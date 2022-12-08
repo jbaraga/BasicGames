@@ -1,0 +1,3221 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD10BD2B27D42E2200422720 /* Football.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD10BD2A27D42E2200422720 /* Football.pdf */; };
+		AD150F0327C0836700FA3280 /* Weekday.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD150F0227C0836700FA3280 /* Weekday.pdf */; };
+		AD150F0B27C1492A00FA3280 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD150F0A27C1492A00FA3280 /* main.swift */; };
+		AD150F0F27C1493D00FA3280 /* Calendar in Resources */ = {isa = PBXBuildFile; fileRef = AD150F0827C1492A00FA3280 /* Calendar */; };
+		AD150F1427C1498E00FA3280 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD150F1527C1499100FA3280 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD150F1627C1499400FA3280 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD150F1827C149D500FA3280 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD150F1727C149D500FA3280 /* Calendar.swift */; };
+		AD150F1A27C1A73200FA3280 /* Calendar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD150F1927C1A73200FA3280 /* Calendar.pdf */; };
+		AD150F2227C2AF9F00FA3280 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD150F2127C2AF9F00FA3280 /* main.swift */; };
+		AD150F2627C2AFAB00FA3280 /* Blackjack in Resources */ = {isa = PBXBuildFile; fileRef = AD150F1F27C2AF9F00FA3280 /* Blackjack */; };
+		AD150F2A27C2B29D00FA3280 /* Blackjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD150F2927C2B29D00FA3280 /* Blackjack.swift */; };
+		AD150F2B27C2B2A600FA3280 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD150F2C27C2B2A900FA3280 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD150F2D27C2B2AC00FA3280 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD162326277BD2C100E919C1 /* TerminalViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162325277BD2C100E919C1 /* TerminalViewRepresentable.swift */; };
+		AD162328277BD31D00E919C1 /* GameLauncherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162327277BD31D00E919C1 /* GameLauncherView.swift */; };
+		AD162331277BD53600E919C1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		AD162333277BD81B00E919C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162332277BD81B00E919C1 /* AppDelegate.swift */; };
+		AD1F5A2727C46DE1005BE669 /* Blackjack.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD1F5A2627C46DE1005BE669 /* Blackjack.pdf */; };
+		AD22859627B40B4A00FEADB8 /* StarTrek.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD22859527B40B4400FEADB8 /* StarTrek.pdf */; };
+		AD2437C527EAA03E005D67B6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2437C427EAA03E005D67B6 /* main.swift */; };
+		AD2437CB27EAA075005D67B6 /* Splat in Resources */ = {isa = PBXBuildFile; fileRef = AD2437C227EAA03E005D67B6 /* Splat */; };
+		AD2437CD27EAA101005D67B6 /* Splat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2437CC27EAA101005D67B6 /* Splat.swift */; };
+		AD2437CE27EAA10C005D67B6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD2437CF27EAA10F005D67B6 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD2437D027EAA112005D67B6 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD33FD0927B955DD00E087D1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD33FD0827B955DD00E087D1 /* main.swift */; };
+		AD33FD0E27B9560F00E087D1 /* ICBM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD33FD0D27B9560F00E087D1 /* ICBM.swift */; };
+		AD33FD0F27B9562D00E087D1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD33FD1027B9563100E087D1 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD33FD1127B9563400E087D1 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD33FD1227B9576600E087D1 /* ICBM in Resources */ = {isa = PBXBuildFile; fileRef = AD33FD0627B955DD00E087D1 /* ICBM */; };
+		AD33FD1627B9A44700E087D1 /* ICBM.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD33FD1527B9A44700E087D1 /* ICBM.pdf */; };
+		AD36C56B27BB410C00FB1E63 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36C56A27BB410C00FB1E63 /* main.swift */; };
+		AD36C56F27BB416E00FB1E63 /* Banner in Resources */ = {isa = PBXBuildFile; fileRef = AD36C56827BB410C00FB1E63 /* Banner */; };
+		AD36C57327BB41BA00FB1E63 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36C57227BB41BA00FB1E63 /* Banner.swift */; };
+		AD36C57427BB41DF00FB1E63 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD36C57527BB41E100FB1E63 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD36C57627BB41E400FB1E63 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD36C57827BD40BF00FB1E63 /* Banner.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD36C57727BD40BF00FB1E63 /* Banner.pdf */; };
+		AD3D807227BF2623004226EF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3D807127BF2623004226EF /* main.swift */; };
+		AD3D807627BF2642004226EF /* Weekday in Resources */ = {isa = PBXBuildFile; fileRef = AD3D806F27BF2623004226EF /* Weekday */; };
+		AD3D807A27BF268D004226EF /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3D807927BF268D004226EF /* Weekday.swift */; };
+		AD3D807B27BF269C004226EF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD3D807C27BF269F004226EF /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD3D807D27BF26A2004226EF /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD56DA0727E29A5500179FAA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56DA0627E29A5500179FAA /* main.swift */; };
+		AD56DA0B27E29AB800179FAA /* Animal in Resources */ = {isa = PBXBuildFile; fileRef = AD56DA0427E29A5500179FAA /* Animal */; };
+		AD56DA0F27E29C0100179FAA /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56DA0E27E29C0100179FAA /* Animal.swift */; };
+		AD56DA1027E29C1200179FAA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD56DA1127E29C1500179FAA /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD56DA1227E29C1800179FAA /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD56DA1427E4006300179FAA /* Animal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD56DA1327E4006200179FAA /* Animal.pdf */; };
+		AD56DA1C27E60F8700179FAA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56DA1B27E60F8700179FAA /* main.swift */; };
+		AD56DA2227E60FC900179FAA /* 3DPlot in Resources */ = {isa = PBXBuildFile; fileRef = AD56DA1927E60F8700179FAA /* 3DPlot */; };
+		AD56DA2427E610B700179FAA /* 3DPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56DA2327E610B700179FAA /* 3DPlot.swift */; };
+		AD56DA2527E610C500179FAA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD56DA2627E610C900179FAA /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD56DA2727E610CB00179FAA /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD56DA2927E62DC600179FAA /* 3DPlot.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD56DA2827E62DC600179FAA /* 3DPlot.pdf */; };
+		AD57CCE327AEC1D300AD32C5 /* Amazing in Resources */ = {isa = PBXBuildFile; fileRef = AD6AC926277F33C400B9E5DB /* Amazing */; };
+		AD57CCED27AEC29F00AD32C5 /* LEM in Resources */ = {isa = PBXBuildFile; fileRef = ADF23D53278649F700D71CDD /* LEM */; };
+		AD57CCEE27AEC2B400AD32C5 /* Lunar in Resources */ = {isa = PBXBuildFile; fileRef = AD8F43E127824DFF0067143D /* Lunar */; };
+		AD57CCEF27AEC2BE00AD32C5 /* OregonTrail in Resources */ = {isa = PBXBuildFile; fileRef = AD7D2759277CA79600F43F39 /* OregonTrail */; };
+		AD57CCF727AED50800AD32C5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD57CCF627AED50800AD32C5 /* main.swift */; };
+		AD57CCFC27AED53A00AD32C5 /* StarTrek.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD57CCFB27AED53A00AD32C5 /* StarTrek.swift */; };
+		AD57CCFD27AED59900AD32C5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD57CCFE27AED59D00AD32C5 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD57CCFF27AED5A100AD32C5 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD57CD0227AED83F00AD32C5 /* StarTrek in Resources */ = {isa = PBXBuildFile; fileRef = AD57CCF427AED50800AD32C5 /* StarTrek */; };
+		AD60176B27ED2C7200213C47 /* Splat.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD60176A27ED2C7200213C47 /* Splat.pdf */; };
+		AD60177327ED3E8000213C47 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60177227ED3E8000213C47 /* main.swift */; };
+		AD60177927ED3EAC00213C47 /* Target in Resources */ = {isa = PBXBuildFile; fileRef = AD60177027ED3E8000213C47 /* Target */; };
+		AD60177B27ED3FA000213C47 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60177A27ED3FA000213C47 /* Target.swift */; };
+		AD60177C27ED3FA700213C47 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD60177D27ED3FAA00213C47 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD60177E27ED3FAE00213C47 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD60178027EDFB5F00213C47 /* Target.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD60177F27EDFB5F00213C47 /* Target.pdf */; };
+		AD6AC929277F33C400B9E5DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6AC928277F33C400B9E5DB /* main.swift */; };
+		AD6AC92F277F340200B9E5DB /* Amazing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6AC92D277F340200B9E5DB /* Amazing.swift */; };
+		AD6AC931277F346400B9E5DB /* Amazing.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD6AC930277F346400B9E5DB /* Amazing.pdf */; };
+		AD7D2754277CA5EE00F43F39 /* OregonTrail.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD7D2753277CA5EE00F43F39 /* OregonTrail.pdf */; };
+		AD7D275C277CA79600F43F39 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D275B277CA79600F43F39 /* main.swift */; };
+		AD7D2761277CA7BE00F43F39 /* OregonTrail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2760277CA7BE00F43F39 /* OregonTrail.swift */; };
+		AD82570827F09A9D00A0ECCB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82570727F09A9D00A0ECCB /* main.swift */; };
+		AD82570E27F09ADA00A0ECCB /* Bounce in Resources */ = {isa = PBXBuildFile; fileRef = AD82570527F09A9D00A0ECCB /* Bounce */; };
+		AD82571027F09CF000A0ECCB /* Bounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82570F27F09CF000A0ECCB /* Bounce.swift */; };
+		AD82571127F09CFB00A0ECCB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD82571227F09CFE00A0ECCB /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD82571327F09D0100A0ECCB /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD82571527F09EA900A0ECCB /* Bounce.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD82571427F09EA900A0ECCB /* Bounce.pdf */; };
+		AD8A002527E77C62009B5679 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A002427E77C62009B5679 /* main.swift */; };
+		AD8A002B27E77C90009B5679 /* StockMarket in Resources */ = {isa = PBXBuildFile; fileRef = AD8A002227E77C62009B5679 /* StockMarket */; };
+		AD8A002D27E77D2E009B5679 /* StockMarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A002C27E77D2E009B5679 /* StockMarket.swift */; };
+		AD8A002E27E77D35009B5679 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD8A002F27E77D38009B5679 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD8A003027E77D3D009B5679 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD8F43E427824DFF0067143D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43E327824DFF0067143D /* main.swift */; };
+		AD8F43ED278250450067143D /* Lunar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43EC278250450067143D /* Lunar.swift */; };
+		AD8F43EE278250D90067143D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD8F43EF278250D90067143D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD8F43F0278250D90067143D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD8F43F2278250E40067143D /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD8F43F3278250E50067143D /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD8F43F4278250E70067143D /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD8F43F6278252550067143D /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD8F43F7278252550067143D /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD8F43F8278252550067143D /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADAE10B5277BAD25006762F5 /* BasicGamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */; };
+		ADAE10B9277BAD2D006762F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAE10B8277BAD2D006762F5 /* Assets.xcassets */; };
+		ADAE10BC277BAD2D006762F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAE10BB277BAD2D006762F5 /* Preview Assets.xcassets */; };
+		ADAE10C7277BAD2D006762F5 /* BasicGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE10C6277BAD2D006762F5 /* BasicGamesTests.swift */; };
+		ADAE10D1277BAD2E006762F5 /* BasicGamesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE10D0277BAD2E006762F5 /* BasicGamesUITests.swift */; };
+		ADAE10D3277BAD2E006762F5 /* BasicGamesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE10D2277BAD2E006762F5 /* BasicGamesUITestsLaunchTests.swift */; };
+		ADAFE7AB27B839B8009A7D0B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADAFE7AD27B83B8F009A7D0B /* Joust.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADAFE7AC27B83B8F009A7D0B /* Joust.pdf */; };
+		ADAFE7AF27B86106009A7D0B /* DepthCharge.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADAFE7AE27B86106009A7D0B /* DepthCharge.pdf */; };
+		ADB4DE9E27C5BE6000C04087 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DE9D27C5BE6000C04087 /* main.swift */; };
+		ADB4DEA227C5BE6C00C04087 /* Ftball in Resources */ = {isa = PBXBuildFile; fileRef = ADB4DE9B27C5BE5F00C04087 /* Ftball */; };
+		ADB4DEAC27C5BEA100C04087 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DEAB27C5BEA100C04087 /* main.swift */; };
+		ADB4DEB027C5BEAA00C04087 /* Football in Resources */ = {isa = PBXBuildFile; fileRef = ADB4DEA927C5BEA100C04087 /* Football */; };
+		ADB4DEB427C5BF3400C04087 /* Football.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DEB327C5BF3400C04087 /* Football.swift */; };
+		ADB4DEB627C5BF4600C04087 /* Ftball.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DEB527C5BF4600C04087 /* Ftball.swift */; };
+		ADB4DEB727C5BF4D00C04087 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADB4DEB827C5BF4D00C04087 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADB4DEB927C5BF5000C04087 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADB4DEBA27C5BF5100C04087 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADB4DEBB27C5BF5400C04087 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADB4DEBC27C5BF5400C04087 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADDB4FC8278B589100278FB7 /* SwiftTerm in Frameworks */ = {isa = PBXBuildFile; productRef = ADDB4FC7278B589100278FB7 /* SwiftTerm */; };
+		ADDBCD0427B5504000C369D1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD0327B5504000C369D1 /* main.swift */; };
+		ADDBCD0927B5509F00C369D1 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD0827B5509F00C369D1 /* Rocket.swift */; };
+		ADDBCD0A27B550F900C369D1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADDBCD0B27B550FE00C369D1 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADDBCD0C27B5510100C369D1 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADDBCD0F27B5515E00C369D1 /* Rocket in Resources */ = {isa = PBXBuildFile; fileRef = ADDBCD0127B5504000C369D1 /* Rocket */; };
+		ADDBCD1727B6B13900C369D1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD1627B6B13900C369D1 /* main.swift */; };
+		ADDBCD1C27B6B16E00C369D1 /* Joust.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD1B27B6B16E00C369D1 /* Joust.swift */; };
+		ADDBCD1D27B6B19800C369D1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADDBCD1E27B6B19C00C369D1 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADDBCD1F27B6B1A200C369D1 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADDBCD2027B6B2B000C369D1 /* Joust in Resources */ = {isa = PBXBuildFile; fileRef = ADDBCD1427B6B13900C369D1 /* Joust */; };
+		ADDBCD2427B6F16B00C369D1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2327B6F16B00C369D1 /* Preferences.swift */; };
+		ADDBCD2627B6F22E00C369D1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */; };
+		ADF23D462784D1FF00D71CDD /* LunarLEMRocket.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADF23D452784D1FF00D71CDD /* LunarLEMRocket.pdf */; };
+		ADF23D56278649F800D71CDD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF23D55278649F800D71CDD /* main.swift */; };
+		ADF23D5B27864A3100D71CDD /* LEM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF23D5A27864A3100D71CDD /* LEM.swift */; };
+		ADF23D5C27864A7300D71CDD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADF23D5D27864A7600D71CDD /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADF23D5E27864A7900D71CDD /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADFE458727B83522002175D7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFE458627B83522002175D7 /* main.swift */; };
+		ADFE458B27B8353A002175D7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADFE458C27B8354A002175D7 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADFE458D27B8354D002175D7 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADFE458F27B83570002175D7 /* DepthCharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFE458E27B83570002175D7 /* DepthCharge.swift */; };
+		ADFE459027B836F1002175D7 /* DepthCharge in Resources */ = {isa = PBXBuildFile; fileRef = ADFE458427B83522002175D7 /* DepthCharge */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD150F1027C1495200FA3280 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD150F0727C1492A00FA3280;
+			remoteInfo = Calendar;
+		};
+		AD150F2727C2AFF800FA3280 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD150F1E27C2AF9F00FA3280;
+			remoteInfo = Blackjack;
+		};
+		AD2437C927EAA062005D67B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD2437C127EAA03E005D67B6;
+			remoteInfo = Splat;
+		};
+		AD33FD1327B9578900E087D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD33FD0527B955DD00E087D1;
+			remoteInfo = ICBM;
+		};
+		AD36C57027BB419900FB1E63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD36C56727BB410C00FB1E63;
+			remoteInfo = Banner;
+		};
+		AD3D807727BF265C004226EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD3D806E27BF2623004226EF;
+			remoteInfo = Weekday;
+		};
+		AD56DA0C27E29AD500179FAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD56DA0327E29A5500179FAA;
+			remoteInfo = Animal;
+		};
+		AD56DA2027E60FB700179FAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD56DA1827E60F8700179FAA;
+			remoteInfo = 3DPlot;
+		};
+		AD57CCE427AEC22E00AD32C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD6AC925277F33C400B9E5DB;
+			remoteInfo = Amazing;
+		};
+		AD57CCE627AEC25600AD32C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADF23D52278649F700D71CDD;
+			remoteInfo = LEM;
+		};
+		AD57CCE827AEC25B00AD32C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD8F43E027824DFF0067143D;
+			remoteInfo = Lunar;
+		};
+		AD57CCEA27AEC26500AD32C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD7D2758277CA79600F43F39;
+			remoteInfo = OregonTrail;
+		};
+		AD57CD0027AED82E00AD32C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD57CCF327AED50800AD32C5;
+			remoteInfo = StarTrek;
+		};
+		AD60177727ED3E9500213C47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD60176F27ED3E8000213C47;
+			remoteInfo = Target;
+		};
+		AD82570C27F09AC700A0ECCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD82570427F09A9D00A0ECCB;
+			remoteInfo = Bounce;
+		};
+		AD8A002927E77C79009B5679 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD8A002127E77C62009B5679;
+			remoteInfo = StockMarket;
+		};
+		ADAE10C3277BAD2D006762F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADAE10B0277BAD25006762F5;
+			remoteInfo = BasicGames;
+		};
+		ADAE10CD277BAD2E006762F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADAE10B0277BAD25006762F5;
+			remoteInfo = BasicGames;
+		};
+		ADB4DEA327C5BE8000C04087 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADB4DE9A27C5BE5F00C04087;
+			remoteInfo = Ftball;
+		};
+		ADB4DEB127C5BEBB00C04087 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADB4DEA827C5BEA100C04087;
+			remoteInfo = Football;
+		};
+		ADDBCD0D27B5512E00C369D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADDBCD0027B5504000C369D1;
+			remoteInfo = Rocket;
+		};
+		ADDBCD2127B6B2DA00C369D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADDBCD1327B6B13900C369D1;
+			remoteInfo = Joust;
+		};
+		ADFE459127B83700002175D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADFE458327B83522002175D7;
+			remoteInfo = DepthCharge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AD150F0627C1492A00FA3280 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD150F1D27C2AF9F00FA3280 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD2437C027EAA03E005D67B6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD33FD0427B955DD00E087D1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD36C56627BB410C00FB1E63 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD3D806D27BF2623004226EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD56DA0227E29A5500179FAA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD56DA1727E60F8700179FAA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD57CCF227AED50800AD32C5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD60176E27ED3E8000213C47 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD6AC924277F33C400B9E5DB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD7D2757277CA79600F43F39 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD82570327F09A9D00A0ECCB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD8A002027E77C62009B5679 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD8F43DF27824DFF0067143D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		ADB4DE9927C5BE5F00C04087 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		ADB4DEA727C5BEA100C04087 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		ADDBCCFF27B5504000C369D1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		ADDBCD1227B6B13900C369D1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		ADF23D51278649F700D71CDD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		ADFE458227B83522002175D7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AD10BD2A27D42E2200422720 /* Football.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Football.pdf; sourceTree = "<group>"; };
+		AD150F0227C0836700FA3280 /* Weekday.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Weekday.pdf; sourceTree = "<group>"; };
+		AD150F0827C1492A00FA3280 /* Calendar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Calendar; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD150F0A27C1492A00FA3280 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD150F1727C149D500FA3280 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		AD150F1927C1A73200FA3280 /* Calendar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Calendar.pdf; sourceTree = "<group>"; };
+		AD150F1F27C2AF9F00FA3280 /* Blackjack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Blackjack; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD150F2127C2AF9F00FA3280 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD150F2927C2B29D00FA3280 /* Blackjack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blackjack.swift; sourceTree = "<group>"; };
+		AD162325277BD2C100E919C1 /* TerminalViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalViewRepresentable.swift; sourceTree = "<group>"; };
+		AD162327277BD31D00E919C1 /* GameLauncherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherView.swift; sourceTree = "<group>"; };
+		AD162329277BD38900E919C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AD162330277BD53600E919C1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		AD162332277BD81B00E919C1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD1F5A2627C46DE1005BE669 /* Blackjack.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Blackjack.pdf; sourceTree = "<group>"; };
+		AD22859527B40B4400FEADB8 /* StarTrek.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = StarTrek.pdf; sourceTree = "<group>"; };
+		AD2437C227EAA03E005D67B6 /* Splat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Splat; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD2437C427EAA03E005D67B6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD2437CC27EAA101005D67B6 /* Splat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splat.swift; sourceTree = "<group>"; };
+		AD33FD0627B955DD00E087D1 /* ICBM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ICBM; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD33FD0827B955DD00E087D1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD33FD0D27B9560F00E087D1 /* ICBM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICBM.swift; sourceTree = "<group>"; };
+		AD33FD1527B9A44700E087D1 /* ICBM.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ICBM.pdf; sourceTree = "<group>"; };
+		AD36C56827BB410C00FB1E63 /* Banner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Banner; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD36C56A27BB410C00FB1E63 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD36C57227BB41BA00FB1E63 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		AD36C57727BD40BF00FB1E63 /* Banner.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Banner.pdf; sourceTree = "<group>"; };
+		AD3D806F27BF2623004226EF /* Weekday */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Weekday; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD3D807127BF2623004226EF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD3D807927BF268D004226EF /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		AD56DA0427E29A5500179FAA /* Animal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Animal; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD56DA0627E29A5500179FAA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD56DA0E27E29C0100179FAA /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		AD56DA1327E4006200179FAA /* Animal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Animal.pdf; sourceTree = "<group>"; };
+		AD56DA1927E60F8700179FAA /* 3DPlot */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 3DPlot; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD56DA1B27E60F8700179FAA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD56DA2327E610B700179FAA /* 3DPlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DPlot.swift; sourceTree = "<group>"; };
+		AD56DA2827E62DC600179FAA /* 3DPlot.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 3DPlot.pdf; sourceTree = "<group>"; };
+		AD57CCF427AED50800AD32C5 /* StarTrek */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StarTrek; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD57CCF627AED50800AD32C5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD57CCFB27AED53A00AD32C5 /* StarTrek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTrek.swift; sourceTree = "<group>"; };
+		AD60176A27ED2C7200213C47 /* Splat.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Splat.pdf; sourceTree = "<group>"; };
+		AD60177027ED3E8000213C47 /* Target */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Target; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD60177227ED3E8000213C47 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD60177A27ED3FA000213C47 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		AD60177F27EDFB5F00213C47 /* Target.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Target.pdf; sourceTree = "<group>"; };
+		AD6AC926277F33C400B9E5DB /* Amazing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Amazing; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD6AC928277F33C400B9E5DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD6AC92D277F340200B9E5DB /* Amazing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amazing.swift; sourceTree = "<group>"; };
+		AD6AC930277F346400B9E5DB /* Amazing.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Amazing.pdf; sourceTree = "<group>"; };
+		AD7D274E277CA59800F43F39 /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
+		AD7D2750277CA5A600F43F39 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AD7D2753277CA5EE00F43F39 /* OregonTrail.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = OregonTrail.pdf; sourceTree = "<group>"; };
+		AD7D2759277CA79600F43F39 /* OregonTrail */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OregonTrail; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD7D275B277CA79600F43F39 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD7D2760277CA7BE00F43F39 /* OregonTrail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OregonTrail.swift; sourceTree = "<group>"; };
+		AD82570527F09A9D00A0ECCB /* Bounce */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bounce; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD82570727F09A9D00A0ECCB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD82570F27F09CF000A0ECCB /* Bounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bounce.swift; sourceTree = "<group>"; };
+		AD82571427F09EA900A0ECCB /* Bounce.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Bounce.pdf; sourceTree = "<group>"; };
+		AD8A002227E77C62009B5679 /* StockMarket */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StockMarket; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD8A002427E77C62009B5679 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD8A002C27E77D2E009B5679 /* StockMarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMarket.swift; sourceTree = "<group>"; };
+		AD8F43E127824DFF0067143D /* Lunar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lunar; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD8F43E327824DFF0067143D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD8F43EC278250450067143D /* Lunar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lunar.swift; sourceTree = "<group>"; };
+		AD8F43F5278252550067143D /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		ADAE10B1277BAD25006762F5 /* BasicGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGamesApp.swift; sourceTree = "<group>"; };
+		ADAE10B8277BAD2D006762F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ADAE10BB277BAD2D006762F5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ADAE10BD277BAD2D006762F5 /* BasicGames.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BasicGames.entitlements; sourceTree = "<group>"; };
+		ADAE10C2277BAD2D006762F5 /* BasicGamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicGamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADAE10C6277BAD2D006762F5 /* BasicGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGamesTests.swift; sourceTree = "<group>"; };
+		ADAE10CC277BAD2D006762F5 /* BasicGamesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicGamesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADAE10D0277BAD2E006762F5 /* BasicGamesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGamesUITests.swift; sourceTree = "<group>"; };
+		ADAE10D2277BAD2E006762F5 /* BasicGamesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGamesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ADAFE7AC27B83B8F009A7D0B /* Joust.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Joust.pdf; sourceTree = "<group>"; };
+		ADAFE7AE27B86106009A7D0B /* DepthCharge.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DepthCharge.pdf; sourceTree = "<group>"; };
+		ADB4DE9B27C5BE5F00C04087 /* Ftball */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Ftball; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADB4DE9D27C5BE6000C04087 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADB4DEA927C5BEA100C04087 /* Football */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Football; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADB4DEAB27C5BEA100C04087 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADB4DEB327C5BF3400C04087 /* Football.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Football.swift; sourceTree = "<group>"; };
+		ADB4DEB527C5BF4600C04087 /* Ftball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ftball.swift; sourceTree = "<group>"; };
+		ADDBCD0127B5504000C369D1 /* Rocket */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Rocket; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDBCD0327B5504000C369D1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADDBCD0827B5509F00C369D1 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		ADDBCD1427B6B13900C369D1 /* Joust */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Joust; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDBCD1627B6B13900C369D1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADDBCD1B27B6B16E00C369D1 /* Joust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joust.swift; sourceTree = "<group>"; };
+		ADDBCD2327B6F16B00C369D1 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ADF23D452784D1FF00D71CDD /* LunarLEMRocket.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = LunarLEMRocket.pdf; sourceTree = "<group>"; };
+		ADF23D53278649F700D71CDD /* LEM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LEM; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADF23D55278649F800D71CDD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADF23D5A27864A3100D71CDD /* LEM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEM.swift; sourceTree = "<group>"; };
+		ADFE458427B83522002175D7 /* DepthCharge */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DepthCharge; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADFE458627B83522002175D7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADFE458E27B83570002175D7 /* DepthCharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthCharge.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD150F0527C1492A00FA3280 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD150F1C27C2AF9F00FA3280 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD2437BF27EAA03E005D67B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD33FD0327B955DD00E087D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD36C56527BB410C00FB1E63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD3D806C27BF2623004226EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD56DA0127E29A5500179FAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD56DA1627E60F8700179FAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD57CCF127AED50800AD32C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD60176D27ED3E8000213C47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD6AC923277F33C400B9E5DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD7D2756277CA79600F43F39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD82570227F09A9D00A0ECCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD8A001F27E77C62009B5679 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD8F43DE27824DFF0067143D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAE10AE277BAD25006762F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADDB4FC8278B589100278FB7 /* SwiftTerm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAE10BF277BAD2D006762F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAE10C9277BAD2D006762F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB4DE9827C5BE5F00C04087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB4DEA627C5BEA100C04087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADDBCCFE27B5504000C369D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADDBCD1127B6B13900C369D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADF23D50278649F700D71CDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADFE458127B83522002175D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD150F0927C1492A00FA3280 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				AD150F0A27C1492A00FA3280 /* main.swift */,
+				AD150F1727C149D500FA3280 /* Calendar.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		AD150F2027C2AF9F00FA3280 /* Blackjack */ = {
+			isa = PBXGroup;
+			children = (
+				AD150F2127C2AF9F00FA3280 /* main.swift */,
+				AD150F2927C2B29D00FA3280 /* Blackjack.swift */,
+			);
+			path = Blackjack;
+			sourceTree = "<group>";
+		};
+		AD2437C327EAA03E005D67B6 /* Splat */ = {
+			isa = PBXGroup;
+			children = (
+				AD2437C427EAA03E005D67B6 /* main.swift */,
+				AD2437CC27EAA101005D67B6 /* Splat.swift */,
+			);
+			path = Splat;
+			sourceTree = "<group>";
+		};
+		AD33FD0727B955DD00E087D1 /* ICBM */ = {
+			isa = PBXGroup;
+			children = (
+				AD33FD0827B955DD00E087D1 /* main.swift */,
+				AD33FD0D27B9560F00E087D1 /* ICBM.swift */,
+			);
+			path = ICBM;
+			sourceTree = "<group>";
+		};
+		AD36C56927BB410C00FB1E63 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				AD36C56A27BB410C00FB1E63 /* main.swift */,
+				AD36C57227BB41BA00FB1E63 /* Banner.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		AD3D807027BF2623004226EF /* Weekday */ = {
+			isa = PBXGroup;
+			children = (
+				AD3D807127BF2623004226EF /* main.swift */,
+				AD3D807927BF268D004226EF /* Weekday.swift */,
+			);
+			path = Weekday;
+			sourceTree = "<group>";
+		};
+		AD56DA0527E29A5500179FAA /* Animal */ = {
+			isa = PBXGroup;
+			children = (
+				AD56DA0627E29A5500179FAA /* main.swift */,
+				AD56DA0E27E29C0100179FAA /* Animal.swift */,
+			);
+			path = Animal;
+			sourceTree = "<group>";
+		};
+		AD56DA1A27E60F8700179FAA /* 3DPlot */ = {
+			isa = PBXGroup;
+			children = (
+				AD56DA1B27E60F8700179FAA /* main.swift */,
+				AD56DA2327E610B700179FAA /* 3DPlot.swift */,
+			);
+			path = 3DPlot;
+			sourceTree = "<group>";
+		};
+		AD57CCF527AED50800AD32C5 /* StarTrek */ = {
+			isa = PBXGroup;
+			children = (
+				AD57CCF627AED50800AD32C5 /* main.swift */,
+				AD57CCFB27AED53A00AD32C5 /* StarTrek.swift */,
+			);
+			path = StarTrek;
+			sourceTree = "<group>";
+		};
+		AD60177127ED3E8000213C47 /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				AD60177227ED3E8000213C47 /* main.swift */,
+				AD60177A27ED3FA000213C47 /* Target.swift */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
+		AD6AC927277F33C400B9E5DB /* Amazing */ = {
+			isa = PBXGroup;
+			children = (
+				AD6AC928277F33C400B9E5DB /* main.swift */,
+				AD6AC92D277F340200B9E5DB /* Amazing.swift */,
+			);
+			path = Amazing;
+			sourceTree = "<group>";
+		};
+		AD7D2752277CA5D500F43F39 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AD6AC930277F346400B9E5DB /* Amazing.pdf */,
+				AD56DA1327E4006200179FAA /* Animal.pdf */,
+				AD36C57727BD40BF00FB1E63 /* Banner.pdf */,
+				AD1F5A2627C46DE1005BE669 /* Blackjack.pdf */,
+				AD82571427F09EA900A0ECCB /* Bounce.pdf */,
+				AD150F1927C1A73200FA3280 /* Calendar.pdf */,
+				ADAFE7AE27B86106009A7D0B /* DepthCharge.pdf */,
+				AD10BD2A27D42E2200422720 /* Football.pdf */,
+				AD33FD1527B9A44700E087D1 /* ICBM.pdf */,
+				ADAFE7AC27B83B8F009A7D0B /* Joust.pdf */,
+				AD7D2753277CA5EE00F43F39 /* OregonTrail.pdf */,
+				ADF23D452784D1FF00D71CDD /* LunarLEMRocket.pdf */,
+				AD60176A27ED2C7200213C47 /* Splat.pdf */,
+				AD22859527B40B4400FEADB8 /* StarTrek.pdf */,
+				AD60177F27EDFB5F00213C47 /* Target.pdf */,
+				AD56DA2827E62DC600179FAA /* 3DPlot.pdf */,
+				AD150F0227C0836700FA3280 /* Weekday.pdf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AD7D275A277CA79600F43F39 /* OregonTrail */ = {
+			isa = PBXGroup;
+			children = (
+				AD7D275B277CA79600F43F39 /* main.swift */,
+				AD7D2760277CA7BE00F43F39 /* OregonTrail.swift */,
+			);
+			path = OregonTrail;
+			sourceTree = "<group>";
+		};
+		AD82570627F09A9D00A0ECCB /* Bounce */ = {
+			isa = PBXGroup;
+			children = (
+				AD82570727F09A9D00A0ECCB /* main.swift */,
+				AD82570F27F09CF000A0ECCB /* Bounce.swift */,
+			);
+			path = Bounce;
+			sourceTree = "<group>";
+		};
+		AD8A002327E77C62009B5679 /* StockMarket */ = {
+			isa = PBXGroup;
+			children = (
+				AD8A002427E77C62009B5679 /* main.swift */,
+				AD8A002C27E77D2E009B5679 /* StockMarket.swift */,
+			);
+			path = StockMarket;
+			sourceTree = "<group>";
+		};
+		AD8F43E227824DFF0067143D /* Lunar */ = {
+			isa = PBXGroup;
+			children = (
+				AD8F43E327824DFF0067143D /* main.swift */,
+				AD8F43EC278250450067143D /* Lunar.swift */,
+			);
+			path = Lunar;
+			sourceTree = "<group>";
+		};
+		ADAE10A8277BAD25006762F5 = {
+			isa = PBXGroup;
+			children = (
+				AD7D2752277CA5D500F43F39 /* Resources */,
+				ADAE10B3277BAD25006762F5 /* BasicGames */,
+				ADAE10C5277BAD2D006762F5 /* BasicGamesTests */,
+				ADAE10CF277BAD2E006762F5 /* BasicGamesUITests */,
+				AD7D2750277CA5A600F43F39 /* Extensions.swift */,
+				AD7D274E277CA59800F43F39 /* ConsoleIO.swift */,
+				AD8F43F5278252550067143D /* GameProtocol.swift */,
+				AD6AC927277F33C400B9E5DB /* Amazing */,
+				AD56DA0527E29A5500179FAA /* Animal */,
+				AD36C56927BB410C00FB1E63 /* Banner */,
+				AD150F2027C2AF9F00FA3280 /* Blackjack */,
+				AD82570627F09A9D00A0ECCB /* Bounce */,
+				AD150F0927C1492A00FA3280 /* Calendar */,
+				ADFE458527B83522002175D7 /* DepthCharge */,
+				ADB4DEAA27C5BEA100C04087 /* Football */,
+				ADB4DE9C27C5BE5F00C04087 /* Ftball */,
+				AD33FD0727B955DD00E087D1 /* ICBM */,
+				ADDBCD1527B6B13900C369D1 /* Joust */,
+				AD8F43E227824DFF0067143D /* Lunar */,
+				ADF23D54278649F800D71CDD /* LEM */,
+				ADDBCD0227B5504000C369D1 /* Rocket */,
+				AD7D275A277CA79600F43F39 /* OregonTrail */,
+				AD2437C327EAA03E005D67B6 /* Splat */,
+				AD57CCF527AED50800AD32C5 /* StarTrek */,
+				AD8A002327E77C62009B5679 /* StockMarket */,
+				AD60177127ED3E8000213C47 /* Target */,
+				AD56DA1A27E60F8700179FAA /* 3DPlot */,
+				AD3D807027BF2623004226EF /* Weekday */,
+				ADAE10B2277BAD25006762F5 /* Products */,
+				ADDB4FC6278B589100278FB7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ADAE10B2277BAD25006762F5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADAE10B1277BAD25006762F5 /* BasicGames.app */,
+				ADAE10C2277BAD2D006762F5 /* BasicGamesTests.xctest */,
+				ADAE10CC277BAD2D006762F5 /* BasicGamesUITests.xctest */,
+				AD7D2759277CA79600F43F39 /* OregonTrail */,
+				AD6AC926277F33C400B9E5DB /* Amazing */,
+				AD8F43E127824DFF0067143D /* Lunar */,
+				ADF23D53278649F700D71CDD /* LEM */,
+				AD57CCF427AED50800AD32C5 /* StarTrek */,
+				ADDBCD0127B5504000C369D1 /* Rocket */,
+				ADDBCD1427B6B13900C369D1 /* Joust */,
+				ADFE458427B83522002175D7 /* DepthCharge */,
+				AD33FD0627B955DD00E087D1 /* ICBM */,
+				AD36C56827BB410C00FB1E63 /* Banner */,
+				AD3D806F27BF2623004226EF /* Weekday */,
+				AD150F0827C1492A00FA3280 /* Calendar */,
+				AD150F1F27C2AF9F00FA3280 /* Blackjack */,
+				ADB4DE9B27C5BE5F00C04087 /* Ftball */,
+				ADB4DEA927C5BEA100C04087 /* Football */,
+				AD56DA0427E29A5500179FAA /* Animal */,
+				AD56DA1927E60F8700179FAA /* 3DPlot */,
+				AD8A002227E77C62009B5679 /* StockMarket */,
+				AD2437C227EAA03E005D67B6 /* Splat */,
+				AD60177027ED3E8000213C47 /* Target */,
+				AD82570527F09A9D00A0ECCB /* Bounce */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADAE10B3277BAD25006762F5 /* BasicGames */ = {
+			isa = PBXGroup;
+			children = (
+				AD162329277BD38900E919C1 /* Info.plist */,
+				AD162330277BD53600E919C1 /* Game.swift */,
+				AD162332277BD81B00E919C1 /* AppDelegate.swift */,
+				ADDBCD2327B6F16B00C369D1 /* Preferences.swift */,
+				ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */,
+				ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */,
+				AD162327277BD31D00E919C1 /* GameLauncherView.swift */,
+				AD162325277BD2C100E919C1 /* TerminalViewRepresentable.swift */,
+				ADAE10B8277BAD2D006762F5 /* Assets.xcassets */,
+				ADAE10BD277BAD2D006762F5 /* BasicGames.entitlements */,
+				ADAE10BA277BAD2D006762F5 /* Preview Content */,
+			);
+			path = BasicGames;
+			sourceTree = "<group>";
+		};
+		ADAE10BA277BAD2D006762F5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				ADAE10BB277BAD2D006762F5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ADAE10C5277BAD2D006762F5 /* BasicGamesTests */ = {
+			isa = PBXGroup;
+			children = (
+				ADAE10C6277BAD2D006762F5 /* BasicGamesTests.swift */,
+			);
+			path = BasicGamesTests;
+			sourceTree = "<group>";
+		};
+		ADAE10CF277BAD2E006762F5 /* BasicGamesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ADAE10D0277BAD2E006762F5 /* BasicGamesUITests.swift */,
+				ADAE10D2277BAD2E006762F5 /* BasicGamesUITestsLaunchTests.swift */,
+			);
+			path = BasicGamesUITests;
+			sourceTree = "<group>";
+		};
+		ADB4DE9C27C5BE5F00C04087 /* Ftball */ = {
+			isa = PBXGroup;
+			children = (
+				ADB4DE9D27C5BE6000C04087 /* main.swift */,
+				ADB4DEB527C5BF4600C04087 /* Ftball.swift */,
+			);
+			path = Ftball;
+			sourceTree = "<group>";
+		};
+		ADB4DEAA27C5BEA100C04087 /* Football */ = {
+			isa = PBXGroup;
+			children = (
+				ADB4DEAB27C5BEA100C04087 /* main.swift */,
+				ADB4DEB327C5BF3400C04087 /* Football.swift */,
+			);
+			path = Football;
+			sourceTree = "<group>";
+		};
+		ADDB4FC6278B589100278FB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADDBCD0227B5504000C369D1 /* Rocket */ = {
+			isa = PBXGroup;
+			children = (
+				ADDBCD0327B5504000C369D1 /* main.swift */,
+				ADDBCD0827B5509F00C369D1 /* Rocket.swift */,
+			);
+			path = Rocket;
+			sourceTree = "<group>";
+		};
+		ADDBCD1527B6B13900C369D1 /* Joust */ = {
+			isa = PBXGroup;
+			children = (
+				ADDBCD1627B6B13900C369D1 /* main.swift */,
+				ADDBCD1B27B6B16E00C369D1 /* Joust.swift */,
+			);
+			path = Joust;
+			sourceTree = "<group>";
+		};
+		ADF23D54278649F800D71CDD /* LEM */ = {
+			isa = PBXGroup;
+			children = (
+				ADF23D55278649F800D71CDD /* main.swift */,
+				ADF23D5A27864A3100D71CDD /* LEM.swift */,
+			);
+			path = LEM;
+			sourceTree = "<group>";
+		};
+		ADFE458527B83522002175D7 /* DepthCharge */ = {
+			isa = PBXGroup;
+			children = (
+				ADFE458627B83522002175D7 /* main.swift */,
+				ADFE458E27B83570002175D7 /* DepthCharge.swift */,
+			);
+			path = DepthCharge;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD150F0727C1492A00FA3280 /* Calendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD150F0C27C1492A00FA3280 /* Build configuration list for PBXNativeTarget "Calendar" */;
+			buildPhases = (
+				AD150F0427C1492A00FA3280 /* Sources */,
+				AD150F0527C1492A00FA3280 /* Frameworks */,
+				AD150F0627C1492A00FA3280 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Calendar;
+			productName = Calendar;
+			productReference = AD150F0827C1492A00FA3280 /* Calendar */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD150F1E27C2AF9F00FA3280 /* Blackjack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD150F2327C2AF9F00FA3280 /* Build configuration list for PBXNativeTarget "Blackjack" */;
+			buildPhases = (
+				AD150F1B27C2AF9F00FA3280 /* Sources */,
+				AD150F1C27C2AF9F00FA3280 /* Frameworks */,
+				AD150F1D27C2AF9F00FA3280 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Blackjack;
+			productName = Blackjack;
+			productReference = AD150F1F27C2AF9F00FA3280 /* Blackjack */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD2437C127EAA03E005D67B6 /* Splat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD2437C827EAA03E005D67B6 /* Build configuration list for PBXNativeTarget "Splat" */;
+			buildPhases = (
+				AD2437BE27EAA03E005D67B6 /* Sources */,
+				AD2437BF27EAA03E005D67B6 /* Frameworks */,
+				AD2437C027EAA03E005D67B6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Splat;
+			productName = Splat;
+			productReference = AD2437C227EAA03E005D67B6 /* Splat */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD33FD0527B955DD00E087D1 /* ICBM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD33FD0A27B955DD00E087D1 /* Build configuration list for PBXNativeTarget "ICBM" */;
+			buildPhases = (
+				AD33FD0227B955DD00E087D1 /* Sources */,
+				AD33FD0327B955DD00E087D1 /* Frameworks */,
+				AD33FD0427B955DD00E087D1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ICBM;
+			productName = ICBM;
+			productReference = AD33FD0627B955DD00E087D1 /* ICBM */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD36C56727BB410C00FB1E63 /* Banner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD36C56E27BB410C00FB1E63 /* Build configuration list for PBXNativeTarget "Banner" */;
+			buildPhases = (
+				AD36C56427BB410C00FB1E63 /* Sources */,
+				AD36C56527BB410C00FB1E63 /* Frameworks */,
+				AD36C56627BB410C00FB1E63 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Banner;
+			productName = Banner;
+			productReference = AD36C56827BB410C00FB1E63 /* Banner */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD3D806E27BF2623004226EF /* Weekday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD3D807527BF2623004226EF /* Build configuration list for PBXNativeTarget "Weekday" */;
+			buildPhases = (
+				AD3D806B27BF2623004226EF /* Sources */,
+				AD3D806C27BF2623004226EF /* Frameworks */,
+				AD3D806D27BF2623004226EF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Weekday;
+			productName = Weekday;
+			productReference = AD3D806F27BF2623004226EF /* Weekday */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD56DA0327E29A5500179FAA /* Animal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD56DA0A27E29A5500179FAA /* Build configuration list for PBXNativeTarget "Animal" */;
+			buildPhases = (
+				AD56DA0027E29A5500179FAA /* Sources */,
+				AD56DA0127E29A5500179FAA /* Frameworks */,
+				AD56DA0227E29A5500179FAA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Animal;
+			productName = Animal;
+			productReference = AD56DA0427E29A5500179FAA /* Animal */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD56DA1827E60F8700179FAA /* 3DPlot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD56DA1D27E60F8700179FAA /* Build configuration list for PBXNativeTarget "3DPlot" */;
+			buildPhases = (
+				AD56DA1527E60F8700179FAA /* Sources */,
+				AD56DA1627E60F8700179FAA /* Frameworks */,
+				AD56DA1727E60F8700179FAA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 3DPlot;
+			productName = 3DPlot;
+			productReference = AD56DA1927E60F8700179FAA /* 3DPlot */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD57CCF327AED50800AD32C5 /* StarTrek */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD57CCF827AED50800AD32C5 /* Build configuration list for PBXNativeTarget "StarTrek" */;
+			buildPhases = (
+				AD57CCF027AED50800AD32C5 /* Sources */,
+				AD57CCF127AED50800AD32C5 /* Frameworks */,
+				AD57CCF227AED50800AD32C5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StarTrek;
+			productName = StarTrek;
+			productReference = AD57CCF427AED50800AD32C5 /* StarTrek */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD60176F27ED3E8000213C47 /* Target */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD60177427ED3E8000213C47 /* Build configuration list for PBXNativeTarget "Target" */;
+			buildPhases = (
+				AD60176C27ED3E8000213C47 /* Sources */,
+				AD60176D27ED3E8000213C47 /* Frameworks */,
+				AD60176E27ED3E8000213C47 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Target;
+			productName = Target;
+			productReference = AD60177027ED3E8000213C47 /* Target */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD6AC925277F33C400B9E5DB /* Amazing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD6AC92C277F33C400B9E5DB /* Build configuration list for PBXNativeTarget "Amazing" */;
+			buildPhases = (
+				AD6AC922277F33C400B9E5DB /* Sources */,
+				AD6AC923277F33C400B9E5DB /* Frameworks */,
+				AD6AC924277F33C400B9E5DB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Amazing;
+			productName = Amazing;
+			productReference = AD6AC926277F33C400B9E5DB /* Amazing */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD7D2758277CA79600F43F39 /* OregonTrail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD7D275D277CA79600F43F39 /* Build configuration list for PBXNativeTarget "OregonTrail" */;
+			buildPhases = (
+				AD7D2755277CA79600F43F39 /* Sources */,
+				AD7D2756277CA79600F43F39 /* Frameworks */,
+				AD7D2757277CA79600F43F39 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OregonTrail;
+			productName = OregonTrail;
+			productReference = AD7D2759277CA79600F43F39 /* OregonTrail */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD82570427F09A9D00A0ECCB /* Bounce */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD82570B27F09A9D00A0ECCB /* Build configuration list for PBXNativeTarget "Bounce" */;
+			buildPhases = (
+				AD82570127F09A9D00A0ECCB /* Sources */,
+				AD82570227F09A9D00A0ECCB /* Frameworks */,
+				AD82570327F09A9D00A0ECCB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bounce;
+			productName = Bounce;
+			productReference = AD82570527F09A9D00A0ECCB /* Bounce */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD8A002127E77C62009B5679 /* StockMarket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD8A002827E77C62009B5679 /* Build configuration list for PBXNativeTarget "StockMarket" */;
+			buildPhases = (
+				AD8A001E27E77C62009B5679 /* Sources */,
+				AD8A001F27E77C62009B5679 /* Frameworks */,
+				AD8A002027E77C62009B5679 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StockMarket;
+			productName = StockMarket;
+			productReference = AD8A002227E77C62009B5679 /* StockMarket */;
+			productType = "com.apple.product-type.tool";
+		};
+		AD8F43E027824DFF0067143D /* Lunar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD8F43E527824DFF0067143D /* Build configuration list for PBXNativeTarget "Lunar" */;
+			buildPhases = (
+				AD8F43DD27824DFF0067143D /* Sources */,
+				AD8F43DE27824DFF0067143D /* Frameworks */,
+				AD8F43DF27824DFF0067143D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lunar;
+			productName = Lunar;
+			productReference = AD8F43E127824DFF0067143D /* Lunar */;
+			productType = "com.apple.product-type.tool";
+		};
+		ADAE10B0277BAD25006762F5 /* BasicGames */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADAE10D6277BAD2E006762F5 /* Build configuration list for PBXNativeTarget "BasicGames" */;
+			buildPhases = (
+				ADAE10AD277BAD25006762F5 /* Sources */,
+				ADAE10AE277BAD25006762F5 /* Frameworks */,
+				ADAE10AF277BAD25006762F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD57CCE527AEC22E00AD32C5 /* PBXTargetDependency */,
+				AD56DA0D27E29AD500179FAA /* PBXTargetDependency */,
+				AD150F2827C2AFF800FA3280 /* PBXTargetDependency */,
+				AD36C57127BB419900FB1E63 /* PBXTargetDependency */,
+				AD82570D27F09AC700A0ECCB /* PBXTargetDependency */,
+				AD150F1127C1495200FA3280 /* PBXTargetDependency */,
+				ADFE459227B83700002175D7 /* PBXTargetDependency */,
+				ADB4DEB227C5BEBB00C04087 /* PBXTargetDependency */,
+				ADB4DEA427C5BE8000C04087 /* PBXTargetDependency */,
+				AD33FD1427B9578900E087D1 /* PBXTargetDependency */,
+				ADDBCD2227B6B2DA00C369D1 /* PBXTargetDependency */,
+				AD57CCE727AEC25600AD32C5 /* PBXTargetDependency */,
+				AD57CCE927AEC25B00AD32C5 /* PBXTargetDependency */,
+				ADDBCD0E27B5512E00C369D1 /* PBXTargetDependency */,
+				AD57CCEB27AEC26500AD32C5 /* PBXTargetDependency */,
+				AD2437CA27EAA062005D67B6 /* PBXTargetDependency */,
+				AD57CD0127AED82E00AD32C5 /* PBXTargetDependency */,
+				AD8A002A27E77C79009B5679 /* PBXTargetDependency */,
+				AD60177827ED3E9500213C47 /* PBXTargetDependency */,
+				AD56DA2127E60FB700179FAA /* PBXTargetDependency */,
+				AD3D807827BF265C004226EF /* PBXTargetDependency */,
+			);
+			name = BasicGames;
+			packageProductDependencies = (
+				ADDB4FC7278B589100278FB7 /* SwiftTerm */,
+			);
+			productName = BasicGames;
+			productReference = ADAE10B1277BAD25006762F5 /* BasicGames.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ADAE10C1277BAD2D006762F5 /* BasicGamesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADAE10D9277BAD2E006762F5 /* Build configuration list for PBXNativeTarget "BasicGamesTests" */;
+			buildPhases = (
+				ADAE10BE277BAD2D006762F5 /* Sources */,
+				ADAE10BF277BAD2D006762F5 /* Frameworks */,
+				ADAE10C0277BAD2D006762F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADAE10C4277BAD2D006762F5 /* PBXTargetDependency */,
+			);
+			name = BasicGamesTests;
+			productName = BasicGamesTests;
+			productReference = ADAE10C2277BAD2D006762F5 /* BasicGamesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ADAE10CB277BAD2D006762F5 /* BasicGamesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADAE10DC277BAD2E006762F5 /* Build configuration list for PBXNativeTarget "BasicGamesUITests" */;
+			buildPhases = (
+				ADAE10C8277BAD2D006762F5 /* Sources */,
+				ADAE10C9277BAD2D006762F5 /* Frameworks */,
+				ADAE10CA277BAD2D006762F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADAE10CE277BAD2E006762F5 /* PBXTargetDependency */,
+			);
+			name = BasicGamesUITests;
+			productName = BasicGamesUITests;
+			productReference = ADAE10CC277BAD2D006762F5 /* BasicGamesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		ADB4DE9A27C5BE5F00C04087 /* Ftball */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADB4DEA127C5BE6000C04087 /* Build configuration list for PBXNativeTarget "Ftball" */;
+			buildPhases = (
+				ADB4DE9727C5BE5F00C04087 /* Sources */,
+				ADB4DE9827C5BE5F00C04087 /* Frameworks */,
+				ADB4DE9927C5BE5F00C04087 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ftball;
+			productName = Ftball;
+			productReference = ADB4DE9B27C5BE5F00C04087 /* Ftball */;
+			productType = "com.apple.product-type.tool";
+		};
+		ADB4DEA827C5BEA100C04087 /* Football */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADB4DEAD27C5BEA100C04087 /* Build configuration list for PBXNativeTarget "Football" */;
+			buildPhases = (
+				ADB4DEA527C5BEA100C04087 /* Sources */,
+				ADB4DEA627C5BEA100C04087 /* Frameworks */,
+				ADB4DEA727C5BEA100C04087 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Football;
+			productName = Football;
+			productReference = ADB4DEA927C5BEA100C04087 /* Football */;
+			productType = "com.apple.product-type.tool";
+		};
+		ADDBCD0027B5504000C369D1 /* Rocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADDBCD0527B5504000C369D1 /* Build configuration list for PBXNativeTarget "Rocket" */;
+			buildPhases = (
+				ADDBCCFD27B5504000C369D1 /* Sources */,
+				ADDBCCFE27B5504000C369D1 /* Frameworks */,
+				ADDBCCFF27B5504000C369D1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rocket;
+			productName = Rocket;
+			productReference = ADDBCD0127B5504000C369D1 /* Rocket */;
+			productType = "com.apple.product-type.tool";
+		};
+		ADDBCD1327B6B13900C369D1 /* Joust */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADDBCD1827B6B13900C369D1 /* Build configuration list for PBXNativeTarget "Joust" */;
+			buildPhases = (
+				ADDBCD1027B6B13900C369D1 /* Sources */,
+				ADDBCD1127B6B13900C369D1 /* Frameworks */,
+				ADDBCD1227B6B13900C369D1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Joust;
+			productName = Joust;
+			productReference = ADDBCD1427B6B13900C369D1 /* Joust */;
+			productType = "com.apple.product-type.tool";
+		};
+		ADF23D52278649F700D71CDD /* LEM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADF23D57278649F800D71CDD /* Build configuration list for PBXNativeTarget "LEM" */;
+			buildPhases = (
+				ADF23D4F278649F700D71CDD /* Sources */,
+				ADF23D50278649F700D71CDD /* Frameworks */,
+				ADF23D51278649F700D71CDD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LEM;
+			productName = LEM;
+			productReference = ADF23D53278649F700D71CDD /* LEM */;
+			productType = "com.apple.product-type.tool";
+		};
+		ADFE458327B83522002175D7 /* DepthCharge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADFE458827B83522002175D7 /* Build configuration list for PBXNativeTarget "DepthCharge" */;
+			buildPhases = (
+				ADFE458027B83522002175D7 /* Sources */,
+				ADFE458127B83522002175D7 /* Frameworks */,
+				ADFE458227B83522002175D7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DepthCharge;
+			productName = DepthCharge;
+			productReference = ADFE458427B83522002175D7 /* DepthCharge */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ADAE10A9277BAD25006762F5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					AD150F0727C1492A00FA3280 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					AD150F1E27C2AF9F00FA3280 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					AD2437C127EAA03E005D67B6 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					AD33FD0527B955DD00E087D1 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					AD36C56727BB410C00FB1E63 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					AD3D806E27BF2623004226EF = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					AD56DA0327E29A5500179FAA = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					AD56DA1827E60F8700179FAA = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					AD57CCF327AED50800AD32C5 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					AD60176F27ED3E8000213C47 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					AD6AC925277F33C400B9E5DB = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					AD7D2758277CA79600F43F39 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					AD82570427F09A9D00A0ECCB = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					AD8A002127E77C62009B5679 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					AD8F43E027824DFF0067143D = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					ADAE10B0277BAD25006762F5 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					ADAE10C1277BAD2D006762F5 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = ADAE10B0277BAD25006762F5;
+					};
+					ADAE10CB277BAD2D006762F5 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = ADAE10B0277BAD25006762F5;
+					};
+					ADB4DE9A27C5BE5F00C04087 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					ADB4DEA827C5BEA100C04087 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					ADDBCD0027B5504000C369D1 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					ADDBCD1327B6B13900C369D1 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					ADF23D52278649F700D71CDD = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					ADFE458327B83522002175D7 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = ADAE10AC277BAD25006762F5 /* Build configuration list for PBXProject "BasicGames" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ADAE10A8277BAD25006762F5;
+			packageReferences = (
+				AD162320277BD1D700E919C1 /* XCRemoteSwiftPackageReference "SwiftTerm" */,
+			);
+			productRefGroup = ADAE10B2277BAD25006762F5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ADAE10B0277BAD25006762F5 /* BasicGames */,
+				ADAE10C1277BAD2D006762F5 /* BasicGamesTests */,
+				ADAE10CB277BAD2D006762F5 /* BasicGamesUITests */,
+				AD6AC925277F33C400B9E5DB /* Amazing */,
+				AD56DA0327E29A5500179FAA /* Animal */,
+				AD36C56727BB410C00FB1E63 /* Banner */,
+				AD150F1E27C2AF9F00FA3280 /* Blackjack */,
+				AD82570427F09A9D00A0ECCB /* Bounce */,
+				AD150F0727C1492A00FA3280 /* Calendar */,
+				ADFE458327B83522002175D7 /* DepthCharge */,
+				ADB4DEA827C5BEA100C04087 /* Football */,
+				ADB4DE9A27C5BE5F00C04087 /* Ftball */,
+				AD33FD0527B955DD00E087D1 /* ICBM */,
+				ADDBCD1327B6B13900C369D1 /* Joust */,
+				AD8F43E027824DFF0067143D /* Lunar */,
+				ADF23D52278649F700D71CDD /* LEM */,
+				ADDBCD0027B5504000C369D1 /* Rocket */,
+				AD7D2758277CA79600F43F39 /* OregonTrail */,
+				AD2437C127EAA03E005D67B6 /* Splat */,
+				AD57CCF327AED50800AD32C5 /* StarTrek */,
+				AD8A002127E77C62009B5679 /* StockMarket */,
+				AD60176F27ED3E8000213C47 /* Target */,
+				AD56DA1827E60F8700179FAA /* 3DPlot */,
+				AD3D806E27BF2623004226EF /* Weekday */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ADAE10AF277BAD25006762F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD57CCE327AEC1D300AD32C5 /* Amazing in Resources */,
+				AD56DA0B27E29AB800179FAA /* Animal in Resources */,
+				AD36C56F27BB416E00FB1E63 /* Banner in Resources */,
+				AD150F2627C2AFAB00FA3280 /* Blackjack in Resources */,
+				AD82570E27F09ADA00A0ECCB /* Bounce in Resources */,
+				AD150F0F27C1493D00FA3280 /* Calendar in Resources */,
+				ADFE459027B836F1002175D7 /* DepthCharge in Resources */,
+				ADB4DEB027C5BEAA00C04087 /* Football in Resources */,
+				ADB4DEA227C5BE6C00C04087 /* Ftball in Resources */,
+				AD33FD1227B9576600E087D1 /* ICBM in Resources */,
+				ADDBCD2027B6B2B000C369D1 /* Joust in Resources */,
+				AD57CCED27AEC29F00AD32C5 /* LEM in Resources */,
+				AD57CCEE27AEC2B400AD32C5 /* Lunar in Resources */,
+				AD57CCEF27AEC2BE00AD32C5 /* OregonTrail in Resources */,
+				ADDBCD0F27B5515E00C369D1 /* Rocket in Resources */,
+				AD2437CB27EAA075005D67B6 /* Splat in Resources */,
+				AD57CD0227AED83F00AD32C5 /* StarTrek in Resources */,
+				AD8A002B27E77C90009B5679 /* StockMarket in Resources */,
+				AD60177927ED3EAC00213C47 /* Target in Resources */,
+				AD56DA2227E60FC900179FAA /* 3DPlot in Resources */,
+				AD3D807627BF2642004226EF /* Weekday in Resources */,
+				AD56DA1427E4006300179FAA /* Animal.pdf in Resources */,
+				AD6AC931277F346400B9E5DB /* Amazing.pdf in Resources */,
+				AD36C57827BD40BF00FB1E63 /* Banner.pdf in Resources */,
+				AD1F5A2727C46DE1005BE669 /* Blackjack.pdf in Resources */,
+				AD150F1A27C1A73200FA3280 /* Calendar.pdf in Resources */,
+				ADAFE7AF27B86106009A7D0B /* DepthCharge.pdf in Resources */,
+				AD33FD1627B9A44700E087D1 /* ICBM.pdf in Resources */,
+				AD60178027EDFB5F00213C47 /* Target.pdf in Resources */,
+				ADAFE7AD27B83B8F009A7D0B /* Joust.pdf in Resources */,
+				ADF23D462784D1FF00D71CDD /* LunarLEMRocket.pdf in Resources */,
+				AD10BD2B27D42E2200422720 /* Football.pdf in Resources */,
+				AD7D2754277CA5EE00F43F39 /* OregonTrail.pdf in Resources */,
+				AD60176B27ED2C7200213C47 /* Splat.pdf in Resources */,
+				AD22859627B40B4A00FEADB8 /* StarTrek.pdf in Resources */,
+				AD150F0327C0836700FA3280 /* Weekday.pdf in Resources */,
+				AD56DA2927E62DC600179FAA /* 3DPlot.pdf in Resources */,
+				ADAE10B9277BAD2D006762F5 /* Assets.xcassets in Resources */,
+				AD82571527F09EA900A0ECCB /* Bounce.pdf in Resources */,
+				ADAE10BC277BAD2D006762F5 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAE10C0277BAD2D006762F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAE10CA277BAD2D006762F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD150F0427C1492A00FA3280 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD150F0B27C1492A00FA3280 /* main.swift in Sources */,
+				AD150F1627C1499400FA3280 /* GameProtocol.swift in Sources */,
+				AD150F1527C1499100FA3280 /* ConsoleIO.swift in Sources */,
+				AD150F1427C1498E00FA3280 /* Extensions.swift in Sources */,
+				AD150F1827C149D500FA3280 /* Calendar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD150F1B27C2AF9F00FA3280 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD150F2A27C2B29D00FA3280 /* Blackjack.swift in Sources */,
+				AD150F2D27C2B2AC00FA3280 /* GameProtocol.swift in Sources */,
+				AD150F2C27C2B2A900FA3280 /* ConsoleIO.swift in Sources */,
+				AD150F2B27C2B2A600FA3280 /* Extensions.swift in Sources */,
+				AD150F2227C2AF9F00FA3280 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD2437BE27EAA03E005D67B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD2437CD27EAA101005D67B6 /* Splat.swift in Sources */,
+				AD2437D027EAA112005D67B6 /* GameProtocol.swift in Sources */,
+				AD2437CF27EAA10F005D67B6 /* ConsoleIO.swift in Sources */,
+				AD2437CE27EAA10C005D67B6 /* Extensions.swift in Sources */,
+				AD2437C527EAA03E005D67B6 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD33FD0227B955DD00E087D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD33FD0E27B9560F00E087D1 /* ICBM.swift in Sources */,
+				AD33FD1127B9563400E087D1 /* GameProtocol.swift in Sources */,
+				AD33FD1027B9563100E087D1 /* ConsoleIO.swift in Sources */,
+				AD33FD0F27B9562D00E087D1 /* Extensions.swift in Sources */,
+				AD33FD0927B955DD00E087D1 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD36C56427BB410C00FB1E63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD36C56B27BB410C00FB1E63 /* main.swift in Sources */,
+				AD36C57627BB41E400FB1E63 /* GameProtocol.swift in Sources */,
+				AD36C57527BB41E100FB1E63 /* ConsoleIO.swift in Sources */,
+				AD36C57427BB41DF00FB1E63 /* Extensions.swift in Sources */,
+				AD36C57327BB41BA00FB1E63 /* Banner.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD3D806B27BF2623004226EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD3D807A27BF268D004226EF /* Weekday.swift in Sources */,
+				AD3D807D27BF26A2004226EF /* GameProtocol.swift in Sources */,
+				AD3D807C27BF269F004226EF /* ConsoleIO.swift in Sources */,
+				AD3D807B27BF269C004226EF /* Extensions.swift in Sources */,
+				AD3D807227BF2623004226EF /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD56DA0027E29A5500179FAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD56DA0727E29A5500179FAA /* main.swift in Sources */,
+				AD56DA1227E29C1800179FAA /* GameProtocol.swift in Sources */,
+				AD56DA1127E29C1500179FAA /* ConsoleIO.swift in Sources */,
+				AD56DA1027E29C1200179FAA /* Extensions.swift in Sources */,
+				AD56DA0F27E29C0100179FAA /* Animal.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD56DA1527E60F8700179FAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD56DA1C27E60F8700179FAA /* main.swift in Sources */,
+				AD56DA2727E610CB00179FAA /* GameProtocol.swift in Sources */,
+				AD56DA2627E610C900179FAA /* ConsoleIO.swift in Sources */,
+				AD56DA2527E610C500179FAA /* Extensions.swift in Sources */,
+				AD56DA2427E610B700179FAA /* 3DPlot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD57CCF027AED50800AD32C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD57CCF727AED50800AD32C5 /* main.swift in Sources */,
+				AD57CCFF27AED5A100AD32C5 /* GameProtocol.swift in Sources */,
+				AD57CCFE27AED59D00AD32C5 /* ConsoleIO.swift in Sources */,
+				AD57CCFD27AED59900AD32C5 /* Extensions.swift in Sources */,
+				AD57CCFC27AED53A00AD32C5 /* StarTrek.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD60176C27ED3E8000213C47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD60177B27ED3FA000213C47 /* Target.swift in Sources */,
+				AD60177E27ED3FAE00213C47 /* GameProtocol.swift in Sources */,
+				AD60177D27ED3FAA00213C47 /* ConsoleIO.swift in Sources */,
+				AD60177C27ED3FA700213C47 /* Extensions.swift in Sources */,
+				AD60177327ED3E8000213C47 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD6AC922277F33C400B9E5DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD6AC929277F33C400B9E5DB /* main.swift in Sources */,
+				AD8F43F6278252550067143D /* GameProtocol.swift in Sources */,
+				AD8F43F2278250E40067143D /* ConsoleIO.swift in Sources */,
+				AD8F43EE278250D90067143D /* Extensions.swift in Sources */,
+				AD6AC92F277F340200B9E5DB /* Amazing.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD7D2755277CA79600F43F39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7D2761277CA7BE00F43F39 /* OregonTrail.swift in Sources */,
+				AD8F43F7278252550067143D /* GameProtocol.swift in Sources */,
+				AD8F43F3278250E50067143D /* ConsoleIO.swift in Sources */,
+				AD8F43EF278250D90067143D /* Extensions.swift in Sources */,
+				AD7D275C277CA79600F43F39 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD82570127F09A9D00A0ECCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD82570827F09A9D00A0ECCB /* main.swift in Sources */,
+				AD82571327F09D0100A0ECCB /* GameProtocol.swift in Sources */,
+				AD82571227F09CFE00A0ECCB /* ConsoleIO.swift in Sources */,
+				AD82571127F09CFB00A0ECCB /* Extensions.swift in Sources */,
+				AD82571027F09CF000A0ECCB /* Bounce.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD8A001E27E77C62009B5679 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD8A002D27E77D2E009B5679 /* StockMarket.swift in Sources */,
+				AD8A003027E77D3D009B5679 /* GameProtocol.swift in Sources */,
+				AD8A002F27E77D38009B5679 /* ConsoleIO.swift in Sources */,
+				AD8A002E27E77D35009B5679 /* Extensions.swift in Sources */,
+				AD8A002527E77C62009B5679 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD8F43DD27824DFF0067143D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD8F43ED278250450067143D /* Lunar.swift in Sources */,
+				AD8F43F8278252550067143D /* GameProtocol.swift in Sources */,
+				AD8F43F4278250E70067143D /* ConsoleIO.swift in Sources */,
+				AD8F43F0278250D90067143D /* Extensions.swift in Sources */,
+				AD8F43E427824DFF0067143D /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAE10AD277BAD25006762F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD162328277BD31D00E919C1 /* GameLauncherView.swift in Sources */,
+				ADDBCD2627B6F22E00C369D1 /* SettingsView.swift in Sources */,
+				ADDBCD2427B6F16B00C369D1 /* Preferences.swift in Sources */,
+				ADAFE7AB27B839B8009A7D0B /* Extensions.swift in Sources */,
+				ADAE10B5277BAD25006762F5 /* BasicGamesApp.swift in Sources */,
+				AD162326277BD2C100E919C1 /* TerminalViewRepresentable.swift in Sources */,
+				AD162333277BD81B00E919C1 /* AppDelegate.swift in Sources */,
+				AD162331277BD53600E919C1 /* Game.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAE10BE277BAD2D006762F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADAE10C7277BAD2D006762F5 /* BasicGamesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAE10C8277BAD2D006762F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADAE10D1277BAD2E006762F5 /* BasicGamesUITests.swift in Sources */,
+				ADAE10D3277BAD2E006762F5 /* BasicGamesUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB4DE9727C5BE5F00C04087 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB4DEB627C5BF4600C04087 /* Ftball.swift in Sources */,
+				ADB4DEBC27C5BF5400C04087 /* GameProtocol.swift in Sources */,
+				ADB4DEBA27C5BF5100C04087 /* ConsoleIO.swift in Sources */,
+				ADB4DEB827C5BF4D00C04087 /* Extensions.swift in Sources */,
+				ADB4DE9E27C5BE6000C04087 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB4DEA527C5BEA100C04087 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB4DEB427C5BF3400C04087 /* Football.swift in Sources */,
+				ADB4DEBB27C5BF5400C04087 /* GameProtocol.swift in Sources */,
+				ADB4DEB927C5BF5000C04087 /* ConsoleIO.swift in Sources */,
+				ADB4DEB727C5BF4D00C04087 /* Extensions.swift in Sources */,
+				ADB4DEAC27C5BEA100C04087 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADDBCCFD27B5504000C369D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADDBCD0427B5504000C369D1 /* main.swift in Sources */,
+				ADDBCD0C27B5510100C369D1 /* GameProtocol.swift in Sources */,
+				ADDBCD0B27B550FE00C369D1 /* ConsoleIO.swift in Sources */,
+				ADDBCD0A27B550F900C369D1 /* Extensions.swift in Sources */,
+				ADDBCD0927B5509F00C369D1 /* Rocket.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADDBCD1027B6B13900C369D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADDBCD1727B6B13900C369D1 /* main.swift in Sources */,
+				ADDBCD1F27B6B1A200C369D1 /* GameProtocol.swift in Sources */,
+				ADDBCD1E27B6B19C00C369D1 /* ConsoleIO.swift in Sources */,
+				ADDBCD1D27B6B19800C369D1 /* Extensions.swift in Sources */,
+				ADDBCD1C27B6B16E00C369D1 /* Joust.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADF23D4F278649F700D71CDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADF23D5B27864A3100D71CDD /* LEM.swift in Sources */,
+				ADF23D5E27864A7900D71CDD /* GameProtocol.swift in Sources */,
+				ADF23D5D27864A7600D71CDD /* ConsoleIO.swift in Sources */,
+				ADF23D5C27864A7300D71CDD /* Extensions.swift in Sources */,
+				ADF23D56278649F800D71CDD /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADFE458027B83522002175D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADFE458C27B8354A002175D7 /* ConsoleIO.swift in Sources */,
+				ADFE458D27B8354D002175D7 /* GameProtocol.swift in Sources */,
+				ADFE458727B83522002175D7 /* main.swift in Sources */,
+				ADFE458B27B8353A002175D7 /* Extensions.swift in Sources */,
+				ADFE458F27B83570002175D7 /* DepthCharge.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD150F1127C1495200FA3280 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD150F0727C1492A00FA3280 /* Calendar */;
+			targetProxy = AD150F1027C1495200FA3280 /* PBXContainerItemProxy */;
+		};
+		AD150F2827C2AFF800FA3280 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD150F1E27C2AF9F00FA3280 /* Blackjack */;
+			targetProxy = AD150F2727C2AFF800FA3280 /* PBXContainerItemProxy */;
+		};
+		AD2437CA27EAA062005D67B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD2437C127EAA03E005D67B6 /* Splat */;
+			targetProxy = AD2437C927EAA062005D67B6 /* PBXContainerItemProxy */;
+		};
+		AD33FD1427B9578900E087D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD33FD0527B955DD00E087D1 /* ICBM */;
+			targetProxy = AD33FD1327B9578900E087D1 /* PBXContainerItemProxy */;
+		};
+		AD36C57127BB419900FB1E63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD36C56727BB410C00FB1E63 /* Banner */;
+			targetProxy = AD36C57027BB419900FB1E63 /* PBXContainerItemProxy */;
+		};
+		AD3D807827BF265C004226EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD3D806E27BF2623004226EF /* Weekday */;
+			targetProxy = AD3D807727BF265C004226EF /* PBXContainerItemProxy */;
+		};
+		AD56DA0D27E29AD500179FAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD56DA0327E29A5500179FAA /* Animal */;
+			targetProxy = AD56DA0C27E29AD500179FAA /* PBXContainerItemProxy */;
+		};
+		AD56DA2127E60FB700179FAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD56DA1827E60F8700179FAA /* 3DPlot */;
+			targetProxy = AD56DA2027E60FB700179FAA /* PBXContainerItemProxy */;
+		};
+		AD57CCE527AEC22E00AD32C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD6AC925277F33C400B9E5DB /* Amazing */;
+			targetProxy = AD57CCE427AEC22E00AD32C5 /* PBXContainerItemProxy */;
+		};
+		AD57CCE727AEC25600AD32C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADF23D52278649F700D71CDD /* LEM */;
+			targetProxy = AD57CCE627AEC25600AD32C5 /* PBXContainerItemProxy */;
+		};
+		AD57CCE927AEC25B00AD32C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD8F43E027824DFF0067143D /* Lunar */;
+			targetProxy = AD57CCE827AEC25B00AD32C5 /* PBXContainerItemProxy */;
+		};
+		AD57CCEB27AEC26500AD32C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD7D2758277CA79600F43F39 /* OregonTrail */;
+			targetProxy = AD57CCEA27AEC26500AD32C5 /* PBXContainerItemProxy */;
+		};
+		AD57CD0127AED82E00AD32C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD57CCF327AED50800AD32C5 /* StarTrek */;
+			targetProxy = AD57CD0027AED82E00AD32C5 /* PBXContainerItemProxy */;
+		};
+		AD60177827ED3E9500213C47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD60176F27ED3E8000213C47 /* Target */;
+			targetProxy = AD60177727ED3E9500213C47 /* PBXContainerItemProxy */;
+		};
+		AD82570D27F09AC700A0ECCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD82570427F09A9D00A0ECCB /* Bounce */;
+			targetProxy = AD82570C27F09AC700A0ECCB /* PBXContainerItemProxy */;
+		};
+		AD8A002A27E77C79009B5679 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD8A002127E77C62009B5679 /* StockMarket */;
+			targetProxy = AD8A002927E77C79009B5679 /* PBXContainerItemProxy */;
+		};
+		ADAE10C4277BAD2D006762F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADAE10B0277BAD25006762F5 /* BasicGames */;
+			targetProxy = ADAE10C3277BAD2D006762F5 /* PBXContainerItemProxy */;
+		};
+		ADAE10CE277BAD2E006762F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADAE10B0277BAD25006762F5 /* BasicGames */;
+			targetProxy = ADAE10CD277BAD2E006762F5 /* PBXContainerItemProxy */;
+		};
+		ADB4DEA427C5BE8000C04087 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADB4DE9A27C5BE5F00C04087 /* Ftball */;
+			targetProxy = ADB4DEA327C5BE8000C04087 /* PBXContainerItemProxy */;
+		};
+		ADB4DEB227C5BEBB00C04087 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADB4DEA827C5BEA100C04087 /* Football */;
+			targetProxy = ADB4DEB127C5BEBB00C04087 /* PBXContainerItemProxy */;
+		};
+		ADDBCD0E27B5512E00C369D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADDBCD0027B5504000C369D1 /* Rocket */;
+			targetProxy = ADDBCD0D27B5512E00C369D1 /* PBXContainerItemProxy */;
+		};
+		ADDBCD2227B6B2DA00C369D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADDBCD1327B6B13900C369D1 /* Joust */;
+			targetProxy = ADDBCD2127B6B2DA00C369D1 /* PBXContainerItemProxy */;
+		};
+		ADFE459227B83700002175D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADFE458327B83522002175D7 /* DepthCharge */;
+			targetProxy = ADFE459127B83700002175D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AD150F0D27C1492A00FA3280 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD150F0E27C1492A00FA3280 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD150F2427C2AF9F00FA3280 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD150F2527C2AF9F00FA3280 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD2437C627EAA03E005D67B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD2437C727EAA03E005D67B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD33FD0B27B955DD00E087D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD33FD0C27B955DD00E087D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD36C56C27BB410C00FB1E63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD36C56D27BB410C00FB1E63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD3D807327BF2623004226EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD3D807427BF2623004226EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD56DA0827E29A5500179FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD56DA0927E29A5500179FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD56DA1E27E60F8700179FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD56DA1F27E60F8700179FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD57CCF927AED50800AD32C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD57CCFA27AED50800AD32C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD60177527ED3E8000213C47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD60177627ED3E8000213C47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD6AC92A277F33C400B9E5DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD6AC92B277F33C400B9E5DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD7D275E277CA79600F43F39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD7D275F277CA79600F43F39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD82570927F09A9D00A0ECCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD82570A27F09A9D00A0ECCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD8A002627E77C62009B5679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD8A002727E77C62009B5679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD8F43E627824DFF0067143D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD8F43E727824DFF0067143D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ADAE10D4277BAD2E006762F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ADAE10D5277BAD2E006762F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		ADAE10D7277BAD2E006762F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BasicGames/BasicGames.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BasicGames/Preview Content\"";
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BasicGames/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "101 Plus";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Starware Software LLC. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.starwaresoftware.BasicGames;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADAE10D8277BAD2E006762F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BasicGames/BasicGames.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BasicGames/Preview Content\"";
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BasicGames/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "101 Plus";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Starware Software LLC. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.starwaresoftware.BasicGames;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ADAE10DA277BAD2E006762F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.starwaresoftware.BasicGamesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BasicGames.app/Contents/MacOS/BasicGames";
+			};
+			name = Debug;
+		};
+		ADAE10DB277BAD2E006762F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.starwaresoftware.BasicGamesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BasicGames.app/Contents/MacOS/BasicGames";
+			};
+			name = Release;
+		};
+		ADAE10DD277BAD2E006762F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.starwaresoftware.BasicGamesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = BasicGames;
+			};
+			name = Debug;
+		};
+		ADAE10DE277BAD2E006762F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.starwaresoftware.BasicGamesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = BasicGames;
+			};
+			name = Release;
+		};
+		ADB4DE9F27C5BE6000C04087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADB4DEA027C5BE6000C04087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ADB4DEAE27C5BEA100C04087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADB4DEAF27C5BEA100C04087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ADDBCD0627B5504000C369D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADDBCD0727B5504000C369D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ADDBCD1927B6B13900C369D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADDBCD1A27B6B13900C369D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ADF23D58278649F800D71CDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADF23D59278649F800D71CDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ADFE458927B83522002175D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADFE458A27B83522002175D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD150F0C27C1492A00FA3280 /* Build configuration list for PBXNativeTarget "Calendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD150F0D27C1492A00FA3280 /* Debug */,
+				AD150F0E27C1492A00FA3280 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD150F2327C2AF9F00FA3280 /* Build configuration list for PBXNativeTarget "Blackjack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD150F2427C2AF9F00FA3280 /* Debug */,
+				AD150F2527C2AF9F00FA3280 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD2437C827EAA03E005D67B6 /* Build configuration list for PBXNativeTarget "Splat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD2437C627EAA03E005D67B6 /* Debug */,
+				AD2437C727EAA03E005D67B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD33FD0A27B955DD00E087D1 /* Build configuration list for PBXNativeTarget "ICBM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD33FD0B27B955DD00E087D1 /* Debug */,
+				AD33FD0C27B955DD00E087D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD36C56E27BB410C00FB1E63 /* Build configuration list for PBXNativeTarget "Banner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD36C56C27BB410C00FB1E63 /* Debug */,
+				AD36C56D27BB410C00FB1E63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD3D807527BF2623004226EF /* Build configuration list for PBXNativeTarget "Weekday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD3D807327BF2623004226EF /* Debug */,
+				AD3D807427BF2623004226EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD56DA0A27E29A5500179FAA /* Build configuration list for PBXNativeTarget "Animal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD56DA0827E29A5500179FAA /* Debug */,
+				AD56DA0927E29A5500179FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD56DA1D27E60F8700179FAA /* Build configuration list for PBXNativeTarget "3DPlot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD56DA1E27E60F8700179FAA /* Debug */,
+				AD56DA1F27E60F8700179FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD57CCF827AED50800AD32C5 /* Build configuration list for PBXNativeTarget "StarTrek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD57CCF927AED50800AD32C5 /* Debug */,
+				AD57CCFA27AED50800AD32C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD60177427ED3E8000213C47 /* Build configuration list for PBXNativeTarget "Target" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD60177527ED3E8000213C47 /* Debug */,
+				AD60177627ED3E8000213C47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD6AC92C277F33C400B9E5DB /* Build configuration list for PBXNativeTarget "Amazing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD6AC92A277F33C400B9E5DB /* Debug */,
+				AD6AC92B277F33C400B9E5DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD7D275D277CA79600F43F39 /* Build configuration list for PBXNativeTarget "OregonTrail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7D275E277CA79600F43F39 /* Debug */,
+				AD7D275F277CA79600F43F39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD82570B27F09A9D00A0ECCB /* Build configuration list for PBXNativeTarget "Bounce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD82570927F09A9D00A0ECCB /* Debug */,
+				AD82570A27F09A9D00A0ECCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD8A002827E77C62009B5679 /* Build configuration list for PBXNativeTarget "StockMarket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD8A002627E77C62009B5679 /* Debug */,
+				AD8A002727E77C62009B5679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD8F43E527824DFF0067143D /* Build configuration list for PBXNativeTarget "Lunar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD8F43E627824DFF0067143D /* Debug */,
+				AD8F43E727824DFF0067143D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADAE10AC277BAD25006762F5 /* Build configuration list for PBXProject "BasicGames" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADAE10D4277BAD2E006762F5 /* Debug */,
+				ADAE10D5277BAD2E006762F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADAE10D6277BAD2E006762F5 /* Build configuration list for PBXNativeTarget "BasicGames" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADAE10D7277BAD2E006762F5 /* Debug */,
+				ADAE10D8277BAD2E006762F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADAE10D9277BAD2E006762F5 /* Build configuration list for PBXNativeTarget "BasicGamesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADAE10DA277BAD2E006762F5 /* Debug */,
+				ADAE10DB277BAD2E006762F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADAE10DC277BAD2E006762F5 /* Build configuration list for PBXNativeTarget "BasicGamesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADAE10DD277BAD2E006762F5 /* Debug */,
+				ADAE10DE277BAD2E006762F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADB4DEA127C5BE6000C04087 /* Build configuration list for PBXNativeTarget "Ftball" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADB4DE9F27C5BE6000C04087 /* Debug */,
+				ADB4DEA027C5BE6000C04087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADB4DEAD27C5BEA100C04087 /* Build configuration list for PBXNativeTarget "Football" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADB4DEAE27C5BEA100C04087 /* Debug */,
+				ADB4DEAF27C5BEA100C04087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADDBCD0527B5504000C369D1 /* Build configuration list for PBXNativeTarget "Rocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADDBCD0627B5504000C369D1 /* Debug */,
+				ADDBCD0727B5504000C369D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADDBCD1827B6B13900C369D1 /* Build configuration list for PBXNativeTarget "Joust" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADDBCD1927B6B13900C369D1 /* Debug */,
+				ADDBCD1A27B6B13900C369D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADF23D57278649F800D71CDD /* Build configuration list for PBXNativeTarget "LEM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADF23D58278649F800D71CDD /* Debug */,
+				ADF23D59278649F800D71CDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADFE458827B83522002175D7 /* Build configuration list for PBXNativeTarget "DepthCharge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADFE458927B83522002175D7 /* Debug */,
+				ADFE458A27B83522002175D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD162320277BD1D700E919C1 /* XCRemoteSwiftPackageReference "SwiftTerm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/migueldeicaza/SwiftTerm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ADDB4FC7278B589100278FB7 /* SwiftTerm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD162320277BD1D700E919C1 /* XCRemoteSwiftPackageReference "SwiftTerm" */;
+			productName = SwiftTerm;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = ADAE10A9277BAD25006762F5 /* Project object */;
+}
