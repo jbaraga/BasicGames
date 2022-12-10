@@ -91,39 +91,32 @@ struct BasicGamesApp: App {
     
     private func scene(for game: Game) -> some Scene {
         WindowGroup(id: game.urlString) {
-            GeometryReader { geometry in
-                TerminalViewRepresentable(frame: geometry.frame(in: .local), executableName: game.executableName, windowTitle: game.stringValue)
-                    .navigationTitle(game.stringValue)
+            if #available(macOS 13, *) {
+                GeometryReader { geometry in
+                    TerminalViewRepresentable(frame: geometry.frame(in: .local), executableName: game.executableName, windowTitle: game.stringValue)
+                        .navigationTitle(game.stringValue)
+                }
+                .padding(.leading, 4)
+                .padding(.bottom, 1)
+                .background(Color(.terminalBackground))
+                .frame(minWidth: 660, minHeight: 480) //~ 80 columns in terminal
+                .frame(maxWidth: 680)
+                .fixedSize()
+            } else {
+                GeometryReader { geometry in
+                    TerminalViewRepresentable(frame: geometry.frame(in: .local), executableName: game.executableName, windowTitle: game.stringValue)
+                        .navigationTitle(game.stringValue)
+                }
+                .padding(.leading, 4)
+                .padding(.bottom, 1)
+                .background(Color(.terminalBackground))
+                .frame(minWidth: 660, minHeight: 480) //~ 80 columns in terminal
+                .frame(maxWidth: 680)
             }
-            .padding(.leading, 4)
-            .padding(.bottom, 1)
-            .background(Color(.terminalBackground))
-            .frame(minWidth: 660, minHeight: 400) //~ 80 columns in terminal
-            .frame(maxWidth: 680)
         }
         .handlesExternalEvents(matching: game.set)
     }
-}
-
-
-//MARK: Terminal Colors
-extension NSColor {
-    static let terminalBackground = NSColor(colorSpace: .deviceRGB, hue: 0, saturation: 0, brightness: 0.1, alpha: 1)
-    static let terminalWhite = NSColor(colorSpace: .deviceRGB, hue: 0, saturation: 0, brightness: 0.9, alpha: 1)
-    static let terminalGreen = NSColor(red: 100/255, green: 225/255, blue: 100/255, alpha: 1)
-    static let terminalBlue = NSColor(red: 75/255, green: 175/255, blue: 255/255, alpha: 1)
     
-    var displayName: String {
-        switch self {
-        case .terminalWhite: return "White"
-        case .terminalGreen: return "Green"
-        case .terminalBlue: return "Blue"
-        default:
-            fatalError("Missing terminal color")
-        }
-    }
 }
 
-struct TerminalColors {
-    static let all: [NSColor] = [.terminalWhite, .terminalGreen, .terminalBlue]
-}
+

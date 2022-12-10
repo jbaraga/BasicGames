@@ -23,7 +23,7 @@ struct SettingsView: View {
                     }
                     
                     Picker("Text Color:", selection: $settings.foregroundColor) {
-                        ForEach(TerminalColors.all, id: \.self) { color in
+                        ForEach(NSColor.allTerminalColors, id: \.self) { color in
                             Text(color.displayName)
                                 .foregroundColor(Color(color))
                         }
@@ -35,7 +35,9 @@ struct SettingsView: View {
         }
         .frame(width: 300, height: 120)
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            //Hack to remove focus from Toggle
+            Task {
+                try await Task.sleep(seconds: 0.1)
                 NSApp.windows.last?.makeFirstResponder(nil)
             }
         }

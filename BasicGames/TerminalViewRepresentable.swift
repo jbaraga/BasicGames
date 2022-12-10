@@ -35,8 +35,11 @@ struct TerminalViewRepresentable: NSViewRepresentable {
         context.coordinator.terminal = terminal
         terminalView.processDelegate = context.coordinator
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            terminalView.startProcess(executable: path, args: [], environment: nil, execName: nil)
+        Task {
+            try await Task.sleep(seconds: 1)
+            await MainActor.run {
+                terminalView.startProcess(executable: path, args: [], environment: nil, execName: nil)
+            }
         }
         return terminalView
     }
@@ -81,7 +84,7 @@ struct TerminalViewRepresentable: NSViewRepresentable {
             }
             
             let center = DistributedNotificationCenter.default()
-            center.addObserver(forName: NSNotification.Name("com.starwaresoftware.basicGames.input"), object: nil, queue: .main) { [weak self] notification in
+            center.addObserver(forName: NSNotification.Name.consoleInputDidBegin, object: nil, queue: .main) { [weak self] notification in
                 guard let self = self else { return }
                 guard let isAwaitingInput = notification.object as? String else { return }
                 self.isAwaitingInput = isAwaitingInput == true.description
@@ -91,25 +94,23 @@ struct TerminalViewRepresentable: NSViewRepresentable {
                 guard let window = notification.object as? NSWindow, window.title == parent.windowTitle else {
                     return
                 }
-                center.post(name: NSNotification.Name("com.starwaresoftware.basicGames.close"), object: parent.executableName, userInfo: nil)
+                center.post(name: Notification.Name.terminalWindowWillClose, object: parent.executableName, userInfo: nil)
             }
         }
                 
-        func blinkCursor() {
+        private func blinkCursor() {
             guard isCursorBlinkingEnabled, Preferences.shared.isBlinkingCursor else {
                 terminal?.showCursor()
                 return
             }
             
             let delay = 0.5
-            terminal?.hideCursor()
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
-                guard let self = self else { return }
-                if !self.isCursorHidden {
-                    self.terminal?.showCursor()
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
-                    self?.blinkCursor()
+            isCursorHidden = !isCursorHidden
+            Task {
+                try await Task.sleep(seconds: delay)
+                await MainActor.run { [weak self] in
+                    guard let self = self else { return }
+                    self.blinkCursor()
                 }
             }
         }
@@ -119,8 +120,9 @@ struct TerminalViewRepresentable: NSViewRepresentable {
             //Hack to restore cursor position on window resize
             isCursorHidden = true
             source.send(txt: " " + .deleteCharacter)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
-                isCursorHidden = false
+            Task {
+                try await Task.sleep(seconds: 1)
+                await MainActor.run { isCursorHidden = false }
             }
         }
         

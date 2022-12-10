@@ -7,6 +7,16 @@
 //
 
 import Foundation
+import Cocoa
+
+
+extension Task where Success == Never, Failure == Never {
+    static func sleep(seconds: Double) async throws {
+        let duration = UInt64(seconds * 1_000_000_000)
+        try await Task.sleep(nanoseconds: duration)
+    }
+}
+
 
 extension String {
     var isYes: Bool {
@@ -118,3 +128,31 @@ extension Array where Element == [Int] {
         }
     }
 }
+
+extension Notification.Name {
+    static let terminalWindowWillClose = Notification.Name("com.starwaresoftware.basicGames.close")
+    static let consoleInputDidBegin = Notification.Name("com.starwaresoftware.basicGames.input")
+    static let consoleWillPrint = Notification.Name("com.starwaresoftware.basicGames.print")
+}
+
+
+//MARK: Terminal Colors
+extension NSColor {
+    static let terminalBackground = NSColor(colorSpace: .deviceRGB, hue: 0, saturation: 0, brightness: 0.1, alpha: 1)
+    static let terminalWhite = NSColor(colorSpace: .deviceRGB, hue: 0, saturation: 0, brightness: 0.9, alpha: 1)
+    static let terminalGreen = NSColor(red: 100/255, green: 225/255, blue: 100/255, alpha: 1)
+    static let terminalBlue = NSColor(red: 75/255, green: 175/255, blue: 255/255, alpha: 1)
+    
+    var displayName: String {
+        switch self {
+        case .terminalWhite: return "White"
+        case .terminalGreen: return "Green"
+        case .terminalBlue: return "Blue"
+        default:
+            fatalError("Missing terminal color")
+        }
+    }
+    
+    static var allTerminalColors: [NSColor] { [.terminalWhite, .terminalGreen, .terminalBlue] }
+}
+

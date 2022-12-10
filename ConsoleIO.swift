@@ -64,7 +64,7 @@ class ConsoleIO {
         didSet {
             let center = DistributedNotificationCenter.default()
             //object has to be the string, userInfo nil for this to properly post
-            center.post(name: NSNotification.Name("com.starwaresoftware.basicGames.input"), object: isAwaitingInput.description, userInfo: nil)
+            center.post(name: Notification.Name.consoleInputDidBegin, object: isAwaitingInput.description, userInfo: nil)
         }
     }
     
@@ -76,7 +76,7 @@ class ConsoleIO {
         queue.name = "com.starwaresoftware.consoleIO"
         queue.qualityOfService = .userInteractive
 
-        center.addObserver(forName: NSNotification.Name("com.starwaresoftware.basicGames.close"), object: nil, queue: queue) { notification in
+        center.addObserver(forName: Notification.Name.terminalWindowWillClose, object: nil, queue: queue) { notification in
             if let executableName = Bundle.main.executableURL?.lastPathComponent, let string = notification.object as? String, executableName == string {
                 exit(EXIT_SUCCESS)
             } else {
@@ -205,7 +205,7 @@ class ConsoleIO {
     func printHardcopy() {
         let center = DistributedNotificationCenter.default()
         //object has to be the string, userInfo nil for this to properly post
-        center.post(name: NSNotification.Name("com.starwaresoftware.basicGames.print"), object: hardcopyString, userInfo: nil)
+        center.post(name: Notification.Name.consoleWillPrint, object: hardcopyString, userInfo: nil)
     }
     
     //Low level terminal functions to read each input character
@@ -247,4 +247,5 @@ class ConsoleIO {
 //        println()
 //    }
 }
+
 

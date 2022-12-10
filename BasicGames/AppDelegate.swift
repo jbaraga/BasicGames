@@ -13,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let center = DistributedNotificationCenter.default()
-        center.addObserver(forName: NSNotification.Name("com.starwaresoftware.basicGames.print"), object: nil, queue: .main) { notification in
+        center.addObserver(forName: Notification.Name.consoleWillPrint, object: nil, queue: .main) { notification in
             guard let string = notification.object as? String else { return }
             self.printHardcopy(string)
         }
