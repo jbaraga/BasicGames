@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftTerm
 import Cocoa
 
 @main
@@ -113,9 +112,7 @@ extension NSColor {
     static let terminalWhite = NSColor(colorSpace: .deviceRGB, hue: 0, saturation: 0, brightness: 0.9, alpha: 1)
     static let terminalGreen = NSColor(red: 100/255, green: 225/255, blue: 100/255, alpha: 1)
     static let terminalBlue = NSColor(red: 75/255, green: 175/255, blue: 255/255, alpha: 1)
-}
-
-extension NSColor {
+    
     var displayName: String {
         switch self {
         case .terminalWhite: return "White"
