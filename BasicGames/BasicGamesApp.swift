@@ -91,32 +91,17 @@ struct BasicGamesApp: App {
     
     private func scene(for game: Game) -> some Scene {
         WindowGroup(id: game.urlString) {
-            if #available(macOS 13, *) {
-                GeometryReader { geometry in
-                    TerminalViewRepresentable(frame: geometry.frame(in: .local), executableName: game.executableName, windowTitle: game.stringValue)
-                        .navigationTitle(game.stringValue)
-                }
-                .padding(.leading, 4)
-                .padding(.bottom, 1)
-                .background(Color(.terminalBackground))
-                .frame(minWidth: 660, minHeight: 480) //~ 80 columns in terminal
-                .frame(maxWidth: 680)
-                .fixedSize()
-            } else {
-                GeometryReader { geometry in
-                    TerminalViewRepresentable(frame: geometry.frame(in: .local), executableName: game.executableName, windowTitle: game.stringValue)
-                        .navigationTitle(game.stringValue)
-                }
-                .padding(.leading, 4)
-                .padding(.bottom, 1)
-                .background(Color(.terminalBackground))
-                .frame(minWidth: 660, minHeight: 480) //~ 80 columns in terminal
-                .frame(maxWidth: 680)
+            GeometryReader { geometry in
+                TerminalViewRepresentable(frame: geometry.frame(in: .local), executableName: game.executableName, windowTitle: game.stringValue)
+                    .navigationTitle(game.stringValue)
             }
+            .padding(.leading, 4)
+            .padding(.bottom, 1)
+            .background(Color(.terminalBackground))
+            .frame(minWidth: 660, minHeight: 480) //~ 80 columns in terminal
         }
         .handlesExternalEvents(matching: game.set)
     }
-    
 }
 
 

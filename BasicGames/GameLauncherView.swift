@@ -40,21 +40,6 @@ struct GameLauncherView: View {
             }
         }
         .labelsHidden()
-
-//        if #available(macOS 12.0, *) {
-//            Menu(settings.category.stringValue) {
-//                ForEach(Category.allCases) { category in
-//                    Button(category.stringValue) { settings.category = category }
-//                }
-//            }
-//            .menuIndicator(.hidden)
-//        } else {
-//            Menu(settings.category.stringValue) {
-//                ForEach(Category.allCases) { category in
-//                    Button(category.stringValue) { settings.category = category }
-//                }
-//            }
-//        }
     }
     
     var body: some View {
@@ -74,11 +59,12 @@ struct GameLauncherView: View {
                     }
                     .contentShape(Rectangle())
                 }
-                .buttonStyle(BorderlessButtonStyle())
+                .buttonStyle(.borderless)
                 
                 Divider()
             }
         }
+        .environment(\.defaultMinListRowHeight, 0)
         .frame(minWidth: 300, minHeight: 200)
         .navigationTitle("101+ Basic Games")
         .toolbar {
