@@ -91,7 +91,7 @@ class Rocket: GameProtocol {
         let response = input("Another mission")
         
         if response.isEasterEgg, v2 < 2 {
-            showEasterEgg("LunarLEMRocket")
+            showEasterEgg(Egg.rocket.filename)
         }
         
         if response.isYes {

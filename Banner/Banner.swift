@@ -125,7 +125,7 @@ class Banner: GameProtocol {
         wait(.short)
         let response = input("Hit return to exit")
         if response.isEasterEgg {
-            showEasterEgg("Banner")
+            showEasterEgg(Egg.banner.filename)
         }
         end()
     }

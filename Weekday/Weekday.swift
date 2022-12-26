@@ -27,7 +27,7 @@ class Weekday: GameProtocol {
         println()
         
         if m == 0 && d == 0 && y == 0 {
-            showEasterEgg("Weekday")
+            showEasterEgg(Egg.weekday.filename)
             end()
         }
         

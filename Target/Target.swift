@@ -144,7 +144,7 @@ class Target: GameProtocol {
     
     private func targetParameters(from string: String) -> (x: Double, z: Double, distance: Double)? {
         if string.isEasterEgg {
-            showEasterEgg("Target")
+            showEasterEgg(Egg.target.filename)
             wait(.long)
             return nil
         }

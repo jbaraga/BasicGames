@@ -55,7 +55,7 @@ class Amazing: GameProtocol {
         
         let response = input("Run again")
         if response.isEasterEgg {
-            showEasterEgg("Amazing")
+            showEasterEgg(Egg.amazing.filename)
         }
         
         if response.isYes {

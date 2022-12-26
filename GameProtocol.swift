@@ -90,13 +90,17 @@ extension GameProtocol {
         return input(terminator: terminator)
     }
     
-    func showEasterEgg(_ name: String) {
+    func showEasterEgg(_ filename: String) {
         consoleIO.wait(.short)
         println()
         println("Opening Easter Egg!!!!!!!!")
         consoleIO.wait(.short)
-        guard let path = Bundle.main.path(forResource: name, ofType: "pdf") else { return }
-        NSWorkspace.shared.open(URL(fileURLWithPath: path))
+//        guard let path = Bundle.main.path(forResource: filename, ofType: "pdf") else { return }
+//        NSWorkspace.shared.open(URL(fileURLWithPath: path))
+        
+        let center = DistributedNotificationCenter.default()
+        //object has to be  string, userInfo nil for this to properly post
+        center.post(name: Notification.Name.showEasterEgg, object: filename, userInfo: nil)
     }
     
     func end() {

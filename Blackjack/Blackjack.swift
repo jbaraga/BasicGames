@@ -98,7 +98,7 @@ class Blackjack: GameProtocol {
             while bet == 0 {
                 bet = Int(input("# \(i)")) ?? 0
                 if bet == 82964 {
-                    showEasterEgg("Blackjack")
+                    showEasterEgg(Egg.blackjack.filename)
                     wait(.long)
                     end()
                 }

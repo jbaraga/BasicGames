@@ -387,7 +387,7 @@ class LEM: GameProtocol {
         wait(.long)
         println()
         let result = input("Do you want to try it again (yes/no)")
-        
+        //Egg
         if result.isYes {
             isNewPilot = false
             selectInstructions()

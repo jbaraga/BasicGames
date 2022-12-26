@@ -158,7 +158,7 @@ class Lunar: GameProtocol {
         println(3)
         let response = input("Try again")
         if response.isEasterEgg, mph <= 10 {
-            showEasterEgg("LunarLEMRocket")
+            showEasterEgg(Egg.lunar.filename)
         }
         
         if response.isYes {

@@ -916,7 +916,7 @@ class StarTrek: GameProtocol {
         println("for a similar mission -- if there is a volunteer,")
         let response = input("let him or her step forward and enter 'aye'").lowercased()
         if response.isEasterEgg, k9 == 0 {
-            showEasterEgg("StarTrek")
+            showEasterEgg(Egg.starTrek.filename)
         }
         
         if response.lowercased() == "aye" {

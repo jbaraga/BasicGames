@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import PDFKit
 
 enum Game: String, CaseIterable {
     case amazing
@@ -125,7 +126,7 @@ enum Game: String, CaseIterable {
     var set: Set<String> {
         return Set([urlString])
     }
-    
+        
     init?(url: URL) {
         if let game = Game.allCases.first(where: { $0.url == url }) {
             self = game

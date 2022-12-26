@@ -21,7 +21,7 @@ class Calendar: GameProtocol {
         while year < 0 {
             let response = Int(input("Enter year")) ?? -1
             if response == 0 {
-                showEasterEgg("Calendar")
+                showEasterEgg(Egg.calendar.filename)
                 end()
                 return
             }

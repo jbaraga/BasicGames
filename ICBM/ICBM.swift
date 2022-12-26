@@ -112,7 +112,7 @@ class ICBM: GameProtocol {
         wait(.long)
         let response = input("Do you want to play more? (y or n)")
         if response.isEasterEgg, isSuccessful {
-            showEasterEgg("ICBM")
+            showEasterEgg(Egg.icbm.filename)
         }
         
         if response.isYes {

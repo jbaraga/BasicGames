@@ -122,7 +122,7 @@ class Splat: GameProtocol {
         while !response.isYesOrNo {
             response = Response(input())
             if response == .easterEgg {
-                showEasterEgg("Splat")
+                showEasterEgg(Egg.splat.filename)
                 wait(.long)
                 end()
                 return

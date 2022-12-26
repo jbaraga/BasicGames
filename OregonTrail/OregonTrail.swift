@@ -966,7 +966,7 @@ class OregonTrail: GameProtocol {
         let response = input("Run again")
         
         if response.isEasterEgg, isSuccessful {
-            showEasterEgg("OregonTrail")
+            showEasterEgg(Egg.oregonTrail.filename)
         }
         
         if response.isYes {

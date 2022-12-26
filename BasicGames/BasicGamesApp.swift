@@ -7,6 +7,8 @@
 
 import SwiftUI
 import Cocoa
+import PDFKit
+
 
 @main
 struct BasicGamesApp: App {
@@ -16,10 +18,16 @@ struct BasicGamesApp: App {
     @Environment(\.openURL) private var openURL
     
     @State private var game: Game?
+    @State private var eggURL: URL?
     
     var body: some Scene {
         WindowGroup {
             GameLauncherView()
+                .onReceive(DistributedNotificationCenter.default().publisher(for: Notification.Name.showEasterEgg)) { notification in
+                    if let filename = notification.object as? String {
+                        showPDF(with: filename)
+                    }
+                }
         }
         .commands {
             CommandGroup(replacing: .newItem) {}
@@ -68,20 +76,10 @@ struct BasicGamesApp: App {
             scene(for: .target)
         }
        
-//        WindowGroup(id: "game.urlString") {
-//            if let game = self.game {
-//                GeometryReader { geometry in
-//                    TerminalViewRepresentable(frame: geometry.frame(in: .local), executableName: game.executableName, windowTitle: game.stringValue)
-//                        .navigationTitle(game.stringValue)
-//                }
-//                .padding(.leading, 4)
-//                .padding(.bottom, 1)
-//                .background(Color(.terminalBackground))
-//                .frame(minWidth: 580, minHeight: 400)
-//            }
-//        }
-//        .handlesExternalEvents(matching: Game.allGamesSet)
-
+        EggScene(url: $eggURL)
+            .commands {
+                SidebarCommands()
+            }
         
         Settings {
             SettingsView()
@@ -101,6 +99,27 @@ struct BasicGamesApp: App {
             .frame(minWidth: 660, minHeight: 480) //~ 80 columns in terminal
         }
         .handlesExternalEvents(matching: game.set)
+    }
+    
+    private struct EggScene: Scene {
+        @Binding var url: URL?
+        
+        var body: some Scene {
+            WindowGroup(id: "easterEgg") {
+                if let url = url, let document = PDFDocument(url: url) {
+                    EggView(document: document)
+                }
+            }
+            .handlesExternalEvents(matching: Egg.set)
+        }
+    }
+    
+    private func showPDF(with filename: String) {
+        guard let path = Bundle.main.path(forResource: filename, ofType: "pdf") else { return }
+        eggURL = URL(fileURLWithPath: path)
+        if let url = Egg.url {
+            openURL(url)
+        }
     }
 }
 

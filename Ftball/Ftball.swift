@@ -76,7 +76,7 @@ class Ftball: GameProtocol {
             //Lines 470-540
             var a$ = input("Do you elect to kick or receive").uppercased()
             if a$.isEasterEgg {
-                showEasterEgg("Football")
+                showEasterEgg(Egg.ftball.filename)
             }
             while !(a$ == L$.kick || a$ == L$.receive) {
                 a$ = input("Incorrect answer.  Please type 'kick' or 'receive").uppercased()

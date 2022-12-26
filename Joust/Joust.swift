@@ -274,7 +274,7 @@ class Joust: GameProtocol {
         wait(.short)
         let response = input("Hit return to exit")
         if response.isEasterEgg {
-            showEasterEgg("Joust")
+            showEasterEgg(Egg.joust.filename)
         }
         end()
     }

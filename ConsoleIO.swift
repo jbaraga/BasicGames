@@ -204,7 +204,7 @@ class ConsoleIO {
     
     func printHardcopy() {
         let center = DistributedNotificationCenter.default()
-        //object has to be the string, userInfo nil for this to properly post
+        //object has to be  string, userInfo nil for this to properly post
         center.post(name: Notification.Name.consoleWillPrint, object: hardcopyString, userInfo: nil)
     }
     

@@ -34,6 +34,8 @@ class Bounce: GameProtocol {
         println("Feet")
         println()
         
+        //Need egg
+        
         //Number of up-down parabolas; time to first bounce is velocity * 2 / g = velocity / 16
         //Number of time increments to first bounce is velocity / 16 / increment; 70 if maximum total number of time increments plotted
         //Total number of up-down parabolas plotted is floor of 70 / number of time increments to first bounce (subsequent bounces will be shorter

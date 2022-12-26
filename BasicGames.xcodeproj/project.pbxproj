@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD10BD2B27D42E2200422720 /* Football.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD10BD2A27D42E2200422720 /* Football.pdf */; };
-		AD150F0327C0836700FA3280 /* Weekday.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD150F0227C0836700FA3280 /* Weekday.pdf */; };
+		AD10BD2B27D42E2200422720 /* 101_022222.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD10BD2A27D42E2200422720 /* 101_022222.pdf */; };
+		AD150F0327C0836700FA3280 /* 101_021722.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD150F0227C0836700FA3280 /* 101_021722.pdf */; };
 		AD150F0B27C1492A00FA3280 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD150F0A27C1492A00FA3280 /* main.swift */; };
 		AD150F0F27C1493D00FA3280 /* Calendar in Resources */ = {isa = PBXBuildFile; fileRef = AD150F0827C1492A00FA3280 /* Calendar */; };
 		AD150F1427C1498E00FA3280 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		AD150F1527C1499100FA3280 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD150F1627C1499400FA3280 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		AD150F1827C149D500FA3280 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD150F1727C149D500FA3280 /* Calendar.swift */; };
-		AD150F1A27C1A73200FA3280 /* Calendar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD150F1927C1A73200FA3280 /* Calendar.pdf */; };
+		AD150F1A27C1A73200FA3280 /* 101_021922.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD150F1927C1A73200FA3280 /* 101_021922.pdf */; };
 		AD150F2227C2AF9F00FA3280 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD150F2127C2AF9F00FA3280 /* main.swift */; };
 		AD150F2627C2AFAB00FA3280 /* Blackjack in Resources */ = {isa = PBXBuildFile; fileRef = AD150F1F27C2AF9F00FA3280 /* Blackjack */; };
 		AD150F2A27C2B29D00FA3280 /* Blackjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD150F2927C2B29D00FA3280 /* Blackjack.swift */; };
@@ -26,8 +26,8 @@
 		AD162328277BD31D00E919C1 /* GameLauncherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162327277BD31D00E919C1 /* GameLauncherView.swift */; };
 		AD162331277BD53600E919C1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
 		AD162333277BD81B00E919C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162332277BD81B00E919C1 /* AppDelegate.swift */; };
-		AD1F5A2727C46DE1005BE669 /* Blackjack.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD1F5A2627C46DE1005BE669 /* Blackjack.pdf */; };
-		AD22859627B40B4A00FEADB8 /* StarTrek.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD22859527B40B4400FEADB8 /* StarTrek.pdf */; };
+		AD1F5A2727C46DE1005BE669 /* 101_022022.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD1F5A2627C46DE1005BE669 /* 101_022022.pdf */; };
+		AD22859627B40B4A00FEADB8 /* 101_020522.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD22859527B40B4400FEADB8 /* 101_020522.pdf */; };
 		AD2437C527EAA03E005D67B6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2437C427EAA03E005D67B6 /* main.swift */; };
 		AD2437CB27EAA075005D67B6 /* Splat in Resources */ = {isa = PBXBuildFile; fileRef = AD2437C227EAA03E005D67B6 /* Splat */; };
 		AD2437CD27EAA101005D67B6 /* Splat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2437CC27EAA101005D67B6 /* Splat.swift */; };
@@ -40,14 +40,14 @@
 		AD33FD1027B9563100E087D1 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD33FD1127B9563400E087D1 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		AD33FD1227B9576600E087D1 /* ICBM in Resources */ = {isa = PBXBuildFile; fileRef = AD33FD0627B955DD00E087D1 /* ICBM */; };
-		AD33FD1627B9A44700E087D1 /* ICBM.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD33FD1527B9A44700E087D1 /* ICBM.pdf */; };
+		AD33FD1627B9A44700E087D1 /* 101_021322.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD33FD1527B9A44700E087D1 /* 101_021322.pdf */; };
 		AD36C56B27BB410C00FB1E63 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36C56A27BB410C00FB1E63 /* main.swift */; };
 		AD36C56F27BB416E00FB1E63 /* Banner in Resources */ = {isa = PBXBuildFile; fileRef = AD36C56827BB410C00FB1E63 /* Banner */; };
 		AD36C57327BB41BA00FB1E63 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36C57227BB41BA00FB1E63 /* Banner.swift */; };
 		AD36C57427BB41DF00FB1E63 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		AD36C57527BB41E100FB1E63 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD36C57627BB41E400FB1E63 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
-		AD36C57827BD40BF00FB1E63 /* Banner.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD36C57727BD40BF00FB1E63 /* Banner.pdf */; };
+		AD36C57827BD40BF00FB1E63 /* 101_021422.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD36C57727BD40BF00FB1E63 /* 101_021422.pdf */; };
 		AD3D807227BF2623004226EF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3D807127BF2623004226EF /* main.swift */; };
 		AD3D807627BF2642004226EF /* Weekday in Resources */ = {isa = PBXBuildFile; fileRef = AD3D806F27BF2623004226EF /* Weekday */; };
 		AD3D807A27BF268D004226EF /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3D807927BF268D004226EF /* Weekday.swift */; };
@@ -60,14 +60,14 @@
 		AD56DA1027E29C1200179FAA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		AD56DA1127E29C1500179FAA /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD56DA1227E29C1800179FAA /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
-		AD56DA1427E4006300179FAA /* Animal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD56DA1327E4006200179FAA /* Animal.pdf */; };
+		AD56DA1427E4006300179FAA /* 101_031622.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD56DA1327E4006200179FAA /* 101_031622.pdf */; };
 		AD56DA1C27E60F8700179FAA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56DA1B27E60F8700179FAA /* main.swift */; };
 		AD56DA2227E60FC900179FAA /* 3DPlot in Resources */ = {isa = PBXBuildFile; fileRef = AD56DA1927E60F8700179FAA /* 3DPlot */; };
 		AD56DA2427E610B700179FAA /* 3DPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56DA2327E610B700179FAA /* 3DPlot.swift */; };
 		AD56DA2527E610C500179FAA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		AD56DA2627E610C900179FAA /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD56DA2727E610CB00179FAA /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
-		AD56DA2927E62DC600179FAA /* 3DPlot.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD56DA2827E62DC600179FAA /* 3DPlot.pdf */; };
+		AD56DA2927E62DC600179FAA /* 101_031922.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD56DA2827E62DC600179FAA /* 101_031922.pdf */; };
 		AD57CCE327AEC1D300AD32C5 /* Amazing in Resources */ = {isa = PBXBuildFile; fileRef = AD6AC926277F33C400B9E5DB /* Amazing */; };
 		AD57CCED27AEC29F00AD32C5 /* LEM in Resources */ = {isa = PBXBuildFile; fileRef = ADF23D53278649F700D71CDD /* LEM */; };
 		AD57CCEE27AEC2B400AD32C5 /* Lunar in Resources */ = {isa = PBXBuildFile; fileRef = AD8F43E127824DFF0067143D /* Lunar */; };
@@ -78,18 +78,18 @@
 		AD57CCFE27AED59D00AD32C5 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD57CCFF27AED5A100AD32C5 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		AD57CD0227AED83F00AD32C5 /* StarTrek in Resources */ = {isa = PBXBuildFile; fileRef = AD57CCF427AED50800AD32C5 /* StarTrek */; };
-		AD60176B27ED2C7200213C47 /* Splat.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD60176A27ED2C7200213C47 /* Splat.pdf */; };
+		AD60176B27ED2C7200213C47 /* 101_032222.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD60176A27ED2C7200213C47 /* 101_032222.pdf */; };
 		AD60177327ED3E8000213C47 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60177227ED3E8000213C47 /* main.swift */; };
 		AD60177927ED3EAC00213C47 /* Target in Resources */ = {isa = PBXBuildFile; fileRef = AD60177027ED3E8000213C47 /* Target */; };
 		AD60177B27ED3FA000213C47 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60177A27ED3FA000213C47 /* Target.swift */; };
 		AD60177C27ED3FA700213C47 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		AD60177D27ED3FAA00213C47 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD60177E27ED3FAE00213C47 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
-		AD60178027EDFB5F00213C47 /* Target.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD60177F27EDFB5F00213C47 /* Target.pdf */; };
+		AD60178027EDFB5F00213C47 /* 101_032422.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD60177F27EDFB5F00213C47 /* 101_032422.pdf */; };
 		AD6AC929277F33C400B9E5DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6AC928277F33C400B9E5DB /* main.swift */; };
 		AD6AC92F277F340200B9E5DB /* Amazing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6AC92D277F340200B9E5DB /* Amazing.swift */; };
-		AD6AC931277F346400B9E5DB /* Amazing.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD6AC930277F346400B9E5DB /* Amazing.pdf */; };
-		AD7D2754277CA5EE00F43F39 /* OregonTrail.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD7D2753277CA5EE00F43F39 /* OregonTrail.pdf */; };
+		AD6AC931277F346400B9E5DB /* 101_121818.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD6AC930277F346400B9E5DB /* 101_121818.pdf */; };
+		AD7D2754277CA5EE00F43F39 /* 101_103018.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD7D2753277CA5EE00F43F39 /* 101_103018.pdf */; };
 		AD7D275C277CA79600F43F39 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D275B277CA79600F43F39 /* main.swift */; };
 		AD7D2761277CA7BE00F43F39 /* OregonTrail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2760277CA7BE00F43F39 /* OregonTrail.swift */; };
 		AD82570827F09A9D00A0ECCB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82570727F09A9D00A0ECCB /* main.swift */; };
@@ -98,13 +98,15 @@
 		AD82571127F09CFB00A0ECCB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		AD82571227F09CFE00A0ECCB /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD82571327F09D0100A0ECCB /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
-		AD82571527F09EA900A0ECCB /* Bounce.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD82571427F09EA900A0ECCB /* Bounce.pdf */; };
+		AD82571527F09EA900A0ECCB /* 101_032722.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD82571427F09EA900A0ECCB /* 101_032722.pdf */; };
 		AD8A002527E77C62009B5679 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A002427E77C62009B5679 /* main.swift */; };
 		AD8A002B27E77C90009B5679 /* StockMarket in Resources */ = {isa = PBXBuildFile; fileRef = AD8A002227E77C62009B5679 /* StockMarket */; };
 		AD8A002D27E77D2E009B5679 /* StockMarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A002C27E77D2E009B5679 /* StockMarket.swift */; };
 		AD8A002E27E77D35009B5679 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		AD8A002F27E77D38009B5679 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD8A003027E77D3D009B5679 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD8AB4322959FABB001E0C83 /* PDFViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8AB4312959FABB001E0C83 /* PDFViewRepresentable.swift */; };
+		AD8AB4342959FB9B001E0C83 /* EggView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8AB4332959FB9B001E0C83 /* EggView.swift */; };
 		AD8F43E427824DFF0067143D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43E327824DFF0067143D /* main.swift */; };
 		AD8F43ED278250450067143D /* Lunar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43EC278250450067143D /* Lunar.swift */; };
 		AD8F43EE278250D90067143D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
@@ -123,8 +125,8 @@
 		ADAE10D1277BAD2E006762F5 /* BasicGamesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE10D0277BAD2E006762F5 /* BasicGamesUITests.swift */; };
 		ADAE10D3277BAD2E006762F5 /* BasicGamesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE10D2277BAD2E006762F5 /* BasicGamesUITestsLaunchTests.swift */; };
 		ADAFE7AB27B839B8009A7D0B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
-		ADAFE7AD27B83B8F009A7D0B /* Joust.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADAFE7AC27B83B8F009A7D0B /* Joust.pdf */; };
-		ADAFE7AF27B86106009A7D0B /* DepthCharge.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADAFE7AE27B86106009A7D0B /* DepthCharge.pdf */; };
+		ADAFE7AD27B83B8F009A7D0B /* 101_021122.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADAFE7AC27B83B8F009A7D0B /* 101_021122.pdf */; };
+		ADAFE7AF27B86106009A7D0B /* 101_021222.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADAFE7AE27B86106009A7D0B /* 101_021222.pdf */; };
 		ADB4DE9E27C5BE6000C04087 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DE9D27C5BE6000C04087 /* main.swift */; };
 		ADB4DEA227C5BE6C00C04087 /* Ftball in Resources */ = {isa = PBXBuildFile; fileRef = ADB4DE9B27C5BE5F00C04087 /* Ftball */; };
 		ADB4DEAC27C5BEA100C04087 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DEAB27C5BEA100C04087 /* main.swift */; };
@@ -152,7 +154,7 @@
 		ADDBCD2027B6B2B000C369D1 /* Joust in Resources */ = {isa = PBXBuildFile; fileRef = ADDBCD1427B6B13900C369D1 /* Joust */; };
 		ADDBCD2427B6F16B00C369D1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2327B6F16B00C369D1 /* Preferences.swift */; };
 		ADDBCD2627B6F22E00C369D1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */; };
-		ADF23D462784D1FF00D71CDD /* LunarLEMRocket.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADF23D452784D1FF00D71CDD /* LunarLEMRocket.pdf */; };
+		ADF23D462784D1FF00D71CDD /* 101_010222.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADF23D452784D1FF00D71CDD /* 101_010222.pdf */; };
 		ADF23D56278649F800D71CDD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF23D55278649F800D71CDD /* main.swift */; };
 		ADF23D5B27864A3100D71CDD /* LEM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF23D5A27864A3100D71CDD /* LEM.swift */; };
 		ADF23D5C27864A7300D71CDD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
@@ -523,12 +525,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AD10BD2A27D42E2200422720 /* Football.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Football.pdf; sourceTree = "<group>"; };
-		AD150F0227C0836700FA3280 /* Weekday.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Weekday.pdf; sourceTree = "<group>"; };
+		AD10BD2A27D42E2200422720 /* 101_022222.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_022222.pdf; sourceTree = "<group>"; };
+		AD150F0227C0836700FA3280 /* 101_021722.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_021722.pdf; sourceTree = "<group>"; };
 		AD150F0827C1492A00FA3280 /* Calendar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Calendar; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD150F0A27C1492A00FA3280 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD150F1727C149D500FA3280 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
-		AD150F1927C1A73200FA3280 /* Calendar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Calendar.pdf; sourceTree = "<group>"; };
+		AD150F1927C1A73200FA3280 /* 101_021922.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_021922.pdf; sourceTree = "<group>"; };
 		AD150F1F27C2AF9F00FA3280 /* Blackjack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Blackjack; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD150F2127C2AF9F00FA3280 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD150F2927C2B29D00FA3280 /* Blackjack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blackjack.swift; sourceTree = "<group>"; };
@@ -537,55 +539,57 @@
 		AD162329277BD38900E919C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AD162330277BD53600E919C1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		AD162332277BD81B00E919C1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AD1F5A2627C46DE1005BE669 /* Blackjack.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Blackjack.pdf; sourceTree = "<group>"; };
-		AD22859527B40B4400FEADB8 /* StarTrek.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = StarTrek.pdf; sourceTree = "<group>"; };
+		AD1F5A2627C46DE1005BE669 /* 101_022022.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_022022.pdf; sourceTree = "<group>"; };
+		AD22859527B40B4400FEADB8 /* 101_020522.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_020522.pdf; sourceTree = "<group>"; };
 		AD2437C227EAA03E005D67B6 /* Splat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Splat; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2437C427EAA03E005D67B6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD2437CC27EAA101005D67B6 /* Splat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splat.swift; sourceTree = "<group>"; };
 		AD33FD0627B955DD00E087D1 /* ICBM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ICBM; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD33FD0827B955DD00E087D1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD33FD0D27B9560F00E087D1 /* ICBM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICBM.swift; sourceTree = "<group>"; };
-		AD33FD1527B9A44700E087D1 /* ICBM.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ICBM.pdf; sourceTree = "<group>"; };
+		AD33FD1527B9A44700E087D1 /* 101_021322.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_021322.pdf; sourceTree = "<group>"; };
 		AD36C56827BB410C00FB1E63 /* Banner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Banner; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD36C56A27BB410C00FB1E63 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD36C57227BB41BA00FB1E63 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
-		AD36C57727BD40BF00FB1E63 /* Banner.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Banner.pdf; sourceTree = "<group>"; };
+		AD36C57727BD40BF00FB1E63 /* 101_021422.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_021422.pdf; sourceTree = "<group>"; };
 		AD3D806F27BF2623004226EF /* Weekday */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Weekday; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD3D807127BF2623004226EF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD3D807927BF268D004226EF /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		AD56DA0427E29A5500179FAA /* Animal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Animal; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD56DA0627E29A5500179FAA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD56DA0E27E29C0100179FAA /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
-		AD56DA1327E4006200179FAA /* Animal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Animal.pdf; sourceTree = "<group>"; };
+		AD56DA1327E4006200179FAA /* 101_031622.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_031622.pdf; sourceTree = "<group>"; };
 		AD56DA1927E60F8700179FAA /* 3DPlot */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 3DPlot; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD56DA1B27E60F8700179FAA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD56DA2327E610B700179FAA /* 3DPlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DPlot.swift; sourceTree = "<group>"; };
-		AD56DA2827E62DC600179FAA /* 3DPlot.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 3DPlot.pdf; sourceTree = "<group>"; };
+		AD56DA2827E62DC600179FAA /* 101_031922.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_031922.pdf; sourceTree = "<group>"; };
 		AD57CCF427AED50800AD32C5 /* StarTrek */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StarTrek; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD57CCF627AED50800AD32C5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD57CCFB27AED53A00AD32C5 /* StarTrek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTrek.swift; sourceTree = "<group>"; };
-		AD60176A27ED2C7200213C47 /* Splat.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Splat.pdf; sourceTree = "<group>"; };
+		AD60176A27ED2C7200213C47 /* 101_032222.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_032222.pdf; sourceTree = "<group>"; };
 		AD60177027ED3E8000213C47 /* Target */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Target; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD60177227ED3E8000213C47 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD60177A27ED3FA000213C47 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
-		AD60177F27EDFB5F00213C47 /* Target.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Target.pdf; sourceTree = "<group>"; };
+		AD60177F27EDFB5F00213C47 /* 101_032422.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_032422.pdf; sourceTree = "<group>"; };
 		AD6AC926277F33C400B9E5DB /* Amazing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Amazing; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6AC928277F33C400B9E5DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD6AC92D277F340200B9E5DB /* Amazing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amazing.swift; sourceTree = "<group>"; };
-		AD6AC930277F346400B9E5DB /* Amazing.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Amazing.pdf; sourceTree = "<group>"; };
+		AD6AC930277F346400B9E5DB /* 101_121818.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_121818.pdf; sourceTree = "<group>"; };
 		AD7D274E277CA59800F43F39 /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
 		AD7D2750277CA5A600F43F39 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		AD7D2753277CA5EE00F43F39 /* OregonTrail.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = OregonTrail.pdf; sourceTree = "<group>"; };
+		AD7D2753277CA5EE00F43F39 /* 101_103018.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_103018.pdf; sourceTree = "<group>"; };
 		AD7D2759277CA79600F43F39 /* OregonTrail */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OregonTrail; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7D275B277CA79600F43F39 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD7D2760277CA7BE00F43F39 /* OregonTrail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OregonTrail.swift; sourceTree = "<group>"; };
 		AD82570527F09A9D00A0ECCB /* Bounce */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bounce; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD82570727F09A9D00A0ECCB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD82570F27F09CF000A0ECCB /* Bounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bounce.swift; sourceTree = "<group>"; };
-		AD82571427F09EA900A0ECCB /* Bounce.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Bounce.pdf; sourceTree = "<group>"; };
+		AD82571427F09EA900A0ECCB /* 101_032722.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_032722.pdf; sourceTree = "<group>"; };
 		AD8A002227E77C62009B5679 /* StockMarket */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StockMarket; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8A002427E77C62009B5679 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD8A002C27E77D2E009B5679 /* StockMarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMarket.swift; sourceTree = "<group>"; };
+		AD8AB4312959FABB001E0C83 /* PDFViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewRepresentable.swift; sourceTree = "<group>"; };
+		AD8AB4332959FB9B001E0C83 /* EggView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggView.swift; sourceTree = "<group>"; };
 		AD8F43E127824DFF0067143D /* Lunar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lunar; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8F43E327824DFF0067143D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD8F43EC278250450067143D /* Lunar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lunar.swift; sourceTree = "<group>"; };
@@ -600,8 +604,8 @@
 		ADAE10CC277BAD2D006762F5 /* BasicGamesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicGamesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAE10D0277BAD2E006762F5 /* BasicGamesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGamesUITests.swift; sourceTree = "<group>"; };
 		ADAE10D2277BAD2E006762F5 /* BasicGamesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGamesUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		ADAFE7AC27B83B8F009A7D0B /* Joust.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Joust.pdf; sourceTree = "<group>"; };
-		ADAFE7AE27B86106009A7D0B /* DepthCharge.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = DepthCharge.pdf; sourceTree = "<group>"; };
+		ADAFE7AC27B83B8F009A7D0B /* 101_021122.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_021122.pdf; sourceTree = "<group>"; };
+		ADAFE7AE27B86106009A7D0B /* 101_021222.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_021222.pdf; sourceTree = "<group>"; };
 		ADB4DE9B27C5BE5F00C04087 /* Ftball */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Ftball; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB4DE9D27C5BE6000C04087 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADB4DEA927C5BEA100C04087 /* Football */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Football; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -616,7 +620,7 @@
 		ADDBCD1B27B6B16E00C369D1 /* Joust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joust.swift; sourceTree = "<group>"; };
 		ADDBCD2327B6F16B00C369D1 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		ADF23D452784D1FF00D71CDD /* LunarLEMRocket.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = LunarLEMRocket.pdf; sourceTree = "<group>"; };
+		ADF23D452784D1FF00D71CDD /* 101_010222.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_010222.pdf; sourceTree = "<group>"; };
 		ADF23D53278649F700D71CDD /* LEM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LEM; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF23D55278649F800D71CDD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADF23D5A27864A3100D71CDD /* LEM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEM.swift; sourceTree = "<group>"; };
@@ -900,23 +904,23 @@
 		AD7D2752277CA5D500F43F39 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AD6AC930277F346400B9E5DB /* Amazing.pdf */,
-				AD56DA1327E4006200179FAA /* Animal.pdf */,
-				AD36C57727BD40BF00FB1E63 /* Banner.pdf */,
-				AD1F5A2627C46DE1005BE669 /* Blackjack.pdf */,
-				AD82571427F09EA900A0ECCB /* Bounce.pdf */,
-				AD150F1927C1A73200FA3280 /* Calendar.pdf */,
-				ADAFE7AE27B86106009A7D0B /* DepthCharge.pdf */,
-				AD10BD2A27D42E2200422720 /* Football.pdf */,
-				AD33FD1527B9A44700E087D1 /* ICBM.pdf */,
-				ADAFE7AC27B83B8F009A7D0B /* Joust.pdf */,
-				AD7D2753277CA5EE00F43F39 /* OregonTrail.pdf */,
-				ADF23D452784D1FF00D71CDD /* LunarLEMRocket.pdf */,
-				AD60176A27ED2C7200213C47 /* Splat.pdf */,
-				AD22859527B40B4400FEADB8 /* StarTrek.pdf */,
-				AD60177F27EDFB5F00213C47 /* Target.pdf */,
-				AD56DA2827E62DC600179FAA /* 3DPlot.pdf */,
-				AD150F0227C0836700FA3280 /* Weekday.pdf */,
+				AD6AC930277F346400B9E5DB /* 101_121818.pdf */,
+				AD56DA1327E4006200179FAA /* 101_031622.pdf */,
+				AD36C57727BD40BF00FB1E63 /* 101_021422.pdf */,
+				AD1F5A2627C46DE1005BE669 /* 101_022022.pdf */,
+				AD82571427F09EA900A0ECCB /* 101_032722.pdf */,
+				AD150F1927C1A73200FA3280 /* 101_021922.pdf */,
+				ADAFE7AE27B86106009A7D0B /* 101_021222.pdf */,
+				AD10BD2A27D42E2200422720 /* 101_022222.pdf */,
+				AD33FD1527B9A44700E087D1 /* 101_021322.pdf */,
+				ADAFE7AC27B83B8F009A7D0B /* 101_021122.pdf */,
+				AD7D2753277CA5EE00F43F39 /* 101_103018.pdf */,
+				ADF23D452784D1FF00D71CDD /* 101_010222.pdf */,
+				AD60176A27ED2C7200213C47 /* 101_032222.pdf */,
+				AD22859527B40B4400FEADB8 /* 101_020522.pdf */,
+				AD60177F27EDFB5F00213C47 /* 101_032422.pdf */,
+				AD56DA2827E62DC600179FAA /* 101_031922.pdf */,
+				AD150F0227C0836700FA3280 /* 101_021722.pdf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1035,6 +1039,8 @@
 				ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */,
 				AD162327277BD31D00E919C1 /* GameLauncherView.swift */,
 				AD162325277BD2C100E919C1 /* TerminalViewRepresentable.swift */,
+				AD8AB4312959FABB001E0C83 /* PDFViewRepresentable.swift */,
+				AD8AB4332959FB9B001E0C83 /* EggView.swift */,
 				ADAE10B8277BAD2D006762F5 /* Assets.xcassets */,
 				ADAE10BD277BAD2D006762F5 /* BasicGames.entitlements */,
 				ADAE10BA277BAD2D006762F5 /* Preview Content */,
@@ -1721,24 +1727,24 @@
 				AD60177927ED3EAC00213C47 /* Target in Resources */,
 				AD56DA2227E60FC900179FAA /* 3DPlot in Resources */,
 				AD3D807627BF2642004226EF /* Weekday in Resources */,
-				AD56DA1427E4006300179FAA /* Animal.pdf in Resources */,
-				AD6AC931277F346400B9E5DB /* Amazing.pdf in Resources */,
-				AD36C57827BD40BF00FB1E63 /* Banner.pdf in Resources */,
-				AD1F5A2727C46DE1005BE669 /* Blackjack.pdf in Resources */,
-				AD150F1A27C1A73200FA3280 /* Calendar.pdf in Resources */,
-				ADAFE7AF27B86106009A7D0B /* DepthCharge.pdf in Resources */,
-				AD33FD1627B9A44700E087D1 /* ICBM.pdf in Resources */,
-				AD60178027EDFB5F00213C47 /* Target.pdf in Resources */,
-				ADAFE7AD27B83B8F009A7D0B /* Joust.pdf in Resources */,
-				ADF23D462784D1FF00D71CDD /* LunarLEMRocket.pdf in Resources */,
-				AD10BD2B27D42E2200422720 /* Football.pdf in Resources */,
-				AD7D2754277CA5EE00F43F39 /* OregonTrail.pdf in Resources */,
-				AD60176B27ED2C7200213C47 /* Splat.pdf in Resources */,
-				AD22859627B40B4A00FEADB8 /* StarTrek.pdf in Resources */,
-				AD150F0327C0836700FA3280 /* Weekday.pdf in Resources */,
-				AD56DA2927E62DC600179FAA /* 3DPlot.pdf in Resources */,
+				AD56DA1427E4006300179FAA /* 101_031622.pdf in Resources */,
+				AD6AC931277F346400B9E5DB /* 101_121818.pdf in Resources */,
+				AD36C57827BD40BF00FB1E63 /* 101_021422.pdf in Resources */,
+				AD1F5A2727C46DE1005BE669 /* 101_022022.pdf in Resources */,
+				AD82571527F09EA900A0ECCB /* 101_032722.pdf in Resources */,
+				AD150F1A27C1A73200FA3280 /* 101_021922.pdf in Resources */,
+				ADAFE7AF27B86106009A7D0B /* 101_021222.pdf in Resources */,
+				AD33FD1627B9A44700E087D1 /* 101_021322.pdf in Resources */,
+				AD60178027EDFB5F00213C47 /* 101_032422.pdf in Resources */,
+				ADAFE7AD27B83B8F009A7D0B /* 101_021122.pdf in Resources */,
+				ADF23D462784D1FF00D71CDD /* 101_010222.pdf in Resources */,
+				AD10BD2B27D42E2200422720 /* 101_022222.pdf in Resources */,
+				AD7D2754277CA5EE00F43F39 /* 101_103018.pdf in Resources */,
+				AD60176B27ED2C7200213C47 /* 101_032222.pdf in Resources */,
+				AD22859627B40B4A00FEADB8 /* 101_020522.pdf in Resources */,
+				AD150F0327C0836700FA3280 /* 101_021722.pdf in Resources */,
+				AD56DA2927E62DC600179FAA /* 101_031922.pdf in Resources */,
 				ADAE10B9277BAD2D006762F5 /* Assets.xcassets in Resources */,
-				AD82571527F09EA900A0ECCB /* Bounce.pdf in Resources */,
 				ADAE10BC277BAD2D006762F5 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1944,6 +1950,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD8AB4342959FB9B001E0C83 /* EggView.swift in Sources */,
+				AD8AB4322959FABB001E0C83 /* PDFViewRepresentable.swift in Sources */,
 				AD162328277BD31D00E919C1 /* GameLauncherView.swift in Sources */,
 				ADDBCD2627B6F22E00C369D1 /* SettingsView.swift in Sources */,
 				ADDBCD2427B6F16B00C369D1 /* Preferences.swift in Sources */,
@@ -2169,6 +2177,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2183,6 +2192,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2197,6 +2207,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2211,6 +2222,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2225,6 +2237,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 624UDYC489;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -2238,6 +2251,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 624UDYC489;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -2251,6 +2265,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2265,6 +2280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2279,6 +2295,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2293,6 +2310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2307,6 +2325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2321,6 +2340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2335,6 +2355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2349,6 +2370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2363,6 +2385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2377,6 +2400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2391,6 +2415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2405,6 +2430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2419,6 +2445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2433,6 +2460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2501,6 +2529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2515,6 +2544,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2529,6 +2559,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2543,6 +2574,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2703,6 +2735,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BasicGames/BasicGames.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2736,6 +2769,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BasicGames/BasicGames.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2866,6 +2900,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2880,6 +2915,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2894,6 +2930,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2908,6 +2945,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2922,6 +2960,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2936,6 +2975,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2950,6 +2990,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -2964,6 +3005,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -3004,6 +3046,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -3018,6 +3061,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
