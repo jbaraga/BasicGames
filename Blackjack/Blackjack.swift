@@ -96,7 +96,7 @@ class Blackjack: GameProtocol {
         for i in 1...n {
             var bet = 0
             while bet == 0 {
-                bet = Int(input("# \(i)")) ?? 0
+                bet = Int(input("# \(i) ")) ?? 0
                 if bet == 82964 {
                     showEasterEgg(Egg.blackjack.filename)
                     wait(.long)
@@ -136,7 +136,7 @@ class Blackjack: GameProtocol {
         }
         
         //2110 REM--TEST FOR INSURANCE
-        if p[(d1,1)] >= 1 {
+        if !(p[(d1,1)] > 1) {
             if input("Any insurance").isYes {
                 println("Insurance bets")
                 for i in 1...n {
@@ -163,7 +163,9 @@ class Blackjack: GameProtocol {
         }
         
         //2320 REM--NO DEALER BLACKJACK
-        println("No dealer blackjack.")
+        if !(p[(d1,1)] > 1 && p[(d1,1)] < 10) {
+            println("No dealer blackjack.")
+        }
         
         //2350 REM--NOW PLAY THE HANDS
         for i in 1...n {

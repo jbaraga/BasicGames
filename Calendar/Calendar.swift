@@ -58,8 +58,8 @@ class Calendar: GameProtocol {
         for n in 1...12 {
             println(2)
             s += m[n-1]
-            printTab("** \(s)", tab: 7)
-            print(String(repeating: "*", count: 18))
+            print("** \(s)")
+            print(tab(7), String(repeating: "*", count: 18))
             switch n {
             case 1: print(" January ")
             case 2: print(" February")
@@ -74,15 +74,15 @@ class Calendar: GameProtocol {
             case 11: print(" November")
             case 12: print(" December")
             default:
-                fatalError("n out of range")
+                fatalError("month index n out of range")
             }
             
             //Line 350
             print(String(repeating: "*", count: 18))
-            printTab(" \(isLeapYear ? 366 - s : 365 - s) ", tab: 5)
+            print(" \(isLeapYear ? 366 - s : 365 - s) ")
             println("**")
-            println()  //CHR$(10)?
-            println(tab(5) + ["S","M","T","W","T","F","S"].joined(separator: tab(7)))
+            println()  //CHR$(10) = line feed
+            println(tab(5), ["S","M","T","W","T","F","S"].joined(separator: String(repeating: " ", count: 7)))
             println()
             print(String(repeating: "*", count: 59))
                         
@@ -90,7 +90,7 @@ class Calendar: GameProtocol {
             var d2 = 0
             while d2 < m[n] {
                 println(2) //CHR$(10) = Linefeed
-                print(tab(5))
+                print(tab(4))
                 //Line 460 REM
                 for g in 1...7 {
                     d += 1
@@ -100,10 +100,9 @@ class Calendar: GameProtocol {
                         break
                     } else {
                         if d2 > 0 {
-                            printTab("\(d2)", tab: 8)
-                        } else {
-                            print(tab(8))
+                            print(" \(d2) ")
                         }
+                        print(tab(4 + 8 * g))
                     }
                 }
             }

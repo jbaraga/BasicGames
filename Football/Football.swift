@@ -180,19 +180,21 @@ class Football: GameProtocol {
     private func printPlaycard() {
         consoleIO.startHardcopy()
         println("Team 1 play chart")
-        println("No." + tab(6) + "Play")
+        println("No.      Play")
+        println()
         for (index, play) in plays1.enumerated() {
-            printTab(" \(index + 1)", tab: 6)
-            println(play.stringValue)
+            print(" \(index + 1)")
+            println(tab(6), play.stringValue)
         }
         println(13)
         println("Tear off here" + String(repeating: "-", count: 46))
         println("\u{2029}")  //Page feed (doesn't work)
         println("Team 2 play chart")
-        println("No." + tab(6) + "Play")
+        println("No.      Play")
+        println()
         for (index, play) in plays2.enumerated(){
-            printTab(" \(index + 1)", tab: 6)
-            println(play.stringValue)
+            print(" \(index + 1)")
+            println(tab(6), play.stringValue)
         }
         println(11)
         println("Tear off here" + String(repeating: "-", count: 46))
@@ -262,9 +264,9 @@ class Football: GameProtocol {
             }
             
             if c == 8 {
-                println(tab(27) + "\(team.x - team.y * p) yards")
+                println(tab(27), "\(team.x - team.y * p) yards")
             } else {
-                println(tab(27) + "\(10 - team.y * (p - s)) yards to 1st down")
+                println(tab(27), "\(10 - team.y * (p - s)) yards to 1st down")
             }
             
             printBallLocationOnField()  //Line 910
@@ -353,7 +355,7 @@ class Football: GameProtocol {
         let response = input("Input offensive play, defensive play")
         let values = response.components(separatedBy: ",").compactMap { Int($0.trimmingCharacters(in: .whitespaces)) }
         guard values.count == 2, let index1 = values.first, let index2 = values.last else {
-            println("Illegal play number, check and")
+            println("Illegal play number, retype")
             return getPlay()
         }
         
@@ -366,7 +368,7 @@ class Football: GameProtocol {
             printScore()
             return getPlay()
         default:
-            println("Illegal play number, check and")
+            println("Illegal play number, retype")
             return getPlay()
         }
     }
@@ -546,7 +548,7 @@ class Football: GameProtocol {
     
     //Line 1900
     private func printBallLocationOnField() {
-        println(tab(team.d + 5 + p / 2) + team.m$)  //
+        println(tab(team.d + 5 + p / 2), team.m$)  //
         printField()
     }
     

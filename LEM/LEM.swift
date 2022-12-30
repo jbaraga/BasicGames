@@ -46,6 +46,7 @@ class LEM: GameProtocol {
         // ROCKT2 IS AN INTERACTIVE GAME THAT SIMULATES A LUNAR
         // LANDING IS SIMILAR TO THAT OF THE APOLLO PROGRAM.
         // THERE IS ABSOLUTELY NO CHANCE INVOLVED.
+        println()
         println("Lunar Landing Simulation")
         println()
     }
@@ -101,21 +102,14 @@ class LEM: GameProtocol {
         println("+90 degrees is on a tangent from the direction of orbit")
         println("0 (zero) degrees is directly toward the moon")
         println()
-        print(tab(30))
-        println("-180,180")
-        print(tab(34))
-        println("^")
-        print(tab(27))
-        println("-90 < -+- > 90")
-        print(tab(34))
-        println("!")
-        print(tab(34))
-        println("0")
-        print(tab(23))
-        println("<< Direction of orbit <<")
+        println(tab(30), "-180,180")
+        println(tab(34), "^")
+        println(tab(27), "-90 < -+- > 90")
+        println(tab(34), "!")
+        println(tab(34), "0")
+        println(tab(23), "<< Direction of orbit <<")
         println()
-        print(tab(27))
-        println("Surface of moon")
+        println(tab(27), "Surface of moon")
         println(2)
         println("All angles between -180 and 180 are accepted.")
         
@@ -265,12 +259,12 @@ class LEM: GameProtocol {
             let hvelString = formatter.string(from: horizontalVelocity)
             let fuelString = formatter.string(from: remainingFuelUnits)
             
-            printTab(" " + timeString, tab: 10)
-            printTab(hString, tab: 13)
-            printTab(dString, tab: 14)
-            printTab(vvelString, tab: 12)
-            printTab(hvelString, tab: 11)
-            println(fuelString)
+            print("  " + timeString)
+            print(tab(11), hString)
+            print(tab(24), dString)
+            print(tab(38), vvelString)
+            print(tab(50), hvelString)
+            println(tab(61), fuelString)
         }
         
         //Execution starts here
@@ -377,17 +371,24 @@ class LEM: GameProtocol {
             println("Tranquility Base here -- the Eagle has landed")
             println("Congratulations -- there was no spacecraft damage")
             println("You may now proceed with surface exploration")
+            tryAgain(true)
+            return
         }
         
         tryAgain()
     }
     
     //Lines 1100-1145
-    private func tryAgain() {
+    private func tryAgain(_ success: Bool = false) {
         wait(.long)
         println()
         let result = input("Do you want to try it again (yes/no)")
-        //Egg
+        if result.isEasterEgg, success {
+            showEasterEgg(Egg.lem.filename)
+            end()
+            return
+        }
+        
         if result.isYes {
             isNewPilot = false
             selectInstructions()

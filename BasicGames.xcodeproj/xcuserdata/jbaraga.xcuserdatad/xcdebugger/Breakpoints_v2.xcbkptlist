@@ -46,25 +46,9 @@
             filePath = "StockMarket/StockMarket.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
             landmarkName = "newStockValues()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CAB0A618-D82E-4FAC-AFB9-0028888F0DC9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Bounce/Bounce.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "bounce()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -87,32 +71,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "93D12AFF-76E6-4FBF-A3AB-B6155DEE7112"
+            uuid = "6DAE4D5F-B128-4424-9A4E-F6DECCEA1031"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Bounce/Bounce.swift"
+            filePath = "StockMarket/StockMarket.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "bounce()"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "run()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6A2AFF70-C863-4478-B69C-1447DCAE6E09"
+            uuid = "75C36C49-DDE6-459C-AF24-06EF6C5A4B97"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LEM/LEM.swift"
+            filePath = "Rocket/Rocket.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "390"
-            endingLineNumber = "390"
-            landmarkName = "tryAgain()"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "performLanding()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

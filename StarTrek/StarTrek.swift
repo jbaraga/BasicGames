@@ -176,16 +176,39 @@ class StarTrek: GameProtocol {
         return sqrt(pow(Double(k[(i,1)]) - Double(s1), 2) + pow(Double(k[(i,2)]) - Double(s2), 2))
     }
     
+    //10 REM SUPER STARTREK - MAY 16,1978 - REQUIRES 24K MEMORY
+    //30 REM
+    //40 REM ****        **** STAR TREK ****        ****
+    //50 REM **** SIMULATION OF A MISSION OF THE STARSHIP ENTERPRISE,
+    //60 REM **** AS SEEN ON THE STAR TREK TV SHOW.
+    //70 REM **** ORIGINAL PROGRAM BY MIKE MAYFIELD, MODIFIED VERSION
+    //80 REM **** PUBLISHED IN DEC'S "101 BASIC GAMES", BY DAVE AHL.
+    //90 REM **** MODIFICATIONS TO THE LATTER (PLUS DEBUGGING) BY BOB
+    //100 REM *** LEEDOM - APRIL & DECEMBER 1974,
+    //110 REM *** WITH A LITTLE HELP FROM HIS FRIENDS . . .
+    //120 REM *** COMMENTS, EPITHETS, AND SUGGESTIONS SOLICITED --
+    //130 REM *** SEND TO:  R. C. LEEDOM
+    //140 REM ***           WESTINGHOUSE DEFENSE & ELECTRONICS SYSTEMS CNTR.
+    //150 REM ***           BOX 746, M.S. 338
+    //160 REM ***           BALTIMORE, MD  21203
+    //170 REM ***
+    //180 REM *** CONVERTED TO MICROSOFT 8 K BASIC 3/16/78 BY JOHN BORDERS
+    //190 REM *** LINE NUMBERS FROM VERSION STREK7 OF 1/12/75 PRESERVED AS
+    //200 REM *** MUCH AS POSSIBLE WHILE USING MULTIPLE STATEMENTS PER LINE
+    //205 REM *** SOME LINES ARE LONGER THAN 72 CHARACTERS; THIS WAS DONE
+    //210 REM *** BY USING "?" INSTEAD OF "PRINT" WHEN ENTERING LINES
+    //215 REM ***
+    
     //MARK: Main program
     func run() {
         println(3)
-        println(tab(34) + ",------*------,")
-        println(tab(19) + ",------------   '---  ------'")
-        println(tab(20) + "'-------- --'" + tab(6) + "/ /")
-        println(tab(24) + ",---' '-------/ /--,")
-        println(tab(25) + "'----------------'")
+        println(tab(34), ",------*------,")
+        println(tab(19), ",------------   '---  ------'")
+        println(tab(20), "'-------- --'      / /")
+        println(tab(24), ",---' '-------/ /--,")
+        println(tab(25), "'----------------'")
         println()
-        println(tab(19) + "The USS Enterprise --- NCC-1701")
+        println(tab(19), "The USS Enterprise --- NCC-1701")
         println(3)
         
         //From original Mike Mayfield version
@@ -267,12 +290,11 @@ class StarTrek: GameProtocol {
         println("Your orders are as follows:")
         println("     Destroy the \(k9) Klingon warships wich have invaded")
         println("   the galaxy before they can attack Federation headquarters")
-        println("   on stardate " + String(format: "%.1f", t0 + t9) + "  This gives you \(Int(t9)) days.  There " + x0$)
+        println("   on stardate " + String(format: "%.1f", t0 + t9) + "   This gives you \(Int(t9)) days.  There " + x0$)
         println("   \(b9) starbase" + x$ + " in the galaxy for resupplying your ship")
         println()
-        println("Hit return when ready to accept command")
-        let _ = input()
-        
+        let _ = input("Hit return when ready to accept command", terminator: "")
+        println()
         enterQuadrant()
         
          //Lines 1990-2260 Main Loop
@@ -353,7 +375,7 @@ class StarTrek: GameProtocol {
             //Klingon positions are reset on every entry
             k = Array(repeating: Array(repeating: 0, count: 4), count: 4)
             
-            let z$ = tab(26)  //Each quadrant row is encoded with 8 objects 3 characters long, with space at beginning and end
+            let z$ = String(repeating: " ", count: 26)  //Each quadrant row is encoded with 8 objects 3 characters long, with space at beginning and end
             q$ = [z$, z$, z$, z$, z$, z$, z$, z$.left(17)].joined(separator: "")  //String length is 225
         }
         initializeQuadrant()
@@ -393,7 +415,7 @@ class StarTrek: GameProtocol {
     //MARK: 2290 REM COURSE CONTROL BEGINS HERE
     //2300-3900
     private func navigate() {
-        var c1 = Int(input("Course (1-9)")) ?? -1
+        var c1 = Int(round(Double(input("Course (1-9)")) ?? -1))
         if c1 == 9 { c1 = 1 }
         
         if c1 < 1 || c1 > 9 {
@@ -452,7 +474,7 @@ class StarTrek: GameProtocol {
                             isDamageControlMessagePrinted = true
                             print("Damage control report:   ")
                         }
-                        println(tab(8) + deviceName(for: i) + " repair completed.")
+                        println(deviceName(for: i) + " repair completed.")
                     }
                 }
             }
@@ -726,7 +748,7 @@ class StarTrek: GameProtocol {
                 klingonAttack()
                 return
             }
-            println(tab(16) + "\(x3) , \(y3)")
+            println(tab(16), "\(x3) , \(y3)")
         } while isObject(.emptySpace, at: (x3, y3))  //Line 5050
         
         //Line 5060
@@ -791,7 +813,7 @@ class StarTrek: GameProtocol {
             return
         }
         
-        println("Energy available = \(e + s)")
+        print("Energy available = \(Int(round(e + s))) ")
         if let x = Double(input("Number of units to shields")) {
             if x < 0 || s == x {
                 println("<Shields unchanged>")
@@ -806,8 +828,8 @@ class StarTrek: GameProtocol {
             
             e = e + s - x
             s = x
-            println("Deflector contorl room report:")
-            println("  'Shields now at \(Int(s)) units per your command.'")
+            println("Deflector control room report:")
+            println("  'Shields now at \(Int(round(s))) units per your command.'")
             return
         } else {
             println("<Shields unchanged>")
@@ -854,8 +876,9 @@ class StarTrek: GameProtocol {
         println("Device             State of repair")
         for r1 in 1...8 {
             let device = deviceName(for: r1)
-            let format = d[r1] == 0 ? "%0.f" : "%.2f"
-            println(device + tab(25 - device.count) + String(format: format, d[r1]))
+            let format = d[r1] == 0 ? " %0.f" : " %.2f"
+            print(device)
+            println(tab(25), String(format: format, d[r1]))
         }
         println()
     }
@@ -971,37 +994,37 @@ class StarTrek: GameProtocol {
         let o1$ = Array(repeating: "-", count: 33).joined(separator: "")
         println(o1$)
         
-        let tab = "KLINGONS REMAINING".count + 1
+        let tab1 = 41
+        let tab2 = tab1 + "KLINGONS REMAINING".count + 1
         for i in 1...8 {
             for j in stride(from: ((i - 1) * 24 + 1), through: ((i - 1) * 24 + 22), by: 3) {
                 print(" " + q$.mid(j, length: 3))
             }
-            print(self.tab(8))
             switch i {
             case 1:
-                printTab("STARDATE", tab: tab)
-                println(stardate)
+                print(tab(tab1), "STARDATE")
+                println(tab(tab2), stardate)
             case 2:
-                printTab("CONDITION", tab: tab)
-                println(c$)
+                print(tab(tab1), "CONDITION")
+                println(tab(tab2), c$)
             case 3:
-                printTab("QUADRANT", tab: tab)
-                println("\(q1) , \(q2)")
+                print(tab(tab1), "QUADRANT")
+                println(tab(tab2), "\(q1) , \(q2)")
             case 4:
-                printTab("SECTOR", tab: tab)
-                println("\(s1) , \(s2)")
+                print(tab(tab1), "SECTOR")
+                println(tab(tab2), "\(s1) , \(s2)")
             case 5:
-                printTab("PHOTON TORPEDOES", tab: tab)
-                println("\(p)")
+                print(tab(tab1), "PHOTON TORPEDOES")
+                println(tab(tab2), "\(p)")
             case 6:
-                printTab("TOTAL ENERGY", tab: tab)
-                println("\(e + s)")
+                print(tab(tab1), "TOTAL ENERGY")
+                println(tab(tab2), "\(Int(round(e + s)))")
             case 7:
-                printTab("SHIELDS", tab: tab)
-                println("\(Int(s))")
+                print(tab(tab1), "SHIELDS")
+                println(tab(tab2), "\(Int(round(s)))")
             case 8:
-                printTab("KLINGONS REMAINING", tab: tab)
-                println("\(k9)")
+                print(tab(tab1), "KLINGONS REMAINING")
+                println(tab(tab2), "\(k9)")
             default:
                 fatalError()
             }
@@ -1042,7 +1065,7 @@ class StarTrek: GameProtocol {
             } else {
                 println("Functions available from the library-computer:")
                 ComputerCommand.allCases.forEach {
-                    println(tab(3) + " \($0.rawValue) = " + $0.description)
+                    println(tab(3), " \($0.rawValue) = " + $0.description)
                 }
                 println()
             }
@@ -1052,7 +1075,7 @@ class StarTrek: GameProtocol {
     //MARK: 7390 SETUP TO CHANGE CUM GAL RECORD TO GALAXY MAP
     //Line 7400
     private func galacticMap() {
-        println(tab(24) + "The Galaxy")
+        println(tab(24), "The Galaxy")
         printGalaxy(isMap: true)
     }
     
@@ -1067,18 +1090,19 @@ class StarTrek: GameProtocol {
     
     //Lines 7550-7850
     private func printGalaxy(isMap: Bool = false) {
-        println(tab(7) + (1...8).map{ String($0) }.joined(separator: tab(5)))
-        let o1$ = tab(5) + Array(repeating: "-----", count: 8).joined(separator: " ")
+        println(tab(7), (1...8).map{ String($0) }.joined(separator: "     "))
+        let o1$ = "     " + Array(repeating: "-----", count: 8).joined(separator: " ")
         println(o1$)
         for i in 1...8 {
             print(" \(i) ")
             if isMap {
                 //Lines 7740-7800
-                let name1 = quadrantName(for: (i, 1), regionOnly: true)
-                let j0 = 11 - Int(0.5 * Double(name1.count))
-                let name2 = quadrantName(for: (i, 5), regionOnly: true)
-                let j1 = 36 - (j0 + name1.count) - Int(0.5 * Double(name2.count))
-                println(tab(j0) + name1 + tab(j1) + name2)
+                var name = quadrantName(for: (i, 1), regionOnly: true)
+                var j0 = 15 - Int(round(0.5 * Double(name.count)))
+                print(tab(j0), name)
+                name = quadrantName(for: (i, 5), regionOnly: true)
+                j0 = 39 - Int(round(0.5 * Double(name.count)))
+                println(tab(j0), name)
                 println(o1$)
             } else {
                 //Lines 7630-7720
@@ -1340,16 +1364,16 @@ class StarTrek: GameProtocol {
     }
     
     //MARK: Instructions
-    //Instructions for "Super Star Trek"  Mar 5, 1978
+    //10 REM INSTRUCTIONS FOR "SUPER STARTREK"  MAR 5, 1978
     func printInstructions() {
         println()
-        println(tab(10) + "*************************************")
-        println(tab(10) + "*                                   *")
-        println(tab(10) + "*                                   *")
-        println(tab(10) + "*      * * SUPER STAR TREK * *      *")
-        println(tab(10) + "*                                   *")
-        println(tab(10) + "*                                   *")
-        println(tab(10) + "*************************************")
+        println(tab(10), "*************************************")
+        println(tab(10), "*                                   *")
+        println(tab(10), "*                                   *")
+        println(tab(10), "*      * * SUPER STAR TREK * *      *")
+        println(tab(10), "*                                   *")
+        println(tab(10), "*                                   *")
+        println(tab(10), "*************************************")
         println(2)
         println("     Instructions for 'Super Star Trek'")
         println()

@@ -66,14 +66,14 @@ class Animal: GameProtocol {
         if response.isYes {
             println("Why not try another animal?")
         } else {
-            let animal = input("The animal you were thinking of was a")
+            let animal = input("The animal you were thinking of was a ")
             println("Please type in a question that would distinguish a")
             println(animal + " from a " + guess)
             let question = input()
             
             var answer = Response.other
             while !(answer.isYesOrNo) {
-                answer = Response(input("For a " + animal + " the answer would be"))
+                answer = Response(input("For a " + animal + " the answer would be "))
             }
             
             a$.append(a$[index])
@@ -126,7 +126,7 @@ class Animal: GameProtocol {
         var x = 0
         a$.forEach { entry in
             if entry.left(2) == "/a" {
-                printTab(entry.removingFirst(2), tab: 12)
+                print(tab(x * 12), entry.removingFirst(2))
                 x += 1
                 if x > 5 {
                     println()

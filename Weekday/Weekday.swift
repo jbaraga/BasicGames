@@ -45,7 +45,7 @@ class Weekday: GameProtocol {
         let b = weekday(y: y, m: m, d: d)
         let days1 = (y1 * 12 + m1) * 31 + d1
         let days = (y * 12 + m) * 31 + d
-        print("\(m) / \(d) / \(y)  ")
+        print(" \(m) / \(d) / \(y)  ")
         switch days {
         case _ where days1 < days:
             print("will be a ")
@@ -103,10 +103,9 @@ class Weekday: GameProtocol {
             println("***Happy Birthday***")
         }
         
-        print(tab(27))
-        printTab("Years", tab: 12)
-        printTab("Months", tab: 12)
-        println("Days")
+        print(tab(28), "Years")
+        print(tab(42), "Months")
+        println(tab(56), "Days")
         printInterval(message: "Your age if birthdate", delta)
         
         //910 REM CALCULATE RETIREMENT DATE.
@@ -128,7 +127,7 @@ class Weekday: GameProtocol {
         printInterval(message: message, calculateInterval(0.23 * a8, &delta))
         printInterval(message: "You have relaxed", delta)
         println()
-        println(tab(12) + "*You may retire in \(e)*")
+        println(tab(12), "*You may retire in \(e)*")
         wait(.short)
         stop()
     }
@@ -159,7 +158,7 @@ class Weekday: GameProtocol {
     }
     
     //Compact method
-    //From https://www.hackerearth.com/blog/developers/how-to-find-the-day-of-a-week/, adjusting b so that 1 = Sundat
+    //From https://www.hackerearth.com/blog/developers/how-to-find-the-day-of-a-week/, adjusting b so that 1 = Sunday
     func wd(y: Int, m: Int, d: Int) -> Int {
         let t: [Int] = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4]
         let y0 = m < 3 ? y - 1 : y
@@ -168,10 +167,10 @@ class Weekday: GameProtocol {
     }
     
     private func printInterval(message: String, _ interval: Interval) {
-        printTab(message, tab: 28)
-        printTab("\(interval.years)", tab: 12)
-        printTab("\(interval.months)", tab: 12)
-        println("\(interval.days)")
+        print(message)
+        print(tab(28), " \(interval.years)")
+        print(tab(42), " \(interval.months)")
+        println(tab(56), " \(interval.days)")
     }
 
     //1360 REM CALCULATE TIME IN YEARS, MONTHS, AND DAYS

@@ -27,17 +27,18 @@ struct EggView: View {
     
     @ViewBuilder
     var contentView: some View {
-        let pdfView = self.pdfView
-        GeometryReader { geometry in
-            HSplitView {
-                GeometryReader { leftPaneGeometry in
-                    ThumbnailView(pdfView: pdfView, size: leftPaneGeometry.size)
-                        .frame(maxWidth: geometry.size.width * 0.5)
-                }
-                PDFViewRepresentable(pdfView: pdfView)
-                    .frame(minWidth: geometry.size.width * 0.5)
-            }
-        }
+//        let pdfView = self.pdfView
+//        GeometryReader { geometry in
+//            HSplitView {
+//                GeometryReader { leftPaneGeometry in
+//                    ThumbnailView(pdfView: pdfView, size: leftPaneGeometry.size)
+//                        .frame(maxWidth: geometry.size.width * 0.5)
+//                }
+//                PDFViewRepresentable(pdfView: pdfView)
+//                    .frame(minWidth: geometry.size.width * 0.5)
+//            }
+//        }
+        PDFViewRepresentable(pdfView: pdfView)
         .onAppear {
             document.unlock(withPassword: pwd)
             pdfView.document = document

@@ -231,11 +231,11 @@ class Joust: GameProtocol {
     }
         
     func run() {
-        println(tab(26) + "Joust")
-        println(tab(20) + "Creative Computing")
-        println(tab(18) + "Morristown, New Jersey")
+        println(tab(26), "Joust")
+        println(tab(20), "Creative Computing")
+        println(tab(18), "Morristown, New Jersey")
         println(3)
-        let name = input("What is hour name, please")
+        let name = input("What is your name, please")
         println("Sir " + name + ", you are a medieval knight in a jousting tournament.")
         println("The prize to the winner is the princess' hand in marriage.")
         println("To win, you must beat four other knights.")

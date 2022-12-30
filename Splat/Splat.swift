@@ -137,6 +137,19 @@ class Splat: GameProtocol {
             return
         }
         
+        response = .other
+        while !response.isYesOrNo {
+            response = Response(input("Please"))
+            if response == .other {
+                print("Yes or no ")
+            }
+        }
+        
+        if response == .yes {
+            getInputs()
+            return
+        }
+        
         println("SSSSSSSSSS.")
         wait(.short)
         
@@ -148,8 +161,10 @@ class Splat: GameProtocol {
     
     //Lines 218-
     private func jump(d1: Double, v: Double, a: Double, t: Double) {
-        println("Time (sec)" + tab(4) + "Dist to Fall (Ft)")
-        println(String(repeating: "=", count: 10) + tab(4) + String(repeating: "=", count: 17))
+        print("Time (sec)")
+        println(tab(14), "Dist to Fall (Ft)")
+        print(String(repeating: "=", count: 10))
+        println(tab(14), String(repeating: "=", count: 17))
         
         var d = d1
         for i in stride(from: 0, through: t, by: t / 8) {
@@ -162,8 +177,8 @@ class Splat: GameProtocol {
                     return
                 }
                 
-                printTab("\(i)", tab: 15)
-                println("\(d)")
+                print(" \(i)")
+                println(tab(14), String(format: " %.2f", d))
             } else {
                 println(String(format: "Terminal velocity reached at T plus %.6f seconds", v / a))
                 for i1 in stride(from: i, through: t, by: t / 8) {
@@ -175,8 +190,8 @@ class Splat: GameProtocol {
                         return
                     }
                     
-                    printTab("\(i1)", tab: 15)
-                    println("\(d)")
+                    print(" \(i1)")
+                    println(tab(14), " \(d)")
                 }
                 break
             }

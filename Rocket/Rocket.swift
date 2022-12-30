@@ -30,7 +30,7 @@ class Rocket: GameProtocol {
         println()
         println("G O O D  L U C K ! ! !")
         println(2)
-        println("SEC" + tab(2) + "FEET" + tab(3) + "SPEED" + tab(3) + "FUEL" + tab(5) + "PLOT OF DISTANCE")
+        println("SEC  FEET   SPEED   FUEL     PLOT OF DISTANCE")
         println()
         
         var t = 0  //Elapsed time (s)
@@ -42,11 +42,12 @@ class Rocket: GameProtocol {
         
         //Main loop
         while h > 0 {
-            printTab(" \(t)", tab: 5)
-            printTab(String(format: "%.1f", h), tab: 7)
-            printTab(String(format: "%.1f", v), tab: 8)
-            printTab(String(format: "%.1f", f), tab: 9)
-            println("I" + tab(Int(round(h/12))) + "*")
+            print(" \(t)")
+            print(tab(4), String(format: " %.1f", h))
+            print(tab(12), String(format: " %.0f", v))
+            print(tab(20), String(format: " %.0f", f))
+            print(tab(29), "I")
+            println(tab(Int((h/12)) + 29), "*")
             b = f > 0 ? Double(input()) ?? 0 : 0  //Only input for burn rate while fuel available
             if b < 0 { b = 0 }
             if b > 30 { b = 30 }
@@ -97,6 +98,7 @@ class Rocket: GameProtocol {
         if response.isYes {
             performLanding()
         } else {
+            println()
             println("Control out.")
             end()
         }

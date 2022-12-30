@@ -57,6 +57,7 @@ class ConsoleIO {
         return form
     }()
     
+    private var cursor = 0  //x position for tab
     private var isRecording = false
     private var hardcopyString = ""
     
@@ -137,9 +138,9 @@ class ConsoleIO {
 //        NSSound.beep()
     }
     
-    private func throttledWrite(_ message: String, suppressNewline: Bool = false) {
+    private func throttledWrite(_ message: String, terminateWithNewLine: Bool = true) {
         if isRecording {
-            hardcopyString += message.uppercased() + (suppressNewline ? "" : "\n")
+            hardcopyString += message.uppercased() + (terminateWithNewLine ? "\n" : "")
         }
         
         message.uppercased().forEach {
@@ -148,8 +149,11 @@ class ConsoleIO {
             Thread.sleep(forTimeInterval: delayAfterCharacter)
         }
         
-        if !suppressNewline {
+        cursor += message.count
+        
+        if terminateWithNewLine {
             Swift.print()
+            cursor = 0
             Thread.sleep(forTimeInterval: delayAfterNewLine)
         }
     }
@@ -161,7 +165,7 @@ class ConsoleIO {
     }
     
     func print(_ message: String) {
-        throttledWrite(message, suppressNewline: true)
+        throttledWrite(message, terminateWithNewLine: false)
     }
     
     func println(_ message: String) {
@@ -171,17 +175,14 @@ class ConsoleIO {
     func println(_ number: Int = 1) {
         throttledNewLine(number)
     }
-    
-    func printPrompt(_ message: String) {
-        throttledWrite(message, suppressNewline: true)
-    }
-    
+        
     func getInput(terminator: String? = nil) -> String {
-        throttledWrite((terminator ?? promptCharacter) + " ", suppressNewline: true)
+        print((terminator ?? promptCharacter) + " ")
 
         isAwaitingInput = true
         defer {
             isAwaitingInput = false
+            cursor = 0
         }
         
         let keyboard = FileHandle.standardInput
@@ -190,6 +191,11 @@ class ConsoleIO {
             hardcopyString += inputString
         }
         return inputString.trimmingCharacters(in: .newlines)
+    }
+    
+    func tab(_ position: Int) -> String {
+        guard cursor < position else { return "" }
+        return String(repeating: " ", count: position - cursor)
     }
         
     //MARK: Hardcopy printing functions

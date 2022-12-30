@@ -35,35 +35,47 @@ class OregonTrail: GameProtocol {
     
     private let delayAfterInput = 0.5  //Seconds after hitting return
     private let TotalCash = 700
+    
+    //10 REM PROGRAM NAME - OREGON        VERSION:01/01/78
+    //20 REM ORIGINAL PROGRAMMING BY BILL HEINEMANN - 1971
+    //30 REM SUPPORT RESEARCH AND MATERIALS BY DON RAWITSCH,
+    //40 REM      MINNESOTA EDUCATIONAL COMPUTING CONSORTIUM STAFF
+    //50 REM CDC CYBER 70/73-26     BASIC 3.1
+    //60 REM DOCUMENTATION BOOKLET 'OREGON' AVAILABLE FROM
+    //61 REM    MECC SUPPORT SERVICES
+    //62 REM    2520 BROADWAY DRIVE
+    //63 REM    ST. PAUL, MN  55113
+    //80 REM
+    //150 REM  *FOR THE MEANING OF THE VARIABLES USED, LIST LINES 6470-6790*
+    //155 REM
         
-    //MARK:-Main program
+    //MARK: Main program
     func run() {
         //Initialize game
-        var animals = 0  //A
-        var ammunition = 0  //B
-        var clothing = 0 //C
-        var food = 0 //F
+        var animals = 0  //A - amount spent on animals
+        var ammunition = 0  //B - ammount spent on ammunition
+        var clothing = 0 //C - amount spend on clothing
+        var food = 0 //F - amount spent on food
         var supplies = 0  //M1 - amount spent on miscellaneous supplies
-//        var amountSpentAtFort = 0  //P
-        var cash = 0 //T
+        var cash = 0 //T - cash left over after initial purchase
         
         var foodChoice = 0  //E
         
-        var eventCounter = 0  //D1
+        var eventCounter = 0  //D1 - counter in generating events
         var turnCounter = 0 //D3 - turn number for setting date
-        var eventRandomNumber = 0  //R1
+        var eventRandomNumber = 0  //R1 - random number in choosing events
         
-        var mileageThroughPreviousTurn = 0 //M2
+        var mileageThroughPreviousTurn = 0 //M2 - total mileage up through previous turn
         var totalMileage = 0  //M - total mileage whole trip
         var fractionOfTwoWeeksTraveledFinalTurn = 0.0  //F9
         
-        var shootingLevel: ShootingLevel!  //D9 - shooting expertise level
+        var shootingLevel = ShootingLevel.unspecified  //D9 - shooting expertise level
         var ridersAreHostile = false  //S5 - hostility of riders factor
         var tacticalChoice = 0  //T1 - choice of tactics when attacked
         
         var insufficientClothing = false  //C1 - flag for insufficient clothing in cold weather
         var clearedSouthPass = false  //F1 - flag for clearing South Pass
-        var clearedSouthPassInSettingMileage = false  //M9
+        var clearedSouthPassInSettingMileage = false  //M9 - flag for clearing South Pass in setting mileage
         var clearedBlueMountains = false  //F2 - flag for clearing Blue Mountains
         var injury = false  //K8 - flag for injury
         var seriousIllness = false  //S4 - flag for illness
@@ -192,18 +204,18 @@ class OregonTrail: GameProtocol {
         
         //MARK: Subroutines
         func showInventory() {
-            let length = 15
-            printTab("Food", tab: length)
-            printTab("Bullets", tab: length)
-            printTab("Clothing", tab: length)
-            printTab("Misc. Supp.", tab: length)
-            printTab("Cash", tab: length)
+            let tabStop = 15
+            print("Food")
+            print(tab(tabStop), "Bullets")
+            print(tab(tabStop * 2), "Clothing")
+            print(tab(tabStop * 3), "Misc. Supp.")
+            print(tab(tabStop * 4), "Cash")
             println()
-            printTab("\(food)", tab: length)
-            printTab("\(ammunition)", tab: length)
-            printTab("\(clothing)", tab: length)
-            printTab("\(supplies)", tab: length)
-            printTab("\(cash)", tab: length)
+            print(" \(food)")
+            print(tab(tabStop), " \(ammunition)")
+            print(tab(tabStop * 2), " \(clothing)")
+            print(tab(tabStop * 3), " \(supplies)")
+            print(tab(tabStop * 4), " \(cash)")
             println()
         }
         
@@ -975,4 +987,38 @@ class OregonTrail: GameProtocol {
             end()
         }
     }
+    
+    //6470 REM ***IDENTIFICATION OF VARIABLES IN THE PROGRAM***
+    //6480 REM A = AMOUNT SPENT ON ANIMALS
+    //6490 REM B = AMOUNT SPENT ON AMMUNITION
+    //6500 REM B1 = ACUTAL RESPONSE TIME FOR INPUTTING "BANG"
+    //6510 REM B3 = CLOCK TIME AT START OF INPUTTING "BANG"
+    //6520 REM C = AMOUNT SPENT ON CLOTHING
+    //6530 REM C1 = FLAG FOR INSUFFICIENT CLOTHING IN COLD WEATHER
+    //6540 REM C$ = YES/NO RESPONSE TO QUESTIONS
+    //6550 REM D1 = COUNTER IN GENERATION EVENTS
+    //6560 REM D3 = TURN NUMBER FOR SETTING DATE
+    //6570 REM D4 = CURRENT DATE
+    //6580 REM D9 = CHOICE OF SHOOTING EXPERTISE LEVEL
+    //6590 REM E = CHOICE OF EATING
+    //6600 REM F = AMOUNT SPENT ON FOOD
+    //6610 REM F1 = FLAG FOR CLEARING SOUTH PASS
+    //6620 REM F2 = FLAG FOR CLEARING BLUE MOUNTAINS
+    //6630 REM F9 = FRACTION OF 2 WEEKS TRAVELLED ON FINAL TURN
+    //6640 REM K8 = FLAG FOR INJURY
+    //6650 REM L1 = FLAG FOR BLIZZARD
+    //6660 REM M = TOTAL MILEAGE WHOLE TRIP
+    //6670 REM M1 = AMOUNT SPENT ON MISCELLANEOUS SUPPLIES
+    //6680 REM M2 = TOTAL MILEAGE UP THROUGH PREVIOUS TURN
+    //6690 REM M9 = FLAG FOR CLEARING SOUTH PASS IN SETTING MILEAGE
+    //6700 REM P = AMOUNT SPENT ON ITEMS AT THE FORT
+    //6710 REM R1 = RANDOM NUMBER IN CHOOSING EVENTS
+    //6720 REM S4 = FLAG FOR ILLNESS
+    //6730 REM S5 = ""HOSTILITY OF RIDERS"" FACTOR
+    //6740 REM S6 = SHOOTING WORD SELECTOR
+    //6750 REM S$ = VARIATIONS OF SHOOTING WORD
+    //6760 REM T = CASH LEFT OVER AFTER INITIAL PURCHASES
+    //6770 REM T1 = CHOICE OF TACTICS WHEN ATTACKED
+    //6780 REM X = CHOICE OF ACTION FOR EACH TURN
+    //6790 REM X1 = FLAG FOR FORT OPTION
 }

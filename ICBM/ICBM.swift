@@ -11,29 +11,28 @@ import Foundation
 class ICBM: GameProtocol {
         
     func run() {
-        println(tab(26) + "ICBM")
-        println(tab(20) + "Creative Computing")
-        println(tab(18) + "Morristown, New Jersey")
+        println(tab(26), "ICBM")
+        println(tab(20), "Creative Computing")
+        println(tab(18), "Morristown, New Jersey")
         println(3)
         intercept()
     }
     
     func intercept() {
-        printTab("-------Missile------", tab: 28)
-        printTab("--------SAM---------", tab: 28)
-        println("-------")
-        printTab("Miles", tab: 14)
-        printTab("Miles", tab: 14)
-        printTab("Miles", tab: 14)
-        printTab("Miles", tab: 14)
-        println("Heading")
-        printTab("North", tab: 14)
-        printTab("East", tab: 14)
-        printTab("North", tab: 14)
-        printTab("East", tab: 14)
-        println("?")
-        print("----------------------------------")
-        println("-----------------------------")
+        print("-------Missile------")
+        print(tab(28), "--------SAM---------")
+        println(tab(56), "-----")
+        print("Miles")
+        print(tab(14), "Miles")
+        print(tab(28), "Miles")
+        print(tab(42), "Miles")
+        println(tab(56), "Heading")
+        print("North")
+        print(tab(14), "East")
+        print(tab(28), "North")
+        print(tab(42), "East")
+        println(tab(56), "?")
+        println(String(repeating: "-", count: 61))
         
         //ICBM coordinates
         var x = rnd(1) * 800 + 200  //East-West
@@ -46,10 +45,11 @@ class ICBM: GameProtocol {
         let s1 = rnd(1) * 20 + 50 //SAM velocity
         
         for _ in 1...50 {
-            printTab(" \(Int(round(y)))", tab: 14)
-            printTab(" \(Int(round(x)))", tab: 14)
-            printTab(" \(Int(round(y1)))", tab: 14)
-            printTab(" \(Int(round(x1)))", tab: 14)
+            print(" \(Int(round(y))) ")
+            print(tab(14), " \(Int(round(x))) ")
+            print(tab(28), " \(Int(round(y1))) ")
+            print(tab(42), " \(Int(round(x1))) ")
+            print(tab(56))
             
             if x == 0 {
                 println()

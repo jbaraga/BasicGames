@@ -110,11 +110,13 @@ class StockMarket: GameProtocol {
     
         //338 REM PRINT INITIAL PORTFOLIO
         println(2)
-        println("Stock" + tab(24) + "Initials" + tab(5) + "Price/Share")
+        print("Stock")
+        print(tab(28), "Initials")
+        println(tab(42), "Price/Share")
         stocks.forEach { stock in
-            printTab(stock.name, tab: 31)
-            printTab(stock.initials, tab: 12)
-            println(String(format: "%.2f", stock.s))
+            print(stock.name)
+            print(tab(30), stock.initials)
+            println(tab(42), String(format: " %.2f", stock.s))
         }
         println()
         
@@ -168,19 +170,19 @@ class StockMarket: GameProtocol {
         println("**********  End of Day's Trading")
         println(2)
         
-        printTab("Stock", tab: 15)
-        printTab("Price/Share", tab: 15)
-        printTab("Holdings", tab: 15)
-        printTab("Value", tab: 15)
-        println("Net Price Change")
+        print("Stock")
+        print(tab(14), "Price/Share")
+        print(tab(28), "Holdings")
+        print(tab(42), "Value")
+        println(tab(56), "Net Price Change")
         
         stocks.forEach { stock in
-            printTab(stock.initials, tab: 16)
-            printTab(String(format: "%.2f", stock.s), tab: 15)
-            printTab(String(stock.p), tab: 15)
-            printTab(String(format: "%.2f", stock.value), tab: 14)
+            print(stock.initials)
+            print(tab(14), String(format: " %.2f", stock.s))
+            print(tab(28), " \(stock.p)")
+            print(tab(42), String(format: " %.2f", stock.value))
             let format = stock.c < 0 ? "%.2f" : " %.2f"
-            println(String(format: format, stock.c))
+            println(tab(56), String(format: format, stock.c))
         }
 
         isFirstDay = false

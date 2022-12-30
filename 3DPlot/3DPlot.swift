@@ -38,7 +38,7 @@ class TDPlot: GameProtocol {
         func a(_ z: Double) -> Double {
             switch self {
             case .e:
-                return 30 * pow(M_E, -z * z / 100)
+                return 30 * exp(-z * z / 100)
             case .squareRoot:
                 return sqrt(900.01 - z * z) * 0.9 - 2
             case .cosine:
@@ -79,8 +79,7 @@ class TDPlot: GameProtocol {
             for y in stride(from: y1, through: -y1, by: -5) {
                 let z = Int(25 + fn.a(sqrt(x * x + y * y)) - 0.7 * y)
                 if z > l {
-                    let tabIncrement = l == 0 ? z : z - (l + 1)  //Additional space for "*" after first iteration
-                    print(tab(tabIncrement) + "*")
+                    print(tab(z), "*")
                     l = z
                 }
             }

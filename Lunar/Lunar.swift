@@ -9,7 +9,7 @@ import Foundation
 
 
 class Lunar: GameProtocol {
-    private let tab = 12
+    private let tab = 14
     
     func run() {
         printDescription()
@@ -88,10 +88,11 @@ class Lunar: GameProtocol {
         
         //Lines 150-230
         outerLoop: while remainingFuel >= 1e-3 {
-            printTab(elapsedTimeString, tab: tab)
-            printTab(altitudeString, tab: tab)
-            printTab(velocityString, tab: tab)
-            printTab(fuelString, tab: tab)
+            print(elapsedTimeString)
+            print(tab(tab), altitudeString)
+            print(tab(tab * 2), velocityString)
+            print(tab(tab * 3), fuelString)
+            print(tab(tab * 4))
             let rate = Double(input()) ?? 0.0  //K - burn rate lbs per second
             t = 10.0  //T seconds - interval time counter
             
@@ -172,8 +173,6 @@ class Lunar: GameProtocol {
     //Lines 10-110
     private func printDescription() {
         printHeader(title: "Lunar")
-        print(tab(15))
-        println("CREATIVE COMPUTING  MORRISTOWN, NEW JERSEY")
         println()
         println("This is a computer simulation of an Apollo lunar")
         println("landing capsule.")
@@ -197,10 +196,10 @@ class Lunar: GameProtocol {
     
     //Line 130
     private func printHeader() {
-        printTab("SEC", tab: tab)
-        printTab("MI + FT", tab: tab)
-        printTab("MPH", tab: tab)
-        printTab("LB FUEL", tab: tab)
-        println("BURN RATE")
+        print("SEC")
+        print(tab(tab), "MI + FT")
+        print(tab(tab * 2), "MPH")
+        print(tab(tab * 3), "LB FUEL")
+        println(tab(tab * 4), "BURN RATE")
     }
 }
