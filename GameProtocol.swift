@@ -163,7 +163,7 @@ extension GameProtocol {
         return input(terminator: terminator)
     }
     
-    func showEasterEgg(_ filename: String) {
+    func showEasterEgg(_ egg: Egg) {
         consoleIO.wait(.short)
         println()
         println("Opening Easter Egg!!!!!!!!")
@@ -171,7 +171,7 @@ extension GameProtocol {
         
         let center = DistributedNotificationCenter.default()
         //object has to be  string, userInfo nil for this to properly post
-        center.post(name: Notification.Name.showEasterEgg, object: filename, userInfo: nil)
+        center.post(name: Notification.Name.showEasterEgg, object: egg.filename, userInfo: nil)
     }
     
     func end() {

@@ -36,7 +36,7 @@ struct GameLauncherView: View {
     private func FilterButton() -> some View {
         Picker("", selection: $settings.category) {
             ForEach(Category.allCases) { category in
-                Text(category.stringValue)
+                Text(category.stringValue + " (\(category.count(Game.allCases)))")
             }
         }
         .labelsHidden()

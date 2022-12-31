@@ -112,7 +112,7 @@ class AceyDucey: GameProtocol {
         case .yes:
             mainLoop()
         case .easterEgg:
-            showEasterEgg(Egg.aceyDucey.filename)
+            showEasterEgg(.aceyDucey)
             end()
         default:
             end()

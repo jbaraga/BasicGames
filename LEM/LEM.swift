@@ -384,7 +384,7 @@ class LEM: GameProtocol {
         println()
         let result = input("Do you want to try it again (yes/no)")
         if result.isEasterEgg, success {
-            showEasterEgg(Egg.lem.filename)
+            showEasterEgg(.lem)
             end()
             return
         }

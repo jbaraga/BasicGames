@@ -148,7 +148,7 @@ class Animal: GameProtocol {
         case .no:
             reset()
         case .easterEgg:
-            showEasterEgg(Egg.animal.filename)
+            showEasterEgg(.animal)
             stop()
         default:
             break

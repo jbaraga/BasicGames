@@ -152,7 +152,7 @@ class StockMarket: GameProtocol {
                 return
             }
             if response == 99 {
-                showEasterEgg(Egg.stockMarket.filename)
+                showEasterEgg(.stockMarket)
                 wait(.long)
             }
         }

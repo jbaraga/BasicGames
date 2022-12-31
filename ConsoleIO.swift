@@ -135,8 +135,13 @@ class ConsoleIO {
     }
     
     func ringBell() {
-        print(TerminalCommands.bell)
-//        NSSound.beep()
+        do {
+            guard let url = URL(string: "/System/Library/Sounds/Glass.aiff") else { throw CocoaError(.fileNoSuchFile) }
+            guard let sound = NSSound(contentsOf: url, byReference: true) else { throw CocoaError(.fileReadUnknown) }
+            sound.play()
+        } catch {
+            print(TerminalCommands.bell)
+        }
     }
     
     private func throttledWrite(_ message: String, terminateWithNewLine: Bool = true) {

@@ -31,7 +31,7 @@ class Bounce: GameProtocol {
         println()
         
         if velocity == 82964 {
-            showEasterEgg(Egg.bounce.filename)
+            showEasterEgg(.bounce)
             end()
         }
         

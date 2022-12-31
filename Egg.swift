@@ -18,6 +18,7 @@ enum Egg {
     case depthCharge
     case football
     case ftball
+    case guess
     case icbm
     case joust
     case lunar
@@ -53,6 +54,8 @@ enum Egg {
             return "101_022222"
         case .ftball:
             return "101_022222"
+        case .guess:
+            return "101_123122"
         case .icbm:
             return "101_021322"
         case .joust:

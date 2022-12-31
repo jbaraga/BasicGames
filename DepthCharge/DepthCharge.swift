@@ -77,7 +77,7 @@ class DepthCharge: GameProtocol {
         println(2)
         let response = input("Another game (y or n)")
         if response.isEasterEgg {
-            showEasterEgg(Egg.depthCharge.filename)
+            showEasterEgg(.depthCharge)
         }
         
         if response.isYes {

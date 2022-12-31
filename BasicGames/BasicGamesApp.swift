@@ -75,6 +75,7 @@ struct BasicGamesApp: App {
             scene(for: .splat)
             scene(for: .target)
             scene(for: .aceyDucey)
+            scene(for: .guess)
         }
        
         EggScene(url: $eggURL)
@@ -128,9 +129,8 @@ struct BasicGamesApp: App {
 /*
  TO ADD A NEW GAME
  1. Add new CLI target with GameName (i.e. no spaces, camel case).
- 2. Add Group with GameName.
- 3. Add target membership GameName to Extensions, Egg, ConsoleIO, GameProtocol
- 4. Add files to GameName group, with target membership GameName:
+ 2. Add target membership GameName to Extensions, Egg, ConsoleIO, GameProtocol
+ 3. Add files to GameName group, with target membership GameName:
     main.swift
         let game = GameName()
         game.run()

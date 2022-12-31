@@ -20,6 +20,7 @@ enum Game: String, CaseIterable {
     case depthCharge
     case football
     case ftball
+    case guess
     case icbm
     case joust
     case lunar
@@ -45,6 +46,7 @@ enum Game: String, CaseIterable {
         case .depthCharge: return "Depth Charge"
         case .football: return "Football"
         case .ftball: return "Ftball"
+        case .guess: return "Guess"
         case .icbm: return "ICBM"
         case .joust: return "Joust"
         case .lunar: return "Lunar"
@@ -70,12 +72,13 @@ enum Game: String, CaseIterable {
         case .amazing: return .plot
         case .animal: return .characterGuessing
         case .banner: return .plot
-        case .blackjack: return .cardAndBoard
+        case .blackjack: return .gambling
         case .bounce: return .plot
         case .calendar: return .plot
         case .depthCharge: return .matrixManipulation
         case .football: return .sports
         case .ftball: return .sports
+        case .guess: return .characterGuessing
         case .icbm: return .combat
         case .joust: return .combat
         case .lunar: return .space
@@ -109,6 +112,8 @@ enum Game: String, CaseIterable {
             return "suit.club.fill"
         case .calendar:
             return "calendar"
+        case .guess:
+            return "questionmark.app"
         case .stockMarket:
             return "chart.line.uptrend.xyaxis.circle.fill"
         case .target:
@@ -126,6 +131,7 @@ enum Game: String, CaseIterable {
         case .animal: return .black
         case .blackjack: return .black
         case .calendar: return .green
+        case .guess: return .red
         case .starTrek: return .blue
         case .stockMarket: return .purple
         case .target: return .red
@@ -208,4 +214,9 @@ enum Category: String, CaseIterable, Identifiable {
     }
     
     var id: Category { self }
+    
+    func count(_ games: [Game]) -> Int {
+        if self == .all { return games.count }
+        return (games.filter { $0.category == self }).count
+    }
 }

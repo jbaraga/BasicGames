@@ -154,7 +154,7 @@ class Football: GameProtocol {
         println(2)
         let response = input("Do you want instructions")
         if response.isEasterEgg {
-            showEasterEgg(Egg.football.filename)
+            showEasterEgg(.football)
         }
         if response.isYes {
             showInstructions()
@@ -579,7 +579,7 @@ class Football: GameProtocol {
         println()
         let response = input("Hit enter to run", terminator: "")
         if response.isEasterEgg {
-            showEasterEgg(Egg.football.filename)
+            showEasterEgg(.football)
             end()
         }
     }

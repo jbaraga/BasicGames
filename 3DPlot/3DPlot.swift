@@ -97,7 +97,7 @@ class TDPlot: GameProtocol {
         case .no:
             end()
         case .easterEgg:
-            showEasterEgg(Egg.threeDPlot.filename)
+            showEasterEgg(.threeDPlot)
             wait(.long)
             end()
         case .other:
