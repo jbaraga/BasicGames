@@ -34,6 +34,7 @@
 		AD2437CE27EAA10C005D67B6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		AD2437CF27EAA10F005D67B6 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD2437D027EAA112005D67B6 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD2AFA0C295FDCC50036C31F /* 101_123022.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADA84848295FCC7C00F86687 /* 101_123022.pdf */; };
 		AD33FD0927B955DD00E087D1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD33FD0827B955DD00E087D1 /* main.swift */; };
 		AD33FD0E27B9560F00E087D1 /* ICBM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD33FD0D27B9560F00E087D1 /* ICBM.swift */; };
 		AD33FD0F27B9562D00E087D1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
@@ -147,7 +148,6 @@
 		ADA84841295FC2EA00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
 		ADA84842295FC2EB00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
 		ADA84847295FC4F500F86687 /* AceyDucey in Resources */ = {isa = PBXBuildFile; fileRef = ADA84820295FC06F00F86687 /* AceyDucey */; };
-		ADA84849295FCC7C00F86687 /* 101_123022.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADA84848295FCC7C00F86687 /* 101_123022.pdf */; };
 		ADAE10B5277BAD25006762F5 /* BasicGamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */; };
 		ADAE10B9277BAD2D006762F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAE10B8277BAD2D006762F5 /* Assets.xcassets */; };
 		ADAE10BC277BAD2D006762F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAE10BB277BAD2D006762F5 /* Preview Assets.xcassets */; };
@@ -1831,7 +1831,7 @@
 				AD60177927ED3EAC00213C47 /* Target in Resources */,
 				AD56DA2227E60FC900179FAA /* 3DPlot in Resources */,
 				AD3D807627BF2642004226EF /* Weekday in Resources */,
-				ADA84849295FCC7C00F86687 /* 101_123022.pdf in Resources */,
+				AD2AFA0C295FDCC50036C31F /* 101_123022.pdf in Resources */,
 				AD56DA1427E4006300179FAA /* 101_031622.pdf in Resources */,
 				AD6AC931277F346400B9E5DB /* 101_121818.pdf in Resources */,
 				AD36C57827BD40BF00FB1E63 /* 101_021422.pdf in Resources */,
