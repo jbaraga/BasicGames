@@ -48,10 +48,11 @@ struct GameLauncherView: View {
                 Button(action: { launch(game) }) {
                     HStack {
                         image(for: game)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: imageWidth, height: imageWidth, alignment: .center)
-                        .cornerRadius(radius)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: imageWidth, height: imageWidth, alignment: .center)
+                            .foregroundColor(game.imageTint)
+                            .cornerRadius(radius)
                         
                         Text(game.stringValue)
                             .font(.title)
