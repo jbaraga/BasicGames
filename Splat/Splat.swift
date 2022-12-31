@@ -161,10 +161,8 @@ class Splat: GameProtocol {
     
     //Lines 218-
     private func jump(d1: Double, v: Double, a: Double, t: Double) {
-        print("Time (sec)")
-        println(tab(14), "Dist to Fall (Ft)")
-        print(String(repeating: "=", count: 10))
-        println(tab(14), String(repeating: "=", count: 17))
+        println("Time (sec)", "Dist to Fall (Ft)")
+        println(String(repeating: "=", count: 10), String(repeating: "=", count: 17))
         
         var d = d1
         for i in stride(from: 0, through: t, by: t / 8) {
@@ -177,8 +175,7 @@ class Splat: GameProtocol {
                     return
                 }
                 
-                print(" \(i)")
-                println(tab(14), String(format: " %.2f", d))
+                println(" \(i)", String(format: " %.2f", d))
             } else {
                 println(String(format: "Terminal velocity reached at T plus %.6f seconds", v / a))
                 for i1 in stride(from: i, through: t, by: t / 8) {
@@ -190,8 +187,7 @@ class Splat: GameProtocol {
                         return
                     }
                     
-                    print(" \(i1)")
-                    println(tab(14), " \(d)")
+                    println(" \(i1)", " \(d)")
                 }
                 break
             }

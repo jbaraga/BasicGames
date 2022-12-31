@@ -170,19 +170,10 @@ class StockMarket: GameProtocol {
         println("**********  End of Day's Trading")
         println(2)
         
-        print("Stock")
-        print(tab(14), "Price/Share")
-        print(tab(28), "Holdings")
-        print(tab(42), "Value")
-        println(tab(56), "Net Price Change")
+        println("Stock", "Price/Share", "Holdings", "Value", "Net Price Change")
         
         stocks.forEach { stock in
-            print(stock.initials)
-            print(tab(14), String(format: " %.2f", stock.s))
-            print(tab(28), " \(stock.p)")
-            print(tab(42), String(format: " %.2f", stock.value))
-            let format = stock.c < 0 ? "%.2f" : " %.2f"
-            println(tab(56), String(format: format, stock.c))
+            println(stock.initials, String(format: " %.2f", stock.s), " \(stock.p)", String(format: " %.2f", stock.value), String(format: stock.c < 0 ? "%.2f" : " %.2f", stock.c))
         }
 
         isFirstDay = false

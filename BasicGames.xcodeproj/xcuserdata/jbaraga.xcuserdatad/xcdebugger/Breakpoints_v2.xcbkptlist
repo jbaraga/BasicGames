@@ -46,8 +46,8 @@
             filePath = "StockMarket/StockMarket.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "newStockValues()"
             landmarkType = "7">
          </BreakpointContent>
@@ -66,22 +66,6 @@
             endingLineNumber = "220"
             landmarkName = "filename"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6DAE4D5F-B128-4424-9A4E-F6DECCEA1031"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StockMarket/StockMarket.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "run()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

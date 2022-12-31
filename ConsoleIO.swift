@@ -13,6 +13,7 @@ class ConsoleIO {
     public struct TerminalCommands {
         static let reset = "\u{1B}[c"
         static let foregroundColorGreen = "\u{1B}[32m"
+        static let cursorPosition = "\u{1B}6nR"
         static let cursorHome = "\u{1B}[H"
         static let cursorBack = "\u{1B}[1D"
         static let cursorForward = "\u{1B}[1D"
@@ -145,7 +146,7 @@ class ConsoleIO {
         
         message.uppercased().forEach {
             Swift.print($0, terminator: "")
-            fflush(__stdoutp)  //Needed after print with terminator, or freezes
+            fflush(stdout)  //Needed after print with terminator, or freezes
             Thread.sleep(forTimeInterval: delayAfterCharacter)
         }
         

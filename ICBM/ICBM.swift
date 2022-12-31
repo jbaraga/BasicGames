@@ -22,16 +22,8 @@ class ICBM: GameProtocol {
         print("-------Missile------")
         print(tab(28), "--------SAM---------")
         println(tab(56), "-----")
-        print("Miles")
-        print(tab(14), "Miles")
-        print(tab(28), "Miles")
-        print(tab(42), "Miles")
-        println(tab(56), "Heading")
-        print("North")
-        print(tab(14), "East")
-        print(tab(28), "North")
-        print(tab(42), "East")
-        println(tab(56), "?")
+        println("Miles", "Miles", "Miles", "Miles", "Heading")
+        println("North", "East", "North", "East", "?")
         println(String(repeating: "-", count: 61))
         
         //ICBM coordinates
@@ -45,10 +37,7 @@ class ICBM: GameProtocol {
         let s1 = rnd(1) * 20 + 50 //SAM velocity
         
         for _ in 1...50 {
-            print(" \(Int(round(y))) ")
-            print(tab(14), " \(Int(round(x))) ")
-            print(tab(28), " \(Int(round(y1))) ")
-            print(tab(42), " \(Int(round(x1))) ")
+            print(" \(Int(round(y))) ", " \(Int(round(x))) ", " \(Int(round(y1))) ", " \(Int(round(x1))) ")
             print(tab(56))
             
             if x == 0 {

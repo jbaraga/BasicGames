@@ -7,6 +7,14 @@
 
 import AppKit
 
+/*
+ BASIC observations:
+ INT(_:) - rounds Double values in most cases.
+ PRINT(_:); - the semicolon suppresses new line. Numeric values are padded with a space before and after
+ PRINT(_, _, _) - multiple items separated by column are printed at successive tab stops. Default tab stop is 14
+*/
+ 
+
 protocol GameProtocol {
     func run()
 }
@@ -107,6 +115,33 @@ extension GameProtocol {
     /// - Returns: Closure which generates string with spaces needed move cursor to desired tab stop
     func tab(_ x: Int) -> () -> String {
         return { consoleIO.tab(x) }
+    }
+    
+    /// Prints multiple items, each item is printed at successive tab stops
+    /// - Parameters:
+    ///   - message1: String
+    ///   - message2: Optional String
+    ///   - message3: Optional String
+    ///   - message4: Optional String
+    ///   - message5: Optional String
+    ///   - tabInterval: Tab  interval
+    func print(_ message1: String, _ message2: String? = nil, _ message3: String? = nil, _ message4: String? = nil, _ message5: String? = nil, tabInterval: Int = 14) {
+        for (index, string) in ([message1, message2, message3, message4, message5].compactMap { $0 }).enumerated() {
+            print(tab(tabInterval * index), string)
+        }
+    }
+    
+    /// Prints multiple items at successive tab stops, terminating with new line
+    /// - Parameters:
+    ///   - message1: String
+    ///   - message2: Optional String
+    ///   - message3: Optional String
+    ///   - message4: Optional String
+    ///   - message5: Optional String
+    ///   - tabInterval: Tab  interval
+    func println(_ message1: String, _ message2: String? = nil, _ message3: String? = nil, _ message4: String? = nil, _ message5: String? = nil, tabInterval: Int = 14) {
+        print(message1, message2, message3, message4, message5, tabInterval: tabInterval)
+        println()
     }
     
     /// Gets keyboard input
