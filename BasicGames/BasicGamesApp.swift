@@ -74,6 +74,7 @@ struct BasicGamesApp: App {
             scene(for: .bounce)
             scene(for: .splat)
             scene(for: .target)
+            scene(for: .aceyDucey)
         }
        
         EggScene(url: $eggURL)
@@ -124,3 +125,26 @@ struct BasicGamesApp: App {
 }
 
 
+/*
+ TO ADD A NEW GAME
+ 1. Add new CLI target with GameName (i.e. no spaces, camel case).
+ 2. Add Group with GameName.
+ 3. Add target membership GameName to Extensions, Egg, ConsoleIO, GameProtocol
+ 4. Add files to GameName group, with target membership GameName:
+    main.swift
+        let game = GameName()
+        game.run()
+    GameName.swift
+        class GameName: GameProtocol {
+            func run() {}
+        }
+ 5.  Add case gameName to Egg enum; specify name of easter egg pdf file (standard is 101_mmddyy)
+ 6.  Create easter egg pdf with Preview. Edit Permissions... and set read and owner passwords from KeyChain, deselect all privileges. Drag easter egg pdf to Resources group, and select copy to folder.
+ 7.  Add case gameName to Game enum in BasicGames group.
+ 8.  Add image for game either as Image set in Assets or use system image specified in Game enum.
+ 9.  BasicGamesApp - add scene(for: .gameName)
+ 10. BasicGames target -> Build Phases
+        Target Dependencies - add game CLI target
+        Copy Bundle Resources - drag game CLI from Products group
+ 11. Write the game code in GameName.swift. Have fun!
+ */

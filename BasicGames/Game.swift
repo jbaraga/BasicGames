@@ -10,6 +10,7 @@ import SwiftUI
 import PDFKit
 
 enum Game: String, CaseIterable {
+    case aceyDucey
     case amazing
     case animal
     case banner
@@ -34,6 +35,7 @@ enum Game: String, CaseIterable {
     
     var stringValue: String {
         switch self {
+        case .aceyDucey: return "Acey Ducey"
         case .amazing: return "Amazing"
         case .animal: return "Animal"
         case .banner: return "Banner"
@@ -64,6 +66,7 @@ enum Game: String, CaseIterable {
     
     var category: Category {
         switch self {
+        case .aceyDucey: return .cardAndBoard
         case .amazing: return .plot
         case .animal: return .characterGuessing
         case .banner: return .plot
@@ -98,6 +101,8 @@ enum Game: String, CaseIterable {
     
     var imageSystemName: String? {
         switch self {
+        case .aceyDucey:
+            return "suit.heart.fill"
         case .animal:
             return "pawprint.fill"
         case .blackjack:
@@ -110,6 +115,21 @@ enum Game: String, CaseIterable {
             return "target"
         case .threeDPlot:
             return "view.3d"
+        default:
+            return nil
+        }
+    }
+    
+    var imageTint: Color? {
+        switch self {
+        case .aceyDucey: return .red
+        case .animal: return .black
+        case .blackjack: return .black
+        case .calendar: return .green
+        case .starTrek: return .blue
+        case .stockMarket: return .purple
+        case .target: return .red
+        case .threeDPlot: return .black
         default:
             return nil
         }

@@ -118,6 +118,36 @@
 		AD8F43F6278252550067143D /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		AD8F43F7278252550067143D /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		AD8F43F8278252550067143D /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADA84823295FC06F00F86687 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA84822295FC06F00F86687 /* main.swift */; };
+		ADA84827295FC0D100F86687 /* AceyDucey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8481A295FBF8100F86687 /* AceyDucey.swift */; };
+		ADA84828295FC0FC00F86687 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADA84829295FC0FF00F86687 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADA8482A295FC10200F86687 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADA8482C295FC2C500F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA8482D295FC2DC00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA8482E295FC2DD00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA8482F295FC2DE00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84830295FC2DE00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84831295FC2DF00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84832295FC2E000F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84833295FC2E000F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84834295FC2E100F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84835295FC2E200F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84836295FC2E200F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84837295FC2E300F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84838295FC2E400F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84839295FC2E500F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA8483A295FC2E600F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA8483B295FC2E700F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA8483C295FC2E700F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA8483D295FC2E700F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA8483E295FC2E800F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA8483F295FC2E900F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84840295FC2E900F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84841295FC2EA00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84842295FC2EB00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
+		ADA84847295FC4F500F86687 /* AceyDucey in Resources */ = {isa = PBXBuildFile; fileRef = ADA84820295FC06F00F86687 /* AceyDucey */; };
+		ADA84849295FCC7C00F86687 /* 101_123022.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADA84848295FCC7C00F86687 /* 101_123022.pdf */; };
 		ADAE10B5277BAD25006762F5 /* BasicGamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */; };
 		ADAE10B9277BAD2D006762F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAE10B8277BAD2D006762F5 /* Assets.xcassets */; };
 		ADAE10BC277BAD2D006762F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAE10BB277BAD2D006762F5 /* Preview Assets.xcassets */; };
@@ -280,6 +310,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = AD8A002127E77C62009B5679;
 			remoteInfo = StockMarket;
+		};
+		ADA84845295FC4B100F86687 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADA8481F295FC06F00F86687;
+			remoteInfo = AceyDucey;
 		};
 		ADAE10C3277BAD2D006762F5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -468,6 +505,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		ADA8481E295FC06F00F86687 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ADB4DE9927C5BE5F00C04087 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -594,6 +640,12 @@
 		AD8F43E327824DFF0067143D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD8F43EC278250450067143D /* Lunar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lunar.swift; sourceTree = "<group>"; };
 		AD8F43F5278252550067143D /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		ADA84818295FBF6200F86687 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADA8481A295FBF8100F86687 /* AceyDucey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AceyDucey.swift; sourceTree = "<group>"; };
+		ADA84820295FC06F00F86687 /* AceyDucey */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AceyDucey; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADA84822295FC06F00F86687 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADA8482B295FC2C500F86687 /* Egg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg.swift; sourceTree = "<group>"; };
+		ADA84848295FCC7C00F86687 /* 101_123022.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_123022.pdf; sourceTree = "<group>"; };
 		ADAE10B1277BAD25006762F5 /* BasicGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGamesApp.swift; sourceTree = "<group>"; };
 		ADAE10B8277BAD2D006762F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -729,6 +781,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD8F43DE27824DFF0067143D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADA8481D295FC06F00F86687 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -904,6 +963,7 @@
 		AD7D2752277CA5D500F43F39 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ADA84848295FCC7C00F86687 /* 101_123022.pdf */,
 				AD6AC930277F346400B9E5DB /* 101_121818.pdf */,
 				AD56DA1327E4006200179FAA /* 101_031622.pdf */,
 				AD36C57727BD40BF00FB1E63 /* 101_021422.pdf */,
@@ -961,14 +1021,33 @@
 			path = Lunar;
 			sourceTree = "<group>";
 		};
+		ADA84817295FBF1A00F86687 /* AceyDucey */ = {
+			isa = PBXGroup;
+			children = (
+				ADA84818295FBF6200F86687 /* main.swift */,
+				ADA8481A295FBF8100F86687 /* AceyDucey.swift */,
+			);
+			path = AceyDucey;
+			sourceTree = "<group>";
+		};
+		ADA84821295FC06F00F86687 /* AceyDucey */ = {
+			isa = PBXGroup;
+			children = (
+				ADA84822295FC06F00F86687 /* main.swift */,
+			);
+			path = AceyDucey;
+			sourceTree = "<group>";
+		};
 		ADAE10A8277BAD25006762F5 = {
 			isa = PBXGroup;
 			children = (
 				AD7D2752277CA5D500F43F39 /* Resources */,
 				ADAE10B3277BAD25006762F5 /* BasicGames */,
 				AD7D2750277CA5A600F43F39 /* Extensions.swift */,
+				ADA8482B295FC2C500F86687 /* Egg.swift */,
 				AD7D274E277CA59800F43F39 /* ConsoleIO.swift */,
 				AD8F43F5278252550067143D /* GameProtocol.swift */,
+				ADA84817295FBF1A00F86687 /* AceyDucey */,
 				AD6AC927277F33C400B9E5DB /* Amazing */,
 				AD56DA0527E29A5500179FAA /* Animal */,
 				AD36C56927BB410C00FB1E63 /* Banner */,
@@ -992,6 +1071,7 @@
 				AD3D807027BF2623004226EF /* Weekday */,
 				ADAE10C5277BAD2D006762F5 /* BasicGamesTests */,
 				ADAE10CF277BAD2E006762F5 /* BasicGamesUITests */,
+				ADA84821295FC06F00F86687 /* AceyDucey */,
 				ADAE10B2277BAD25006762F5 /* Products */,
 				ADDB4FC6278B589100278FB7 /* Frameworks */,
 			);
@@ -1024,6 +1104,7 @@
 				AD2437C227EAA03E005D67B6 /* Splat */,
 				AD60177027ED3E8000213C47 /* Target */,
 				AD82570527F09A9D00A0ECCB /* Bounce */,
+				ADA84820295FC06F00F86687 /* AceyDucey */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1392,6 +1473,23 @@
 			productReference = AD8F43E127824DFF0067143D /* Lunar */;
 			productType = "com.apple.product-type.tool";
 		};
+		ADA8481F295FC06F00F86687 /* AceyDucey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADA84824295FC06F00F86687 /* Build configuration list for PBXNativeTarget "AceyDucey" */;
+			buildPhases = (
+				ADA8481C295FC06F00F86687 /* Sources */,
+				ADA8481D295FC06F00F86687 /* Frameworks */,
+				ADA8481E295FC06F00F86687 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AceyDucey;
+			productName = AceyDucey;
+			productReference = ADA84820295FC06F00F86687 /* AceyDucey */;
+			productType = "com.apple.product-type.tool";
+		};
 		ADAE10B0277BAD25006762F5 /* BasicGames */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADAE10D6277BAD2E006762F5 /* Build configuration list for PBXNativeTarget "BasicGames" */;
@@ -1403,6 +1501,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				ADA84846295FC4B100F86687 /* PBXTargetDependency */,
 				AD57CCE527AEC22E00AD32C5 /* PBXTargetDependency */,
 				AD56DA0D27E29AD500179FAA /* PBXTargetDependency */,
 				AD150F2827C2AFF800FA3280 /* PBXTargetDependency */,
@@ -1578,7 +1677,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					AD150F0727C1492A00FA3280 = {
@@ -1625,6 +1724,9 @@
 					};
 					AD8F43E027824DFF0067143D = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					ADA8481F295FC06F00F86687 = {
+						CreatedOnToolsVersion = 14.1;
 					};
 					ADAE10B0277BAD25006762F5 = {
 						CreatedOnToolsVersion = 13.0;
@@ -1676,6 +1778,7 @@
 				ADAE10B0277BAD25006762F5 /* BasicGames */,
 				ADAE10C1277BAD2D006762F5 /* BasicGamesTests */,
 				ADAE10CB277BAD2D006762F5 /* BasicGamesUITests */,
+				ADA8481F295FC06F00F86687 /* AceyDucey */,
 				AD6AC925277F33C400B9E5DB /* Amazing */,
 				AD56DA0327E29A5500179FAA /* Animal */,
 				AD36C56727BB410C00FB1E63 /* Banner */,
@@ -1706,6 +1809,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA84847295FC4F500F86687 /* AceyDucey in Resources */,
 				AD57CCE327AEC1D300AD32C5 /* Amazing in Resources */,
 				AD56DA0B27E29AB800179FAA /* Animal in Resources */,
 				AD36C56F27BB416E00FB1E63 /* Banner in Resources */,
@@ -1727,6 +1831,7 @@
 				AD60177927ED3EAC00213C47 /* Target in Resources */,
 				AD56DA2227E60FC900179FAA /* 3DPlot in Resources */,
 				AD3D807627BF2642004226EF /* Weekday in Resources */,
+				ADA84849295FCC7C00F86687 /* 101_123022.pdf in Resources */,
 				AD56DA1427E4006300179FAA /* 101_031622.pdf in Resources */,
 				AD6AC931277F346400B9E5DB /* 101_121818.pdf in Resources */,
 				AD36C57827BD40BF00FB1E63 /* 101_021422.pdf in Resources */,
@@ -1773,6 +1878,7 @@
 				AD150F0B27C1492A00FA3280 /* main.swift in Sources */,
 				AD150F1627C1499400FA3280 /* GameProtocol.swift in Sources */,
 				AD150F1527C1499100FA3280 /* ConsoleIO.swift in Sources */,
+				ADA84833295FC2E000F86687 /* Egg.swift in Sources */,
 				AD150F1427C1498E00FA3280 /* Extensions.swift in Sources */,
 				AD150F1827C149D500FA3280 /* Calendar.swift in Sources */,
 			);
@@ -1785,6 +1891,7 @@
 				AD150F2A27C2B29D00FA3280 /* Blackjack.swift in Sources */,
 				AD150F2D27C2B2AC00FA3280 /* GameProtocol.swift in Sources */,
 				AD150F2C27C2B2A900FA3280 /* ConsoleIO.swift in Sources */,
+				ADA84831295FC2DF00F86687 /* Egg.swift in Sources */,
 				AD150F2B27C2B2A600FA3280 /* Extensions.swift in Sources */,
 				AD150F2227C2AF9F00FA3280 /* main.swift in Sources */,
 			);
@@ -1797,6 +1904,7 @@
 				AD2437CD27EAA101005D67B6 /* Splat.swift in Sources */,
 				AD2437D027EAA112005D67B6 /* GameProtocol.swift in Sources */,
 				AD2437CF27EAA10F005D67B6 /* ConsoleIO.swift in Sources */,
+				ADA8483D295FC2E700F86687 /* Egg.swift in Sources */,
 				AD2437CE27EAA10C005D67B6 /* Extensions.swift in Sources */,
 				AD2437C527EAA03E005D67B6 /* main.swift in Sources */,
 			);
@@ -1809,6 +1917,7 @@
 				AD33FD0E27B9560F00E087D1 /* ICBM.swift in Sources */,
 				AD33FD1127B9563400E087D1 /* GameProtocol.swift in Sources */,
 				AD33FD1027B9563100E087D1 /* ConsoleIO.swift in Sources */,
+				ADA84837295FC2E300F86687 /* Egg.swift in Sources */,
 				AD33FD0F27B9562D00E087D1 /* Extensions.swift in Sources */,
 				AD33FD0927B955DD00E087D1 /* main.swift in Sources */,
 			);
@@ -1821,6 +1930,7 @@
 				AD36C56B27BB410C00FB1E63 /* main.swift in Sources */,
 				AD36C57627BB41E400FB1E63 /* GameProtocol.swift in Sources */,
 				AD36C57527BB41E100FB1E63 /* ConsoleIO.swift in Sources */,
+				ADA84830295FC2DE00F86687 /* Egg.swift in Sources */,
 				AD36C57427BB41DF00FB1E63 /* Extensions.swift in Sources */,
 				AD36C57327BB41BA00FB1E63 /* Banner.swift in Sources */,
 			);
@@ -1833,6 +1943,7 @@
 				AD3D807A27BF268D004226EF /* Weekday.swift in Sources */,
 				AD3D807D27BF26A2004226EF /* GameProtocol.swift in Sources */,
 				AD3D807C27BF269F004226EF /* ConsoleIO.swift in Sources */,
+				ADA84842295FC2EB00F86687 /* Egg.swift in Sources */,
 				AD3D807B27BF269C004226EF /* Extensions.swift in Sources */,
 				AD3D807227BF2623004226EF /* main.swift in Sources */,
 			);
@@ -1845,6 +1956,7 @@
 				AD56DA0727E29A5500179FAA /* main.swift in Sources */,
 				AD56DA1227E29C1800179FAA /* GameProtocol.swift in Sources */,
 				AD56DA1127E29C1500179FAA /* ConsoleIO.swift in Sources */,
+				ADA8482F295FC2DE00F86687 /* Egg.swift in Sources */,
 				AD56DA1027E29C1200179FAA /* Extensions.swift in Sources */,
 				AD56DA0F27E29C0100179FAA /* Animal.swift in Sources */,
 			);
@@ -1857,6 +1969,7 @@
 				AD56DA1C27E60F8700179FAA /* main.swift in Sources */,
 				AD56DA2727E610CB00179FAA /* GameProtocol.swift in Sources */,
 				AD56DA2627E610C900179FAA /* ConsoleIO.swift in Sources */,
+				ADA84841295FC2EA00F86687 /* Egg.swift in Sources */,
 				AD56DA2527E610C500179FAA /* Extensions.swift in Sources */,
 				AD56DA2427E610B700179FAA /* 3DPlot.swift in Sources */,
 			);
@@ -1869,6 +1982,7 @@
 				AD57CCF727AED50800AD32C5 /* main.swift in Sources */,
 				AD57CCFF27AED5A100AD32C5 /* GameProtocol.swift in Sources */,
 				AD57CCFE27AED59D00AD32C5 /* ConsoleIO.swift in Sources */,
+				ADA8483E295FC2E800F86687 /* Egg.swift in Sources */,
 				AD57CCFD27AED59900AD32C5 /* Extensions.swift in Sources */,
 				AD57CCFC27AED53A00AD32C5 /* StarTrek.swift in Sources */,
 			);
@@ -1881,6 +1995,7 @@
 				AD60177B27ED3FA000213C47 /* Target.swift in Sources */,
 				AD60177E27ED3FAE00213C47 /* GameProtocol.swift in Sources */,
 				AD60177D27ED3FAA00213C47 /* ConsoleIO.swift in Sources */,
+				ADA84840295FC2E900F86687 /* Egg.swift in Sources */,
 				AD60177C27ED3FA700213C47 /* Extensions.swift in Sources */,
 				AD60177327ED3E8000213C47 /* main.swift in Sources */,
 			);
@@ -1893,6 +2008,7 @@
 				AD6AC929277F33C400B9E5DB /* main.swift in Sources */,
 				AD8F43F6278252550067143D /* GameProtocol.swift in Sources */,
 				AD8F43F2278250E40067143D /* ConsoleIO.swift in Sources */,
+				ADA8482E295FC2DD00F86687 /* Egg.swift in Sources */,
 				AD8F43EE278250D90067143D /* Extensions.swift in Sources */,
 				AD6AC92F277F340200B9E5DB /* Amazing.swift in Sources */,
 			);
@@ -1905,6 +2021,7 @@
 				AD7D2761277CA7BE00F43F39 /* OregonTrail.swift in Sources */,
 				AD8F43F7278252550067143D /* GameProtocol.swift in Sources */,
 				AD8F43F3278250E50067143D /* ConsoleIO.swift in Sources */,
+				ADA8483C295FC2E700F86687 /* Egg.swift in Sources */,
 				AD8F43EF278250D90067143D /* Extensions.swift in Sources */,
 				AD7D275C277CA79600F43F39 /* main.swift in Sources */,
 			);
@@ -1917,6 +2034,7 @@
 				AD82570827F09A9D00A0ECCB /* main.swift in Sources */,
 				AD82571327F09D0100A0ECCB /* GameProtocol.swift in Sources */,
 				AD82571227F09CFE00A0ECCB /* ConsoleIO.swift in Sources */,
+				ADA84832295FC2E000F86687 /* Egg.swift in Sources */,
 				AD82571127F09CFB00A0ECCB /* Extensions.swift in Sources */,
 				AD82571027F09CF000A0ECCB /* Bounce.swift in Sources */,
 			);
@@ -1929,6 +2047,7 @@
 				AD8A002D27E77D2E009B5679 /* StockMarket.swift in Sources */,
 				AD8A003027E77D3D009B5679 /* GameProtocol.swift in Sources */,
 				AD8A002F27E77D38009B5679 /* ConsoleIO.swift in Sources */,
+				ADA8483F295FC2E900F86687 /* Egg.swift in Sources */,
 				AD8A002E27E77D35009B5679 /* Extensions.swift in Sources */,
 				AD8A002527E77C62009B5679 /* main.swift in Sources */,
 			);
@@ -1941,8 +2060,22 @@
 				AD8F43ED278250450067143D /* Lunar.swift in Sources */,
 				AD8F43F8278252550067143D /* GameProtocol.swift in Sources */,
 				AD8F43F4278250E70067143D /* ConsoleIO.swift in Sources */,
+				ADA84839295FC2E500F86687 /* Egg.swift in Sources */,
 				AD8F43F0278250D90067143D /* Extensions.swift in Sources */,
 				AD8F43E427824DFF0067143D /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADA8481C295FC06F00F86687 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADA84827295FC0D100F86687 /* AceyDucey.swift in Sources */,
+				ADA8482A295FC10200F86687 /* GameProtocol.swift in Sources */,
+				ADA84829295FC0FF00F86687 /* ConsoleIO.swift in Sources */,
+				ADA8482D295FC2DC00F86687 /* Egg.swift in Sources */,
+				ADA84828295FC0FC00F86687 /* Extensions.swift in Sources */,
+				ADA84823295FC06F00F86687 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1958,6 +2091,7 @@
 				ADAFE7AB27B839B8009A7D0B /* Extensions.swift in Sources */,
 				ADAE10B5277BAD25006762F5 /* BasicGamesApp.swift in Sources */,
 				AD162326277BD2C100E919C1 /* TerminalViewRepresentable.swift in Sources */,
+				ADA8482C295FC2C500F86687 /* Egg.swift in Sources */,
 				AD162333277BD81B00E919C1 /* AppDelegate.swift in Sources */,
 				AD162331277BD53600E919C1 /* Game.swift in Sources */,
 			);
@@ -1987,6 +2121,7 @@
 				ADB4DEB627C5BF4600C04087 /* Ftball.swift in Sources */,
 				ADB4DEBC27C5BF5400C04087 /* GameProtocol.swift in Sources */,
 				ADB4DEBA27C5BF5100C04087 /* ConsoleIO.swift in Sources */,
+				ADA84836295FC2E200F86687 /* Egg.swift in Sources */,
 				ADB4DEB827C5BF4D00C04087 /* Extensions.swift in Sources */,
 				ADB4DE9E27C5BE6000C04087 /* main.swift in Sources */,
 			);
@@ -1999,6 +2134,7 @@
 				ADB4DEB427C5BF3400C04087 /* Football.swift in Sources */,
 				ADB4DEBB27C5BF5400C04087 /* GameProtocol.swift in Sources */,
 				ADB4DEB927C5BF5000C04087 /* ConsoleIO.swift in Sources */,
+				ADA84835295FC2E200F86687 /* Egg.swift in Sources */,
 				ADB4DEB727C5BF4D00C04087 /* Extensions.swift in Sources */,
 				ADB4DEAC27C5BEA100C04087 /* main.swift in Sources */,
 			);
@@ -2011,6 +2147,7 @@
 				ADDBCD0427B5504000C369D1 /* main.swift in Sources */,
 				ADDBCD0C27B5510100C369D1 /* GameProtocol.swift in Sources */,
 				ADDBCD0B27B550FE00C369D1 /* ConsoleIO.swift in Sources */,
+				ADA8483B295FC2E700F86687 /* Egg.swift in Sources */,
 				ADDBCD0A27B550F900C369D1 /* Extensions.swift in Sources */,
 				ADDBCD0927B5509F00C369D1 /* Rocket.swift in Sources */,
 			);
@@ -2023,6 +2160,7 @@
 				ADDBCD1727B6B13900C369D1 /* main.swift in Sources */,
 				ADDBCD1F27B6B1A200C369D1 /* GameProtocol.swift in Sources */,
 				ADDBCD1E27B6B19C00C369D1 /* ConsoleIO.swift in Sources */,
+				ADA84838295FC2E400F86687 /* Egg.swift in Sources */,
 				ADDBCD1D27B6B19800C369D1 /* Extensions.swift in Sources */,
 				ADDBCD1C27B6B16E00C369D1 /* Joust.swift in Sources */,
 			);
@@ -2035,6 +2173,7 @@
 				ADF23D5B27864A3100D71CDD /* LEM.swift in Sources */,
 				ADF23D5E27864A7900D71CDD /* GameProtocol.swift in Sources */,
 				ADF23D5D27864A7600D71CDD /* ConsoleIO.swift in Sources */,
+				ADA8483A295FC2E600F86687 /* Egg.swift in Sources */,
 				ADF23D5C27864A7300D71CDD /* Extensions.swift in Sources */,
 				ADF23D56278649F800D71CDD /* main.swift in Sources */,
 			);
@@ -2047,6 +2186,7 @@
 				ADFE458C27B8354A002175D7 /* ConsoleIO.swift in Sources */,
 				ADFE458D27B8354D002175D7 /* GameProtocol.swift in Sources */,
 				ADFE458727B83522002175D7 /* main.swift in Sources */,
+				ADA84834295FC2E100F86687 /* Egg.swift in Sources */,
 				ADFE458B27B8353A002175D7 /* Extensions.swift in Sources */,
 				ADFE458F27B83570002175D7 /* DepthCharge.swift in Sources */,
 			);
@@ -2134,6 +2274,11 @@
 			isa = PBXTargetDependency;
 			target = AD8A002127E77C62009B5679 /* StockMarket */;
 			targetProxy = AD8A002927E77C79009B5679 /* PBXContainerItemProxy */;
+		};
+		ADA84846295FC4B100F86687 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADA8481F295FC06F00F86687 /* AceyDucey */;
+			targetProxy = ADA84845295FC4B100F86687 /* PBXContainerItemProxy */;
 		};
 		ADAE10C4277BAD2D006762F5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2606,6 +2751,32 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 624UDYC489;
 				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ADA84825295FC06F00F86687 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADA84826295FC06F00F86687 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -3206,6 +3377,15 @@
 			buildConfigurations = (
 				AD8F43E627824DFF0067143D /* Debug */,
 				AD8F43E727824DFF0067143D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADA84824295FC06F00F86687 /* Build configuration list for PBXNativeTarget "AceyDucey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADA84825295FC06F00F86687 /* Debug */,
+				ADA84826295FC06F00F86687 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
