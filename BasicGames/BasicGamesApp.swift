@@ -112,14 +112,14 @@ struct BasicGamesApp: App {
                     EggView(document: document)
                 }
             }
-            .handlesExternalEvents(matching: Egg.set)
+            .handlesExternalEvents(matching: Game.eggSet)
         }
     }
     
     private func showPDF(with filename: String) {
         guard let path = Bundle.main.path(forResource: filename, ofType: "pdf") else { return }
         eggURL = URL(fileURLWithPath: path)
-        if let url = Egg.url {
+        if let url = Game.eggURL {
             openURL(url)
         }
     }

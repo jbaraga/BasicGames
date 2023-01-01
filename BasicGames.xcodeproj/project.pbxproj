@@ -93,7 +93,6 @@
 		AD77472F2960D39F00066994 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD77472E2960D39F00066994 /* main.swift */; };
 		AD7747332960D3BA00066994 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		AD7747342960D3BD00066994 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
-		AD7747352960D3C200066994 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
 		AD7747362960D3C600066994 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		AD7747382960D51200066994 /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7747372960D51200066994 /* Guess.swift */; };
 		AD77473A2960D63C00066994 /* 101_123122.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD7747392960D63C00066994 /* 101_123122.pdf */; };
@@ -132,29 +131,6 @@
 		ADA84828295FC0FC00F86687 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		ADA84829295FC0FF00F86687 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		ADA8482A295FC10200F86687 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
-		ADA8482C295FC2C500F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA8482D295FC2DC00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA8482E295FC2DD00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA8482F295FC2DE00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84830295FC2DE00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84831295FC2DF00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84832295FC2E000F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84833295FC2E000F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84834295FC2E100F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84835295FC2E200F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84836295FC2E200F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84837295FC2E300F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84838295FC2E400F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84839295FC2E500F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA8483A295FC2E600F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA8483B295FC2E700F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA8483C295FC2E700F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA8483D295FC2E700F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA8483E295FC2E800F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA8483F295FC2E900F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84840295FC2E900F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84841295FC2EA00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
-		ADA84842295FC2EB00F86687 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8482B295FC2C500F86687 /* Egg.swift */; };
 		ADA84847295FC4F500F86687 /* AceyDucey in Resources */ = {isa = PBXBuildFile; fileRef = ADA84820295FC06F00F86687 /* AceyDucey */; };
 		ADAE10B5277BAD25006762F5 /* BasicGamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */; };
 		ADAE10B9277BAD2D006762F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAE10B8277BAD2D006762F5 /* Assets.xcassets */; };
@@ -177,6 +153,29 @@
 		ADB4DEBA27C5BF5100C04087 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		ADB4DEBB27C5BF5400C04087 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		ADB4DEBC27C5BF5400C04087 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADCC59402961186000E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59412961186100E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59422961186100E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59432961186200E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59442961186300E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59452961186300E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59462961186400E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59472961186400E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59482961186500E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59492961186600E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC594A2961186600E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC594B2961186700E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC594C2961186800E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC594D2961186900E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC594E2961186A00E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC594F2961186B00E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59502961186B00E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59512961186C00E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59522961186C00E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59532961186D00E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59542961187C00E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59552961187D00E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADCC59562961187F00E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
 		ADDB4FC8278B589100278FB7 /* SwiftTerm in Frameworks */ = {isa = PBXBuildFile; productRef = ADDB4FC7278B589100278FB7 /* SwiftTerm */; };
 		ADDBCD0427B5504000C369D1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD0327B5504000C369D1 /* main.swift */; };
 		ADDBCD0927B5509F00C369D1 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD0827B5509F00C369D1 /* Rocket.swift */; };
@@ -672,7 +671,6 @@
 		ADA8481A295FBF8100F86687 /* AceyDucey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AceyDucey.swift; sourceTree = "<group>"; };
 		ADA84820295FC06F00F86687 /* AceyDucey */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AceyDucey; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADA84822295FC06F00F86687 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		ADA8482B295FC2C500F86687 /* Egg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg.swift; sourceTree = "<group>"; };
 		ADA84848295FCC7C00F86687 /* 101_123022.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_123022.pdf; sourceTree = "<group>"; };
 		ADAE10B1277BAD25006762F5 /* BasicGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGamesApp.swift; sourceTree = "<group>"; };
@@ -1089,7 +1087,7 @@
 				AD7D2752277CA5D500F43F39 /* Resources */,
 				ADAE10B3277BAD25006762F5 /* BasicGames */,
 				AD7D2750277CA5A600F43F39 /* Extensions.swift */,
-				ADA8482B295FC2C500F86687 /* Egg.swift */,
+				AD162330277BD53600E919C1 /* Game.swift */,
 				AD7D274E277CA59800F43F39 /* ConsoleIO.swift */,
 				AD8F43F5278252550067143D /* GameProtocol.swift */,
 				ADA84817295FBF1A00F86687 /* AceyDucey */,
@@ -1160,7 +1158,6 @@
 			isa = PBXGroup;
 			children = (
 				AD162329277BD38900E919C1 /* Info.plist */,
-				AD162330277BD53600E919C1 /* Game.swift */,
 				AD162332277BD81B00E919C1 /* AppDelegate.swift */,
 				ADDBCD2327B6F16B00C369D1 /* Preferences.swift */,
 				ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */,
@@ -1948,8 +1945,8 @@
 			files = (
 				AD150F0B27C1492A00FA3280 /* main.swift in Sources */,
 				AD150F1627C1499400FA3280 /* GameProtocol.swift in Sources */,
+				ADCC59462961186400E34C91 /* Game.swift in Sources */,
 				AD150F1527C1499100FA3280 /* ConsoleIO.swift in Sources */,
-				ADA84833295FC2E000F86687 /* Egg.swift in Sources */,
 				AD150F1427C1498E00FA3280 /* Extensions.swift in Sources */,
 				AD150F1827C149D500FA3280 /* Calendar.swift in Sources */,
 			);
@@ -1961,8 +1958,8 @@
 			files = (
 				AD150F2A27C2B29D00FA3280 /* Blackjack.swift in Sources */,
 				AD150F2D27C2B2AC00FA3280 /* GameProtocol.swift in Sources */,
+				ADCC59442961186300E34C91 /* Game.swift in Sources */,
 				AD150F2C27C2B2A900FA3280 /* ConsoleIO.swift in Sources */,
-				ADA84831295FC2DF00F86687 /* Egg.swift in Sources */,
 				AD150F2B27C2B2A600FA3280 /* Extensions.swift in Sources */,
 				AD150F2227C2AF9F00FA3280 /* main.swift in Sources */,
 			);
@@ -1974,8 +1971,8 @@
 			files = (
 				AD2437CD27EAA101005D67B6 /* Splat.swift in Sources */,
 				AD2437D027EAA112005D67B6 /* GameProtocol.swift in Sources */,
+				ADCC59512961186C00E34C91 /* Game.swift in Sources */,
 				AD2437CF27EAA10F005D67B6 /* ConsoleIO.swift in Sources */,
-				ADA8483D295FC2E700F86687 /* Egg.swift in Sources */,
 				AD2437CE27EAA10C005D67B6 /* Extensions.swift in Sources */,
 				AD2437C527EAA03E005D67B6 /* main.swift in Sources */,
 			);
@@ -1987,8 +1984,8 @@
 			files = (
 				AD33FD0E27B9560F00E087D1 /* ICBM.swift in Sources */,
 				AD33FD1127B9563400E087D1 /* GameProtocol.swift in Sources */,
+				ADCC594B2961186700E34C91 /* Game.swift in Sources */,
 				AD33FD1027B9563100E087D1 /* ConsoleIO.swift in Sources */,
-				ADA84837295FC2E300F86687 /* Egg.swift in Sources */,
 				AD33FD0F27B9562D00E087D1 /* Extensions.swift in Sources */,
 				AD33FD0927B955DD00E087D1 /* main.swift in Sources */,
 			);
@@ -2000,8 +1997,8 @@
 			files = (
 				AD36C56B27BB410C00FB1E63 /* main.swift in Sources */,
 				AD36C57627BB41E400FB1E63 /* GameProtocol.swift in Sources */,
+				ADCC59432961186200E34C91 /* Game.swift in Sources */,
 				AD36C57527BB41E100FB1E63 /* ConsoleIO.swift in Sources */,
-				ADA84830295FC2DE00F86687 /* Egg.swift in Sources */,
 				AD36C57427BB41DF00FB1E63 /* Extensions.swift in Sources */,
 				AD36C57327BB41BA00FB1E63 /* Banner.swift in Sources */,
 			);
@@ -2013,8 +2010,8 @@
 			files = (
 				AD3D807A27BF268D004226EF /* Weekday.swift in Sources */,
 				AD3D807D27BF26A2004226EF /* GameProtocol.swift in Sources */,
+				ADCC59562961187F00E34C91 /* Game.swift in Sources */,
 				AD3D807C27BF269F004226EF /* ConsoleIO.swift in Sources */,
-				ADA84842295FC2EB00F86687 /* Egg.swift in Sources */,
 				AD3D807B27BF269C004226EF /* Extensions.swift in Sources */,
 				AD3D807227BF2623004226EF /* main.swift in Sources */,
 			);
@@ -2026,8 +2023,8 @@
 			files = (
 				AD56DA0727E29A5500179FAA /* main.swift in Sources */,
 				AD56DA1227E29C1800179FAA /* GameProtocol.swift in Sources */,
+				ADCC59422961186100E34C91 /* Game.swift in Sources */,
 				AD56DA1127E29C1500179FAA /* ConsoleIO.swift in Sources */,
-				ADA8482F295FC2DE00F86687 /* Egg.swift in Sources */,
 				AD56DA1027E29C1200179FAA /* Extensions.swift in Sources */,
 				AD56DA0F27E29C0100179FAA /* Animal.swift in Sources */,
 			);
@@ -2039,8 +2036,8 @@
 			files = (
 				AD56DA1C27E60F8700179FAA /* main.swift in Sources */,
 				AD56DA2727E610CB00179FAA /* GameProtocol.swift in Sources */,
+				ADCC59552961187D00E34C91 /* Game.swift in Sources */,
 				AD56DA2627E610C900179FAA /* ConsoleIO.swift in Sources */,
-				ADA84841295FC2EA00F86687 /* Egg.swift in Sources */,
 				AD56DA2527E610C500179FAA /* Extensions.swift in Sources */,
 				AD56DA2427E610B700179FAA /* 3DPlot.swift in Sources */,
 			);
@@ -2052,8 +2049,8 @@
 			files = (
 				AD57CCF727AED50800AD32C5 /* main.swift in Sources */,
 				AD57CCFF27AED5A100AD32C5 /* GameProtocol.swift in Sources */,
+				ADCC59522961186C00E34C91 /* Game.swift in Sources */,
 				AD57CCFE27AED59D00AD32C5 /* ConsoleIO.swift in Sources */,
-				ADA8483E295FC2E800F86687 /* Egg.swift in Sources */,
 				AD57CCFD27AED59900AD32C5 /* Extensions.swift in Sources */,
 				AD57CCFC27AED53A00AD32C5 /* StarTrek.swift in Sources */,
 			);
@@ -2065,8 +2062,8 @@
 			files = (
 				AD60177B27ED3FA000213C47 /* Target.swift in Sources */,
 				AD60177E27ED3FAE00213C47 /* GameProtocol.swift in Sources */,
+				ADCC59542961187C00E34C91 /* Game.swift in Sources */,
 				AD60177D27ED3FAA00213C47 /* ConsoleIO.swift in Sources */,
-				ADA84840295FC2E900F86687 /* Egg.swift in Sources */,
 				AD60177C27ED3FA700213C47 /* Extensions.swift in Sources */,
 				AD60177327ED3E8000213C47 /* main.swift in Sources */,
 			);
@@ -2078,8 +2075,8 @@
 			files = (
 				AD6AC929277F33C400B9E5DB /* main.swift in Sources */,
 				AD8F43F6278252550067143D /* GameProtocol.swift in Sources */,
+				ADCC59412961186100E34C91 /* Game.swift in Sources */,
 				AD8F43F2278250E40067143D /* ConsoleIO.swift in Sources */,
-				ADA8482E295FC2DD00F86687 /* Egg.swift in Sources */,
 				AD8F43EE278250D90067143D /* Extensions.swift in Sources */,
 				AD6AC92F277F340200B9E5DB /* Amazing.swift in Sources */,
 			);
@@ -2091,9 +2088,9 @@
 			files = (
 				AD7747362960D3C600066994 /* Extensions.swift in Sources */,
 				AD7747342960D3BD00066994 /* ConsoleIO.swift in Sources */,
+				ADCC594A2961186600E34C91 /* Game.swift in Sources */,
 				AD77472F2960D39F00066994 /* main.swift in Sources */,
 				AD7747332960D3BA00066994 /* GameProtocol.swift in Sources */,
-				AD7747352960D3C200066994 /* Egg.swift in Sources */,
 				AD7747382960D51200066994 /* Guess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2104,8 +2101,8 @@
 			files = (
 				AD7D2761277CA7BE00F43F39 /* OregonTrail.swift in Sources */,
 				AD8F43F7278252550067143D /* GameProtocol.swift in Sources */,
+				ADCC59502961186B00E34C91 /* Game.swift in Sources */,
 				AD8F43F3278250E50067143D /* ConsoleIO.swift in Sources */,
-				ADA8483C295FC2E700F86687 /* Egg.swift in Sources */,
 				AD8F43EF278250D90067143D /* Extensions.swift in Sources */,
 				AD7D275C277CA79600F43F39 /* main.swift in Sources */,
 			);
@@ -2117,8 +2114,8 @@
 			files = (
 				AD82570827F09A9D00A0ECCB /* main.swift in Sources */,
 				AD82571327F09D0100A0ECCB /* GameProtocol.swift in Sources */,
+				ADCC59452961186300E34C91 /* Game.swift in Sources */,
 				AD82571227F09CFE00A0ECCB /* ConsoleIO.swift in Sources */,
-				ADA84832295FC2E000F86687 /* Egg.swift in Sources */,
 				AD82571127F09CFB00A0ECCB /* Extensions.swift in Sources */,
 				AD82571027F09CF000A0ECCB /* Bounce.swift in Sources */,
 			);
@@ -2130,8 +2127,8 @@
 			files = (
 				AD8A002D27E77D2E009B5679 /* StockMarket.swift in Sources */,
 				AD8A003027E77D3D009B5679 /* GameProtocol.swift in Sources */,
+				ADCC59532961186D00E34C91 /* Game.swift in Sources */,
 				AD8A002F27E77D38009B5679 /* ConsoleIO.swift in Sources */,
-				ADA8483F295FC2E900F86687 /* Egg.swift in Sources */,
 				AD8A002E27E77D35009B5679 /* Extensions.swift in Sources */,
 				AD8A002527E77C62009B5679 /* main.swift in Sources */,
 			);
@@ -2143,8 +2140,8 @@
 			files = (
 				AD8F43ED278250450067143D /* Lunar.swift in Sources */,
 				AD8F43F8278252550067143D /* GameProtocol.swift in Sources */,
+				ADCC594D2961186900E34C91 /* Game.swift in Sources */,
 				AD8F43F4278250E70067143D /* ConsoleIO.swift in Sources */,
-				ADA84839295FC2E500F86687 /* Egg.swift in Sources */,
 				AD8F43F0278250D90067143D /* Extensions.swift in Sources */,
 				AD8F43E427824DFF0067143D /* main.swift in Sources */,
 			);
@@ -2156,8 +2153,8 @@
 			files = (
 				ADA84827295FC0D100F86687 /* AceyDucey.swift in Sources */,
 				ADA8482A295FC10200F86687 /* GameProtocol.swift in Sources */,
+				ADCC59402961186000E34C91 /* Game.swift in Sources */,
 				ADA84829295FC0FF00F86687 /* ConsoleIO.swift in Sources */,
-				ADA8482D295FC2DC00F86687 /* Egg.swift in Sources */,
 				ADA84828295FC0FC00F86687 /* Extensions.swift in Sources */,
 				ADA84823295FC06F00F86687 /* main.swift in Sources */,
 			);
@@ -2175,7 +2172,6 @@
 				ADAFE7AB27B839B8009A7D0B /* Extensions.swift in Sources */,
 				ADAE10B5277BAD25006762F5 /* BasicGamesApp.swift in Sources */,
 				AD162326277BD2C100E919C1 /* TerminalViewRepresentable.swift in Sources */,
-				ADA8482C295FC2C500F86687 /* Egg.swift in Sources */,
 				AD162333277BD81B00E919C1 /* AppDelegate.swift in Sources */,
 				AD162331277BD53600E919C1 /* Game.swift in Sources */,
 			);
@@ -2204,8 +2200,8 @@
 			files = (
 				ADB4DEB627C5BF4600C04087 /* Ftball.swift in Sources */,
 				ADB4DEBC27C5BF5400C04087 /* GameProtocol.swift in Sources */,
+				ADCC59492961186600E34C91 /* Game.swift in Sources */,
 				ADB4DEBA27C5BF5100C04087 /* ConsoleIO.swift in Sources */,
-				ADA84836295FC2E200F86687 /* Egg.swift in Sources */,
 				ADB4DEB827C5BF4D00C04087 /* Extensions.swift in Sources */,
 				ADB4DE9E27C5BE6000C04087 /* main.swift in Sources */,
 			);
@@ -2217,8 +2213,8 @@
 			files = (
 				ADB4DEB427C5BF3400C04087 /* Football.swift in Sources */,
 				ADB4DEBB27C5BF5400C04087 /* GameProtocol.swift in Sources */,
+				ADCC59482961186500E34C91 /* Game.swift in Sources */,
 				ADB4DEB927C5BF5000C04087 /* ConsoleIO.swift in Sources */,
-				ADA84835295FC2E200F86687 /* Egg.swift in Sources */,
 				ADB4DEB727C5BF4D00C04087 /* Extensions.swift in Sources */,
 				ADB4DEAC27C5BEA100C04087 /* main.swift in Sources */,
 			);
@@ -2230,8 +2226,8 @@
 			files = (
 				ADDBCD0427B5504000C369D1 /* main.swift in Sources */,
 				ADDBCD0C27B5510100C369D1 /* GameProtocol.swift in Sources */,
+				ADCC594F2961186B00E34C91 /* Game.swift in Sources */,
 				ADDBCD0B27B550FE00C369D1 /* ConsoleIO.swift in Sources */,
-				ADA8483B295FC2E700F86687 /* Egg.swift in Sources */,
 				ADDBCD0A27B550F900C369D1 /* Extensions.swift in Sources */,
 				ADDBCD0927B5509F00C369D1 /* Rocket.swift in Sources */,
 			);
@@ -2243,8 +2239,8 @@
 			files = (
 				ADDBCD1727B6B13900C369D1 /* main.swift in Sources */,
 				ADDBCD1F27B6B1A200C369D1 /* GameProtocol.swift in Sources */,
+				ADCC594C2961186800E34C91 /* Game.swift in Sources */,
 				ADDBCD1E27B6B19C00C369D1 /* ConsoleIO.swift in Sources */,
-				ADA84838295FC2E400F86687 /* Egg.swift in Sources */,
 				ADDBCD1D27B6B19800C369D1 /* Extensions.swift in Sources */,
 				ADDBCD1C27B6B16E00C369D1 /* Joust.swift in Sources */,
 			);
@@ -2256,8 +2252,8 @@
 			files = (
 				ADF23D5B27864A3100D71CDD /* LEM.swift in Sources */,
 				ADF23D5E27864A7900D71CDD /* GameProtocol.swift in Sources */,
+				ADCC594E2961186A00E34C91 /* Game.swift in Sources */,
 				ADF23D5D27864A7600D71CDD /* ConsoleIO.swift in Sources */,
-				ADA8483A295FC2E600F86687 /* Egg.swift in Sources */,
 				ADF23D5C27864A7300D71CDD /* Extensions.swift in Sources */,
 				ADF23D56278649F800D71CDD /* main.swift in Sources */,
 			);
@@ -2269,8 +2265,8 @@
 			files = (
 				ADFE458C27B8354A002175D7 /* ConsoleIO.swift in Sources */,
 				ADFE458D27B8354D002175D7 /* GameProtocol.swift in Sources */,
+				ADCC59472961186400E34C91 /* Game.swift in Sources */,
 				ADFE458727B83522002175D7 /* main.swift in Sources */,
-				ADA84834295FC2E100F86687 /* Egg.swift in Sources */,
 				ADFE458B27B8353A002175D7 /* Extensions.swift in Sources */,
 				ADFE458F27B83570002175D7 /* DepthCharge.swift in Sources */,
 			);
