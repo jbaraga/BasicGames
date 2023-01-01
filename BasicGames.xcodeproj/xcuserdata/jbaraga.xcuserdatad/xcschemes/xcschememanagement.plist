@@ -89,6 +89,11 @@
 			<key>orderHint</key>
 			<integer>13</integer>
 		</dict>
+		<key>Orbit.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>24</integer>
+		</dict>
 		<key>OregonTrail.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>

@@ -26,6 +26,7 @@ enum Game: String, CaseIterable {
     case lunar
     case lem
     case rocket
+    case orbit
     case oregonTrail
     case splat
     case starTrek
@@ -52,6 +53,7 @@ enum Game: String, CaseIterable {
         case .lunar: return "Lunar"
         case .lem: return "LEM"
         case .rocket: return "Rocket"
+        case .orbit: return "Orbit"
         case .oregonTrail: return "Oregon Trail"
         case .splat: return "Splat"
         case .starTrek: return "Star Trek"
@@ -84,6 +86,7 @@ enum Game: String, CaseIterable {
         case .lunar: return .space
         case .lem: return .space
         case .rocket: return .space
+        case .orbit: return .space
         case .oregonTrail: return .educational
         case .splat: return .space
         case .starTrek: return .space
@@ -114,6 +117,8 @@ enum Game: String, CaseIterable {
             return "calendar"
         case .guess:
             return "questionmark.app"
+        case .orbit:
+            return "atom"
         case .stockMarket:
             return "chart.line.uptrend.xyaxis.circle.fill"
         case .target:
@@ -132,6 +137,7 @@ enum Game: String, CaseIterable {
         case .blackjack: return .black
         case .calendar: return .green
         case .guess: return .red
+        case .orbit: return .blue
         case .starTrek: return .blue
         case .stockMarket: return .purple
         case .target: return .red
@@ -187,6 +193,8 @@ enum Game: String, CaseIterable {
             return "101_010222"
         case .rocket:
             return "101_010222"
+        case .orbit:
+            return "101_010123"
         case .oregonTrail:
             return "101_103018"
         case .splat:

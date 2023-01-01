@@ -76,6 +76,7 @@ struct BasicGamesApp: App {
             scene(for: .target)
             scene(for: .aceyDucey)
             scene(for: .guess)
+            scene(for: .orbit)
         }
        
         EggScene(url: $eggURL)
@@ -130,7 +131,7 @@ struct BasicGamesApp: App {
  TO ADD A NEW GAME
  1. Add new CLI target with GameName (i.e. no spaces, camel case).
  2. Add target membership GameName to Extensions, Egg, ConsoleIO, GameProtocol
- 3. Add files to GameName group, with target membership GameName:
+ 3. Add GameName.swift file to GameName group, with target membership GameName:
     main.swift
         let game = GameName()
         game.run()
@@ -138,13 +139,12 @@ struct BasicGamesApp: App {
         class GameName: GameProtocol {
             func run() {}
         }
- 5.  Add case gameName to Egg enum; specify name of easter egg pdf file (standard is 101_mmddyy)
- 6.  Create easter egg pdf with Preview. Edit Permissions... and set read and owner passwords from KeyChain, deselect all privileges. Drag easter egg pdf to Resources group, and select copy to folder.
- 7.  Add case gameName to Game enum in BasicGames group.
- 8.  Add image for game either as Image set in Assets or use system image specified in Game enum.
- 9.  BasicGamesApp - add scene(for: .gameName)
- 10. BasicGames target -> Build Phases
+ 4.  Add case gameName to Game enum in BasicGames group; specify name of easter egg pdf file (standard is 101_mmddyy)
+ 5.  Create easter egg pdf with Preview. Edit Permissions... and set read and owner passwords from KeyChain, deselect all privileges. Drag easter egg pdf to Resources group, and select copy to folder.
+ 6.  Add image for game either as Image set in Assets or use system image specified in Game enum; add optional tint.
+ 7.  BasicGamesApp - add scene(for: .gameName)
+ 8.  BasicGames target -> Build Phases
         Target Dependencies - add game CLI target
         Copy Bundle Resources - drag game CLI from Products group
- 11. Write the game code in GameName.swift. Have fun!
+ 9.  Write the game code in GameName.swift. Have fun!
  */

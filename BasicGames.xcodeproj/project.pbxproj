@@ -97,6 +97,14 @@
 		AD7747382960D51200066994 /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7747372960D51200066994 /* Guess.swift */; };
 		AD77473A2960D63C00066994 /* 101_123122.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD7747392960D63C00066994 /* 101_123122.pdf */; };
 		AD77473D2960D66F00066994 /* Guess in Resources */ = {isa = PBXBuildFile; fileRef = AD77472C2960D39E00066994 /* Guess */; };
+		AD7C3F6B2961D4E900F3C5AA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C3F6A2961D4E900F3C5AA /* main.swift */; };
+		AD7C3F6F2961D51E00F3C5AA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD7C3F702961D52200F3C5AA /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		AD7C3F712961D52500F3C5AA /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD7C3F722961D52800F3C5AA /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD7C3F742961D54000F3C5AA /* Orbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C3F732961D54000F3C5AA /* Orbit.swift */; };
+		AD7C3F762961D6AF00F3C5AA /* 101_010123.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD7C3F752961D6AF00F3C5AA /* 101_010123.pdf */; };
+		AD7C3F792961D6F800F3C5AA /* Orbit in Resources */ = {isa = PBXBuildFile; fileRef = AD7C3F682961D4E900F3C5AA /* Orbit */; };
 		AD7D2754277CA5EE00F43F39 /* 101_103018.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD7D2753277CA5EE00F43F39 /* 101_103018.pdf */; };
 		AD7D275C277CA79600F43F39 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D275B277CA79600F43F39 /* main.swift */; };
 		AD7D2761277CA7BE00F43F39 /* OregonTrail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2760277CA7BE00F43F39 /* OregonTrail.swift */; };
@@ -311,6 +319,13 @@
 			remoteGlobalIDString = AD77472B2960D39E00066994;
 			remoteInfo = Guess;
 		};
+		AD7C3F772961D6E000F3C5AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD7C3F672961D4E900F3C5AA;
+			remoteInfo = Orbit;
+		};
 		AD82570C27F09AC700A0ECCB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
@@ -492,6 +507,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		AD7C3F662961D4E900F3C5AA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		AD7D2757277CA79600F43F39 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -648,6 +672,10 @@
 		AD77472E2960D39F00066994 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD7747372960D51200066994 /* Guess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess.swift; sourceTree = "<group>"; };
 		AD7747392960D63C00066994 /* 101_123122.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_123122.pdf; sourceTree = "<group>"; };
+		AD7C3F682961D4E900F3C5AA /* Orbit */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Orbit; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD7C3F6A2961D4E900F3C5AA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD7C3F732961D54000F3C5AA /* Orbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orbit.swift; sourceTree = "<group>"; };
+		AD7C3F752961D6AF00F3C5AA /* 101_010123.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_010123.pdf; sourceTree = "<group>"; };
 		AD7D274E277CA59800F43F39 /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
 		AD7D2750277CA5A600F43F39 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AD7D2753277CA5EE00F43F39 /* 101_103018.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_103018.pdf; sourceTree = "<group>"; };
@@ -786,6 +814,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD7747292960D39E00066994 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD7C3F652961D4E900F3C5AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1002,6 +1037,15 @@
 			path = Guess;
 			sourceTree = "<group>";
 		};
+		AD7C3F692961D4E900F3C5AA /* Orbit */ = {
+			isa = PBXGroup;
+			children = (
+				AD7C3F6A2961D4E900F3C5AA /* main.swift */,
+				AD7C3F732961D54000F3C5AA /* Orbit.swift */,
+			);
+			path = Orbit;
+			sourceTree = "<group>";
+		};
 		AD7D2752277CA5D500F43F39 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1011,6 +1055,7 @@
 				AD36C57727BD40BF00FB1E63 /* 101_021422.pdf */,
 				AD1F5A2627C46DE1005BE669 /* 101_022022.pdf */,
 				AD82571427F09EA900A0ECCB /* 101_032722.pdf */,
+				AD7C3F752961D6AF00F3C5AA /* 101_010123.pdf */,
 				AD150F1927C1A73200FA3280 /* 101_021922.pdf */,
 				ADAFE7AE27B86106009A7D0B /* 101_021222.pdf */,
 				AD10BD2A27D42E2200422720 /* 101_022222.pdf */,
@@ -1106,6 +1151,7 @@
 				AD8F43E227824DFF0067143D /* Lunar */,
 				ADF23D54278649F800D71CDD /* LEM */,
 				ADDBCD0227B5504000C369D1 /* Rocket */,
+				AD7C3F692961D4E900F3C5AA /* Orbit */,
 				AD7D275A277CA79600F43F39 /* OregonTrail */,
 				AD2437C327EAA03E005D67B6 /* Splat */,
 				AD57CCF527AED50800AD32C5 /* StarTrek */,
@@ -1150,6 +1196,7 @@
 				AD82570527F09A9D00A0ECCB /* Bounce */,
 				ADA84820295FC06F00F86687 /* AceyDucey */,
 				AD77472C2960D39E00066994 /* Guess */,
+				AD7C3F682961D4E900F3C5AA /* Orbit */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1466,6 +1513,23 @@
 			productReference = AD77472C2960D39E00066994 /* Guess */;
 			productType = "com.apple.product-type.tool";
 		};
+		AD7C3F672961D4E900F3C5AA /* Orbit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD7C3F6E2961D4E900F3C5AA /* Build configuration list for PBXNativeTarget "Orbit" */;
+			buildPhases = (
+				AD7C3F642961D4E900F3C5AA /* Sources */,
+				AD7C3F652961D4E900F3C5AA /* Frameworks */,
+				AD7C3F662961D4E900F3C5AA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Orbit;
+			productName = Orbit;
+			productReference = AD7C3F682961D4E900F3C5AA /* Orbit */;
+			productType = "com.apple.product-type.tool";
+		};
 		AD7D2758277CA79600F43F39 /* OregonTrail */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD7D275D277CA79600F43F39 /* Build configuration list for PBXNativeTarget "OregonTrail" */;
@@ -1578,6 +1642,7 @@
 				AD57CCE727AEC25600AD32C5 /* PBXTargetDependency */,
 				AD57CCE927AEC25B00AD32C5 /* PBXTargetDependency */,
 				ADDBCD0E27B5512E00C369D1 /* PBXTargetDependency */,
+				AD7C3F782961D6E000F3C5AA /* PBXTargetDependency */,
 				AD57CCEB27AEC26500AD32C5 /* PBXTargetDependency */,
 				AD2437CA27EAA062005D67B6 /* PBXTargetDependency */,
 				AD57CD0127AED82E00AD32C5 /* PBXTargetDependency */,
@@ -1778,6 +1843,9 @@
 					AD77472B2960D39E00066994 = {
 						CreatedOnToolsVersion = 14.1;
 					};
+					AD7C3F672961D4E900F3C5AA = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					AD7D2758277CA79600F43F39 = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -1859,6 +1927,7 @@
 				AD8F43E027824DFF0067143D /* Lunar */,
 				ADF23D52278649F700D71CDD /* LEM */,
 				ADDBCD0027B5504000C369D1 /* Rocket */,
+				AD7C3F672961D4E900F3C5AA /* Orbit */,
 				AD7D2758277CA79600F43F39 /* OregonTrail */,
 				AD2437C127EAA03E005D67B6 /* Splat */,
 				AD57CCF327AED50800AD32C5 /* StarTrek */,
@@ -1890,6 +1959,7 @@
 				ADDBCD2027B6B2B000C369D1 /* Joust in Resources */,
 				AD57CCED27AEC29F00AD32C5 /* LEM in Resources */,
 				AD57CCEE27AEC2B400AD32C5 /* Lunar in Resources */,
+				AD7C3F792961D6F800F3C5AA /* Orbit in Resources */,
 				AD57CCEF27AEC2BE00AD32C5 /* OregonTrail in Resources */,
 				ADDBCD0F27B5515E00C369D1 /* Rocket in Resources */,
 				AD2437CB27EAA075005D67B6 /* Splat in Resources */,
@@ -1909,6 +1979,7 @@
 				AD33FD1627B9A44700E087D1 /* 101_021322.pdf in Resources */,
 				AD60178027EDFB5F00213C47 /* 101_032422.pdf in Resources */,
 				ADAFE7AD27B83B8F009A7D0B /* 101_021122.pdf in Resources */,
+				AD7C3F762961D6AF00F3C5AA /* 101_010123.pdf in Resources */,
 				ADF23D462784D1FF00D71CDD /* 101_010222.pdf in Resources */,
 				AD10BD2B27D42E2200422720 /* 101_022222.pdf in Resources */,
 				AD7D2754277CA5EE00F43F39 /* 101_103018.pdf in Resources */,
@@ -2092,6 +2163,19 @@
 				AD77472F2960D39F00066994 /* main.swift in Sources */,
 				AD7747332960D3BA00066994 /* GameProtocol.swift in Sources */,
 				AD7747382960D51200066994 /* Guess.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD7C3F642961D4E900F3C5AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7C3F6B2961D4E900F3C5AA /* main.swift in Sources */,
+				AD7C3F722961D52800F3C5AA /* GameProtocol.swift in Sources */,
+				AD7C3F742961D54000F3C5AA /* Orbit.swift in Sources */,
+				AD7C3F712961D52500F3C5AA /* ConsoleIO.swift in Sources */,
+				AD7C3F702961D52200F3C5AA /* Game.swift in Sources */,
+				AD7C3F6F2961D51E00F3C5AA /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2349,6 +2433,11 @@
 			isa = PBXTargetDependency;
 			target = AD77472B2960D39E00066994 /* Guess */;
 			targetProxy = AD77473B2960D65400066994 /* PBXContainerItemProxy */;
+		};
+		AD7C3F782961D6E000F3C5AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD7C3F672961D4E900F3C5AA /* Orbit */;
+			targetProxy = AD7C3F772961D6E000F3C5AA /* PBXContainerItemProxy */;
 		};
 		AD82570D27F09AC700A0ECCB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2743,6 +2832,32 @@
 			name = Debug;
 		};
 		AD7747312960D39F00066994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD7C3F6C2961D4E900F3C5AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD7C3F6D2961D4E900F3C5AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -3461,6 +3576,15 @@
 			buildConfigurations = (
 				AD7747302960D39F00066994 /* Debug */,
 				AD7747312960D39F00066994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD7C3F6E2961D4E900F3C5AA /* Build configuration list for PBXNativeTarget "Orbit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7C3F6C2961D4E900F3C5AA /* Debug */,
+				AD7C3F6D2961D4E900F3C5AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
