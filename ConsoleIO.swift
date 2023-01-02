@@ -25,12 +25,14 @@ class ConsoleIO {
     }
     
     public enum Delay {
+        case veryShort
         case afterEntry
         case short
         case long
         
         var value: Double {
             switch self {
+            case .veryShort: return 0.2
             case .afterEntry: return 0.5
             case .short: return 1
             case .long: return 2

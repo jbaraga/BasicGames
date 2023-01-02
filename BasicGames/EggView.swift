@@ -42,6 +42,7 @@ struct EggView: View {
         .onAppear {
             document.unlock(withPassword: pwd)
             pdfView.document = document
+            pdfView.scrollToBeginningOfDocument(self)
         }
     }
 

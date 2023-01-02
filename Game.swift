@@ -18,6 +18,7 @@ enum Game: String, CaseIterable {
     case bounce
     case calendar
     case depthCharge
+    case digits
     case football
     case ftball
     case guess
@@ -45,6 +46,7 @@ enum Game: String, CaseIterable {
         case .bounce: return "Bounce"
         case .calendar: return "Calendar"
         case .depthCharge: return "Depth Charge"
+        case .digits: return "Digits"
         case .football: return "Football"
         case .ftball: return "Ftball"
         case .guess: return "Guess"
@@ -78,6 +80,7 @@ enum Game: String, CaseIterable {
         case .bounce: return .plot
         case .calendar: return .plot
         case .depthCharge: return .matrixManipulation
+        case .digits: return .logic
         case .football: return .sports
         case .ftball: return .sports
         case .guess: return .characterGuessing
@@ -115,6 +118,8 @@ enum Game: String, CaseIterable {
             return "suit.club.fill"
         case .calendar:
             return "calendar"
+        case .digits:
+            return "hand.raised.fingers.spread.fill"
         case .guess:
             return "questionmark.app"
         case .orbit:
@@ -133,15 +138,16 @@ enum Game: String, CaseIterable {
     var imageTint: Color? {
         switch self {
         case .aceyDucey: return .red
-        case .animal: return .black
+        case .animal: return .brown
         case .blackjack: return .black
         case .calendar: return .green
-        case .guess: return .red
+        case .digits: return .teal
+        case .guess: return .mint
         case .orbit: return .blue
         case .starTrek: return .blue
         case .stockMarket: return .purple
         case .target: return .red
-        case .threeDPlot: return .black
+        case .threeDPlot: return .indigo
         default:
             return nil
         }
@@ -177,6 +183,8 @@ enum Game: String, CaseIterable {
             return "101_021922"
         case .depthCharge:
             return "101_021222"
+        case .digits:
+            return "101_010223"
         case .football:
             return "101_022222"
         case .ftball:
