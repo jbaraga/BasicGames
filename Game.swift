@@ -19,6 +19,7 @@ enum Game: String, CaseIterable {
     case calendar
     case depthCharge
     case digits
+    case evenWins1
     case football
     case ftball
     case guess
@@ -47,6 +48,7 @@ enum Game: String, CaseIterable {
         case .calendar: return "Calendar"
         case .depthCharge: return "Depth Charge"
         case .digits: return "Digits"
+        case .evenWins1: return "Even Wins (v1)"
         case .football: return "Football"
         case .ftball: return "Ftball"
         case .guess: return "Guess"
@@ -81,6 +83,7 @@ enum Game: String, CaseIterable {
         case .calendar: return .plot
         case .depthCharge: return .matrixManipulation
         case .digits: return .logic
+        case .evenWins1: return .removeObject
         case .football: return .sports
         case .ftball: return .sports
         case .guess: return .characterGuessing
@@ -101,7 +104,12 @@ enum Game: String, CaseIterable {
     }
     
     var executableName: String {
-        return stringValue.replacingOccurrences(of: " ", with: "")
+        switch self {
+        case .evenWins1:
+            return "EvenWins1"
+        default:
+            return stringValue.replacingOccurrences(of: " ", with: "")
+        }
     }
     
     var imageName: String {
@@ -185,6 +193,8 @@ enum Game: String, CaseIterable {
             return "101_021222"
         case .digits:
             return "101_010223"
+        case .evenWins1:
+            return "101_010823"
         case .football:
             return "101_022222"
         case .ftball:

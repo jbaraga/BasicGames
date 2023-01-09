@@ -79,6 +79,14 @@
 		AD57CCFE27AED59D00AD32C5 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD57CCFF27AED5A100AD32C5 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		AD57CD0227AED83F00AD32C5 /* StarTrek in Resources */ = {isa = PBXBuildFile; fileRef = AD57CCF427AED50800AD32C5 /* StarTrek */; };
+		AD5C22C4296B90AB0067A2EF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5C22C3296B90AB0067A2EF /* main.swift */; };
+		AD5C22C9296B90DA0067A2EF /* EvenWins1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5C22C8296B90DA0067A2EF /* EvenWins1.swift */; };
+		AD5C22CA296B90ED0067A2EF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		AD5C22CB296B90F00067A2EF /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD5C22CC296B90F40067A2EF /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD5C22CE296B92EB0067A2EF /* 101_010823.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD5C22CD296B92EB0067A2EF /* 101_010823.pdf */; };
+		AD5C22D1296B93390067A2EF /* EvenWins1 in Resources */ = {isa = PBXBuildFile; fileRef = AD5C22C1296B90AB0067A2EF /* EvenWins1 */; };
+		AD5C22D2296B96D90067A2EF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		AD60176B27ED2C7200213C47 /* 101_032222.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD60176A27ED2C7200213C47 /* 101_032222.pdf */; };
 		AD60177327ED3E8000213C47 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60177227ED3E8000213C47 /* main.swift */; };
 		AD60177927ED3EAC00213C47 /* Target in Resources */ = {isa = PBXBuildFile; fileRef = AD60177027ED3E8000213C47 /* Target */; };
@@ -313,6 +321,13 @@
 			remoteGlobalIDString = AD57CCF327AED50800AD32C5;
 			remoteInfo = StarTrek;
 		};
+		AD5C22CF296B931A0067A2EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD5C22C0296B90AB0067A2EF;
+			remoteInfo = EvenWins1;
+		};
 		AD60177727ED3E9500213C47 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
@@ -487,6 +502,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		AD57CCF227AED50800AD32C5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD5C22BF296B90AB0067A2EF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -683,6 +707,10 @@
 		AD57CCF427AED50800AD32C5 /* StarTrek */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StarTrek; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD57CCF627AED50800AD32C5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD57CCFB27AED53A00AD32C5 /* StarTrek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTrek.swift; sourceTree = "<group>"; };
+		AD5C22C1296B90AB0067A2EF /* EvenWins1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EvenWins1; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5C22C3296B90AB0067A2EF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD5C22C8296B90DA0067A2EF /* EvenWins1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenWins1.swift; sourceTree = "<group>"; };
+		AD5C22CD296B92EB0067A2EF /* 101_010823.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_010823.pdf; sourceTree = "<group>"; };
 		AD60176A27ED2C7200213C47 /* 101_032222.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_032222.pdf; sourceTree = "<group>"; };
 		AD60177027ED3E8000213C47 /* Target */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Target; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD60177227ED3E8000213C47 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -820,6 +848,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD57CCF127AED50800AD32C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5C22BE296B90AB0067A2EF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1044,6 +1079,15 @@
 			path = StarTrek;
 			sourceTree = "<group>";
 		};
+		AD5C22C2296B90AB0067A2EF /* EvenWins1 */ = {
+			isa = PBXGroup;
+			children = (
+				AD5C22C3296B90AB0067A2EF /* main.swift */,
+				AD5C22C8296B90DA0067A2EF /* EvenWins1.swift */,
+			);
+			path = EvenWins1;
+			sourceTree = "<group>";
+		};
 		AD60177127ED3E8000213C47 /* Target */ = {
 			isa = PBXGroup;
 			children = (
@@ -1103,6 +1147,7 @@
 				AD60177F27EDFB5F00213C47 /* 101_032422.pdf */,
 				AD56DA2827E62DC600179FAA /* 101_031922.pdf */,
 				AD150F0227C0836700FA3280 /* 101_021722.pdf */,
+				AD5C22CD296B92EB0067A2EF /* 101_010823.pdf */,
 				ADACACB52963384B00DEB6F7 /* 101_010223.pdf */,
 			);
 			path = Resources;
@@ -1180,6 +1225,7 @@
 				AD150F0927C1492A00FA3280 /* Calendar */,
 				ADFE458527B83522002175D7 /* DepthCharge */,
 				ADACACA62963360E00DEB6F7 /* Digits */,
+				AD5C22C2296B90AB0067A2EF /* EvenWins1 */,
 				ADB4DEAA27C5BEA100C04087 /* Football */,
 				ADB4DE9C27C5BE5F00C04087 /* Ftball */,
 				AD77472D2960D39F00066994 /* Guess */,
@@ -1234,6 +1280,7 @@
 				AD77472C2960D39E00066994 /* Guess */,
 				AD7C3F682961D4E900F3C5AA /* Orbit */,
 				ADACACA52963360E00DEB6F7 /* Digits */,
+				AD5C22C1296B90AB0067A2EF /* EvenWins1 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1499,6 +1546,23 @@
 			productReference = AD57CCF427AED50800AD32C5 /* StarTrek */;
 			productType = "com.apple.product-type.tool";
 		};
+		AD5C22C0296B90AB0067A2EF /* EvenWins1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD5C22C7296B90AB0067A2EF /* Build configuration list for PBXNativeTarget "EvenWins1" */;
+			buildPhases = (
+				AD5C22BD296B90AB0067A2EF /* Sources */,
+				AD5C22BE296B90AB0067A2EF /* Frameworks */,
+				AD5C22BF296B90AB0067A2EF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EvenWins1;
+			productName = EvenWins1;
+			productReference = AD5C22C1296B90AB0067A2EF /* EvenWins1 */;
+			productType = "com.apple.product-type.tool";
+		};
 		AD60176F27ED3E8000213C47 /* Target */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD60177427ED3E8000213C47 /* Build configuration list for PBXNativeTarget "Target" */;
@@ -1689,6 +1753,7 @@
 				AD150F1127C1495200FA3280 /* PBXTargetDependency */,
 				ADFE459227B83700002175D7 /* PBXTargetDependency */,
 				ADACACB82963386F00DEB6F7 /* PBXTargetDependency */,
+				AD5C22D0296B931A0067A2EF /* PBXTargetDependency */,
 				ADB4DEB227C5BEBB00C04087 /* PBXTargetDependency */,
 				ADB4DEA427C5BE8000C04087 /* PBXTargetDependency */,
 				AD77473C2960D65400066994 /* PBXTargetDependency */,
@@ -1889,6 +1954,9 @@
 					AD57CCF327AED50800AD32C5 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
+					AD5C22C0296B90AB0067A2EF = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					AD60176F27ED3E8000213C47 = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -1978,6 +2046,7 @@
 				AD150F0727C1492A00FA3280 /* Calendar */,
 				ADFE458327B83522002175D7 /* DepthCharge */,
 				ADACACA42963360E00DEB6F7 /* Digits */,
+				AD5C22C0296B90AB0067A2EF /* EvenWins1 */,
 				ADB4DEA827C5BEA100C04087 /* Football */,
 				ADB4DE9A27C5BE5F00C04087 /* Ftball */,
 				AD77472B2960D39E00066994 /* Guess */,
@@ -2012,6 +2081,7 @@
 				AD150F0F27C1493D00FA3280 /* Calendar in Resources */,
 				ADFE459027B836F1002175D7 /* DepthCharge in Resources */,
 				ADACACB92963389000DEB6F7 /* Digits in Resources */,
+				AD5C22D1296B93390067A2EF /* EvenWins1 in Resources */,
 				ADB4DEB027C5BEAA00C04087 /* Football in Resources */,
 				ADB4DEA227C5BE6C00C04087 /* Ftball in Resources */,
 				AD77473D2960D66F00066994 /* Guess in Resources */,
@@ -2031,6 +2101,7 @@
 				AD2AFA0C295FDCC50036C31F /* 101_123022.pdf in Resources */,
 				AD56DA1427E4006300179FAA /* 101_031622.pdf in Resources */,
 				AD6AC931277F346400B9E5DB /* 101_121818.pdf in Resources */,
+				AD5C22CE296B92EB0067A2EF /* 101_010823.pdf in Resources */,
 				AD36C57827BD40BF00FB1E63 /* 101_021422.pdf in Resources */,
 				AD1F5A2727C46DE1005BE669 /* 101_022022.pdf in Resources */,
 				AD82571527F09EA900A0ECCB /* 101_032722.pdf in Resources */,
@@ -2185,6 +2256,19 @@
 				AD57CCFE27AED59D00AD32C5 /* ConsoleIO.swift in Sources */,
 				AD57CCFD27AED59900AD32C5 /* Extensions.swift in Sources */,
 				AD57CCFC27AED53A00AD32C5 /* StarTrek.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5C22BD296B90AB0067A2EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5C22C9296B90DA0067A2EF /* EvenWins1.swift in Sources */,
+				AD5C22D2296B96D90067A2EF /* Extensions.swift in Sources */,
+				AD5C22CC296B90F40067A2EF /* GameProtocol.swift in Sources */,
+				AD5C22CB296B90F00067A2EF /* ConsoleIO.swift in Sources */,
+				AD5C22CA296B90ED0067A2EF /* Game.swift in Sources */,
+				AD5C22C4296B90AB0067A2EF /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2497,6 +2581,11 @@
 			isa = PBXTargetDependency;
 			target = AD57CCF327AED50800AD32C5 /* StarTrek */;
 			targetProxy = AD57CD0027AED82E00AD32C5 /* PBXContainerItemProxy */;
+		};
+		AD5C22D0296B931A0067A2EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD5C22C0296B90AB0067A2EF /* EvenWins1 */;
+			targetProxy = AD5C22CF296B931A0067A2EF /* PBXContainerItemProxy */;
 		};
 		AD60177827ED3E9500213C47 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2834,6 +2923,32 @@
 				DEVELOPMENT_TEAM = 624UDYC489;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD5C22C5296B90AB0067A2EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD5C22C6296B90AB0067A2EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -3664,6 +3779,15 @@
 			buildConfigurations = (
 				AD57CCF927AED50800AD32C5 /* Debug */,
 				AD57CCFA27AED50800AD32C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD5C22C7296B90AB0067A2EF /* Build configuration list for PBXNativeTarget "EvenWins1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD5C22C5296B90AB0067A2EF /* Debug */,
+				AD5C22C6296B90AB0067A2EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

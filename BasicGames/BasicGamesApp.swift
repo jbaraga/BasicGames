@@ -78,6 +78,7 @@ struct BasicGamesApp: App {
             scene(for: .guess)
             scene(for: .orbit)
             scene(for: .digits)
+            scene(for: .evenWins1)
         }
        
         EggScene(url: $eggURL)
