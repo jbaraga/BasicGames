@@ -221,6 +221,13 @@
 		ADF23D5C27864A7300D71CDD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		ADF23D5D27864A7600D71CDD /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		ADF23D5E27864A7900D71CDD /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADF8BF00296CC54A00B778CA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF8BEFF296CC54A00B778CA /* main.swift */; };
+		ADF8BF05296CC57300B778CA /* EvenWins2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF8BF04296CC57300B778CA /* EvenWins2.swift */; };
+		ADF8BF06296CC58600B778CA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADF8BF07296CC58D00B778CA /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADF8BF08296CC59000B778CA /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADF8BF09296CC59400B778CA /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADF8BF0C296CCD8F00B778CA /* EvenWins2 in Resources */ = {isa = PBXBuildFile; fileRef = ADF8BEFD296CC54A00B778CA /* EvenWins2 */; };
 		ADFE458727B83522002175D7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFE458627B83522002175D7 /* main.swift */; };
 		ADFE458B27B8353A002175D7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		ADFE458C27B8354A002175D7 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
@@ -418,6 +425,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = ADDBCD1327B6B13900C369D1;
 			remoteInfo = Joust;
+		};
+		ADF8BF0A296CCD6F00B778CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADF8BEFC296CC54A00B778CA;
+			remoteInfo = EvenWins2;
 		};
 		ADFE459127B83700002175D7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -654,6 +668,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		ADF8BEFB296CC54A00B778CA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ADFE458227B83522002175D7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -785,6 +808,9 @@
 		ADF23D53278649F700D71CDD /* LEM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LEM; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF23D55278649F800D71CDD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADF23D5A27864A3100D71CDD /* LEM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEM.swift; sourceTree = "<group>"; };
+		ADF8BEFD296CC54A00B778CA /* EvenWins2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EvenWins2; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADF8BEFF296CC54A00B778CA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADF8BF04296CC57300B778CA /* EvenWins2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenWins2.swift; sourceTree = "<group>"; };
 		ADFE458427B83522002175D7 /* DepthCharge */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DepthCharge; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFE458627B83522002175D7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADFE458E27B83570002175D7 /* DepthCharge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthCharge.swift; sourceTree = "<group>"; };
@@ -982,6 +1008,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ADF23D50278649F700D71CDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADF8BEFA296CC54A00B778CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1226,6 +1259,7 @@
 				ADFE458527B83522002175D7 /* DepthCharge */,
 				ADACACA62963360E00DEB6F7 /* Digits */,
 				AD5C22C2296B90AB0067A2EF /* EvenWins1 */,
+				ADF8BEFE296CC54A00B778CA /* EvenWins2 */,
 				ADB4DEAA27C5BEA100C04087 /* Football */,
 				ADB4DE9C27C5BE5F00C04087 /* Ftball */,
 				AD77472D2960D39F00066994 /* Guess */,
@@ -1281,6 +1315,7 @@
 				AD7C3F682961D4E900F3C5AA /* Orbit */,
 				ADACACA52963360E00DEB6F7 /* Digits */,
 				AD5C22C1296B90AB0067A2EF /* EvenWins1 */,
+				ADF8BEFD296CC54A00B778CA /* EvenWins2 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1379,6 +1414,15 @@
 				ADF23D5A27864A3100D71CDD /* LEM.swift */,
 			);
 			path = LEM;
+			sourceTree = "<group>";
+		};
+		ADF8BEFE296CC54A00B778CA /* EvenWins2 */ = {
+			isa = PBXGroup;
+			children = (
+				ADF8BEFF296CC54A00B778CA /* main.swift */,
+				ADF8BF04296CC57300B778CA /* EvenWins2.swift */,
+			);
+			path = EvenWins2;
 			sourceTree = "<group>";
 		};
 		ADFE458527B83522002175D7 /* DepthCharge */ = {
@@ -1754,6 +1798,7 @@
 				ADFE459227B83700002175D7 /* PBXTargetDependency */,
 				ADACACB82963386F00DEB6F7 /* PBXTargetDependency */,
 				AD5C22D0296B931A0067A2EF /* PBXTargetDependency */,
+				ADF8BF0B296CCD6F00B778CA /* PBXTargetDependency */,
 				ADB4DEB227C5BEBB00C04087 /* PBXTargetDependency */,
 				ADB4DEA427C5BE8000C04087 /* PBXTargetDependency */,
 				AD77473C2960D65400066994 /* PBXTargetDependency */,
@@ -1900,6 +1945,23 @@
 			productReference = ADF23D53278649F700D71CDD /* LEM */;
 			productType = "com.apple.product-type.tool";
 		};
+		ADF8BEFC296CC54A00B778CA /* EvenWins2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADF8BF03296CC54A00B778CA /* Build configuration list for PBXNativeTarget "EvenWins2" */;
+			buildPhases = (
+				ADF8BEF9296CC54A00B778CA /* Sources */,
+				ADF8BEFA296CC54A00B778CA /* Frameworks */,
+				ADF8BEFB296CC54A00B778CA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EvenWins2;
+			productName = EvenWins2;
+			productReference = ADF8BEFD296CC54A00B778CA /* EvenWins2 */;
+			productType = "com.apple.product-type.tool";
+		};
 		ADFE458327B83522002175D7 /* DepthCharge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADFE458827B83522002175D7 /* Build configuration list for PBXNativeTarget "DepthCharge" */;
@@ -2013,6 +2075,9 @@
 					ADF23D52278649F700D71CDD = {
 						CreatedOnToolsVersion = 13.0;
 					};
+					ADF8BEFC296CC54A00B778CA = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					ADFE458327B83522002175D7 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -2047,6 +2112,7 @@
 				ADFE458327B83522002175D7 /* DepthCharge */,
 				ADACACA42963360E00DEB6F7 /* Digits */,
 				AD5C22C0296B90AB0067A2EF /* EvenWins1 */,
+				ADF8BEFC296CC54A00B778CA /* EvenWins2 */,
 				ADB4DEA827C5BEA100C04087 /* Football */,
 				ADB4DE9A27C5BE5F00C04087 /* Ftball */,
 				AD77472B2960D39E00066994 /* Guess */,
@@ -2082,6 +2148,7 @@
 				ADFE459027B836F1002175D7 /* DepthCharge in Resources */,
 				ADACACB92963389000DEB6F7 /* Digits in Resources */,
 				AD5C22D1296B93390067A2EF /* EvenWins1 in Resources */,
+				ADF8BF0C296CCD8F00B778CA /* EvenWins2 in Resources */,
 				ADB4DEB027C5BEAA00C04087 /* Football in Resources */,
 				ADB4DEA227C5BE6C00C04087 /* Ftball in Resources */,
 				AD77473D2960D66F00066994 /* Guess in Resources */,
@@ -2501,6 +2568,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADF8BEF9296CC54A00B778CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADF8BF08296CC59000B778CA /* ConsoleIO.swift in Sources */,
+				ADF8BF00296CC54A00B778CA /* main.swift in Sources */,
+				ADF8BF06296CC58600B778CA /* Extensions.swift in Sources */,
+				ADF8BF05296CC57300B778CA /* EvenWins2.swift in Sources */,
+				ADF8BF07296CC58D00B778CA /* Game.swift in Sources */,
+				ADF8BF09296CC59400B778CA /* GameProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADFE458027B83522002175D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2651,6 +2731,11 @@
 			isa = PBXTargetDependency;
 			target = ADDBCD1327B6B13900C369D1 /* Joust */;
 			targetProxy = ADDBCD2127B6B2DA00C369D1 /* PBXContainerItemProxy */;
+		};
+		ADF8BF0B296CCD6F00B778CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADF8BEFC296CC54A00B778CA /* EvenWins2 */;
+			targetProxy = ADF8BF0A296CCD6F00B778CA /* PBXContainerItemProxy */;
 		};
 		ADFE459227B83700002175D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3669,6 +3754,32 @@
 			};
 			name = Release;
 		};
+		ADF8BF01296CC54A00B778CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADF8BF02296CC54A00B778CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		ADFE458927B83522002175D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3959,6 +4070,15 @@
 			buildConfigurations = (
 				ADF23D58278649F800D71CDD /* Debug */,
 				ADF23D59278649F800D71CDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADF8BF03296CC54A00B778CA /* Build configuration list for PBXNativeTarget "EvenWins2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADF8BF01296CC54A00B778CA /* Debug */,
+				ADF8BF02296CC54A00B778CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

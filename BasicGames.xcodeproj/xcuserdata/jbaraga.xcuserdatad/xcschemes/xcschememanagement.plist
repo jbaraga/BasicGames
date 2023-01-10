@@ -12,7 +12,7 @@
 		<key>AceyDucey.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>25</integer>
 		</dict>
 		<key>Amazing.xcscheme_^#shared#^_</key>
 		<dict>
@@ -57,12 +57,17 @@
 		<key>Digits.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>25</integer>
+			<integer>23</integer>
 		</dict>
 		<key>EvenWins1.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>24</integer>
+			<integer>22</integer>
+		</dict>
+		<key>EvenWins2.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>27</integer>
 		</dict>
 		<key>Football.xcscheme_^#shared#^_</key>
 		<dict>
@@ -77,7 +82,7 @@
 		<key>Guess.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>24</integer>
 		</dict>
 		<key>ICBM.xcscheme_^#shared#^_</key>
 		<dict>

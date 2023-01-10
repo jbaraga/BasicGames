@@ -20,6 +20,7 @@ enum Game: String, CaseIterable {
     case depthCharge
     case digits
     case evenWins1
+    case evenWins2
     case football
     case ftball
     case guess
@@ -48,7 +49,8 @@ enum Game: String, CaseIterable {
         case .calendar: return "Calendar"
         case .depthCharge: return "Depth Charge"
         case .digits: return "Digits"
-        case .evenWins1: return "Even Wins (v1)"
+        case .evenWins1: return "Even Wins (version 1)"
+        case .evenWins2: return "Even Wins (version 2)"
         case .football: return "Football"
         case .ftball: return "Ftball"
         case .guess: return "Guess"
@@ -84,6 +86,7 @@ enum Game: String, CaseIterable {
         case .depthCharge: return .matrixManipulation
         case .digits: return .logic
         case .evenWins1: return .removeObject
+        case .evenWins2: return .removeObject
         case .football: return .sports
         case .ftball: return .sports
         case .guess: return .characterGuessing
@@ -107,6 +110,8 @@ enum Game: String, CaseIterable {
         switch self {
         case .evenWins1:
             return "EvenWins1"
+        case .evenWins2:
+            return "EvenWins2"
         default:
             return stringValue.replacingOccurrences(of: " ", with: "")
         }
@@ -128,6 +133,8 @@ enum Game: String, CaseIterable {
             return "calendar"
         case .digits:
             return "hand.raised.fingers.spread.fill"
+        case .evenWins2:
+            return "circle.hexagongrid.circle"
         case .guess:
             return "questionmark.app"
         case .orbit:
@@ -150,6 +157,7 @@ enum Game: String, CaseIterable {
         case .blackjack: return .black
         case .calendar: return .green
         case .digits: return .teal
+        case .evenWins2: return .blue
         case .guess: return .mint
         case .orbit: return .blue
         case .starTrek: return .blue
@@ -162,7 +170,7 @@ enum Game: String, CaseIterable {
     }
     
     var urlString: String {
-        return "basicGames://" + rawValue
+        return Self.baseURLString + rawValue
     }
 
     var url: URL? {
@@ -193,7 +201,7 @@ enum Game: String, CaseIterable {
             return "101_021222"
         case .digits:
             return "101_010223"
-        case .evenWins1:
+        case .evenWins1, .evenWins2:
             return "101_010823"
         case .football:
             return "101_022222"
@@ -237,6 +245,8 @@ enum Game: String, CaseIterable {
             return nil
         }
     }
+    
+    static let baseURLString = "basicGames://"
     
     static var allGamesSet: Set<String> {
         return Set(allCases.compactMap { $0.urlString })

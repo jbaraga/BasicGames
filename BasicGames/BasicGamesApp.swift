@@ -22,7 +22,7 @@ struct BasicGamesApp: App {
     
     var body: some Scene {
         WindowGroup {
-            GameLauncherView()
+            GameLauncherView(game: $game)
                 .onReceive(DistributedNotificationCenter.default().publisher(for: Notification.Name.showEasterEgg)) { notification in
                     if let filename = notification.object as? String {
                         showPDF(with: filename)
@@ -46,6 +46,8 @@ struct BasicGamesApp: App {
         }
         .windowToolbarStyle(.unifiedCompact(showsTitle: true))
         
+//        GameScene(game: $game)
+        
         Group {
             scene(for: .amazing)
             scene(for: .depthCharge)
@@ -57,7 +59,7 @@ struct BasicGamesApp: App {
             scene(for: .oregonTrail)
             scene(for: .starTrek)
         }
-        
+
         Group {
             scene(for: .animal)
             scene(for: .banner)
@@ -69,7 +71,7 @@ struct BasicGamesApp: App {
             scene(for: .stockMarket)
             scene(for: .threeDPlot)
         }
-        
+
         Group {
             scene(for: .bounce)
             scene(for: .splat)
@@ -79,8 +81,9 @@ struct BasicGamesApp: App {
             scene(for: .orbit)
             scene(for: .digits)
             scene(for: .evenWins1)
+            scene(for: .evenWins2)
         }
-       
+
         EggScene(url: $eggURL)
             .commands {
                 SidebarCommands()
@@ -104,6 +107,26 @@ struct BasicGamesApp: App {
             .frame(minWidth: 660, minHeight: 480) //~ 80 columns in terminal
         }
         .handlesExternalEvents(matching: game.set)
+    }
+    
+    private struct GameScene: Scene {
+        @Binding var game: Game?
+        
+        var body: some Scene {
+            WindowGroup(id: Game.baseURLString) {
+                if let game = game {
+                    GeometryReader { geometry in
+                        TerminalViewRepresentable(frame: geometry.frame(in: .local), executableName: game.executableName, windowTitle: game.stringValue)
+                            .navigationTitle(game.stringValue)
+                    }
+                    .padding(.leading, 4)
+                    .padding(.bottom, 1)
+                    .background(Color(.terminalBackground))
+                    .frame(minWidth: 660, minHeight: 480) //~ 80 columns in terminal
+                }
+            }
+            .handlesExternalEvents(matching: Game.allGamesSet)
+        }
     }
     
     private struct EggScene: Scene {

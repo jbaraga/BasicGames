@@ -9,6 +9,8 @@ import SwiftUI
 
 
 struct GameLauncherView: View {
+    @Binding var game: Game?
+    
     @Environment(\.openURL) private var openURL
     @ObservedObject private var settings = Preferences.shared
     
@@ -77,12 +79,13 @@ struct GameLauncherView: View {
     
     private func launch(_ game: Game) {
         guard let url = game.url else { return }
+//        self.game = game
         openURL(url)
     }
 }
 
 struct GameLauncherView_Previews: PreviewProvider {
     static var previews: some View {
-        GameLauncherView()
+        GameLauncherView(game: .constant(.amazing))
     }
 }

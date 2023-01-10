@@ -140,7 +140,9 @@ class EvenWins1: GameProtocol {
         println()
         println(" My total is \(m1)   your total is \(y1)")
         println()
-        println("     \(m1 % 2 == 0 ? "I" : "You") won.  Do you want to play")
+        
+        let playerWon = y1 % 2 == 0
+        println("     \(playerWon ? "You" : "I") won.  Do you want to play")
         println("again?  Type 1 for yes and 0 for no.")
         let a1 = Int(input()) ?? 1
         switch a1 {
@@ -148,7 +150,9 @@ class EvenWins1: GameProtocol {
             playGame()
             return
         case 82964:
-            showEasterEgg(.evenWins1)
+            if playerWon {
+                showEasterEgg(.evenWins1)
+            }
         default:
             break
         }
