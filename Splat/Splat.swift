@@ -22,11 +22,9 @@ class Splat: GameProtocol {
     func run() {
         printHeader(title: "Splat")
         println(3)
-        
         println("Welcome to 'Splat' -- the game that simulates a parachute")
         println("jump.  Try to open your chute at the last possible")
         println("moment without going splat.")
-        
         getInputs()
     }
     
@@ -36,83 +34,84 @@ class Splat: GameProtocol {
         
         var v1 = 0.0  //Terminal velocity (mi/hr)
         var a2 = 0.0  //Acceleration (ft/sec/sec)
-        let d1 = round(9001 * rnd(1) + 1000)
+        let d1 = round(9001 * rnd(1) + 1000)  //Altitude (feet)
         
         var response = Response.other
         print(" Select your own terminal velocity (yes or no)")
         while !response.isYesOrNo {
             response = Response(input())
-            if !response.isYesOrNo {
+            switch response {
+            case .yes:
+                let velocity = Double(input("What terminal velocity (mi/hr)")) ?? round(1000 * rnd(1))
+                v1 = velocity * 5280 / 3600  //Convert to feet per second
+            case .no:
+                let velocity = round(1000 * rnd(1))
+                println("Ok.  Terminal velocity = \(Int(velocity)) mi/hr")
+                v1 = velocity * 5280 / 3600  //Convert to feet per second
+            default:
                 print("Yes or no")
             }
         }
-        if response.isYes, let velocity = Double(input("What terminal velocity (mi/hr)")), velocity > 0 {
-            v1 = velocity * 5280 / 3600  //Convert to feet per second
-        } else {
-            let velocity = round(1000 * rnd(1))
-            println("Ok.  Terminal velocity = \(Int(velocity)) mi/hr")
-            v1 = velocity * 5280 / 3600  //Convert to feet per second
-        }
-        let v = v1 + (v1 * rnd(1) / 20) - (v1 * rnd(1) / 20)  //Add random error
+        let v = v1 + (v1 * rnd(1) / 20) - (v1 * rnd(1) / 20)  //Add random variation
         
         response = .other
-        print("Want to select accleration due to gravity (yes or no)")
+        print("Want to select acceleration due to gravity (yes or no)")
         while !response.isYesOrNo {
             response = Response(input())
-            if !response.isYesOrNo {
+            switch response {
+            case .yes:
+                a2 = Double(input("What acceleration (ft/sec/sec)")) ?? 32.16
+            case .no:
+                switch Int(1 + 10 * rnd(1)) {
+                case 1:
+                    println("Fine. You're on Mercury. Acceleration=12.2ft/sec/sec")
+                    a2 = 12.2
+                case 2:
+                    println("Alright. You're on Venus. Acceleration=28.3ft/sec/sec")
+                    a2 = 28.3
+                case 3:
+                    println("The you're on Earth. Acceleration=32.16ft/sec/sec")
+                    a2 = 32.16
+                case 4:
+                    println("Fine. You're on the Moon. Acceleration=5.15ft/sec/sec")
+                    a2 = 5.15
+                case 5:
+                    println("Alright. you're on Mars. Acceleration=12.5ft/sec/sec")
+                    a2 = 12.5
+                case 6:
+                    println("Then you're on Jupiter. Acceleration=85.2ft/sec/sec")
+                    a2 = 85.2
+                case 7:
+                    println("Fine. You're on Saturn. Acceleration=37.6ft/sec/sec")
+                    a2 = 37.6
+                case 8:
+                    println("Alright. You're on Uranus. Acceleration=33.8ft/sec/sec")
+                    a2 = 33.8
+                case 9:
+                    println("Then you're on Neptune. Acceleration=39.6ft/sec/sec")
+                    a2 = 39.6
+                case 10:
+                    println("Fine. You're on the Sun. Acceleration=896ft/sec/sec")
+                    a2 = 896.0
+                default:
+                    fatalError("Impossible case")
+                }
+            default:
                 print("Yes or no")
             }
         }
-        
-        if response.isYes, let accel = Double(input("What acceleration (ft/sec/sec)")), accel > 0 {
-            a2 = accel
-        } else {
-            switch Int(1 + 10 * rnd(1)) {
-            case 1:
-                println("Fine. You're on Mercury. Acceleration=12.2ft/sec/sec")
-                a2 = 12.2
-            case 2:
-                println("Alright. You're on Venus. Acceleration=28.3ft/sec/sec")
-                a2 = 28.3
-            case 3:
-                println("The you're on Earth. Acceleration=32.16ft/sec/sec")
-                a2 = 32.16
-            case 4:
-                println("Fine. You're on the Moon. Acceleration=5.15ft/sec/sec")
-                a2 = 5.15
-            case 5:
-                println("Alright. you're on Mars. Acceleration=12.5ft/sec/sec")
-                a2 = 12.5
-            case 6:
-                println("Then you're on Jupiter. Acceleration=85.2ft/sec/sec")
-                a2 = 85.2
-            case 7:
-                println("Fine. You're on Saturn. Acceleration=37.6ft/sec/sec")
-                a2 = 37.6
-            case 8:
-                println("Alright. You're on Uranus. Acceleration=33.8ft/sec/sec")
-                a2 = 33.8
-            case 9:
-                println("Then you're on Neptune. Acceleration=39.6ft/sec/sec")
-                a2 = 39.6
-            case 10:
-                println("Fine. You're on the Sun. Acceleration=896ft/sec/sec")
-                a2 = 12.2
-            default:
-                fatalError("Impossible case")
-            }
-        }
-        let a = a2 + (a2 * rnd(1) / 20) - (a2 * rnd(1) / 20)  //Add random error
+        let a = a2 + (a2 * rnd(1) / 20) - (a2 * rnd(1) / 20)  //Add random variation
 
         println()
         println("    Altitude         = \(Int(d1)) ft")
-        println("    Term.Velocity    = \(Int(v1)) ft/sec +-5%")
+        println("    Term.Velocity    = \(formatter.string(from: v1)) ft/sec +-5%")
         println("    Acceleration     = " + String(format: "%.1f", a2) + " ft/sec/sec +-5%")
         println("Set the timer for your freefall.")
         
         let t = Double(input("How many seconds")) ?? 0
-        print("Here we go.")
+        println("Here we go.")
         println()
+        wait(.short)
         
         jump(d1: d1, v: v, a: a, t: t)
         
@@ -121,42 +120,40 @@ class Splat: GameProtocol {
         print("Do you want to play again")
         while !response.isYesOrNo {
             response = Response(input())
-            if response == .easterEgg {
+            if response == .easterEgg, chuteOpenAltitudes.count > 5 {
                 showEasterEgg(.splat)
                 wait(.long)
                 end()
                 return
             }
-            if response == .other {
+            switch response {
+            case .yes:
+                getInputs()
+                return
+            case .no:
+                print("Please")
+                response = Response.other
+                while !response.isYesOrNo {
+                    response = Response(input())
+                    switch response {
+                    case .yes:
+                        getInputs()
+                        return
+                    case .no:
+                        println("SSSSSSSSSS.")
+                        wait(.short)
+                        println()
+                        promptForReset()
+                        end()
+                        return
+                    default:
+                        print("Yes or no ")
+                    }
+                }
+            default:
                 print("Yes or no")
             }
         }
-        
-        if response == .yes {
-            getInputs()
-            return
-        }
-        
-        response = .other
-        while !response.isYesOrNo {
-            response = Response(input("Please"))
-            if response == .other {
-                print("Yes or no ")
-            }
-        }
-        
-        if response == .yes {
-            getInputs()
-            return
-        }
-        
-        println("SSSSSSSSSS.")
-        wait(.short)
-        
-        println()
-        promptForReset()
-        
-        end()
     }
     
     //Lines 218-
@@ -165,32 +162,31 @@ class Splat: GameProtocol {
         println(String(repeating: "=", count: 10), String(repeating: "=", count: 17))
         
         var d = d1
-        for i in stride(from: 0, through: t, by: t / 8) {
-            if i < v/a {
-                d = d1 - ((a / 2) * i * i)
-                if d <= 0 {
-                    //Line 1000
-                    println(String(format: "%.6f Splat", sqrt(2 * d1 / a)))
-                    splatMessage()
-                    return
+        var i = 0.0
+        //Additional precomputed convenience variables
+        let tvTime = v/a  //Time terminal velocity is reached
+        var splatTime = tvTime + (d1 - v * v / (2 * a)) / v  //Line 1010 - time of impact if terminal velocity reached
+        while i <= t {
+            if i > tvTime {
+                d = d1 - ((v * v / (2 * a)) + v * (i - tvTime))
+                //Extra condition added to original code to suppress message if impact occurs before terminal velocity is reached within current interval
+                if (i - t/8) <= tvTime && tvTime <= splatTime {
+                    println(String(format: "Terminal velocity reached at T plus %.6f seconds", v/a))
                 }
-                
-                println(" \(i)", String(format: " %.2f", d))
             } else {
-                println(String(format: "Terminal velocity reached at T plus %.6f seconds", v / a))
-                for i1 in stride(from: i, through: t, by: t / 8) {
-                    d = d1 - ((v * v / (2 * a)) + v * (i1 - v / a))
-                    if d <= 0 {
-                        //Line 1010
-                        println(String(format: "%.6f Splat", v / a + (d1 - v * v / (2 * a))))
-                        splatMessage()
-                        return
-                    }
-                    
-                    println(" \(i1)", " \(d)")
-                }
-                break
+                d = d1 - ((a / 2) * i * i)
             }
+            
+            if d <= 0 {
+                //Line 1000, 1010
+                if i < tvTime { splatTime = sqrt(2 * d1 / a) }  //Line 1000 - time of impact if terminal velocity not reached
+                println(String(format: " %.6f Splat", splatTime))
+                splatMessage()
+                return
+            }
+            
+            println(" \(i)", String(format: " %0.2f", d))
+            i += t/8
         }
         
         //Line 500

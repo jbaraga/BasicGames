@@ -548,7 +548,7 @@ class Football: GameProtocol {
     
     //Line 1900
     private func printBallLocationOnField() {
-        println(tab(team.d + 5 + p / 2), team.m$)  //
+        println(tab(team.d + 5 + p / 2), team.m$)
         printField()
     }
     

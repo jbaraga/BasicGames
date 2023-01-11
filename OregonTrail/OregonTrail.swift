@@ -48,9 +48,26 @@ class OregonTrail: GameProtocol {
     //80 REM
     //150 REM  *FOR THE MEANING OF THE VARIABLES USED, LIST LINES 6470-6790*
     //155 REM
+    
+    func run() {
+        printHeader(title: Game.oregonTrail.title)
+        println(2)
+        
+        var response = ""
+        repeat {
+            response = input("Do you need instructions (Yes/No)")
+            if response.isYes {
+                println()
+                showInstructions()
+                wait(.long)
+            }
+        } while !(response.isNo || response.isYes)
+        
+        playGame()
+    }
         
     //MARK: Main program
-    func run() {
+    private func playGame() {
         //Initialize game
         var animals = 0  //A - amount spent on animals
         var ammunition = 0  //B - ammount spent on ammunition
@@ -82,19 +99,7 @@ class OregonTrail: GameProtocol {
         var blizzard = false  //L1 - flag for blizzard
         var showFortOption = false  //X1 - flag for fort option
 
-        println("Welcome to Oregon Trail")
-        println()
-        
-        var response = ""
-        repeat {
-            response = input("Do you need instructions (Yes/No)")
-            if response.isYes {
-                println()
-                showInstructions()
-                wait(.long)
-            }
-        } while !(response.isNo || response.isYes)
-        
+        println(2)
         shootingLevel = getMarksmanshipLevel()
         initialPurchase()
 
@@ -693,7 +698,9 @@ class OregonTrail: GameProtocol {
             
             println()
             //Generate beep for next two lines
+            consoleIO.ringBell()
             println("You finally arrived at Oregon City")
+            consoleIO.ringBell()
             println("After 2040 long miles---HOORAY!!!")
             println("A real pioneer!")
             println()
@@ -758,7 +765,7 @@ class OregonTrail: GameProtocol {
             println()
             println("       at your new home")
             
-            stop()
+            stop(true)
         }
 
         //Illness subroutine, lines 6290-6460
@@ -784,8 +791,6 @@ class OregonTrail: GameProtocol {
                 notEnoughSuppliesForTreatment()
             }
         }
-        
-
     }
     
     //Instructions, lines 230-680
@@ -840,8 +845,6 @@ class OregonTrail: GameProtocol {
         
     //Lines 710-790
     private func getMarksmanshipLevel() -> ShootingLevel {
-        println()
-        println()
         println("How good a shot are you with your rifle?")
         println("   (1) Ace marksman, (2) Good shot, (3) Fair to middlin',")
         println("       (4) Need more pracice, (5) Shaky knees")
@@ -852,8 +855,7 @@ class OregonTrail: GameProtocol {
         guard let level = Int(response) else { return .unspecified }
         return ShootingLevel(level)
     }
-    
-    
+
     //Setting date, lines 1200-1680
     private func date(for turnNumber: Int) -> String? {
         let day: String
@@ -884,7 +886,6 @@ class OregonTrail: GameProtocol {
         
         return "Monday " + day + " 1847"
     }
-    
     
     //Lines 5050-5070
     private func outOfFood() {
@@ -926,8 +927,8 @@ class OregonTrail: GameProtocol {
         } else {
             println("But your Aunt Sadie in St. Louis is really worried about you.")
         }
-        println()
         
+        println()
         println("We thank you for this information and we are sorry you")
         println("didn't make it to the great territory of Oregon")
         println("Better luck next time")
@@ -937,7 +938,7 @@ class OregonTrail: GameProtocol {
         println()
         println("   The Oregon City Chamber of Commerce")
 
-        stop(true)
+        stop(false)
     }
         
     //Shooting subroutine, lines 6130-6280.
@@ -974,6 +975,7 @@ class OregonTrail: GameProtocol {
         println("Run complete.")
         wait(.long)
         
+        //Added option to run again
         println(4)
         let response = input("Run again")
         
@@ -982,7 +984,7 @@ class OregonTrail: GameProtocol {
         }
         
         if response.isYes {
-            run()
+            playGame()
         } else {
             end()
         }

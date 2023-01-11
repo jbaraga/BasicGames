@@ -24,7 +24,7 @@ class AceyDucey: GameProtocol {
     }
     
     //Lines 110-1010
-    func mainLoop() {
+    private func mainLoop() {
         q = 100
         while q > 0 {
             println("You now have \(q) dollars")
@@ -38,7 +38,7 @@ class AceyDucey: GameProtocol {
     }
     
     //Lines 260-970
-    func playHand() {
+    private func playHand() {
         println("Here are your next two cards")
         let (a, b) = getCards()
         println(cardName(for: a))
@@ -77,7 +77,7 @@ class AceyDucey: GameProtocol {
     }
     
     //Lines 270-630
-    func getCards() -> (a: Int, b: Int) {
+    private func getCards() -> (a: Int, b: Int) {
         let a = Int(14 * rnd(1)) + 2
         if a < 2 || a > 14 {
             return getCards()
@@ -94,7 +94,7 @@ class AceyDucey: GameProtocol {
         }
     }
     
-    func cardName(for value: Int) -> String {
+    private func cardName(for value: Int) -> String {
         switch value {
         case 2...10: return " \(value)"
         case 11: return "Jack"
@@ -106,7 +106,7 @@ class AceyDucey: GameProtocol {
     }
     
     //Lines 1020-1050
-    func tryAgain() {
+    private func tryAgain() {
         let response = Response(input("Try again (yes or no)"))
         switch response {
         case .yes:

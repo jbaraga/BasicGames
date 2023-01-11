@@ -60,15 +60,21 @@ class Lunar: GameProtocol {
             velocity = segmentVelocity
         }
         
-        //Lines 420-430. s is burn time in seconds, rate is burn rate
+        //Lines 420-430. t is burn time in seconds (s in original code), rate is burn rate
         func performTrialBurn(for s: Double, rate: Double) {
             let q = s * rate / weight
-            segmentVelocity = velocity + g * s - z * (q + pow(q,2)/2 + pow(q,3)/3 + pow(q,4)/4 + pow(q,5)/5)  //series expansion ln(1-q)
-            segmentAltitude = altitude - g * s * s / 2 - velocity * s + z * s * (q/2 + pow(q,2)/6 + pow(q,3)/12 + pow(q,4)/20 + pow(q,5)/30)  //Integral of velocity
+            
+            //Original code, Taylor's expansion to calculate log(1-q)
+//            segmentVelocity = velocity + g * s - z * (q + pow(q,2)/2 + pow(q,3)/3 + pow(q,4)/4 + pow(q,5)/5)  //series expansion ln(1-q)
+//            segmentAltitude = altitude - g * s * s / 2 - velocity * s + z * s * (q/2 + pow(q,2)/6 + pow(q,3)/12 + pow(q,4)/20 + pow(q,5)/30)  //Integral of velocity
             
             //Alternate - no expansion
-//            segmentVelocity = velocity + g * s + z * log(1 - q)
-//            segmentAltitude = altitude - g * s * s / 2 - velocity * s - z * s * ((q - 1) * (log(1 - q) - 1) - 1)
+            segmentVelocity = velocity + g * s + z * log(1 - q)
+            if q > 0 {
+                segmentAltitude = altitude - g * s * s / 2 - velocity * s + z * s * ((1 - q) * log(1 - q) / q + 1)
+            } else {
+                segmentAltitude = altitude - g * s * s / 2 - velocity * s
+            }
         }
         
         //Lines 340-360. Iteratively compute burn for segment shortened by impact. s does not have to be updated

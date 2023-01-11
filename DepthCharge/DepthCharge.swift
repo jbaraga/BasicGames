@@ -76,8 +76,9 @@ class DepthCharge: GameProtocol {
     private func tryAgain(_ isSuccessful: Bool) {
         println(2)
         let response = input("Another game (y or n)")
-        if response.isEasterEgg {
+        if response.isEasterEgg, isSuccessful {
             showEasterEgg(.depthCharge)
+            end()
         }
         
         if response.isYes {

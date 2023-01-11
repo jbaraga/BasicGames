@@ -41,7 +41,7 @@ class Rocket: GameProtocol {
         var b = 0.0  //Burn (fuel units) - 1 unit = 1 ft/s decrease in end velocity
         
         //Main loop
-        while h > 0 {
+        repeat {
             print(" \(t)")
             print(tab(4), String(format: " %.1f", h))
             print(tab(12), String(format: " %.0f", v))
@@ -54,19 +54,20 @@ class Rocket: GameProtocol {
             if b > f { b = f }
             v1 = v - b + 5  //Segment end velocity = start velocity - burn + gravity * 1 sec?
             f -= b
-            h = h - 0.5 * (v + v1)  //Average velocity used to calculate distance
+            h -= 0.5 * (v + v1)  //Average velocity used to calculate distance
             if h > 0 {
                 t += 1
                 v = v1
-                if f <= 0 && f + b > 0  {
+                if f <= 0 && b > 0  {
                     println("**** OUT OF FUEL ****")
+                    b = 0
                 }
             }
-        }
+        } while h > 0.05  //Will show h 0.0 without contact if conditional is h > 0
         
         //Contact
         println("**** CONTACT ****")
-        h = h + 0.5 * (v + v1)
+        h += 0.5 * (v + v1)
         let d = b == 5 ? h / v : (-v + sqrt(v * v + h * (10 - 2 * b))) / (5 - b)
         v1 = v + (5 - b) * d
         let timeString = formatter.string(from: Double(t) + d)

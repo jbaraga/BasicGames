@@ -10,8 +10,8 @@ import Foundation
 
 
 class Amazing: GameProtocol {
-    private let MaximumWidth = 60
-    private let MaximumLength = 60
+    private let MaximumWidth = 72
+    private let MaximumLength = 72
         
     func run() {
         printHeader(title: "Amazing Program")
@@ -65,9 +65,8 @@ class Amazing: GameProtocol {
         }
     }
         
-    //MARK:-Generate and print maze
+    //MARK: Generate and print maze
     private func generateMaze(width: Int, height: Int) {
-        
         struct Square {
             var hasRightWall = true
             var hasBottomWall = true

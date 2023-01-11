@@ -33,6 +33,7 @@ class Bounce: GameProtocol {
         if velocity == 82964 {
             showEasterEgg(.bounce)
             end()
+            return
         }
         
         let coefficient = Double(input("Coefficient")) ?? 0.9  //c
