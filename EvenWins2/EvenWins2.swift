@@ -11,7 +11,7 @@ import Foundation
 class EvenWins2: GameProtocol {
     
     //Adaptive computer move array
-    private var r: [[Int]] = Array(repeating: Array(repeating: 4, count: 6), count: 2)
+    private var r = dim(2, 6, value: 4)
     private var userWins = 0
     
     func run() {

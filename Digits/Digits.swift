@@ -38,11 +38,11 @@ class Digits: GameProtocol {
     }
     
     private func play() {
-        //Line 380-
+        //Line 380-910
         //Arrays are zero indexed
-        var m: [[Int]] = Array(repeating: Array(repeating: 1, count: 3), count: 27)
-        var k: [[Int]] = Array(repeating: Array(repeating: 9, count: 3), count: 3)
-        var l: [[Int]] = Array(repeating: Array(repeating: 3, count: 3), count: 9)
+        var m = dim(27, 3, value: 1)
+        var k = dim(3, 3, value: 9)
+        var l = dim(9, 3, value: 3)
         l[(0,0)] = 2
         l[(4,1)] = 2
         l[(8,2)] = 2
@@ -86,9 +86,9 @@ class Digits: GameProtocol {
                         result = "Right"
                         //Lines 810-870
                         x += 1
-                        m[(z,number)] = m[(z,number)] + 1
-                        l[(z1,number)] = l[(z1,number)] + 1
-                        k[(z2,number)] = k[(z2,number)] + 1
+                        m[(z,number)] += 1
+                        l[(z1,number)] += 1
+                        k[(z2,number)] += 1
                         z -= Int(Double(z) / 9) * 9
                         z = 3 * z + number
                     } else {
@@ -119,10 +119,7 @@ class Digits: GameProtocol {
         case _ where x > 10:
             println("I guessed more than 1/3 of your numbers.")
             println("I win.")
-            (0...9).forEach { _ in
-                consoleIO.ringBell()
-                wait(.veryShort)
-            }
+            consoleIO.ringBell(10)
         default:
             println("I guessed exactly 1/3 of your numbers.")
             println("It is a tie game.")

@@ -128,6 +128,18 @@ extension Array where Element == [Int] {
     }
 }
 
+func dim(_ rows: Int, _ columns: Int, value: Int = 0) -> [[Int]] {
+    return Array(repeating: Array(repeating: value, count: columns), count: rows)
+}
+
+func dim(_ rows: Int, _ columns: Int, value: Double) -> [[Double]] {
+    return Array(repeating: Array(repeating: value, count: columns), count: rows)
+}
+
+func dim<T>(_ rows: Int, _ columns: Int, value: T) -> [[T]] {
+    return Array(repeating: Array(repeating: value, count: columns), count: rows)
+}
+
 extension Notification.Name {
     static let terminalWindowWillClose = Notification.Name("com.starwaresoftware.basicGames.close")
     static let consoleInputDidBegin = Notification.Name("com.starwaresoftware.basicGames.input")

@@ -10,36 +10,49 @@ import Foundation
 
 
 class Amazing: GameProtocol {
-    private let MaximumWidth = 72
+    private let MaximumWidth = 30
     private let MaximumLength = 72
+    
+    private struct Square {
+        var hasRightWall = true
+        var hasBottomWall = true
+        var hasBeenVisited = false
+        
+        var hasNotBeenVisited: Bool {
+            return !hasBeenVisited
+        }
+        
+        mutating func eraseRightWall() {
+            self.hasRightWall = false
+        }
+        
+        mutating func eraseBottomWall() {
+            self.hasBottomWall = false
+        }
+        
+        mutating func markVisited() {
+            self.hasBeenVisited = true
+        }
+    }
+    
+    private enum Direction {
+        case left
+        case right
+        case up
+        case down
+    }
+
         
     func run() {
         printHeader(title: "Amazing Program")
         println(3)
-        
-        var width = 0
-        var length = 0
-        var validEntry = false
-        
-        let NumberCharacterSet = CharacterSet(charactersIn: "0123456789")
-        repeat {
-            let response = input("What are your width and length")
-            let components = response.components(separatedBy: NumberCharacterSet.inverted)
-            if let first = components.first, let last = components.last, let value1 = Int(first), let value2 = Int(last) {
-                if value1 > 0 && value1 <= MaximumWidth && value2 > 0 && value2 <= MaximumLength {
-                    width = value1
-                    length = value2
-                    validEntry = true
-                } else {
-                    println("Maximum dimensions \(MaximumWidth) x \(MaximumLength).  Try Again.")
-                }
-            } else {
-                println("Meaningless dimensions.  Try Again.")
-            }
-            wait(.short)
-        } while !validEntry
-        
+        playGame()
+    }
+    
+    private func playGame() {
+        let (width, length) = getDimensions()
         println(3)
+        
         consoleIO.startHardcopy()
         generateMaze(width: width, height: length)
         consoleIO.endHardcopy()
@@ -59,45 +72,32 @@ class Amazing: GameProtocol {
         }
         
         if response.isYes {
-            run()
+            println(3)
+            playGame()
         } else {
             end()
         }
     }
+    
+    private func getDimensions() -> (width: Int, height: Int) {
+        wait(.short)
+        let response = input("What are your width and length")
+        let components = response.components(separatedBy: CharacterSet.decimalDigits.inverted)
+        guard components.count > 1, let first = components.first, let last = components.last, let width = Int(first), let height = Int(last), width > 0, height > 0 else {
+            println("Meaningless dimensions.  Try Again.")
+            return getDimensions()
+        }
+        guard width <= MaximumWidth, height <= MaximumLength else {
+            println("Maximum dimensions \(MaximumWidth) x \(MaximumLength).  Try Again.")
+            return getDimensions()
+        }
+        return (width, height)
+    }
         
     //MARK: Generate and print maze
     private func generateMaze(width: Int, height: Int) {
-        struct Square {
-            var hasRightWall = true
-            var hasBottomWall = true
-            var hasBeenVisited = false
-            
-            var hasNotBeenVisited: Bool {
-                return !hasBeenVisited
-            }
-            
-            mutating func eraseRightWall() {
-                self.hasRightWall = false
-            }
-            
-            mutating func eraseBottomWall() {
-                self.hasBottomWall = false
-            }
-            
-            mutating func markVisited() {
-                self.hasBeenVisited = true
-            }
-        }
-        
-        enum Direction {
-            case left
-            case right
-            case up
-            case down
-        }
-        
         let numberOfSquares = width * height
-        var squares: [[Square]] = Array(repeating: Array(repeating: Square(), count: width), count: height)
+        var squares = dim(height, width, value: Square())
         var isThereAnExit = false
         var row = 0
         var column = 0
@@ -194,16 +194,16 @@ class Amazing: GameProtocol {
         println(".")
         
         //Remainder of maze
-        for rowOfSquares in squares {
+        for row in squares {
             //Vertical dividers
             print("I")
-            for square in rowOfSquares {
+            for square in row {
                 square.hasRightWall ? print("  I") : print("   ")
             }
             println()
             
             //Horizontal dividers
-            for square in rowOfSquares {
+            for square in row {
                 square.hasBottomWall ? print(":--") : print(":  ")
             }
             println(".")

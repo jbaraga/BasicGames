@@ -83,6 +83,10 @@ struct BasicGamesApp: App {
             scene(for: .evenWins1)
             scene(for: .evenWins2)
         }
+        
+        Group {
+            scene(for: .hamurabi)
+        }
 
         EggScene(url: $eggURL)
             .commands {

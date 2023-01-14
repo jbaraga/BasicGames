@@ -95,6 +95,14 @@
 		AD60177D27ED3FAA00213C47 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD60177E27ED3FAE00213C47 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		AD60178027EDFB5F00213C47 /* 101_032422.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD60177F27EDFB5F00213C47 /* 101_032422.pdf */; };
+		AD69C552297187A8005D52A2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD69C551297187A8005D52A2 /* main.swift */; };
+		AD69C55729718802005D52A2 /* Hamurabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD69C55629718802005D52A2 /* Hamurabi.swift */; };
+		AD69C55829718811005D52A2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD69C55929718814005D52A2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		AD69C55A29718818005D52A2 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD69C55B2971881B005D52A2 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD69C55D297189BC005D52A2 /* Haumurabi.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD69C55C297189BC005D52A2 /* Haumurabi.pdf */; };
+		AD69C56029718BD7005D52A2 /* Hamurabi in Resources */ = {isa = PBXBuildFile; fileRef = AD69C54F297187A8005D52A2 /* Hamurabi */; };
 		AD6AC929277F33C400B9E5DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6AC928277F33C400B9E5DB /* main.swift */; };
 		AD6AC92F277F340200B9E5DB /* Amazing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6AC92D277F340200B9E5DB /* Amazing.swift */; };
 		AD6AC931277F346400B9E5DB /* 101_121818.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD6AC930277F346400B9E5DB /* 101_121818.pdf */; };
@@ -342,6 +350,13 @@
 			remoteGlobalIDString = AD60176F27ED3E8000213C47;
 			remoteInfo = Target;
 		};
+		AD69C55E29718BBA005D52A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD69C54E297187A8005D52A2;
+			remoteInfo = Hamurabi;
+		};
 		AD77473B2960D65400066994 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
@@ -534,6 +549,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		AD60176E27ED3E8000213C47 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD69C54D297187A8005D52A2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -739,6 +763,10 @@
 		AD60177227ED3E8000213C47 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD60177A27ED3FA000213C47 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		AD60177F27EDFB5F00213C47 /* 101_032422.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 101_032422.pdf; sourceTree = "<group>"; };
+		AD69C54F297187A8005D52A2 /* Hamurabi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hamurabi; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD69C551297187A8005D52A2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AD69C55629718802005D52A2 /* Hamurabi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hamurabi.swift; sourceTree = "<group>"; };
+		AD69C55C297189BC005D52A2 /* Haumurabi.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Haumurabi.pdf; sourceTree = "<group>"; };
 		AD6AC926277F33C400B9E5DB /* Amazing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Amazing; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6AC928277F33C400B9E5DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD6AC92D277F340200B9E5DB /* Amazing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amazing.swift; sourceTree = "<group>"; };
@@ -888,6 +916,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD60176D27ED3E8000213C47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD69C54C297187A8005D52A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1130,6 +1165,15 @@
 			path = Target;
 			sourceTree = "<group>";
 		};
+		AD69C550297187A8005D52A2 /* Hamurabi */ = {
+			isa = PBXGroup;
+			children = (
+				AD69C551297187A8005D52A2 /* main.swift */,
+				AD69C55629718802005D52A2 /* Hamurabi.swift */,
+			);
+			path = Hamurabi;
+			sourceTree = "<group>";
+		};
 		AD6AC927277F33C400B9E5DB /* Amazing */ = {
 			isa = PBXGroup;
 			children = (
@@ -1178,6 +1222,7 @@
 				AD60176A27ED2C7200213C47 /* 101_032222.pdf */,
 				AD22859527B40B4400FEADB8 /* 101_020522.pdf */,
 				AD60177F27EDFB5F00213C47 /* 101_032422.pdf */,
+				AD69C55C297189BC005D52A2 /* Haumurabi.pdf */,
 				AD56DA2827E62DC600179FAA /* 101_031922.pdf */,
 				AD150F0227C0836700FA3280 /* 101_021722.pdf */,
 				AD5C22CD296B92EB0067A2EF /* 101_010823.pdf */,
@@ -1263,6 +1308,7 @@
 				ADB4DEAA27C5BEA100C04087 /* Football */,
 				ADB4DE9C27C5BE5F00C04087 /* Ftball */,
 				AD77472D2960D39F00066994 /* Guess */,
+				AD69C550297187A8005D52A2 /* Hamurabi */,
 				AD33FD0727B955DD00E087D1 /* ICBM */,
 				ADDBCD1527B6B13900C369D1 /* Joust */,
 				AD8F43E227824DFF0067143D /* Lunar */,
@@ -1316,6 +1362,7 @@
 				ADACACA52963360E00DEB6F7 /* Digits */,
 				AD5C22C1296B90AB0067A2EF /* EvenWins1 */,
 				ADF8BEFD296CC54A00B778CA /* EvenWins2 */,
+				AD69C54F297187A8005D52A2 /* Hamurabi */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1624,6 +1671,23 @@
 			productReference = AD60177027ED3E8000213C47 /* Target */;
 			productType = "com.apple.product-type.tool";
 		};
+		AD69C54E297187A8005D52A2 /* Hamurabi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD69C555297187A8005D52A2 /* Build configuration list for PBXNativeTarget "Hamurabi" */;
+			buildPhases = (
+				AD69C54B297187A8005D52A2 /* Sources */,
+				AD69C54C297187A8005D52A2 /* Frameworks */,
+				AD69C54D297187A8005D52A2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hamurabi;
+			productName = Hamurabi;
+			productReference = AD69C54F297187A8005D52A2 /* Hamurabi */;
+			productType = "com.apple.product-type.tool";
+		};
 		AD6AC925277F33C400B9E5DB /* Amazing */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD6AC92C277F33C400B9E5DB /* Build configuration list for PBXNativeTarget "Amazing" */;
@@ -1802,6 +1866,7 @@
 				ADB4DEB227C5BEBB00C04087 /* PBXTargetDependency */,
 				ADB4DEA427C5BE8000C04087 /* PBXTargetDependency */,
 				AD77473C2960D65400066994 /* PBXTargetDependency */,
+				AD69C55F29718BBA005D52A2 /* PBXTargetDependency */,
 				AD33FD1427B9578900E087D1 /* PBXTargetDependency */,
 				ADDBCD2227B6B2DA00C369D1 /* PBXTargetDependency */,
 				AD57CCE727AEC25600AD32C5 /* PBXTargetDependency */,
@@ -2022,6 +2087,9 @@
 					AD60176F27ED3E8000213C47 = {
 						CreatedOnToolsVersion = 13.3;
 					};
+					AD69C54E297187A8005D52A2 = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					AD6AC925277F33C400B9E5DB = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -2116,6 +2184,7 @@
 				ADB4DEA827C5BEA100C04087 /* Football */,
 				ADB4DE9A27C5BE5F00C04087 /* Ftball */,
 				AD77472B2960D39E00066994 /* Guess */,
+				AD69C54E297187A8005D52A2 /* Hamurabi */,
 				AD33FD0527B955DD00E087D1 /* ICBM */,
 				ADDBCD1327B6B13900C369D1 /* Joust */,
 				AD8F43E027824DFF0067143D /* Lunar */,
@@ -2152,6 +2221,7 @@
 				ADB4DEB027C5BEAA00C04087 /* Football in Resources */,
 				ADB4DEA227C5BE6C00C04087 /* Ftball in Resources */,
 				AD77473D2960D66F00066994 /* Guess in Resources */,
+				AD69C56029718BD7005D52A2 /* Hamurabi in Resources */,
 				AD33FD1227B9576600E087D1 /* ICBM in Resources */,
 				ADDBCD2027B6B2B000C369D1 /* Joust in Resources */,
 				AD57CCED27AEC29F00AD32C5 /* LEM in Resources */,
@@ -2165,6 +2235,7 @@
 				AD60177927ED3EAC00213C47 /* Target in Resources */,
 				AD56DA2227E60FC900179FAA /* 3DPlot in Resources */,
 				AD3D807627BF2642004226EF /* Weekday in Resources */,
+				AD69C55D297189BC005D52A2 /* Haumurabi.pdf in Resources */,
 				AD2AFA0C295FDCC50036C31F /* 101_123022.pdf in Resources */,
 				AD56DA1427E4006300179FAA /* 101_031622.pdf in Resources */,
 				AD6AC931277F346400B9E5DB /* 101_121818.pdf in Resources */,
@@ -2349,6 +2420,19 @@
 				AD60177D27ED3FAA00213C47 /* ConsoleIO.swift in Sources */,
 				AD60177C27ED3FA700213C47 /* Extensions.swift in Sources */,
 				AD60177327ED3E8000213C47 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD69C54B297187A8005D52A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD69C55A29718818005D52A2 /* ConsoleIO.swift in Sources */,
+				AD69C55729718802005D52A2 /* Hamurabi.swift in Sources */,
+				AD69C55829718811005D52A2 /* Extensions.swift in Sources */,
+				AD69C552297187A8005D52A2 /* main.swift in Sources */,
+				AD69C55929718814005D52A2 /* Game.swift in Sources */,
+				AD69C55B2971881B005D52A2 /* GameProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2671,6 +2755,11 @@
 			isa = PBXTargetDependency;
 			target = AD60176F27ED3E8000213C47 /* Target */;
 			targetProxy = AD60177727ED3E9500213C47 /* PBXContainerItemProxy */;
+		};
+		AD69C55F29718BBA005D52A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD69C54E297187A8005D52A2 /* Hamurabi */;
+			targetProxy = AD69C55E29718BBA005D52A2 /* PBXContainerItemProxy */;
 		};
 		AD77473C2960D65400066994 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3064,6 +3153,32 @@
 				DEVELOPMENT_TEAM = 624UDYC489;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD69C553297187A8005D52A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD69C554297187A8005D52A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -3908,6 +4023,15 @@
 			buildConfigurations = (
 				AD60177527ED3E8000213C47 /* Debug */,
 				AD60177627ED3E8000213C47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD69C555297187A8005D52A2 /* Build configuration list for PBXNativeTarget "Hamurabi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD69C553297187A8005D52A2 /* Debug */,
+				AD69C554297187A8005D52A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

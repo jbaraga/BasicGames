@@ -136,13 +136,19 @@ class ConsoleIO {
         print(TerminalCommands.cursorHome)
     }
     
-    func ringBell() {
+    func ringBell(_ count: Int = 1) {
         do {
             guard let url = URL(string: "/System/Library/Sounds/Glass.aiff") else { throw CocoaError(.fileNoSuchFile) }
             guard let sound = NSSound(contentsOf: url, byReference: true) else { throw CocoaError(.fileReadUnknown) }
-            sound.play()
+            for _ in 1...count {
+                sound.play()
+                wait(.veryShort)
+            }
         } catch {
-            print(TerminalCommands.bell)
+            for _ in 1...count {
+                print(TerminalCommands.bell)
+                wait(.veryShort)
+            }
         }
     }
     

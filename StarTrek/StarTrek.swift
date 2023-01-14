@@ -91,14 +91,14 @@ class StarTrek: GameProtocol {
     }
     
     //BASIC arrays, one indexed
-    private var g: [[Int]] = Array(repeating: Array(repeating: 0, count: 9), count: 9)  //Galaxy quadrants - values are 3 digit Int: hundreds digit is number of Klingons, tens digit is number of starbases, ones digit number of stars in quadrant
-    private var z: [[Int]] = Array(repeating: Array(repeating: 0, count: 9), count: 9)  //Known galaxy quadrants - either by entry in quadrant or LRS
-    private var k: [[Int]] = Array(repeating: Array(repeating: 0, count: 4), count: 4)  //Klingon ships in quadrant; for each ship i: k(i,1) = x coordinate, k(i,2) = y coordinate, k(i,3) = shield strength; maximum of 3 Klingons in quadrant
+    private var g = dim(9, 9)  //Galaxy quadrants - values are 3 digit Int: hundreds digit is number of Klingons, tens digit is number of starbases, ones digit number of stars in quadrant
+    private var z = dim(9, 9)  //Known galaxy quadrants - either by entry in quadrant or LRS
+    private var k = dim(4, 4)  //Klingon ships in quadrant; for each ship i: k(i,1) = x coordinate, k(i,2) = y coordinate, k(i,3) = shield strength; maximum of 3 Klingons in quadrant
     private var d = [Double]()  //Damage array by index, value < 0 == nonoperational. Indexes: 1 - warp engines, 2 - short range sensory, 3 - long range sensors, 4 - phasers, 5 - photon tubes, 7 - shields, 8 - computer targeting
     
-    //Movement matrix
+    //Movement matrix, one indexed
     private let c: [[Int]] = {
-        var c = Array(repeating: Array(repeating: 0, count: 3), count: 10)
+        var c = dim(10, 3)
         c[(3,1)] = -1
         c[(2,1)] = -1
         c[(4,1)] = -1
@@ -373,7 +373,7 @@ class StarTrek: GameProtocol {
             }
             
             //Klingon positions are reset on every entry
-            k = Array(repeating: Array(repeating: 0, count: 4), count: 4)
+            k = dim(4, 4)
             
             let z$ = String(repeating: " ", count: 26)  //Each quadrant row is encoded with 8 objects 3 characters long, with space at beginning and end
             q$ = [z$, z$, z$, z$, z$, z$, z$, z$.left(17)].joined(separator: "")  //String length is 225
