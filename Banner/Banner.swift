@@ -60,6 +60,13 @@ class Banner: GameProtocol {
 
         let x = Int(input("Horizontal")) ?? 1
         let y = Int(input("Vertical")) ?? 1
+        
+        guard x > 0 && y > 0 else {
+            println("Invalid dimensions")
+            end()
+            return
+        }
+        
         let isCentered = input("Centered").isYes  //G1: 0 = false, 1 = true
         let character = input("Character (type 'ALL' if you want character being printed)").uppercased()  //M$
         let statement = input("Statement").uppercased()  //A$

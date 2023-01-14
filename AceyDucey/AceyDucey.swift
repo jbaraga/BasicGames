@@ -19,12 +19,11 @@ class AceyDucey: GameProtocol {
         println("on whether or not you feel the card will have")
         println("a value between the first two.")
         println("If you do not want to bet, input a 0")
-
-        mainLoop()
+        playGame()
     }
     
     //Lines 110-1010
-    private func mainLoop() {
+    private func playGame() {
         q = 100
         while q > 0 {
             println("You now have \(q) dollars")
@@ -45,17 +44,7 @@ class AceyDucey: GameProtocol {
         println(cardName(for: b))
         println()
         
-        var m = -1  //Bet
-        while m < 0 {
-            m = Int(input("What is your bet")) ?? -1
-            if m > q {
-                println("Sorry, my friend but you bet too much")
-                println("You have only \(q) dollars to bet")
-                println()
-                m = -1
-            }
-        }
-        
+        let m = getBet(maximum: q)
         if m == 0 {
             println("Chicken!!")
             println()
@@ -74,6 +63,19 @@ class AceyDucey: GameProtocol {
             println("Sorry, You lose")
             q -= m
         }
+    }
+    
+    private func getBet(maximum q: Int) -> Int {
+        guard let m = Int(input("What is your bet")), m >= 0 else {
+            return getBet(maximum: q)
+        }
+        guard m <= q else {
+            println("Sorry, my friend but you bet too much")
+            println("You have only \(q) dollars to bet")
+            println()
+            return getBet(maximum: q)
+        }
+        return m
     }
     
     //Lines 270-630
@@ -110,7 +112,7 @@ class AceyDucey: GameProtocol {
         let response = Response(input("Try again (yes or no)"))
         switch response {
         case .yes:
-            mainLoop()
+            playGame()
         case .easterEgg:
             showEasterEgg(.aceyDucey)
             end()

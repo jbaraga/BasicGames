@@ -120,6 +120,19 @@ enum Game: String, CaseIterable {
         }
     }
     
+    var pdfFilename: String {
+        switch self {
+        case .ftball:
+            return "Football"
+        case .evenWins1, .evenWins2:
+            return "EvenWins"
+        case .lem, .rocket:
+            return "Lunar"
+        default:
+            return executableName
+        }
+    }
+    
     var imageName: String {
         return stringValue
     }
@@ -187,65 +200,6 @@ enum Game: String, CaseIterable {
         return Set([urlString])
     }
     
-    var pdfFilename: String {
-        switch self {
-        case .aceyDucey:
-            return "101_123022"
-        case .amazing:
-            return "101_121818"
-        case .animal:
-            return "101_031622"
-        case .banner:
-            return "101_021422"
-        case .blackjack:
-            return "101_022022"
-        case .bounce:
-            return "101_032722"
-        case .calendar:
-            return "101_021922"
-        case .depthCharge:
-            return "101_021222"
-        case .digits:
-            return "101_010223"
-        case .evenWins1, .evenWins2:
-            return "101_010823"
-        case .football:
-            return "101_022222"
-        case .ftball:
-            return "101_022222"
-        case .guess:
-            return "101_123122"
-        case .hamurabi:
-            return stringValue
-        case .icbm:
-            return "101_021322"
-        case .joust:
-            return "101_021122"
-        case .lunar:
-            return "101_010222"
-        case .lem:
-            return "101_010222"
-        case .rocket:
-            return "101_010222"
-        case .orbit:
-            return "101_010123"
-        case .oregonTrail:
-            return "101_103018"
-        case .splat:
-            return "101_032222"
-        case .starTrek:
-            return "101_020522"
-        case .stockMarket:
-            return "101_032022"
-        case .target:
-            return "101_032422"
-        case .threeDPlot:
-            return "101_031922"
-        case .weekday:
-            return "101_021722"
-        }
-    }
-        
     init?(url: URL) {
         if let game = Game.allCases.first(where: { $0.url == url }) {
             self = game

@@ -19,8 +19,8 @@ class Digits: GameProtocol {
         printHeader(title: "Digits")
         println(3)
         println("This is a game of guessing.")
-        let e = Int(input("For instructions, type '1', else type '0'")) ?? 0
-        if e > 0 {
+        let e = Int(input("For instructions, type '1', else type '0'")) ?? 1
+        if e != 0 {
             println()
             println("Please take a piece of paper and write down")
             println("the digits  '0', '1', or '2' thirty times at random.")

@@ -59,22 +59,26 @@ class Blackjack: GameProtocol {
         printHeader(title: "Black Jack")
         println(3)
                 
-        //Lines 1610-
+        //Lines 1610-1630
         if input("Do you want instructions").isYes {
             printInstructions()
             wait(.short)
         }
         
-        while n == 0 {
-            let value = Int(input("Number of players")) ?? 0
-            if value > 0 && value < 8 {
-                n = value
-            }
-        }
+        n = getNumberOfPlayers()
         
+        //In original code, no stopping point
         while true {
             mainLoop()
         }
+    }
+    
+    //Lines 1760-1780
+    private func getNumberOfPlayers() -> Int {
+        guard let n = Int("Number of players"), n > 0 && n < 8 else {
+            return getNumberOfPlayers()
+        }
+        return n
     }
     
     private func mainLoop() {

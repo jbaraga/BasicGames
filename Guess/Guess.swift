@@ -19,6 +19,14 @@ class Guess: GameProtocol {
         println()
         let limit = Int(input("What limit do you want")) ?? 1
         println()
+        
+        //Added safety check
+        guard limit > 0 else {
+            println("Invalid limit")
+            end()
+            return
+        }
+        
         play(limit)
     }
     

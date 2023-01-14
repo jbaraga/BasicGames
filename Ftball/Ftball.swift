@@ -75,9 +75,6 @@ class Ftball: GameProtocol {
         if p == 0 {
             //Lines 470-540
             var a$ = input("Do you elect to kick or receive").uppercased()
-            if a$.isEasterEgg {
-                showEasterEgg(.ftball)
-            }
             while !(a$ == L$.kick || a$ == L$.receive) {
                 a$ = input("Incorrect answer.  Please type 'kick' or 'receive").uppercased()
             }
@@ -159,6 +156,9 @@ class Ftball: GameProtocol {
             println("End of game***")
             println("Final score:  " + teams[0] + " \(score[0])" + "  " + teams[1] + " \(score[1])")
             wait(.long)
+            if score[0] > score[1] {
+                showEasterEgg(.ftball)
+            }
             end()
             return
         }
@@ -170,23 +170,11 @@ class Ftball: GameProtocol {
             wait(.long)
         }
         
-        var play: Play!
-        if p == 1 {
-            play = opponentsPlay()
-        } else {
-            //Line 950
-            play = Play(rawValue: Int(input("Next play")) ?? 0)
-            while play == nil {
-                play = Play(rawValue: Int(input("Illegal play number, retype")) ?? 0)
-            }
-        }
+        let play = p == 1 ? getOpponentsPlay() : getUserPlay()
         
         f = 0  //Line 1010 - reset fumble
         print(play.stringValue + ".  ")
         let r = rnd(1) * (0.98 + Double(fnf()) * 0.02)
-        guard let play = play else {
-            fatalError("Illegal play")
-        }
         switch play {
         case .simpleRun:
             simpleRun(r: r)
@@ -214,6 +202,15 @@ class Ftball: GameProtocol {
             //Line 820
             println(L$.ballOn + teams[0] + " \(x) " + L$.yardLine)
         }
+    }
+    
+    //Lines 960-1000
+    private func getUserPlay() -> Play {
+        guard let play = Play(rawValue: Int(input()) ?? 0) else {
+            print("Illegal play number, retype")
+            return getUserPlay()
+        }
+        return play
     }
     
     //1110 REM SIMPLE RUN
@@ -391,7 +388,7 @@ class Ftball: GameProtocol {
     }
     
     //1870 REM OPPONENT'S PLAY
-    private func opponentsPlay() -> Play {
+    private func getOpponentsPlay() -> Play {
         let z: Int
         switch d {
         case 1:

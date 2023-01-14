@@ -62,15 +62,7 @@ class TDPlot: GameProtocol {
         Function.allCases.forEach {
             println(" \($0.rawValue + 1): " + $0.stringValue)
         }
-        
-        var selection: Function?
-        while selection == nil {
-            selection = Function(rawValue: (Int(input("Enter (1 - \(Function.allCases.count))")) ?? 0) - 1)
-        }
-        
-        guard let fn = selection else {
-            fatalError("Selection out of bounds")
-        }
+        let fn = selectFunction()
         
         println(3)
         for x in stride(from: -30, through: 30, by: 1.5) {
@@ -94,14 +86,19 @@ class TDPlot: GameProtocol {
             wait(.short)
             consoleIO.clear()
             run()
-        case .no:
-            end()
         case .easterEgg:
             showEasterEgg(.threeDPlot)
             wait(.long)
             end()
-        case .other:
+        default:
             end()
         }
+    }
+    
+    private func selectFunction() -> Function {
+        guard let fn = Function(rawValue: (Int(input("Enter (1 - \(Function.allCases.count))")) ?? 0) - 1) else {
+            return selectFunction()
+        }
+        return fn
     }
 }

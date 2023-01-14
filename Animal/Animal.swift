@@ -148,8 +148,10 @@ class Animal: GameProtocol {
         case .no:
             reset()
         case .easterEgg:
-            showEasterEgg(.animal)
-            stop()
+            if a$.count > 10 {
+                showEasterEgg(.animal)
+                stop()
+            }
         default:
             break
         }

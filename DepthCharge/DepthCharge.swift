@@ -21,6 +21,14 @@ class DepthCharge: GameProtocol {
         println("Depth Charge Game")
         println()
         g = Double(input("Dimension of search area")) ?? 10
+        
+        //Added safety check
+        guard g > 0 else {
+            println("Invalid dimension")
+            end()
+            return
+        }
+        
         println()
         println("You are the captain of the destroyer USS Computer.")
         println("An enemy sub has been causing you trouble. Your")
@@ -75,18 +83,23 @@ class DepthCharge: GameProtocol {
     
     private func tryAgain(_ isSuccessful: Bool) {
         println(2)
-        let response = input("Another game (y or n)")
-        if response.isEasterEgg, isSuccessful {
-            showEasterEgg(.depthCharge)
-            end()
+        let response = Response(input("Another game (y or n)"))
+        switch response {
+        case .easterEgg:
+            if isSuccessful {
+                showEasterEgg(.depthCharge)
+                end()
+                return
+            }
+        case .yes:
+            start()
+            return
+        default:
+            break
         }
         
-        if response.isYes {
-            start()
-        } else {
-            println("Ok.  Hope you enjoyed yourself.")
-            end()
-        }
+        println("Ok.  Hope you enjoyed yourself.")
+        end()
     }
     
     private func getInput() -> (x: Int, y: Int, z: Int) {

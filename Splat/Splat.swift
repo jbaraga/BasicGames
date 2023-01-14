@@ -28,78 +28,17 @@ class Splat: GameProtocol {
         getInputs()
     }
     
-    //Lines 118-
     private func getInputs() {
+        //Line 118
         println(2)
-        
-        var v1 = 0.0  //Terminal velocity (mi/hr)
-        var a2 = 0.0  //Acceleration (ft/sec/sec)
         let d1 = round(9001 * rnd(1) + 1000)  //Altitude (feet)
-        
-        var response = Response.other
+
         print(" Select your own terminal velocity (yes or no)")
-        while !response.isYesOrNo {
-            response = Response(input())
-            switch response {
-            case .yes:
-                let velocity = Double(input("What terminal velocity (mi/hr)")) ?? round(1000 * rnd(1))
-                v1 = velocity * 5280 / 3600  //Convert to feet per second
-            case .no:
-                let velocity = round(1000 * rnd(1))
-                println("Ok.  Terminal velocity = \(Int(velocity)) mi/hr")
-                v1 = velocity * 5280 / 3600  //Convert to feet per second
-            default:
-                print("Yes or no")
-            }
-        }
+        let v1 = getTerminalVelocity()  //Terminal velocity (ft/sec)
         let v = v1 + (v1 * rnd(1) / 20) - (v1 * rnd(1) / 20)  //Add random variation
         
-        response = .other
         print("Want to select acceleration due to gravity (yes or no)")
-        while !response.isYesOrNo {
-            response = Response(input())
-            switch response {
-            case .yes:
-                a2 = Double(input("What acceleration (ft/sec/sec)")) ?? 32.16
-            case .no:
-                switch Int(1 + 10 * rnd(1)) {
-                case 1:
-                    println("Fine. You're on Mercury. Acceleration=12.2ft/sec/sec")
-                    a2 = 12.2
-                case 2:
-                    println("Alright. You're on Venus. Acceleration=28.3ft/sec/sec")
-                    a2 = 28.3
-                case 3:
-                    println("The you're on Earth. Acceleration=32.16ft/sec/sec")
-                    a2 = 32.16
-                case 4:
-                    println("Fine. You're on the Moon. Acceleration=5.15ft/sec/sec")
-                    a2 = 5.15
-                case 5:
-                    println("Alright. you're on Mars. Acceleration=12.5ft/sec/sec")
-                    a2 = 12.5
-                case 6:
-                    println("Then you're on Jupiter. Acceleration=85.2ft/sec/sec")
-                    a2 = 85.2
-                case 7:
-                    println("Fine. You're on Saturn. Acceleration=37.6ft/sec/sec")
-                    a2 = 37.6
-                case 8:
-                    println("Alright. You're on Uranus. Acceleration=33.8ft/sec/sec")
-                    a2 = 33.8
-                case 9:
-                    println("Then you're on Neptune. Acceleration=39.6ft/sec/sec")
-                    a2 = 39.6
-                case 10:
-                    println("Fine. You're on the Sun. Acceleration=896ft/sec/sec")
-                    a2 = 896.0
-                default:
-                    fatalError("Impossible case")
-                }
-            default:
-                print("Yes or no")
-            }
-        }
+        let a2 = getAcceleration()  //Acceleration (ft/sec/sec)
         let a = a2 + (a2 * rnd(1) / 20) - (a2 * rnd(1) / 20)  //Add random variation
 
         println()
@@ -109,54 +48,80 @@ class Splat: GameProtocol {
         println("Set the timer for your freefall.")
         
         let t = Double(input("How many seconds")) ?? 0
+        
         println("Here we go.")
         println()
         wait(.short)
-        
         jump(d1: d1, v: v, a: a, t: t)
         
-        //Line 2000
-        response = .other
-        print("Do you want to play again")
-        while !response.isYesOrNo {
-            response = Response(input())
-            if response == .easterEgg, chuteOpenAltitudes.count > 5 {
-                showEasterEgg(.splat)
-                wait(.long)
-                end()
-                return
-            }
-            switch response {
-            case .yes:
-                getInputs()
-                return
-            case .no:
-                print("Please")
-                response = Response.other
-                while !response.isYesOrNo {
-                    response = Response(input())
-                    switch response {
-                    case .yes:
-                        getInputs()
-                        return
-                    case .no:
-                        println("SSSSSSSSSS.")
-                        wait(.short)
-                        println()
-                        promptForReset()
-                        end()
-                        return
-                    default:
-                        print("Yes or no ")
-                    }
-                }
-            default:
-                print("Yes or no")
-            }
+        tryAgain()
+    }
+    
+    //Lines 119-130
+    private func getTerminalVelocity() -> Double {
+        let response = Response(input())
+        switch response {
+        case .yes:
+            let velocity = Double(input("What terminal velocity (mi/hr)")) ?? round(1000 * rnd(1))
+            return velocity * 5280 / 3600  //Convert to feet per second
+        case .no:
+            let velocity = round(1000 * rnd(1))
+            println("Ok.  Terminal velocity = \(Int(velocity)) mi/hr")
+            return velocity * 5280 / 3600  //Convert to feet per second
+        default:
+            print("Yes or no")
+            return getTerminalVelocity()
         }
     }
     
-    //Lines 218-
+    //Lines 136-170
+    private func getAcceleration() -> Double {
+        let response = Response(input())
+        switch response {
+        case .yes:
+            return Double(input("What acceleration (ft/sec/sec)")) ?? 32.16
+        case .no:
+            switch Int(1 + 10 * rnd(1)) {
+            case 1:
+                println("Fine. You're on Mercury. Acceleration=12.2ft/sec/sec")
+                return 12.2
+            case 2:
+                println("Alright. You're on Venus. Acceleration=28.3ft/sec/sec")
+                return 28.3
+            case 3:
+                println("The you're on Earth. Acceleration=32.16ft/sec/sec")
+                return 32.16
+            case 4:
+                println("Fine. You're on the Moon. Acceleration=5.15ft/sec/sec")
+                return 5.15
+            case 5:
+                println("Alright. you're on Mars. Acceleration=12.5ft/sec/sec")
+                return 12.5
+            case 6:
+                println("Then you're on Jupiter. Acceleration=85.2ft/sec/sec")
+                return 85.2
+            case 7:
+                println("Fine. You're on Saturn. Acceleration=37.6ft/sec/sec")
+                return 37.6
+            case 8:
+                println("Alright. You're on Uranus. Acceleration=33.8ft/sec/sec")
+                return 33.8
+            case 9:
+                println("Then you're on Neptune. Acceleration=39.6ft/sec/sec")
+                return 39.6
+            case 10:
+                println("Fine. You're on the Sun. Acceleration=896ft/sec/sec")
+                return 896.0
+            default:
+                fatalError("Impossible case")
+            }
+        default:
+            print("Yes or no")
+            return getAcceleration()
+        }
+    }
+    
+    //Lines 218-1020
     private func jump(d1: Double, v: Double, a: Double, t: Double) {
         println("Time (sec)", "Dist to Fall (Ft)")
         println(String(repeating: "=", count: 10), String(repeating: "=", count: 17))
@@ -166,7 +131,7 @@ class Splat: GameProtocol {
         //Additional precomputed convenience variables
         let tvTime = v/a  //Time terminal velocity is reached
         var splatTime = tvTime + (d1 - v * v / (2 * a)) / v  //Line 1010 - time of impact if terminal velocity reached
-        while i <= t {
+        while i <= t && t > 0 {
             if i > tvTime {
                 d = d1 - ((v * v / (2 * a)) + v * (i - tvTime))
                 //Extra condition added to original code to suppress message if impact occurs before terminal velocity is reached within current interval
@@ -192,7 +157,7 @@ class Splat: GameProtocol {
         //Line 500
         println("Chute Open")
         
-        //Lines 510-751 - Rewritten using shootOpenAltitudes array
+        //Lines 510-751 - revised with chuteOpenAltitudes array
         let k = chuteOpenAltitudes.count
         if k < 3 {
             let jumpNumber = k == 0 ? "1st" : ( k == 1 ? "2nd" : "3rd")
@@ -249,7 +214,38 @@ class Splat: GameProtocol {
             fatalError("Impossible case - you and the program crashed.")
         }
         
+        //Line 1950
         println("I'll give you another chance.")
+    }
+    
+    //Lines 2000-2046
+    private func tryAgain(message: String = "Do you want to play again") {
+        print(message)
+            let response = Response(input())
+            if response == .easterEgg, chuteOpenAltitudes.count > 5 {
+                showEasterEgg(.splat)
+                wait(.long)
+                end()
+                return
+            }
+        
+            switch response {
+            case .yes:
+                getInputs()
+            case .no:
+                if message == "Please" {
+                    println("SSSSSSSSSS.")
+                    wait(.short)
+                    println()
+                    promptForReset()
+                    end()
+                } else {
+                    tryAgain(message: "Please")
+                }
+            default:
+                println("Yes or no")
+                tryAgain()
+            }
     }
     
     private func promptForReset() {

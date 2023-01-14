@@ -30,7 +30,7 @@ class OregonTrail: GameProtocol {
     private enum TurnChoice {
         case fort
         case hunt
-        case cont
+        case `continue`
     }
     
     private let delayAfterInput = 0.5  //Seconds after hitting return
@@ -167,7 +167,7 @@ class OregonTrail: GameProtocol {
                 fort()
             case .hunt:
                 hunt()
-            case .cont:
+            case .continue:
                 break
             }
             
@@ -300,7 +300,7 @@ class OregonTrail: GameProtocol {
             } else {
                 println("Do you want to (1) hunt, or (2) continue")
             }
-            guard var selection = Int(input()) else { return .cont }
+            guard var selection = Int(input()) else { return .continue }
             
             //Duplicates original logic - fort = 1, hunt = 2, else continue
             if !showFortOption { selection += 1 }
@@ -315,7 +315,7 @@ class OregonTrail: GameProtocol {
                     return .hunt
                 }
             default:
-                return .cont
+                return .continue
             }
         }
         

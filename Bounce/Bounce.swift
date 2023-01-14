@@ -27,13 +27,25 @@ class Bounce: GameProtocol {
     private func bounce() {
         let increment = Double(input("Time increment (sec)")) ?? 0.1  //s2
         println()
+        
+        //Added safety
+        guard increment > 0 else {
+            println("Invalid increment")
+            end()
+            return
+        }
+        
         let velocity = Double(input("Velocity (fps)")) ?? 30  //v
         println()
         
-        if velocity == 82964 {
-            showEasterEgg(.bounce)
+        guard velocity > 0 else {
+            println("Invalid velocity")
             end()
             return
+        }
+
+        if velocity == 82964 {
+            showEasterEgg(.bounce)
         }
         
         let coefficient = Double(input("Coefficient")) ?? 0.9  //c

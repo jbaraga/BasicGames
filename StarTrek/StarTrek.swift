@@ -339,7 +339,7 @@ class StarTrek: GameProtocol {
             }
         }
         
-        //Fallthrough?
+        //Fallthrough - should not occur
     }
     
     //MARK: 1310 REM HERE ANY TIME NEW QUADRANT ENTERED
@@ -692,8 +692,9 @@ class StarTrek: GameProtocol {
                         k[(i,3)] = 0
                         g[(q1,q2)] -= 100
                         z[(q1,q2)] = g[(q1,q2)]
-                        if k9 <= 0 {
+                        guard k9 > 0 else {
                             missionCompleted()
+                            return
                         }
                     } else {
                         println("   (Sensors show \(k[(i,3)]) units remaining)")
@@ -942,7 +943,7 @@ class StarTrek: GameProtocol {
             showEasterEgg(.starTrek)
         }
         
-        if response.lowercased() == "aye" {
+        if response == "aye" {
             run()
         } else {
             end()
@@ -955,6 +956,7 @@ class StarTrek: GameProtocol {
         println("menacing the Federation has been destroyed.")
         println()
         println(String(format: "Your efficiency rating is %.3f", 1000 * (Double(k9) * (t - t0))))
+        tryAgain()
     }
     
     //MARK: 6420 REM SHORT RANGE SENSOR SCAN AND STARTUP SUBROUTINE
@@ -1041,13 +1043,12 @@ class StarTrek: GameProtocol {
             return
         }
         
-        var isValidCommand = false
-        while !isValidCommand {
+        var command: ComputerCommand?
+        while command == nil {
             let a = Int(input("Computer active and awaiting command")) ?? -1
             if a < 0 { return }
-            println()
-            if let command = ComputerCommand(rawValue: a) {
-                isValidCommand = true
+            command = ComputerCommand(rawValue: a)
+            if let command = command {
                 switch command {
                 case .galacticRecord:
                     galacticRecord()
@@ -1071,7 +1072,7 @@ class StarTrek: GameProtocol {
             }
         }
     }
-    
+        
     //MARK: 7390 SETUP TO CHANGE CUM GAL RECORD TO GALAXY MAP
     //Line 7400
     private func galacticMap() {
@@ -1082,10 +1083,20 @@ class StarTrek: GameProtocol {
     //MARK: 7530 CUM GALACTIC RECORD
     //Lines 7540-7546
     private func galacticRecord() {
+        let a$ = input("Do you want a hardcopy? Is the TTY on (y/n)")
+        if a$.isYes {
+            consoleIO.startHardcopy()
+        }
+        
         println()
         println("Computer record of galaxy for quadrant \(q1) , \(q2)")
         println()
         printGalaxy()
+        
+        if a$.isYes {
+            consoleIO.printHardcopy()
+            consoleIO.endHardcopy()
+        }
     }
     
     //Lines 7550-7850

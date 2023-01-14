@@ -122,8 +122,6 @@ class Orbit: GameProtocol {
         case .easterEgg:
             if success {
                 showEasterEgg(.orbit)
-                end()
-                return
             }
         default:
             break

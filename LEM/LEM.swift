@@ -74,18 +74,16 @@ class LEM: GameProtocol {
             println(" 1=metric     0=english")
             print("Enter the appropriate number")
         }
-        
-        var response = ""
-        while !(response == "0" || response == "1") {
-            response = input(" ")
-            if !(response == "0" || response == "1") {
-                print("Enter the appropriate number")
-            }
-        }
-        
-        isMetricUnits = response == "1"
+        isMetricUnits = getUnits() == 1
     }
     
+    private func getUnits() -> Int {
+        guard let k = Int(input()), k == 0 || k == 1 else {
+            print("Enter the appropriate number")
+            return getUnits()
+        }
+        return k
+    }
     
     //Lines 315-480
     private func printInstructions() {
@@ -215,7 +213,7 @@ class LEM: GameProtocol {
                 //Lines 905 - 920
                 println()
                 println("This spacecraft is not able to violate the space-")
-                println("time contimuum.")
+                println("time continuum.")
                 getInputs()
                 return
             }
@@ -382,23 +380,27 @@ class LEM: GameProtocol {
     private func tryAgain(_ success: Bool = false) {
         wait(.long)
         println()
-        let result = input("Do you want to try it again (yes/no)")
-        if result.isEasterEgg, success {
-            showEasterEgg(.lem)
-            end()
-            return
-        }
-        
-        if result.isYes {
+        let response = Response(input("Do you want to try it again (yes/no)"))
+        switch response {
+        case .easterEgg:
+            if success {
+                showEasterEgg(.lem)
+                end()
+                return
+            }
+        case .yes:
             isNewPilot = false
             selectInstructions()
             performLanding()
-        } else {
-            println("Too bad, the space program hates to lose experienced")
-            println("astronauts.")
-            println()
-            end()
+            return
+        default:
+            break
         }
+        
+        println("Too bad, the space program hates to lose experienced")
+        println("astronauts.")
+        println()
+        end()
     }
     
     //Lines 1150-1210

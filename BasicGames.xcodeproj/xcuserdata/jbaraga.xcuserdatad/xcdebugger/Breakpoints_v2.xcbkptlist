@@ -14,8 +14,8 @@
             filePath = "Blackjack/Blackjack.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "mainLoop()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,9 +30,9 @@
             filePath = "Ftball/Ftball.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "400"
-            endingLineNumber = "400"
-            landmarkName = "opponentsPlay()"
+            startingLineNumber = "397"
+            endingLineNumber = "397"
+            landmarkName = "getOpponentsPlay()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

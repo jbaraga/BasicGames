@@ -19,13 +19,13 @@ extension Task where Success == Never, Failure == Never {
 
 extension String {
     var isYes: Bool {
-        return self.contains("Y") || self.contains("y")
+        return self.lowercased().hasPrefix("y")
     }
 }
 
 extension String {
     var isNo: Bool {
-        return self.contains("N") || self.contains("n")
+        return self.lowercased().hasPrefix("n")
     }
 }
 
@@ -35,6 +35,7 @@ extension String {
     }
 }
 
+/// Fuzzy match of string to yes or no
 enum Response {
     case yes
     case no
@@ -128,14 +129,22 @@ extension Array where Element == [Int] {
     }
 }
 
+/// Create 2 dimensional array of Integer
+/// - Parameters:
+///   - rows: # of rows
+///   - columns: # of columns
+///   - value: initial value for each element
+/// - Returns: 2-d integer array of dimensions row x column [row, column] with each element set to value
 func dim(_ rows: Int, _ columns: Int, value: Int = 0) -> [[Int]] {
     return Array(repeating: Array(repeating: value, count: columns), count: rows)
 }
 
-func dim(_ rows: Int, _ columns: Int, value: Double) -> [[Double]] {
-    return Array(repeating: Array(repeating: value, count: columns), count: rows)
-}
-
+/// Create 2 dimensional array of type T
+/// - Parameters:
+///   - rows: # of rows
+///   - columns: # of columns
+///   - value: initial value for each element
+/// - Returns: 2-d T array of dimensions row x column [row, column] with each element set to value
 func dim<T>(_ rows: Int, _ columns: Int, value: T) -> [[T]] {
     return Array(repeating: Array(repeating: value, count: columns), count: rows)
 }

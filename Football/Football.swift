@@ -153,9 +153,6 @@ class Football: GameProtocol {
         println("Presenting N.F.U. Football (No Fortran Used)")
         println(2)
         let response = input("Do you want instructions")
-        if response.isEasterEgg {
-            showEasterEgg(.football)
-        }
         if response.isYes {
             showInstructions()
         }
@@ -537,6 +534,9 @@ class Football: GameProtocol {
         if let score = pointsByTeam[team], score >= maximumPoints {
             println(team.stringValue + " WINS" + String(repeating: "*", count: 20))
             wait(.long)
+            if maximumPoints >= 30 {
+                showEasterEgg(.football)
+            }
             end()
         }
     }

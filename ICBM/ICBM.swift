@@ -18,7 +18,7 @@ class ICBM: GameProtocol {
         intercept()
     }
     
-    func intercept() {
+    private func intercept() {
         print("-------Missile------")
         print(tab(28), "--------SAM---------")
         println(tab(56), "-----")
@@ -87,6 +87,7 @@ class ICBM: GameProtocol {
                     println("Congratulations!  Your SAM came within \(Int(round(d))) miles of")
                     println("the ICBM and destroyed it!")
                     tryAgain(true)
+                    return
                 }
                 println("ICBM & SAM now \(Int(round(d))) miles apart")
             } else  {
@@ -97,18 +98,22 @@ class ICBM: GameProtocol {
         }
     }
     
-    func tryAgain(_ isSuccessful: Bool = false) {
+    private func tryAgain(_ isSuccessful: Bool = false) {
         wait(.long)
-        let response = input("Do you want to play more? (y or n)")
-        if response.isEasterEgg, isSuccessful {
-            showEasterEgg(.icbm)
-        }
-        
-        if response.isYes {
+        let response = Response(input("Do you want to play more? (y or n)"))
+        switch response {
+        case .easterEgg:
+            if isSuccessful {
+                showEasterEgg(.icbm)
+            }
+        case .yes:
             println()
             intercept()
-        } else {
-            end()
+            return
+        default:
+            break
         }
+        
+        end()
     }
 }

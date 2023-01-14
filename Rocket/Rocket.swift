@@ -90,19 +90,22 @@ class Rocket: GameProtocol {
         println(3)
         wait(.short)
         
-        let response = input("Another mission")
-        
-        if response.isEasterEgg, v2 < 2 {
-            showEasterEgg(.rocket)
-        }
-        
-        if response.isYes {
+        let response = Response(input("Another mission"))
+        switch response {
+        case .easterEgg:
+            if v2 < 2 {
+                showEasterEgg(.rocket)
+            }
+        case .yes:
             performLanding()
-        } else {
-            println()
-            println("Control out.")
-            end()
+            return
+        default:
+            break
         }
+        
+        println()
+        println("Control out.")
+        end()
     }
     
     private func printInstructions() {

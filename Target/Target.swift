@@ -35,7 +35,7 @@ class Target: GameProtocol {
         newTarget()
     }
     
-    //Lines 220-
+    //Lines 220-570
     private func newTarget() {
         let a = rnd(1) * 2 * .pi  //radians deviation from x axis
         let b = rnd(1) * 2 * .pi  //radians deviation from z axis
@@ -67,15 +67,9 @@ class Target: GameProtocol {
             let digits = r < 4 ? 0 : 1
             println(String(format: "     Estimated distance= %.\(digits)f", p3))
             
-            var parameters: (x: Double, z: Double, distance: Double)?
-            while parameters == nil {
-                parameters = targetParameters(from: input("Input angle deviation from x, deviation from z, distance"))
-            }
+            let parameters = getTargetParameters()
             println()
 
-            guard let parameters = parameters else {
-                fatalError("Invalid parameters")
-            }
             let a1 = parameters.x * .pi / 180
             let b1 = parameters.z * .pi / 180
             let p2 = parameters.distance
@@ -130,9 +124,26 @@ class Target: GameProtocol {
         println()
         println("Mission accomplished in \(r) shots.")
         wait(.short)
-        restart()
+        
+        if r < 4 {
+            showEasterEgg(.target)
+            end()
+        } else {
+            restart()
+        }
     }
     
+    //Lines 400-405
+    private func getTargetParameters() -> (x: Double, z: Double, distance: Double) {
+        let string = input("Input angle deviation from x, deviation from z, distance")
+        let values = string.components(separatedBy: ",").compactMap { Double($0.trimmingCharacters(in: .whitespaces)) }
+        guard values.count == 3 else {
+            return getTargetParameters()
+            
+        }
+        return (values[0], values[1], values[2])
+    }
+
     //Lines 580-590
     private func restart() {
         println(5)
@@ -140,16 +151,5 @@ class Target: GameProtocol {
         println("Next target...")
         wait(.short)
         newTarget()
-    }
-    
-    private func targetParameters(from string: String) -> (x: Double, z: Double, distance: Double)? {
-        if string.isEasterEgg {
-            showEasterEgg(.target)
-            wait(.long)
-            return nil
-        }
-        let values = string.components(separatedBy: ",").compactMap { Double($0.trimmingCharacters(in: .whitespaces)) }
-        guard values.count == 3 else { return nil }
-        return (values[0], values[1], values[2])
     }
 }
