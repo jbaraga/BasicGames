@@ -16,6 +16,7 @@ enum Game: String, CaseIterable {
     case banner
     case blackjack
     case bounce
+    case bug
     case calendar
     case depthCharge
     case digits
@@ -47,6 +48,7 @@ enum Game: String, CaseIterable {
         case .banner: return "Banner"
         case .blackjack: return "Blackjack"
         case .bounce: return "Bounce"
+        case .bug: return "Bug"
         case .calendar: return "Calendar"
         case .depthCharge: return "Depth Charge"
         case .digits: return "Digits"
@@ -84,6 +86,7 @@ enum Game: String, CaseIterable {
         case .banner: return .plot
         case .blackjack: return .gambling
         case .bounce: return .plot
+        case .bug: return .plot
         case .calendar: return .plot
         case .depthCharge: return .matrixManipulation
         case .digits: return .logic
@@ -145,6 +148,8 @@ enum Game: String, CaseIterable {
             return "pawprint.fill"
         case .blackjack:
             return "suit.club.fill"
+        case .bug:
+            return "ladybug"
         case .calendar:
             return "calendar"
         case .digits:
@@ -173,6 +178,7 @@ enum Game: String, CaseIterable {
         case .aceyDucey: return .red
         case .animal: return .brown
         case .blackjack: return .black
+        case .bug: return .red
         case .calendar: return .green
         case .digits: return .teal
         case .evenWins2: return .blue
