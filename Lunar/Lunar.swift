@@ -9,29 +9,36 @@ import Foundation
 
 
 class Lunar: GameProtocol {
-    private let tab = 14
+    private let g = 1.01e-3  //lunar gravity miles/sec/sec
+    private let z = 1.8  //Z - burn force conversion?
+    private let capsuleWeight = 16500.0  //N - This is capsule weight, not including fuel. Incorrectly labeled fuel weight in description.
     
+    private struct BurnResult {
+        var velocity: Double
+        var altitude: Double
+    }
+
     func run() {
-        printDescription()
+        printHeader(title: "Lunar")
+        println()
+        println("This is a computer simulation of an Apollo lunar")
+        println("landing capsule.")
+        println()
+        println("The on-board computer has failed (it was made by")
+        println("Xerox) so you have to land the capsule manually.")
+        
         printInstructions()
         performLanding()
     }
     
     private func performLanding() {
         var weight = 33000.0  //M - weight of capsule, including remaining fuel (lbs) and ?additional 500 lbs for astronauts?
-        let capsuleWeight = 16500.0  //N - This is capsule weight, not including fuel. Incorrectly labeled fuel weight in description.
         var altitude = 120.0  //A - miles
         var velocity = 1.0  //V - vertical velocity mps
         var elapsedTime = 0.0 //L - seconds
-        let g = 1.01e-3  //lunar gravity miles/sec/sec
-        let z = 1.8  //Z - burn force conversion?
-        
-        var t = 10.0  //T seconds - interval time counter during segment, each segment is 10 seconds long
-        var segmentAltitude = 120.0  //I - altitude (miles) used during segment for iterative calculation
-        var segmentVelocity = 1.0  //J - velocity (mps) used during segment for iterative calculation
         
         var remainingFuel: Double {
-            return weight - capsuleWeight
+            return weight - capsuleWeight  //M-N
         }
         
         var elapsedTimeString: String {
@@ -50,86 +57,50 @@ class Lunar: GameProtocol {
         var altitudeString: String {
             return "\(Int(altitude))  \(Int(5280 * (altitude - Double(Int(altitude)))))"
         }
-        
-        //Line 330. s is burn time in seconds, rate is burn rate
-        func commitTrialBurn(for s: Double, rate: Double) {
-            elapsedTime += s
-            t -= s
-            weight -= s * rate
-            altitude = segmentAltitude
-            velocity = segmentVelocity
-        }
-        
-        //Lines 420-430. t is burn time in seconds (s in original code), rate is burn rate
-        func performTrialBurn(for s: Double, rate: Double) {
-            let q = s * rate / weight
-            
-            //Original code, Taylor's expansion to calculate log(1-q)
-//            segmentVelocity = velocity + g * s - z * (q + pow(q,2)/2 + pow(q,3)/3 + pow(q,4)/4 + pow(q,5)/5)  //series expansion ln(1-q)
-//            segmentAltitude = altitude - g * s * s / 2 - velocity * s + z * s * (q/2 + pow(q,2)/6 + pow(q,3)/12 + pow(q,4)/20 + pow(q,5)/30)  //Integral of velocity
-            
-            //Alternate - no expansion
-            segmentVelocity = velocity + g * s + z * log(1 - q)
-            if q > 0 {
-                segmentAltitude = altitude - g * s * s / 2 - velocity * s + z * s * ((1 - q) * log(1 - q) / q + 1)
-            } else {
-                segmentAltitude = altitude - g * s * s / 2 - velocity * s
-            }
-        }
-        
-        //Lines 340-360. Iteratively compute burn for segment shortened by impact. s does not have to be updated
-        func performFinalBurn(for s: Double, rate: Double) {
-            var s = s
-            while s >= 5e-3 {
-                let d = velocity + sqrt(velocity * velocity + 2 * altitude * (g - z * rate / weight))
-                s = 2 * altitude / d
-                performTrialBurn(for: s, rate: rate)
-                commitTrialBurn(for: s, rate: rate)
-            }
-        }
-        
+                
         //Line 130
-        printHeader()
+        println("SEC", "MI + FT", "MPH", "LB FUEL", "BURN RATE")
         println()
         
         //Lines 150-230
-        outerLoop: while remainingFuel >= 1e-3 {
-            print(elapsedTimeString)
-            print(tab(tab), altitudeString)
-            print(tab(tab * 2), velocityString)
-            print(tab(tab * 3), fuelString)
-            print(tab(tab * 4))
+        while remainingFuel >= 1e-3 && altitude > 0 {
+            print(elapsedTimeString, altitudeString, velocityString, fuelString, "")
             let rate = Double(input()) ?? 0.0  //K - burn rate lbs per second
-            t = 10.0  //T seconds - interval time counter
+            var t = 10.0  //T seconds - interval time counter during segment, each segment is 10 seconds long
             
             //Lines 160-230
-            while t >= 1e-3 {
+            while t >= 1e-3 && remainingFuel >= 1e-3 {
                 //Lines 180-200
-                var s = remainingFuel >= t * rate ? t : remainingFuel / rate  //S - burn time in seconds for requested burn rate, capped by available fuel
-                performTrialBurn(for: s, rate: rate)
+                var s = remainingFuel >= t * rate ? t : remainingFuel / rate  //S - burn time in seconds for requested burn rate, capped by available fuel, or t if rate = 0
+                var burnResult = performBurn(forTime: s, rate: rate, weight: weight, velocity: velocity, altitude: altitude)
                 
-                if segmentAltitude <= 0 {  //Impact during trial burn
-                    performFinalBurn(for: s, rate: rate)
-                    break outerLoop
+                //Lines 210-220 - if vertical velocity switches from positive to negative during burn, shorten burn  to compute altitude when velocity is near zero to detect potential impact
+                if velocity > 0 && burnResult.velocity < 0 {
+                    //Line 370-410
+                    let w = (1 - weight * g/(z * rate)) / 2
+                    s = weight * velocity / (z * rate * (w + sqrt(w * w + velocity / z))) + 0.05
+                    burnResult = performBurn(forTime: s, rate: rate, weight: weight, velocity: velocity, altitude: altitude)
                 }
                 
-                if velocity > 0 && segmentVelocity < 0 {
-                    //If vertical velocity has switched from positive to negative during trial burn, must iteratively compute altitude and velocity during burn, and detect case where impact occurred while velocity was still positive
-                    while velocity > 0 && segmentVelocity < 0 {
-                        //Line 370-410
-                        let w = (1 - weight * g/(z * rate)) / 2
-                        s = weight * velocity / (z * rate * (w + sqrt(w * w + velocity / z))) + 0.05
-                        performTrialBurn(for: s, rate: rate)
-                        
-                        if segmentAltitude <= 0 {  //Impact during trial burn
-                            performFinalBurn(for: s, rate: rate)
-                            break outerLoop
-                        } else {
-                            commitTrialBurn(for: s, rate: rate)
-                        }
-                    }
+                //Commit burn results if no impact
+                if burnResult.altitude > 0 {
+                    velocity = burnResult.velocity
+                    altitude = burnResult.altitude
+                    t -= s
+                    elapsedTime += s
+                    weight -= s * rate
                 } else {
-                    commitTrialBurn(for: s, rate: rate)
+                    //Lines 340-360 - iteratively compute burn for segment shortened by impact.
+                    while s >= 5e-3 {
+                        let d = velocity + sqrt(velocity * velocity + 2 * altitude * (g - z * rate / weight))
+                        s = 2 * altitude / d
+                        let result = performBurn(forTime: s, rate: rate, weight: weight, velocity: velocity, altitude: altitude)
+                        velocity = result.velocity
+                        altitude = result.altitude
+                        elapsedTime += s
+                        weight -= s * rate
+                    }
+                    t = 0
                 }
             }
         }
@@ -137,14 +108,14 @@ class Lunar: GameProtocol {
         println()
 
         if remainingFuel < 1e-3 {
-            println("Fuel out at \(elapsedTime) seconds")
-            let ffTime = (sqrt(velocity * velocity + 2 * altitude * g) - velocity) / g  //S (reused) - Free fall time
-            velocity += g * ffTime
-            elapsedTime += ffTime
+            //Lines 240-250 - free fall
+            println("Fuel out at \(elapsedTimeString) seconds")
+            let s = (sqrt(velocity * velocity + 2 * altitude * g) - velocity) / g  //S (reused) - Free fall time
+            velocity += g * s
+            elapsedTime += s
         }
         
-        let timeString = formatter.string(from: elapsedTime)
-        println("On moon at " + timeString + " - impact velocity " + velocityString + " mph")
+        println("On moon at \(elapsedTimeString) seconds - impact velocity \(velocityString) mph")
         
         let mph = velocity * 3600
         switch mph {
@@ -176,17 +147,6 @@ class Lunar: GameProtocol {
         }
     }
     
-    //Lines 10-110
-    private func printDescription() {
-        printHeader(title: "Lunar")
-        println()
-        println("This is a computer simulation of an Apollo lunar")
-        println("landing capsule.")
-        println()
-        println("The on-board computer has failed (it was made by")
-        println("Xerox) so you have to land the capsule manually.")
-    }
-    
     private func printInstructions() {
         println()
         println("Set the burn rate of retro rockets to any value between")
@@ -196,16 +156,23 @@ class Lunar: GameProtocol {
         println()
         println("Good luck")
         println()
-        
         wait(.long)
     }
     
-    //Line 130
-    private func printHeader() {
-        print("SEC")
-        print(tab(tab), "MI + FT")
-        print(tab(tab * 2), "MPH")
-        print(tab(tab * 3), "LB FUEL")
-        println(tab(tab * 4), "BURN RATE")
+    //Lines 420-430. rate is burn rate
+    private func performBurn(forTime s: Double, rate: Double, weight: Double, velocity: Double, altitude: Double) -> BurnResult {
+        let q = s * rate / weight
+        let finalVelocity = velocity + g * s + z * log(1 - q)
+        let finalAltitude: Double
+        if q > 0 {
+            finalAltitude = altitude - g * s * s / 2 - velocity * s + z * s * ((1 - q) * log(1 - q) / q + 1)
+        } else {
+            finalAltitude = altitude - g * s * s / 2 - velocity * s
+        }
+        
+        //Original code, Taylor's expansion to calculate log(1-q)
+//        let finalVelocity = velocity + g * s - z * (q + pow(q,2)/2 + pow(q,3)/3 + pow(q,4)/4 + pow(q,5)/5)  //series expansion ln(1-q)
+//        let finalAltitude = altitude - g * s * s / 2 - velocity * s + z * s * (q/2 + pow(q,2)/6 + pow(q,3)/12 + pow(q,4)/20 + pow(q,5)/30)  //Integral of velocity
+        return BurnResult(velocity: finalVelocity, altitude: finalAltitude)
     }
 }
