@@ -226,7 +226,6 @@ class Splat: GameProtocol {
                 showEasterEgg(.splat)
                 wait(.long)
                 end()
-                return
             }
         
             switch response {

@@ -386,7 +386,6 @@ class LEM: GameProtocol {
             if success {
                 showEasterEgg(.lem)
                 end()
-                return
             }
         case .yes:
             isNewPilot = false

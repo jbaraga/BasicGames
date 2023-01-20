@@ -64,7 +64,6 @@ class Banner: GameProtocol {
         guard x > 0 && y > 0 else {
             println("Invalid dimensions")
             end()
-            return
         }
         
         let isCentered = input("Centered").isYes  //G1: 0 = false, 1 = true
@@ -80,7 +79,6 @@ class Banner: GameProtocol {
             guard let s = data[letter], s.count == 7 else {  //s zero indexed
                 println("Unallowed character: " + letter)
                 end()
-                return
             }
             
             //Line 96

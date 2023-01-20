@@ -24,7 +24,6 @@ class Guess: GameProtocol {
         guard limit > 0 else {
             println("Invalid limit")
             end()
-            return
         }
         
         play(limit)
@@ -50,7 +49,6 @@ class Guess: GameProtocol {
             if n == 82964 {
                 showEasterEgg(.guess)
                 end()
-                return
             }
             
             if n < m {

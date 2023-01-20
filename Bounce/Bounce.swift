@@ -32,7 +32,6 @@ class Bounce: GameProtocol {
         guard increment > 0 else {
             println("Invalid increment")
             end()
-            return
         }
         
         let velocity = Double(input("Velocity (fps)")) ?? 30  //v
@@ -41,7 +40,6 @@ class Bounce: GameProtocol {
         guard velocity > 0 else {
             println("Invalid velocity")
             end()
-            return
         }
 
         if velocity == 82964 {

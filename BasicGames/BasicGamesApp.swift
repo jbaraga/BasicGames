@@ -87,6 +87,7 @@ struct BasicGamesApp: App {
         Group {
             scene(for: .hamurabi)
             scene(for: .bug)
+            scene(for: .king)
         }
 
         EggScene(url: $eggURL)

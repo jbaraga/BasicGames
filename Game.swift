@@ -28,6 +28,7 @@ enum Game: String, CaseIterable {
     case hamurabi
     case icbm
     case joust
+    case king
     case lunar
     case lem
     case rocket
@@ -60,6 +61,7 @@ enum Game: String, CaseIterable {
         case .hamurabi: return "Hamurabi"
         case .icbm: return "ICBM"
         case .joust: return "Joust"
+        case .king: return "King"
         case .lunar: return "Lunar"
         case .lem: return "LEM"
         case .rocket: return "Rocket"
@@ -98,6 +100,7 @@ enum Game: String, CaseIterable {
         case .hamurabi: return .educational
         case .icbm: return .combat
         case .joust: return .combat
+        case .king: return .educational
         case .lunar: return .space
         case .lem: return .space
         case .rocket: return .space
@@ -160,6 +163,8 @@ enum Game: String, CaseIterable {
             return "questionmark.app"
         case .hamurabi:
             return "crown.fill"
+        case .king:
+            return "crown"
         case .orbit:
             return "atom"
         case .stockMarket:
@@ -184,6 +189,7 @@ enum Game: String, CaseIterable {
         case .evenWins2: return .blue
         case .guess: return .mint
         case .hamurabi: return .purple
+        case .king: return .indigo
         case .orbit: return .blue
         case .starTrek: return .blue
         case .stockMarket: return .purple

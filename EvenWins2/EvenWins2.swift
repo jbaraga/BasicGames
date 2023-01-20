@@ -90,14 +90,12 @@ class EvenWins2: GameProtocol {
                         showEasterEgg(.evenWins2)
                         wait(.long)
                         end()
-                        return
                     }
                     
                     switch m {
                     case 0:
                         wait(.long)
                         end()
-                        return
                     case 1...(p < 4 ? p : 4):
                         break
                     default:

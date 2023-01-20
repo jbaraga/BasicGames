@@ -163,6 +163,11 @@ extension GameProtocol {
         return input(terminator: terminator)
     }
     
+    @discardableResult
+    func pauseForEnter() -> String {
+        return consoleIO.pauseForEnter()
+    }
+    
     func showEasterEgg(_ game: Game) {
         consoleIO.wait(.short)
         println()
@@ -174,7 +179,7 @@ extension GameProtocol {
         center.post(name: Notification.Name.showEasterEgg, object: game.pdfFilename, userInfo: nil)
     }
     
-    func end() {
+    func end() -> Never {
         consoleIO.close()
     }
 }

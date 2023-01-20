@@ -26,7 +26,6 @@ class DepthCharge: GameProtocol {
         guard g > 0 else {
             println("Invalid dimension")
             end()
-            return
         }
         
         println()
@@ -88,8 +87,6 @@ class DepthCharge: GameProtocol {
         case .easterEgg:
             if isSuccessful {
                 showEasterEgg(.depthCharge)
-                end()
-                return
             }
         case .yes:
             start()

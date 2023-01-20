@@ -58,7 +58,6 @@ class Animal: GameProtocol {
         
         guard index < a$.count else {
             end()
-            return
         }
         
         let guess = a$[index].removingFirst(2)

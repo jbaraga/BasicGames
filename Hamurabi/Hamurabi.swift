@@ -24,12 +24,12 @@ class Hamurabi: GameProtocol {
         var d1 = 0  //Cumulative deaths
         var p1 = 0  //Running average mortality rate per year
         
-        var year = 0  //z
+        var year = 0  //Z
         var p = 95  //Population
-        var i = 5  //#of people added for year
-        var d = 0  //# of people died for year
+        var i = 5  //# people added for year
+        var d = 0  //# people died for year
 
-        var yield = 3  //y - bushels of grain harvested per acre
+        var yield = 3  //Y - bushels of grain harvested per acre
         var h = 3000  //Harvested grain in 1 year
         var acres = h / yield
         var s = 2800  // Bushels in store
@@ -166,6 +166,8 @@ class Hamurabi: GameProtocol {
             //Line 900
             println("A fantastic performance!!!  Charlemagne, Disraeli, and")
             println("Jefferson combined could not have done better!")
+            wait(.long)
+            pauseForEnter()
             showEasterEgg(.hamurabi)
         }
         

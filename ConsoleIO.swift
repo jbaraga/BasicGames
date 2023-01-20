@@ -124,7 +124,7 @@ class ConsoleIO {
         Thread.sleep(forTimeInterval: delay.value)
     }
     
-    func close() {
+    func close() -> Never {
         wait(.short)
         println()
         println("Process Terminated")
@@ -204,6 +204,18 @@ class ConsoleIO {
         if isRecording {
             hardcopyString += inputString
         }
+        return inputString.trimmingCharacters(in: .newlines)
+    }
+    
+    func pauseForEnter() -> String {
+        isAwaitingInput = true
+        defer {
+            isAwaitingInput = false
+            cursor = 0
+        }
+        
+        let keyboard = FileHandle.standardInput
+        guard let inputString = String(data: keyboard.availableData, encoding: .utf8) else { return "" }
         return inputString.trimmingCharacters(in: .newlines)
     }
     

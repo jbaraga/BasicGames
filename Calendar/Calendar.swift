@@ -23,7 +23,6 @@ class Calendar: GameProtocol {
             if response == 0 {
                 showEasterEgg(.calendar)
                 end()
-                return
             }
             
             if response >= 1582 {

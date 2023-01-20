@@ -160,7 +160,6 @@ class Ftball: GameProtocol {
                 showEasterEgg(.ftball)
             }
             end()
-            return
         }
         
         if t == 30 && rnd(1) < 1 / 3 {
