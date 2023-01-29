@@ -117,30 +117,28 @@ extension GameProtocol {
         return { consoleIO.tab(x) }
     }
     
-    /// Prints multiple items, each item is printed at successive tab stops
+    /// Prints multiple items, each item is printed at successive tab stops. Will skip to next tab stop if message length greater than tabInterval
     /// - Parameters:
-    ///   - message1: String
-    ///   - message2: Optional String
-    ///   - message3: Optional String
-    ///   - message4: Optional String
-    ///   - message5: Optional String
+    ///   - messages: strings to print, separated by comma
     ///   - tabInterval: Tab  interval
-    func print(_ message1: String, _ message2: String? = nil, _ message3: String? = nil, _ message4: String? = nil, _ message5: String? = nil, tabInterval: Int = 14) {
-        for (index, string) in ([message1, message2, message3, message4, message5].compactMap { $0 }).enumerated() {
-            print(tab(tabInterval * index), string)
+    func print(_ messages: String..., tabInterval: Int = 14) {
+        var tabIndex = 0
+        for string in messages {
+            print(tab(tabInterval * tabIndex), string)
+            tabIndex += (1 + (string.count / tabInterval))
         }
     }
     
     /// Prints multiple items at successive tab stops, terminating with new line
     /// - Parameters:
-    ///   - message1: String
-    ///   - message2: Optional String
-    ///   - message3: Optional String
-    ///   - message4: Optional String
-    ///   - message5: Optional String
+    ///   - messages: strings to print, separated by comma
     ///   - tabInterval: Tab  interval
-    func println(_ message1: String, _ message2: String? = nil, _ message3: String? = nil, _ message4: String? = nil, _ message5: String? = nil, tabInterval: Int = 14) {
-        print(message1, message2, message3, message4, message5, tabInterval: tabInterval)
+    func println(_ messages: String..., tabInterval: Int = 14) {
+        var tabIndex = 0
+        for string in messages {
+            print(tab(tabInterval * tabIndex), string)
+            tabIndex += (1 + (string.count / tabInterval))
+        }
         println()
     }
     

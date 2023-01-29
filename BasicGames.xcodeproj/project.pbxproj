@@ -225,6 +225,14 @@
 		ADCC59542961187C00E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
 		ADCC59552961187D00E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
 		ADCC59562961187F00E34C91 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADD5D275297B64320035F451 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5D274297B64320035F451 /* main.swift */; };
+		ADD5D279297B644C0035F451 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADD5D27A297B644F0035F451 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADD5D27B297B64530035F451 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADD5D27C297B64560035F451 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADD5D27E297B64690035F451 /* Hockey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5D27D297B64690035F451 /* Hockey.swift */; };
+		ADD5D280297B659F0035F451 /* Hockey.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADD5D27F297B659F0035F451 /* Hockey.pdf */; };
+		ADD5D283297B65DD0035F451 /* Hockey in Resources */ = {isa = PBXBuildFile; fileRef = ADD5D272297B64320035F451 /* Hockey */; };
 		ADDB4FC8278B589100278FB7 /* SwiftTerm in Frameworks */ = {isa = PBXBuildFile; productRef = ADDB4FC7278B589100278FB7 /* SwiftTerm */; };
 		ADDBCD0427B5504000C369D1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD0327B5504000C369D1 /* main.swift */; };
 		ADDBCD0927B5509F00C369D1 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD0827B5509F00C369D1 /* Rocket.swift */; };
@@ -240,6 +248,7 @@
 		ADDBCD2027B6B2B000C369D1 /* Joust in Resources */ = {isa = PBXBuildFile; fileRef = ADDBCD1427B6B13900C369D1 /* Joust */; };
 		ADDBCD2427B6F16B00C369D1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2327B6F16B00C369D1 /* Preferences.swift */; };
 		ADDBCD2627B6F22E00C369D1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */; };
+		ADDBEF1B2985956F00745DBD /* Bell Buoy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADDBEF1A2985956F00745DBD /* Bell Buoy.mp3 */; };
 		ADF23D462784D1FF00D71CDD /* Lunar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADF23D452784D1FF00D71CDD /* Lunar.pdf */; };
 		ADF23D56278649F800D71CDD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF23D55278649F800D71CDD /* main.swift */; };
 		ADF23D5B27864A3100D71CDD /* LEM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF23D5A27864A3100D71CDD /* LEM.swift */; };
@@ -457,6 +466,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = ADB4DEA827C5BEA100C04087;
 			remoteInfo = Football;
+		};
+		ADD5D281297B65C50035F451 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADD5D271297B64320035F451;
+			remoteInfo = Hockey;
 		};
 		ADDBCD0D27B5512E00C369D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -714,6 +730,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		ADD5D270297B64320035F451 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ADDBCCFF27B5504000C369D1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -882,6 +907,10 @@
 		ADB4DEAB27C5BEA100C04087 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADB4DEB327C5BF3400C04087 /* Football.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Football.swift; sourceTree = "<group>"; };
 		ADB4DEB527C5BF4600C04087 /* Ftball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ftball.swift; sourceTree = "<group>"; };
+		ADD5D272297B64320035F451 /* Hockey */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hockey; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADD5D274297B64320035F451 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADD5D27D297B64690035F451 /* Hockey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hockey.swift; sourceTree = "<group>"; };
+		ADD5D27F297B659F0035F451 /* Hockey.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Hockey.pdf; sourceTree = "<group>"; };
 		ADDBCD0127B5504000C369D1 /* Rocket */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Rocket; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDBCD0327B5504000C369D1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADDBCD0827B5509F00C369D1 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
@@ -890,6 +919,7 @@
 		ADDBCD1B27B6B16E00C369D1 /* Joust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joust.swift; sourceTree = "<group>"; };
 		ADDBCD2327B6F16B00C369D1 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ADDBEF1A2985956F00745DBD /* Bell Buoy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bell Buoy.mp3"; sourceTree = "<group>"; };
 		ADF23D452784D1FF00D71CDD /* Lunar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Lunar.pdf; sourceTree = "<group>"; };
 		ADF23D53278649F700D71CDD /* LEM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LEM; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF23D55278649F800D71CDD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -1100,6 +1130,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADD5D26F297B64320035F451 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADDBCCFE27B5504000C369D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1299,6 +1336,7 @@
 				AD10BD2A27D42E2200422720 /* Football.pdf */,
 				AD7747392960D63C00066994 /* Guess.pdf */,
 				AD69C55C297189BC005D52A2 /* Haumurabi.pdf */,
+				ADD5D27F297B659F0035F451 /* Hockey.pdf */,
 				AD33FD1527B9A44700E087D1 /* ICBM.pdf */,
 				ADAFE7AC27B83B8F009A7D0B /* Joust.pdf */,
 				AD90BF012978D4050015A9DB /* King.pdf */,
@@ -1311,6 +1349,7 @@
 				AD60177F27EDFB5F00213C47 /* Target.pdf */,
 				AD56DA2827E62DC600179FAA /* 3DPlot.pdf */,
 				AD150F0227C0836700FA3280 /* Weekday.pdf */,
+				ADDBEF1A2985956F00745DBD /* Bell Buoy.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1403,6 +1442,7 @@
 				ADB4DE9C27C5BE5F00C04087 /* Ftball */,
 				AD77472D2960D39F00066994 /* Guess */,
 				AD69C550297187A8005D52A2 /* Hamurabi */,
+				ADD5D273297B64320035F451 /* Hockey */,
 				AD33FD0727B955DD00E087D1 /* ICBM */,
 				ADDBCD1527B6B13900C369D1 /* Joust */,
 				AD90BEF52978D2390015A9DB /* King */,
@@ -1460,6 +1500,7 @@
 				AD69C54F297187A8005D52A2 /* Hamurabi */,
 				AD5F26D1297389650053C5A1 /* Bug */,
 				AD90BEF42978D2380015A9DB /* King */,
+				ADD5D272297B64320035F451 /* Hockey */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1524,6 +1565,15 @@
 				ADB4DEB327C5BF3400C04087 /* Football.swift */,
 			);
 			path = Football;
+			sourceTree = "<group>";
+		};
+		ADD5D273297B64320035F451 /* Hockey */ = {
+			isa = PBXGroup;
+			children = (
+				ADD5D274297B64320035F451 /* main.swift */,
+				ADD5D27D297B64690035F451 /* Hockey.swift */,
+			);
+			path = Hockey;
 			sourceTree = "<group>";
 		};
 		ADDB4FC6278B589100278FB7 /* Frameworks */ = {
@@ -1999,6 +2049,7 @@
 				ADB4DEA427C5BE8000C04087 /* PBXTargetDependency */,
 				AD77473C2960D65400066994 /* PBXTargetDependency */,
 				AD69C55F29718BBA005D52A2 /* PBXTargetDependency */,
+				ADD5D282297B65C50035F451 /* PBXTargetDependency */,
 				AD33FD1427B9578900E087D1 /* PBXTargetDependency */,
 				ADDBCD2227B6B2DA00C369D1 /* PBXTargetDependency */,
 				AD90BF042978D41F0015A9DB /* PBXTargetDependency */,
@@ -2090,6 +2141,23 @@
 			name = Football;
 			productName = Football;
 			productReference = ADB4DEA927C5BEA100C04087 /* Football */;
+			productType = "com.apple.product-type.tool";
+		};
+		ADD5D271297B64320035F451 /* Hockey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADD5D278297B64320035F451 /* Build configuration list for PBXNativeTarget "Hockey" */;
+			buildPhases = (
+				ADD5D26E297B64320035F451 /* Sources */,
+				ADD5D26F297B64320035F451 /* Frameworks */,
+				ADD5D270297B64320035F451 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hockey;
+			productName = Hockey;
+			productReference = ADD5D272297B64320035F451 /* Hockey */;
 			productType = "com.apple.product-type.tool";
 		};
 		ADDBCD0027B5504000C369D1 /* Rocket */ = {
@@ -2273,6 +2341,9 @@
 					ADB4DEA827C5BEA100C04087 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
+					ADD5D271297B64320035F451 = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					ADDBCD0027B5504000C369D1 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -2325,6 +2396,7 @@
 				ADB4DE9A27C5BE5F00C04087 /* Ftball */,
 				AD77472B2960D39E00066994 /* Guess */,
 				AD69C54E297187A8005D52A2 /* Hamurabi */,
+				ADD5D271297B64320035F451 /* Hockey */,
 				AD33FD0527B955DD00E087D1 /* ICBM */,
 				ADDBCD1327B6B13900C369D1 /* Joust */,
 				AD90BEF32978D2380015A9DB /* King */,
@@ -2364,12 +2436,14 @@
 				ADB4DEA227C5BE6C00C04087 /* Ftball in Resources */,
 				AD77473D2960D66F00066994 /* Guess in Resources */,
 				AD69C56029718BD7005D52A2 /* Hamurabi in Resources */,
+				ADD5D283297B65DD0035F451 /* Hockey in Resources */,
 				AD33FD1227B9576600E087D1 /* ICBM in Resources */,
 				ADDBCD2027B6B2B000C369D1 /* Joust in Resources */,
 				AD90BF052978D43A0015A9DB /* King in Resources */,
 				AD57CCED27AEC29F00AD32C5 /* LEM in Resources */,
 				AD57CCEE27AEC2B400AD32C5 /* Lunar in Resources */,
 				AD7C3F792961D6F800F3C5AA /* Orbit in Resources */,
+				ADDBEF1B2985956F00745DBD /* Bell Buoy.mp3 in Resources */,
 				AD57CCEF27AEC2BE00AD32C5 /* OregonTrail in Resources */,
 				ADDBCD0F27B5515E00C369D1 /* Rocket in Resources */,
 				AD2437CB27EAA075005D67B6 /* Splat in Resources */,
@@ -2396,6 +2470,7 @@
 				ADAFE7AD27B83B8F009A7D0B /* Joust.pdf in Resources */,
 				AD90BF022978D4050015A9DB /* King.pdf in Resources */,
 				ADF23D462784D1FF00D71CDD /* Lunar.pdf in Resources */,
+				ADD5D280297B659F0035F451 /* Hockey.pdf in Resources */,
 				AD7D2754277CA5EE00F43F39 /* OregonTrail.pdf in Resources */,
 				AD7C3F762961D6AF00F3C5AA /* Orbit.pdf in Resources */,
 				AD0C603329736D570015436F /* StockMarket.pdf in Resources */,
@@ -2785,6 +2860,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADD5D26E297B64320035F451 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADD5D275297B64320035F451 /* main.swift in Sources */,
+				ADD5D27C297B64560035F451 /* GameProtocol.swift in Sources */,
+				ADD5D27E297B64690035F451 /* Hockey.swift in Sources */,
+				ADD5D27B297B64530035F451 /* ConsoleIO.swift in Sources */,
+				ADD5D27A297B644F0035F451 /* Game.swift in Sources */,
+				ADD5D279297B644C0035F451 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADDBCCFD27B5504000C369D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2992,6 +3080,11 @@
 			isa = PBXTargetDependency;
 			target = ADB4DEA827C5BEA100C04087 /* Football */;
 			targetProxy = ADB4DEB127C5BEBB00C04087 /* PBXContainerItemProxy */;
+		};
+		ADD5D282297B65C50035F451 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADD5D271297B64320035F451 /* Hockey */;
+			targetProxy = ADD5D281297B65C50035F451 /* PBXContainerItemProxy */;
 		};
 		ADDBCD0E27B5512E00C369D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4015,6 +4108,32 @@
 			};
 			name = Release;
 		};
+		ADD5D276297B64320035F451 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADD5D277297B64320035F451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		ADDBCD0627B5504000C369D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -4419,6 +4538,15 @@
 			buildConfigurations = (
 				ADB4DEAE27C5BEA100C04087 /* Debug */,
 				ADB4DEAF27C5BEA100C04087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADD5D278297B64320035F451 /* Build configuration list for PBXNativeTarget "Hockey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADD5D276297B64320035F451 /* Debug */,
+				ADD5D277297B64320035F451 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

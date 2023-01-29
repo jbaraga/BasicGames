@@ -88,6 +88,7 @@ struct BasicGamesApp: App {
             scene(for: .hamurabi)
             scene(for: .bug)
             scene(for: .king)
+            scene(for: .hockey)
         }
 
         EggScene(url: $eggURL)
@@ -149,11 +150,9 @@ struct BasicGamesApp: App {
     }
     
     private func showPDF(with filename: String) {
-        guard let path = Bundle.main.path(forResource: filename, ofType: "pdf") else { return }
-        eggURL = URL(fileURLWithPath: path)
-        if let url = Game.eggURL {
-            openURL(url)
-        }
+        guard let url = Bundle.main.url(forResource: filename, withExtension: "pdf") else { return }
+        eggURL = url
+        openURL(url)
     }
 }
 

@@ -8,6 +8,7 @@
 
 import Foundation
 import AppKit
+import AVFAudio
 
 class ConsoleIO {
     public struct TerminalCommands {
@@ -71,6 +72,8 @@ class ConsoleIO {
             center.post(name: Notification.Name.consoleInputDidBegin, object: isAwaitingInput.description, userInfo: nil)
         }
     }
+    
+    private var player: AVAudioPlayer?  //Need to keep reference for sound to play
     
     private init() {
 //        freopen("", "a+", stderr)  //Suppresses error logging
@@ -138,13 +141,14 @@ class ConsoleIO {
     
     func ringBell(_ count: Int = 1) {
         do {
-            guard let url = URL(string: "/System/Library/Sounds/Glass.aiff") else { throw CocoaError(.fileNoSuchFile) }
-            guard let sound = NSSound(contentsOf: url, byReference: true) else { throw CocoaError(.fileReadUnknown) }
-            for _ in 1...count {
-                sound.play()
-                wait(.veryShort)
-            }
-        } catch {
+            guard let url = Bundle.main.url(forResource: "Bell Buoy", withExtension: "mp3") else { throw CocoaError(.fileNoSuchFile) }
+            let player = try AVAudioPlayer(contentsOf: url)
+            self.player = player
+            player.enableRate = true
+            player.rate = 2
+            player.numberOfLoops = count - 1
+            player.play()
+         } catch {
             for _ in 1...count {
                 print(TerminalCommands.bell)
                 wait(.veryShort)
