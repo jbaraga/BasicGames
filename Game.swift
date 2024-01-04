@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import PDFKit
 
-enum Game: String, CaseIterable {
+enum Game: String, CaseIterable, Codable {
     case aceyDucey
     case amazing
     case animal
@@ -18,6 +18,7 @@ enum Game: String, CaseIterable {
     case bounce
     case bug
     case calendar
+    case civilWar
     case depthCharge
     case digits
     case evenWins1
@@ -52,6 +53,7 @@ enum Game: String, CaseIterable {
         case .bounce: return "Bounce"
         case .bug: return "Bug"
         case .calendar: return "Calendar"
+        case .civilWar: return "Civil War"
         case .depthCharge: return "Depth Charge"
         case .digits: return "Digits"
         case .evenWins1: return "Even Wins (version 1)"
@@ -92,6 +94,7 @@ enum Game: String, CaseIterable {
         case .bounce: return .plot
         case .bug: return .plot
         case .calendar: return .plot
+        case .civilWar: return .educational
         case .depthCharge: return .matrixManipulation
         case .digits: return .logic
         case .evenWins1: return .removeObject
@@ -120,10 +123,8 @@ enum Game: String, CaseIterable {
     
     var executableName: String {
         switch self {
-        case .evenWins1:
-            return "EvenWins1"
-        case .evenWins2:
-            return "EvenWins2"
+        case .evenWins1: return "EvenWins1"
+        case .evenWins2: return "EvenWins2"
         default:
             return stringValue.replacingOccurrences(of: " ", with: "")
         }
@@ -131,53 +132,33 @@ enum Game: String, CaseIterable {
     
     var pdfFilename: String {
         switch self {
-        case .ftball:
-            return "Football"
-        case .evenWins1, .evenWins2:
-            return "EvenWins"
-        case .lem, .rocket:
-            return "Lunar"
+        case .ftball: return "Football"
+        case .evenWins1, .evenWins2: return "EvenWins"
+        case .lem, .rocket: return "Lunar"
         default:
             return executableName
         }
     }
     
-    var imageName: String {
-        return stringValue
-    }
+    var imageName: String { stringValue }
     
     var imageSystemName: String? {
         switch self {
-        case .aceyDucey:
-            return "suit.heart.fill"
-        case .animal:
-            return "pawprint.fill"
-        case .blackjack:
-            return "suit.club.fill"
-        case .bug:
-            return "ladybug"
-        case .calendar:
-            return "calendar"
-        case .digits:
-            return "hand.raised.fingers.spread.fill"
-        case .evenWins2:
-            return "circle.hexagongrid.circle"
-        case .guess:
-            return "questionmark.app"
-        case .hamurabi:
-            return "crown.fill"
-        case .hockey:
-            return "figure.hockey"
-        case .king:
-            return "crown"
-        case .orbit:
-            return "atom"
-        case .stockMarket:
-            return "chart.line.uptrend.xyaxis.circle.fill"
-        case .target:
-            return "target"
-        case .threeDPlot:
-            return "view.3d"
+        case .aceyDucey: return "suit.heart.fill"
+        case .animal: return "pawprint.fill"
+        case .blackjack: return "suit.club.fill"
+        case .bug: return "ladybug"
+        case .calendar: return "calendar"
+        case .digits: return "hand.raised.fingers.spread.fill"
+        case .evenWins2: return "circle.hexagongrid.circle"
+        case .guess: return "questionmark.app"
+        case .hamurabi: return "crown.fill"
+        case .hockey: return "figure.hockey"
+        case .king: return "crown"
+        case .orbit: return "atom"
+        case .stockMarket: return "chart.line.uptrend.xyaxis.circle.fill"
+        case .target: return "target"
+        case .threeDPlot: return "view.3d"
         default:
             return nil
         }
@@ -205,48 +186,10 @@ enum Game: String, CaseIterable {
             return nil
         }
     }
-    
-    var urlString: String {
-        return Self.baseURLString + rawValue
-    }
-
-    var url: URL? {
-        return URL(string: urlString)
-    }
-    
-    var set: Set<String> {
-        return Set([urlString])
-    }
-    
-    init?(url: URL) {
-        if let game = Game.allCases.first(where: { $0.url == url }) {
-            self = game
-        } else {
-            return nil
-        }
-    }
-    
-    static let baseURLString = "basicGames://"
-    
-    static var allGamesSet: Set<String> {
-        return Set(allCases.compactMap { $0.urlString })
-    }
-    
-    static var eggURLString: String {
-        return "basicGames://easterEgg"
-    }
-
-    static var eggURL: URL? {
-        return URL(string: Self.eggURLString)
-    }
-    
-    static var eggSet: Set<String> {
-        return Set([Self.eggURLString])
-    }
 }
 
 
-enum Category: String, CaseIterable, Identifiable {
+enum Category: String, CaseIterable, Identifiable, Codable {
     case all
     case introductoryFun
     case educational
@@ -263,32 +206,19 @@ enum Category: String, CaseIterable, Identifiable {
     
     var stringValue: String {
         switch self {
-        case .all:
-            return "All Games"
-        case .introductoryFun:
-            return "Introductory Fun"
-        case .educational:
-            return "Educational"
-        case .plot:
-            return "Plotting and Pictures"
-        case .characterGuessing:
-            return "Number or Letter Guessing"
-        case .removeObject:
-            return "Remove an Object"
-        case .matrixManipulation:
-            return "Matrix Manipulation"
-        case .logic:
-            return "Logic"
-        case .space:
-            return "Space"
-        case .sports:
-            return "Sports Simulation"
-        case .gambling:
-            return "Gambling and Casino"
-        case .cardAndBoard:
-            return "Card and Board"
-        case .combat:
-            return "Combat"
+        case .all: return "All Games"
+        case .introductoryFun: return "Introductory Fun"
+        case .educational: return "Educational"
+        case .plot: return "Plotting and Pictures"
+        case .characterGuessing: return "Number or Letter Guessing"
+        case .removeObject: return "Remove an Object"
+        case .matrixManipulation: return "Matrix Manipulation"
+        case .logic: return "Logic"
+        case .space: return "Space"
+        case .sports: return "Sports Simulation"
+        case .gambling: return "Gambling and Casino"
+        case .cardAndBoard: return "Card and Board"
+        case .combat: return "Combat"
         }
     }
     

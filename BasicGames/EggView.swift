@@ -25,8 +25,7 @@ struct EggView: View {
         return pdfView
     }()
     
-    @ViewBuilder
-    var contentView: some View {
+    private var contentView: some View {
         PDFViewRepresentable(pdfView: pdfView)
             .onAppear {
                 document.unlock(withPassword: pwd)

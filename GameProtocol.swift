@@ -14,6 +14,7 @@ import AppKit
  PRINT(_, _, _) - multiple items separated by column are printed at successive tab stops. Default tab stop is 14
 */
  
+typealias Tab = () -> String
 
 protocol GameProtocol {
     func run()
@@ -61,87 +62,52 @@ extension GameProtocol {
         return Double.random(in: 0...upperLimit)
     }
     
-    /// Prints message followed by new line
-    /// - Parameter message: String to print
-    func println(_ message: String) {
-        consoleIO.println(message)
-    }
-    
     /// Prints new lines
     /// - Parameter number: number of new lines to print
     func println(_ number: Int = 1) {
         consoleIO.println(number)
     }
-    
-    /// Prints message without new line
-    /// - Parameter message: String to print
-    func print(_ message: String) {
-        consoleIO.print(message)
-    }
-    
-    /// Prints message terminated by new line after moving cursor to tab stop
-    /// - Parameters:
-    ///   - message: String to print
-    ///   - tab: Tab stop (zero indexed)
-    func println(_ tab: (() -> String)? = nil ,_ message: String) {
-        if let tab = tab {
-            consoleIO.print(tab())
-        }
-        consoleIO.println(message)
-    }
-    
-    /// Moves cursor to tab stop
-    /// - Parameters:
-    ///   - message: String to print
-    ///   - tab: Tab stop (zero indexed)
-    func print(_ tab: (() -> String)) {
-        consoleIO.print(tab())
-    }
-
-    /// Prints message after moving cursor to tab stop
-    /// - Parameters:
-    ///   - message: String to print
-    ///   - tab: Tab stop (zero indexed)
-    func print(_ tab: (() -> String)? = nil ,_ message: String) {
-        if let tab = tab {
-            consoleIO.print(tab())
-        }
-        consoleIO.print(message)
-    }
-    
+        
     /// Moves cursor to tab stop; provides simplified syntax for use with print
     /// - Parameters:
     ///   - x: Tab stop (zero indexed)
     /// - Returns: Closure which generates string with spaces needed move cursor to desired tab stop
-    func tab(_ x: Int) -> () -> String {
+    func tab(_ x: Int) -> Tab {
         return { consoleIO.tab(x) }
     }
     
-    /// Prints multiple items, each item is printed at successive tab stops. Will skip to next tab stop if message length greater than tabInterval
+    /// Prints string representation String(item) of multiple items at successive tab stops, terminating with new line
     /// - Parameters:
-    ///   - messages: strings to print, separated by comma
+    ///   - items: items to print, separated by comma.
     ///   - tabInterval: Tab  interval
-    func print(_ messages: String..., tabInterval: Int = 14) {
+    func print(_ items: Any..., tabInterval: Int = 14) {
         var tabIndex = 0
-        for string in messages {
-            print(tab(tabInterval * tabIndex), string)
-            tabIndex += (1 + (string.count / tabInterval))
+        for item in items {
+            switch item {
+            case let item as LosslessStringConvertible: 
+                let string = String(item)
+                consoleIO.print(tab(tabInterval * tabIndex)())
+                consoleIO.print(string)
+                tabIndex += (1 + (string.count / tabInterval))
+            case let item as Tab:
+                let string = item()
+                consoleIO.print(item())
+                tabIndex += string.count / tabInterval
+            default:
+                fatalError("Illegal print item: " + String(describing: item))
+            }
         }
     }
-    
-    /// Prints multiple items at successive tab stops, terminating with new line
+
+    /// Prints string representation String(item) of multiple items at successive tab stops, terminating with new line
     /// - Parameters:
-    ///   - messages: strings to print, separated by comma
+    ///   - items: items to print, separated by comma.
     ///   - tabInterval: Tab  interval
-    func println(_ messages: String..., tabInterval: Int = 14) {
-        var tabIndex = 0
-        for string in messages {
-            print(tab(tabInterval * tabIndex), string)
-            tabIndex += (1 + (string.count / tabInterval))
-        }
+    func println(_ items: Any..., tabInterval: Int = 14) {
+        print(items, tabInterval: tabInterval)
         println()
     }
-    
+
     /// Gets keyboard input
     /// - Parameter terminator: If specified, replaces default prompt character (?)
     /// - Returns: Entered string

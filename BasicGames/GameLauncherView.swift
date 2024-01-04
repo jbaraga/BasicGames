@@ -9,19 +9,15 @@ import SwiftUI
 
 
 struct GameLauncherView: View {
-    @Binding var game: Game?
-    
-    @Environment(\.openURL) private var openURL
     @ObservedObject private var settings = Preferences.shared
+    @Environment(\.openWindow) private var openWindow
+    @State private var selection = Category.all
     
     private let imageWidth: CGFloat = 40
     private let radius: CGFloat = 8
     
     private var games: [Game] {
-        if settings.category == .all {
-            return Game.allCases
-        }
-        
+        if settings.category == .all { return Game.allCases }
         return Game.allCases.filter { $0.category == settings.category }
     }
     
@@ -34,16 +30,20 @@ struct GameLauncherView: View {
         }
     }
     
-    @ViewBuilder
-    private func FilterButton() -> some View {
-        Picker("", selection: $settings.category) {
-            ForEach(Category.allCases) { category in
-                Text(category.stringValue + " (\(category.count(Game.allCases)))")
+    private struct FilterButton: View {
+        @Binding var selection: Category
+        
+        var body: some View {
+            Picker("", selection: $selection) {
+                ForEach(Category.allCases) { category in
+                    Text(category.stringValue + " (\(category.count(Game.allCases)))")
+                }
             }
+            .labelsHidden()
+            .fixedSize()
         }
-        .labelsHidden()
     }
-    
+        
     var body: some View {
         List {
             ForEach(games, id: \.self) { game in
@@ -52,7 +52,7 @@ struct GameLauncherView: View {
                         image(for: game)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: imageWidth, height: imageWidth, alignment: .center)
+                            .frame(width: imageWidth, alignment: .center)
                             .foregroundColor(game.imageTint)
                             .cornerRadius(radius)
                         
@@ -63,29 +63,25 @@ struct GameLauncherView: View {
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.borderless)
-                
-                Divider()
             }
         }
         .environment(\.defaultMinListRowHeight, 0)
-        .frame(minWidth: 300, minHeight: 200)
+        .frame(minWidth: 480, minHeight: 200)
         .navigationTitle("101+ Basic Games")
         .toolbar {
             ToolbarItem(placement: .automatic) {
-                FilterButton()
+                FilterButton(selection: $selection)
             }
         }
     }
     
     private func launch(_ game: Game) {
-        guard let url = game.url else { return }
-//        self.game = game
-        openURL(url)
+        openWindow(value: game)
     }
 }
 
 struct GameLauncherView_Previews: PreviewProvider {
     static var previews: some View {
-        GameLauncherView(game: .constant(.amazing))
+        GameLauncherView()
     }
 }

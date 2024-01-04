@@ -249,6 +249,14 @@
 		ADDBCD2427B6F16B00C369D1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2327B6F16B00C369D1 /* Preferences.swift */; };
 		ADDBCD2627B6F22E00C369D1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */; };
 		ADDBEF1B2985956F00745DBD /* Bell Buoy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADDBEF1A2985956F00745DBD /* Bell Buoy.mp3 */; };
+		ADE6149D2B35000B0087F9C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6149C2B35000B0087F9C6 /* main.swift */; };
+		ADE614A12B3500350087F9C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADE614A22B35003A0087F9C6 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADE614A32B35003E0087F9C6 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADE614A42B3500410087F9C6 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADE614A62B3500820087F9C6 /* CivilWar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE614A52B3500820087F9C6 /* CivilWar.swift */; };
+		ADE614AC2B35032C0087F9C6 /* CivilWar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADE614AB2B35032C0087F9C6 /* CivilWar.pdf */; };
+		ADE614AF2B3503AF0087F9C6 /* CivilWar in Resources */ = {isa = PBXBuildFile; fileRef = ADE6149A2B35000A0087F9C6 /* CivilWar */; };
 		ADF23D462784D1FF00D71CDD /* Lunar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADF23D452784D1FF00D71CDD /* Lunar.pdf */; };
 		ADF23D56278649F800D71CDD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF23D55278649F800D71CDD /* main.swift */; };
 		ADF23D5B27864A3100D71CDD /* LEM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF23D5A27864A3100D71CDD /* LEM.swift */; };
@@ -487,6 +495,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = ADDBCD1327B6B13900C369D1;
 			remoteInfo = Joust;
+		};
+		ADE614AD2B3503510087F9C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADE614992B35000A0087F9C6;
+			remoteInfo = CivilWar;
 		};
 		ADF8BF0A296CCD6F00B778CA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -757,6 +772,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		ADE614982B35000A0087F9C6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ADF23D51278649F700D71CDD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -920,6 +944,10 @@
 		ADDBCD2327B6F16B00C369D1 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		ADDBEF1A2985956F00745DBD /* Bell Buoy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bell Buoy.mp3"; sourceTree = "<group>"; };
+		ADE6149A2B35000A0087F9C6 /* CivilWar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CivilWar; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADE6149C2B35000B0087F9C6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADE614A52B3500820087F9C6 /* CivilWar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilWar.swift; sourceTree = "<group>"; };
+		ADE614AB2B35032C0087F9C6 /* CivilWar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CivilWar.pdf; sourceTree = "<group>"; };
 		ADF23D452784D1FF00D71CDD /* Lunar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Lunar.pdf; sourceTree = "<group>"; };
 		ADF23D53278649F700D71CDD /* LEM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LEM; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF23D55278649F800D71CDD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -1151,6 +1179,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADE614972B35000A0087F9C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADF23D50278649F700D71CDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1268,6 +1303,7 @@
 		AD5F26D2297389650053C5A1 /* Bug */ = {
 			isa = PBXGroup;
 			children = (
+				AD82570627F09A9D00A0ECCB /* Bounce */,
 				AD5F26D3297389650053C5A1 /* main.swift */,
 				AD5F26D8297389820053C5A1 /* Bug.swift */,
 			);
@@ -1330,6 +1366,7 @@
 				AD82571427F09EA900A0ECCB /* Bounce.pdf */,
 				AD5F26DE29738B6D0053C5A1 /* Bug.pdf */,
 				AD150F1927C1A73200FA3280 /* Calendar.pdf */,
+				ADE614AB2B35032C0087F9C6 /* CivilWar.pdf */,
 				ADACACB52963384B00DEB6F7 /* Digits.pdf */,
 				ADAFE7AE27B86106009A7D0B /* DepthCharge.pdf */,
 				AD5C22CD296B92EB0067A2EF /* EvenWins.pdf */,
@@ -1366,6 +1403,7 @@
 		AD82570627F09A9D00A0ECCB /* Bounce */ = {
 			isa = PBXGroup;
 			children = (
+				AD150F2027C2AF9F00FA3280 /* Blackjack */,
 				AD82570727F09A9D00A0ECCB /* main.swift */,
 				AD82570F27F09CF000A0ECCB /* Bounce.swift */,
 			);
@@ -1430,10 +1468,9 @@
 				AD6AC927277F33C400B9E5DB /* Amazing */,
 				AD56DA0527E29A5500179FAA /* Animal */,
 				AD36C56927BB410C00FB1E63 /* Banner */,
-				AD150F2027C2AF9F00FA3280 /* Blackjack */,
-				AD82570627F09A9D00A0ECCB /* Bounce */,
 				AD5F26D2297389650053C5A1 /* Bug */,
 				AD150F0927C1492A00FA3280 /* Calendar */,
+				ADE6149B2B35000B0087F9C6 /* CivilWar */,
 				ADFE458527B83522002175D7 /* DepthCharge */,
 				ADACACA62963360E00DEB6F7 /* Digits */,
 				AD5C22C2296B90AB0067A2EF /* EvenWins1 */,
@@ -1501,6 +1538,7 @@
 				AD5F26D1297389650053C5A1 /* Bug */,
 				AD90BEF42978D2380015A9DB /* King */,
 				ADD5D272297B64320035F451 /* Hockey */,
+				ADE6149A2B35000A0087F9C6 /* CivilWar */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1599,6 +1637,15 @@
 				ADDBCD1B27B6B16E00C369D1 /* Joust.swift */,
 			);
 			path = Joust;
+			sourceTree = "<group>";
+		};
+		ADE6149B2B35000B0087F9C6 /* CivilWar */ = {
+			isa = PBXGroup;
+			children = (
+				ADE6149C2B35000B0087F9C6 /* main.swift */,
+				ADE614A52B3500820087F9C6 /* CivilWar.swift */,
+			);
+			path = CivilWar;
 			sourceTree = "<group>";
 		};
 		ADF23D54278649F800D71CDD /* LEM */ = {
@@ -2041,6 +2088,7 @@
 				AD82570D27F09AC700A0ECCB /* PBXTargetDependency */,
 				AD5F26E229738D6C0053C5A1 /* PBXTargetDependency */,
 				AD150F1127C1495200FA3280 /* PBXTargetDependency */,
+				ADE614AE2B3503510087F9C6 /* PBXTargetDependency */,
 				ADFE459227B83700002175D7 /* PBXTargetDependency */,
 				ADACACB82963386F00DEB6F7 /* PBXTargetDependency */,
 				AD5C22D0296B931A0067A2EF /* PBXTargetDependency */,
@@ -2194,6 +2242,23 @@
 			productReference = ADDBCD1427B6B13900C369D1 /* Joust */;
 			productType = "com.apple.product-type.tool";
 		};
+		ADE614992B35000A0087F9C6 /* CivilWar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADE614A02B35000B0087F9C6 /* Build configuration list for PBXNativeTarget "CivilWar" */;
+			buildPhases = (
+				ADE614962B35000A0087F9C6 /* Sources */,
+				ADE614972B35000A0087F9C6 /* Frameworks */,
+				ADE614982B35000A0087F9C6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CivilWar;
+			productName = CivilWar;
+			productReference = ADE6149A2B35000A0087F9C6 /* CivilWar */;
+			productType = "com.apple.product-type.tool";
+		};
 		ADF23D52278649F700D71CDD /* LEM */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADF23D57278649F800D71CDD /* Build configuration list for PBXNativeTarget "LEM" */;
@@ -2252,8 +2317,8 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					AD150F0727C1492A00FA3280 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -2350,6 +2415,9 @@
 					ADDBCD1327B6B13900C369D1 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
+					ADE614992B35000A0087F9C6 = {
+						CreatedOnToolsVersion = 15.1;
+					};
 					ADF23D52278649F700D71CDD = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -2388,6 +2456,7 @@
 				AD82570427F09A9D00A0ECCB /* Bounce */,
 				AD5F26D0297389650053C5A1 /* Bug */,
 				AD150F0727C1492A00FA3280 /* Calendar */,
+				ADE614992B35000A0087F9C6 /* CivilWar */,
 				ADFE458327B83522002175D7 /* DepthCharge */,
 				ADACACA42963360E00DEB6F7 /* Digits */,
 				AD5C22C0296B90AB0067A2EF /* EvenWins1 */,
@@ -2428,6 +2497,7 @@
 				AD82570E27F09ADA00A0ECCB /* Bounce in Resources */,
 				AD5F26E029738D5E0053C5A1 /* Bug in Resources */,
 				AD150F0F27C1493D00FA3280 /* Calendar in Resources */,
+				ADE614AF2B3503AF0087F9C6 /* CivilWar in Resources */,
 				ADFE459027B836F1002175D7 /* DepthCharge in Resources */,
 				ADACACB92963389000DEB6F7 /* Digits in Resources */,
 				AD5C22D1296B93390067A2EF /* EvenWins1 in Resources */,
@@ -2443,7 +2513,6 @@
 				AD57CCED27AEC29F00AD32C5 /* LEM in Resources */,
 				AD57CCEE27AEC2B400AD32C5 /* Lunar in Resources */,
 				AD7C3F792961D6F800F3C5AA /* Orbit in Resources */,
-				ADDBEF1B2985956F00745DBD /* Bell Buoy.mp3 in Resources */,
 				AD57CCEF27AEC2BE00AD32C5 /* OregonTrail in Resources */,
 				ADDBCD0F27B5515E00C369D1 /* Rocket in Resources */,
 				AD2437CB27EAA075005D67B6 /* Splat in Resources */,
@@ -2452,6 +2521,7 @@
 				AD60177927ED3EAC00213C47 /* Target in Resources */,
 				AD56DA2227E60FC900179FAA /* 3DPlot in Resources */,
 				AD3D807627BF2642004226EF /* Weekday in Resources */,
+				ADDBEF1B2985956F00745DBD /* Bell Buoy.mp3 in Resources */,
 				AD2AFA0C295FDCC50036C31F /* AceyDucey.pdf in Resources */,
 				AD6AC931277F346400B9E5DB /* Amazing.pdf in Resources */,
 				AD56DA1427E4006300179FAA /* Animal.pdf in Resources */,
@@ -2460,6 +2530,7 @@
 				AD82571527F09EA900A0ECCB /* Bounce.pdf in Resources */,
 				AD5F26DF29738B6D0053C5A1 /* Bug.pdf in Resources */,
 				AD150F1A27C1A73200FA3280 /* Calendar.pdf in Resources */,
+				ADE614AC2B35032C0087F9C6 /* CivilWar.pdf in Resources */,
 				ADAFE7AF27B86106009A7D0B /* DepthCharge.pdf in Resources */,
 				ADACACB62963384B00DEB6F7 /* Digits.pdf in Resources */,
 				AD5C22CE296B92EB0067A2EF /* EvenWins.pdf in Resources */,
@@ -2899,6 +2970,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADE614962B35000A0087F9C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADE614A62B3500820087F9C6 /* CivilWar.swift in Sources */,
+				ADE6149D2B35000B0087F9C6 /* main.swift in Sources */,
+				ADE614A42B3500410087F9C6 /* GameProtocol.swift in Sources */,
+				ADE614A32B35003E0087F9C6 /* ConsoleIO.swift in Sources */,
+				ADE614A22B35003A0087F9C6 /* Game.swift in Sources */,
+				ADE614A12B3500350087F9C6 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADF23D4F278649F700D71CDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3095,6 +3179,11 @@
 			isa = PBXTargetDependency;
 			target = ADDBCD1327B6B13900C369D1 /* Joust */;
 			targetProxy = ADDBCD2127B6B2DA00C369D1 /* PBXContainerItemProxy */;
+		};
+		ADE614AE2B3503510087F9C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADE614992B35000A0087F9C6 /* CivilWar */;
+			targetProxy = ADE614AD2B3503510087F9C6 /* PBXContainerItemProxy */;
 		};
 		ADF8BF0B296CCD6F00B778CA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3799,6 +3888,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -3813,7 +3903,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3861,6 +3951,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -3869,7 +3960,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -3903,7 +3994,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.starwaresoftware.BasicGames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3937,7 +4028,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.starwaresoftware.BasicGames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4189,6 +4280,39 @@
 				DEVELOPMENT_TEAM = 624UDYC489;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ADE6149E2B35000B0087F9C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADE6149F2B35000B0087F9C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -4565,6 +4689,15 @@
 			buildConfigurations = (
 				ADDBCD1927B6B13900C369D1 /* Debug */,
 				ADDBCD1A27B6B13900C369D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADE614A02B35000B0087F9C6 /* Build configuration list for PBXNativeTarget "CivilWar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADE6149E2B35000B0087F9C6 /* Debug */,
+				ADE6149F2B35000B0087F9C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

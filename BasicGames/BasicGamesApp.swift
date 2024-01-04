@@ -15,20 +15,20 @@ struct BasicGamesApp: App {
     @StateObject private var settings = Preferences.shared
 
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
-    @Environment(\.openURL) private var openURL
-    
-    @State private var game: Game?
-    @State private var eggURL: URL?
+    @Environment(\.openWindow) private var openWindow
+    @Environment(\.pixelLength) private var pixelLength
+    @Environment(\.displayScale) private var displayScale
     
     var body: some Scene {
-        WindowGroup {
-            GameLauncherView(game: $game)
+        WindowGroup(id: "Main") {
+            GameLauncherView()
                 .onReceive(DistributedNotificationCenter.default().publisher(for: Notification.Name.showEasterEgg)) { notification in
                     if let filename = notification.object as? String {
                         showPDF(with: filename)
                     }
                 }
         }
+        .defaultSize(width: 300, height: 500)
         .commands {
             CommandGroup(replacing: .newItem) {}
 
@@ -46,113 +46,28 @@ struct BasicGamesApp: App {
         }
         .windowToolbarStyle(.unifiedCompact(showsTitle: true))
         
-//        GameScene(game: $game)
+        WindowGroup(id: "Terminal", for: Game.self) { $game in
+            TerminalView(game: game ?? .amazing)
+        }
+        .windowToolbarStyle(.unifiedCompact(showsTitle: true))
+        .defaultSize(width: 660, height: 640)  //~ 80 columns in terminal
         
-        Group {
-            scene(for: .amazing)
-            scene(for: .depthCharge)
-            scene(for: .icbm)
-            scene(for: .joust)
-            scene(for: .lunar)
-            scene(for: .lem)
-            scene(for: .rocket)
-            scene(for: .oregonTrail)
-            scene(for: .starTrek)
-        }
-
-        Group {
-            scene(for: .animal)
-            scene(for: .banner)
-            scene(for: .blackjack)
-            scene(for: .calendar)
-            scene(for: .weekday)
-            scene(for: .football)
-            scene(for: .ftball)
-            scene(for: .stockMarket)
-            scene(for: .threeDPlot)
-        }
-
-        Group {
-            scene(for: .bounce)
-            scene(for: .splat)
-            scene(for: .target)
-            scene(for: .aceyDucey)
-            scene(for: .guess)
-            scene(for: .orbit)
-            scene(for: .digits)
-            scene(for: .evenWins1)
-            scene(for: .evenWins2)
-        }
-        
-        Group {
-            scene(for: .hamurabi)
-            scene(for: .bug)
-            scene(for: .king)
-            scene(for: .hockey)
-        }
-
-        EggScene(url: $eggURL)
-            .commands {
-                SidebarCommands()
+        WindowGroup(id: "EasterEgg", for: URL.self) { $url in
+            if let url, let document = PDFDocument(url: url) {
+                EggView(document: document)
             }
-        
+        }
+        .defaultSize(NSScreen.main?.size(for: 8/displayScale, height: 10/displayScale) ?? NSSize(width: 640, height: 720))
+        .commands { SidebarCommands() }
+
         Settings {
             SettingsView()
-                .navigationTitle("Preferences")
         }
     }
-    
-    private func scene(for game: Game) -> some Scene {
-        WindowGroup(id: game.urlString) {
-            GeometryReader { geometry in
-                TerminalViewRepresentable(frame: geometry.frame(in: .local), executableName: game.executableName, windowTitle: game.stringValue)
-                    .navigationTitle(game.stringValue)
-            }
-            .padding(.leading, 4)
-            .padding(.bottom, 1)
-            .background(Color(.terminalBackground))
-            .frame(minWidth: 660, minHeight: 480) //~ 80 columns in terminal
-        }
-        .handlesExternalEvents(matching: game.set)
-    }
-    
-    private struct GameScene: Scene {
-        @Binding var game: Game?
         
-        var body: some Scene {
-            WindowGroup(id: Game.baseURLString) {
-                if let game = game {
-                    GeometryReader { geometry in
-                        TerminalViewRepresentable(frame: geometry.frame(in: .local), executableName: game.executableName, windowTitle: game.stringValue)
-                            .navigationTitle(game.stringValue)
-                    }
-                    .padding(.leading, 4)
-                    .padding(.bottom, 1)
-                    .background(Color(.terminalBackground))
-                    .frame(minWidth: 660, minHeight: 480) //~ 80 columns in terminal
-                }
-            }
-            .handlesExternalEvents(matching: Game.allGamesSet)
-        }
-    }
-    
-    private struct EggScene: Scene {
-        @Binding var url: URL?
-        
-        var body: some Scene {
-            WindowGroup(id: "easterEgg") {
-                if let url = url, let document = PDFDocument(url: url) {
-                    EggView(document: document)
-                }
-            }
-            .handlesExternalEvents(matching: Game.eggSet)
-        }
-    }
-    
     private func showPDF(with filename: String) {
         guard let url = Bundle.main.url(forResource: filename, withExtension: "pdf") else { return }
-        eggURL = url
-        openURL(url)
+        openWindow(value: url)
     }
 }
 
@@ -169,12 +84,23 @@ struct BasicGamesApp: App {
         class GameName: GameProtocol {
             func run() {}
         }
- 4.  Add case gameName to Game enum in BasicGames group; specify name of easter egg pdf file (standard is 101_mmddyy)
- 5.  Create easter egg pdf with Preview. Edit Permissions... and set read and owner passwords from KeyChain, deselect all privileges. Drag easter egg pdf to Resources group, and select copy to folder.
+ 4.  Add case gameName to Game enum in BasicGames group; specify name of easter egg pdf file (standard is Gamename)
+ 5.  Create easter egg pdf with Preview. Edit Permissions... and set read and owner passwords from KeyChain (PDF Reader, PDF Owner), deselect all privileges. Drag easter egg pdf to Resources group, and select copy to folder.
  6.  Add image for game either as Image set in Assets or use system image specified in Game enum; add optional tint.
- 7.  BasicGamesApp - add scene(for: .gameName)
- 8.  BasicGames target -> Build Phases
+ 7.  BasicGames target -> Build Phases
         Target Dependencies - add game CLI target
         Copy Bundle Resources - drag game CLI from Products group
- 9.  Write the game code in GameName.swift. Have fun!
+ 8.  Write the game code in GameName.swift. Have fun!
  */
+
+extension NSScreen {
+    //Pixels per inch
+    var scale: NSSize? {
+        return self.deviceDescription[.resolution] as? NSSize
+    }
+    
+    func size(for width: CGFloat, height: CGFloat) -> NSSize? {
+        guard let scale else { return nil }
+        return NSSize(width: width * scale.width, height: height * scale.height)
+    }
+}

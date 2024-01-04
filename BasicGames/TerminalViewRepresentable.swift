@@ -130,14 +130,31 @@ struct TerminalViewRepresentable: NSViewRepresentable {
             return
         }
         
-        func hostCurrentDirectoryUpdate(source: TerminalView, directory: String?) {
+        func hostCurrentDirectoryUpdate(source: SwiftTerm.TerminalView, directory: String?) {
             return
         }
         
-        func processTerminated(source: TerminalView, exitCode: Int32?) {
+        func processTerminated(source: SwiftTerm.TerminalView, exitCode: Int32?) {
             return
         }
     }
 }
 
 
+struct TerminalView: View {
+    let game: Game
+    
+    @FocusState private var isFocused: Bool
+    
+    var body: some View {
+        GeometryReader { geometry in
+            TerminalViewRepresentable(frame: geometry.frame(in: .local), executableName: game.executableName, windowTitle: game.stringValue)
+                .navigationTitle(game.stringValue)
+                .focused($isFocused)
+        }
+        .padding(.leading, 4)
+        .padding(.bottom, 1)
+        .background(Color(.terminalBackground))
+        .onAppear { isFocused = true }
+    }
+}

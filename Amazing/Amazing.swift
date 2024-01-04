@@ -8,6 +8,101 @@
 
 import Foundation
 
+/*
+class Amazing: GameProtocol {
+    private let MaximumWidth = 30
+    private let MaximumLength = 72
+    var width = 2
+    var height = 2
+    
+    // Define the directions to move in the maze
+    let directions = [
+        (dx: 0, dy: -1), // Up
+        (dx: 0, dy: 1), // Down
+        (dx: -1, dy: 0), // Left
+        (dx: 1, dy: 0) // Right
+    ]
+
+    func run() {
+        (width, height) = getDimensions()
+        
+        // Choose a random starting cell and carve out the maze
+        let startX = Int.random(in: 1..<width-1)
+        let startY = Int.random(in: 1..<height-1)
+        
+        var maze = recursiveBacktracking(x: startX, y: startY)
+
+        // Add an entrance and an exit to the maze
+        maze[0][1] = " "
+        maze[height-1][width-2] = " "
+
+        // Print the maze
+        for row in maze {
+            print(String(row))
+            println()
+        }
+    }
+    
+    // Define a function to check if a cell is within the maze boundaries
+    private func isValidCell(x: Int, y: Int) -> Bool {
+        return x >= 0 && x < width && y >= 0 && y < height
+    }
+
+    // Define a function to get the unvisited neighbors of a cell
+    private func getUnvisitedNeighbors(x: Int, y: Int, maze: [[Character]]) -> [(Int, Int)] {
+        var neighbors = [(Int, Int)]()
+        for direction in directions {
+            let neighborX = x + direction.dx
+            let neighborY = y + direction.dy
+            if isValidCell(x: neighborX, y: neighborY) && maze[neighborY][neighborX] == "#" {
+                neighbors.append((neighborX, neighborY))
+            }
+        }
+        return neighbors
+    }
+
+    // Define the recursive backtracking function
+    private func recursiveBacktracking(x: Int, y: Int) -> [[Character]] {
+        // Create a two-dimensional array to represent the maze
+        var maze = [[Character]](repeating: [Character](repeating: "#", count: width), count: height)
+        maze[y][x] = " "
+        var stack = [(x, y)]
+        while !stack.isEmpty {
+            let currentCell = stack.last!
+            let unvisitedNeighbors = getUnvisitedNeighbors(x: currentCell.0, y: currentCell.1, maze: maze)
+            if unvisitedNeighbors.isEmpty {
+                stack.removeLast()
+                break
+            }
+            let randomNeighbor = unvisitedNeighbors.randomElement()!
+            let direction = (
+                dx: randomNeighbor.0 - currentCell.0,
+                dy: randomNeighbor.1 - currentCell.1
+            )
+            maze[currentCell.1 + direction.dy / 2][currentCell.0 + direction.dx / 2] = " "
+            maze[randomNeighbor.1][randomNeighbor.0] = " "
+            stack.append(randomNeighbor)
+        }
+        return maze
+    }
+    
+    private func getDimensions() -> (width: Int, height: Int) {
+        wait(.short)
+        let response = input("What are your width and length")
+        let components = response.components(separatedBy: CharacterSet.decimalDigits.inverted)
+        guard components.count > 1, let first = components.first, let last = components.last, let width = Int(first), let height = Int(last), width > 0, height > 0 else {
+            println("Meaningless dimensions.  Try Again.")
+            return getDimensions()
+        }
+        guard width <= MaximumWidth, height <= MaximumLength else {
+            println("Maximum dimensions \(MaximumWidth) x \(MaximumLength).  Try Again.")
+            return getDimensions()
+        }
+        return (width, height)
+    }
+}
+*/
+
 
 class Amazing: GameProtocol {
     private let MaximumWidth = 30
@@ -209,6 +304,7 @@ class Amazing: GameProtocol {
             println(".")
         }
     }
+ }
     
     /*Recursive version, based on Ahl
     private var width = 0  //h
@@ -594,5 +690,3 @@ class Amazing: GameProtocol {
         }
     }
  */
-    
-}
