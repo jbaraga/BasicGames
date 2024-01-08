@@ -142,8 +142,10 @@ class King: GameProtocol {
         println("plays the game.")
         
         wait(.long)
-        pauseForEnter()
-        showEasterEgg(.king)
+        if Response(pauseForEnter()) == .easterEgg {
+            showEasterEgg(.king)
+        }
+        
         stop()
     }
     

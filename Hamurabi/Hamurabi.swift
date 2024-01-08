@@ -167,8 +167,9 @@ class Hamurabi: GameProtocol {
             println("A fantastic performance!!!  Charlemagne, Disraeli, and")
             println("Jefferson combined could not have done better!")
             wait(.long)
-            pauseForEnter()
-            showEasterEgg(.hamurabi)
+            if Response(pauseForEnter()) == .easterEgg {
+                showEasterEgg(.hamurabi)
+            }
         }
         
         stop()

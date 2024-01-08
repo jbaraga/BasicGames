@@ -21,13 +21,9 @@ protocol GameProtocol {
 }
 
 extension GameProtocol {    
-    var consoleIO: ConsoleIO {
-        return ConsoleIO.shared
-    }
+    var consoleIO: ConsoleIO { ConsoleIO.shared}
         
-    var formatter: NumberFormatter {
-        return consoleIO.formatter
-    }
+    var formatter: NumberFormatter { consoleIO.formatter }
     
     /// BASIC Sign function
     /// - Parameter x: Integer
@@ -36,12 +32,11 @@ extension GameProtocol {
         return x == 0 ? 0 : (x < 0 ? -1 : 1)
     }
     
-    func printHeader(title: String) {
-        let creditString = "Creative Computing  Morristown, New Jersey"
-        println(tab((creditString.count - title.count) / 2 + 15), title)
-        println(tab(15), creditString)
+    func chr$(_ value: UInt8) -> String {
+        let scalar = UnicodeScalar(value)
+        return String(Character(scalar))
     }
-
+    
     func wait(_ delay: ConsoleIO.Delay) {
         consoleIO.wait(delay)
     }
@@ -62,12 +57,6 @@ extension GameProtocol {
         return Double.random(in: 0...upperLimit)
     }
     
-    /// Prints new lines
-    /// - Parameter number: number of new lines to print
-    func println(_ number: Int = 1) {
-        consoleIO.println(number)
-    }
-        
     /// Moves cursor to tab stop; provides simplified syntax for use with print
     /// - Parameters:
     ///   - x: Tab stop (zero indexed)
@@ -106,6 +95,18 @@ extension GameProtocol {
     func println(_ items: Any..., tabInterval: Int = 14) {
         print(items, tabInterval: tabInterval)
         println()
+    }
+    
+    /// Prints new lines
+    /// - Parameter number: number of new lines to print
+    func println(_ number: Int = 1) {
+        consoleIO.println(number)
+    }
+    
+    func printHeader(title: String) {
+        let creditString = "Creative Computing  Morristown, New Jersey"
+        println(tab((creditString.count - title.count) / 2 + 15), title)
+        println(tab(15), creditString)
     }
 
     /// Gets keyboard input

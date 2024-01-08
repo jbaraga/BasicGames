@@ -12,6 +12,8 @@ import AVFAudio
 
 class ConsoleIO {
     public struct TerminalCommands {
+        static let xon = "\u{15}"
+        static let xoff = "\u{17}"
         static let reset = "\u{1B}[c"
         static let foregroundColorGreen = "\u{1B}[32m"
         static let cursorPosition = "\u{1B}6nR"
@@ -20,6 +22,7 @@ class ConsoleIO {
         static let cursorForward = "\u{1B}[1D"
         static let cursorSavePosition = "\u{1B}7"
         static let cursorRestorePosition = "\u{1B}8"
+        static let eraseToCursor = "\u{1B}[1K"
         static let eraseToEndOfLine = "\u{1B}[K"
         static let clearScreen = "\u{1B}[2J"
         static let bell = "\u{7}"
@@ -245,43 +248,43 @@ class ConsoleIO {
     }
     
     //Low level terminal functions to read each input character
-//    private func initStruct<S>() -> S {
-//        let struct_pointer = UnsafeMutablePointer<S>.allocate(capacity: 1)
-//        let struct_memory = struct_pointer.pointee
-//        struct_pointer.deallocate()
-//        return struct_memory
-//    }
-//
-//    private func enterRawMode(fileHandle: FileHandle) -> termios {
-//        var raw: termios = initStruct()
-//        tcgetattr(fileHandle.fileDescriptor, &raw)
-//
-//        let original = raw
-//
-//        raw.c_lflag &= ~(UInt(ECHO | ICANON))
-//        tcsetattr(fileHandle.fileDescriptor, TCSAFLUSH, &raw);
-//
-//        return original
-//    }
-//
-//    private func exitRawMode(fileHandle: FileHandle, originalTerm: termios) {
-//        var term = originalTerm
-//        tcsetattr(fileHandle.fileDescriptor, TCSAFLUSH, &term);
-//    }
-//
-//    func hitAnyKeyExceptReturn() {
-//        //From stackoverflow https://stackoverflow.com/questions/49748507/listening-to-stdin-in-swift
-//        let keyboard = FileHandle.standardInput
-//        let terminal = enterRawMode(fileHandle: keyboard)
-//
-//        var inputByte: UInt8 = 13
-//        repeat {
-//            read(keyboard.fileDescriptor, &inputByte, 1)
-//        } while inputByte == 13 || inputByte == 10  //return AND newline
-//
-//        exitRawMode(fileHandle: keyboard, originalTerm: terminal)
-//        println()
-//    }
+    private func initStruct<S>() -> S {
+        let struct_pointer = UnsafeMutablePointer<S>.allocate(capacity: 1)
+        let struct_memory = struct_pointer.pointee
+        struct_pointer.deallocate()
+        return struct_memory
+    }
+
+    private func enterRawMode(fileHandle: FileHandle) -> termios {
+        var raw: termios = initStruct()
+        tcgetattr(fileHandle.fileDescriptor, &raw)
+
+        let original = raw
+
+        raw.c_lflag &= ~(UInt(ECHO | ICANON))
+        tcsetattr(fileHandle.fileDescriptor, TCSAFLUSH, &raw);
+
+        return original
+    }
+
+    private func exitRawMode(fileHandle: FileHandle, originalTerm: termios) {
+        var term = originalTerm
+        tcsetattr(fileHandle.fileDescriptor, TCSAFLUSH, &term);
+    }
+
+    //Does not work with SwiftTerm
+    func hitAnyKeyExceptReturn() {
+        //From stackoverflow https://stackoverflow.com/questions/49748507/listening-to-stdin-in-swift
+        let keyboard = FileHandle.standardInput
+        let terminal = enterRawMode(fileHandle: keyboard)
+                
+        var inputByte: UInt8 = 10
+        repeat {
+            read(keyboard.fileDescriptor, &inputByte, 1)
+        } while inputByte == 10
+
+       exitRawMode(fileHandle: keyboard, originalTerm: terminal)
+    }
 }
 
 

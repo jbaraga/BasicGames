@@ -181,6 +181,14 @@
 		ADACACB42963372700DEB6F7 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		ADACACB62963384B00DEB6F7 /* Digits.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADACACB52963384B00DEB6F7 /* Digits.pdf */; };
 		ADACACB92963389000DEB6F7 /* Digits in Resources */ = {isa = PBXBuildFile; fileRef = ADACACA52963360E00DEB6F7 /* Digits */; };
+		ADADA57D2B46E7390024CA81 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADA57C2B46E7390024CA81 /* main.swift */; };
+		ADADA5822B46E7630024CA81 /* Checkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADA5812B46E7630024CA81 /* Checkers.swift */; };
+		ADADA5832B46E7A80024CA81 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADADA5842B46E7AC0024CA81 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADADA5852B46E7B00024CA81 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADADA5862B46E7B50024CA81 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADADA5882B46E9E20024CA81 /* Checkers.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADADA5872B46E9E20024CA81 /* Checkers.pdf */; };
+		ADADA58B2B46EA7A0024CA81 /* Checkers in Resources */ = {isa = PBXBuildFile; fileRef = ADADA57A2B46E7390024CA81 /* Checkers */; };
 		ADAE10B5277BAD25006762F5 /* BasicGamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */; };
 		ADAE10B9277BAD2D006762F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAE10B8277BAD2D006762F5 /* Assets.xcassets */; };
 		ADAE10BC277BAD2D006762F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAE10BB277BAD2D006762F5 /* Preview Assets.xcassets */; };
@@ -446,6 +454,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = ADACACA42963360E00DEB6F7;
 			remoteInfo = Digits;
+		};
+		ADADA5892B46EA430024CA81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADADA5792B46E7390024CA81;
+			remoteInfo = Checkers;
 		};
 		ADAE10C3277BAD2D006762F5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -727,6 +742,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		ADADA5782B46E7390024CA81 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ADB4DE9927C5BE5F00C04087 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -913,6 +937,10 @@
 		ADACACAD2963368000DEB6F7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADACACAF2963371600DEB6F7 /* Digits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits.swift; sourceTree = "<group>"; };
 		ADACACB52963384B00DEB6F7 /* Digits.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Digits.pdf; sourceTree = "<group>"; };
+		ADADA57A2B46E7390024CA81 /* Checkers */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Checkers; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADADA57C2B46E7390024CA81 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADADA5812B46E7630024CA81 /* Checkers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkers.swift; sourceTree = "<group>"; };
+		ADADA5872B46E9E20024CA81 /* Checkers.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Checkers.pdf; sourceTree = "<group>"; };
 		ADAE10B1277BAD25006762F5 /* BasicGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGamesApp.swift; sourceTree = "<group>"; };
 		ADAE10B8277BAD2D006762F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1116,6 +1144,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ADACACA22963360E00DEB6F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADADA5772B46E7390024CA81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1366,6 +1401,7 @@
 				AD82571427F09EA900A0ECCB /* Bounce.pdf */,
 				AD5F26DE29738B6D0053C5A1 /* Bug.pdf */,
 				AD150F1927C1A73200FA3280 /* Calendar.pdf */,
+				ADADA5872B46E9E20024CA81 /* Checkers.pdf */,
 				ADE614AB2B35032C0087F9C6 /* CivilWar.pdf */,
 				ADACACB52963384B00DEB6F7 /* Digits.pdf */,
 				ADAFE7AE27B86106009A7D0B /* DepthCharge.pdf */,
@@ -1455,6 +1491,15 @@
 			path = Digits;
 			sourceTree = "<group>";
 		};
+		ADADA57B2B46E7390024CA81 /* Checkers */ = {
+			isa = PBXGroup;
+			children = (
+				ADADA57C2B46E7390024CA81 /* main.swift */,
+				ADADA5812B46E7630024CA81 /* Checkers.swift */,
+			);
+			path = Checkers;
+			sourceTree = "<group>";
+		};
 		ADAE10A8277BAD25006762F5 = {
 			isa = PBXGroup;
 			children = (
@@ -1470,6 +1515,7 @@
 				AD36C56927BB410C00FB1E63 /* Banner */,
 				AD5F26D2297389650053C5A1 /* Bug */,
 				AD150F0927C1492A00FA3280 /* Calendar */,
+				ADADA57B2B46E7390024CA81 /* Checkers */,
 				ADE6149B2B35000B0087F9C6 /* CivilWar */,
 				ADFE458527B83522002175D7 /* DepthCharge */,
 				ADACACA62963360E00DEB6F7 /* Digits */,
@@ -1539,6 +1585,7 @@
 				AD90BEF42978D2380015A9DB /* King */,
 				ADD5D272297B64320035F451 /* Hockey */,
 				ADE6149A2B35000A0087F9C6 /* CivilWar */,
+				ADADA57A2B46E7390024CA81 /* Checkers */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2069,6 +2116,23 @@
 			productReference = ADACACA52963360E00DEB6F7 /* Digits */;
 			productType = "com.apple.product-type.tool";
 		};
+		ADADA5792B46E7390024CA81 /* Checkers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADADA57E2B46E7390024CA81 /* Build configuration list for PBXNativeTarget "Checkers" */;
+			buildPhases = (
+				ADADA5762B46E7390024CA81 /* Sources */,
+				ADADA5772B46E7390024CA81 /* Frameworks */,
+				ADADA5782B46E7390024CA81 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Checkers;
+			productName = Checkers;
+			productReference = ADADA57A2B46E7390024CA81 /* Checkers */;
+			productType = "com.apple.product-type.tool";
+		};
 		ADAE10B0277BAD25006762F5 /* BasicGames */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADAE10D6277BAD2E006762F5 /* Build configuration list for PBXNativeTarget "BasicGames" */;
@@ -2088,6 +2152,7 @@
 				AD82570D27F09AC700A0ECCB /* PBXTargetDependency */,
 				AD5F26E229738D6C0053C5A1 /* PBXTargetDependency */,
 				AD150F1127C1495200FA3280 /* PBXTargetDependency */,
+				ADADA58A2B46EA430024CA81 /* PBXTargetDependency */,
 				ADE614AE2B3503510087F9C6 /* PBXTargetDependency */,
 				ADFE459227B83700002175D7 /* PBXTargetDependency */,
 				ADACACB82963386F00DEB6F7 /* PBXTargetDependency */,
@@ -2389,6 +2454,9 @@
 					ADACACA42963360E00DEB6F7 = {
 						CreatedOnToolsVersion = 14.1;
 					};
+					ADADA5792B46E7390024CA81 = {
+						CreatedOnToolsVersion = 15.1;
+					};
 					ADAE10B0277BAD25006762F5 = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -2456,6 +2524,7 @@
 				AD82570427F09A9D00A0ECCB /* Bounce */,
 				AD5F26D0297389650053C5A1 /* Bug */,
 				AD150F0727C1492A00FA3280 /* Calendar */,
+				ADADA5792B46E7390024CA81 /* Checkers */,
 				ADE614992B35000A0087F9C6 /* CivilWar */,
 				ADFE458327B83522002175D7 /* DepthCharge */,
 				ADACACA42963360E00DEB6F7 /* Digits */,
@@ -2497,6 +2566,7 @@
 				AD82570E27F09ADA00A0ECCB /* Bounce in Resources */,
 				AD5F26E029738D5E0053C5A1 /* Bug in Resources */,
 				AD150F0F27C1493D00FA3280 /* Calendar in Resources */,
+				ADADA58B2B46EA7A0024CA81 /* Checkers in Resources */,
 				ADE614AF2B3503AF0087F9C6 /* CivilWar in Resources */,
 				ADFE459027B836F1002175D7 /* DepthCharge in Resources */,
 				ADACACB92963389000DEB6F7 /* Digits in Resources */,
@@ -2530,6 +2600,7 @@
 				AD82571527F09EA900A0ECCB /* Bounce.pdf in Resources */,
 				AD5F26DF29738B6D0053C5A1 /* Bug.pdf in Resources */,
 				AD150F1A27C1A73200FA3280 /* Calendar.pdf in Resources */,
+				ADADA5882B46E9E20024CA81 /* Checkers.pdf in Resources */,
 				ADE614AC2B35032C0087F9C6 /* CivilWar.pdf in Resources */,
 				ADAFE7AF27B86106009A7D0B /* DepthCharge.pdf in Resources */,
 				ADACACB62963384B00DEB6F7 /* Digits.pdf in Resources */,
@@ -2871,6 +2942,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADADA5762B46E7390024CA81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADADA5852B46E7B00024CA81 /* ConsoleIO.swift in Sources */,
+				ADADA57D2B46E7390024CA81 /* main.swift in Sources */,
+				ADADA5832B46E7A80024CA81 /* Extensions.swift in Sources */,
+				ADADA5822B46E7630024CA81 /* Checkers.swift in Sources */,
+				ADADA5842B46E7AC0024CA81 /* Game.swift in Sources */,
+				ADADA5862B46E7B50024CA81 /* GameProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADAE10AD277BAD25006762F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3144,6 +3228,11 @@
 			isa = PBXTargetDependency;
 			target = ADACACA42963360E00DEB6F7 /* Digits */;
 			targetProxy = ADACACB72963386F00DEB6F7 /* PBXContainerItemProxy */;
+		};
+		ADADA58A2B46EA430024CA81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADADA5792B46E7390024CA81 /* Checkers */;
+			targetProxy = ADADA5892B46EA430024CA81 /* PBXContainerItemProxy */;
 		};
 		ADAE10C4277BAD2D006762F5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3845,6 +3934,39 @@
 				DEVELOPMENT_TEAM = 624UDYC489;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ADADA57F2B46E7390024CA81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADADA5802B46E7390024CA81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -4608,6 +4730,15 @@
 			buildConfigurations = (
 				ADACACA92963360E00DEB6F7 /* Debug */,
 				ADACACAA2963360E00DEB6F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADADA57E2B46E7390024CA81 /* Build configuration list for PBXNativeTarget "Checkers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADADA57F2B46E7390024CA81 /* Debug */,
+				ADADA5802B46E7390024CA81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

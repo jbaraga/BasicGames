@@ -5,13 +5,15 @@
 //  Created by Joseph Baraga on 12/21/23.
 //
 
+//20 REM ORIGINAL GAME DESIGN: CRAM, GOODIE, HIBBARD LEXINGTON H.S.
+//30 REM MODIFICATIONS: G. PAUL, R. HESS (TIES) 1973
+
+
 import Foundation
 
 
 class CivilWar: GameProtocol {
     
-    //20 REM ORIGINAL GAME DESIGN: CRAM, GOODIE, HIBBARD LEXINGTON H.S.
-    //30 REM MODIFICATIONS: G. PAUL, R. HESS (TIES) 1973
     
     private var battles = [HistoricalBattleData]()  //Zero indexed; original 1 indexed
     private var players = 1

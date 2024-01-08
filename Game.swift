@@ -18,6 +18,7 @@ enum Game: String, CaseIterable, Codable {
     case bounce
     case bug
     case calendar
+    case checkers
     case civilWar
     case depthCharge
     case digits
@@ -53,6 +54,7 @@ enum Game: String, CaseIterable, Codable {
         case .bounce: return "Bounce"
         case .bug: return "Bug"
         case .calendar: return "Calendar"
+        case .checkers: return "Checkers"
         case .civilWar: return "Civil War"
         case .depthCharge: return "Depth Charge"
         case .digits: return "Digits"
@@ -94,6 +96,7 @@ enum Game: String, CaseIterable, Codable {
         case .bounce: return .plot
         case .bug: return .plot
         case .calendar: return .plot
+        case .checkers: return .cardAndBoard
         case .civilWar: return .educational
         case .depthCharge: return .matrixManipulation
         case .digits: return .logic
@@ -149,6 +152,7 @@ enum Game: String, CaseIterable, Codable {
         case .blackjack: return "suit.club.fill"
         case .bug: return "ladybug"
         case .calendar: return "calendar"
+        case .checkers: return "rectangle.checkered"
         case .digits: return "hand.raised.fingers.spread.fill"
         case .evenWins2: return "circle.hexagongrid.circle"
         case .guess: return "questionmark.app"
@@ -171,6 +175,7 @@ enum Game: String, CaseIterable, Codable {
         case .blackjack: return .black
         case .bug: return .red
         case .calendar: return .green
+        case .checkers: return .red
         case .digits: return .teal
         case .evenWins2: return .blue
         case .guess: return .mint
