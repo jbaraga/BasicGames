@@ -12,7 +12,7 @@
 		<key>AceyDucey.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>28</integer>
+			<integer>26</integer>
 		</dict>
 		<key>Amazing.xcscheme_^#shared#^_</key>
 		<dict>
@@ -44,10 +44,15 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>Bowling.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>30</integer>
+		</dict>
 		<key>Bug.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>31</integer>
 		</dict>
 		<key>Calendar.xcscheme_^#shared#^_</key>
 		<dict>
@@ -57,12 +62,12 @@
 		<key>Checkers.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>33</integer>
+			<integer>34</integer>
 		</dict>
 		<key>CivilWar.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>25</integer>
+			<integer>23</integer>
 		</dict>
 		<key>DepthCharge.xcscheme_^#shared#^_</key>
 		<dict>
@@ -77,12 +82,12 @@
 		<key>EvenWins1.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>32</integer>
+			<integer>25</integer>
 		</dict>
 		<key>EvenWins2.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>26</integer>
+			<integer>24</integer>
 		</dict>
 		<key>Football.xcscheme_^#shared#^_</key>
 		<dict>
@@ -97,17 +102,17 @@
 		<key>Guess.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>24</integer>
+			<integer>28</integer>
 		</dict>
 		<key>Hamurabi.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>30</integer>
+			<integer>32</integer>
 		</dict>
 		<key>Hockey.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>29</integer>
 		</dict>
 		<key>ICBM.xcscheme_^#shared#^_</key>
 		<dict>
@@ -122,7 +127,7 @@
 		<key>King.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>29</integer>
+			<integer>22</integer>
 		</dict>
 		<key>LEM.xcscheme_^#shared#^_</key>
 		<dict>
@@ -137,7 +142,7 @@
 		<key>Orbit.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>31</integer>
+			<integer>33</integer>
 		</dict>
 		<key>OregonTrail.xcscheme_^#shared#^_</key>
 		<dict>

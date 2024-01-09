@@ -11,7 +11,6 @@ import SwiftUI
 struct GameLauncherView: View {
     @ObservedObject private var settings = Preferences.shared
     @Environment(\.openWindow) private var openWindow
-    @State private var selection = Category.all
     
     private let imageWidth: CGFloat = 40
     private let radius: CGFloat = 8
@@ -70,7 +69,7 @@ struct GameLauncherView: View {
         .navigationTitle("101+ Basic Games")
         .toolbar {
             ToolbarItem(placement: .automatic) {
-                FilterButton(selection: $selection)
+                FilterButton(selection: $settings.category)
             }
         }
     }
