@@ -128,6 +128,28 @@ extension GameProtocol {
         return input(terminator: terminator)
     }
     
+    /// Gets keyboard input after printing message
+    /// - Parameters:
+    ///   - message: Prompt message
+    ///   - terminator: If specified, replaces default prompt character (?)
+    /// - Returns: Optional value from string representation
+    func input<T>(_ message: String, terminator: String? = nil) -> T? where T: LosslessStringConvertible {
+        consoleIO.print(message)
+        return T(input(terminator: terminator))
+    }
+    
+    /// Gets keyboard input after printing message
+    /// - Parameters:
+    ///   - message: Prompt message
+    ///   - terminator: If specified, replaces default prompt character (?)
+    /// - Returns: Optional 2 values from entered string representation, separated by comma or whitespace
+    func input<T>(_ message: String, terminator: String? = nil) -> (T, T)? where T: LosslessStringConvertible {
+        consoleIO.print(message)
+        let stringValues = (input(terminator: terminator).components(separatedBy: CharacterSet(charactersIn: " ,")).compactMap { $0.trimmingCharacters(in: .whitespaces) }).filter { !$0.isEmpty }
+        guard stringValues.count == 2, let value1 = T(stringValues[0]), let value2 = T(stringValues[1]) else { return nil }
+        return (value1, value2)
+    }
+    
     @discardableResult
     func pauseForEnter() -> String {
         return consoleIO.pauseForEnter()

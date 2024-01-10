@@ -300,7 +300,9 @@ fileprivate struct Square {
 
 extension Square: Equatable {}
 
-extension Square {
+extension Square: LosslessStringConvertible {
+    var description: String { stringValue }
+    
     init?(_ string: String) {
         let numbers = string.components(separatedBy: CharacterSet(charactersIn: " ,")).compactMap { Int($0.trimmingCharacters(in: .whitespaces)) }
         guard numbers.count == 2 else { return nil }

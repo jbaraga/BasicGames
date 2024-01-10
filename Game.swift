@@ -14,6 +14,7 @@ enum Game: String, CaseIterable, Codable {
     case amazing
     case animal
     case banner
+    case batnum
     case blackjack
     case bounce
     case bowling
@@ -52,6 +53,7 @@ enum Game: String, CaseIterable, Codable {
         case .animal: return "Animal"
         case .banner: return "Banner"
         case .blackjack: return "Blackjack"
+        case .batnum: return "Batnum"
         case .bounce: return "Bounce"
         case .bowling: return "Bowling"
         case .bug: return "Bug"
@@ -94,6 +96,7 @@ enum Game: String, CaseIterable, Codable {
         case .amazing: return .plot
         case .animal: return .characterGuessing
         case .banner: return .plot
+        case .batnum: return .removeObject
         case .blackjack: return .gambling
         case .bounce: return .plot
         case .bowling: return .sports
@@ -176,6 +179,7 @@ enum Game: String, CaseIterable, Codable {
         switch self {
         case .aceyDucey: return .red
         case .animal: return .brown
+        case .batnum: return .orange
         case .blackjack: return .black
         case .bowling: return .brown
         case .bug: return .red

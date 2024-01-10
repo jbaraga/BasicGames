@@ -18,22 +18,49 @@ extension Task where Success == Never, Failure == Never {
 }
 
 extension String {
+    static let deleteCharacter = String(UnicodeScalar(127))
+
     var isYes: Bool {
         return self.lowercased().hasPrefix("y")
     }
-}
 
-extension String {
     var isNo: Bool {
         return self.lowercased().hasPrefix("n")
     }
-}
 
-extension String {
     var isEasterEgg: Bool {
         return self.lowercased() == "shadow"
     }
+
+    func padded(to length: Int) -> String {
+        return self.padding(toLength: length, withPad: " ", startingAt: 0)
+    }
+
+    func left(_ length: Int) -> String {
+        return String(self.prefix(length))
+    }
+
+    func right(_ length: Int) -> String {
+        return String(self.suffix(length))
+    }
+
+    func removingFirst(_ k: Int) -> String {
+        var string = self
+        string.removeFirst(k)
+        return string
+    }
+
+    /// BASIC substring function
+    /// - Parameters:
+    ///   - index: one indexed location
+    ///   - length: length of substring
+    /// - Returns: String
+    func mid(_ index: Int, length: Int) -> String {
+        let range = String.Index(utf16Offset: index - 1, in: self)...String.Index(utf16Offset: index + length - 2, in: self)
+        return String(self[range])
+    }
 }
+
 
 /// Fuzzy match of string to yes or no
 enum Response {
@@ -64,47 +91,6 @@ enum Response {
     }
 }
 
-extension String {
-    func padded(to length: Int) -> String {
-        return self.padding(toLength: length, withPad: " ", startingAt: 0)
-    }
-}
-
-extension String {
-    static let deleteCharacter = String(UnicodeScalar(127))
-}
-
-extension String {
-    func left(_ length: Int) -> String {
-        return String(self.prefix(length))
-    }
-}
-
-extension String {
-    func right(_ length: Int) -> String {
-        return String(self.suffix(length))
-    }
-}
-
-extension String {
-    func removingFirst(_ k: Int) -> String {
-        var string = self
-        string.removeFirst(k)
-        return string
-    }
-}
-
-extension String {
-    /// BASIC substring function
-    /// - Parameters:
-    ///   - index: one indexed location
-    ///   - length: length of substring
-    /// - Returns: String
-    func mid(_ index: Int, length: Int) -> String {
-        let range = String.Index(utf16Offset: index - 1, in: self)...String.Index(utf16Offset: index + length - 2, in: self)
-        return String(self[range])
-    }
-}
 
 extension NumberFormatter {
     func string(from value: Double) -> String {

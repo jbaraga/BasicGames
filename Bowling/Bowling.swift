@@ -56,9 +56,9 @@ class Bowling: GameProtocol {
 
                     //2520 REMARK BALL GENERATOR USING MOD '15' SYSTEM
                     println("Type roll to get the ball going.")
-                    let roll = input()
+                    let _ = input()
                     
-                    for i in 1...20 {
+                    (1...20).forEach { _ in
                         let x = Int(100 * rnd(1))
                         for j in 1...10 {
                             if x < 15 * j {
@@ -73,7 +73,7 @@ class Bowling: GameProtocol {
                     println("Player: \(player) Frame: \(frameNumber) Ball: \(ball)")
                     for i in 0...3 {
                         println()
-                        for j in 1...(4 - i) {
+                        for _ in 1...(4 - i) {
                             k += 1
                             print(tab(i), pinState[k] == 1 ? "O " : "+ ")
                             //4680 REMARK ROLL ANALYSIS

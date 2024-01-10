@@ -273,6 +273,14 @@
 		ADE614A62B3500820087F9C6 /* CivilWar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE614A52B3500820087F9C6 /* CivilWar.swift */; };
 		ADE614AC2B35032C0087F9C6 /* CivilWar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADE614AB2B35032C0087F9C6 /* CivilWar.pdf */; };
 		ADE614AF2B3503AF0087F9C6 /* CivilWar in Resources */ = {isa = PBXBuildFile; fileRef = ADE6149A2B35000A0087F9C6 /* CivilWar */; };
+		ADE848F02B4DD9120018C719 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE848EF2B4DD9120018C719 /* main.swift */; };
+		ADE848F52B4DD9350018C719 /* Batnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE848F42B4DD9350018C719 /* Batnum.swift */; };
+		ADE848F62B4DD9600018C719 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADE848F72B4DD9640018C719 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADE848F82B4DD9660018C719 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADE848F92B4DD9690018C719 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADE848FB2B4DDDB70018C719 /* Batnum.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADE848FA2B4DDDB70018C719 /* Batnum.pdf */; };
+		ADE848FE2B4DDDFD0018C719 /* Batnum in Resources */ = {isa = PBXBuildFile; fileRef = ADE848ED2B4DD9120018C719 /* Batnum */; };
 		ADF23D462784D1FF00D71CDD /* Lunar.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADF23D452784D1FF00D71CDD /* Lunar.pdf */; };
 		ADF23D56278649F800D71CDD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF23D55278649F800D71CDD /* main.swift */; };
 		ADF23D5B27864A3100D71CDD /* LEM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF23D5A27864A3100D71CDD /* LEM.swift */; };
@@ -532,6 +540,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = ADE614992B35000A0087F9C6;
 			remoteInfo = CivilWar;
+		};
+		ADE848FC2B4DDDCC0018C719 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADE848EC2B4DD9120018C719;
+			remoteInfo = Batnum;
 		};
 		ADF8BF0A296CCD6F00B778CA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -829,6 +844,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		ADE848EB2B4DD9120018C719 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ADF23D51278649F700D71CDD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1004,6 +1028,10 @@
 		ADE6149C2B35000B0087F9C6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADE614A52B3500820087F9C6 /* CivilWar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilWar.swift; sourceTree = "<group>"; };
 		ADE614AB2B35032C0087F9C6 /* CivilWar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CivilWar.pdf; sourceTree = "<group>"; };
+		ADE848ED2B4DD9120018C719 /* Batnum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Batnum; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADE848EF2B4DD9120018C719 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADE848F42B4DD9350018C719 /* Batnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batnum.swift; sourceTree = "<group>"; };
+		ADE848FA2B4DDDB70018C719 /* Batnum.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Batnum.pdf; sourceTree = "<group>"; };
 		ADF23D452784D1FF00D71CDD /* Lunar.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Lunar.pdf; sourceTree = "<group>"; };
 		ADF23D53278649F700D71CDD /* LEM */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LEM; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF23D55278649F800D71CDD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -1256,6 +1284,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADE848EA2B4DD9120018C719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADF23D50278649F700D71CDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1431,6 +1466,7 @@
 				AD6AC930277F346400B9E5DB /* Amazing.pdf */,
 				AD56DA1327E4006200179FAA /* Animal.pdf */,
 				AD36C57727BD40BF00FB1E63 /* Banner.pdf */,
+				ADE848FA2B4DDDB70018C719 /* Batnum.pdf */,
 				AD1F5A2627C46DE1005BE669 /* Blackjack.pdf */,
 				AD82571427F09EA900A0ECCB /* Bounce.pdf */,
 				ADADA59D2B4C3EF50024CA81 /* Bowling.pdf */,
@@ -1557,6 +1593,7 @@
 				AD6AC927277F33C400B9E5DB /* Amazing */,
 				AD56DA0527E29A5500179FAA /* Animal */,
 				AD36C56927BB410C00FB1E63 /* Banner */,
+				ADE848EE2B4DD9120018C719 /* Batnum */,
 				AD82570627F09A9D00A0ECCB /* Bounce */,
 				ADADA5912B4C3BAB0024CA81 /* Bowling */,
 				AD5F26D2297389650053C5A1 /* Bug */,
@@ -1633,6 +1670,7 @@
 				ADE6149A2B35000A0087F9C6 /* CivilWar */,
 				ADADA57A2B46E7390024CA81 /* Checkers */,
 				ADADA5902B4C3BAA0024CA81 /* Bowling */,
+				ADE848ED2B4DD9120018C719 /* Batnum */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1740,6 +1778,15 @@
 				ADE614A52B3500820087F9C6 /* CivilWar.swift */,
 			);
 			path = CivilWar;
+			sourceTree = "<group>";
+		};
+		ADE848EE2B4DD9120018C719 /* Batnum */ = {
+			isa = PBXGroup;
+			children = (
+				ADE848EF2B4DD9120018C719 /* main.swift */,
+				ADE848F42B4DD9350018C719 /* Batnum.swift */,
+			);
+			path = Batnum;
 			sourceTree = "<group>";
 		};
 		ADF23D54278649F800D71CDD /* LEM */ = {
@@ -2211,8 +2258,9 @@
 				ADA84846295FC4B100F86687 /* PBXTargetDependency */,
 				AD57CCE527AEC22E00AD32C5 /* PBXTargetDependency */,
 				AD56DA0D27E29AD500179FAA /* PBXTargetDependency */,
-				AD150F2827C2AFF800FA3280 /* PBXTargetDependency */,
 				AD36C57127BB419900FB1E63 /* PBXTargetDependency */,
+				ADE848FD2B4DDDCC0018C719 /* PBXTargetDependency */,
+				AD150F2827C2AFF800FA3280 /* PBXTargetDependency */,
 				AD82570D27F09AC700A0ECCB /* PBXTargetDependency */,
 				ADADA5A02B4C3F150024CA81 /* PBXTargetDependency */,
 				AD5F26E229738D6C0053C5A1 /* PBXTargetDependency */,
@@ -2389,6 +2437,23 @@
 			productReference = ADE6149A2B35000A0087F9C6 /* CivilWar */;
 			productType = "com.apple.product-type.tool";
 		};
+		ADE848EC2B4DD9120018C719 /* Batnum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADE848F32B4DD9120018C719 /* Build configuration list for PBXNativeTarget "Batnum" */;
+			buildPhases = (
+				ADE848E92B4DD9120018C719 /* Sources */,
+				ADE848EA2B4DD9120018C719 /* Frameworks */,
+				ADE848EB2B4DD9120018C719 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Batnum;
+			productName = Batnum;
+			productReference = ADE848ED2B4DD9120018C719 /* Batnum */;
+			productType = "com.apple.product-type.tool";
+		};
 		ADF23D52278649F700D71CDD /* LEM */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADF23D57278649F800D71CDD /* Build configuration list for PBXNativeTarget "LEM" */;
@@ -2447,8 +2512,8 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1510;
-				LastUpgradeCheck = 1510;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					AD150F0727C1492A00FA3280 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -2554,6 +2619,9 @@
 					ADE614992B35000A0087F9C6 = {
 						CreatedOnToolsVersion = 15.1;
 					};
+					ADE848EC2B4DD9120018C719 = {
+						CreatedOnToolsVersion = 15.2;
+					};
 					ADF23D52278649F700D71CDD = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -2588,6 +2656,7 @@
 				AD6AC925277F33C400B9E5DB /* Amazing */,
 				AD56DA0327E29A5500179FAA /* Animal */,
 				AD36C56727BB410C00FB1E63 /* Banner */,
+				ADE848EC2B4DD9120018C719 /* Batnum */,
 				AD150F1E27C2AF9F00FA3280 /* Blackjack */,
 				AD82570427F09A9D00A0ECCB /* Bounce */,
 				ADADA58F2B4C3BAA0024CA81 /* Bowling */,
@@ -2631,6 +2700,7 @@
 				AD57CCE327AEC1D300AD32C5 /* Amazing in Resources */,
 				AD56DA0B27E29AB800179FAA /* Animal in Resources */,
 				AD36C56F27BB416E00FB1E63 /* Banner in Resources */,
+				ADE848FE2B4DDDFD0018C719 /* Batnum in Resources */,
 				AD150F2627C2AFAB00FA3280 /* Blackjack in Resources */,
 				AD82570E27F09ADA00A0ECCB /* Bounce in Resources */,
 				ADADA5A12B4C3F350024CA81 /* Bowling in Resources */,
@@ -2666,6 +2736,7 @@
 				AD6AC931277F346400B9E5DB /* Amazing.pdf in Resources */,
 				AD56DA1427E4006300179FAA /* Animal.pdf in Resources */,
 				AD36C57827BD40BF00FB1E63 /* Banner.pdf in Resources */,
+				ADE848FB2B4DDDB70018C719 /* Batnum.pdf in Resources */,
 				AD1F5A2727C46DE1005BE669 /* Blackjack.pdf in Resources */,
 				AD82571527F09EA900A0ECCB /* Bounce.pdf in Resources */,
 				ADADA59E2B4C3EF60024CA81 /* Bowling.pdf in Resources */,
@@ -3151,6 +3222,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADE848E92B4DD9120018C719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADE848F82B4DD9660018C719 /* ConsoleIO.swift in Sources */,
+				ADE848F52B4DD9350018C719 /* Batnum.swift in Sources */,
+				ADE848F62B4DD9600018C719 /* Extensions.swift in Sources */,
+				ADE848F02B4DD9120018C719 /* main.swift in Sources */,
+				ADE848F72B4DD9640018C719 /* Game.swift in Sources */,
+				ADE848F92B4DD9690018C719 /* GameProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADF23D4F278649F700D71CDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3362,6 +3446,11 @@
 			isa = PBXTargetDependency;
 			target = ADE614992B35000A0087F9C6 /* CivilWar */;
 			targetProxy = ADE614AD2B3503510087F9C6 /* PBXContainerItemProxy */;
+		};
+		ADE848FD2B4DDDCC0018C719 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADE848EC2B4DD9120018C719 /* Batnum */;
+			targetProxy = ADE848FC2B4DDDCC0018C719 /* PBXContainerItemProxy */;
 		};
 		ADF8BF0B296CCD6F00B778CA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4562,6 +4651,39 @@
 			};
 			name = Release;
 		};
+		ADE848F12B4DD9120018C719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADE848F22B4DD9120018C719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		ADF23D58278649F800D71CDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -4960,6 +5082,15 @@
 			buildConfigurations = (
 				ADE6149E2B35000B0087F9C6 /* Debug */,
 				ADE6149F2B35000B0087F9C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADE848F32B4DD9120018C719 /* Build configuration list for PBXNativeTarget "Batnum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADE848F12B4DD9120018C719 /* Debug */,
+				ADE848F22B4DD9120018C719 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

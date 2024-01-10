@@ -247,7 +247,7 @@ class ConsoleIO {
         center.post(name: Notification.Name.consoleWillPrint, object: hardcopyString, userInfo: nil)
     }
     
-    //Low level terminal functions to read each input character
+    //MARK: Low level terminal functions to read each input character
     private func initStruct<S>() -> S {
         let struct_pointer = UnsafeMutablePointer<S>.allocate(capacity: 1)
         let struct_memory = struct_pointer.pointee
