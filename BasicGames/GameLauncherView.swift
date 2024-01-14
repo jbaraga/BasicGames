@@ -29,6 +29,14 @@ struct GameLauncherView: View {
         }
     }
     
+    private func cornerRadius(for game: Game) -> CGFloat {
+        switch game {
+        case .banner, .oregonTrail: return 8
+        default:
+            return 0
+        }
+    }
+    
     private struct FilterButton: View {
         @Binding var selection: Category
         
@@ -50,10 +58,10 @@ struct GameLauncherView: View {
                     HStack {
                         image(for: game)
                             .resizable()
-                            .scaledToFit()
-                            .frame(width: imageWidth, alignment: .center)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: imageWidth, height: imageWidth, alignment: .center)
                             .foregroundColor(game.imageTint)
-                            .cornerRadius(radius)
+                            .cornerRadius(cornerRadius(for: game))
                         
                         Text(game.stringValue)
                             .font(.title)
@@ -64,7 +72,6 @@ struct GameLauncherView: View {
                 .buttonStyle(.borderless)
             }
         }
-        .environment(\.defaultMinListRowHeight, 0)
         .frame(minWidth: 480, minHeight: 200)
         .navigationTitle("101+ Basic Games")
         .toolbar {

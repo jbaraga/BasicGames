@@ -39,6 +39,8 @@ enum Game: String, CaseIterable, Codable {
     case rocket
     case orbit
     case oregonTrail
+    case pizza
+    case poetry
     case splat
     case starTrek
     case stockMarket
@@ -77,6 +79,8 @@ enum Game: String, CaseIterable, Codable {
         case .rocket: return "Rocket"
         case .orbit: return "Orbit"
         case .oregonTrail: return "Oregon Trail"
+        case .pizza: return "Pizza"
+        case .poetry: return "Poetry"
         case .splat: return "Splat"
         case .starTrek: return "Star Trek"
         case .stockMarket: return "Stock Market"
@@ -121,6 +125,8 @@ enum Game: String, CaseIterable, Codable {
         case .rocket: return .space
         case .orbit: return .space
         case .oregonTrail: return .educational
+        case .pizza: return .matrixManipulation
+        case .poetry: return .introductoryFun
         case .splat: return .space
         case .starTrek: return .space
         case .stockMarket: return .educational
@@ -167,6 +173,7 @@ enum Game: String, CaseIterable, Codable {
         case .hockey: return "figure.hockey"
         case .king: return "crown"
         case .orbit: return "atom"
+        case .poetry: return "text.alignright"
         case .stockMarket: return "chart.line.uptrend.xyaxis.circle.fill"
         case .target: return "target"
         case .threeDPlot: return "view.3d"
@@ -192,6 +199,7 @@ enum Game: String, CaseIterable, Codable {
         case .hockey: return .green
         case .king: return .indigo
         case .orbit: return .blue
+        case .poetry: return .teal
         case .starTrek: return .blue
         case .stockMarket: return .purple
         case .target: return .red

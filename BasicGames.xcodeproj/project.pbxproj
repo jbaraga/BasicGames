@@ -265,6 +265,22 @@
 		ADDBCD2427B6F16B00C369D1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2327B6F16B00C369D1 /* Preferences.swift */; };
 		ADDBCD2627B6F22E00C369D1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */; };
 		ADDBEF1B2985956F00745DBD /* Bell Buoy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADDBEF1A2985956F00745DBD /* Bell Buoy.mp3 */; };
+		ADDF8FB02B4EDAC300BD5B14 /* Pizza.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADDF8FAF2B4EDAC300BD5B14 /* Pizza.pdf */; };
+		ADDF8FB82B4EDADC00BD5B14 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF8FB72B4EDADC00BD5B14 /* main.swift */; };
+		ADDF8FBD2B4EDB0000BD5B14 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF8FBC2B4EDB0000BD5B14 /* Pizza.swift */; };
+		ADDF8FBE2B4EDB0F00BD5B14 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADDF8FBF2B4EDB1300BD5B14 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADDF8FC02B4EDB1700BD5B14 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADDF8FC12B4EDB1B00BD5B14 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADDF8FC42B4EDCE300BD5B14 /* Pizza in Resources */ = {isa = PBXBuildFile; fileRef = ADDF8FB52B4EDADC00BD5B14 /* Pizza */; };
+		ADDF8FCC2B4F2BB600BD5B14 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF8FCB2B4F2BB600BD5B14 /* main.swift */; };
+		ADDF8FD12B4F2BDB00BD5B14 /* Poetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF8FD02B4F2BDB00BD5B14 /* Poetry.swift */; };
+		ADDF8FD22B4F2BED00BD5B14 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADDF8FD32B4F2BF300BD5B14 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADDF8FD42B4F2BF600BD5B14 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADDF8FD52B4F2BFA00BD5B14 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADDF8FD72B4F2CD500BD5B14 /* Poetry.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADDF8FD62B4F2CD500BD5B14 /* Poetry.pdf */; };
+		ADDF8FDA2B4F2E0000BD5B14 /* Poetry in Resources */ = {isa = PBXBuildFile; fileRef = ADDF8FC92B4F2BB600BD5B14 /* Poetry */; };
 		ADE6149D2B35000B0087F9C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6149C2B35000B0087F9C6 /* main.swift */; };
 		ADE614A12B3500350087F9C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		ADE614A22B35003A0087F9C6 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
@@ -533,6 +549,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = ADDBCD1327B6B13900C369D1;
 			remoteInfo = Joust;
+		};
+		ADDF8FC22B4EDCC700BD5B14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADDF8FB42B4EDADC00BD5B14;
+			remoteInfo = Pizza;
+		};
+		ADDF8FD82B4F2DDC00BD5B14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADDF8FC82B4F2BB600BD5B14;
+			remoteInfo = Poetry;
 		};
 		ADE614AD2B3503510087F9C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -835,6 +865,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		ADDF8FB32B4EDADC00BD5B14 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		ADDF8FC72B4F2BB600BD5B14 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ADE614982B35000A0087F9C6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1024,6 +1072,14 @@
 		ADDBCD2327B6F16B00C369D1 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		ADDBEF1A2985956F00745DBD /* Bell Buoy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bell Buoy.mp3"; sourceTree = "<group>"; };
+		ADDF8FAF2B4EDAC300BD5B14 /* Pizza.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Pizza.pdf; sourceTree = "<group>"; };
+		ADDF8FB52B4EDADC00BD5B14 /* Pizza */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Pizza; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDF8FB72B4EDADC00BD5B14 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADDF8FBC2B4EDB0000BD5B14 /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
+		ADDF8FC92B4F2BB600BD5B14 /* Poetry */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Poetry; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDF8FCB2B4F2BB600BD5B14 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADDF8FD02B4F2BDB00BD5B14 /* Poetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poetry.swift; sourceTree = "<group>"; };
+		ADDF8FD62B4F2CD500BD5B14 /* Poetry.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Poetry.pdf; sourceTree = "<group>"; };
 		ADE6149A2B35000A0087F9C6 /* CivilWar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CivilWar; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE6149C2B35000B0087F9C6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADE614A52B3500820087F9C6 /* CivilWar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilWar.swift; sourceTree = "<group>"; };
@@ -1277,6 +1333,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADDF8FB22B4EDADC00BD5B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADDF8FC62B4F2BB600BD5B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADE614972B35000A0087F9C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1487,6 +1557,8 @@
 				ADF23D452784D1FF00D71CDD /* Lunar.pdf */,
 				AD7C3F752961D6AF00F3C5AA /* Orbit.pdf */,
 				AD7D2753277CA5EE00F43F39 /* OregonTrail.pdf */,
+				ADDF8FAF2B4EDAC300BD5B14 /* Pizza.pdf */,
+				ADDF8FD62B4F2CD500BD5B14 /* Poetry.pdf */,
 				AD60176A27ED2C7200213C47 /* Splat.pdf */,
 				AD22859527B40B4400FEADB8 /* StarTrek.pdf */,
 				AD0C603229736D570015436F /* StockMarket.pdf */,
@@ -1617,6 +1689,8 @@
 				ADDBCD0227B5504000C369D1 /* Rocket */,
 				AD7C3F692961D4E900F3C5AA /* Orbit */,
 				AD7D275A277CA79600F43F39 /* OregonTrail */,
+				ADDF8FCA2B4F2BB600BD5B14 /* Poetry */,
+				ADDF8FB62B4EDADC00BD5B14 /* Pizza */,
 				AD2437C327EAA03E005D67B6 /* Splat */,
 				AD57CCF527AED50800AD32C5 /* StarTrek */,
 				AD8A002327E77C62009B5679 /* StockMarket */,
@@ -1671,6 +1745,8 @@
 				ADADA57A2B46E7390024CA81 /* Checkers */,
 				ADADA5902B4C3BAA0024CA81 /* Bowling */,
 				ADE848ED2B4DD9120018C719 /* Batnum */,
+				ADDF8FB52B4EDADC00BD5B14 /* Pizza */,
+				ADDF8FC92B4F2BB600BD5B14 /* Poetry */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1769,6 +1845,24 @@
 				ADDBCD1B27B6B16E00C369D1 /* Joust.swift */,
 			);
 			path = Joust;
+			sourceTree = "<group>";
+		};
+		ADDF8FB62B4EDADC00BD5B14 /* Pizza */ = {
+			isa = PBXGroup;
+			children = (
+				ADDF8FB72B4EDADC00BD5B14 /* main.swift */,
+				ADDF8FBC2B4EDB0000BD5B14 /* Pizza.swift */,
+			);
+			path = Pizza;
+			sourceTree = "<group>";
+		};
+		ADDF8FCA2B4F2BB600BD5B14 /* Poetry */ = {
+			isa = PBXGroup;
+			children = (
+				ADDF8FCB2B4F2BB600BD5B14 /* main.swift */,
+				ADDF8FD02B4F2BDB00BD5B14 /* Poetry.swift */,
+			);
+			path = Poetry;
 			sourceTree = "<group>";
 		};
 		ADE6149B2B35000B0087F9C6 /* CivilWar */ = {
@@ -2284,6 +2378,8 @@
 				ADDBCD0E27B5512E00C369D1 /* PBXTargetDependency */,
 				AD7C3F782961D6E000F3C5AA /* PBXTargetDependency */,
 				AD57CCEB27AEC26500AD32C5 /* PBXTargetDependency */,
+				ADDF8FC32B4EDCC700BD5B14 /* PBXTargetDependency */,
+				ADDF8FD92B4F2DDC00BD5B14 /* PBXTargetDependency */,
 				AD2437CA27EAA062005D67B6 /* PBXTargetDependency */,
 				AD57CD0127AED82E00AD32C5 /* PBXTargetDependency */,
 				AD8A002A27E77C79009B5679 /* PBXTargetDependency */,
@@ -2418,6 +2514,40 @@
 			name = Joust;
 			productName = Joust;
 			productReference = ADDBCD1427B6B13900C369D1 /* Joust */;
+			productType = "com.apple.product-type.tool";
+		};
+		ADDF8FB42B4EDADC00BD5B14 /* Pizza */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADDF8FB92B4EDADC00BD5B14 /* Build configuration list for PBXNativeTarget "Pizza" */;
+			buildPhases = (
+				ADDF8FB12B4EDADC00BD5B14 /* Sources */,
+				ADDF8FB22B4EDADC00BD5B14 /* Frameworks */,
+				ADDF8FB32B4EDADC00BD5B14 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pizza;
+			productName = Pizza;
+			productReference = ADDF8FB52B4EDADC00BD5B14 /* Pizza */;
+			productType = "com.apple.product-type.tool";
+		};
+		ADDF8FC82B4F2BB600BD5B14 /* Poetry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADDF8FCD2B4F2BB600BD5B14 /* Build configuration list for PBXNativeTarget "Poetry" */;
+			buildPhases = (
+				ADDF8FC52B4F2BB600BD5B14 /* Sources */,
+				ADDF8FC62B4F2BB600BD5B14 /* Frameworks */,
+				ADDF8FC72B4F2BB600BD5B14 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Poetry;
+			productName = Poetry;
+			productReference = ADDF8FC92B4F2BB600BD5B14 /* Poetry */;
 			productType = "com.apple.product-type.tool";
 		};
 		ADE614992B35000A0087F9C6 /* CivilWar */ = {
@@ -2616,6 +2746,12 @@
 					ADDBCD1327B6B13900C369D1 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
+					ADDF8FB42B4EDADC00BD5B14 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					ADDF8FC82B4F2BB600BD5B14 = {
+						CreatedOnToolsVersion = 15.2;
+					};
 					ADE614992B35000A0087F9C6 = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -2681,6 +2817,8 @@
 				ADDBCD0027B5504000C369D1 /* Rocket */,
 				AD7C3F672961D4E900F3C5AA /* Orbit */,
 				AD7D2758277CA79600F43F39 /* OregonTrail */,
+				ADDF8FB42B4EDADC00BD5B14 /* Pizza */,
+				ADDF8FC82B4F2BB600BD5B14 /* Poetry */,
 				AD2437C127EAA03E005D67B6 /* Splat */,
 				AD57CCF327AED50800AD32C5 /* StarTrek */,
 				AD8A002127E77C62009B5679 /* StockMarket */,
@@ -2724,6 +2862,8 @@
 				AD57CCEE27AEC2B400AD32C5 /* Lunar in Resources */,
 				AD7C3F792961D6F800F3C5AA /* Orbit in Resources */,
 				AD57CCEF27AEC2BE00AD32C5 /* OregonTrail in Resources */,
+				ADDF8FC42B4EDCE300BD5B14 /* Pizza in Resources */,
+				ADDF8FDA2B4F2E0000BD5B14 /* Poetry in Resources */,
 				ADDBCD0F27B5515E00C369D1 /* Rocket in Resources */,
 				AD2437CB27EAA075005D67B6 /* Splat in Resources */,
 				AD57CD0227AED83F00AD32C5 /* StarTrek in Resources */,
@@ -2757,6 +2897,8 @@
 				ADD5D280297B659F0035F451 /* Hockey.pdf in Resources */,
 				AD7D2754277CA5EE00F43F39 /* OregonTrail.pdf in Resources */,
 				AD7C3F762961D6AF00F3C5AA /* Orbit.pdf in Resources */,
+				ADDF8FB02B4EDAC300BD5B14 /* Pizza.pdf in Resources */,
+				ADDF8FD72B4F2CD500BD5B14 /* Poetry.pdf in Resources */,
 				AD0C603329736D570015436F /* StockMarket.pdf in Resources */,
 				AD60176B27ED2C7200213C47 /* Splat.pdf in Resources */,
 				AD22859627B40B4A00FEADB8 /* StarTrek.pdf in Resources */,
@@ -3209,6 +3351,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADDF8FB12B4EDADC00BD5B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADDF8FC02B4EDB1700BD5B14 /* ConsoleIO.swift in Sources */,
+				ADDF8FBD2B4EDB0000BD5B14 /* Pizza.swift in Sources */,
+				ADDF8FBE2B4EDB0F00BD5B14 /* Extensions.swift in Sources */,
+				ADDF8FB82B4EDADC00BD5B14 /* main.swift in Sources */,
+				ADDF8FBF2B4EDB1300BD5B14 /* Game.swift in Sources */,
+				ADDF8FC12B4EDB1B00BD5B14 /* GameProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADDF8FC52B4F2BB600BD5B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADDF8FD42B4F2BF600BD5B14 /* ConsoleIO.swift in Sources */,
+				ADDF8FD12B4F2BDB00BD5B14 /* Poetry.swift in Sources */,
+				ADDF8FD22B4F2BED00BD5B14 /* Extensions.swift in Sources */,
+				ADDF8FCC2B4F2BB600BD5B14 /* main.swift in Sources */,
+				ADDF8FD32B4F2BF300BD5B14 /* Game.swift in Sources */,
+				ADDF8FD52B4F2BFA00BD5B14 /* GameProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADE614962B35000A0087F9C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3441,6 +3609,16 @@
 			isa = PBXTargetDependency;
 			target = ADDBCD1327B6B13900C369D1 /* Joust */;
 			targetProxy = ADDBCD2127B6B2DA00C369D1 /* PBXContainerItemProxy */;
+		};
+		ADDF8FC32B4EDCC700BD5B14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADDF8FB42B4EDADC00BD5B14 /* Pizza */;
+			targetProxy = ADDF8FC22B4EDCC700BD5B14 /* PBXContainerItemProxy */;
+		};
+		ADDF8FD92B4F2DDC00BD5B14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADDF8FC82B4F2BB600BD5B14 /* Poetry */;
+			targetProxy = ADDF8FD82B4F2DDC00BD5B14 /* PBXContainerItemProxy */;
 		};
 		ADE614AE2B3503510087F9C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4618,6 +4796,72 @@
 			};
 			name = Release;
 		};
+		ADDF8FBA2B4EDADC00BD5B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADDF8FBB2B4EDADC00BD5B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ADDF8FCE2B4F2BB600BD5B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADDF8FCF2B4F2BB600BD5B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		ADE6149E2B35000B0087F9C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -5073,6 +5317,24 @@
 			buildConfigurations = (
 				ADDBCD1927B6B13900C369D1 /* Debug */,
 				ADDBCD1A27B6B13900C369D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADDF8FB92B4EDADC00BD5B14 /* Build configuration list for PBXNativeTarget "Pizza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADDF8FBA2B4EDADC00BD5B14 /* Debug */,
+				ADDF8FBB2B4EDADC00BD5B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADDF8FCD2B4F2BB600BD5B14 /* Build configuration list for PBXNativeTarget "Poetry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADDF8FCE2B4F2BB600BD5B14 /* Debug */,
+				ADDF8FCF2B4F2BB600BD5B14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

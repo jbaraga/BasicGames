@@ -149,7 +149,7 @@ extension GameProtocol {
         guard stringValues.count == 2, let value1 = T(stringValues[0]), let value2 = T(stringValues[1]) else { return nil }
         return (value1, value2)
     }
-    
+        
     @discardableResult
     func pauseForEnter() -> String {
         return consoleIO.pauseForEnter()
