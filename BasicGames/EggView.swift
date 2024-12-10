@@ -49,4 +49,4 @@ struct EggView_Previews: PreviewProvider {
 }
 
 
-extension PDFView: ObservableObject {}
+extension PDFView: @retroactive ObservableObject {}

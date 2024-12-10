@@ -281,6 +281,14 @@
 		ADDF8FD52B4F2BFA00BD5B14 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		ADDF8FD72B4F2CD500BD5B14 /* Poetry.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADDF8FD62B4F2CD500BD5B14 /* Poetry.pdf */; };
 		ADDF8FDA2B4F2E0000BD5B14 /* Poetry in Resources */ = {isa = PBXBuildFile; fileRef = ADDF8FC92B4F2BB600BD5B14 /* Poetry */; };
+		ADDF8FE22B543D1C00BD5B14 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF8FE12B543D1C00BD5B14 /* main.swift */; };
+		ADDF8FE72B543D3F00BD5B14 /* Poker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF8FE62B543D3F00BD5B14 /* Poker.swift */; };
+		ADDF8FE82B543D4900BD5B14 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADDF8FE92B543D4D00BD5B14 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADDF8FEA2B543D5100BD5B14 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADDF8FEB2B543D5400BD5B14 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADDF8FED2B543E0600BD5B14 /* Poker.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADDF8FEC2B543E0600BD5B14 /* Poker.pdf */; };
+		ADDF8FF02B543EEC00BD5B14 /* Poker in Resources */ = {isa = PBXBuildFile; fileRef = ADDF8FDF2B543D1B00BD5B14 /* Poker */; };
 		ADE6149D2B35000B0087F9C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6149C2B35000B0087F9C6 /* main.swift */; };
 		ADE614A12B3500350087F9C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		ADE614A22B35003A0087F9C6 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
@@ -563,6 +571,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = ADDF8FC82B4F2BB600BD5B14;
 			remoteInfo = Poetry;
+		};
+		ADDF8FEE2B543EC600BD5B14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADDF8FDE2B543D1B00BD5B14;
+			remoteInfo = Poker;
 		};
 		ADE614AD2B3503510087F9C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -883,6 +898,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		ADDF8FDD2B543D1B00BD5B14 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ADE614982B35000A0087F9C6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1080,6 +1104,10 @@
 		ADDF8FCB2B4F2BB600BD5B14 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADDF8FD02B4F2BDB00BD5B14 /* Poetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poetry.swift; sourceTree = "<group>"; };
 		ADDF8FD62B4F2CD500BD5B14 /* Poetry.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Poetry.pdf; sourceTree = "<group>"; };
+		ADDF8FDF2B543D1B00BD5B14 /* Poker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Poker; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADDF8FE12B543D1C00BD5B14 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADDF8FE62B543D3F00BD5B14 /* Poker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poker.swift; sourceTree = "<group>"; };
+		ADDF8FEC2B543E0600BD5B14 /* Poker.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Poker.pdf; sourceTree = "<group>"; };
 		ADE6149A2B35000A0087F9C6 /* CivilWar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CivilWar; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE6149C2B35000B0087F9C6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADE614A52B3500820087F9C6 /* CivilWar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilWar.swift; sourceTree = "<group>"; };
@@ -1347,6 +1375,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADDF8FDC2B543D1B00BD5B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADE614972B35000A0087F9C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1559,6 +1594,7 @@
 				AD7D2753277CA5EE00F43F39 /* OregonTrail.pdf */,
 				ADDF8FAF2B4EDAC300BD5B14 /* Pizza.pdf */,
 				ADDF8FD62B4F2CD500BD5B14 /* Poetry.pdf */,
+				ADDF8FEC2B543E0600BD5B14 /* Poker.pdf */,
 				AD60176A27ED2C7200213C47 /* Splat.pdf */,
 				AD22859527B40B4400FEADB8 /* StarTrek.pdf */,
 				AD0C603229736D570015436F /* StockMarket.pdf */,
@@ -1582,7 +1618,6 @@
 		AD82570627F09A9D00A0ECCB /* Bounce */ = {
 			isa = PBXGroup;
 			children = (
-				AD150F2027C2AF9F00FA3280 /* Blackjack */,
 				AD82570727F09A9D00A0ECCB /* main.swift */,
 				AD82570F27F09CF000A0ECCB /* Bounce.swift */,
 			);
@@ -1666,6 +1701,7 @@
 				AD56DA0527E29A5500179FAA /* Animal */,
 				AD36C56927BB410C00FB1E63 /* Banner */,
 				ADE848EE2B4DD9120018C719 /* Batnum */,
+				AD150F2027C2AF9F00FA3280 /* Blackjack */,
 				AD82570627F09A9D00A0ECCB /* Bounce */,
 				ADADA5912B4C3BAB0024CA81 /* Bowling */,
 				AD5F26D2297389650053C5A1 /* Bug */,
@@ -1691,6 +1727,7 @@
 				AD7D275A277CA79600F43F39 /* OregonTrail */,
 				ADDF8FCA2B4F2BB600BD5B14 /* Poetry */,
 				ADDF8FB62B4EDADC00BD5B14 /* Pizza */,
+				ADDF8FE02B543D1C00BD5B14 /* Poker */,
 				AD2437C327EAA03E005D67B6 /* Splat */,
 				AD57CCF527AED50800AD32C5 /* StarTrek */,
 				AD8A002327E77C62009B5679 /* StockMarket */,
@@ -1747,6 +1784,7 @@
 				ADE848ED2B4DD9120018C719 /* Batnum */,
 				ADDF8FB52B4EDADC00BD5B14 /* Pizza */,
 				ADDF8FC92B4F2BB600BD5B14 /* Poetry */,
+				ADDF8FDF2B543D1B00BD5B14 /* Poker */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1863,6 +1901,15 @@
 				ADDF8FD02B4F2BDB00BD5B14 /* Poetry.swift */,
 			);
 			path = Poetry;
+			sourceTree = "<group>";
+		};
+		ADDF8FE02B543D1C00BD5B14 /* Poker */ = {
+			isa = PBXGroup;
+			children = (
+				ADDF8FE12B543D1C00BD5B14 /* main.swift */,
+				ADDF8FE62B543D3F00BD5B14 /* Poker.swift */,
+			);
+			path = Poker;
 			sourceTree = "<group>";
 		};
 		ADE6149B2B35000B0087F9C6 /* CivilWar */ = {
@@ -2380,6 +2427,7 @@
 				AD57CCEB27AEC26500AD32C5 /* PBXTargetDependency */,
 				ADDF8FC32B4EDCC700BD5B14 /* PBXTargetDependency */,
 				ADDF8FD92B4F2DDC00BD5B14 /* PBXTargetDependency */,
+				ADDF8FEF2B543EC600BD5B14 /* PBXTargetDependency */,
 				AD2437CA27EAA062005D67B6 /* PBXTargetDependency */,
 				AD57CD0127AED82E00AD32C5 /* PBXTargetDependency */,
 				AD8A002A27E77C79009B5679 /* PBXTargetDependency */,
@@ -2550,6 +2598,23 @@
 			productReference = ADDF8FC92B4F2BB600BD5B14 /* Poetry */;
 			productType = "com.apple.product-type.tool";
 		};
+		ADDF8FDE2B543D1B00BD5B14 /* Poker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADDF8FE32B543D1C00BD5B14 /* Build configuration list for PBXNativeTarget "Poker" */;
+			buildPhases = (
+				ADDF8FDB2B543D1B00BD5B14 /* Sources */,
+				ADDF8FDC2B543D1B00BD5B14 /* Frameworks */,
+				ADDF8FDD2B543D1B00BD5B14 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Poker;
+			productName = Poker;
+			productReference = ADDF8FDF2B543D1B00BD5B14 /* Poker */;
+			productType = "com.apple.product-type.tool";
+		};
 		ADE614992B35000A0087F9C6 /* CivilWar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADE614A02B35000B0087F9C6 /* Build configuration list for PBXNativeTarget "CivilWar" */;
@@ -2643,7 +2708,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					AD150F0727C1492A00FA3280 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -2752,6 +2817,9 @@
 					ADDF8FC82B4F2BB600BD5B14 = {
 						CreatedOnToolsVersion = 15.2;
 					};
+					ADDF8FDE2B543D1B00BD5B14 = {
+						CreatedOnToolsVersion = 15.2;
+					};
 					ADE614992B35000A0087F9C6 = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -2819,6 +2887,7 @@
 				AD7D2758277CA79600F43F39 /* OregonTrail */,
 				ADDF8FB42B4EDADC00BD5B14 /* Pizza */,
 				ADDF8FC82B4F2BB600BD5B14 /* Poetry */,
+				ADDF8FDE2B543D1B00BD5B14 /* Poker */,
 				AD2437C127EAA03E005D67B6 /* Splat */,
 				AD57CCF327AED50800AD32C5 /* StarTrek */,
 				AD8A002127E77C62009B5679 /* StockMarket */,
@@ -2864,6 +2933,7 @@
 				AD57CCEF27AEC2BE00AD32C5 /* OregonTrail in Resources */,
 				ADDF8FC42B4EDCE300BD5B14 /* Pizza in Resources */,
 				ADDF8FDA2B4F2E0000BD5B14 /* Poetry in Resources */,
+				ADDF8FF02B543EEC00BD5B14 /* Poker in Resources */,
 				ADDBCD0F27B5515E00C369D1 /* Rocket in Resources */,
 				AD2437CB27EAA075005D67B6 /* Splat in Resources */,
 				AD57CD0227AED83F00AD32C5 /* StarTrek in Resources */,
@@ -2899,6 +2969,7 @@
 				AD7C3F762961D6AF00F3C5AA /* Orbit.pdf in Resources */,
 				ADDF8FB02B4EDAC300BD5B14 /* Pizza.pdf in Resources */,
 				ADDF8FD72B4F2CD500BD5B14 /* Poetry.pdf in Resources */,
+				ADDF8FED2B543E0600BD5B14 /* Poker.pdf in Resources */,
 				AD0C603329736D570015436F /* StockMarket.pdf in Resources */,
 				AD60176B27ED2C7200213C47 /* Splat.pdf in Resources */,
 				AD22859627B40B4A00FEADB8 /* StarTrek.pdf in Resources */,
@@ -3377,6 +3448,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADDF8FDB2B543D1B00BD5B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADDF8FEA2B543D5100BD5B14 /* ConsoleIO.swift in Sources */,
+				ADDF8FE22B543D1C00BD5B14 /* main.swift in Sources */,
+				ADDF8FE82B543D4900BD5B14 /* Extensions.swift in Sources */,
+				ADDF8FE72B543D3F00BD5B14 /* Poker.swift in Sources */,
+				ADDF8FE92B543D4D00BD5B14 /* Game.swift in Sources */,
+				ADDF8FEB2B543D5400BD5B14 /* GameProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADE614962B35000A0087F9C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3619,6 +3703,11 @@
 			isa = PBXTargetDependency;
 			target = ADDF8FC82B4F2BB600BD5B14 /* Poetry */;
 			targetProxy = ADDF8FD82B4F2DDC00BD5B14 /* PBXContainerItemProxy */;
+		};
+		ADDF8FEF2B543EC600BD5B14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADDF8FDE2B543D1B00BD5B14 /* Poker */;
+			targetProxy = ADDF8FEE2B543EC600BD5B14 /* PBXContainerItemProxy */;
 		};
 		ADE614AE2B3503510087F9C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4551,7 +4640,6 @@
 		ADAE10DA277BAD2E006762F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -4577,7 +4665,6 @@
 		ADAE10DB277BAD2E006762F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -4603,7 +4690,6 @@
 		ADAE10DD277BAD2E006762F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -4628,7 +4714,6 @@
 		ADAE10DE277BAD2E006762F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -4847,6 +4932,39 @@
 			name = Debug;
 		};
 		ADDF8FCF2B4F2BB600BD5B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ADDF8FE42B543D1C00BD5B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADDF8FE52B543D1C00BD5B14 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -5335,6 +5453,15 @@
 			buildConfigurations = (
 				ADDF8FCE2B4F2BB600BD5B14 /* Debug */,
 				ADDF8FCF2B4F2BB600BD5B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADDF8FE32B543D1C00BD5B14 /* Build configuration list for PBXNativeTarget "Poker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADDF8FE42B543D1C00BD5B14 /* Debug */,
+				ADDF8FE52B543D1C00BD5B14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
