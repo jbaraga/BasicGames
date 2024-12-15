@@ -12,7 +12,7 @@ struct GameLauncherView: View {
     @ObservedObject private var settings = Preferences.shared
     @Environment(\.openWindow) private var openWindow
     
-    private let imageWidth: CGFloat = 40
+    private let imageWidth: CGFloat = 36
     private let radius: CGFloat = 8
     
     private var games: [Game] {

@@ -23,8 +23,8 @@ struct BasicGamesApp: App {
         WindowGroup(id: "Main") {
             GameLauncherView()
                 .onReceive(DistributedNotificationCenter.default().publisher(for: Notification.Name.showEasterEgg)) { notification in
-                    if let filename = notification.object as? String {
-                        showPDF(with: filename)
+                    if let string = notification.object as? String {
+                        showPDF(with: string)
                     }
                 }
         }
@@ -52,8 +52,8 @@ struct BasicGamesApp: App {
         .windowToolbarStyle(.unifiedCompact(showsTitle: true))
         .defaultSize(width: 660, height: 640)  //~ 80 columns in terminal
         
-        WindowGroup(id: "EasterEgg", for: URL.self) { $url in
-            if let url, let document = PDFDocument(url: url) {
+        WindowGroup(id: "EasterEgg", for: EasterEggPDF.self) { $pdf in
+            if let pdf, let document = pdf.document {
                 EggView(document: document)
             }
         }
@@ -65,9 +65,37 @@ struct BasicGamesApp: App {
         }
     }
         
-    private func showPDF(with filename: String) {
-        guard let url = Bundle.main.url(forResource: filename, withExtension: "pdf") else { return }
-        openWindow(value: url)
+    private func showPDF(with pdfString: String) {
+        guard let pdf = EasterEggPDF(pdfString: pdfString) else { return }
+        openWindow(value: pdf)
+    }
+    
+    private struct EasterEggPDF: Codable, Hashable {
+        let url: URL
+        var pageNumbers: ClosedRange<Int>?
+        
+        init?(pdfString: String) {
+            let components = pdfString.components(separatedBy: "-")
+            if let last = components.last, let range = ClosedRange(string: last) {
+                self.pageNumbers = range
+                let filename = pdfString.replacingOccurrences(of: "-" + last, with: "")
+                guard let url = Bundle.main.url(forResource: filename, withExtension: "pdf") else { return nil }
+                self.url = url
+                return
+            }
+            
+            guard let url = Bundle.main.url(forResource: pdfString, withExtension: "pdf") else { return nil }
+            self.url = url
+        }
+        
+        var document: PDFDocument? {
+            guard let doc = PDFDocument(url: url) else { return nil }
+            if let pageNumbers {
+                return PDFDocument(document: doc, pageNumbers: pageNumbers)
+            } else {
+                return doc
+            }
+        }
     }
 }
 
@@ -75,8 +103,8 @@ struct BasicGamesApp: App {
 /*
  TO ADD A NEW GAME
  1. Add new CLI target with GameName (i.e. no spaces, camel case).
- 2. Add target membership GameName to Extensions, ConsoleIO, GameProtocol
- 3. Add GameName.swift file to GameName group, with target membership GameName:
+ 2. Add target membership for GameName CLI to Extensions, ConsoleIO, GameProtocol
+ 3. Add GameName.swift file to GameName group, with target membership GameName.
     main.swift
         let game = GameName()
         game.run()
@@ -84,8 +112,8 @@ struct BasicGamesApp: App {
         class GameName: GameProtocol {
             func run() {}
         }
- 4.  Add case gameName to Game enum in BasicGames group; specify name of easter egg pdf file (standard is Gamename)
- 5.  Create easter egg pdf with Preview. Edit Permissions... and set read and owner passwords from KeyChain (PDF Reader, PDF Owner), deselect all privileges. Drag easter egg pdf to Resources group, and select copy to folder.
+ 4.  Add case gameName to Game enum in BasicGames group; specify name of easter egg pdf file (standard is BasicGames)
+ 5.  Add page numbers to Game enum for app if easter egg pdf derived from BasicGames.pdf. Otherwise, create easter egg pdf with Preview. Edit Permissions... and set read and owner passwords from KeyChain (PDF Reader, PDF Owner), deselect all privileges. Drag easter egg pdf to Resources group, and select copy to folder.
  6.  Add image for game either as Image set in Assets or use system image specified in Game enum; add optional tint.
  7.  BasicGames target -> Build Phases
         Target Dependencies - add game CLI target
@@ -93,14 +121,3 @@ struct BasicGamesApp: App {
  8.  Write the game code in GameName.swift. Have fun!
  */
 
-extension NSScreen {
-    //Pixels per inch
-    var scale: NSSize? {
-        return self.deviceDescription[.resolution] as? NSSize
-    }
-    
-    func size(for width: CGFloat, height: CGFloat) -> NSSize? {
-        guard let scale else { return nil }
-        return NSSize(width: width * scale.width, height: height * scale.height)
-    }
-}

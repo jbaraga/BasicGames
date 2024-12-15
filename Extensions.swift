@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import PDFKit
 
 
 extension Task where Success == Never, Failure == Never {
@@ -164,3 +165,37 @@ extension NSColor {
 }
 
 
+extension NSScreen {
+    //Pixels per inch
+    var scale: NSSize? {
+        return self.deviceDescription[.resolution] as? NSSize
+    }
+    
+    func size(for width: CGFloat, height: CGFloat) -> NSSize? {
+        guard let scale else { return nil }
+        return NSSize(width: width * scale.width, height: height * scale.height)
+    }
+}
+
+extension PDFDocument {
+    static let pwd: String = {
+        let data = Data([116, 75, 82, 107, 107, 66, 117, 71, 75, 68, 67, 114, 73, 57, 52, 87, 88, 70, 82, 88, 122, 72, 83, 114, 106, 52, 74, 78, 120, 65, 105])
+        return String(data: data, encoding: .utf8) ?? ""
+    }()
+    
+    convenience init(document: PDFDocument, pageNumbers: ClosedRange<Int>) {
+        document.unlock(withPassword: Self.pwd)
+        self.init()
+        let pages = pageNumbers.compactMap { document.page(at: $0 - 1) }  //Page numbers in sidebar are 1 indexed, in PDFDocument are 0 indexed
+        pages.forEach { self.insert($0, at: self.pageCount) }
+    }
+}
+
+
+extension ClosedRange<Int> {
+    init?(string: String) {
+        let components = string.components(separatedBy: "...")
+        guard components.count == 2, let start = Int(components[0]), let end = Int(components[1]), start <= end else { return nil }
+        self = start...end
+    }
+}

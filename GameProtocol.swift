@@ -163,7 +163,7 @@ extension GameProtocol {
         
         let center = DistributedNotificationCenter.default()
         //object has to be  string, userInfo nil for this to properly post
-        center.post(name: Notification.Name.showEasterEgg, object: game.pdfFilename, userInfo: nil)
+        center.post(name: Notification.Name.showEasterEgg, object: game.pdfString)
     }
     
     func end() -> Never {
