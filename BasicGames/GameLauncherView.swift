@@ -15,11 +15,8 @@ struct GameLauncherView: View {
     private let imageWidth: CGFloat = 36
     private let radius: CGFloat = 8
     
-    private var games: [Game] {
-        if settings.category == .all { return Game.allCases }
-        return Game.allCases.filter { $0.category == settings.category }
-    }
-    
+    private var games: [Game] { settings.category.games }
+ 
     private func image(for game: Game) -> Image {
         if let systemName = game.imageSystemName {
             return Image(systemName: systemName)
@@ -43,7 +40,7 @@ struct GameLauncherView: View {
         var body: some View {
             Picker("", selection: $selection) {
                 ForEach(Category.allCases) { category in
-                    Text(category.stringValue + " (\(category.count(Game.allCases)))")
+                    Text(category.stringValue + " (\(category.games.count))")
                 }
             }
             .labelsHidden()

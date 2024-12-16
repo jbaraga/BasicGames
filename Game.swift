@@ -538,6 +538,9 @@ enum Category: String, CaseIterable, Identifiable, Codable {
     case gambling
     case cardAndBoard
     case combat
+    #if DEBUG
+    case completed
+    #endif
     
     var stringValue: String {
         switch self {
@@ -554,13 +557,22 @@ enum Category: String, CaseIterable, Identifiable, Codable {
         case .gambling: return "Gambling and Casino"
         case .cardAndBoard: return "Card and Board"
         case .combat: return "Combat"
+        #if DEBUG
+        case .completed: return "Completed"
+        #endif
         }
     }
     
     var id: Category { self }
     
-    func count(_ games: [Game]) -> Int {
-        if self == .all { return games.count }
-        return (games.filter { $0.category == self }).count
+    var games: [Game] {
+        switch self {
+        case .all: return Game.allCases
+        #if DEBUG
+        case .completed: return Game.allCases.filter { $0.imageSystemName != nil || Bundle.main.image(forResource: $0.imageName) != nil }
+        #endif
+        default:
+            return Game.allCases.filter { $0.category == self }
+        }
     }
 }

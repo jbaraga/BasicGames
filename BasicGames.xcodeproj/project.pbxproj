@@ -266,6 +266,11 @@
 		ADDF8FEB2B543D5400BD5B14 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		ADDF8FF02B543EEC00BD5B14 /* Poker in Resources */ = {isa = PBXBuildFile; fileRef = ADDF8FDF2B543D1B00BD5B14 /* Poker */; };
 		ADE101052D0F3346003080C9 /* BasicGames.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADE101042D0F3346003080C9 /* BasicGames.pdf */; };
+		ADE101112D0F3BBA003080C9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADE101122D0F3BD4003080C9 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADE101132D0F3BE0003080C9 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADE101142D0F3BE6003080C9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADE1011D2D0F3D42003080C9 /* Bagels in Resources */ = {isa = PBXBuildFile; fileRef = ADE1010A2D0F3B43003080C9 /* Bagels */; };
 		ADE6149D2B35000B0087F9C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6149C2B35000B0087F9C6 /* main.swift */; };
 		ADE614A12B3500350087F9C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		ADE614A22B35003A0087F9C6 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
@@ -559,6 +564,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = ADDF8FDE2B543D1B00BD5B14;
 			remoteInfo = Poker;
+		};
+		ADE1011B2D0F3D09003080C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADE101092D0F3B43003080C9;
+			remoteInfo = Bagels;
 		};
 		ADE614AD2B3503510087F9C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -897,6 +909,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		ADE101082D0F3B43003080C9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ADE614982B35000A0087F9C6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1071,6 +1092,7 @@
 		ADDF8FE12B543D1C00BD5B14 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADDF8FE62B543D3F00BD5B14 /* Poker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poker.swift; sourceTree = "<group>"; };
 		ADE101042D0F3346003080C9 /* BasicGames.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BasicGames.pdf; sourceTree = "<group>"; };
+		ADE1010A2D0F3B43003080C9 /* Bagels */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bagels; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE6149A2B35000A0087F9C6 /* CivilWar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CivilWar; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE6149C2B35000B0087F9C6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADE614A52B3500820087F9C6 /* CivilWar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilWar.swift; sourceTree = "<group>"; };
@@ -1090,6 +1112,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AD87F0C12D092A10008DEC47 /* Awari */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Awari; sourceTree = "<group>"; };
+		ADE1010B2D0F3B43003080C9 /* Bagels */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Bagels; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1347,6 +1370,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ADDF8FDC2B543D1B00BD5B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADE101072D0F3B43003080C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1640,6 +1670,7 @@
 				AD6AC927277F33C400B9E5DB /* Amazing */,
 				AD56DA0527E29A5500179FAA /* Animal */,
 				AD87F0C12D092A10008DEC47 /* Awari */,
+				ADE1010B2D0F3B43003080C9 /* Bagels */,
 				AD36C56927BB410C00FB1E63 /* Banner */,
 				ADE848EE2B4DD9120018C719 /* Batnum */,
 				AD150F2027C2AF9F00FA3280 /* Blackjack */,
@@ -1727,6 +1758,7 @@
 				ADDF8FC92B4F2BB600BD5B14 /* Poetry */,
 				ADDF8FDF2B543D1B00BD5B14 /* Poker */,
 				AD87F0C02D092A10008DEC47 /* Awari */,
+				ADE1010A2D0F3B43003080C9 /* Bagels */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2360,6 +2392,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				ADE1011C2D0F3D09003080C9 /* PBXTargetDependency */,
 				AD87F0D02D092ACE008DEC47 /* PBXTargetDependency */,
 				ADA84846295FC4B100F86687 /* PBXTargetDependency */,
 				AD57CCE527AEC22E00AD32C5 /* PBXTargetDependency */,
@@ -2580,6 +2613,28 @@
 			productReference = ADDF8FDF2B543D1B00BD5B14 /* Poker */;
 			productType = "com.apple.product-type.tool";
 		};
+		ADE101092D0F3B43003080C9 /* Bagels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADE1010E2D0F3B43003080C9 /* Build configuration list for PBXNativeTarget "Bagels" */;
+			buildPhases = (
+				ADE101062D0F3B43003080C9 /* Sources */,
+				ADE101072D0F3B43003080C9 /* Frameworks */,
+				ADE101082D0F3B43003080C9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				ADE1010B2D0F3B43003080C9 /* Bagels */,
+			);
+			name = Bagels;
+			packageProductDependencies = (
+			);
+			productName = Bagels;
+			productReference = ADE1010A2D0F3B43003080C9 /* Bagels */;
+			productType = "com.apple.product-type.tool";
+		};
 		ADE614992B35000A0087F9C6 /* CivilWar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADE614A02B35000B0087F9C6 /* Build configuration list for PBXNativeTarget "CivilWar" */;
@@ -2672,7 +2727,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1610;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					AD150F0727C1492A00FA3280 = {
@@ -2788,6 +2843,9 @@
 					ADDF8FDE2B543D1B00BD5B14 = {
 						CreatedOnToolsVersion = 15.2;
 					};
+					ADE101092D0F3B43003080C9 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					ADE614992B35000A0087F9C6 = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -2828,6 +2886,7 @@
 				AD6AC925277F33C400B9E5DB /* Amazing */,
 				AD56DA0327E29A5500179FAA /* Animal */,
 				AD87F0BF2D092A10008DEC47 /* Awari */,
+				ADE101092D0F3B43003080C9 /* Bagels */,
 				AD36C56727BB410C00FB1E63 /* Banner */,
 				ADE848EC2B4DD9120018C719 /* Batnum */,
 				AD150F1E27C2AF9F00FA3280 /* Blackjack */,
@@ -2876,6 +2935,7 @@
 				AD57CCE327AEC1D300AD32C5 /* Amazing in Resources */,
 				AD56DA0B27E29AB800179FAA /* Animal in Resources */,
 				AD87F0D12D092AE0008DEC47 /* Awari in Resources */,
+				ADE1011D2D0F3D42003080C9 /* Bagels in Resources */,
 				AD36C56F27BB416E00FB1E63 /* Banner in Resources */,
 				ADE848FE2B4DDDFD0018C719 /* Batnum in Resources */,
 				AD150F2627C2AFAB00FA3280 /* Blackjack in Resources */,
@@ -2899,7 +2959,6 @@
 				AD90BF052978D43A0015A9DB /* King in Resources */,
 				AD57CCED27AEC29F00AD32C5 /* LEM in Resources */,
 				AD57CCEE27AEC2B400AD32C5 /* Lunar in Resources */,
-				AD9FA6CD2D0B88DF008A5E92 /* BasicGames2.pdf in Resources */,
 				AD7C3F792961D6F800F3C5AA /* Orbit in Resources */,
 				AD57CCEF27AEC2BE00AD32C5 /* OregonTrail in Resources */,
 				ADDF8FC42B4EDCE300BD5B14 /* Pizza in Resources */,
@@ -2913,8 +2972,9 @@
 				AD56DA2227E60FC900179FAA /* 3DPlot in Resources */,
 				AD3D807627BF2642004226EF /* Weekday in Resources */,
 				ADDBEF1B2985956F00745DBD /* Bell Buoy.mp3 in Resources */,
-				AD7D2754277CA5EE00F43F39 /* OregonTrail.pdf in Resources */,
 				ADE101052D0F3346003080C9 /* BasicGames.pdf in Resources */,
+				AD9FA6CD2D0B88DF008A5E92 /* BasicGames2.pdf in Resources */,
+				AD7D2754277CA5EE00F43F39 /* OregonTrail.pdf in Resources */,
 				ADAE10B9277BAD2D006762F5 /* Assets.xcassets in Resources */,
 				ADAE10BC277BAD2D006762F5 /* Preview Assets.xcassets in Resources */,
 			);
@@ -3411,6 +3471,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADE101062D0F3B43003080C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADE101122D0F3BD4003080C9 /* ConsoleIO.swift in Sources */,
+				ADE101142D0F3BE6003080C9 /* Game.swift in Sources */,
+				ADE101132D0F3BE0003080C9 /* GameProtocol.swift in Sources */,
+				ADE101112D0F3BBA003080C9 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADE614962B35000A0087F9C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3663,6 +3734,11 @@
 			isa = PBXTargetDependency;
 			target = ADDF8FDE2B543D1B00BD5B14 /* Poker */;
 			targetProxy = ADDF8FEE2B543EC600BD5B14 /* PBXContainerItemProxy */;
+		};
+		ADE1011C2D0F3D09003080C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADE101092D0F3B43003080C9 /* Bagels */;
+			targetProxy = ADE1011B2D0F3D09003080C9 /* PBXContainerItemProxy */;
 		};
 		ADE614AE2B3503510087F9C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4970,6 +5046,37 @@
 			};
 			name = Release;
 		};
+		ADE1010F2D0F3B43003080C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADE101102D0F3B43003080C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		ADE6149E2B35000B0087F9C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -5461,6 +5568,15 @@
 			buildConfigurations = (
 				ADDF8FE42B543D1C00BD5B14 /* Debug */,
 				ADDF8FE52B543D1C00BD5B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADE1010E2D0F3B43003080C9 /* Build configuration list for PBXNativeTarget "Bagels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADE1010F2D0F3B43003080C9 /* Debug */,
+				ADE101102D0F3B43003080C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

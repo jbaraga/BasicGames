@@ -103,7 +103,7 @@ struct BasicGamesApp: App {
 /*
  TO ADD A NEW GAME
  1. Add new CLI target with GameName (i.e. no spaces, camel case).
- 2. Add target membership for GameName CLI to Extensions, ConsoleIO, GameProtocol
+ 2. Add target membership for GameName CLI to Extensions, Game, ConsoleIO, GameProtocol
  3. Add GameName.swift file to GameName group, with target membership GameName.
     main.swift
         let game = GameName()
