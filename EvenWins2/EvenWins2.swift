@@ -37,7 +37,9 @@ class EvenWins2: GameProtocol {
             wait(.long)
         }
         
-        playGame()
+        while true {
+            playGame()
+        }
     }
     
     private func playGame() {
@@ -126,6 +128,5 @@ class EvenWins2: GameProtocol {
             }
         }
         println()
-        playGame()
     }
 }

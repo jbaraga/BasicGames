@@ -27,40 +27,35 @@ class Lunar: GameProtocol {
         println("The on-board computer has failed (it was made by")
         println("Xerox) so you have to land the capsule manually.")
         
-        printInstructions()
-        performLanding()
+        var response = Response.yes
+        var mph = 0.0
+        repeat {
+            printInstructions()
+            mph = performLanding()
+            wait(.long)
+            response = Response(input("Try again", terminator: "??"))
+        } while response.isYes
+        
+        if mph <= 10, response == .easterEgg {
+            showEasterEgg(.lunar)
+        }
+        
+        end()
     }
     
-    private func performLanding() {
+    private func performLanding() -> Double {
         var weight = 33000.0  //M - weight of capsule, including remaining fuel (lbs) and ?additional 500 lbs for astronauts?
         var altitude = 120.0  //A - miles
         var velocity = 1.0  //V - vertical velocity mps
         var elapsedTime = 0.0 //L - seconds
         
-        var remainingFuel: Double {
-            return weight - capsuleWeight  //M-N
-        }
+        var remainingFuel: Double { weight - capsuleWeight }  //M-N
+        var isOutOfFuel: Bool { remainingFuel < 1e-3 }
         
-        var isOutOfFuel: Bool {
-            return remainingFuel < 1e-3
-        }
-        
-        var elapsedTimeString: String {
-            return formatter.string(from: elapsedTime)
-        }
-        
-        var velocityString: String {
-            let mph = velocity * 3600
-            return formatter.string(from: mph)
-        }
-        
-        var fuelString: String {
-            return formatter.string(from: remainingFuel)
-        }
-
-        var altitudeString: String {
-            return "\(Int(altitude))  \(Int(5280 * (altitude - Double(Int(altitude)))))"
-        }
+        var elapsedTimeString: String { elapsedTime.formatted(.basic) }
+        var velocityString: String { (velocity * 3600).formatted(.basic) }
+        var fuelString: String { remainingFuel.formatted(.basic) }
+        var altitudeString: String { "\(Int(altitude))  \(Int(5280 * (altitude - Double(Int(altitude)))))" }
                 
         //Line 130
         println("SEC", "MI + FT", "MPH", "LB FUEL", "BURN RATE")
@@ -139,23 +134,12 @@ class Lunar: GameProtocol {
             println("party arrives. Hope you have enough oxygen!")
         default:
             println("Sorry there were no survivors. You blew it!")
-            let feet = formatter.string(from: mph * 0.277)
+            let feet = (mph * 0.277).formatted(.basic)
             println("In fact, you blasted a new lunar crater \(feet) feet deep!")
         }
         
-        wait(.long)
         println(3)
-        let response = input("Try again")
-        if response.isEasterEgg, mph <= 10 {
-            showEasterEgg(.lunar)
-        }
-        
-        if response.isYes {
-            printInstructions()
-            performLanding()
-        } else {
-            end()
-        }
+        return mph
     }
     
     private func printInstructions() {

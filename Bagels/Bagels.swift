@@ -33,7 +33,7 @@ class Bagels: GameProtocol {
         repeat {
             play()
             response = Response(input("Play again (yes or no)"))
-        } while response == Response.yes
+        } while response.isYes
 
         println()
         println("A \(y) point bagels buff!!")

@@ -340,6 +340,7 @@ enum Game: String, CaseIterable, Codable {
         switch self {
         case .evenWins1: return "EvenWins1"
         case .evenWins2: return "EvenWins2"
+        case .threeDPlot: return "3DPlot"
         default:
             return stringValue.replacingOccurrences(of: " ", with: "")
         }
@@ -499,6 +500,8 @@ enum Game: String, CaseIterable, Codable {
         case .awari: return .orange
         case .batnum: return .orange
         case .blackjack: return .black
+        case .bombardment: return .blue
+        case .bombsAway: return .indigo
         case .bowling: return .brown
         case .bug: return .red
         case .calendar: return .green

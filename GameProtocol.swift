@@ -23,8 +23,6 @@ protocol GameProtocol {
 extension GameProtocol {    
     var consoleIO: ConsoleIO { ConsoleIO.shared}
         
-    var formatter: NumberFormatter { consoleIO.formatter }
-    
     /// BASIC Sign function
     /// - Parameter x: Integer
     /// - Returns: -1 if x is negative, 0 if x is 0, 1 if x is positive

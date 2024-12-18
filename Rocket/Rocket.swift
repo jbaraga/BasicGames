@@ -16,16 +16,29 @@ class Rocket: GameProtocol {
         println("Lunar Landing Simulation")
         println("----- ------- ----------")
         println()
-        let response = input("Do you want instructions (yes or no)")
+        var response = Response(input("Do you want instructions (yes or no)"))
         if response.isYes {
             printInstructions()
             wait(.long)
         }
         
-        performLanding()
+        var v2 = 0
+        repeat {
+            v2 = performLanding()
+            wait(.short)
+            response = Response(input("Another mission"))
+        } while response.isYes
+        
+        if v2 < 2, response == .easterEgg {
+            showEasterEgg(.rocket)
+        }
+        
+        println()
+        println("Control out.")
+        end()
     }
     
-    private func performLanding() {
+    private func performLanding() -> Int {
         println("Beginning landing procedure.....")
         println()
         println("G O O D  L U C K ! ! !")
@@ -70,8 +83,8 @@ class Rocket: GameProtocol {
         h += 0.5 * (v + v1)
         let d = b == 5 ? h / v : (-v + sqrt(v * v + h * (10 - 2 * b))) / (5 - b)
         v1 = v + (5 - b) * d
-        let timeString = formatter.string(from: Double(t) + d)
-        let velocityString = formatter.string(from: v1)
+        let timeString = (Double(t) + d).formatted(.basic)
+        let velocityString = v1.formatted(.basic)
         println("Touchdown at " + timeString + " seconds.")
         println("Landing velocity = " + velocityString + " feet/sec.")
         println("\(Int(round(f))) units of fuel remaining.")
@@ -88,24 +101,7 @@ class Rocket: GameProtocol {
             break
         }
         println(3)
-        wait(.short)
-        
-        let response = Response(input("Another mission"))
-        switch response {
-        case .easterEgg:
-            if v2 < 2 {
-                showEasterEgg(.rocket)
-            }
-        case .yes:
-            performLanding()
-            return
-        default:
-            break
-        }
-        
-        println()
-        println("Control out.")
-        end()
+        return v2
     }
     
     private func printInstructions() {

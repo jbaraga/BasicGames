@@ -272,7 +272,7 @@ class StarTrek: GameProtocol {
             t9 = Double(k9) + 1
         }
         
-        //Ensure at least one starbase by adding to current qudrant, which also adds Klingon to quadrant if less than 2, then resets enterprise quadrant
+        //Ensure at least one starbase by adding to current quadrant, which also adds Klingon to quadrant if less than 2, then resets enterprise quadrant
         if b9 == 0 {
             if g[(q1,q2)] < 200 {
                 g[(q1,q2)] += 100
@@ -339,7 +339,9 @@ class StarTrek: GameProtocol {
             }
         }
         
-        //Fallthrough - should not occur
+        //Fallthrough - should not occur; the
+        //If k9 == 0 missionCompleted
+        //If t > t0 + t9 missionFailed
     }
     
     //MARK: 1310 REM HERE ANY TIME NEW QUADRANT ENTERED

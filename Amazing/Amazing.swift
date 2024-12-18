@@ -140,8 +140,17 @@ class Amazing: GameProtocol {
         
     func run() {
         printHeader(title: "Amazing Program")
-        println(3)
-        playGame()
+        
+        var response = Response.yes
+        repeat {
+            println(3)
+            playGame()
+            wait(.long)
+            response = Response(input("Run again"))
+        } while response.isYes
+        
+        if response == .easterEgg { showEasterEgg(.amazing) }
+        end()
     }
     
     private func playGame() {
@@ -159,18 +168,6 @@ class Amazing: GameProtocol {
         if hardcopy.isYes {
             consoleIO.printHardcopy()
             wait(.long)
-        }
-        
-        let response = input("Run again")
-        if response.isEasterEgg {
-            showEasterEgg(.amazing)
-        }
-        
-        if response.isYes {
-            println(3)
-            playGame()
-        } else {
-            end()
         }
     }
     

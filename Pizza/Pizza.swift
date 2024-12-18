@@ -37,13 +37,12 @@ class Pizza: GameProtocol {
         println("home ordering the pizza.")
         println()
         
-        var response = Response.other
+        var response = Response(input("Do you need more directions"))
         while !response.isYesOrNo {
+            println("'Yes' or 'no' please, now then,")
             response = Response(input("Do you need more directions"))
-            if !response.isYesOrNo {
-                println("'Yes' or 'no' please, now then,")
-            }
         }
+        
         if response.isYes {
             println()
             println("Somebody will ask for a pizza to be")
@@ -67,7 +66,16 @@ class Pizza: GameProtocol {
         }
         
         wait(.short)
-        deliverPizzas()
+        
+        repeat {
+            deliverPizzas()
+            wait(.short)
+            response = Response(input("Do you want to deliver more pizzas"))
+        } while response.isYes
+        
+        if response == .easterEgg {
+            showEasterEgg(.pizza)
+        }
         
         println()
         println("O.K. \(name), see you later!")
@@ -115,16 +123,6 @@ class Pizza: GameProtocol {
             }
         }
         
-        wait(.short)
         println()
-        let response = Response(input("Do you want to deliver more pizzas"))
-        switch response {
-        case .yes: 
-            deliverPizzas()
-        case .easterEgg:
-            showEasterEgg(.pizza)
-        default:
-            break
-        }
     }
 }

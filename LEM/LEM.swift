@@ -33,11 +33,28 @@ class LEM: GameProtocol {
         printDescription()
         selectExperienceLevel()
         selectUnits()
-        if isNewPilot {
-            printInstructions()
-        }
+        if isNewPilot { printInstructions() }
         printIOstatements()
-        performLanding()
+        
+        var response = Response.yes
+        var success = false
+        repeat {
+            if !isNewPilot { selectInstructions() }
+            success = performLanding()
+            wait(.long)
+            println()
+            response = Response(input("Do you want to try it again (yes/no)"))
+            isNewPilot = false
+        } while response.isYes
+        
+        if success, response == .easterEgg {
+            showEasterEgg(.lem)
+        }
+        
+        println("Too bad, the space program hates to lose experienced")
+        println("astronauts.")
+        println()
+        end()
     }
         
     //Lines 2-9
@@ -147,7 +164,7 @@ class LEM: GameProtocol {
     }
     
     //Lines 10-1085
-    private func performLanding() {
+    private func performLanding() -> Bool {
         //Lines 10-130
         var m = 17.95  //M
         let f1 = 5.25  //F1
@@ -250,12 +267,19 @@ class LEM: GameProtocol {
         //Lines 810-840
         func printStatus() {
             //Prints elapsed time in seconds, height, distance form landing site, vertical velocity, horizontal velocity, fuel units remaining
-            let timeString = formatter.string(from: t)
-            let hString = formatter.string(from: height)
-            let vvelString = formatter.string(from: verticalVelocity)
-            let dString = formatter.string(from: distance)
-            let hvelString = formatter.string(from: horizontalVelocity)
-            let fuelString = formatter.string(from: remainingFuelUnits)
+//            let timeString = formatter.string(from: t)
+//            let hString = formatter.string(from: height)
+//            let vvelString = formatter.string(from: verticalVelocity)
+//            let dString = formatter.string(from: distance)
+//            let hvelString = formatter.string(from: horizontalVelocity)
+//            let fuelString = formatter.string(from: remainingFuelUnits)
+            
+            let timeString = t.formatted(.basic)
+            let hString = height.formatted(.basic)
+            let vvelString = verticalVelocity.formatted(.basic)
+            let dString = distance.formatted(.basic)
+            let hvelString = horizontalVelocity.formatted(.basic)
+            let fuelString = remainingFuelUnits.formatted(.basic)
             
             print("  " + timeString)
             print(tab(11), hString)
@@ -274,8 +298,7 @@ class LEM: GameProtocol {
                 if t1 == 0 {
                     //Lines 1090-1095
                     println("Mission Abended")
-                    tryAgain()
-                    return
+                    return false
                 }
             } else {
                 t1 = 20
@@ -354,14 +377,14 @@ class LEM: GameProtocol {
         case .lostInSpace:
             println("You have been lost in space with no hope of recovery.")
         case .crashed:
-            let hString = formatter.string(from: abs(h0 * z))
+            let hString = abs(h0 * z).formatted(.basic)
             let x1 = sqrt(horizontalVelocity * horizontalVelocity + verticalVelocity * verticalVelocity) * g3
-            let xString = formatter.string(from: x1)
+            let xString = x1.formatted(.basic)
             println("Crash !!!!!!!!!!!!!!!!")
             println("Your impact created a crater " + hString + " " + lengthUnitString + " deep.")
             println("At contact you were traveling " + xString + " " + distanceUnitString + "/hr")
         case .missedLandingSite:
-            let dString = formatter.string(from: abs(distance / g5))
+            let dString = abs(distance / g5).formatted(.basic)
             println("You are down safely - ")
             println()
             println("but missed the landing site by " + dString + " " + distanceUnitString)
@@ -369,37 +392,10 @@ class LEM: GameProtocol {
             println("Tranquility Base here -- the Eagle has landed")
             println("Congratulations -- there was no spacecraft damage")
             println("You may now proceed with surface exploration")
-            tryAgain(true)
-            return
+            return true
         }
         
-        tryAgain()
-    }
-    
-    //Lines 1100-1145
-    private func tryAgain(_ success: Bool = false) {
-        wait(.long)
-        println()
-        let response = Response(input("Do you want to try it again (yes/no)"))
-        switch response {
-        case .easterEgg:
-            if success {
-                showEasterEgg(.lem)
-                end()
-            }
-        case .yes:
-            isNewPilot = false
-            selectInstructions()
-            performLanding()
-            return
-        default:
-            break
-        }
-        
-        println("Too bad, the space program hates to lose experienced")
-        println("astronauts.")
-        println()
-        end()
+        return false
     }
     
     //Lines 1150-1210

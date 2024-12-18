@@ -57,13 +57,6 @@ class ConsoleIO {
     private let delayAfterCharacter = 0.007
     private let delayAfterNewLine = 0.05
     
-    let formatter: NumberFormatter = {
-        let form = NumberFormatter()
-        form.usesSignificantDigits = true
-        form.maximumSignificantDigits = 6
-        return form
-    }()
-    
     private var cursor = 0  //x position for tab
     private var isRecording = false
     private var hardcopyString = ""
@@ -86,12 +79,18 @@ class ConsoleIO {
         queue.name = "com.starwaresoftware.consoleIO"
         queue.qualityOfService = .userInteractive
 
-        center.addObserver(forName: Notification.Name.terminalWindowWillClose, object: nil, queue: queue) { notification in
+        center.addObserver(forName: .terminalWindowWillClose, object: nil, queue: queue) { notification in
             if let executableName = Bundle.main.executableURL?.lastPathComponent, let string = notification.object as? String, executableName == string {
                 exit(EXIT_SUCCESS)
             } else {
                 exit(EXIT_SUCCESS)
             }
+        }
+        
+        center.addObserver(forName: .stop, object: nil, queue: queue) { [weak self] notification in
+            guard let self else { return }
+            println()
+            self.close()
         }
         
 //        reset()

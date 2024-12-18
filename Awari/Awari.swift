@@ -36,7 +36,10 @@ class Awari: GameProtocol {
     func run() {
         printHeader(title: "Awari")
         wait(.short)
-        playGame()
+        
+        while true {
+            playGame()
+        }
     }
     
     //20-95
@@ -91,7 +94,6 @@ class Awari: GameProtocol {
         }
         
         wait(.short)
-        playGame()  //goto 20
     }
     
     //100-230, 800-890

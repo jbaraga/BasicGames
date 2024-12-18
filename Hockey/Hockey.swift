@@ -31,34 +31,15 @@ class Hockey: GameProtocol {
             self._players = players
         }
         
-        var players: [String] {
-            return _players
-        }
+        var players: [String] { _players }
         
         //Positions, as defined in instructions
-        var leftWing: String {
-            return player(1)
-        }
-        
-        var center: String {
-            return player(2)
-        }
-
-        var rightWing: String {
-            return player(3)
-        }
-        
-        var leftDefense: String {
-            return player(4)
-        }
-        
-        var rightDefense: String {
-            return player(5)
-        }
-        
-        var goalie: String {
-            return player(6)
-        }
+        var leftWing: String { player(1) }
+        var center: String { player(2) }
+        var rightWing: String { player(3) }
+        var leftDefense: String { player(4) }
+        var rightDefense: String { player(5) }
+        var goalie: String { player(6) }
         
         //Converts from zero indexed array players to one indexed arrays A$/B$
         func player(_ index: Int) -> String {
@@ -214,6 +195,7 @@ class Hockey: GameProtocol {
         println("\(teamB.name): \(teamB.shots)")
 
         wait(.long)
+        showEasterEgg(.hockey)
         end()
     }
     

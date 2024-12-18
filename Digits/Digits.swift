@@ -13,8 +13,7 @@ class Digits: GameProtocol {
     private let a = 0
     private let b = 1
     private let c = 3
-    
-    
+
     func run() {
         printHeader(title: "Digits")
         println(3)
@@ -23,7 +22,7 @@ class Digits: GameProtocol {
         if e != 0 {
             println()
             println("Please take a piece of paper and write down")
-            println("the digits  '0', '1', or '2' thirty times at random.")
+            println("the digits '0', '1', or '2' thirty times at random.")
             println("Arrange them in three lines of ten digits.")
             println("I will ask for them 10 at a time.")
             println("I will always guess them first, and then look at your")
@@ -34,10 +33,25 @@ class Digits: GameProtocol {
             wait(.long)
         }
         
-        play()
+        var response = Response.yes
+        var x = 0
+        repeat {
+            println(3)
+            x = play()
+            wait(.long)
+            response = Response(input("Do you want to try again (1 for yes, 0 for no)"))
+        } while response.isYes
+        
+        if x < 10, response == .easterEgg {
+            showEasterEgg(.digits)
+        } else {
+            println()
+            println("Thanks for the game.")
+        }
+        end()
     }
     
-    private func play() {
+    private func play() -> Int {
         //Line 380-910
         //Arrays are zero indexed
         var m = dim(27, 3, value: 1)
@@ -126,21 +140,6 @@ class Digits: GameProtocol {
         }
         
         println()
-        let response = Int(input("Do you want to try again (1 for yes, 0 for no)")) ?? 0
-        switch response {
-        case 1:
-            play()
-            return
-        case 82964:
-            if x < 10 {
-                showEasterEgg(.digits)
-            }
-        default:
-            break
-        }
-        
-        println()
-        println("Thanks for the game.")
-        end()
+        return x
     }
 }

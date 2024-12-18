@@ -31,7 +31,14 @@ class Batnum: GameProtocol {
         println()
 
         wait(.short)
-        play()
+        
+        while true {
+            n = 0
+            min = 0
+            max = 0
+            winOption = .undefined
+            play()
+        }
     }
     
     //Lines 330-
@@ -40,7 +47,6 @@ class Batnum: GameProtocol {
             n = Int(input("Enter pile size")) ?? 0
             if n < 0 {
                 n = 0
-                println(10)
             }
         }
         
@@ -77,19 +83,10 @@ class Batnum: GameProtocol {
             end()
         }
         
-        playAgain()
+        //220-240
+        println(10)
     }
-    
-    private func playAgain() {
-        n = 0
-        min = 0
-        max = 0
-        winOption = .undefined
         
-        println(10) //Lines 220-240
-        play()
-    }
-    
     //Lines 600-800
     private func computerMove() {
         if winOption == .takeLast {

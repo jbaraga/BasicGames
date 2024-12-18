@@ -29,7 +29,6 @@ class Poetry: GameProtocol {
         printNextPhrase()
     }
     
-    
     private func printNextPhrase() {
         while k <= 20 {
             //Lines 215-220

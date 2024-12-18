@@ -393,6 +393,7 @@ class Ftball: GameProtocol {
         case 1:
             z = rnd(1) > 1/3 ? 1 : 3
         case 2, 3:
+            //TODO: verify correct
             if 10 + x - x1 < 5 || x < 5 {
                 z = rnd(1) > 1/3 ? 1 : 3
             } else {

@@ -73,10 +73,24 @@ class Orbit: GameProtocol {
         println()
         println("Good luck.  The Federation is counting on you.")
         
-        play()
+        var response = Response.yes
+        var success = false
+        repeat {
+            success = play()
+            wait(.short)
+            println("Another Romulan ship has gone into orbit.")
+            response = Response(input("Do you wish to try to destroy it"))
+        } while response.isYes
+        
+        if success, response == .easterEgg {
+            showEasterEgg(.orbit)
+        }
+        
+        println("Good bye.")
+        end()
     }
     
-    private func play() {
+    private func play() -> Bool {
         //Ship location in polar coordinates
         var a = Int(360 * rnd(1))  //angle of ship in direction of orbit
         //Line 280 - let d = Int(200 * rnd(1) + 200) - bug?
@@ -103,31 +117,11 @@ class Orbit: GameProtocol {
                     
             if c <= 50 {
                 println("You have successfully completed your mission.")
-                tryAgain(success: true)
-                return
+                return true
             }
         }
         
         println("You have allowed the Romulans to escape.")
-        tryAgain()
-    }
-    
-    private func tryAgain(success: Bool = false) {
-        println("Another Romulan ship has gone into orbit.")
-        let response = Response(input("Do you wish to try to destroy it"))
-        switch response {
-        case .yes:
-            play()
-            return
-        case .easterEgg:
-            if success {
-                showEasterEgg(.orbit)
-            }
-        default:
-            break
-        }
-        
-        println("Good bye.")
-        end()
+        return false
     }
 }

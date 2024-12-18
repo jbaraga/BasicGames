@@ -13,13 +13,25 @@ class AceyDucey: GameProtocol {
     func run() {
         printHeader(title: "Acey Ducey Card Game")
         println(3)
-        println("Acey-Ducey is played in hte following manner")
+        println("Acey-Ducey is played in the following manner")
         println("The dealer (computer) deals two cards face up")
         println("You have an option to bet or not bet depending")
         println("on whether or not you feel the card will have")
         println("a value between the first two.")
         println("If you do not want to bet, input a 0")
-        playGame()
+        wait(.short)
+        
+        var response = Response.yes
+        repeat {
+            playGame()
+            wait(.long)
+            response = Response(input("Try again (yes or no)"))
+        } while response.isYes
+        
+        if response == .easterEgg {
+            showEasterEgg(.aceyDucey)
+        }
+        end()
     }
     
     //Lines 110-1010
@@ -33,7 +45,6 @@ class AceyDucey: GameProtocol {
         
         println(2)
         println("Sorry, friend but you blew your wad")
-        tryAgain()
     }
     
     //Lines 260-970
@@ -104,20 +115,6 @@ class AceyDucey: GameProtocol {
         case 13: return "King"
         case 14: return "Ace"
         default: fatalError("Card value \(value) out of bounds")
-        }
-    }
-    
-    //Lines 1020-1050
-    private func tryAgain() {
-        let response = Response(input("Try again (yes or no)"))
-        switch response {
-        case .yes:
-            playGame()
-        case .easterEgg:
-            showEasterEgg(.aceyDucey)
-            end()
-        default:
-            end()
         }
     }
 }

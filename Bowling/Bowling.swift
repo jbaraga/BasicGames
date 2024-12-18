@@ -33,8 +33,18 @@ class Bowling: GameProtocol {
         }
         println()
         println("Very good...")
-        bowl(numberOfPlayers)
-
+        
+        var response = Response.yes
+        repeat {
+            bowl(numberOfPlayers)
+            wait(.short)
+            response = Response(input("Do you want another game"))
+        } while response.isYes
+        
+        if response == .easterEgg {
+            showEasterEgg(.bowling)
+        }
+        end()
     }
     
     //2520 REMARK BALL GENERATOR USING MOD '15' SYSTEM

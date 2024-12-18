@@ -19,6 +19,8 @@ struct BasicGamesApp: App {
     @Environment(\.pixelLength) private var pixelLength
     @Environment(\.displayScale) private var displayScale
     
+    @FocusedValue(\.isWindowFocused) private var isWindowFocused
+        
     var body: some Scene {
         WindowGroup(id: "Main") {
             GameLauncherView()
@@ -47,10 +49,24 @@ struct BasicGamesApp: App {
         .windowToolbarStyle(.unifiedCompact(showsTitle: true))
         
         WindowGroup(id: "Terminal", for: Game.self) { $game in
-            TerminalView(game: game ?? .amazing)
+            if let game {
+                TerminalView(game: game)
+                    .focusedSceneValue(\.isWindowFocused, true)
+            }
         }
-        .windowToolbarStyle(.unifiedCompact(showsTitle: true))
+        .commands {
+            CommandGroup(after: .printItem) {
+                if isWindowFocused ?? false {
+                    Divider()
+                    Button("Exit") {
+                        DistributedNotificationCenter.default().post(name: .stop, object: nil)
+                    }
+                    .keyboardShortcut(KeyEquivalent("c"), modifiers: [.control])
+                }
+            }
+        }
         .defaultSize(width: 660, height: 640)  //~ 80 columns in terminal
+        .windowToolbarStyle(.unifiedCompact(showsTitle: true))
         
         WindowGroup(id: "EasterEgg", for: EasterEggPDF.self) { $pdf in
             if let pdf, let document = pdf.document {
@@ -96,6 +112,17 @@ struct BasicGamesApp: App {
                 return doc
             }
         }
+    }
+}
+
+struct WindowFocusKey: FocusedValueKey {
+    typealias Value = Bool
+}
+
+extension FocusedValues {
+    var isWindowFocused: Bool? {
+        get { self[WindowFocusKey.self] }
+        set { self[WindowFocusKey.self] = newValue }
     }
 }
 

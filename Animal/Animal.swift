@@ -28,25 +28,29 @@ class Animal: GameProtocol {
         println("Think of an animal and the computer will try to guess it.")
         println()
         
-        mainControlSection()
+        var entry = ""
+        while !entry.isNo {
+            entry = mainControlSection()
+        }
     }
     
     //120 REM MAIN CONTROL SECTION
-    private func mainControlSection() {
-        let response = input("Are you thinking of an animal").lowercased()
-        switch response {
+    private func mainControlSection() -> String {
+        let entry = input("Are you thinking of an animal").lowercased()
+        switch entry {
         case "list":
             printAnimals()
         case "reset":
             reset()
-            mainControlSection()
-        case _ where response.isYes:
+        case _ where entry.isYes:
             guessAnimal()
-        case _ where response.isNo:
+        case _ where entry.isNo:
             stop()
         default:
-            mainControlSection()
+            break
         }
+        
+        return entry
     }
     
     //Lines 160-380
@@ -82,8 +86,6 @@ class Animal: GameProtocol {
             a$[index] = "/q" + question + a1 + "\(a$.count - 1)" + b1 + "\(a$.count - 2)"
             a$[0] = "\(a$.count)"
         }
-        
-        mainControlSection()
     }
     
     //390 REM SUBROUTINE TO PRINT QUESTIONS
@@ -134,7 +136,6 @@ class Animal: GameProtocol {
             }
         }
         println(2)
-        mainControlSection()
     }
     
     //Bonus save feature
@@ -149,12 +150,12 @@ class Animal: GameProtocol {
         case .easterEgg:
             if a$.count > 10 {
                 showEasterEgg(.animal)
-                stop()
             }
         default:
             break
         }
-        wait(.long)
+        
+        wait(.short)
         end()
     }
     

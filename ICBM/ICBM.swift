@@ -15,10 +15,23 @@ class ICBM: GameProtocol {
         println(tab(20), "Creative Computing")
         println(tab(18), "Morristown, New Jersey")
         println(3)
-        intercept()
+        
+        var response = Response.yes
+        var success = false
+        repeat {
+            success = intercept()
+            wait(.long)
+            response = Response(input("Do you want to play more? (y or n)"))
+            println()
+        } while response.isYes
+        
+        if success, response == .easterEgg {
+            showEasterEgg(.icbm)
+        }
+        end()
     }
     
-    private func intercept() {
+    private func intercept() -> Bool {
         print("-------Missile------")
         print(tab(28), "--------SAM---------")
         println(tab(56), "-----")
@@ -44,8 +57,7 @@ class ICBM: GameProtocol {
                 println()
                 println("Too bad!")
                 println("The ICBM just hit your location!!")
-                tryAgain()
-                return
+                return false
             }
             
             let t1 = (Double(input()) ?? 0) / (180 / .pi)  //Heading, converted to radians
@@ -54,20 +66,16 @@ class ICBM: GameProtocol {
             case 1:
                 println()
                 println("Too bad.  Your SAM fell to the ground!")
-                tryAgain()
-                return
+                return false
             case 2:
                 println("Your SAM exploded in midair!")
-                tryAgain()
-                return
+                return false
             case 3:
                 println("Good luck-the ICBM exploded harmlessly in midair!")
-                tryAgain()
-                return
+                return false
             case 4:
                 println("Good luck-the ICBM turned out to be a friendly aircraft!")
-                tryAgain()
-                return
+                return false
             default:
                 break
             }
@@ -86,8 +94,7 @@ class ICBM: GameProtocol {
                     //Success
                     println("Congratulations!  Your SAM came within \(Int(round(d))) miles of")
                     println("the ICBM and destroyed it!")
-                    tryAgain(true)
-                    return
+                    return true
                 }
                 println("ICBM & SAM now \(Int(round(d))) miles apart")
             } else  {
@@ -96,24 +103,6 @@ class ICBM: GameProtocol {
                 y = 0
             }
         }
-    }
-    
-    private func tryAgain(_ isSuccessful: Bool = false) {
-        wait(.long)
-        let response = Response(input("Do you want to play more? (y or n)"))
-        switch response {
-        case .easterEgg:
-            if isSuccessful {
-                showEasterEgg(.icbm)
-            }
-        case .yes:
-            println()
-            intercept()
-            return
-        default:
-            break
-        }
-        
-        end()
+        return false
     }
 }

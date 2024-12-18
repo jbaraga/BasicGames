@@ -14,7 +14,6 @@ import Foundation
 
 class CivilWar: GameProtocol {
     
-    
     private var battles = [HistoricalBattleData]()  //Zero indexed; original 1 indexed
     private var players = 1
     //60 REM UNION INFO ON LIKELY CONFEDERATE STRATEGY

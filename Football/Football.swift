@@ -575,7 +575,7 @@ class Football: GameProtocol {
         println("both questions is no it will be assumed you want to")
         println("try and gain yardage.  Answer all questions yes or no.")
         println("The game is played until players terminate (control-c).")
-        println("please prepare a tape and run.")
+        println("Please prepare a tape and run.")
         println()
         let response = input("Hit enter to run", terminator: "")
         if response.isEasterEgg {

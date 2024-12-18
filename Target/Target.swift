@@ -32,7 +32,17 @@ class Target: GameProtocol {
         println("Good Luck!!")
         println(2)
         
-        newTarget()
+        while true {
+            newTarget()
+            wait(.short)
+            
+            //Lines 580-590
+            println(5)
+            println("Next target...")
+            wait(.short)
+            println()
+            newTarget()
+        }
     }
     
     //Lines 220-570
@@ -75,9 +85,7 @@ class Target: GameProtocol {
             let p2 = parameters.distance
             
             if p2 < 20 {
-                println("You blew yourself up!!")
                 wait(.short)
-                restart()
                 return
             }
             
@@ -128,8 +136,6 @@ class Target: GameProtocol {
         if r < 4 {
             showEasterEgg(.target)
             end()
-        } else {
-            restart()
         }
     }
     
@@ -142,14 +148,5 @@ class Target: GameProtocol {
             
         }
         return (values[0], values[1], values[2])
-    }
-
-    //Lines 580-590
-    private func restart() {
-        println(5)
-        println("")
-        println("Next target...")
-        wait(.short)
-        newTarget()
     }
 }

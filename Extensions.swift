@@ -70,6 +70,8 @@ enum Response {
     case easterEgg
     case other
     
+    static let easterEggCode = 82964
+    
     init(_ string: String) {
         switch string {
         case _ where string.isYes: self = .yes
@@ -93,15 +95,25 @@ enum Response {
 }
 
 
-extension NumberFormatter {
-    func string(from value: Double) -> String {
-        if abs(value) < 1e6 {
-            self.numberStyle = .none
+//MARK: Number Formatting
+struct BasicFormatStyle: FormatStyle {
+    func format(_ value: Double) -> String {
+        if value == 0 || (abs(value) < 1e6 && abs(value) > 1e-6) {
+            return value.formatted(.number
+                .precision(.significantDigits(0...6))
+                .grouping(.never)
+            )
         } else {
-            self.numberStyle = .scientific
+            return value.formatted(.number
+                .notation(.scientific)
+                .precision(.significantDigits(0...6))
+            )
         }
-        return string(from: NSNumber(value: value)) ?? "\(value)"
     }
+}
+
+extension FormatStyle where Self == BasicFormatStyle {
+    static var basic: BasicFormatStyle { .init() }
 }
 
 //Improved subscripting notation for 2d array
@@ -138,6 +150,7 @@ func dim<T>(_ rows: Int, _ columns: Int, value: T) -> [[T]] {
 
 extension Notification.Name {
     static let terminalWindowWillClose = Notification.Name("com.starwaresoftware.basicGames.close")
+    static let stop = Notification.Name("com.starwaresoftware.basicGames.stop")
     static let consoleInputDidBegin = Notification.Name("com.starwaresoftware.basicGames.input")
     static let consoleWillPrint = Notification.Name("com.starwaresoftware.basicGames.print")
     static let showEasterEgg = Notification.Name("com.starwaresoftware.basicGames.egg")

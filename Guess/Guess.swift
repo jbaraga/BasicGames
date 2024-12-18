@@ -26,7 +26,9 @@ class Guess: GameProtocol {
             end()
         }
         
-        play(limit)
+        while true {
+            play(limit)
+        }
     }
     
     private func play(_ limit: Int) {
@@ -46,7 +48,7 @@ class Guess: GameProtocol {
                 return
             }
             
-            if n == 82964 {
+            if n == Response.easterEggCode {
                 showEasterEgg(.guess)
                 end()
             }
@@ -68,6 +70,5 @@ class Guess: GameProtocol {
         }
         
         println(5)
-        play(limit)
     }
 }

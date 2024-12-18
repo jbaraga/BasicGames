@@ -76,6 +76,11 @@
 		AD5C22CC296B90F40067A2EF /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		AD5C22D1296B93390067A2EF /* EvenWins1 in Resources */ = {isa = PBXBuildFile; fileRef = AD5C22C1296B90AB0067A2EF /* EvenWins1 */; };
 		AD5C22D2296B96D90067A2EF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD5DFD5D2D10E91A005ECC7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD5DFD5E2D10E921005ECC7B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		AD5DFD5F2D10E927005ECC7B /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD5DFD602D10E931005ECC7B /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD5DFD672D10E9EB005ECC7B /* BombsAway in Resources */ = {isa = PBXBuildFile; fileRef = AD5DFD562D10E900005ECC7B /* BombsAway */; };
 		AD5F26D4297389650053C5A1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F26D3297389650053C5A1 /* main.swift */; };
 		AD5F26D9297389820053C5A1 /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F26D8297389820053C5A1 /* Bug.swift */; };
 		AD5F26DA2973898A0053C5A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
@@ -271,6 +276,11 @@
 		ADE101132D0F3BE0003080C9 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		ADE101142D0F3BE6003080C9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
 		ADE1011D2D0F3D42003080C9 /* Bagels in Resources */ = {isa = PBXBuildFile; fileRef = ADE1010A2D0F3B43003080C9 /* Bagels */; };
+		ADE101292D0FA70A003080C9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		ADE1012A2D0FA711003080C9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		ADE1012B2D0FA717003080C9 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		ADE1012C2D0FA71D003080C9 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		ADE101312D0FA7BB003080C9 /* Bombardment in Resources */ = {isa = PBXBuildFile; fileRef = ADE101222D0FA6D2003080C9 /* Bombardment */; };
 		ADE6149D2B35000B0087F9C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6149C2B35000B0087F9C6 /* main.swift */; };
 		ADE614A12B3500350087F9C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		ADE614A22B35003A0087F9C6 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
@@ -403,6 +413,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = AD5C22C0296B90AB0067A2EF;
 			remoteInfo = EvenWins1;
+		};
+		AD5DFD652D10E9D3005ECC7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD5DFD552D10E900005ECC7B;
+			remoteInfo = BombsAway;
 		};
 		AD5F26E129738D6C0053C5A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -572,6 +589,13 @@
 			remoteGlobalIDString = ADE101092D0F3B43003080C9;
 			remoteInfo = Bagels;
 		};
+		ADE1012F2D0FA7A5003080C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADE101212D0FA6D2003080C9;
+			remoteInfo = Bombardment;
+		};
 		ADE614AD2B3503510087F9C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
@@ -685,6 +709,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		AD5C22BF296B90AB0067A2EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD5DFD542D10E900005ECC7B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -918,6 +951,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		ADE101202D0FA6D2003080C9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		ADE614982B35000A0087F9C6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1001,6 +1043,7 @@
 		AD5C22C1296B90AB0067A2EF /* EvenWins1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EvenWins1; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5C22C3296B90AB0067A2EF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD5C22C8296B90DA0067A2EF /* EvenWins1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenWins1.swift; sourceTree = "<group>"; };
+		AD5DFD562D10E900005ECC7B /* BombsAway */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BombsAway; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5F26D1297389650053C5A1 /* Bug */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bug; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5F26D3297389650053C5A1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD5F26D8297389820053C5A1 /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
@@ -1093,6 +1136,7 @@
 		ADDF8FE62B543D3F00BD5B14 /* Poker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poker.swift; sourceTree = "<group>"; };
 		ADE101042D0F3346003080C9 /* BasicGames.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BasicGames.pdf; sourceTree = "<group>"; };
 		ADE1010A2D0F3B43003080C9 /* Bagels */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bagels; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADE101222D0FA6D2003080C9 /* Bombardment */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bombardment; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE6149A2B35000A0087F9C6 /* CivilWar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CivilWar; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE6149C2B35000B0087F9C6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		ADE614A52B3500820087F9C6 /* CivilWar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilWar.swift; sourceTree = "<group>"; };
@@ -1111,8 +1155,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		AD5DFD572D10E900005ECC7B /* BombsAway */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BombsAway; sourceTree = "<group>"; };
 		AD87F0C12D092A10008DEC47 /* Awari */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Awari; sourceTree = "<group>"; };
 		ADE1010B2D0F3B43003080C9 /* Bagels */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Bagels; sourceTree = "<group>"; };
+		ADE101232D0FA6D2003080C9 /* Bombardment */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Bombardment; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1180,6 +1226,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD5C22BE296B90AB0067A2EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5DFD532D10E900005ECC7B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1377,6 +1430,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ADE101072D0F3B43003080C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADE1011F2D0FA6D2003080C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1674,6 +1734,8 @@
 				AD36C56927BB410C00FB1E63 /* Banner */,
 				ADE848EE2B4DD9120018C719 /* Batnum */,
 				AD150F2027C2AF9F00FA3280 /* Blackjack */,
+				ADE101232D0FA6D2003080C9 /* Bombardment */,
+				AD5DFD572D10E900005ECC7B /* BombsAway */,
 				AD82570627F09A9D00A0ECCB /* Bounce */,
 				ADADA5912B4C3BAB0024CA81 /* Bowling */,
 				AD5F26D2297389650053C5A1 /* Bug */,
@@ -1759,6 +1821,8 @@
 				ADDF8FDF2B543D1B00BD5B14 /* Poker */,
 				AD87F0C02D092A10008DEC47 /* Awari */,
 				ADE1010A2D0F3B43003080C9 /* Bagels */,
+				ADE101222D0FA6D2003080C9 /* Bombardment */,
+				AD5DFD562D10E900005ECC7B /* BombsAway */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2104,6 +2168,28 @@
 			productReference = AD5C22C1296B90AB0067A2EF /* EvenWins1 */;
 			productType = "com.apple.product-type.tool";
 		};
+		AD5DFD552D10E900005ECC7B /* BombsAway */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD5DFD5C2D10E900005ECC7B /* Build configuration list for PBXNativeTarget "BombsAway" */;
+			buildPhases = (
+				AD5DFD522D10E900005ECC7B /* Sources */,
+				AD5DFD532D10E900005ECC7B /* Frameworks */,
+				AD5DFD542D10E900005ECC7B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AD5DFD572D10E900005ECC7B /* BombsAway */,
+			);
+			name = BombsAway;
+			packageProductDependencies = (
+			);
+			productName = BombsAway;
+			productReference = AD5DFD562D10E900005ECC7B /* BombsAway */;
+			productType = "com.apple.product-type.tool";
+		};
 		AD5F26D0297389650053C5A1 /* Bug */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD5F26D7297389650053C5A1 /* Build configuration list for PBXNativeTarget "Bug" */;
@@ -2392,6 +2478,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				AD5DFD662D10E9D3005ECC7B /* PBXTargetDependency */,
+				ADE101302D0FA7A5003080C9 /* PBXTargetDependency */,
 				ADE1011C2D0F3D09003080C9 /* PBXTargetDependency */,
 				AD87F0D02D092ACE008DEC47 /* PBXTargetDependency */,
 				ADA84846295FC4B100F86687 /* PBXTargetDependency */,
@@ -2635,6 +2723,28 @@
 			productReference = ADE1010A2D0F3B43003080C9 /* Bagels */;
 			productType = "com.apple.product-type.tool";
 		};
+		ADE101212D0FA6D2003080C9 /* Bombardment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADE101262D0FA6D2003080C9 /* Build configuration list for PBXNativeTarget "Bombardment" */;
+			buildPhases = (
+				ADE1011E2D0FA6D2003080C9 /* Sources */,
+				ADE1011F2D0FA6D2003080C9 /* Frameworks */,
+				ADE101202D0FA6D2003080C9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				ADE101232D0FA6D2003080C9 /* Bombardment */,
+			);
+			name = Bombardment;
+			packageProductDependencies = (
+			);
+			productName = Bombardment;
+			productReference = ADE101222D0FA6D2003080C9 /* Bombardment */;
+			productType = "com.apple.product-type.tool";
+		};
 		ADE614992B35000A0087F9C6 /* CivilWar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADE614A02B35000B0087F9C6 /* Build configuration list for PBXNativeTarget "CivilWar" */;
@@ -2760,6 +2870,9 @@
 					AD5C22C0296B90AB0067A2EF = {
 						CreatedOnToolsVersion = 14.1;
 					};
+					AD5DFD552D10E900005ECC7B = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					AD5F26D0297389650053C5A1 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -2846,6 +2959,9 @@
 					ADE101092D0F3B43003080C9 = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					ADE101212D0FA6D2003080C9 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					ADE614992B35000A0087F9C6 = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -2890,6 +3006,8 @@
 				AD36C56727BB410C00FB1E63 /* Banner */,
 				ADE848EC2B4DD9120018C719 /* Batnum */,
 				AD150F1E27C2AF9F00FA3280 /* Blackjack */,
+				ADE101212D0FA6D2003080C9 /* Bombardment */,
+				AD5DFD552D10E900005ECC7B /* BombsAway */,
 				AD82570427F09A9D00A0ECCB /* Bounce */,
 				ADADA58F2B4C3BAA0024CA81 /* Bowling */,
 				AD5F26D0297389650053C5A1 /* Bug */,
@@ -2939,6 +3057,8 @@
 				AD36C56F27BB416E00FB1E63 /* Banner in Resources */,
 				ADE848FE2B4DDDFD0018C719 /* Batnum in Resources */,
 				AD150F2627C2AFAB00FA3280 /* Blackjack in Resources */,
+				ADE101312D0FA7BB003080C9 /* Bombardment in Resources */,
+				AD5DFD672D10E9EB005ECC7B /* BombsAway in Resources */,
 				AD82570E27F09ADA00A0ECCB /* Bounce in Resources */,
 				ADADA5A12B4C3F350024CA81 /* Bowling in Resources */,
 				AD5F26E029738D5E0053C5A1 /* Bug in Resources */,
@@ -3124,6 +3244,17 @@
 				AD5C22CB296B90F00067A2EF /* ConsoleIO.swift in Sources */,
 				AD5C22CA296B90ED0067A2EF /* Game.swift in Sources */,
 				AD5C22C4296B90AB0067A2EF /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5DFD522D10E900005ECC7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5DFD602D10E931005ECC7B /* GameProtocol.swift in Sources */,
+				AD5DFD5F2D10E927005ECC7B /* ConsoleIO.swift in Sources */,
+				AD5DFD5E2D10E921005ECC7B /* Game.swift in Sources */,
+				AD5DFD5D2D10E91A005ECC7B /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3482,6 +3613,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADE1011E2D0FA6D2003080C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADE1012C2D0FA71D003080C9 /* GameProtocol.swift in Sources */,
+				ADE1012B2D0FA717003080C9 /* ConsoleIO.swift in Sources */,
+				ADE1012A2D0FA711003080C9 /* Game.swift in Sources */,
+				ADE101292D0FA70A003080C9 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ADE614962B35000A0087F9C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3620,6 +3762,11 @@
 			target = AD5C22C0296B90AB0067A2EF /* EvenWins1 */;
 			targetProxy = AD5C22CF296B931A0067A2EF /* PBXContainerItemProxy */;
 		};
+		AD5DFD662D10E9D3005ECC7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD5DFD552D10E900005ECC7B /* BombsAway */;
+			targetProxy = AD5DFD652D10E9D3005ECC7B /* PBXContainerItemProxy */;
+		};
 		AD5F26E229738D6C0053C5A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AD5F26D0297389650053C5A1 /* Bug */;
@@ -3739,6 +3886,11 @@
 			isa = PBXTargetDependency;
 			target = ADE101092D0F3B43003080C9 /* Bagels */;
 			targetProxy = ADE1011B2D0F3D09003080C9 /* PBXContainerItemProxy */;
+		};
+		ADE101302D0FA7A5003080C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADE101212D0FA6D2003080C9 /* Bombardment */;
+			targetProxy = ADE1012F2D0FA7A5003080C9 /* PBXContainerItemProxy */;
 		};
 		ADE614AE2B3503510087F9C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4052,6 +4204,37 @@
 				DEVELOPMENT_TEAM = 624UDYC489;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD5DFD5A2D10E900005ECC7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD5DFD5B2D10E900005ECC7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -5077,6 +5260,37 @@
 			};
 			name = Release;
 		};
+		ADE101272D0FA6D2003080C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		ADE101282D0FA6D2003080C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		ADE6149E2B35000B0087F9C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -5316,6 +5530,15 @@
 			buildConfigurations = (
 				AD5C22C5296B90AB0067A2EF /* Debug */,
 				AD5C22C6296B90AB0067A2EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD5DFD5C2D10E900005ECC7B /* Build configuration list for PBXNativeTarget "BombsAway" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD5DFD5A2D10E900005ECC7B /* Debug */,
+				AD5DFD5B2D10E900005ECC7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5577,6 +5800,15 @@
 			buildConfigurations = (
 				ADE1010F2D0F3B43003080C9 /* Debug */,
 				ADE101102D0F3B43003080C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADE101262D0FA6D2003080C9 /* Build configuration list for PBXNativeTarget "Bombardment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADE101272D0FA6D2003080C9 /* Debug */,
+				ADE101282D0FA6D2003080C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

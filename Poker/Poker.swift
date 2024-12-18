@@ -228,7 +228,6 @@ class Poker: GameProtocol {
         println()
         
         wait(.short)
-        
         play()
     }
     
@@ -299,7 +298,8 @@ class Poker: GameProtocol {
                         computerChecks = true
                     }
                 } else {
-                    //540-570 potentially lower bet for highest hand (4 of a kind) - error?
+                    //540-570
+                    //TODO: potentially lower bet for highest hand (4 of a kind) - error?
                     if category.score > 16 {
                         z = fna() < 1 ? 2 : 35
                     } else {
@@ -729,7 +729,8 @@ class Poker: GameProtocol {
                     return v
                 }
             } else {
-                //3520 - goto out of subroutine without return to "I'll see you", here replaced by returning nil
+                //3520
+                //TODO: goto out of subroutine without return to "I'll see you", here replaced by returning g
                 return g
             }
         }

@@ -84,8 +84,7 @@ class Blackjack: GameProtocol {
     private func mainLoop() {
         if 2 * d1 + cardIndex >= 52 {
             shuffle()
-            //Discard first card??
-            let _ = getCard()
+            let _ = getCard()  //First card discarded - casino rules - burn first card
         }
         if cardIndex == 2 { cardIndex -= 1 }
         
@@ -103,7 +102,6 @@ class Blackjack: GameProtocol {
                 bet = Int(input("# \(i) ")) ?? 0
                 if bet == 82964 {
                     showEasterEgg(.blackjack)
-                    wait(.long)
                     end()
                 }
                 

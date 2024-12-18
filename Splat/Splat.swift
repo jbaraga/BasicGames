@@ -25,10 +25,49 @@ class Splat: GameProtocol {
         println("Welcome to 'Splat' -- the game that simulates a parachute")
         println("jump.  Try to open your chute at the last possible")
         println("moment without going splat.")
-        getInputs()
+        
+        var response = Response.yes
+        repeat {
+            play()
+            wait(.short)
+            response = playAgain()
+        } while response.isYes
+        
+        if response == .easterEgg, chuteOpenAltitudes.count > 5 {
+            showEasterEgg(.splat)
+            wait(.long)
+            end()
+        }
+        
+        println("SSSSSSSSSS.")
+        wait(.short)
+        println()
+        promptForReset()
+        end()
     }
     
-    private func getInputs() {
+    //2000-2005
+    private func playAgain() -> Response {
+        let reponse = Response(input("Do you want to play again"))
+        switch reponse {
+        case .other:
+            println("Yes or no")
+            return playAgain()
+        case .no:
+            return playAgain2(prompt: "Please")
+        case .yes, .easterEgg: return reponse
+        }
+    }
+    
+    private func playAgain2(prompt: String) -> Response {
+        let response = Response(input(prompt))
+        switch response {
+        case .other: return playAgain2(prompt: "Yes or no please")
+        default: return response
+        }
+    }
+    
+    private func play() {
         //Line 118
         println(2)
         let d1 = round(9001 * rnd(1) + 1000)  //Altitude (feet)
@@ -43,7 +82,7 @@ class Splat: GameProtocol {
 
         println()
         println("    Altitude         = \(Int(d1)) ft")
-        println("    Term.Velocity    = \(formatter.string(from: v1)) ft/sec +-5%")
+        println("    Term.Velocity    = \(v1.formatted(.basic))) ft/sec +-5%")
         println("    Acceleration     = " + String(format: "%.1f", a2) + " ft/sec/sec +-5%")
         println("Set the timer for your freefall.")
         
@@ -221,30 +260,30 @@ class Splat: GameProtocol {
     //Lines 2000-2046
     private func tryAgain(message: String = "Do you want to play again") {
         print(message)
-            let response = Response(input())
-            if response == .easterEgg, chuteOpenAltitudes.count > 5 {
-                showEasterEgg(.splat)
-                wait(.long)
-                end()
-            }
+        let response = Response(input("Do you want to play again"))
+        if response == .easterEgg, chuteOpenAltitudes.count > 5 {
+            showEasterEgg(.splat)
+            wait(.long)
+            end()
+        }
         
-            switch response {
-            case .yes:
-                getInputs()
-            case .no:
-                if message == "Please" {
-                    println("SSSSSSSSSS.")
-                    wait(.short)
-                    println()
-                    promptForReset()
-                    end()
-                } else {
-                    tryAgain(message: "Please")
-                }
-            default:
-                println("Yes or no")
-                tryAgain()
+        switch response {
+        case .yes:
+            play()
+        case .no:
+            if message == "Please" {
+                println("SSSSSSSSSS.")
+                wait(.short)
+                println()
+                promptForReset()
+                end()
+            } else {
+                tryAgain(message: "Please")
             }
+        default:
+            println("Yes or no")
+            tryAgain()
+        }
     }
     
     private func promptForReset() {

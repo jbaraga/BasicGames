@@ -151,7 +151,7 @@ class StockMarket: GameProtocol {
                 stop()
                 return
             }
-            if cash > 20000, response == 99 {
+            if cash > 20000, response == Response.easterEggCode {
                 showEasterEgg(.stockMarket)
                 wait(.long)
             }

@@ -135,7 +135,8 @@ struct TerminalViewRepresentable: NSViewRepresentable {
         }
         
         func processTerminated(source: SwiftTerm.TerminalView, exitCode: Int32?) {
-            return
+            isCursorBlinkingEnabled = false
+            isCursorHidden = true
         }
     }
 }
@@ -158,3 +159,4 @@ struct TerminalView: View {
         .onAppear { isFocused = true }
     }
 }
+

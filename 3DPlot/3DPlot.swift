@@ -57,6 +57,21 @@ class TDPlot: GameProtocol {
         printHeader(title: "3D Plot")
         println(3)
         
+        var response = Response.yes
+        repeat {
+            plot()
+            wait(.long)
+            response = Response(input("Run again"))
+            if response.isYes { consoleIO.clear() }
+        } while response.isYes
+        
+        if response == .easterEgg {
+            showEasterEgg(.threeDPlot)
+        }
+        end()
+    }
+    
+    private func plot() {
         //Added code to select function
         println("Select a function to plot")
         Function.allCases.forEach {
@@ -78,21 +93,6 @@ class TDPlot: GameProtocol {
             println()
         }
         println(3)
-        
-        wait(.long)
-        let response = Response(input("Run again"))
-        switch response {
-        case .yes:
-            wait(.short)
-            consoleIO.clear()
-            run()
-        case .easterEgg:
-            showEasterEgg(.threeDPlot)
-            wait(.long)
-            end()
-        default:
-            end()
-        }
     }
     
     private func selectFunction() -> Function {
