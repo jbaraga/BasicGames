@@ -110,13 +110,9 @@ class StockMarket: GameProtocol {
     
         //338 REM PRINT INITIAL PORTFOLIO
         println(2)
-        print("Stock")
-        print(tab(28), "Initials")
-        println(tab(42), "Price/Share")
+        println("Stock", tab(28), "Initials", tab(42), "Price/Share")
         stocks.forEach { stock in
-            print(stock.name)
-            print(tab(30), stock.initials)
-            println(tab(42), String(format: " %.2f", stock.s))
+            println(stock.name, tab(30), stock.initials, tab(42), String(format: " %.2f", stock.s))
         }
         println()
         

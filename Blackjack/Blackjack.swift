@@ -75,7 +75,7 @@ class Blackjack: GameProtocol {
     
     //Lines 1760-1780
     private func getNumberOfPlayers() -> Int {
-        guard let n = Int("Number of players"), n > 0 && n < 8 else {
+        guard let n = Int(input("Number of players")), n > 0 && n < 8 else {
             return getNumberOfPlayers()
         }
         return n

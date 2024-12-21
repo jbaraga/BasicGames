@@ -150,8 +150,7 @@ func dim<T>(_ rows: Int, _ columns: Int, value: T) -> [[T]] {
 
 extension Notification.Name {
     static let terminalWindowWillClose = Notification.Name("com.starwaresoftware.basicGames.close")
-    static let stop = Notification.Name("com.starwaresoftware.basicGames.stop")
-    static let consoleInputDidBegin = Notification.Name("com.starwaresoftware.basicGames.input")
+    static let `break` = Notification.Name("com.starwaresoftware.basicGames.break")
     static let consoleWillPrint = Notification.Name("com.starwaresoftware.basicGames.print")
     static let showEasterEgg = Notification.Name("com.starwaresoftware.basicGames.egg")
 }
@@ -204,6 +203,9 @@ extension PDFDocument {
     }
 }
 
+extension URL {
+    static let basicGamesScheme = "basicgames"
+}
 
 extension ClosedRange<Int> {
     init?(string: String) {

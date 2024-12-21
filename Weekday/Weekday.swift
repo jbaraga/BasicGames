@@ -103,9 +103,7 @@ class Weekday: GameProtocol {
             println("***Happy Birthday***")
         }
         
-        print(tab(28), "Years")
-        print(tab(42), "Months")
-        println(tab(56), "Days")
+        println(tab(28), "Years", tab(42), "Months", tab(56), "Days")
         printInterval(message: "Your age if birthdate", delta)
         
         //910 REM CALCULATE RETIREMENT DATE.
@@ -168,9 +166,7 @@ class Weekday: GameProtocol {
     
     private func printInterval(message: String, _ interval: Interval) {
         print(message)
-        print(tab(28), " \(interval.years)")
-        print(tab(42), " \(interval.months)")
-        println(tab(56), " \(interval.days)")
+        println(tab(28), " \(interval.years)", tab(42), " \(interval.months)", tab(56), " \(interval.days)")
     }
 
     //1360 REM CALCULATE TIME IN YEARS, MONTHS, AND DAYS

@@ -39,12 +39,12 @@ class LEM: GameProtocol {
         var response = Response.yes
         var success = false
         repeat {
-            if !isNewPilot { selectInstructions() }
             success = performLanding()
             wait(.long)
             println()
             response = Response(input("Do you want to try it again (yes/no)"))
             isNewPilot = false
+            selectInstructions()
         } while response.isYes
         
         if success, response == .easterEgg {
@@ -281,12 +281,7 @@ class LEM: GameProtocol {
             let hvelString = horizontalVelocity.formatted(.basic)
             let fuelString = remainingFuelUnits.formatted(.basic)
             
-            print("  " + timeString)
-            print(tab(11), hString)
-            print(tab(24), dString)
-            print(tab(38), vvelString)
-            print(tab(50), hvelString)
-            println(tab(61), fuelString)
+            println("  " + timeString, tab(11), hString, tab(24), dString, tab(38), vvelString, tab(50), hvelString, tab(61), fuelString)
         }
         
         //Execution starts here
