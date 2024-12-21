@@ -13,8 +13,6 @@ import AppKit
  PRINT(_:); - the semicolon suppresses new line. Numeric values are padded with a space before and after
  PRINT(_, _, _) - multiple items separated by column are printed at successive tab stops. Default tab stop is 14
 */
- 
-typealias Tab = () -> String
 
 protocol GameProtocol {
     func run()
@@ -49,7 +47,7 @@ extension GameProtocol {
     
     /// Returns random Double - matches BASIC function
     /// - Parameters:
-    ///   - upperLimit: Double
+    ///   - upperLimit: Double. Default 1.0
     /// - Returns: Random double within range 0...upperLimit
     func rnd(_ upperLimit: Double = 1) -> Double {
         return Double.random(in: 0...upperLimit)
@@ -59,28 +57,31 @@ extension GameProtocol {
     /// - Parameters:
     ///   - x: Tab stop (zero indexed)
     /// - Returns: Closure which generates string with spaces needed move cursor to desired tab stop
-    func tab(_ x: Int) -> Tab {
-        return { consoleIO.tab(x) }
+    func tab(_ x: Int) -> ConsoleIO.Tab {
+        return .init(position: x)
     }
     
-    /// Prints string representation String(item) of multiple items at successive tab stops, terminating with new line
+    /// Prints string representation String(item) of multiple items at successive tab stops
     /// - Parameters:
-    ///   - items: items to print, separated by comma.
-    ///   - tabInterval: Tab  interval
+    ///   - items: Comma separated items to print, item must be Tab or conform to LosslessStringConvertible protocol. For variable tab, insert specified tab stop as item between each item to print, e.g. item1, tab(12), item2, tab(18), item3
+    ///   - tabInterval: interval between tab  stops if not specified by tab(n) between LosslessStringConvertible items
     func print(_ items: Any..., tabInterval: Int = 14) {
-        var tabIndex = 0
-        for item in items {
+        var tabStop = 0
+        for (index, item) in items.enumerated() {
             switch item {
-            case let item as LosslessStringConvertible: 
+            case let item as LosslessStringConvertible:
                 let string = String(item)
-                consoleIO.print(tab(tabInterval * tabIndex)())
-                consoleIO.print(string)
-                tabIndex += (1 + (string.count / tabInterval))
-            case let item as Tab:
-                let string = item()
-                consoleIO.print(item())
-                tabIndex += string.count / tabInterval
-            default:
+                if index + 1 < items.count, items[index + 1] is ConsoleIO.Tab {
+                    consoleIO.print(string)
+                } else {
+                    if tabStop > 0 { consoleIO.print(tab: tab(tabStop)) }
+                    tabStop += tabInterval
+                    consoleIO.print(string)
+                }
+            case let item as ConsoleIO.Tab:
+                consoleIO.print(tab: item)
+                tabStop = item.position
+           default:
                 fatalError("Illegal print item: " + String(describing: item))
             }
         }
@@ -88,8 +89,8 @@ extension GameProtocol {
 
     /// Prints string representation String(item) of multiple items at successive tab stops, terminating with new line
     /// - Parameters:
-    ///   - items: items to print, separated by comma.
-    ///   - tabInterval: Tab  interval
+    ///   - items: Comma separated items to print, item must be a Tab or conform to LosslessStringConvertible protocol. For variable tab, insert specified tab stop as item between each item to print, e.g. item1, tab(12), item2, tab(18), item3.
+    ///   - tabInterval: interval between tab  stops if not specified by tab(n) between LosslessStringConvertible items
     func println(_ items: Any..., tabInterval: Int = 14) {
         print(items, tabInterval: tabInterval)
         println()
@@ -159,9 +160,8 @@ extension GameProtocol {
         println("Opening Easter Egg!!!!!!!!")
         consoleIO.wait(.short)
         
-        let center = DistributedNotificationCenter.default()
-        //object has to be  string, userInfo nil for this to properly post
-        center.post(name: Notification.Name.showEasterEgg, object: game.pdfString)
+        guard let url = URL(string: URL.basicGamesScheme + "://" + game.pdfString) else { return }
+        NSWorkspace.shared.open(url)
     }
     
     func end() -> Never {

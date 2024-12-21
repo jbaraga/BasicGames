@@ -139,9 +139,9 @@ class Hockey: GameProtocol {
                 let scoringReport = oTeam.goalScored(byPlayer: shooterIndex, assistedBy: firstAssistIndex, assistedBy: secondAssistIndex)
                 println()
                 if teamA.goals < teamB.goals {
-                    println("Score: \(teamB.name): \(teamB.goals)", "\(teamA.name): \(teamA.goals)")
+                    println("Score: \(teamB.name): \(teamB.goals)", " \(teamA.name): \(teamA.goals)")
                 } else {
-                    println("Score: \(teamA.name): \(teamA.goals)", "\(teamB.name): \(teamB.goals)")
+                    println("Score: \(teamA.name): \(teamA.goals)", " \(teamB.name): \(teamB.goals)")
                 }
                 println(scoringReport)
                 isPlayStopped = true

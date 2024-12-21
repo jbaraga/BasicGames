@@ -29,6 +29,8 @@ struct BasicGamesApp: App {
                         showPDF(with: string)
                     }
                 }
+                .onOpenURL { url in showPDF(from: url) }
+                .handlesExternalEvents(preferring: ["*"], allowing: ["*"])
         }
         .defaultSize(width: 300, height: 500)
         .commands {
@@ -50,18 +52,20 @@ struct BasicGamesApp: App {
         
         WindowGroup(id: "Terminal", for: Game.self) { $game in
             if let game {
-                TerminalView(game: game)
+                GameView(game: game)
                     .focusedSceneValue(\.isWindowFocused, true)
             }
         }
         .commands {
-            CommandGroup(after: .printItem) {
-                if isWindowFocused ?? false {
-                    Divider()
-                    Button("Exit") {
-                        DistributedNotificationCenter.default().post(name: .stop, object: nil)
+            if #unavailable(macOS 14) {
+                CommandGroup(after: .printItem) {
+                    if isWindowFocused ?? false {
+                        Divider()
+                        Button("Exit") {
+                            DistributedNotificationCenter.default().post(name: .break, object: nil)
+                        }
+                        .keyboardShortcut(KeyEquivalent("c"), modifiers: [.control])
                     }
-                    .keyboardShortcut(KeyEquivalent("c"), modifiers: [.control])
                 }
             }
         }
@@ -80,6 +84,10 @@ struct BasicGamesApp: App {
             SettingsView()
         }
     }
+    
+    private func showPDF(from url: URL) {
+        showPDF(with: url.absoluteString.replacingOccurrences(of: URL.basicGamesScheme + "://", with: ""))
+    }
         
     private func showPDF(with pdfString: String) {
         guard let pdf = EasterEggPDF(pdfString: pdfString) else { return }
@@ -89,7 +97,7 @@ struct BasicGamesApp: App {
     private struct EasterEggPDF: Codable, Hashable {
         let url: URL
         var pageNumbers: ClosedRange<Int>?
-        
+                
         init?(pdfString: String) {
             let components = pdfString.components(separatedBy: "-")
             if let last = components.last, let range = ClosedRange(string: last) {

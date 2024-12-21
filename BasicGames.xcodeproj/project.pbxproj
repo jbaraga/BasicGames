@@ -81,6 +81,11 @@
 		AD5DFD5F2D10E927005ECC7B /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
 		AD5DFD602D10E931005ECC7B /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
 		AD5DFD672D10E9EB005ECC7B /* BombsAway in Resources */ = {isa = PBXBuildFile; fileRef = AD5DFD562D10E900005ECC7B /* BombsAway */; };
+		AD5DFD772D126F19005ECC7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD5DFD782D126F21005ECC7B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		AD5DFD792D126F29005ECC7B /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD5DFD7A2D126F33005ECC7B /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* GameProtocol.swift */; };
+		AD5DFD812D126FBE005ECC7B /* Bullseye in Resources */ = {isa = PBXBuildFile; fileRef = AD5DFD702D126EE6005ECC7B /* Bullseye */; };
 		AD5F26D4297389650053C5A1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F26D3297389650053C5A1 /* main.swift */; };
 		AD5F26D9297389820053C5A1 /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F26D8297389820053C5A1 /* Bug.swift */; };
 		AD5F26DA2973898A0053C5A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
@@ -421,6 +426,13 @@
 			remoteGlobalIDString = AD5DFD552D10E900005ECC7B;
 			remoteInfo = BombsAway;
 		};
+		AD5DFD7F2D126FAE005ECC7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD5DFD6F2D126EE6005ECC7B;
+			remoteInfo = Bullseye;
+		};
 		AD5F26E129738D6C0053C5A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADAE10A9277BAD25006762F5 /* Project object */;
@@ -718,6 +730,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		AD5DFD542D10E900005ECC7B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		AD5DFD6E2D126EE6005ECC7B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -1044,6 +1065,7 @@
 		AD5C22C3296B90AB0067A2EF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD5C22C8296B90DA0067A2EF /* EvenWins1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenWins1.swift; sourceTree = "<group>"; };
 		AD5DFD562D10E900005ECC7B /* BombsAway */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BombsAway; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5DFD702D126EE6005ECC7B /* Bullseye */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bullseye; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5F26D1297389650053C5A1 /* Bug */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bug; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5F26D3297389650053C5A1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD5F26D8297389820053C5A1 /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
@@ -1156,6 +1178,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AD5DFD572D10E900005ECC7B /* BombsAway */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BombsAway; sourceTree = "<group>"; };
+		AD5DFD712D126EE6005ECC7B /* Bullseye */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Bullseye; sourceTree = "<group>"; };
 		AD87F0C12D092A10008DEC47 /* Awari */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Awari; sourceTree = "<group>"; };
 		ADE1010B2D0F3B43003080C9 /* Bagels */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Bagels; sourceTree = "<group>"; };
 		ADE101232D0FA6D2003080C9 /* Bombardment */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Bombardment; sourceTree = "<group>"; };
@@ -1233,6 +1256,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD5DFD532D10E900005ECC7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5DFD6D2D126EE6005ECC7B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1739,6 +1769,7 @@
 				AD82570627F09A9D00A0ECCB /* Bounce */,
 				ADADA5912B4C3BAB0024CA81 /* Bowling */,
 				AD5F26D2297389650053C5A1 /* Bug */,
+				AD5DFD712D126EE6005ECC7B /* Bullseye */,
 				AD150F0927C1492A00FA3280 /* Calendar */,
 				ADADA57B2B46E7390024CA81 /* Checkers */,
 				ADE6149B2B35000B0087F9C6 /* CivilWar */,
@@ -1823,6 +1854,7 @@
 				ADE1010A2D0F3B43003080C9 /* Bagels */,
 				ADE101222D0FA6D2003080C9 /* Bombardment */,
 				AD5DFD562D10E900005ECC7B /* BombsAway */,
+				AD5DFD702D126EE6005ECC7B /* Bullseye */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2190,6 +2222,28 @@
 			productReference = AD5DFD562D10E900005ECC7B /* BombsAway */;
 			productType = "com.apple.product-type.tool";
 		};
+		AD5DFD6F2D126EE6005ECC7B /* Bullseye */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD5DFD742D126EE6005ECC7B /* Build configuration list for PBXNativeTarget "Bullseye" */;
+			buildPhases = (
+				AD5DFD6C2D126EE6005ECC7B /* Sources */,
+				AD5DFD6D2D126EE6005ECC7B /* Frameworks */,
+				AD5DFD6E2D126EE6005ECC7B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AD5DFD712D126EE6005ECC7B /* Bullseye */,
+			);
+			name = Bullseye;
+			packageProductDependencies = (
+			);
+			productName = Bullseye;
+			productReference = AD5DFD702D126EE6005ECC7B /* Bullseye */;
+			productType = "com.apple.product-type.tool";
+		};
 		AD5F26D0297389650053C5A1 /* Bug */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD5F26D7297389650053C5A1 /* Build configuration list for PBXNativeTarget "Bug" */;
@@ -2478,6 +2532,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AD5DFD802D126FAE005ECC7B /* PBXTargetDependency */,
 				AD5DFD662D10E9D3005ECC7B /* PBXTargetDependency */,
 				ADE101302D0FA7A5003080C9 /* PBXTargetDependency */,
 				ADE1011C2D0F3D09003080C9 /* PBXTargetDependency */,
@@ -2873,6 +2928,9 @@
 					AD5DFD552D10E900005ECC7B = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					AD5DFD6F2D126EE6005ECC7B = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					AD5F26D0297389650053C5A1 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -3011,6 +3069,7 @@
 				AD82570427F09A9D00A0ECCB /* Bounce */,
 				ADADA58F2B4C3BAA0024CA81 /* Bowling */,
 				AD5F26D0297389650053C5A1 /* Bug */,
+				AD5DFD6F2D126EE6005ECC7B /* Bullseye */,
 				AD150F0727C1492A00FA3280 /* Calendar */,
 				ADADA5792B46E7390024CA81 /* Checkers */,
 				ADE614992B35000A0087F9C6 /* CivilWar */,
@@ -3062,6 +3121,7 @@
 				AD82570E27F09ADA00A0ECCB /* Bounce in Resources */,
 				ADADA5A12B4C3F350024CA81 /* Bowling in Resources */,
 				AD5F26E029738D5E0053C5A1 /* Bug in Resources */,
+				AD5DFD812D126FBE005ECC7B /* Bullseye in Resources */,
 				AD150F0F27C1493D00FA3280 /* Calendar in Resources */,
 				ADADA58B2B46EA7A0024CA81 /* Checkers in Resources */,
 				ADE614AF2B3503AF0087F9C6 /* CivilWar in Resources */,
@@ -3255,6 +3315,17 @@
 				AD5DFD5F2D10E927005ECC7B /* ConsoleIO.swift in Sources */,
 				AD5DFD5E2D10E921005ECC7B /* Game.swift in Sources */,
 				AD5DFD5D2D10E91A005ECC7B /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5DFD6C2D126EE6005ECC7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5DFD7A2D126F33005ECC7B /* GameProtocol.swift in Sources */,
+				AD5DFD792D126F29005ECC7B /* ConsoleIO.swift in Sources */,
+				AD5DFD782D126F21005ECC7B /* Game.swift in Sources */,
+				AD5DFD772D126F19005ECC7B /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3767,6 +3838,11 @@
 			target = AD5DFD552D10E900005ECC7B /* BombsAway */;
 			targetProxy = AD5DFD652D10E9D3005ECC7B /* PBXContainerItemProxy */;
 		};
+		AD5DFD802D126FAE005ECC7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD5DFD6F2D126EE6005ECC7B /* Bullseye */;
+			targetProxy = AD5DFD7F2D126FAE005ECC7B /* PBXContainerItemProxy */;
+		};
 		AD5F26E229738D6C0053C5A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AD5F26D0297389650053C5A1 /* Bug */;
@@ -4226,6 +4302,37 @@
 			name = Debug;
 		};
 		AD5DFD5B2D10E900005ECC7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AD5DFD752D126EE6005ECC7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD5DFD762D126EE6005ECC7B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -5539,6 +5646,15 @@
 			buildConfigurations = (
 				AD5DFD5A2D10E900005ECC7B /* Debug */,
 				AD5DFD5B2D10E900005ECC7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD5DFD742D126EE6005ECC7B /* Build configuration list for PBXNativeTarget "Bullseye" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD5DFD752D126EE6005ECC7B /* Debug */,
+				AD5DFD762D126EE6005ECC7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

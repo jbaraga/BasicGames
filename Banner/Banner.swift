@@ -57,6 +57,7 @@ class Banner: GameProtocol {
     
     func run() {
         printHeader(title: "Banner")
+        println()
 
         let x = Int(input("Horizontal")) ?? 1
         let y = Int(input("Vertical")) ?? 1

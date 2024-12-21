@@ -209,19 +209,8 @@ class OregonTrail: GameProtocol {
         
         //MARK: Subroutines
         func showInventory() {
-            let tabStop = 15
-            print("Food")
-            print(tab(tabStop), "Bullets")
-            print(tab(tabStop * 2), "Clothing")
-            print(tab(tabStop * 3), "Misc. Supp.")
-            print(tab(tabStop * 4), "Cash")
-            println()
-            print(" \(food)")
-            print(tab(tabStop), " \(ammunition)")
-            print(tab(tabStop * 2), " \(clothing)")
-            print(tab(tabStop * 3), " \(supplies)")
-            print(tab(tabStop * 4), " \(cash)")
-            println()
+            println("Food", "Bullets", "Clothing", "Misc. Supp.", "Cash", tabInterval: 15)
+            println(" \(food)", " \(ammunition)", " \(clothing)", " \(supplies)", " \(cash)", tabInterval: 15)
         }
         
         //Initial purchase, lines 800-1180

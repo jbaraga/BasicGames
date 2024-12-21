@@ -145,7 +145,6 @@ class Amazing: GameProtocol {
         repeat {
             println(3)
             playGame()
-            wait(.long)
             response = Response(input("Run again"))
         } while response.isYes
         
@@ -161,7 +160,6 @@ class Amazing: GameProtocol {
         generateMaze(width: width, height: length)
         consoleIO.endHardcopy()
         println(3)
-        
         wait(.long)
         
         let hardcopy = input("Would you like a hardcopy")

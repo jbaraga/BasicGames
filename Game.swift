@@ -473,6 +473,7 @@ enum Game: String, CaseIterable, Codable {
         case .awari: return "globe.europe.africa"
         case .blackjack: return "suit.club.fill"
         case .bowling: return "figure.bowling"
+        case .bullseye: return "target"
         case .bug: return "ladybug"
         case .calendar: return "calendar"
         case .checkers: return "rectangle.checkered"
@@ -486,7 +487,7 @@ enum Game: String, CaseIterable, Codable {
         case .poetry: return "text.alignright"
         case .poker: return "suit.spade.fill"
         case .stockMarket: return "chart.line.uptrend.xyaxis.circle.fill"
-        case .target: return "target"
+        case .target: return "dot.scope"
         case .threeDPlot: return "view.3d"
         default:
             return nil
@@ -504,6 +505,7 @@ enum Game: String, CaseIterable, Codable {
         case .bombsAway: return .indigo
         case .bowling: return .brown
         case .bug: return .red
+        case .bullseye: return .blue
         case .calendar: return .green
         case .checkers: return .red
         case .digits: return .teal
@@ -518,7 +520,7 @@ enum Game: String, CaseIterable, Codable {
         case .poker: return .black
         case .starTrek: return .blue
         case .stockMarket: return .purple
-        case .target: return .red
+        case .target: return .blue
         case .threeDPlot: return .indigo
         default:
             return nil

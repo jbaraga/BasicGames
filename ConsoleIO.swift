@@ -44,6 +44,10 @@ class ConsoleIO {
         }
     }
     
+    public struct Tab {
+        let position: Int
+    }
+    
     static let shared = ConsoleIO()
     
     public var promptCharacter = "?"
@@ -60,34 +64,14 @@ class ConsoleIO {
     private var cursor = 0  //x position for tab
     private var isRecording = false
     private var hardcopyString = ""
-    
-    private var isAwaitingInput = false {
-        didSet {
-            let center = DistributedNotificationCenter.default()
-            //object has to be the string, userInfo nil for this to properly post
-            center.post(name: Notification.Name.consoleInputDidBegin, object: isAwaitingInput.description, userInfo: nil)
-        }
-    }
-    
+        
     private var player: AVAudioPlayer?  //Need to keep reference for sound to play
     
     private init() {
 //        freopen("", "a+", stderr)  //Suppresses error logging
 
         let center = DistributedNotificationCenter.default()
-        let queue = OperationQueue()
-        queue.name = "com.starwaresoftware.consoleIO"
-        queue.qualityOfService = .userInteractive
-
-        center.addObserver(forName: .terminalWindowWillClose, object: nil, queue: queue) { notification in
-            if let executableName = Bundle.main.executableURL?.lastPathComponent, let string = notification.object as? String, executableName == string {
-                exit(EXIT_SUCCESS)
-            } else {
-                exit(EXIT_SUCCESS)
-            }
-        }
-        
-        center.addObserver(forName: .stop, object: nil, queue: queue) { [weak self] notification in
+        center.addObserver(forName: .break, object: nil, queue: .main) { [weak self] notification in
             guard let self else { return }
             println()
             self.close()
@@ -130,7 +114,6 @@ class ConsoleIO {
     }
     
     func close() -> Never {
-        wait(.short)
         println()
         println("Process Terminated")
         exit(EXIT_SUCCESS)
@@ -195,13 +178,16 @@ class ConsoleIO {
     func println(_ number: Int = 1) {
         throttledNewLine(number)
     }
+    
+    func print(tab: Tab) {
+        guard cursor < tab.position else { return }
+        print(String(repeating: " ", count: tab.position - cursor))
+    }
         
     func getInput(terminator: String? = nil) -> String {
         print((terminator ?? promptCharacter) + " ")
 
-        isAwaitingInput = true
         defer {
-            isAwaitingInput = false
             cursor = 0
         }
         
@@ -214,9 +200,7 @@ class ConsoleIO {
     }
     
     func pauseForEnter() -> String {
-        isAwaitingInput = true
         defer {
-            isAwaitingInput = false
             cursor = 0
         }
         
@@ -225,11 +209,6 @@ class ConsoleIO {
         return inputString.trimmingCharacters(in: .newlines)
     }
     
-    func tab(_ position: Int) -> String {
-        guard cursor < position else { return "" }
-        return String(repeating: " ", count: position - cursor)
-    }
-        
     //MARK: Hardcopy printing functions
     func startHardcopy() {
         hardcopyString = ""
@@ -276,13 +255,13 @@ class ConsoleIO {
         //From stackoverflow https://stackoverflow.com/questions/49748507/listening-to-stdin-in-swift
         let keyboard = FileHandle.standardInput
         let terminal = enterRawMode(fileHandle: keyboard)
-                
+        
         var inputByte: UInt8 = 10
         repeat {
             read(keyboard.fileDescriptor, &inputByte, 1)
         } while inputByte == 10
-
-       exitRawMode(fileHandle: keyboard, originalTerm: terminal)
+        
+        exitRawMode(fileHandle: keyboard, originalTerm: terminal)
     }
 }
 
