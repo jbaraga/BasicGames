@@ -25,7 +25,7 @@ class Poker: GameProtocol {
         case computer
     }
     
-    private enum HandCategory {
+    private enum HandCategory: CustomStringConvertible {
         case fourOfAKind, fullHouse, flush, straight, threeOfAKind, twoPair, pair
         case schmaltz
         case partialStraight  //Only for internal tracking of hand being played
@@ -801,8 +801,8 @@ class Poker: GameProtocol {
     //3670-3680
     private func computerBust() -> Never {
         println("I'm busted.  Congratulations.")
-        wait(.long)
-        showEasterEgg(.poker)
+        wait(.short)
+        unlockEasterEgg(.poker)
         end()
     }
 }

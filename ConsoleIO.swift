@@ -11,23 +11,6 @@ import AppKit
 import AVFAudio
 
 class ConsoleIO {
-    public struct TerminalCommands {
-        static let xon = "\u{15}"
-        static let xoff = "\u{17}"
-        static let reset = "\u{1B}[c"
-        static let foregroundColorGreen = "\u{1B}[32m"
-        static let cursorPosition = "\u{1B}6nR"
-        static let cursorHome = "\u{1B}[H"
-        static let cursorBack = "\u{1B}[1D"
-        static let cursorForward = "\u{1B}[1D"
-        static let cursorSavePosition = "\u{1B}7"
-        static let cursorRestorePosition = "\u{1B}8"
-        static let eraseToCursor = "\u{1B}[1K"
-        static let eraseToEndOfLine = "\u{1B}[K"
-        static let clearScreen = "\u{1B}[2J"
-        static let bell = "\u{7}"
-    }
-    
     public enum Delay {
         case veryShort
         case afterEntry
@@ -58,7 +41,7 @@ class ConsoleIO {
     private let whiteColor = "{65535, 65535, 65535}"
     private let greenColor = "{0, 50000, 0}"
     
-    private let delayAfterCharacter = 0.007
+    private let delayAfterCharacter = 1.0 / 128  //128 baud
     private let delayAfterNewLine = 0.05
     
     private var cursor = 0  //x position for tab
@@ -68,15 +51,26 @@ class ConsoleIO {
     private var player: AVAudioPlayer?  //Need to keep reference for sound to play
     
     private init() {
-//        freopen("", "a+", stderr)  //Suppresses error logging
+        //***must specify queue for notification to be received***
+        let queue = OperationQueue()
+        queue.name = "com.starwaresoftware.consoleIO"
+        queue.qualityOfService = .userInteractive
 
-        let center = DistributedNotificationCenter.default()
-        center.addObserver(forName: .break, object: nil, queue: .main) { [weak self] notification in
-            guard let self else { return }
-            println()
-            self.close()
+        DistributedNotificationCenter.default().addObserver(forName: .terminalCommand, object: nil, queue: queue) { [weak self] notification in
+            guard let self, let string = notification.object as? String, let command = TerminalCommands(rawValue: string) else { return }
+            switch command {
+            case .break:
+                println()
+                close()
+            case .bell:
+                ringBell()
+            default:
+                print(string)
+            }
         }
         
+//For use of macOS Terminal app
+//        freopen("", "a+", stderr)  //Suppresses error logging
 //        reset()
 //
 //        //Terminal setup control sequences
@@ -113,15 +107,15 @@ class ConsoleIO {
         Thread.sleep(forTimeInterval: delay.value)
     }
     
-    func close() -> Never {
+    func close(_ message: String? = nil) -> Never {
         println()
-        println("Process Terminated")
+        println(message ?? "Process Terminated")
         exit(EXIT_SUCCESS)
     }
     
     func clear() {
-        print(TerminalCommands.clearScreen)
-        print(TerminalCommands.cursorHome)
+        print(TerminalCommands.clearScreen.escapeSequence)
+        print(TerminalCommands.cursorHome.escapeSequence)
     }
     
     func ringBell(_ count: Int = 1) {
@@ -135,7 +129,7 @@ class ConsoleIO {
             player.play()
          } catch {
             for _ in 1...count {
-                print(TerminalCommands.bell)
+                print(TerminalCommands.bell.escapeSequence)
                 wait(.veryShort)
             }
         }
@@ -220,9 +214,8 @@ class ConsoleIO {
     }
     
     func printHardcopy() {
-        let center = DistributedNotificationCenter.default()
-        //object has to be  string, userInfo nil for this to properly post
-        center.post(name: Notification.Name.consoleWillPrint, object: hardcopyString, userInfo: nil)
+        guard let url = URL(string: URL.basicGamesScheme + ":///" + "#string=" + hardcopyString) else { return }
+        NSWorkspace.shared.open(url)
     }
     
     //MARK: Low level terminal functions to read each input character

@@ -34,32 +34,27 @@ class Digits: GameProtocol {
         }
         
         var response = Response.yes
-        var x = 0
         repeat {
             println(3)
-            x = play()
-            wait(.long)
+            play()
+            wait(.short)
             response = Response(input("Do you want to try again (1 for yes, 0 for no)"))
         } while response.isYes
         
-        if x < 10, response == .easterEgg {
-            showEasterEgg(.digits)
-        } else {
-            println()
-            println("Thanks for the game.")
-        }
+        println()
+        println("Thanks for the game.")
         end()
     }
     
-    private func play() -> Int {
+    private func play() {
         //Line 380-910
         //Arrays are zero indexed
         var m = dim(27, 3, value: 1)
         var k = dim(3, 3, value: 9)
         var l = dim(9, 3, value: 3)
-        l[(0,0)] = 2
-        l[(4,1)] = 2
-        l[(8,2)] = 2
+        l[0,0] = 2
+        l[4,1] = 2
+        l[8,2] = 2
         
         var z = 26
         var z1 = 8
@@ -89,7 +84,7 @@ class Digits: GameProtocol {
                     var s = 0
                     var g = 0
                     for j in 0...2 {
-                        let s1 = a * k[(z2,j)]  + b * l[(z1,j)] + c * m[(z,j)]  //a = 0, so k is never used ? bug
+                        let s1 = a * k[z2,j]  + b * l[z1,j] + c * m[z,j]  //a = 0, so k is never used ? bug
                         if s < s1 || (s == s1 && rnd(1) > 0.5) {
                             s = s1
                             g = j
@@ -100,9 +95,9 @@ class Digits: GameProtocol {
                         result = "Right"
                         //Lines 810-870
                         x += 1
-                        m[(z,number)] += 1
-                        l[(z1,number)] += 1
-                        k[(z2,number)] += 1
+                        m[z,number] += 1
+                        l[z1,number] += 1
+                        k[z2,number] += 1
                         z -= Int(Double(z) / 9) * 9
                         z = 3 * z + number
                     } else {
@@ -130,6 +125,7 @@ class Digits: GameProtocol {
         case _ where x < 10:
             println("I guessed less than 1/3 of your numbers.")
             println("You beat me.  Congratulations *****")
+            unlockEasterEgg(.digits)
         case _ where x > 10:
             println("I guessed more than 1/3 of your numbers.")
             println("I win.")
@@ -140,6 +136,5 @@ class Digits: GameProtocol {
         }
         
         println()
-        return x
     }
 }

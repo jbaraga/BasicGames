@@ -47,10 +47,10 @@ class King: GameProtocol {
         
         wait(.short)
         println()
-        playGame()
+        play()
     }
     
-    private func playGame() {
+    private func play() {
         var v3 = 0  //Amount made from tourism previous year
         
         while year < term {
@@ -141,11 +141,7 @@ class King: GameProtocol {
         println("luck - you'll probably need it if you're the type that")
         println("plays the game.")
         
-        wait(.long)
-        if Response(pauseForEnter()) == .easterEgg {
-            showEasterEgg(.king)
-        }
-        
+        unlockEasterEgg(.king)
         stop()
     }
     
@@ -396,7 +392,7 @@ class King: GameProtocol {
     //Lines 1590-1596
     private func stop() -> Never {
         println(2)
-        wait(.long)
+        wait(.short)
         end()
     }
     

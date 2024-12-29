@@ -100,11 +100,6 @@ class Blackjack: GameProtocol {
             var bet = 0
             while bet == 0 {
                 bet = Int(input("# \(i) ")) ?? 0
-                if bet == 82964 {
-                    showEasterEgg(.blackjack)
-                    end()
-                }
-                
                 if bet > 0 && bet <= 500 {
                     b[i] = bet
                 } else {
@@ -123,10 +118,10 @@ class Blackjack: GameProtocol {
         for j in 1...2 {
             print(tab(5))
             for i in 1...d1 {
-                p[(i,j)] = getCard()
+                p[i,j] = getCard()
                 
                 if j == 1 || i <= n {
-                    altPrint(card: p[(i,j)])
+                    altPrint(card: p[i,j])
                 }
             }
             println()
@@ -138,7 +133,7 @@ class Blackjack: GameProtocol {
         }
         
         //2110 REM--TEST FOR INSURANCE
-        if !(p[(d1,1)] > 1) {
+        if !(p[d1,1] > 1) {
             if input("Any insurance").isYes {
                 println("Insurance bets")
                 for i in 1...n {
@@ -147,16 +142,16 @@ class Blackjack: GameProtocol {
                         bet = Int(input("# \(i)")) ?? -1
                     }
                     z[i] = bet
-                    s[i] = z[i] * (3 * ((p[(d1,2)] >= 10 ? 1 : 0)) - 1)  //Booleans evaluate to -1 if true, 0 if false
+                    s[i] = z[i] * (3 * ((p[d1,2] >= 10 ? 1 : 0)) - 1)  //Booleans evaluate to -1 if true, 0 if false
                 }
             }
         }
         
         
         //2240 REM--TEST FOR DEALER BLACKJACK
-        let isBlackjack = (p[(d1,1)] == 1 && p[(d1,2)] > 9) || (p[(d1,2)] == 1 && p[(d1,1)] > 9)
+        let isBlackjack = (p[d1,1] == 1 && p[d1,2] > 9) || (p[d1,2] == 1 && p[d1,1] > 9)
         if isBlackjack {
-            println("Dealer has a" + d$.mid(3 * p[(d1,2)] - 2, length: 3) + " in the hole for blackjack")
+            println("Dealer has a" + d$.mid(3 * p[d1,2] - 2, length: 3) + " in the hole for blackjack")
             for i in 1...d1 {
                 q[i] = evaluateHand(forPlayer: i)
             }
@@ -165,7 +160,7 @@ class Blackjack: GameProtocol {
         }
         
         //2320 REM--NO DEALER BLACKJACK
-        if !(p[(d1,1)] > 1 && p[(d1,1)] < 10) {
+        if !(p[d1,1] > 1 && p[d1,1] < 10) {
             println("No dealer blackjack.")
         }
         
@@ -188,7 +183,7 @@ class Blackjack: GameProtocol {
         
         if playOutDealerHand {
             //Lines 3010-3125
-            print("Dealer has a" + d$.mid(3 * p[(d1,2)] - 2, length: 3) + " concealed ")
+            print("Dealer has a" + d$.mid(3 * p[d1,2] - 2, length: 3) + " concealed ")
             var aa = abc(q[d1])
             println("for a total of \(aa)")
             
@@ -211,7 +206,7 @@ class Blackjack: GameProtocol {
         } else {
             //Lines 2960-3000
             print("Dealer had a")
-            print(card: p[(d1,2)])
+            print(card: p[d1,2])
             println(" concealed.")
         }
         
@@ -246,8 +241,8 @@ class Blackjack: GameProtocol {
             playOutHand(forPlayer: i, allowedActions: [.hit])
         case .split:
             //2600 REM--PLAYER WANTS TO SPLIT
-            let l1 = p[(i,1)] > 10 ? 10 : p[(i,1)]
-            let l2 = p[(i,2)] > 10 ? 10 : p[(i,2)]
+            let l1 = p[i,1] > 10 ? 10 : p[i,1]
+            let l2 = p[i,2] > 10 ? 10 : p[i,2]
             guard l1 == l2 else {
                 println("Splitting not allowed.")
                 playHand(forPlayer: i)
@@ -258,24 +253,24 @@ class Blackjack: GameProtocol {
             //Lines 2650-2890
             let i1 = i + d1
             r[i1] = 2
-            p[(i1,1)] = p[(i,1)]
+            p[i1,1] = p[i,1]
             b[i+d1] = b[i]
             
             let x1 = getCard()
             print("First hand receives a")
             print(card: x1)
-            p[(i,2)] = x1
+            p[i,2] = x1
             q[i] = evaluateHand(forPlayer: i)
             println()
             
             let x2 = getCard()
             print("Second hand receives a")
             print(card: x2)
-            p[(i1,2)] = x2
+            p[i1,2] = x2
             q[i1] = evaluateHand(forPlayer: i1)
             println()
             
-            if p[(i,1)] == 1 { return }
+            if p[i,1] == 1 { return }
             
             //REM--NOW PLAY THE TWO HANDS
             print("Hand 1 ")
@@ -320,7 +315,7 @@ class Blackjack: GameProtocol {
     private func evaluateHand(forPlayer i: Int) -> Int {
         var q = 0
         for q2 in 1...r[i] {
-            add(card: p[(i,q2)], toTotal: &q)
+            add(card: p[i,q2], toTotal: &q)
         }
         return q
     }
@@ -402,7 +397,7 @@ class Blackjack: GameProtocol {
     //Lines 1110-1190
     private func add(card x: Int, toPlayer i: Int) {
         r[i] += 1
-        p[(i,r[i])] = x
+        p[i,r[i]] = x
         var q1 = q[i]
         add(card: x, toTotal: &q1)
         q[i] = q1
@@ -416,7 +411,7 @@ class Blackjack: GameProtocol {
     private func discardRow(forPlayer i: Int) {
         while r[i] > 0 {
             discardIndex += 1
-            d[discardIndex] = p[(i,r[i])]
+            d[discardIndex] = p[i,r[i]]
             r[i] -= 1
         }
     }
@@ -462,6 +457,8 @@ class Blackjack: GameProtocol {
             discardRow(forPlayer: i)
             t[d1] -= s[i]
             discardRow(forPlayer: i + d1)
+            
+            if t[i] > 1000, t[i] > t[d1] { unlockEasterEgg(.blackjack) }
         }
         
         println("Dealer's total = \(t[d1])")

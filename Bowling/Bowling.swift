@@ -40,10 +40,7 @@ class Bowling: GameProtocol {
             wait(.short)
             response = Response(input("Do you want another game"))
         } while response.isYes
-        
-        if response == .easterEgg {
-            showEasterEgg(.bowling)
-        }
+
         end()
     }
     
@@ -52,7 +49,7 @@ class Bowling: GameProtocol {
     private func bowl(_ numberOfPlayers: Int) {
         var frameNumber = 1
         var a = dim(50, 4, value: 0)  //old score A one indexed; row is frame # * player #, column: 1 = ball 1 pins down, 2 = ball 2 pins down (cumulative), 3 = frame result. Bug - multiple players scoring incorrect, additional player scores will overwrite other players as score is indexed by player * frame
-        var score = Array(repeating: [Int: Frame](), count: numberOfPlayers)  //New accurate scoring = array of scores by frame, zero indexed
+        var scores = Array(repeating: [Int: Frame](), count: numberOfPlayers)  //New accurate scoring = array of scores by frame, zero indexed
         
         while frameNumber < 11 {
             for player in 1...numberOfPlayers {
@@ -68,6 +65,7 @@ class Bowling: GameProtocol {
                     println("Type roll to get the ball going.")
                     let _ = input()
                     
+                    //TODO: Strike does not appear to be possible -test
                     (1...20).forEach { _ in
                         let x = Int(100 * rnd(1))
                         for j in 1...10 {
@@ -111,10 +109,10 @@ class Bowling: GameProtocol {
                     
                     //6210 REMARK STORAGE OF THE SCORES
                     println()
-                    a[(frameNumber * player, ball)] = pinsDown
+                    a[frameNumber * player, ball] = pinsDown
                     
                     //New scoring
-                    var playerScoreByFrame = score[player-1]
+                    var playerScoreByFrame = scores[player-1]
                     var frameScore = playerScoreByFrame[frameNumber] ?? Frame()
                     if ball == 1 {
                         frameScore.ball1 = pinsDown
@@ -122,7 +120,7 @@ class Bowling: GameProtocol {
                         frameScore.ball2 = pinsDown - previousPinsDown
                     }
                     playerScoreByFrame[frameNumber] = frameScore
-                    score[player-1] = playerScoreByFrame
+                    scores[player-1] = playerScoreByFrame
                     
                     if ball == 1 {
                         ball = 2
@@ -130,15 +128,15 @@ class Bowling: GameProtocol {
                         if frameResult == 3 {
                             //Goes back to 6210 for strike
                             println()
-                            a[(frameNumber * player, ball)] = pinsDown
+                            a[frameNumber * player, ball] = pinsDown
                         } else {
-                            //score[(frame * player, ball)] = pinsDown - previousPinsDown
+                            //score[frame * player, ball] = pinsDown - previousPinsDown
                             //Bug? this will always be zero for ball 2, which will then be set to pins down on next ball
                         }
                     }
                 }
                 
-                a[(frameNumber * player, 3)] = frameResult
+                a[frameNumber * player, 3] = frameResult
             }
         
             //Line 7200
@@ -156,14 +154,14 @@ class Bowling: GameProtocol {
 //        for p in 1...numberOfPlayers {
 //            for i in 1...3 {
 //                for j in 1...10 {
-//                    print(tab((j-1)*4), a[(j * p, i)])  //Old score
+//                    print(tab((j-1)*4), a[j * p, i])  //Old score
 //                }
 //                println()
 //            }
 //            println()
 //        }
         
-        score.forEach { scoreByFrame in
+        scores.forEach { scoreByFrame in
             let frameNumbers = scoreByFrame.keys.sorted()
             frameNumbers.forEach { print(tab(($0-1)*4), scoreByFrame[$0]?.ball1 ?? 0) }
             println()
@@ -175,18 +173,9 @@ class Bowling: GameProtocol {
         
         wait(.short)
         
-        //Lines 8460-8730
-        let response = Response(input("Do you want another game"))
-        switch response {
-        case .yes:
-            bowl(numberOfPlayers)
-        case .easterEgg:
-            showEasterEgg(.bowling)
-        default:
-            break
-        }
-        
-        end()
+        //TODO: score does not take into account spares and strikes
+        let maximumScore = (scores.map { score in score.values.reduce(0) { $0 + $1.total } }).max() ?? 0
+        if maximumScore > 95 { unlockEasterEgg(.bowling) }
     }
 }
 

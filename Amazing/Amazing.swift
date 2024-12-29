@@ -136,7 +136,6 @@ class Amazing: GameProtocol {
         case up
         case down
     }
-
         
     func run() {
         printHeader(title: "Amazing Program")
@@ -144,15 +143,14 @@ class Amazing: GameProtocol {
         var response = Response.yes
         repeat {
             println(3)
-            playGame()
+            play()
             response = Response(input("Run again"))
         } while response.isYes
         
-        if response == .easterEgg { showEasterEgg(.amazing) }
         end()
     }
     
-    private func playGame() {
+    private func play() {
         let (width, length) = getDimensions()
         println(3)
         
@@ -167,16 +165,17 @@ class Amazing: GameProtocol {
             consoleIO.printHardcopy()
             wait(.long)
         }
+        
+        if width > 4 { unlockEasterEgg(.amazing) }
     }
     
     private func getDimensions() -> (width: Int, height: Int) {
         wait(.short)
-        let response = input("What are your width and length")
-        let components = response.components(separatedBy: CharacterSet.decimalDigits.inverted)
-        guard components.count > 1, let first = components.first, let last = components.last, let width = Int(first), let height = Int(last), width > 0, height > 0 else {
+        guard let (width, height): (Int, Int) = input("What are your width and length"), width > 0, height > 0 else {
             println("Meaningless dimensions.  Try Again.")
             return getDimensions()
         }
+        
         guard width <= MaximumWidth, height <= MaximumLength else {
             println("Maximum dimensions \(MaximumWidth) x \(MaximumLength).  Try Again.")
             return getDimensions()

@@ -10,7 +10,7 @@ import Foundation
 
 class Ftball: GameProtocol {
     
-    private enum Play: Int {
+    private enum Play: Int, CustomStringConvertible {
         case simpleRun = 1
         case trickyRun = 2
         case shortPass = 3
@@ -19,7 +19,7 @@ class Ftball: GameProtocol {
         case quickKick = 6
         case placeKick = 7
         
-        var stringValue: String {
+        var description: String {
             switch self {
             case .simpleRun: return "simple run"
             case .trickyRun: return "tricky run"
@@ -65,8 +65,8 @@ class Ftball: GameProtocol {
         println(3)
         println("This is Dartmouth championship football.")
         println("You will quarterback Dartmouth. Call plays as follows:")
-        println(([Play.simpleRun, .trickyRun, .shortPass].map { "\($0.rawValue)" + "= " + $0.stringValue }).joined(separator: "; ") + ";")
-        println(([Play.longPass, .punt, .quickKick, .placeKick].map { "\($0.rawValue)" + "= " + $0.stringValue }).joined(separator: "; ") + ".")
+        println(([Play.simpleRun, .trickyRun, .shortPass].map { "\($0.rawValue)" + "= \($0)" }).joined(separator: "; ") + ";")
+        println(([Play.longPass, .punt, .quickKick, .placeKick].map { "\($0.rawValue)" + "= \($0)" }).joined(separator: "; ") + ".")
         println()
         teams.append(input("Choose your opponent"))
         
@@ -155,10 +155,8 @@ class Ftball: GameProtocol {
             //Line 910
             println("End of game***")
             println("Final score:  " + teams[0] + " \(score[0])" + "  " + teams[1] + " \(score[1])")
-            wait(.long)
-            if score[0] > score[1] {
-                showEasterEgg(.ftball)
-            }
+            wait(.short)
+            if score[0] > score[1] { unlockEasterEgg(.ftball) }
             end()
         }
         
@@ -172,7 +170,7 @@ class Ftball: GameProtocol {
         let play = p == 1 ? getOpponentsPlay() : getUserPlay()
         
         f = 0  //Line 1010 - reset fumble
-        print(play.stringValue + ".  ")
+        print("\(play).  ")
         let r = rnd(1) * (0.98 + Double(fnf()) * 0.02)
         switch play {
         case .simpleRun:

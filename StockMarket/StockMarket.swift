@@ -147,10 +147,6 @@ class StockMarket: GameProtocol {
                 stop()
                 return
             }
-            if cash > 20000, response == Response.easterEggCode {
-                showEasterEgg(.stockMarket)
-                wait(.long)
-            }
         }
         
         getTransactions()
@@ -174,6 +170,8 @@ class StockMarket: GameProtocol {
 
         isFirstDay = false
         println(2)
+        
+
         nextDay()
     }
     
@@ -307,6 +305,8 @@ class StockMarket: GameProtocol {
     
     private func stop() {
         println("Hope you had fun!!")
+        wait(.short)
+        if cash > 20000 { unlockEasterEgg(.stockMarket) }
         end()
     }
 }

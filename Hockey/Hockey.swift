@@ -82,10 +82,10 @@ class Hockey: GameProtocol {
         //10 REM ROBERT PUOPOLO ALG. 1 140 MCCOWAN 6/7/73 HOCKEY
         println(3)
         promptForInstructions()
-        playGame()
+        play()
     }
     
-    private func playGame() {
+    private func play() {
         let (teamA, teamB, duration) = getTeamsAndDuration()
         let referee = input("Input the referee for this game")  //R$
         println()
@@ -194,8 +194,8 @@ class Hockey: GameProtocol {
         println("\(teamA.name): \(teamA.shots)")
         println("\(teamB.name): \(teamB.shots)")
 
-        wait(.long)
-        showEasterEgg(.hockey)
+        wait(.short)
+        unlockEasterEgg(.hockey)
         end()
     }
     

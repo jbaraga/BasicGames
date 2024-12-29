@@ -73,14 +73,11 @@ class Pizza: GameProtocol {
             response = Response(input("Do you want to deliver more pizzas"))
         } while response.isYes
         
-        if response == .easterEgg {
-            showEasterEgg(.pizza)
-        }
-        
         println()
         println("O.K. \(name), see you later!")
         println()
-        
+        wait(.short)
+        unlockEasterEgg(.pizza)
         end()
     }
     

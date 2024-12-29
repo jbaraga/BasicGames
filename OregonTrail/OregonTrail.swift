@@ -53,21 +53,21 @@ class OregonTrail: GameProtocol {
         printHeader(title: Game.oregonTrail.title)
         println(2)
         
-        var response = ""
+        var response = Response.other
         repeat {
-            response = input("Do you need instructions (Yes/No)")
+            response = Response(input("Do you need instructions (yes/no)"))
             if response.isYes {
                 println()
                 showInstructions()
                 wait(.long)
             }
-        } while !(response.isNo || response.isYes)
+        } while response == .other
         
-        playGame()
+        play()
     }
         
     //MARK: Main program
-    private func playGame() {
+    private func play() {
         //Initialize game
         var animals = 0  //A - amount spent on animals
         var ammunition = 0  //B - ammount spent on ammunition
@@ -754,7 +754,8 @@ class OregonTrail: GameProtocol {
             println()
             println("       at your new home")
             
-            stop(true)
+            unlockEasterEgg(.oregonTrail)
+            stop()
         }
 
         //Illness subroutine, lines 6290-6460
@@ -926,8 +927,7 @@ class OregonTrail: GameProtocol {
         println("           Sincerely")
         println()
         println("   The Oregon City Chamber of Commerce")
-
-        stop(false)
+        stop()
     }
         
     //Shooting subroutine, lines 6130-6280.
@@ -959,24 +959,9 @@ class OregonTrail: GameProtocol {
         return responseTime
     }
     
-    private func stop(_ isSuccessful: Bool = false) {
-        println()
-        println("Run complete.")
-        wait(.long)
-        
-        //Added option to run again
-        println(4)
-        let response = input("Run again")
-        
-        if response.isEasterEgg, isSuccessful {
-            showEasterEgg(.oregonTrail)
-        }
-        
-        if response.isYes {
-            playGame()
-        } else {
-            end()
-        }
+    private func stop() {
+        wait(.short)
+        end("Run complete.")
     }
     
     //6470 REM ***IDENTIFICATION OF VARIABLES IN THE PROGRAM***

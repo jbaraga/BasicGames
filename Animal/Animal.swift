@@ -140,6 +140,7 @@ class Animal: GameProtocol {
     
     //Bonus save feature
     private func stop() {
+        let count = a$.count
         let response = Response(input("Do you want to save the animal list"))
         switch response {
         case .yes:
@@ -147,15 +148,12 @@ class Animal: GameProtocol {
             println("Animal list saved.")
         case .no:
             reset()
-        case .easterEgg:
-            if a$.count > 10 {
-                showEasterEgg(.animal)
-            }
         default:
             break
         }
         
         wait(.short)
+        if count > 4 { unlockEasterEgg(.animal) }
         end()
     }
     

@@ -8,6 +8,7 @@
 import Foundation
 
 class AceyDucey: GameProtocol {
+
     private var q = 100 //Total dollars
     
     func run() {
@@ -23,23 +24,20 @@ class AceyDucey: GameProtocol {
         
         var response = Response.yes
         repeat {
-            playGame()
+            play()
             wait(.long)
             response = Response(input("Try again (yes or no)"))
         } while response.isYes
-        
-        if response == .easterEgg {
-            showEasterEgg(.aceyDucey)
-        }
         end()
     }
     
     //Lines 110-1010
-    private func playGame() {
+    private func play() {
         q = 100
         while q > 0 {
             println("You now have \(q) dollars")
             println()
+            if q >= 200 { unlockEasterEgg(.aceyDucey) }
             playHand()
         }
         

@@ -37,19 +37,13 @@ class LEM: GameProtocol {
         printIOstatements()
         
         var response = Response.yes
-        var success = false
         repeat {
-            success = performLanding()
-            wait(.long)
+            wait(.short)
             println()
             response = Response(input("Do you want to try it again (yes/no)"))
             isNewPilot = false
             selectInstructions()
         } while response.isYes
-        
-        if success, response == .easterEgg {
-            showEasterEgg(.lem)
-        }
         
         println("Too bad, the space program hates to lose experienced")
         println("astronauts.")
@@ -164,7 +158,7 @@ class LEM: GameProtocol {
     }
     
     //Lines 10-1085
-    private func performLanding() -> Bool {
+    private func performLanding() {
         //Lines 10-130
         var m = 17.95  //M
         let f1 = 5.25  //F1
@@ -293,7 +287,7 @@ class LEM: GameProtocol {
                 if t1 == 0 {
                     //Lines 1090-1095
                     println("Mission Abended")
-                    return false
+                    return
                 }
             } else {
                 t1 = 20
@@ -387,10 +381,8 @@ class LEM: GameProtocol {
             println("Tranquility Base here -- the Eagle has landed")
             println("Congratulations -- there was no spacecraft damage")
             println("You may now proceed with surface exploration")
-            return true
+            unlockEasterEgg(.lem)
         }
-        
-        return false
     }
     
     //Lines 1150-1210

@@ -107,15 +107,13 @@ class Bullseye: GameProtocol {
                 println(player + " scored \(score) points.")
             }
         }
+        
         wait(.short)
         println()
         println("Thanks for the game.")
         println()
         
-        if Response(pauseForEnter()) == .easterEgg {
-            showEasterEgg(.bullseye)
-        }
-        
+        unlockEasterEgg(.bullseye)
         end()
     }
 }

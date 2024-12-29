@@ -10,7 +10,7 @@ import Foundation
 
 class Football: GameProtocol {
     
-    private enum Play: Int, CaseIterable {
+    private enum Play: Int, CaseIterable, CustomStringConvertible {
         case pitchout = 1
         case tripleReverse = 2
         case draw = 3
@@ -32,7 +32,7 @@ class Football: GameProtocol {
         case razzleDazzle = 19
         case bomb = 20
         
-        var stringValue: String {
+        var description: String {
             switch self {
             case .pitchout: return "Pitchout"
             case .tripleReverse: return "Triple Reverse"
@@ -62,11 +62,11 @@ class Football: GameProtocol {
         }
     }
     
-    enum Team: Int {
+    enum Team: Int, CustomStringConvertible {
         case one = 1
         case two = 2
         
-        var stringValue: String {
+        var description: String {
             switch self {
             case .one: return "Team 1"
             case .two: return "Team 2"
@@ -181,7 +181,7 @@ class Football: GameProtocol {
         println()
         for (index, play) in plays1.enumerated() {
             print(" \(index + 1)")
-            println(tab(6), play.stringValue)
+            println(tab(6), play)
         }
         println(13)
         println("Tear off here" + String(repeating: "-", count: 46))
@@ -191,7 +191,7 @@ class Football: GameProtocol {
         println()
         for (index, play) in plays2.enumerated(){
             print(" \(index + 1)")
-            println(tab(6), play.stringValue)
+            println(tab(6), play)
         }
         println(11)
         println("Tear off here" + String(repeating: "-", count: 46))
@@ -208,7 +208,7 @@ class Football: GameProtocol {
         p = team.x - team.y * 40
         printDivider()
         println()
-        println(team.stringValue + " receives kick-off")
+        println("\(team) receives kick-off")
         let k = Int(26 * rnd(1) + 40)
         receiveBall(k: k)
     }
@@ -234,7 +234,7 @@ class Football: GameProtocol {
     
     //Lines 830-870
     private func fieldBall() {
-        let response = input(team.stringValue + " do you want to runback")
+        let response = input("\(team) do you want to runback")
         if response.isYes {
             returnBall()
         } else {
@@ -254,7 +254,7 @@ class Football: GameProtocol {
         while d < 5 {
             wait(.short)
             println(String(repeating: "=", count: 68))
-            println(team.stringValue + " Down \(d) on \(p)")
+            println("\(team) Down \(d) on \(p)")
             
             if d == 1 {
                 c = team.y * (p + team.y * 10) < team.x ? 4 : 8
@@ -292,7 +292,7 @@ class Football: GameProtocol {
                     let u = Int(4 * rnd(1) - 1) //Line 930 - changed 3 to 4 to increase odds of completion
                     //Line 1020
                     if u == 0 {
-                        println("Pass incomplete " + team.stringValue)
+                        println("Pass incomplete \(team)")
                         advanceBall(yards: 0, s: s)
                     } else {
                         if rnd(1) > 0.5 || y <= 2 {  //Original code has rnd(1) > 0.025 - means QB scrambled most plays. Changed to 0.5 o/w almost no pass completions
@@ -311,7 +311,7 @@ class Football: GameProtocol {
         
         //Lines 1160-1170 4th down fallthrough
         println()
-        println("Conversion unsuccessful " + team.stringValue)
+        println("Conversion unsuccessful \(team)")
         team.swap()
         println()
         printDivider()
@@ -373,7 +373,7 @@ class Football: GameProtocol {
     //Lines 1080-1100
     private func fumble() {
         println()
-        println("** Loss of possession from " + team.stringValue + " to " + team.otherTeam.stringValue)
+        println("** Loss of possession from \(team) to \(team.otherTeam)")
         printDivider()
         team.swap()
         fieldBall()
@@ -381,7 +381,7 @@ class Football: GameProtocol {
     
     //Lines 1180-1195
     private func puntOrFieldGoal() -> Bool {
-        let response = input("Does " + team.stringValue + " want to punt")
+        let response = input("Does \(team) want to punt")
         switch response {
         case _ where response.isYes:
             punt()
@@ -396,7 +396,7 @@ class Football: GameProtocol {
     //Lines 1190-1195
     private func punt() {
         println()
-        println(team.stringValue + " will punt")
+        println("\(team) will punt")
         if rnd(1) < 0.025 {
             fumble()
             return
@@ -412,12 +412,12 @@ class Football: GameProtocol {
     
     //Lines 1200-1271, 1640-1750
     private func fieldGoal() -> Bool {
-        let response = input("Does " + team.stringValue + " want to attempt a field goal")
+        let response = input("Does \(team) want to attempt a field goal")
         switch response {
         case _ where response.isYes:
             //Line 1640
             println()
-            println(team.stringValue + " will attempt a field goal")
+            println("\(team) will attempt a field goal")
             if rnd(1) < 0.025 {
                 fumble()
                 return true
@@ -434,7 +434,7 @@ class Football: GameProtocol {
                 if g < 0.35 {
                     println("Ball went wide")
                 }
-                println("Field goal unsuccessful " + team.stringValue + String(repeating: "-", count: 17) + "Too bad")
+                println("Field goal unsuccessful \(team)" + String(repeating: "-", count: 17) + "Too bad")
                 println()
                 printDivider()
                 
@@ -451,7 +451,7 @@ class Football: GameProtocol {
                 }
             } else {
                 //Line 1710 - successful
-                println("Field goal good for " + team.stringValue + String(repeating: "*", count: 21) + "Yea")
+                println("Field goal good for \(team)" + String(repeating: "*", count: 21) + "Yea")
                 recordScore(3)
             }
             return true
@@ -465,10 +465,10 @@ class Football: GameProtocol {
     //Lines 1230-1290
     private func safety() {
         println()
-        println("Safety against " + team.stringValue + String(repeating: "*", count: 21) + "Oh-oh")
+        println("Safety against \(team)" + String(repeating: "*", count: 21) + "Oh-oh")
         pointsByTeam[team.otherTeam] = (pointsByTeam[team.otherTeam] ?? 0) + 2
         printScore()
-        let response = input(team.stringValue + " do you want to punt instead of kickoff")
+        let response = input("\(team) do you want to punt instead of kickoff")
         p = team.z - team.w * 20
         if response.isYes {
             punt()
@@ -482,7 +482,7 @@ class Football: GameProtocol {
     //Lines 1320-1380
     private func touchdown() {
         println()
-        println("Touchdown by " + team.stringValue + String(repeating: "*", count: 21) + "Yea team")
+        println("Touchdown by \(team)" + String(repeating: "*", count: 21) + "Yea team")
         let q = rnd(1) > 0.1 ? 7 : 6
         println(q == 7 ? "Extra point good" : "Extra point no good")
         recordScore(q)
@@ -502,7 +502,7 @@ class Football: GameProtocol {
         let r = Int((Double(team.x - team.y * p + 25) * rnd(1) - 15) / Double(k))
         p = p - team.w * r
         println()
-        println("Runback " + team.stringValue + " \(r) yards")
+        println("Runback \(team) \(r) yards")
         
         if rnd(1) < 0.025 {
             fumble()
@@ -528,15 +528,12 @@ class Football: GameProtocol {
             fatalError("Missing score")
         }
         println()
-        println(Team.one.stringValue + " score is \(score1)")
-        println(Team.two.stringValue + " score is \(score2)")
+        println("\(Team.one) score is \(score1)")
+        println("\(Team.two) score is \(score2)")
         
         if let score = pointsByTeam[team], score >= maximumPoints {
-            println(team.stringValue + " WINS" + String(repeating: "*", count: 20))
-            wait(.long)
-            if maximumPoints >= 30 {
-                showEasterEgg(.football)
-            }
+            println("\(team) WINS" + String(repeating: "*", count: 20))
+            unlockEasterEgg(.football)
             end()
         }
     }
@@ -576,11 +573,6 @@ class Football: GameProtocol {
         println("try and gain yardage.  Answer all questions yes or no.")
         println("The game is played until players terminate (control-c).")
         println("Please prepare a tape and run.")
-        println()
-        let response = input("Hit enter to run", terminator: "")
-        if response.isEasterEgg {
-            showEasterEgg(.football)
-            end()
-        }
+        pauseForEnter()
     }
 }

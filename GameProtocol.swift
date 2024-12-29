@@ -8,7 +8,7 @@
 import AppKit
 
 /*
- BASIC observations:
+ BASIC behavior:
  INT(_:) - rounds Double values in most cases.
  PRINT(_:); - the semicolon suppresses new line. Numeric values are padded with a space before and after
  PRINT(_, _, _) - multiple items separated by column are printed at successive tab stops. Default tab stop is 14
@@ -19,8 +19,8 @@ protocol GameProtocol {
 }
 
 extension GameProtocol {    
-    var consoleIO: ConsoleIO { ConsoleIO.shared}
-        
+    var consoleIO: ConsoleIO { ConsoleIO.shared }
+    
     /// BASIC Sign function
     /// - Parameter x: Integer
     /// - Returns: -1 if x is negative, 0 if x is 0, 1 if x is positive
@@ -61,7 +61,7 @@ extension GameProtocol {
         return .init(position: x)
     }
     
-    /// Prints string representation String(item) of multiple items at successive tab stops
+    /// Prints string representation of multiple items at successive tab stops
     /// - Parameters:
     ///   - items: Comma separated items to print, item must be Tab or conform to LosslessStringConvertible protocol. For variable tab, insert specified tab stop as item between each item to print, e.g. item1, tab(12), item2, tab(18), item3
     ///   - tabInterval: interval between tab  stops if not specified by tab(n) between LosslessStringConvertible items
@@ -69,14 +69,13 @@ extension GameProtocol {
         var tabStop = 0
         for (index, item) in items.enumerated() {
             switch item {
-            case let item as LosslessStringConvertible:
-                let string = String(item)
+            case let item as CustomStringConvertible:
                 if index + 1 < items.count, items[index + 1] is ConsoleIO.Tab {
-                    consoleIO.print(string)
+                    consoleIO.print(item.description)
                 } else {
                     if tabStop > 0 { consoleIO.print(tab: tab(tabStop)) }
                     tabStop += tabInterval
-                    consoleIO.print(string)
+                    consoleIO.print(item.description)
                 }
             case let item as ConsoleIO.Tab:
                 consoleIO.print(tab: item)
@@ -141,30 +140,40 @@ extension GameProtocol {
     /// - Parameters:
     ///   - message: Prompt message
     ///   - terminator: If specified, replaces default prompt character (?)
-    /// - Returns: Optional 2 values from entered string representation, separated by comma or whitespace
+    /// - Returns: Optionally 2 values from entered string representation, separated by comma or whitespace
     func input<T>(_ message: String, terminator: String? = nil) -> (T, T)? where T: LosslessStringConvertible {
         consoleIO.print(message)
         let stringValues = (input(terminator: terminator).components(separatedBy: CharacterSet(charactersIn: " ,")).compactMap { $0.trimmingCharacters(in: .whitespaces) }).filter { !$0.isEmpty }
         guard stringValues.count == 2, let value1 = T(stringValues[0]), let value2 = T(stringValues[1]) else { return nil }
         return (value1, value2)
     }
-        
+    
+    /// Gets keyboard input after printing message
+    /// - Parameters:
+    ///   - message: Prompt message
+    ///   - terminator: If specified, replaces default prompt character (?)
+    /// - Returns: 2 optional values from entered string representation, separated by comma or whitespace
+    func input<T>(_ message: String, terminator: String? = nil) -> (T?, T?) where T: LosslessStringConvertible {
+        consoleIO.print(message)
+        let stringValues = (input(terminator: terminator).components(separatedBy: CharacterSet(charactersIn: " ,")).compactMap { $0.trimmingCharacters(in: .whitespaces) }).filter { !$0.isEmpty }
+        switch stringValues.count {
+        case 0: return (nil, nil)
+        case 1: return (T(stringValues[0]), nil)
+        default: return (T(stringValues[0]), T(stringValues[1]))
+        }
+    }
+
     @discardableResult
     func pauseForEnter() -> String {
         return consoleIO.pauseForEnter()
     }
     
-    func showEasterEgg(_ game: Game) {
-        consoleIO.wait(.short)
-        println()
-        println("Opening Easter Egg!!!!!!!!")
-        consoleIO.wait(.short)
-        
-        guard let url = URL(string: URL.basicGamesScheme + "://" + game.pdfString) else { return }
+    func unlockEasterEgg(_ game: Game) {
+        guard let url = game.unlockURL else { return }
         NSWorkspace.shared.open(url)
     }
     
-    func end() -> Never {
-        consoleIO.close()
+    func end(_ message: String? = nil) -> Never {
+        consoleIO.close(message)
     }
 }

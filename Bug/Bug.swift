@@ -25,7 +25,7 @@ class Bug: GameProtocol {
         }
     }
     
-    private enum BodyPart: Int, CaseIterable {
+    private enum BodyPart: Int, CaseIterable, CustomStringConvertible {
         case body = 1
         case neck = 2
         case head = 3
@@ -33,7 +33,7 @@ class Bug: GameProtocol {
         case tail = 5
         case leg = 6
         
-        var stringValue: String {
+        var description: String {
             switch self {
             case .body: return "Body"
             case .neck: return "Neck"
@@ -47,7 +47,7 @@ class Bug: GameProtocol {
         var instructionStringValue: String {
             switch self {
             case .body, .neck, .head, .tail:
-                return stringValue
+                return description
             case .feeler:
                 return "Feelers"
             case .leg:
@@ -58,7 +58,7 @@ class Bug: GameProtocol {
         var rollResultStringValue: String {
             switch self {
             case .body, .neck, .head, .tail, .leg:
-                return stringValue
+                return description
             case .feeler:
                 return "Feelers"
             }
@@ -110,7 +110,7 @@ class Bug: GameProtocol {
             case .neck:
                 if isMissing(part) {
                     if let requiredPart = part.prerequistePart, isMissing(requiredPart) {
-                        return "\(player.pronoun) do not have a \(requiredPart.stringValue)."
+                        return "\(player.pronoun) do not have a \(requiredPart)."
                     } else {
                         parts[part] = (parts[part] ?? 0) + 1
                         return "\(player.pronoun) now have a neck."
@@ -120,7 +120,7 @@ class Bug: GameProtocol {
                 }
             case .head:
                 if let requiredPart = part.prerequistePart, isMissing(requiredPart) {
-                    return player.pronoun + " do not have a \(requiredPart.stringValue)."
+                    return player.pronoun + " do not have a \(requiredPart)."
                 } else {
                     if isMissing(part) {
                         parts[part] = (parts[part] ?? 0) + 1
@@ -131,7 +131,7 @@ class Bug: GameProtocol {
                 }
             case .feeler:
                 if let requiredPart = part.prerequistePart, isMissing(requiredPart) {
-                    return "\(player.pronoun) do not have a \(requiredPart.stringValue)."
+                    return "\(player.pronoun) do not have a \(requiredPart)."
                 } else {
                     if isMissing(part) {
                         parts[part] = (parts[part] ?? 0) + 1
@@ -142,7 +142,7 @@ class Bug: GameProtocol {
                 }
             case .tail:
                 if let requiredPart = part.prerequistePart, isMissing(requiredPart) {
-                    return "\(player.pronoun) do not have a \(requiredPart.stringValue)."
+                    return "\(player.pronoun) do not have a \(requiredPart)."
                 } else {
                     if isMissing(part) {
                         parts[part] = (parts[part] ?? 0) + 1
@@ -154,7 +154,7 @@ class Bug: GameProtocol {
             case . leg:
                 if isMissing(part) {
                     if let requiredPart = part.prerequistePart, isMissing(requiredPart) {
-                        return "\(player.pronoun) do not have a \(requiredPart.stringValue)."
+                        return "\(player.pronoun) do not have a \(requiredPart)."
                     } else {
                         let l = (parts[part] ?? 0) + 1
                         parts[part] = l
@@ -200,7 +200,7 @@ class Bug: GameProtocol {
             wait(.long)
         }
         
-        playGame()
+        play()
     }
     
     //Lines 120-290
@@ -220,7 +220,7 @@ class Bug: GameProtocol {
             let partName: String
             switch part {
             case .body, .neck, .head, .tail:
-                partName = part.stringValue
+                partName = part.description
             case .feeler:
                 partName = "Feelers"
             case .leg:
@@ -233,7 +233,7 @@ class Bug: GameProtocol {
     }
     
     //MARK: Play game
-    private func playGame() {
+    private func play() {
         var yourBug = LadyBug(player: .user)
         var myBug = LadyBug(player: .computer)
         
@@ -290,10 +290,8 @@ class Bug: GameProtocol {
         
         wait(.long)
         println("I hope you enjoyed the game, play it again soon!!")
-        wait(.long)
-        if yourBug.isComplete {
-            showEasterEgg(.bug)
-        }
+        
+        if yourBug.isComplete { unlockEasterEgg(.bug) }
         end()
     }
     

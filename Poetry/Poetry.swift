@@ -51,14 +51,9 @@ class Poetry: GameProtocol {
         u = 0
         k = 0
         
-        let response = Response(pauseForEnter())
-        if response == .easterEgg {
-            showEasterEgg(.poetry)
-            end()
-        } else {
-            printPhrase(groupIndex: 1, phraseIndex: i)
-            printNextPhrase()
-        }
+        wait(.short)
+        unlockEasterEgg(.poetry)
+        end()
     }
     
     private func printPhrase(groupIndex: Int, phraseIndex: Int) {

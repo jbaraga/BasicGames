@@ -19,22 +19,19 @@ struct TerminalViewRepresentable: NSViewRepresentable {
     
     @ObservedObject private var settings = Preferences.shared
         
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
+    func makeCoordinator() -> Coordinator { .init() }
     
     func makeNSView(context: Context) -> GameTerminalView {
         let terminalView = GameTerminalView(frame: frame)
         guard let path = Bundle.main.path(forResource: game.executableName, ofType: nil) else {
             return terminalView
         }
-        terminalView.nativeForegroundColor = settings.foregroundColor
-        terminalView.caretColor = settings.foregroundColor
-        terminalView.caretTextColor = settings.foregroundColor
+        terminalView.hasFocus = true  //For proper rendering of cursor outline
+        terminalView.foregroundColor = settings.foregroundColor
         terminalView.nativeBackgroundColor = .terminalBackground
-        let terminal = terminalView.getTerminal()
-        terminal.setCursorStyle(settings.isBlinkingCursor ? .blinkBlock : .steadyBlock)
-        context.coordinator.terminal = terminal
+        terminalView.setCursorStyle(style: settings.cursorStyle)
+
+        context.coordinator.terminal = terminalView.getTerminal()
         terminalView.delegate = context.coordinator
         
         Task {
@@ -48,30 +45,14 @@ struct TerminalViewRepresentable: NSViewRepresentable {
     
     func updateNSView(_ nsView: GameTerminalView, context: Context) {
         if isTerminated { nsView.terminateProcess() }
-        
-        if nsView.nativeForegroundColor != settings.foregroundColor {
-            nsView.nativeForegroundColor = settings.foregroundColor
-            nsView.caretColor = settings.foregroundColor
-            nsView.caretTextColor = settings.foregroundColor
-            nsView.send(txt: " " + .deleteCharacter)  //Forces refresh of text in TerminalView
-        }
+        nsView.foregroundColor = settings.foregroundColor
+        nsView.setCursorStyle(style: settings.cursorStyle)
     }
     
-    internal class Coordinator: NSObject, GameTerminalViewDelegate {
-        var parent: TerminalViewRepresentable
+    internal class Coordinator: GameTerminalViewDelegate {
         weak var terminal: Terminal?
                 
-        init(_ parent: TerminalViewRepresentable) {
-            self.parent = parent
-            super.init()
-                        
-            NotificationCenter.default.addObserver(forName: .cursorSettingDidChange, object: nil, queue: .main) { [weak self] notification in
-                guard let self else { return }
-                terminal?.setCursorStyle(Preferences.shared.isBlinkingCursor ? .blinkBlock: .steadyBlock)
-            }
-        }
-                        
-        //GameTerminalViewDelegate
+       //GameTerminalViewDelegate
         func sizeChanged(source: GameTerminalView, newCols: Int, newRows: Int) {
             return
         }
@@ -85,7 +66,6 @@ struct TerminalViewRepresentable: NSViewRepresentable {
         }
         
         func processTerminated(source: SwiftTerm.TerminalView, exitCode: Int32?) {
-            terminal?.setCursorStyle(.steadyBar)
             terminal?.hideCursor()
         }
     }
@@ -112,7 +92,7 @@ struct GameView: View {
             guard let window = notification.object as? NSWindow, window.title == game.title else {
                 return
             }
-            isTerminated = true
+            isTerminated = true  //Process is not killed for user window close
         }
     }
     
@@ -121,7 +101,7 @@ struct GameView: View {
             contentView
                 .onKeyPress(.init("c"), phases: .down) { keyPress in
                     guard keyPress.modifiers == [.control] else { return .ignored }
-                    DistributedNotificationCenter.default().post(name: .break, object: nil)
+                    DistributedNotificationCenter.default().post(name: .terminalCommand, object: TerminalCommands.break.rawValue)
 //                    isTerminated = true
                     return .handled
                 }
@@ -132,11 +112,23 @@ struct GameView: View {
 }
 
 
-//Duplicate of LocalProcessTerminalView, with additional access to the LocalProcess, allowing for termination
+//Duplicate of LocalProcessTerminalView, with additional access to the LocalProcess for termination function
 class GameTerminalView: TerminalView, TerminalViewDelegate, LocalProcessDelegate {
     private var process: LocalProcess!
     
     public var delegate: GameTerminalViewDelegate?
+    
+    public var foregroundColor: NSColor {
+        get {
+            return nativeForegroundColor
+        }
+        set {
+            if newValue == nativeForegroundColor { return }
+            nativeForegroundColor = newValue
+            caretColor = newValue
+            caretTextColor = newValue
+        }
+    }
         
     public override init (frame: CGRect) {
         super.init (frame: frame)
@@ -153,6 +145,13 @@ class GameTerminalView: TerminalView, TerminalViewDelegate, LocalProcessDelegate
         process = LocalProcess (delegate: self)
     }
     
+    /**
+     * Launches a child process inside a pseudo-terminal.
+     * - Parameter executable: The executable to launch inside the pseudo terminal, defaults to /bin/bash
+     * - Parameter args: an array of strings that is passed as the arguments to the underlying process
+     * - Parameter environment: an array of environment variables to pass to the child process, if this is null, this picks a good set of defaults from `Terminal.getEnvironmentVariables`.
+     * - Parameter execName: If provided, this is used as the Unix argv[0] parameter, otherwise, the executable is used as the args [0], this is used when the intent is to set a different process name than the file that backs it.
+     */
     public func startProcess(executable: String = "/bin/bash", args: [String] = [], environment: [String]? = nil, execName: String? = nil) {
         process.startProcess(executable: executable, args: args, environment: environment, execName: execName)
     }
@@ -180,7 +179,6 @@ class GameTerminalView: TerminalView, TerminalViewDelegate, LocalProcessDelegate
         return winsize(ws_row: UInt16(terminal.rows), ws_col: UInt16(terminal.cols), ws_xpixel: UInt16 (f.width), ws_ypixel: UInt16 (f.height))
     }
 
-    
     //TerminalViewDelegate
     func sizeChanged(source: SwiftTerm.TerminalView, newCols: Int, newRows: Int) {
         guard process.running else { return }
@@ -251,4 +249,50 @@ protocol GameTerminalViewDelegate {
     func processTerminated (source: TerminalView, exitCode: Int32?)
 }
 
+
+extension SwiftTerm.CursorStyle: Codable, @retroactive CaseIterable {
+    enum CodingKeys: String, CodingKey {
+        case shape
+        case isBlinking
+    }
+
+    public func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(shape, forKey: .shape)
+        try container.encode(isBlinking, forKey: .isBlinking)
+    }
+    
+    public init(from decoder: any Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let shape = try values.decode(String.self, forKey: .shape)
+        let isBlinking = try values.decode(Bool.self, forKey: .isBlinking)
+        try self.init(shape: shape, isBlinking: isBlinking)
+    }
+    
+    public static var allCases: [CursorStyle] { [.blinkBlock, .steadyBlock, .blinkBar, .steadyBar, .blinkUnderline, .steadyUnderline] }
+}
+
+extension SwiftTerm.CursorStyle {
+    var shape: String {
+        switch self {
+        case .blinkBlock, .steadyBlock: return "Block"
+        case .blinkUnderline, .steadyUnderline: return "Underline"
+        case .blinkBar, .steadyBar: return "Bar"
+        }
+    }
+    
+    var isBlinking: Bool {
+        switch self {
+        case .blinkBlock, .blinkUnderline, .blinkBar: return true
+        case .steadyBlock, .steadyUnderline, .steadyBar: return false
+        }
+    }
+    
+    static var allShapes: [String] { ["Block", "Underline", "Bar"] }
+    
+    init(shape: String, isBlinking: Bool) throws {
+        guard let style = Self.allCases.first(where: { $0.shape == shape && $0.isBlinking == isBlinking }) else { throw CocoaError(.coderInvalidValue) }
+        self = style
+    }
+}
 

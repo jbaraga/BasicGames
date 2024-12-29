@@ -38,12 +38,12 @@ class Awari: GameProtocol {
         wait(.short)
         
         while true {
-            playGame()
+            play()
         }
     }
     
     //20-95
-    private func playGame() {
+    private func play() {
         println(2)
         b = Array(repeating: 3, count: 14)
         b[6] = 0
@@ -62,11 +62,18 @@ class Awari: GameProtocol {
                 let _ = move(player: .user)
                 printBoard()
             }
-            if isEnd { gameOver() }
+            if isEnd {
+                gameOver()
+                return
+            }
             
             let (move1, result1) = move(player: .computer)
             print("My move is \(move1 + 1)")
-            if isEnd { gameOver() }
+            if isEnd {
+                gameOver()
+                return
+            }
+            
             if result1 == Player.computer.home {
                 let (move2, _) = move(player: .computer)
                 print(",\(move2 + 1)")
@@ -89,7 +96,7 @@ class Awari: GameProtocol {
                 println("Drawn game")
             } else {
                 println("You win by \(d) points")
-                if n == 1, d > 1 { showEasterEgg(.awari) }
+                if d > 2 { unlockEasterEgg(.awari) }
             }
         }
         

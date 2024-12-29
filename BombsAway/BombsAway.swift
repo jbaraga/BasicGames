@@ -11,8 +11,6 @@ import RegexBuilder
 
 class BombsAway: GameProtocol {
     
-    private var successes: Int = 0  //Added var for Easter Egg
-    
     func run() {
         printHeader(title: "Bombs Away")
         println(2)
@@ -24,11 +22,7 @@ class BombsAway: GameProtocol {
             response = Response(input("Another mission (y or n)"))
         } while response.isYes
         
-        if response == .easterEgg, successes > 1 {
-            showEasterEgg(.bombsAway)
-        } else {
-            println("Chicken !!!")
-        }
+        println("Chicken !!!")
         end()
     }
     
@@ -160,7 +154,7 @@ class BombsAway: GameProtocol {
     private func success() {
         println("Direct hit!!!! \(Int(100 * rnd())) killed.")
         println("Mission successful.")
-        successes += 1
+        unlockEasterEgg(.bombsAway)
     }
     
     //355 Added invalid input check

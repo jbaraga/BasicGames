@@ -19,8 +19,6 @@ extension Task where Success == Never, Failure == Never {
 }
 
 extension String {
-    static let deleteCharacter = String(UnicodeScalar(127))
-
     var isYes: Bool {
         return self.lowercased().hasPrefix("y")
     }
@@ -57,6 +55,7 @@ extension String {
     ///   - length: length of substring
     /// - Returns: String
     func mid(_ index: Int, length: Int) -> String {
+        guard index > 0, index <= self.count else { return "" }
         let range = String.Index(utf16Offset: index - 1, in: self)...String.Index(utf16Offset: index + length - 2, in: self)
         return String(self[range])
     }
@@ -67,16 +66,12 @@ extension String {
 enum Response {
     case yes
     case no
-    case easterEgg
     case other
-    
-    static let easterEggCode = 82964
     
     init(_ string: String) {
         switch string {
         case _ where string.isYes: self = .yes
         case _ where string.isNo: self = .no
-        case _ where string.isEasterEgg: self = .easterEgg
         default: self = .other
         }
     }
@@ -91,6 +86,14 @@ enum Response {
     
     var isYesOrNo: Bool {
         return isYes || isNo
+    }
+    
+    var code: Int {
+        switch self {
+        case .yes: return 1
+        case .no: return 0
+        case .other: return -1
+        }
     }
 }
 
@@ -118,12 +121,23 @@ extension FormatStyle where Self == BasicFormatStyle {
 
 //Improved subscripting notation for 2d array
 extension Array where Element == [Int] {
-    subscript(index: (Int, Int)) -> Element.Element {
+    subscript(_ row: Int, _ column: Int) -> Element.Element {
         get {
-            return self[index.0][index.1]
+            return self[row][column]
         }
         set {
-            self[index.0][index.1] = newValue
+            self[row][column] = newValue
+        }
+    }
+}
+
+extension Array where Element == [String] {
+    subscript(_ row: Int, _ column: Int) -> Element.Element {
+        get {
+            return self[row][column]
+        }
+        set {
+            self[row][column] = newValue
         }
     }
 }
@@ -149,10 +163,7 @@ func dim<T>(_ rows: Int, _ columns: Int, value: T) -> [[T]] {
 }
 
 extension Notification.Name {
-    static let terminalWindowWillClose = Notification.Name("com.starwaresoftware.basicGames.close")
-    static let `break` = Notification.Name("com.starwaresoftware.basicGames.break")
-    static let consoleWillPrint = Notification.Name("com.starwaresoftware.basicGames.print")
-    static let showEasterEgg = Notification.Name("com.starwaresoftware.basicGames.egg")
+    static let terminalCommand = Notification.Name("com.starwaresoftware.basicGames.terminalCommand")
 }
 
 
@@ -189,6 +200,19 @@ extension NSScreen {
     }
 }
 
+extension NSView {
+    func firstSubview<T>(ofType type: T.Type) -> T? {
+        for subview in subviews {
+            if let subview = subview as? T {
+                return subview
+            } else if let subview = subview.firstSubview(ofType: type) {
+                return subview
+            }
+        }
+        return nil
+    }
+}
+
 extension PDFDocument {
     static let pwd: String = {
         let data = Data([116, 75, 82, 107, 107, 66, 117, 71, 75, 68, 67, 114, 73, 57, 52, 87, 88, 70, 82, 88, 122, 72, 83, 114, 106, 52, 74, 78, 120, 65, 105])
@@ -214,3 +238,56 @@ extension ClosedRange<Int> {
         self = start...end
     }
 }
+
+
+
+/// ANSI/VT100 Terminal Control Escape Sequences
+/// "\u{1B}[" == Control Sequence Introducer
+/// SwiftTerm does not support all sequences
+/// break is special internal sequence, not part of ANSI specification
+/// https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
+public enum TerminalCommands: String, CaseIterable {
+    case reset = "\u{1B}[c"
+//    case foregroundColorGreen = "\u{1B}[32m"
+    case cursorPosition = "\u{1B}[6n"
+    case cursorHome = "\u{1B}[H"
+    case cursorForward = "\u{1B}[1C"
+    case cursorBack = "\u{1B}[1D"
+    case cursorSavePosition = "\u{1B}7"
+    case cursorRestorePosition = "\u{1B}8"
+    case delete = "\u{7F}"
+    case eraseToCursor = "\u{1B}[1K"
+    case eraseToEndOfLine = "\u{1B}[K"
+    case clearScreen = "\u{1B}[2J"
+    case printScreen = "\u{1B}[i"
+    case bell = "\u{7}"
+    case `break` = "\u{18}"  //ascii cancel, used internally
+    
+    var escapeSequence: String { return rawValue}
+    
+    var description: String {
+        switch self {
+        case .reset: return "Reset"
+//        case .foregroundColorGreen: return "Text Color Green"
+        case .cursorPosition: return "Cursor Position"
+        case .cursorHome: return "Cursor Home"
+        case .cursorForward: return "Cursor Forward"
+        case .cursorBack: return "Cursor Back"
+        case .cursorSavePosition: return "Cursor Save Position"
+        case .cursorRestorePosition: return "Cursor Restore Position"
+        case .delete: return "Delete"
+        case .eraseToCursor: return "Erase to Cursor"
+        case .eraseToEndOfLine: return "Erase to End of Line"
+        case .clearScreen: return "Clear"
+        case .printScreen: return "Print Screen"
+        case .bell: return "Bell"
+        case .break: return "Break"
+        }
+    }
+}
+
+extension TerminalCommands: Identifiable {
+    public var id: TerminalCommands { self }
+}
+
+

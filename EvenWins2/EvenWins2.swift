@@ -38,11 +38,12 @@ class EvenWins2: GameProtocol {
         }
         
         while true {
-            playGame()
+            play()
+            if userWins == 4 { unlockEasterEgg(.evenWins2) }
         }
     }
     
-    private func playGame() {
+    private func play() {
         //Line 70
         var a = 0  //Player's chips
         var b = 0 //Computer's chips
@@ -68,16 +69,16 @@ class EvenWins2: GameProtocol {
             e = a % 2  //Line 140
             l = p % 6  //Line 150
             
-            if r[(e,l)] < p {
+            if r[e,l] < p {
                 //Line 170 - removed extra code where m<=0, should never occur
-                let m = r[(e,l)]
+                let m = r[e,l]
                 p -= m
                 print("Computer takes \(m) chip\(m > 1 ? "s" : "") leaving \(p) ... Your move")
                 b += m
             } else {
                 //Line 320 - last move for computer
                 println("Computer takes \(p) chip\(p > 1 ? "s" : "").")
-                r[(e,l)] = p
+                r[e,l] = p
                 b += p
                 p = 0
             }
@@ -87,16 +88,9 @@ class EvenWins2: GameProtocol {
                 var m = -1
                 while m < 0 {
                     m = Int(input()) ?? -1
-                    
-                    if m == 82964 && userWins > 4 {
-                        showEasterEgg(.evenWins2)
-                        wait(.long)
-                        end()
-                    }
-                    
                     switch m {
                     case 0:
-                        wait(.long)
+                        wait(.short)
                         end()
                     case 1...(p < 4 ? p : 4):
                         break
@@ -118,12 +112,12 @@ class EvenWins2: GameProtocol {
             println("Game over ... you win!!!")
             //Line 390 - learning code, modifies computer move array
             //If computer loses, decrement losing move by 1; if this move was 1 chip, decrement previous move by 1 chip, r values should always be greater than zer0
-            if r[(e,l)] != 1 {
-                r[(e,l)] -= 1  //Line 400
+            if r[e,l] != 1 {
+                r[e,l] -= 1  //Line 400
             } else {
                 //Line 480
-                if r[(e1,l1)] != 1 {
-                    r[(e1,l1)] -= 1
+                if r[e1,l1] != 1 {
+                    r[e1,l1] -= 1
                 }
             }
         }

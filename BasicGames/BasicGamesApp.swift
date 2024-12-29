@@ -19,18 +19,11 @@ struct BasicGamesApp: App {
     @Environment(\.pixelLength) private var pixelLength
     @Environment(\.displayScale) private var displayScale
     
-    @FocusedValue(\.isWindowFocused) private var isWindowFocused
+    @FocusedValue(\.isWindowFocused) private var isTerminalWindowFocused
         
     var body: some Scene {
         WindowGroup(id: "Main") {
             GameLauncherView()
-                .onReceive(DistributedNotificationCenter.default().publisher(for: Notification.Name.showEasterEgg)) { notification in
-                    if let string = notification.object as? String {
-                        showPDF(with: string)
-                    }
-                }
-                .onOpenURL { url in showPDF(from: url) }
-                .handlesExternalEvents(preferring: ["*"], allowing: ["*"])
         }
         .defaultSize(width: 300, height: 500)
         .commands {
@@ -43,7 +36,12 @@ struct BasicGamesApp: App {
                 .keyboardShortcut(KeyEquivalent("P"), modifiers: [.shift, .command])
 
                 Button("Print...") {
-                    NSApp.keyWindow?.printWindow(nil)
+                    guard let contentView = NSApp.keyWindow?.contentView else { return }
+                    if let pdfView = contentView.firstSubview(ofType: PDFView.self) {
+                        pdfView.printView(nil)  //PDFView properly scales and formats pdf document for printing
+                    } else {
+                        contentView.printView(nil)
+                    }
                 }
                 .keyboardShortcut(KeyEquivalent("P"))
             }
@@ -54,19 +52,30 @@ struct BasicGamesApp: App {
             if let game {
                 GameView(game: game)
                     .focusedSceneValue(\.isWindowFocused, true)
+                    .onOpenURL { url in open(url: url) }
+                    .handlesExternalEvents(preferring: game.preferredSet, allowing: ["*"])
             }
         }
         .commands {
-            if #unavailable(macOS 14) {
-                CommandGroup(after: .printItem) {
-                    if isWindowFocused ?? false {
-                        Divider()
-                        Button("Exit") {
-                            DistributedNotificationCenter.default().post(name: .break, object: nil)
+            CommandMenu("Terminal") {
+                Menu("Command") {
+                    ForEach(TerminalCommands.allCases) { command in
+                        switch command {
+                        case .break:
+                            if #unavailable(macOS 14) {
+                                Button(command.description) {
+                                    DistributedNotificationCenter.default().post(name: .terminalCommand, object: command.escapeSequence)
+                                }
+                                .keyboardShortcut(KeyEquivalent("c"), modifiers: [.control])
+                            }
+                        default:
+                            Button(command.description) {
+                                DistributedNotificationCenter.default().post(name: .terminalCommand, object: command.escapeSequence)
+                            }
                         }
-                        .keyboardShortcut(KeyEquivalent("c"), modifiers: [.control])
                     }
                 }
+                .disabled(!(isTerminalWindowFocused ?? false))
             }
         }
         .defaultSize(width: 660, height: 640)  //~ 80 columns in terminal
@@ -78,47 +87,71 @@ struct BasicGamesApp: App {
             }
         }
         .defaultSize(NSScreen.main?.size(for: 8/displayScale, height: 10/displayScale) ?? NSSize(width: 640, height: 720))
-        .commands { SidebarCommands() }
+        .commands {
+            SidebarCommands()
+        }
 
         Settings {
             SettingsView()
         }
     }
     
-    private func showPDF(from url: URL) {
-        showPDF(with: url.absoluteString.replacingOccurrences(of: URL.basicGamesScheme + "://", with: ""))
-    }
+    private func open(url: URL) {
+        guard var string = url.fragment(percentEncoded: false) else { return }
+        print(url)
+        let printPrefix = "string="
+        let gamePrefix = "game="
         
-    private func showPDF(with pdfString: String) {
-        guard let pdf = EasterEggPDF(pdfString: pdfString) else { return }
-        openWindow(value: pdf)
+        switch string {
+        case _ where string.hasPrefix(printPrefix):
+            string.removeFirst(printPrefix.count)
+            printHardcopy(string)
+        case _ where string.hasPrefix(gamePrefix):
+            string.removeFirst(gamePrefix.count)
+            guard let game = Game(rawValue: string) else { return }
+            settings.unlock(game)
+        default:
+            break
+        }
     }
     
-    private struct EasterEggPDF: Codable, Hashable {
-        let url: URL
-        var pageNumbers: ClosedRange<Int>?
-                
-        init?(pdfString: String) {
-            let components = pdfString.components(separatedBy: "-")
-            if let last = components.last, let range = ClosedRange(string: last) {
-                self.pageNumbers = range
-                let filename = pdfString.replacingOccurrences(of: "-" + last, with: "")
-                guard let url = Bundle.main.url(forResource: filename, withExtension: "pdf") else { return nil }
-                self.url = url
-                return
-            }
-            
-            guard let url = Bundle.main.url(forResource: pdfString, withExtension: "pdf") else { return nil }
-            self.url = url
-        }
+    private func printHardcopy(_ string: String) {
+        let textView = NSTextView(frame: NSRect(x: 0, y: 0, width: 300, height: 0))
+        textView.font = NSFont.monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+        textView.string = string
         
-        var document: PDFDocument? {
-            guard let doc = PDFDocument(url: url) else { return nil }
-            if let pageNumbers {
-                return PDFDocument(document: doc, pageNumbers: pageNumbers)
-            } else {
-                return doc
-            }
+        let printInfo = NSPrintInfo.shared
+//        printInfo.isHorizontallyCentered = true
+//        printInfo.isVerticallyCentered = true
+        textView.frame = NSRect(origin: .zero, size: printInfo.imageablePageBounds.size)
+//        textView.sizeToFit()
+        
+        let printOperation = NSPrintOperation(view: textView, printInfo: printInfo)
+        printOperation.run()
+    }
+}
+
+struct EasterEggPDF: Codable, Hashable {
+    let url: URL
+    var pageNumbers: ClosedRange<Int>?
+            
+    init?(url: URL) {
+        guard let fileURL = Bundle.main.url(forResource: url.deletingPathExtension().lastPathComponent, withExtension: url.pathExtension) else { return nil }
+        self.url = fileURL
+        
+        let prefix = "pages="
+        if var string = url.fragment(percentEncoded: false), string.hasPrefix(prefix) {
+            string.removeFirst(prefix.count)
+            pageNumbers = ClosedRange(string: string)
+        }
+    }
+    
+    var document: PDFDocument? {
+        guard let doc = PDFDocument(url: url) else { return nil }
+        if let pageNumbers {
+            return PDFDocument(document: doc, pageNumbers: pageNumbers)
+        } else {
+            return doc
         }
     }
 }

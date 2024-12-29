@@ -26,11 +26,6 @@ class Weekday: GameProtocol {
         let (m,d,y) = date(from: input("Enter day of birth (or other day of interest)"))
         println()
         
-        if m == 0 && d == 0 && y == 0 {
-            showEasterEgg(.weekday)
-            end()
-        }
-        
         //280 REM TEST FOR DATE BEFORE CURRENT CALENDAR.
         guard y >= 1582 else {
             println("Not prepared to give day of week prior to MDLXXXII.")
@@ -127,6 +122,7 @@ class Weekday: GameProtocol {
         println()
         println(tab(12), "*You may retire in \(e)*")
         wait(.short)
+        unlockEasterEgg(.weekday)
         stop()
     }
     

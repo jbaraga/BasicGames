@@ -47,12 +47,6 @@ class Guess: GameProtocol {
                 run()
                 return
             }
-            
-            if n == Response.easterEggCode {
-                showEasterEgg(.guess)
-                end()
-            }
-            
             if n < m {
                 println("Too low.  Try a bigger answer.")
             }
@@ -63,10 +57,13 @@ class Guess: GameProtocol {
         }
         
         println("That's it!  You got it in \(g) tries.")
-        switch g {
-        case _ where g < l1: println("Very good.")
-        case _ where g == l1: println("Good.")
-        default: println("You should have been able to get it in only \(l1)")
+        if g < l1 {
+            println("Very good.")
+            unlockEasterEgg(.guess)
+        } else if g == l1 {
+            println("Good.")
+        } else {
+            println("You should have been able to get it in only \(l1)")
         }
         
         println(5)

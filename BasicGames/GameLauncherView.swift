@@ -62,11 +62,27 @@ struct GameLauncherView: View {
                         
                         Text(game.stringValue)
                             .font(.title)
+                        
                         Spacer()
+                        
+                        if settings.isUnlocked(game) {
+                            Image(systemName: "circle.fill")
+                                .imageScale(.small)
+                                .foregroundStyle(Color.green)
+                                .brightness(-0.1)
+                        }
                     }
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.borderless)
+                .contextMenu {
+                    #if DEBUG
+                    Button("Easter Egg...") {
+                        showEasterEgg(game)
+                    }
+                    .disabled(!settings.isUnlocked(game))
+                    #endif
+                }
             }
         }
         .frame(minWidth: 480, minHeight: 200)
@@ -76,6 +92,11 @@ struct GameLauncherView: View {
                 FilterButton(selection: $settings.category)
             }
         }
+    }
+    
+    private func showEasterEgg(_ game: Game) {
+        guard let url = game.eggURL, let pdf = EasterEggPDF(url: url) else { return }
+        openWindow(value: pdf)
     }
     
     private func launch(_ game: Game) {

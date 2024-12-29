@@ -387,8 +387,10 @@ class CivilWar: GameProtocol {
             println("The Union has won the war")
         } else if northSurrender && !southSurrender {
             println("The Confederacy has won the war")
+            unlockEasterEgg(.civilWar)
         } else if southWins > northWins {
             println("The Confederacy has won the war")
+            unlockEasterEgg(.civilWar)
         } else {
             println("The Union has won the war")  //Tie goes to Union, or if both surrender (which cannot happen)
         }
@@ -413,12 +415,6 @@ class CivilWar: GameProtocol {
         //3090 REM--------------------------
         
         wait(.short)
-        println(2)
-        let response = input("Hit return to exit", terminator: "")
-        if response.isEasterEgg, numberOfBattles > 1 {
-            showEasterEgg(.civilWar)
-        }
-
         end()
     }
         

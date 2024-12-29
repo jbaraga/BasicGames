@@ -128,11 +128,7 @@ class Banner: GameProtocol {
             consoleIO.printHardcopy()
         }
         
-        wait(.short)
-        let response = input("Hit return to exit", terminator: "")
-        if response.isEasterEgg {
-            showEasterEgg(.banner)
-        }
+        unlockEasterEgg(.banner)
         end()
     }
     

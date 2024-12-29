@@ -32,13 +32,7 @@ class Splat: GameProtocol {
             wait(.short)
             response = playAgain()
         } while response.isYes
-        
-        if response == .easterEgg, chuteOpenAltitudes.count > 5 {
-            showEasterEgg(.splat)
-            wait(.long)
-            end()
-        }
-        
+                
         println("SSSSSSSSSS.")
         wait(.short)
         println()
@@ -48,14 +42,14 @@ class Splat: GameProtocol {
     
     //2000-2005
     private func playAgain() -> Response {
-        let reponse = Response(input("Do you want to play again"))
-        switch reponse {
+        let response = Response(input("Do you want to play again"))
+        switch response {
         case .other:
             println("Yes or no")
             return playAgain()
         case .no:
             return playAgain2(prompt: "Please")
-        case .yes, .easterEgg: return reponse
+        case .yes: return response
         }
     }
     
@@ -93,6 +87,7 @@ class Splat: GameProtocol {
         wait(.short)
         jump(d1: d1, v: v, a: a, t: t)
         
+        if chuteOpenAltitudes.count > 3 { unlockEasterEgg(.splat) }
         tryAgain()
     }
     
@@ -261,11 +256,6 @@ class Splat: GameProtocol {
     private func tryAgain(message: String = "Do you want to play again") {
         print(message)
         let response = Response(input("Do you want to play again"))
-        if response == .easterEgg, chuteOpenAltitudes.count > 5 {
-            showEasterEgg(.splat)
-            wait(.long)
-            end()
-        }
         
         switch response {
         case .yes:

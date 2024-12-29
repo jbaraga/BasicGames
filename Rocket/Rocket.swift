@@ -22,23 +22,18 @@ class Rocket: GameProtocol {
             wait(.long)
         }
         
-        var v2 = 0
         repeat {
-            v2 = performLanding()
+            performLanding()
             wait(.short)
             response = Response(input("Another mission"))
         } while response.isYes
-        
-        if v2 < 2, response == .easterEgg {
-            showEasterEgg(.rocket)
-        }
         
         println()
         println("Control out.")
         end()
     }
     
-    private func performLanding() -> Int {
+    private func performLanding() {
         println("Beginning landing procedure.....")
         println()
         println("G O O D  L U C K ! ! !")
@@ -101,7 +96,8 @@ class Rocket: GameProtocol {
             break
         }
         println(3)
-        return v2
+        
+        if v2 < 2 { unlockEasterEgg(.rocket) }
     }
     
     private func printInstructions() {

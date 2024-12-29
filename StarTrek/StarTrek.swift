@@ -17,7 +17,7 @@ class StarTrek: GameProtocol {
         return (Int(digits.first ?? "") ?? 0, Int(digits.last ?? "") ?? 0)
     }
     
-    private enum Command: String, CaseIterable {
+    private enum Command: String, CaseIterable, CustomStringConvertible {
         case NAV
         case SRS
         case LRS
@@ -52,7 +52,7 @@ class StarTrek: GameProtocol {
         }
     }
     
-    private enum ComputerCommand: Int, CaseIterable {
+    private enum ComputerCommand: Int, CaseIterable, CustomStringConvertible {
         case galacticRecord
         case statusReport
         case photonTorpedoData
@@ -78,14 +78,14 @@ class StarTrek: GameProtocol {
         }
     }
     
-    private enum CoordinateContent: String {
+    private enum CoordinateContent: String, CustomStringConvertible {
         case emptySpace = "   "
         case enterprise = "<*>"
         case klingon = "+K+"
         case starbase = ">!<"
         case star = " * "
         
-        var stringValue: String {
+        var description: String {
             return rawValue
         }
     }
@@ -99,19 +99,19 @@ class StarTrek: GameProtocol {
     //Movement matrix, one indexed
     private let c: [[Int]] = {
         var c = dim(10, 3)
-        c[(3,1)] = -1
-        c[(2,1)] = -1
-        c[(4,1)] = -1
-        c[(4,2)] = -1
-        c[(5,2)] = -1
-        c[(6,2)] = -1
-        c[(1,2)] = 1
-        c[(2,2)] = 1
-        c[(6,1)] = 1
-        c[(7,1)] = 1
-        c[(8,1)] = 1
-        c[(8,2)] = 1
-        c[(9,2)] = 1
+        c[3,1] = -1
+        c[2,1] = -1
+        c[4,1] = -1
+        c[4,2] = -1
+        c[5,2] = -1
+        c[6,2] = -1
+        c[1,2] = 1
+        c[2,2] = 1
+        c[6,1] = 1
+        c[7,1] = 1
+        c[8,1] = 1
+        c[8,2] = 1
+        c[9,2] = 1
         return c
     }()
     
@@ -173,7 +173,7 @@ class StarTrek: GameProtocol {
     
     //Line 470 - computes distance to Klingon ship in sector
     private func fnd(_ i: Int) -> Double {
-        return sqrt(pow(Double(k[(i,1)]) - Double(s1), 2) + pow(Double(k[(i,2)]) - Double(s2), 2))
+        return sqrt(pow(Double(k[i,1]) - Double(s1), 2) + pow(Double(k[i,2]) - Double(s2), 2))
     }
     
     //10 REM SUPER STARTREK - MAY 16,1978 - REQUIRES 24K MEMORY
@@ -240,7 +240,7 @@ class StarTrek: GameProtocol {
         for i in 1...8 {
             for j in 1...8 {
                 k3 = 0
-                z[(i,j)] = 0
+                z[i,j] = 0
                 let r1 = rnd(1.0)  //Distinct from class var r1 (Int)
                 switch r1 {
                 case 0.98...1.0:
@@ -262,7 +262,7 @@ class StarTrek: GameProtocol {
                     b9 += 1
                 }
                 
-                g[(i,j)] = k3 * 100 + b3 * 10 + fnr(1)  //Random number of stars in range 1-8
+                g[i,j] = k3 * 100 + b3 * 10 + fnr(1)  //Random number of stars in range 1-8
             }
         }
         
@@ -274,12 +274,12 @@ class StarTrek: GameProtocol {
         
         //Ensure at least one starbase by adding to current quadrant, which also adds Klingon to quadrant if less than 2, then resets enterprise quadrant
         if b9 == 0 {
-            if g[(q1,q2)] < 200 {
-                g[(q1,q2)] += 100
+            if g[q1,q2] < 200 {
+                g[q1,q2] += 100
                 k9 += 1
             }
             b9 = 1
-            g[(q1,q2)] += 10
+            g[q1,q2] += 10
             q1 = fnr(1)
             q2 = fnr(1)
         }
@@ -334,7 +334,7 @@ class StarTrek: GameProtocol {
             } else {
                 println("Enter one of the following:")
                 Command.allCases.forEach {
-                    println("  " + $0.rawValue + "  (" + $0.description + ")")
+                    println("  \($0.rawValue)  (\($0))")
                 }
             }
         }
@@ -351,7 +351,7 @@ class StarTrek: GameProtocol {
         b3 = 0
         s3 = 0
         d4 = 0.5 * rnd(1)
-        z[(q1,q2)] = g[(q1,q2)]  //Add to known galaxy map
+        z[q1,q2] = g[q1,q2]  //Add to known galaxy map
         
         if q1 > 0 && q1 < 9 && q2 > 0 && q2 < 9  {
             let quadrantName = quadrantName(for: (q1, q2), regionOnly: false)
@@ -363,9 +363,9 @@ class StarTrek: GameProtocol {
             }
             println()
             
-            k3 = Int(Double(g[(q1,q2)]) * 0.01)
-            b3 = Int(Double(g[(q1,q2)]) * 0.1) - 10 * k3
-            s3 = g[(q1,q2)] - 100 * k3 - 10 * b3
+            k3 = Int(Double(g[q1,q2]) * 0.01)
+            b3 = Int(Double(g[q1,q2]) * 0.1) - 10 * k3
+            s3 = g[q1,q2] - 100 * k3 - 10 * b3
             
             if k3 > 0 {
                 println("Combat area      Condition red")
@@ -396,9 +396,9 @@ class StarTrek: GameProtocol {
             for i in 1...k3 {
                 let coordinate = emptyLocation()
                 insertObject(.klingon, at: coordinate)
-                k[(i,1)] = coordinate.x
-                k[(i,2)] = coordinate.y
-                k[(i,3)] = Int(Double(s9) * (0.5 + rnd(1)))
+                k[i,1] = coordinate.x
+                k[i,2] = coordinate.y
+                k[i,3] = Int(Double(s9) * (0.5 + rnd(1)))
             }
         }
         
@@ -451,14 +451,14 @@ class StarTrek: GameProtocol {
         //2580 REM KLINGONS MOVE/FIRE ON MOVING STARSHIP . . .
         //Klingons move
         for i in 1...3 {
-            if k[(i,3)] > 0 {
-                insertObject(.emptySpace, at: (k[(i,1)], k[(i,2)]))
+            if k[i,3] > 0 {
+                insertObject(.emptySpace, at: (k[i,1], k[i,2]))
                 let coordinate = emptyLocation()
-                k[(i,1)] = coordinate.x
-                k[(i,2)] = coordinate.y
+                k[i,1] = coordinate.x
+                k[i,2] = coordinate.y
                 insertObject(.klingon, at: coordinate)
-                k[(i,1)] = coordinate.x
-                k[(i,2)] = coordinate.y
+                k[i,1] = coordinate.x
+                k[i,2] = coordinate.y
             }
         }
         
@@ -498,8 +498,8 @@ class StarTrek: GameProtocol {
         
         //3060 REM BEGIN MOVING STARSHIP
         insertObject(.emptySpace, at: (s1, s2))
-        let x1 = c[(c1,1)] + (c[(c1+1,1)] - c[(c1,1)])*(c1 - Int(c1))
-        let x2 = c[(c1,2)] + (c[(c1+1,2)] - c[(c1,2)])*(c1 - Int(c1))
+        let x1 = c[c1,1] + (c[c1+1,1] - c[c1,1])*(c1 - Int(c1))
+        let x2 = c[c1,2] + (c[c1+1,2] - c[c1,2])*(c1 - Int(c1))
         var x = Double(s1)
         var y = Double(s2)
         let q4 = q1
@@ -622,8 +622,8 @@ class StarTrek: GameProtocol {
             var n = [0]  //one indexed array
             for j in (q2 - 1)...(q2 + 1) {
                 if i > 0 && i < 9 && j > 0 && j < 9 {
-                    n.append(g[(i,j)])
-                    z[(i,j)] = g[(i,j)]
+                    n.append(g[i,j])
+                    z[i,j] = g[i,j]
                 } else {
                     n.append(-1)
                 }
@@ -678,28 +678,28 @@ class StarTrek: GameProtocol {
         
         let h1 = Int(Double(x) / Double (k3))  //Energy divided among Klingon ships
         for i in 1...3 {
-            if k[(i,3)] > 0 {
+            if k[i,3] > 0 {
                 let h = (Double(h1) / fnd(0)) * (rnd(1.0) + 2)
-                if h <= 0.15 * Double(k[(i,3)]) {
-                    println("Sensors show no damage to enemy at \(k[(i,1)]) , \(k[(i,2)])")
+                if h <= 0.15 * Double(k[i,3]) {
+                    println("Sensors show no damage to enemy at \(k[i,1]) , \(k[i,2])")
                 } else {
-                    k[(i,3)] -= Int(h)
-                    println("\(Int(h)) unit hit on Klingon at sector \(k[(i,1)]) , \(k[(i,2)])")
-                    if k[(i,3)] <= 0 {
+                    k[i,3] -= Int(h)
+                    println("\(Int(h)) unit hit on Klingon at sector \(k[i,1]) , \(k[i,2])")
+                    if k[i,3] <= 0 {
                         println("*** Klingon destroyed ***")
                         k3 -= 1
                         k9 -= 1
-                        let coordinate = (k[(i,1)], k[(i,2)])
+                        let coordinate = (k[i,1], k[i,2])
                         insertObject(.emptySpace, at: coordinate)
-                        k[(i,3)] = 0
-                        g[(q1,q2)] -= 100
-                        z[(q1,q2)] = g[(q1,q2)]
+                        k[i,3] = 0
+                        g[q1,q2] -= 100
+                        z[q1,q2] = g[q1,q2]
                         guard k9 > 0 else {
                             missionCompleted()
                             return
                         }
                     } else {
-                        println("   (Sensors show \(k[(i,3)]) units remaining)")
+                        println("   (Sensors show \(k[i,3]) units remaining)")
                     }
                 }
             }
@@ -728,8 +728,8 @@ class StarTrek: GameProtocol {
         }
         if c1 == 9 { c1 = 1 }
         
-        let x1 = Double(c[(Int(c1),1)]) + Double(c[(Int(c1) + 1,1)] - c[(Int(c1),1)]) * (c1 - Double(Int(c1)))
-        let x2 = Double(c[(Int(c1),2)]) + Double(c[(Int(c1) + 1,2)] - c[(Int(c1),2)]) * (c1 - Double(Int(c1)))
+        let x1 = Double(c[Int(c1),1]) + Double(c[Int(c1) + 1,1] - c[Int(c1),1]) * (c1 - Double(Int(c1)))
+        let x2 = Double(c[Int(c1),2]) + Double(c[Int(c1) + 1,2] - c[Int(c1),2]) * (c1 - Double(Int(c1)))
         e -= 2
         p -= 1
         var x = Double(s1)
@@ -774,13 +774,13 @@ class StarTrek: GameProtocol {
             }
             
             for i in 1...3 {
-                if x3 == k[(i,1)] && y3 == k[(i,2)] {
-                    k[(i,3)] = 0
+                if x3 == k[i,1] && y3 == k[i,2] {
+                    k[i,3] = 0
                 }
             }
             insertObject(.emptySpace, at: (x3, y3))
-            g[(q1,q2)] = k3 * 1000 + b3 * 10 * s3
-            z[(q1,q2)] = g[(q1,q2)]
+            g[q1,q2] = k3 * 1000 + b3 * 10 * s3
+            z[q1,q2] = g[q1,q2]
             
         case .starbase:
             //Line 5330
@@ -792,8 +792,8 @@ class StarTrek: GameProtocol {
                 println("court martial!")
                 isDockedAtStarbase = false
                 insertObject(.emptySpace, at: coordinate)
-                g[(q1,q2)] = k3 * 1000 + b3 * 10 * s3
-                z[(q1,q2)] = g[(q1,q2)]
+                g[q1,q2] = k3 * 1000 + b3 * 10 * s3
+                z[q1,q2] = g[q1,q2]
             } else {
                 println("That does it captain!!  You are hereby relieved of command")
                 println("and sentenced to 99 stardates at hard labor on Cygnus 12!!")
@@ -896,11 +896,11 @@ class StarTrek: GameProtocol {
         }
         
         for i in 1...3 {
-            if k[(i,3)] > 0 {
-                let h = (Double(k[(i,3)]) / fnd(1)) * (2 + rnd(1))
+            if k[i,3] > 0 {
+                let h = (Double(k[i,3]) / fnd(1)) * (2 + rnd(1))
                 s -= h
-                k[(i,3)] = k[(i,3)] / Int(round(3 + rnd(1)))  //Original code RND(0) - assumed to return random number between 0 and 1
-                println("\(Int(h)) unit hit on enterprise from sector \(k[(i,1)]) , \(k[(i,2)])")
+                k[i,3] = k[i,3] / Int(round(3 + rnd(1)))  //Original code RND(0) - assumed to return random number between 0 and 1
+                println("\(Int(h)) unit hit on enterprise from sector \(k[i,1]) , \(k[i,2])")
                 
                 guard s > 0 else {
                     println("The Enterprise has been destroyed.  The Federation")
@@ -941,10 +941,6 @@ class StarTrek: GameProtocol {
         println("The Federation is in need of a new starship commander")
         println("for a similar mission -- if there is a volunteer,")
         let response = input("let him or her step forward and enter 'aye'").lowercased()
-        if response.isEasterEgg, k9 == 0 {
-            showEasterEgg(.starTrek)
-        }
-        
         if response == "aye" {
             run()
         } else {
@@ -958,6 +954,7 @@ class StarTrek: GameProtocol {
         println("menacing the Federation has been destroyed.")
         println()
         println(String(format: "Your efficiency rating is %.3f", 1000 * (Double(k9) * (t - t0))))
+        unlockEasterEgg(.starTrek)
         tryAgain()
     }
     
@@ -1068,7 +1065,7 @@ class StarTrek: GameProtocol {
             } else {
                 println("Functions available from the library-computer:")
                 ComputerCommand.allCases.forEach {
-                    println(tab(3), " \($0.rawValue) = " + $0.description)
+                    println(tab(3), " \($0.rawValue) = \($0)")
                 }
                 println()
             }
@@ -1121,10 +1118,10 @@ class StarTrek: GameProtocol {
                 //Lines 7630-7720
                 for j in 1...8 {
                     print("   ")
-                    if z[(i,j)] == 0 {
+                    if z[i,j] == 0 {
                         print("***")
                     } else {
-                        print("\(z[(i,j)] + 1000)".right(3))
+                        print("\(z[i,j] + 1000)".right(3))
                     }
                 }
                 println()
@@ -1159,8 +1156,8 @@ class StarTrek: GameProtocol {
         }
         println("From Enterprise to Klingon battle cruiser" + (k3 > 1 ? "s" : ""))
         for i in 1...3 {
-            if k[(i,3)] > 0 {
-                let (direction, distance) = directionAndDistance(from: (s1, s2), to: (k[(i,1)], k[(i,2)]))
+            if k[i,3] > 0 {
+                let (direction, distance) = directionAndDistance(from: (s1, s2), to: (k[i,1], k[i,2]))
                 println(String(format: "Direction = %.1f", direction))
                 println(String(format: "Distance = %.5f", distance))
             }
@@ -1289,11 +1286,11 @@ class StarTrek: GameProtocol {
         let index = (coordinate.y - 1) * 3 + (coordinate.x - 1) * 24 + 1
         switch index {
         case 1:
-            q$ = " " + object.stringValue + q$.right(189)
+            q$ = " " + object.description + q$.right(189)
         case 190:
-            q$ = q$.left(189) + object.stringValue
+            q$ = q$.left(189) + object.description
         default:
-            q$ = q$.left(index - 1) + object.stringValue + q$.right(190 - index)
+            q$ = q$.left(index - 1) + object.description + q$.right(190 - index)
         }
     }
     
@@ -1318,7 +1315,7 @@ class StarTrek: GameProtocol {
     //Lines 8830-8900
     private func isObject(_ object: CoordinateContent, at coordinate: Coordinate) -> Bool {
         let index = (coordinate.y - 1) * 3 + (coordinate.x - 1) * 24 + 1
-        return q$.mid(index, length: 3) == object.stringValue
+        return q$.mid(index, length: 3) == object.description
     }
     
     private func object(at coordinate: Coordinate) -> CoordinateContent {

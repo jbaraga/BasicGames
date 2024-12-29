@@ -76,12 +76,6 @@ class Batnum: GameProtocol {
         }
         
         wait(.short)
-        println()
-        let response = Response(input("Hit enter to continue", terminator: ""))
-        if response == .easterEgg {
-            showEasterEgg(.batnum)
-            end()
-        }
         
         //220-240
         println(10)
@@ -99,6 +93,7 @@ class Batnum: GameProtocol {
             if n <= min {
                 println("Computer takes \(n) and loses.")
                 n = 0
+                unlockEasterEgg(.batnum)
                 return
             }
         }
@@ -128,6 +123,7 @@ class Batnum: GameProtocol {
         if n == 0 {
             if winOption == .takeLast {
                 println("Congratulations, you win.")
+                unlockEasterEgg(.batnum)
             } else {
                 println("Tough luck, you lose.")
             }

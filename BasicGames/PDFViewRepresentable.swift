@@ -14,9 +14,7 @@ struct PDFViewRepresentable: NSViewRepresentable {
     typealias NSViewType = PDFView
     let pdfView: PDFView
     
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
+    func makeCoordinator() -> Coordinator { .init() }
     
     func makeNSView(context: Context) -> PDFView {
         pdfView.delegate = context.coordinator
@@ -27,14 +25,7 @@ struct PDFViewRepresentable: NSViewRepresentable {
         return
     }
     
-    class Coordinator: NSObject, PDFViewDelegate {
-        var parent: PDFViewRepresentable
-        
-        init(_ parent: PDFViewRepresentable) {
-            self.parent = parent
-            super.init()
-        }
-    }
+    class Coordinator: NSObject, PDFViewDelegate {}
 }
 
 

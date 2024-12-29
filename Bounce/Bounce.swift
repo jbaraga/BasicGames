@@ -41,10 +41,6 @@ class Bounce: GameProtocol {
             println("Invalid velocity")
             end()
         }
-
-        if velocity == 82964 {
-            showEasterEgg(.bounce)
-        }
         
         let coefficient = Double(input("Coefficient")) ?? 0.9  //c
         println()
@@ -96,7 +92,9 @@ class Bounce: GameProtocol {
         println()
         println(tab(Int((l + 1) / (2 * increment)) - 2), "Seconds")
         println(3)
+        
         wait(.long)
+        unlockEasterEgg(.bounce)
         end()
     }
 }

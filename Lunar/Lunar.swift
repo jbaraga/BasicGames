@@ -28,22 +28,17 @@ class Lunar: GameProtocol {
         println("Xerox) so you have to land the capsule manually.")
         
         var response = Response.yes
-        var mph = 0.0
         repeat {
             printInstructions()
-            mph = performLanding()
-            wait(.long)
+            performLanding()
+            wait(.short)
             response = Response(input("Try again", terminator: "??"))
         } while response.isYes
-        
-        if mph <= 10, response == .easterEgg {
-            showEasterEgg(.lunar)
-        }
         
         end()
     }
     
-    private func performLanding() -> Double {
+    private func performLanding() {
         var weight = 33000.0  //M - weight of capsule, including remaining fuel (lbs) and ?additional 500 lbs for astronauts?
         var altitude = 120.0  //A - miles
         var velocity = 1.0  //V - vertical velocity mps
@@ -127,8 +122,10 @@ class Lunar: GameProtocol {
         switch mph {
         case ...1.2:
             println("Perfect landing!")
+            unlockEasterEgg(.lunar)
         case 1.2...10:
             println("Good landing (could be better)")
+            unlockEasterEgg(.lunar)
         case 10...60:
             println("Craft damage... you're stranded here until a rescue")
             println("party arrives. Hope you have enough oxygen!")
@@ -139,7 +136,6 @@ class Lunar: GameProtocol {
         }
         
         println(3)
-        return mph
     }
     
     private func printInstructions() {

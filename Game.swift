@@ -340,6 +340,7 @@ enum Game: String, CaseIterable, Codable {
         switch self {
         case .evenWins1: return "EvenWins1"
         case .evenWins2: return "EvenWins2"
+        case .rockScissorsPaper: return "RockScissorsPaper"
         case .threeDPlot: return "3DPlot"
         default:
             return stringValue.replacingOccurrences(of: " ", with: "")
@@ -458,12 +459,18 @@ enum Game: String, CaseIterable, Codable {
         }
     }
     
-    //Encoded string for DistributedNotificationCenter notification
-    var pdfString: String {
-        if let pdfPageNumbers { return pdfFilename + "-" + pdfPageNumbers.description}
-        return pdfFilename
+    var eggURL: URL? {
+        var string = URL.basicGamesScheme + ":///" + pdfFilename + ".pdf"
+        if let pdfPageNumbers { string += "#pages=" + pdfPageNumbers.description }
+        return URL(string: string)
     }
     
+    var unlockURL: URL? {
+        return URL(string: URL.basicGamesScheme + ":///" + "#game=" + rawValue)
+    }
+    
+    var preferredSet: Set<String> { Set([unlockURL].compactMap { $0?.absoluteString }) }
+        
     var imageName: String { stringValue }
     
     var imageSystemName: String? {
@@ -475,17 +482,31 @@ enum Game: String, CaseIterable, Codable {
         case .bowling: return "figure.bowling"
         case .bullseye: return "target"
         case .bug: return "ladybug"
+        case .buzzword: return "text.bubble"
         case .calendar: return "calendar"
+        case .change: return "dollarsign.circle"
         case .checkers: return "rectangle.checkered"
+        case .chemist: return "flask"
+        case .diamond: return "suit.diamond.fill"
+        case .dice: return "dice"
         case .digits: return "hand.raised.fingers.spread.fill"
         case .evenWins1, .evenWins2: return "circle.hexagongrid.circle"
         case .guess: return "questionmark.app"
         case .hamurabi: return "crown.fill"
+        case .hangman: return "figure"
         case .hockey: return "figure.hockey"
         case .king: return "crown"
+        case .love: return "heart"
+        case .mathDice: return "dice.fill"
+        case .mugwump: return "mug"
+        case .name: return "person.circle"
+        case .nicomachus: return "divide.circle"
+        case .number: return "number.circle.fill"
         case .orbit: return "atom"
         case .poetry: return "text.alignright"
         case .poker: return "suit.spade.fill"
+        case .rockScissorsPaper: return "scissors"
+        case .sineWave: return "water.waves"
         case .stockMarket: return "chart.line.uptrend.xyaxis.circle.fill"
         case .target: return "dot.scope"
         case .threeDPlot: return "view.3d"
@@ -506,18 +527,32 @@ enum Game: String, CaseIterable, Codable {
         case .bowling: return .brown
         case .bug: return .red
         case .bullseye: return .blue
-        case .calendar: return .green
+        case .buzzword: return .pink
+        case .calendar: return .purple
+        case .change: return .green
         case .checkers: return .red
+        case .chemist: return .blue
+        case .diamond: return .blue
+        case .dice: return .yellow
         case .digits: return .teal
         case .evenWins1: return .indigo
         case .evenWins2: return .blue
         case .guess: return .mint
         case .hamurabi: return .purple
+        case .hangman: return .brown
         case .hockey: return .green
         case .king: return .indigo
+        case .love: return .red
+        case .mathDice: return .yellow
+        case .mugwump: return .red
+        case .name: return .brown
+        case .nicomachus: return .indigo
+        case .number: return .teal
         case .orbit: return .blue
         case .poetry: return .teal
         case .poker: return .black
+        case .rockScissorsPaper: return .orange
+        case .sineWave: return .teal
         case .starTrek: return .blue
         case .stockMarket: return .purple
         case .target: return .blue

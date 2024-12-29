@@ -29,25 +29,19 @@ class EvenWins1: GameProtocol {
         wait(.long)
         
         var a1 = 1
-        var success = false
         repeat {
-            success = playGame()
+            play()
             println("  Do you want to play")
             println("again?  Type 1 for yes and 0 for no.")
             a1 = Int(input()) ?? 1
         } while a1 == 1
         
-        if success, a1 == Response.easterEggCode {
-            showEasterEgg(.evenWins1)
-        } else {
-            println()
-            println("Ok.  See you later.")
-            wait(.long)
-        }
+        println()
+        println("Ok.  See you later.")
         end()
     }
     
-    private func playGame() -> Bool {
+    private func play() {
         //Lines 200-260
         println("     Type a 1 if you want to go first, and type")
         println("a 0 if you want me to go first.")
@@ -160,7 +154,7 @@ class EvenWins1: GameProtocol {
         
         let userWon = y1 % 2 == 0
         print("     \(userWon ? "You" : "I") won.")
-        return userWon
+        if userWon { unlockEasterEgg(.evenWins1) }
     }
 }
     

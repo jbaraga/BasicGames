@@ -56,11 +56,7 @@ class Checkers: GameProtocol {
         println()
         println((isUserWinner ? "You" : "I") + "win.")
         
-        if isUserWinner {
-            if Response(pauseForEnter()) == .easterEgg {
-                showEasterEgg(.checkers)
-            }
-        }
+        if isUserWinner { unlockEasterEgg(.checkers) }
         end()
     }
     
@@ -218,7 +214,7 @@ class Checkers: GameProtocol {
         board.reversed().forEach { row in
             row.enumerated().forEach { index, piece in
                 print(tab(5 * index))
-                print(piece.string)
+                print(piece)
             }
             println(2)
         }
@@ -253,14 +249,14 @@ class Checkers: GameProtocol {
     }
 }
 
-fileprivate enum Piece {
+fileprivate enum Piece: CustomStringConvertible {
     case xMan
     case xKing
     case oMan
     case oKing
     case none
     
-    var string: String {
+    var description: String {
         switch self {
         case .xMan: return "X"
         case .xKing: return "X*"

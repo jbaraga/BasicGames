@@ -20,11 +20,6 @@ class Calendar: GameProtocol {
         var year = -1
         while year < 0 {
             let response = Int(input("Enter year")) ?? -1
-            if response == 0 {
-                showEasterEgg(.calendar)
-                end()
-            }
-            
             if response >= 1582 {
                 year = response
             } else {
@@ -118,6 +113,7 @@ class Calendar: GameProtocol {
             wait(.long)
         }
 
+        unlockEasterEgg(.calendar)
         end()
     }
     

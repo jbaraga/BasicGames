@@ -17,21 +17,17 @@ class ICBM: GameProtocol {
         println(3)
         
         var response = Response.yes
-        var success = false
         repeat {
-            success = intercept()
-            wait(.long)
+            intercept()
+            wait(.short)
             response = Response(input("Do you want to play more? (y or n)"))
             println()
         } while response.isYes
         
-        if success, response == .easterEgg {
-            showEasterEgg(.icbm)
-        }
         end()
     }
     
-    private func intercept() -> Bool {
+    private func intercept() {
         print("-------Missile------")
         print(tab(28), "--------SAM---------")
         println(tab(56), "-----")
@@ -57,7 +53,7 @@ class ICBM: GameProtocol {
                 println()
                 println("Too bad!")
                 println("The ICBM just hit your location!!")
-                return false
+                return
             }
             
             let t1 = (Double(input()) ?? 0) / (180 / .pi)  //Heading, converted to radians
@@ -66,16 +62,16 @@ class ICBM: GameProtocol {
             case 1:
                 println()
                 println("Too bad.  Your SAM fell to the ground!")
-                return false
+                return
             case 2:
                 println("Your SAM exploded in midair!")
-                return false
+                return
             case 3:
                 println("Good luck-the ICBM exploded harmlessly in midair!")
-                return false
+                return
             case 4:
                 println("Good luck-the ICBM turned out to be a friendly aircraft!")
-                return false
+                return
             default:
                 break
             }
@@ -94,7 +90,7 @@ class ICBM: GameProtocol {
                     //Success
                     println("Congratulations!  Your SAM came within \(Int(round(d))) miles of")
                     println("the ICBM and destroyed it!")
-                    return true
+                    unlockEasterEgg(.icbm)
                 }
                 println("ICBM & SAM now \(Int(round(d))) miles apart")
             } else  {
@@ -103,6 +99,5 @@ class ICBM: GameProtocol {
                 y = 0
             }
         }
-        return false
     }
 }

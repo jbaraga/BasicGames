@@ -6,39 +6,75 @@
 //
 
 import SwiftUI
+import SwiftTerm
+
 
 struct SettingsView: View {
     @ObservedObject private var settings = Preferences.shared
     
     var body: some View {
-        GeometryReader { _ in
-            ZStack(alignment: .topLeading) {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Cursor:").padding(.trailing)
-                        Toggle("Blinking", isOn: settings.$isBlinkingCursor)
-                            .onChange(of: settings.isBlinkingCursor) { newValue in
-                                NotificationCenter.default.post(name: .cursorSettingDidChange, object: nil)
-                            }
+        VStack(alignment: .leading, spacing: 20) {
+            CursorStyleView(cursorStyle: $settings.cursorStyle)
+            
+            VStack(alignment: .leading) {
+                Text("Text Color").fontWeight(.semibold)
+                Picker("", selection: $settings.foregroundColor) {
+                    ForEach(NSColor.allTerminalColors, id: \.self) { color in
+                        Text(color.displayName)
+                            .foregroundColor(Color(color))
                     }
-                    
-                    Picker("Text Color:", selection: $settings.foregroundColor) {
-                        ForEach(NSColor.allTerminalColors, id: \.self) { color in
-                            Text(color.displayName)
-                                .foregroundColor(Color(color))
+                }
+                .labelsHidden()
+                .fixedSize()
+            }
+        }
+        .padding()
+        .frame(minWidth: 300, alignment: .leading)
+        .fixedSize()
+    }
+    
+    private struct CursorStyleView: View {
+        @Binding var cursorStyle: CursorStyle
+        
+        private var shape: Binding<String> {
+            Binding(
+                get: { cursorStyle.shape },
+                set: {
+                    guard let style = try? CursorStyle(shape: $0, isBlinking: isBlinking.wrappedValue) else { return }
+                    cursorStyle = style
+                    NotificationCenter.default.post(name: .cursorStyleDidChange, object: nil)
+                }
+            )
+        }
+        
+        private var isBlinking: Binding<Bool> {
+            Binding(
+                get: { cursorStyle.isBlinking },
+                set: {
+                    guard let style = try? CursorStyle(shape: shape.wrappedValue, isBlinking: $0) else { return }
+                    cursorStyle = style
+                    NotificationCenter.default.post(name: .cursorStyleDidChange, object: nil)
+                }
+            )
+        }
+        
+        var body: some View {
+            VStack(alignment: .leading) {
+                Text("Cursor").fontWeight(.semibold)
+                
+                HStack(alignment: .top) {
+                    Picker("", selection: shape) {
+                        ForEach(CursorStyle.allShapes, id: \.self) { shape in
+                            Text(shape)
                         }
                     }
-                    .fixedSize()
+                    .labelsHidden()
+                    .pickerStyle(.radioGroup)
+                    
+                    Spacer()
+                    Toggle("Blinking", isOn: isBlinking)
+                    Spacer()
                 }
-            }
-            .padding()
-        }
-        .frame(width: 300, height: 120)
-        .onAppear {
-            //Hack to remove focus from Toggle
-            Task {
-                try await Task.sleep(seconds: 0.1)
-                NSApp.windows.last?.makeFirstResponder(nil)
             }
         }
     }
@@ -51,13 +87,6 @@ struct SettingsView_Previews: PreviewProvider {
 }
 
 extension Notification.Name {
-    static let cursorSettingDidChange = Notification.Name("cursorSettingDidChange")
+    static let cursorStyleDidChange = Notification.Name("cursorStyleDidChange")
     static let foregroundColorDidChange = Notification.Name("foregroundColorDidChange")
 }
-
-//public extension NSTextField {
-//    override var focusRingType: NSFocusRingType {
-//            get { .none }
-//            set { }
-//    }
-//}

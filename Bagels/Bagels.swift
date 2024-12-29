@@ -10,7 +10,7 @@ import Foundation
 
 class Bagels: GameProtocol {
     
-    var y = 0  //Number of correct guess
+    var y = 0  //Number of correct guesses
     
     func run() {
         printHeader(title: "Bagels")
@@ -39,7 +39,7 @@ class Bagels: GameProtocol {
         println("A \(y) point bagels buff!!")
         println("Hope you had fun.  Bye.")
         
-        if response == .easterEgg, y > 1 { showEasterEgg(.bagels) }
+        if y > 3 { unlockEasterEgg(.bagels) }
         end()
     }
     

@@ -10,7 +10,7 @@ import Foundation
 
 class TDPlot: GameProtocol {
     
-    private enum Function: Int, CaseIterable {
+    private enum Function: Int, CaseIterable, CustomStringConvertible {
         case e
         case squareRoot
         case cosine
@@ -18,7 +18,7 @@ class TDPlot: GameProtocol {
         case eCosine
         case sine2
         
-        var stringValue: String {
+        var description: String {
             switch self {
             case .e:
                 return "30*exp(-z*z/100)"
@@ -56,18 +56,10 @@ class TDPlot: GameProtocol {
     func run() {
         printHeader(title: "3D Plot")
         println(3)
+        plot()
         
-        var response = Response.yes
-        repeat {
-            plot()
-            wait(.long)
-            response = Response(input("Run again"))
-            if response.isYes { consoleIO.clear() }
-        } while response.isYes
-        
-        if response == .easterEgg {
-            showEasterEgg(.threeDPlot)
-        }
+        wait(.long)
+        unlockEasterEgg(.threeDPlot)
         end()
     }
     
@@ -75,7 +67,7 @@ class TDPlot: GameProtocol {
         //Added code to select function
         println("Select a function to plot")
         Function.allCases.forEach {
-            println(" \($0.rawValue + 1): " + $0.stringValue)
+            println(" \($0.rawValue + 1): \($0)")
         }
         let fn = selectFunction()
         

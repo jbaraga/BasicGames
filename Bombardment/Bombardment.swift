@@ -59,7 +59,7 @@ class Bombardment: GameProtocol {
                     println("You got me, I'm going fast.  But I'll get you when")
                     println(" y transistors secupera e")
                     wait(.short)
-                    showEasterEgg(.bombardment)
+                    unlockEasterEgg(.bombardment)
                     end()
                 }
                 

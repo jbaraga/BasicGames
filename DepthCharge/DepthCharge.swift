@@ -34,24 +34,19 @@ class DepthCharge: GameProtocol {
         println("trio of numbers -- the first two are the")
         println("surface coordinates; the third is the depth.")
         
-        var success = false
         var response = Response.yes
         repeat {
             println(3)
-            success = play(dimension: g)
+            play(dimension: g)
             wait(.long)
             response = Response(input("Another game (y or n)"))
         } while response.isYes
         
-        if success, response == .easterEgg {
-            showEasterEgg(.depthCharge)
-        } else {
-            println("Ok.  Hope you enjoyed yourself.")
-        }
+        println("Ok.  Hope you enjoyed yourself.")
         end()
     }
     
-    private func play(dimension g: Double) -> Bool {
+    private func play(dimension g: Double) {
         println()
         println("Good luck !")
         println()
@@ -67,8 +62,9 @@ class DepthCharge: GameProtocol {
             print("Trial # \(d) ")
             let (x,y,z) = getInput()
             if abs(x - a) + abs(y - b) + abs(z - c) == 0 {
-                success(d)
-                return true
+                println("B O O M ! ! You found it in \(d) tries!")
+                if d < Int(g / 10) { unlockEasterEgg(.depthCharge) }
+                return
             }
             
             print("Sonar reports shot was ")
@@ -84,11 +80,6 @@ class DepthCharge: GameProtocol {
         println()
         println("You have been torpedoed!  Abandon ship!")
         println("The submarine was at \(a),\(b),\(c)")
-        return false
-    }
-    
-    private func success(_ d: Int) {
-        println("B O O M ! ! You found it in \(d) tries!")
     }
     
     private func getInput() -> (x: Int, y: Int, z: Int) {

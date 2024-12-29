@@ -7,10 +7,9 @@
 
 import Foundation
 
-
 class Joust: GameProtocol {
     
-    private enum AimingPoint: Int, CaseIterable {
+    private enum AimingPoint: Int, CaseIterable, CustomStringConvertible {
         case helm = 1
         case upperLeft = 2
         case upperMiddle = 3
@@ -243,40 +242,46 @@ class Joust: GameProtocol {
         println("and then one of from 3 to 6 different possible defense positions.")
         println("The aiming points are:")
         AimingPoint.allCases.forEach {
-            println($0.description)
+            println($0)
         }
         println()
         println("If you break a lance or lose a helm, you will be given another.")
         println("Good luck, sir!")
         println()
         
-        //Line 700 REM OFF YOU GO TO THE FOUR JOUSTS
-        //Lines 600-1270
-        for a in 1...4 {
-            switch a {
-            case 1:
-                println("This is your first joust. You are up against the Gold Knight.")
-            case 2:
-                println("This is your second joust. Your opponent is the Silver Knight.")
-            case 3:
-                println("You are doing well! Your third joust is against the Red Knight.")
-            case 4:
-                println("This is your final test!! If you win this one the princess")
-                println("is yours!! This fight is against the fierce Black Knight!!!!")
-            default:
-                fatalError("Illegal round")
+        play()
+    }
+    
+    private func play() {
+        let response = Response.yes
+        while response.isYes {
+            //Line 700 REM OFF YOU GO TO THE FOUR JOUSTS
+            //Lines 600-1270
+            for a in 1...4 {
+                switch a {
+                case 1:
+                    println("This is your first joust. You are up against the Gold Knight.")
+                case 2:
+                    println("This is your second joust. Your opponent is the Silver Knight.")
+                case 3:
+                    println("You are doing well! Your third joust is against the Red Knight.")
+                case 4:
+                    println("This is your final test!! If you win this one the princess")
+                    println("is yours!! This fight is against the fierce Black Knight!!!!")
+                default:
+                    fatalError("Illegal round")
+                }
+                
+                joust()
             }
             
-            joust()
+            println()
+            println("Hooray! You are the winnner. Here comes the bride!")
+            wait(.short)
+            unlockEasterEgg(.joust)
+            end()
         }
-        
-        println("Hooray! You are the winnner. Here comes the bride!")
-        wait(.short)
-        let response = input("Hit return to exit")
-        if response.isEasterEgg {
-            showEasterEgg(.joust)
-        }
-        end()
+            
     }
     
     private func joust() {
@@ -312,30 +317,32 @@ class Joust: GameProtocol {
         
         let s = defenseResult.value
         let t = attackResult.value
+        println()
         
-        switch s {
-        case _ where s == t:
+        if s == t {
             if s == 0 {
                 println("You are now ready to try again.")
-                joust()
             } else {
                 println("Too bad, you both lost. At least your honor is intact.")
                 failure()
             }
-        case _ where s < t:
+        } else if s < t {
             println("You have won this joust.")
             println()
-            return
-        case _ where s > t:
+        } else {
             println("Too bad, you lost. Hope your insurance was paid up.")
             failure()
-        default:
-            fatalError()
         }
+        
+        print(tab(12), "Hit enter to continue")
+        pauseForEnter()
+        consoleIO.clear()
     }
     
     func failure() {
+        println()
         println("Sorry, better luck next joust.")
+        wait(.short)
         end()
     }
 }

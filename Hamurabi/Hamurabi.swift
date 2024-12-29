@@ -17,10 +17,10 @@ class Hamurabi: GameProtocol {
         println("For a ten-year term of office.")
         println()
         wait(.short)
-        playGame()
+        play()
     }
     
-    private func playGame() {
+    private func play() {
         var d1 = 0  //Cumulative deaths
         var p1 = 0  //Running average mortality rate per year
         
@@ -162,14 +162,12 @@ class Hamurabi: GameProtocol {
             println("really wasn't too bad at all.  \(Int(Double(p) * 0.8 * rnd(1))) people")
             println("dearly like to see you assassinated but we all have our")
             println("trivial problems.")
+            unlockEasterEgg(.hamurabi)
         default:
             //Line 900
             println("A fantastic performance!!!  Charlemagne, Disraeli, and")
             println("Jefferson combined could not have done better!")
-            wait(.long)
-            if Response(pauseForEnter()) == .easterEgg {
-                showEasterEgg(.hamurabi)
-            }
+            unlockEasterEgg(.hamurabi)
         }
         
         stop()

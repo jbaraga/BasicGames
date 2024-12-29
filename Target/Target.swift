@@ -133,10 +133,7 @@ class Target: GameProtocol {
         println("Mission accomplished in \(r) shots.")
         wait(.short)
         
-        if r < 4 {
-            showEasterEgg(.target)
-            end()
-        }
+        if r < 4 { unlockEasterEgg(.target) }
     }
     
     //Lines 400-405
