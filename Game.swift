@@ -336,23 +336,11 @@ enum Game: String, CaseIterable, Codable {
         }
     }
     
-    var executableName: String {
-        switch self {
-        case .evenWins1: return "EvenWins1"
-        case .evenWins2: return "EvenWins2"
-        case .rockScissorsPaper: return "RockScissorsPaper"
-        case .threeDPlot: return "3DPlot"
-        case .twentyThreeMatches: return "23Matches"
-        default:
-            return stringValue.replacingOccurrences(of: " ", with: "")
-        }
-    }
-    
     //If separate pdf, not from BasicGames.pdf
     var pdfFilename: String {
         switch self {
         case .icbm, .joust: return "BasicGames2"
-        case .oregonTrail: return executableName
+        case .oregonTrail: return "OregonTrail"
         default:
             return "BasicGames"
         }

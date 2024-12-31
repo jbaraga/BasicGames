@@ -23,9 +23,7 @@ struct TerminalViewRepresentable: NSViewRepresentable {
     
     func makeNSView(context: Context) -> GameTerminalView {
         let terminalView = GameTerminalView(frame: frame)
-        guard let path = Bundle.main.path(forResource: game.executableName, ofType: nil) else {
-            return terminalView
-        }
+        guard let path = Bundle.main.path(forResource: "play", ofType: nil) else { return terminalView }
         terminalView.hasFocus = true  //For proper rendering of cursor outline
         terminalView.foregroundColor = settings.foregroundColor
         terminalView.nativeBackgroundColor = .terminalBackground
@@ -37,7 +35,7 @@ struct TerminalViewRepresentable: NSViewRepresentable {
         Task {
             try await Task.sleep(seconds: 1)
             await MainActor.run {
-                terminalView.startProcess(executable: path, args: [], environment: nil, execName: nil)
+                terminalView.startProcess(executable: path, args: ["-g", game.rawValue], environment: nil, execName: nil)
             }
         }
         return terminalView

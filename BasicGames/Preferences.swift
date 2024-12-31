@@ -65,7 +65,7 @@ class Preferences: ObservableObject {
     
     func isUnlocked(_ game: Game) -> Bool {
         guard let serialNumber = Device.serialNumber else { return false }
-        guard let hashData = (game.executableName + serialNumber).data(using: .utf8) else { return false }
+        guard let hashData = (game.rawValue + serialNumber).data(using: .utf8) else { return false }
         let data = Data(SHA512.hash(data: hashData))
         return unlockedEggs.contains(data)
     }
@@ -73,7 +73,7 @@ class Preferences: ObservableObject {
     func unlock(_ game: Game) {
         if isUnlocked(game) { return }
         guard let serialNumber = Device.serialNumber else { return }
-        guard let hashData = (game.executableName + serialNumber).data(using: .utf8) else { return }
+        guard let hashData = (game.rawValue + serialNumber).data(using: .utf8) else { return }
         let data = Data(SHA512.hash(data: hashData))
         unlockedEggs.append(data)
     }
