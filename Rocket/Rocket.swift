@@ -29,8 +29,8 @@ class Rocket: GameProtocol {
         } while response.isYes
         
         println()
-        println("Control out.")
-        end()
+        wait(.short)
+        end("Control out.")
     }
     
     private func performLanding() {

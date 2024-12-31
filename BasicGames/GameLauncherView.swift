@@ -70,18 +70,17 @@ struct GameLauncherView: View {
                                 .imageScale(.small)
                                 .foregroundStyle(Color.green)
                                 .brightness(-0.1)
+                                .help("Easter egg unlocked (right click to open)")
                         }
                     }
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.borderless)
                 .contextMenu {
-                    #if DEBUG
-                    Button("Easter Egg...") {
+                    Button("Easter egg...") {
                         showEasterEgg(game)
                     }
                     .disabled(!settings.isUnlocked(game))
-                    #endif
                 }
             }
         }

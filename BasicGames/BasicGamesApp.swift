@@ -98,7 +98,6 @@ struct BasicGamesApp: App {
     
     private func open(url: URL) {
         guard var string = url.fragment(percentEncoded: false) else { return }
-        print(url)
         let printPrefix = "string="
         let gamePrefix = "game="
         
@@ -116,18 +115,11 @@ struct BasicGamesApp: App {
     }
     
     private func printHardcopy(_ string: String) {
-        let textView = NSTextView(frame: NSRect(x: 0, y: 0, width: 300, height: 0))
+        let printInfo = NSPrintInfo.shared
+        let textView = NSTextView(frame: NSRect(x: 0, y: 0, width: printInfo.imageablePageBounds.width - printInfo.leftMargin - printInfo.rightMargin, height: 0))
         textView.font = NSFont.monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
         textView.string = string
-        
-        let printInfo = NSPrintInfo.shared
-//        printInfo.isHorizontallyCentered = true
-//        printInfo.isVerticallyCentered = true
-        textView.frame = NSRect(origin: .zero, size: printInfo.imageablePageBounds.size)
-//        textView.sizeToFit()
-        
-        let printOperation = NSPrintOperation(view: textView, printInfo: printInfo)
-        printOperation.run()
+        textView.printView(nil)
     }
 }
 

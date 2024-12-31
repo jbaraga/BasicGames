@@ -37,20 +37,12 @@ extension GameProtocol {
         consoleIO.wait(delay)
     }
     
-    /// Returns random Double - matches BASIC function
-    /// - Parameters:
-    ///   - upperLimit: Int
-    /// - Returns: Random double within range 0...upperLimit
-    func rnd(_ upperLimit: Int) -> Double {
-        return Double.random(in: 0...Double(upperLimit))
-    }
-    
-    /// Returns random Double - matches BASIC function
+    /// Returns random Double - matches BASIC function; rnd(1) returns a random number between 0 and 0.999999 per Basic Games book
     /// - Parameters:
     ///   - upperLimit: Double. Default 1.0
-    /// - Returns: Random double within range 0...upperLimit
+    /// - Returns: Random double within range 0..<upperLimit
     func rnd(_ upperLimit: Double = 1) -> Double {
-        return Double.random(in: 0...upperLimit)
+        return Double.random(in: 0..<upperLimit)
     }
     
     /// Moves cursor to tab stop; provides simplified syntax for use with print

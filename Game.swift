@@ -98,8 +98,8 @@ enum Game: String, CaseIterable, Codable {
     case slalom
     case slots
     case splat
-    case stars
     case starTrek
+    case stars
     case stockMarket
     case synonym
     case target
@@ -205,8 +205,8 @@ enum Game: String, CaseIterable, Codable {
         case .slalom: return "Slalom"
         case .slots: return "Slots"
         case .splat: return "Splat"
-        case .stars: return "Stars"
         case .starTrek: return "Star Trek"
+        case .stars: return "Stars"
         case .stockMarket: return "Stock Market"
         case .synonym: return "Synonym"
         case .target: return "Target"
@@ -318,8 +318,8 @@ enum Game: String, CaseIterable, Codable {
         case .slalom: return .sports
         case .slots: return .gambling
         case .splat: return .space
-        case .stars: return .characterGuessing
         case .starTrek: return .space
+        case .stars: return .characterGuessing
         case .stockMarket: return .educational
         case .synonym: return .educational
         case .target: return .space
@@ -342,6 +342,7 @@ enum Game: String, CaseIterable, Codable {
         case .evenWins2: return "EvenWins2"
         case .rockScissorsPaper: return "RockScissorsPaper"
         case .threeDPlot: return "3DPlot"
+        case .twentyThreeMatches: return "23Matches"
         default:
             return stringValue.replacingOccurrences(of: " ", with: "")
         }
@@ -440,8 +441,8 @@ enum Game: String, CaseIterable, Codable {
         case .slalom: return 161...162
         case .slots: return 163...164
         case .splat: return 165...166
-        case .stars: return 167...167
         case .starTrek: return 171...177
+        case .stars: return 167...167
         case .stockMarket: return 168...170
         case .synonym: return 178...178
         case .target: return 179...180
@@ -507,9 +508,14 @@ enum Game: String, CaseIterable, Codable {
         case .poker: return "suit.spade.fill"
         case .rockScissorsPaper: return "scissors"
         case .sineWave: return "water.waves"
+        case .stars: return "staroflife.fill"
         case .stockMarket: return "chart.line.uptrend.xyaxis.circle.fill"
+        case .synonym: return "repeat.circle"
         case .target: return "dot.scope"
         case .threeDPlot: return "view.3d"
+        case .train: return "tram"
+        case .trap: return "lessthan"
+        case .twentyThreeMatches: return "flame"
         default:
             return nil
         }
@@ -553,10 +559,15 @@ enum Game: String, CaseIterable, Codable {
         case .poker: return .black
         case .rockScissorsPaper: return .orange
         case .sineWave: return .teal
+        case .stars: return .green
         case .starTrek: return .blue
         case .stockMarket: return .purple
+        case .synonym: return .orange
         case .target: return .blue
         case .threeDPlot: return .indigo
+        case .train: return .green
+        case .trap: return .red
+        case .twentyThreeMatches: return .orange
         default:
             return nil
         }

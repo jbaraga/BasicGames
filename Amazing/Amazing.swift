@@ -193,7 +193,7 @@ class Amazing: GameProtocol {
         var squaresVisited = 0
         
         //Enter maze at random column
-        let entryColumn = Int(rnd(width))
+        let entryColumn = Int(rnd(Double(width)))
         column = entryColumn
         squares[row][column].markVisited()
         squaresVisited += 1
@@ -232,7 +232,7 @@ class Amazing: GameProtocol {
             
             if allowedDirections.count > 0 {
                 //Pick random direction from allowed directions
-                let x = Int(rnd(allowedDirections.count))
+                let x = Int(rnd(Double(allowedDirections.count)))
                 let direction = allowedDirections[x]
                 
                 switch direction {
