@@ -471,19 +471,25 @@ enum Game: String, CaseIterable, Codable {
         case .bowling: return "figure.bowling"
         case .bullseye: return "target"
         case .bug: return "ladybug"
+        case .bunny: return "hare"
         case .buzzword: return "text.bubble"
         case .calendar: return "calendar"
         case .change: return "dollarsign.circle"
         case .checkers: return "rectangle.checkered"
         case .chemist: return "flask"
-        case .diamond: return "suit.diamond.fill"
+        case .chief: return "bolt"
+        case .craps: return "dice.fill"
+        case .cube: return "cube"
+        case .diamond: return "diamond.fill"
         case .dice: return "dice"
         case .digits: return "hand.raised.fingers.spread.fill"
         case .evenWins1, .evenWins2: return "circle.hexagongrid.circle"
+        case .golf: return "figure.golf"
         case .guess: return "questionmark.app"
         case .hamurabi: return "crown.fill"
         case .hangman: return "figure"
         case .hockey: return "figure.hockey"
+        case .joust: return "shield.pattern.checkered"
         case .king: return "crown"
         case .love: return "heart"
         case .mathDice: return "dice.fill"
@@ -504,6 +510,8 @@ enum Game: String, CaseIterable, Codable {
         case .train: return "tram"
         case .trap: return "lessthan"
         case .twentyThreeMatches: return "flame"
+        case .war: return "suit.diamond.fill"
+        case .word: return "questionmark.circle.dashed"
         default:
             return nil
         }
@@ -521,20 +529,26 @@ enum Game: String, CaseIterable, Codable {
         case .bowling: return .brown
         case .bug: return .red
         case .bullseye: return .blue
-        case .buzzword: return .pink
+        case .bunny: return .pink
+        case .buzzword: return .teal
         case .calendar: return .purple
         case .change: return .green
         case .checkers: return .red
         case .chemist: return .blue
+        case .chief: return .yellow
+        case .craps: return .white
+        case .cube: return .green
         case .diamond: return .blue
         case .dice: return .yellow
         case .digits: return .teal
         case .evenWins1: return .indigo
         case .evenWins2: return .blue
+        case .golf: return .brown
         case .guess: return .mint
         case .hamurabi: return .purple
         case .hangman: return .brown
         case .hockey: return .green
+        case .joust: return .orange
         case .king: return .indigo
         case .love: return .red
         case .mathDice: return .yellow
@@ -554,8 +568,10 @@ enum Game: String, CaseIterable, Codable {
         case .target: return .blue
         case .threeDPlot: return .indigo
         case .train: return .green
-        case .trap: return .red
+        case .trap: return .teal
         case .twentyThreeMatches: return .orange
+        case .war: return .red
+        case .word: return .purple
         default:
             return nil
         }

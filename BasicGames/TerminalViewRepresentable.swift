@@ -87,9 +87,7 @@ struct GameView: View {
         .background(Color(.terminalBackground))
         .onAppear { isFocused = true }
         .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { notification in
-            guard let window = notification.object as? NSWindow, window.title == game.title else {
-                return
-            }
+            guard let window = notification.object as? NSWindow, window.title == game.title else { return }
             isTerminated = true  //Process is not killed for user window close
         }
     }
@@ -127,7 +125,7 @@ class GameTerminalView: TerminalView, TerminalViewDelegate, LocalProcessDelegate
             caretTextColor = newValue
         }
     }
-        
+    
     public override init (frame: CGRect) {
         super.init (frame: frame)
         setup ()
@@ -137,7 +135,7 @@ class GameTerminalView: TerminalView, TerminalViewDelegate, LocalProcessDelegate
         super.init (coder: coder)
         setup ()
     }
-
+    
     func setup () {
         terminalDelegate = self
         process = LocalProcess (delegate: self)
@@ -176,7 +174,7 @@ class GameTerminalView: TerminalView, TerminalViewDelegate, LocalProcessDelegate
         let terminal = getTerminal()
         return winsize(ws_row: UInt16(terminal.rows), ws_col: UInt16(terminal.cols), ws_xpixel: UInt16 (f.width), ws_ypixel: UInt16 (f.height))
     }
-
+    
     //TerminalViewDelegate
     func sizeChanged(source: SwiftTerm.TerminalView, newCols: Int, newRows: Int) {
         guard process.running else { return }

@@ -162,22 +162,15 @@ extension FocusedValues {
 
 /*
  TO ADD A NEW GAME
- 1. Add new CLI target with GameName (i.e. no spaces, camel case).
- 2. Add target membership for GameName CLI to Extensions, Game, ConsoleIO, GameProtocol
- 3. Add GameName.swift file to GameName group, with target membership GameName.
-    main.swift
-        let game = GameName()
-        game.run()
+ 1. Add GameName.swift file to play group, with target membership play.
     GameName.swift
         class GameName: GameProtocol {
             func run() {}
         }
- 4.  Add case gameName to Game enum in BasicGames group; specify name of easter egg pdf file (standard is BasicGames)
- 5.  Add page numbers to Game enum for app if easter egg pdf derived from BasicGames.pdf. Otherwise, create easter egg pdf with Preview. Edit Permissions... and set read and owner passwords from KeyChain (PDF Reader, PDF Owner), deselect all privileges. Drag easter egg pdf to Resources group, and select copy to folder.
- 6.  Add image for game either as Image set in Assets or use system image specified in Game enum; add optional tint.
- 7.  BasicGames target -> Build Phases
-        Target Dependencies - add game CLI target
-        Copy Bundle Resources - drag game CLI from Products group
- 8.  Write the game code in GameName.swift. Have fun!
+ 2.  Add case gameName to Game enum in BasicGames group; specify name of easter egg pdf file and optionally page numbers (default file is BasicGames)
+ 3.  Add page numbers to Game enum for app if easter egg pdf derived from BasicGames.pdf. Otherwise, create easter egg pdf with Preview. Edit Permissions... and set read and owner passwords from KeyChain (PDF Reader, PDF Owner), deselect all privileges. Drag easter egg pdf to Resources group, and select copy to folder.
+ 4.  Add image for game either as Image set in Assets or use system image specified in Game enum; add optional tint.
+ 5.  In Play struct (PlayCommand file), add enum case game: GameName().run()
+ 6.  Write the game code in GameName.swift. Have fun!
  */
 

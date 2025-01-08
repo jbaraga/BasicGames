@@ -11,6 +11,11 @@
 		AD162328277BD31D00E919C1 /* GameLauncherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162327277BD31D00E919C1 /* GameLauncherView.swift */; };
 		AD162331277BD53600E919C1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
 		AD162333277BD81B00E919C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162332277BD81B00E919C1 /* AppDelegate.swift */; };
+		AD1CD1412D2617D6000340DC /* War.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CD1402D2617D6000340DC /* War.swift */; };
+		AD1CD15F2D287944000340DC /* Bunny.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CD15E2D287944000340DC /* Bunny.swift */; };
+		AD1CD1612D29894E000340DC /* Chief.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CD1602D29894E000340DC /* Chief.swift */; };
+		AD1CD1632D29CEC6000340DC /* Craps.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CD1622D29CEC6000340DC /* Craps.swift */; };
+		AD1CD1652D29F714000340DC /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CD1642D29F714000340DC /* Cube.swift */; };
 		AD6E52332D19004700F337D8 /* OregonTrail.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD6E52322D19004700F337D8 /* OregonTrail.pdf */; };
 		AD7E478B2D246E610051D447 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		AD7E478C2D246E610051D447 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
@@ -81,9 +86,11 @@
 		AD7E47D32D247A210051D447 /* MathDice.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E474E2D2468860051D447 /* MathDice.swift */; };
 		AD7E47D42D247A210051D447 /* StarTrek.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD57CCFB27AED53A00AD32C5 /* StarTrek.swift */; };
 		AD7E47D52D247A210051D447 /* Love.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47492D2468860051D447 /* Love.swift */; };
+		AD84626A2D2A32E100588A2B /* Golf.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8462692D2A32E100588A2B /* Golf.swift */; };
 		AD8AB4322959FABB001E0C83 /* PDFViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8AB4312959FABB001E0C83 /* PDFViewRepresentable.swift */; };
 		AD8AB4342959FB9B001E0C83 /* EggView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8AB4332959FB9B001E0C83 /* EggView.swift */; };
 		AD9FA6CD2D0B88DF008A5E92 /* BasicGames2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD9FA6CC2D0B88DF008A5E92 /* BasicGames2.pdf */; };
+		ADA44D872D24A26800AF183E /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA44D862D24A26800AF183E /* Word.swift */; };
 		ADAE10B5277BAD25006762F5 /* BasicGamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */; };
 		ADAE10B9277BAD2D006762F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAE10B8277BAD2D006762F5 /* Assets.xcassets */; };
 		ADAE10BC277BAD2D006762F5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAE10BB277BAD2D006762F5 /* Preview Assets.xcassets */; };
@@ -142,6 +149,11 @@
 		AD162329277BD38900E919C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AD162330277BD53600E919C1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		AD162332277BD81B00E919C1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD1CD1402D2617D6000340DC /* War.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = War.swift; sourceTree = "<group>"; };
+		AD1CD15E2D287944000340DC /* Bunny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bunny.swift; sourceTree = "<group>"; };
+		AD1CD1602D29894E000340DC /* Chief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chief.swift; sourceTree = "<group>"; };
+		AD1CD1622D29CEC6000340DC /* Craps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Craps.swift; sourceTree = "<group>"; };
+		AD1CD1642D29F714000340DC /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		AD2437CC27EAA101005D67B6 /* Splat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splat.swift; sourceTree = "<group>"; };
 		AD33FD0D27B9560F00E087D1 /* ICBM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICBM.swift; sourceTree = "<group>"; };
 		AD36C57227BB41BA00FB1E63 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
@@ -187,6 +199,7 @@
 		AD7E47842D246E370051D447 /* play */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = play; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7E47932D2470B50051D447 /* PlayCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayCommand.swift; sourceTree = "<group>"; };
 		AD82570F27F09CF000A0ECCB /* Bounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bounce.swift; sourceTree = "<group>"; };
+		AD8462692D2A32E100588A2B /* Golf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Golf.swift; sourceTree = "<group>"; };
 		AD8A002C27E77D2E009B5679 /* StockMarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMarket.swift; sourceTree = "<group>"; };
 		AD8AB4312959FABB001E0C83 /* PDFViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewRepresentable.swift; sourceTree = "<group>"; };
 		AD8AB4332959FB9B001E0C83 /* EggView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggView.swift; sourceTree = "<group>"; };
@@ -194,6 +207,7 @@
 		AD8F43F5278252550067143D /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
 		AD90BEFB2978D25A0015A9DB /* King.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = King.swift; sourceTree = "<group>"; };
 		AD9FA6CC2D0B88DF008A5E92 /* BasicGames2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BasicGames2.pdf; sourceTree = "<group>"; };
+		ADA44D862D24A26800AF183E /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		ADA8481A295FBF8100F86687 /* AceyDucey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AceyDucey.swift; sourceTree = "<group>"; };
 		ADACACAF2963371600DEB6F7 /* Digits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digits.swift; sourceTree = "<group>"; };
 		ADADA5812B46E7630024CA81 /* Checkers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkers.swift; sourceTree = "<group>"; };
@@ -272,7 +286,7 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		AD7E47942D2470B50051D447 /* play */ = {
+		AD7E47942D2470B50051D447 /* Play */ = {
 			isa = PBXGroup;
 			children = (
 				AD7E47932D2470B50051D447 /* PlayCommand.swift */,
@@ -290,12 +304,16 @@
 				ADADA5972B4C3BE90024CA81 /* Bowling.swift */,
 				AD5F26D8297389820053C5A1 /* Bug.swift */,
 				AD7E472D2D2468860051D447 /* Bullseye.swift */,
+				AD1CD15E2D287944000340DC /* Bunny.swift */,
 				AD7E47312D2468860051D447 /* Buzzword.swift */,
 				AD150F1727C149D500FA3280 /* Calendar.swift */,
 				AD7E47352D2468860051D447 /* Change.swift */,
 				ADADA5812B46E7630024CA81 /* Checkers.swift */,
 				AD7E47392D2468860051D447 /* Chemist.swift */,
+				AD1CD1602D29894E000340DC /* Chief.swift */,
 				ADE614A52B3500820087F9C6 /* CivilWar.swift */,
+				AD1CD1622D29CEC6000340DC /* Craps.swift */,
+				AD1CD1642D29F714000340DC /* Cube.swift */,
 				ADFE458E27B83570002175D7 /* DepthCharge.swift */,
 				AD7E473D2D2468860051D447 /* Diamond.swift */,
 				AD7E47412D2468860051D447 /* Dice.swift */,
@@ -304,6 +322,7 @@
 				ADF8BF04296CC57300B778CA /* EvenWins2.swift */,
 				ADB4DEB327C5BF3400C04087 /* Football.swift */,
 				ADB4DEB527C5BF4600C04087 /* Ftball.swift */,
+				AD8462692D2A32E100588A2B /* Golf.swift */,
 				AD7747372960D51200066994 /* Guess.swift */,
 				AD69C55629718802005D52A2 /* Hamurabi.swift */,
 				AD7E47452D2468860051D447 /* Hangman.swift */,
@@ -337,9 +356,11 @@
 				AD7E47722D2468860051D447 /* Train.swift */,
 				AD7E47762D2468860051D447 /* Trap.swift */,
 				AD7E47792D2468860051D447 /* 23Matches.swift */,
+				AD1CD1402D2617D6000340DC /* War.swift */,
 				AD3D807927BF268D004226EF /* Weekday.swift */,
+				ADA44D862D24A26800AF183E /* Word.swift */,
 			);
-			path = play;
+			path = Play;
 			sourceTree = "<group>";
 		};
 		ADAE10A8277BAD25006762F5 = {
@@ -351,7 +372,7 @@
 				AD162330277BD53600E919C1 /* Game.swift */,
 				AD7D274E277CA59800F43F39 /* ConsoleIO.swift */,
 				AD8F43F5278252550067143D /* GameProtocol.swift */,
-				AD7E47942D2470B50051D447 /* play */,
+				AD7E47942D2470B50051D447 /* Play */,
 				ADAE10C5277BAD2D006762F5 /* BasicGamesTests */,
 				ADAE10CF277BAD2E006762F5 /* BasicGamesUITests */,
 				ADAE10B2277BAD25006762F5 /* Products */,
@@ -589,11 +610,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD7E478B2D246E610051D447 /* Extensions.swift in Sources */,
+				AD1CD1612D29894E000340DC /* Chief.swift in Sources */,
 				AD7E478C2D246E610051D447 /* Game.swift in Sources */,
 				AD7E47912D246FB30051D447 /* GameProtocol.swift in Sources */,
 				AD7E47952D2470B50051D447 /* PlayCommand.swift in Sources */,
 				AD7E47992D2476D90051D447 /* AceyDucey.swift in Sources */,
 				AD7E47922D246FB30051D447 /* ConsoleIO.swift in Sources */,
+				AD1CD1632D29CEC6000340DC /* Craps.swift in Sources */,
 				AD7E479A2D247A210051D447 /* Rocket.swift in Sources */,
 				AD7E479B2D247A210051D447 /* 3DPlot.swift in Sources */,
 				AD7E479C2D247A210051D447 /* Digits.swift in Sources */,
@@ -605,13 +628,17 @@
 				AD7E47A22D247A210051D447 /* Calendar.swift in Sources */,
 				AD7E47A32D247A210051D447 /* Number.swift in Sources */,
 				AD7E47A42D247A210051D447 /* Poetry.swift in Sources */,
+				AD1CD1652D29F714000340DC /* Cube.swift in Sources */,
 				AD7E47A52D247A210051D447 /* Bowling.swift in Sources */,
 				AD7E47A62D247A210051D447 /* Name.swift in Sources */,
 				AD7E47A72D247A210051D447 /* Change.swift in Sources */,
 				AD7E47A82D247A210051D447 /* Animal.swift in Sources */,
+				ADA44D872D24A26800AF183E /* Word.swift in Sources */,
 				AD7E47A92D247A210051D447 /* 23Matches.swift in Sources */,
 				AD7E47AA2D247A210051D447 /* Bug.swift in Sources */,
+				AD1CD15F2D287944000340DC /* Bunny.swift in Sources */,
 				AD7E47AB2D247A210051D447 /* EvenWins2.swift in Sources */,
+				AD84626A2D2A32E100588A2B /* Golf.swift in Sources */,
 				AD7E47AC2D247A210051D447 /* EvenWins1.swift in Sources */,
 				AD7E47AD2D247A210051D447 /* LEM.swift in Sources */,
 				AD7E47AE2D247A210051D447 /* Diamond.swift in Sources */,
@@ -647,6 +674,7 @@
 				AD7E47CC2D247A210051D447 /* Hangman.swift in Sources */,
 				AD7E47CD2D247A210051D447 /* Train.swift in Sources */,
 				AD7E47CE2D247A210051D447 /* CivilWar.swift in Sources */,
+				AD1CD1412D2617D6000340DC /* War.swift in Sources */,
 				AD7E47CF2D247A210051D447 /* Weekday.swift in Sources */,
 				AD7E47D02D247A210051D447 /* SineWave.swift in Sources */,
 				AD7E47D12D247A210051D447 /* Target.swift in Sources */,

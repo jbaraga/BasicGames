@@ -93,10 +93,11 @@ extension GameProtocol {
         consoleIO.println(number)
     }
     
-    func printHeader(title: String) {
+    func printHeader(title: String, newlines: Int = 3) {
         let creditString = "Creative Computing  Morristown, New Jersey"
         println(tab((creditString.count - title.count) / 2 + 15), title)
         println(tab(15), creditString)
+        println(newlines)
     }
 
     /// Gets keyboard input
@@ -166,6 +167,7 @@ extension GameProtocol {
     }
     
     func end(_ message: String? = nil) -> Never {
+        wait(.short)
         consoleIO.close(message)
     }
 }
