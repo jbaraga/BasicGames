@@ -59,7 +59,7 @@ struct BasicGamesApp: App {
         .commands {
             CommandMenu("Terminal") {
                 Menu("Command") {
-                    ForEach(TerminalCommands.allCases) { command in
+                    ForEach(TerminalCommand.allCases) { command in
                         switch command {
                         case .break:
                             if #unavailable(macOS 14) {

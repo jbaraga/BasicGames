@@ -118,6 +118,7 @@ class Poker: GameProtocol {
         //d is highest card for HandCategory in most hands, except flush where it is first card in unsorted hand. d is not set for partial straight (0 is returned).
         //i is an integer flag, set to 6 for schmaltz or for pair/2 pair if face value is <=8
         //card are not sorted for flush
+        //TODO: Review logic and simplify, maybe add a nonmutating version for player?
         mutating func evaluate() -> (category: HandCategory, x: Int, d: Int) {
             //Check for flush
             let uniqueSuits = Array(Set(cards.map { suit(for: $0) }))
@@ -269,6 +270,7 @@ class Poker: GameProtocol {
             break
         }
         
+        //TODO: try to simplify logic
         //Convoluted betting logic to determine baseline bet z, also alters discard mask x, var i, and introduced var k
         var computerChecks = false
         if isComputerBluffing {

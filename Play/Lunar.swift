@@ -30,7 +30,7 @@ class Lunar: GameProtocol {
             printInstructions()
             performLanding()
             wait(.short)
-        } while Response(input("Try again", terminator: "??")).isYes
+        } while Response(input("Try again", terminator: "?? ")).isYes
         
         end()
     }

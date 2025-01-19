@@ -55,7 +55,9 @@ class Batnum: GameProtocol {
         }
         
         while min < 1 || min > max {
-            (min, max) = input("Enter min and max ") ?? (0, 0)
+            let limits: Point = input("Enter min and max ") ?? .zero
+            min = limits.x
+            max = limits.y
         }
         
         var startOption = 0  //S start option - 1 computer first, 2 user first

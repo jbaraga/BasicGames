@@ -46,20 +46,29 @@ class Trap: GameProtocol {
     private func guess(x: Int) {
         for guessNumber in 1...g {
             println()
-            var (a, b): (Int, Int) = input("Guess # \(guessNumber)") ?? (0, 0)
-            if a == x && b == x {
+            let guess: ClosedRange<Int> = input("Guess # \(guessNumber)") ?? 0...0
+            if guess.lowerBound == x && guess.upperBound == x {
                 println("You got it!!!")
                 if guessNumber < 6 { unlockEasterEgg(.trap) }
                 return
             }
             
-            if a > b { (a, b) = (b, a) }
-            if (a...b).contains(x) {
+            if guess.contains(x) {
                 println("You have trapped my number.")
             } else {
-                println("My number is \(x < a ? "smaller" : "larger") than your trap numbers.")
+                println("My number is \(x < guess.lowerBound ? "smaller" : "larger") than your trap numbers.")
             }
         }
         println("Sorry, that's \(g) guesses. Number was \(x)")
     }
 }
+
+
+extension ClosedRange<Int>: @retroactive LosslessStringConvertible {
+    public init?(_ description: String) {
+        let stringValues = description.components(separatedBy: CharacterSet(charactersIn: " ,")).compactMap { $0.trimmingCharacters(in: .whitespaces) }.filter { !$0.isEmpty }
+        guard stringValues.count == 2, let x = Int(stringValues[0]), let y = Int(stringValues[1]) else { return nil }
+        self = x < y ? x...y : y...x
+    }
+}
+

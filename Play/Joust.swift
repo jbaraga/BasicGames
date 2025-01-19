@@ -275,6 +275,7 @@ class Joust: GameProtocol {
         
         println()
         println("Hooray! You are the winnner. Here comes the bride!")
+        //TODO: get original code used for easter egg, came from different source than basic games
         unlockEasterEgg(.joust)
         end()
     }

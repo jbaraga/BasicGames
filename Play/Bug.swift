@@ -342,5 +342,9 @@ class Bug: GameProtocol {
             }
         }
     }
+    
+    func test() {
+        //TODO: Implement
+    }
 }
 

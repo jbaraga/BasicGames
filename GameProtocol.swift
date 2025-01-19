@@ -16,6 +16,11 @@ import AppKit
 
 protocol GameProtocol {
     func run()
+    func test()
+}
+
+extension GameProtocol {
+    func test() { println("Default implementation - no test available") }
 }
 
 extension GameProtocol {    
@@ -112,7 +117,7 @@ extension GameProtocol {
     /// Gets keyboard input after printing message
     /// - Parameters:
     ///   - message: Prompt message
-    ///   - terminator: If specified, replaces default prompt character (?)
+    ///   - terminator: If specified, replaces default prompt character (? )
     /// - Returns: Entered string
     func input(_ message: String, terminator: String? = nil) -> String {
         consoleIO.print(message)
@@ -122,38 +127,51 @@ extension GameProtocol {
     /// Gets keyboard input after printing message
     /// - Parameters:
     ///   - message: Prompt message
-    ///   - terminator: If specified, replaces default prompt character (?)
+    ///   - terminator: If specified, replaces default prompt character (? )
     /// - Returns: Optional value from string representation
     func input<T>(_ message: String, terminator: String? = nil) -> T? where T: LosslessStringConvertible {
         consoleIO.print(message)
         return T(input(terminator: terminator))
     }
     
-    /// Gets keyboard input after printing message
-    /// - Parameters:
-    ///   - message: Prompt message
-    ///   - terminator: If specified, replaces default prompt character (?)
-    /// - Returns: Optionally 2 values from entered string representation, separated by comma or whitespace
-    func input<T>(_ message: String, terminator: String? = nil) -> (T, T)? where T: LosslessStringConvertible {
-        consoleIO.print(message)
-        let stringValues = (input(terminator: terminator).components(separatedBy: CharacterSet(charactersIn: " ,")).compactMap { $0.trimmingCharacters(in: .whitespaces) }).filter { !$0.isEmpty }
-        guard stringValues.count == 2, let value1 = T(stringValues[0]), let value2 = T(stringValues[1]) else { return nil }
-        return (value1, value2)
+    func enterCRTmode() {
+        consoleIO.send(command: .eraseScreenToCursor)  //Clear screen results in additional clear for each cursorHome command (? SwiftTerm bug)
+        consoleIO.send(command: .cursorHome)
+        consoleIO.set(baudRate: 256)
     }
     
-    /// Gets keyboard input after printing message
-    /// - Parameters:
-    ///   - message: Prompt message
-    ///   - terminator: If specified, replaces default prompt character (?)
-    /// - Returns: 2 optional values from entered string representation, separated by comma or whitespace
-    func input<T>(_ message: String, terminator: String? = nil) -> (T?, T?) where T: LosslessStringConvertible {
-        consoleIO.print(message)
-        let stringValues = (input(terminator: terminator).components(separatedBy: CharacterSet(charactersIn: " ,")).compactMap { $0.trimmingCharacters(in: .whitespaces) }).filter { !$0.isEmpty }
-        switch stringValues.count {
-        case 0: return (nil, nil)
-        case 1: return (T(stringValues[0]), nil)
-        default: return (T(stringValues[0]), T(stringValues[1]))
-        }
+    func moveCursorToHome() {
+        consoleIO.send(command: .cursorHome)
+    }
+    
+    func accelerate(baudRate: Double = 256) {
+        consoleIO.set(baudRate: baudRate)
+    }
+    
+    func saveCursorPosition() {
+        consoleIO.saveCursorLocation()
+    }
+    
+    func restoreCursorPosition() {
+        consoleIO.restoreCursorLocation()
+    }
+    
+    func moveCursorUp(lines: Int = 1, eraseLine: Bool = false) {
+        consoleIO.moveCursorUp(lines: lines)
+        if eraseLine { self.eraseLine() }
+    }
+    
+    func eraseLine() {
+        consoleIO.send(command: .eraseLine)
+    }
+    
+    func saveLinePosition() {
+        consoleIO.saveLinePosition()
+    }
+    
+    func restoreLinePositon(eraseLine: Bool = true) {
+        consoleIO.restoreLinePosition()
+        if eraseLine { self.eraseLine() }
     }
 
     @discardableResult

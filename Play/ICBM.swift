@@ -17,7 +17,7 @@ class ICBM: GameProtocol {
         println(3)
         
         repeat {
-            intercept()
+            play()
             wait(.short)
             println()
         } while Response(input("Do you want to play more? (y or n)")).isYes
@@ -25,7 +25,7 @@ class ICBM: GameProtocol {
         end()
     }
     
-    private func intercept() {
+    private func play() {
         print("-------Missile------")
         print(tab(28), "--------SAM---------")
         println(tab(56), "-----")

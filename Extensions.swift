@@ -240,24 +240,24 @@ extension ClosedRange<Int> {
 }
 
 
-
 /// ANSI/VT100 Terminal Control Escape Sequences
 /// "\u{1B}[" == Control Sequence Introducer
 /// SwiftTerm does not support all sequences
 /// break is special internal sequence, not part of ANSI specification
 /// https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
-public enum TerminalCommands: String, CaseIterable {
+public enum TerminalCommand: String, CaseIterable, Codable {
     case reset = "\u{1B}[c"
-//    case foregroundColorGreen = "\u{1B}[32m"
     case cursorPosition = "\u{1B}[6n"
     case cursorHome = "\u{1B}[H"
     case cursorForward = "\u{1B}[1C"
     case cursorBack = "\u{1B}[1D"
+    case cursorUp = "\u{1B}[1A"
     case cursorSavePosition = "\u{1B}7"
     case cursorRestorePosition = "\u{1B}8"
     case delete = "\u{7F}"
-    case eraseToCursor = "\u{1B}[1K"
-    case eraseToEndOfLine = "\u{1B}[K"
+    case eraseLineToCursor = "\u{1B}[1K"
+    case eraseLine = "\u{1B}[2K"
+    case eraseScreenToCursor = "\u{1B}[1J"
     case clearScreen = "\u{1B}[2J"
     case printScreen = "\u{1B}[i"
     case bell = "\u{7}"
@@ -268,26 +268,47 @@ public enum TerminalCommands: String, CaseIterable {
     var description: String {
         switch self {
         case .reset: return "Reset"
-//        case .foregroundColorGreen: return "Text Color Green"
         case .cursorPosition: return "Cursor Position"
         case .cursorHome: return "Cursor Home"
         case .cursorForward: return "Cursor Forward"
         case .cursorBack: return "Cursor Back"
+        case .cursorUp: return "Cursor Up"
         case .cursorSavePosition: return "Cursor Save Position"
         case .cursorRestorePosition: return "Cursor Restore Position"
         case .delete: return "Delete"
-        case .eraseToCursor: return "Erase to Cursor"
-        case .eraseToEndOfLine: return "Erase to End of Line"
-        case .clearScreen: return "Clear"
+        case .eraseLineToCursor: return "Erase Line to Cursor"
+        case .eraseLine: return "Erase Line"
+        case .eraseScreenToCursor: return "Erase Screen to Cursor"
+        case .clearScreen: return "Clear Screen"
         case .printScreen: return "Print Screen"
         case .bell: return "Bell"
         case .break: return "Break"
         }
     }
+    
+    static func moveCursorUp(lines: Int) -> String {
+        return "\u{1B}[\(lines)A"
+    }
 }
 
-extension TerminalCommands: Identifiable {
-    public var id: TerminalCommands { self }
+extension TerminalCommand: Identifiable {
+    public var id: TerminalCommand { self }
+}
+
+
+//https://stackoverflow.com/questions/39889568/how-to-transpose-an-array-more-swiftly
+extension Collection where Self.Iterator.Element: RandomAccessCollection {
+    // PRECONDITION: `self` must be rectangular, i.e. every row has equal size.
+    func transposed() -> [[Self.Iterator.Element.Iterator.Element]] {
+        guard let row = self.first else { return [] }
+        return row.indices.map { index in
+            self.map { $0[index] }
+        }
+    }
+    
+    func flipped() -> [[Self.Iterator.Element.Iterator.Element]] {
+        return self.map { $0.reversed() }
+    }
 }
 
 

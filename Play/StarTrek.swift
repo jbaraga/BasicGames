@@ -7,16 +7,10 @@
 
 import Foundation
 
+private typealias Coordinate = Point
+
 
 class StarTrek: GameProtocol {
-    
-    private typealias Coordinate = (x: Int, y: Int)  //Note that x = row, y = column, i.e. x and y are swapped
-    
-    private func coordinate(from string: String) -> Coordinate {
-        let digits = string.components(separatedBy: ",").map { $0.trimmingCharacters(in: .whitespaces) }
-        return (Int(digits.first ?? "") ?? 0, Int(digits.last ?? "") ?? 0)
-    }
-    
     private enum Command: String, CaseIterable, CustomStringConvertible {
         case NAV
         case SRS
@@ -132,7 +126,7 @@ class StarTrek: GameProtocol {
     private var k7 = 0  //# Klingons in galaxy at start of run
     private var k9 = 0  //# Klingons in galaxy
     private var b3 = 0  //# Starbases in current quadrant - 0 or 1
-    private var starbaseCoordinate = Coordinate(0, 0)  //Starbase location in quadrant
+    private var starbaseCoordinate = Coordinate.zero  //Starbase location in quadrant
     private var b9 = 2  //# Starbases in galaxy
     private var s3 = 0  //# Stars in current quadrant
     
@@ -293,7 +287,7 @@ class StarTrek: GameProtocol {
         println("   on stardate " + String(format: "%.1f", t0 + t9) + "   This gives you \(Int(t9)) days.  There " + x0$)
         println("   \(b9) starbase" + x$ + " in the galaxy for resupplying your ship")
         println()
-        let _ = input("Hit return when ready to accept command", terminator: "")
+        let _ = input("Hit return when ready to accept command", terminator: " ")
         println()
         enterQuadrant()
         
@@ -354,7 +348,7 @@ class StarTrek: GameProtocol {
         z[q1,q2] = g[q1,q2]  //Add to known galaxy map
         
         if q1 > 0 && q1 < 9 && q2 > 0 && q2 < 9  {
-            let quadrantName = quadrantName(for: (q1, q2), regionOnly: false)
+            let quadrantName = quadrantName(for: Coordinate(q1, q2), regionOnly: false)
             if t0 == t {
                 println("Your mission begins with your starship located")
                 println("in the galactic quadrant, '" + quadrantName + "'.")
@@ -389,7 +383,7 @@ class StarTrek: GameProtocol {
     //1680-1980
     private func initializeQuadrant() {
         //1680 Enterprise
-        insertObject(.enterprise, at: (s1, s2))
+        insertObject(.enterprise, at: Coordinate(s1, s2))
         
         //1720-1780 Klingons
         if k3 > 0 {
@@ -452,7 +446,7 @@ class StarTrek: GameProtocol {
         //Klingons move
         for i in 1...3 {
             if k[i,3] > 0 {
-                insertObject(.emptySpace, at: (k[i,1], k[i,2]))
+                insertObject(.emptySpace, at: Coordinate(k[i,1], k[i,2]))
                 let coordinate = emptyLocation()
                 k[i,1] = coordinate.x
                 k[i,2] = coordinate.y
@@ -497,7 +491,7 @@ class StarTrek: GameProtocol {
         }
         
         //3060 REM BEGIN MOVING STARSHIP
-        insertObject(.emptySpace, at: (s1, s2))
+        insertObject(.emptySpace, at: Coordinate(s1, s2))
         let x1 = c[c1,1] + (c[c1+1,1] - c[c1,1])*(c1 - Int(c1))
         let x2 = c[c1,2] + (c[c1+1,2] - c[c1,2])*(c1 - Int(c1))
         var x = Double(s1)
@@ -583,7 +577,7 @@ class StarTrek: GameProtocol {
         }
         
         //Lines 3370-3450
-        insertObject(.enterprise, at: (s1, s2))
+        insertObject(.enterprise, at: Coordinate(s1, s2))
         manueverEnergy()
         let t8 = w1 < 1 ? 0.1 * Double(Int(10 * w1)) : 1
         t += t8
@@ -689,7 +683,7 @@ class StarTrek: GameProtocol {
                         println("*** Klingon destroyed ***")
                         k3 -= 1
                         k9 -= 1
-                        let coordinate = (k[i,1], k[i,2])
+                        let coordinate = Coordinate(k[i,1], k[i,2])
                         insertObject(.emptySpace, at: coordinate)
                         k[i,3] = 0
                         g[q1,q2] -= 100
@@ -752,10 +746,10 @@ class StarTrek: GameProtocol {
                 return
             }
             println(tab(16), "\(x3) , \(y3)")
-        } while isObject(.emptySpace, at: (x3, y3))  //Line 5050
+        } while isObject(.emptySpace, at: Coordinate(x3, y3))  //Line 5050
         
         //Line 5060
-        let coordinate = (x3, y3)
+        let coordinate = Coordinate(x3, y3)
         let object = object(at: coordinate)
         switch object {
         case .emptySpace:
@@ -778,7 +772,7 @@ class StarTrek: GameProtocol {
                     k[i,3] = 0
                 }
             }
-            insertObject(.emptySpace, at: (x3, y3))
+            insertObject(.emptySpace, at: Coordinate(x3, y3))
             g[q1,q2] = k3 * 1000 + b3 * 10 * s3
             z[q1,q2] = g[q1,q2]
             
@@ -968,7 +962,7 @@ class StarTrek: GameProtocol {
         for i in (s1 - 1)...(s1 + 1) {
             for j in (s2 - 1)...(s2 + 1) {
                 if i > 0 && i < 9 && j > 0 && j < 9 {
-                    if isObject(.starbase, at: (i,j)) {
+                    if isObject(.starbase, at: Coordinate(i,j)) {
                         isDockedAtStarbase = true
                         c$ = "DOCKED"
                         e = e0
@@ -1107,10 +1101,10 @@ class StarTrek: GameProtocol {
             print(" \(i) ")
             if isMap {
                 //Lines 7740-7800
-                var name = quadrantName(for: (i, 1), regionOnly: true)
+                var name = quadrantName(for: Coordinate(i, 1), regionOnly: true)
                 var j0 = 15 - Int(round(0.5 * Double(name.count)))
                 print(tab(j0), name)
-                name = quadrantName(for: (i, 5), regionOnly: true)
+                name = quadrantName(for: Coordinate(i, 5), regionOnly: true)
                 j0 = 39 - Int(round(0.5 * Double(name.count)))
                 println(tab(j0), name)
                 println(o1$)
@@ -1157,7 +1151,7 @@ class StarTrek: GameProtocol {
         println("From Enterprise to Klingon battle cruiser" + (k3 > 1 ? "s" : ""))
         for i in 1...3 {
             if k[i,3] > 0 {
-                let (direction, distance) = directionAndDistance(from: (s1, s2), to: (k[i,1], k[i,2]))
+                let (direction, distance) = directionAndDistance(from: Coordinate(s1, s2), to: Coordinate(k[i,1], k[i,2]))
                 println(String(format: "Direction = %.1f", direction))
                 println(String(format: "Distance = %.5f", distance))
             }
@@ -1169,8 +1163,8 @@ class StarTrek: GameProtocol {
         println("Direction/Distance Calculator")
         println("You are at quadrant \(q1) , \(q2) sector \(s1) , \(s2)")
         println("Please enter")
-        let coordinate1 = coordinate(from: input("  Initial coordinates (x,y)"))
-        let coordinate2 = coordinate(from: input("  Final coordinates (x,y)"))
+        let coordinate1 = Coordinate(input("  Initial coordinates (x,y)")) ?? .zero
+        let coordinate2 = Coordinate(input("  Final coordinates (x,y)")) ?? .zero
         let (direction, distance) = directionAndDistance(from: coordinate1, to: coordinate2)
         println(String(format: "Direction = %.1f", direction))
         println(String(format: "Distance = %.5f", distance))
@@ -1262,7 +1256,7 @@ class StarTrek: GameProtocol {
             println("Mr. Spock reports,  'Sensors show no starbases in this quadrant.'")
         } else {
             println("From Enterprise to Starbase:")
-            let (direction, distance) = directionAndDistance(from: (s1, s2), to: starbaseCoordinate)
+            let (direction, distance) = directionAndDistance(from: Coordinate(s1, s2), to: starbaseCoordinate)
             println(String(format: "Direction = %.1f", direction))
             println(String(format: "Distance = %.5f", distance))
         }
@@ -1273,11 +1267,11 @@ class StarTrek: GameProtocol {
     private func emptyLocation() -> Coordinate {
         var x = fnr(1)
         var y = fnr(1)
-        while !isObject(.emptySpace, at: (x, y)) {
+        while !isObject(.emptySpace, at: Coordinate(x, y)) {
             x = fnr(1)
             y = fnr(1)
         }
-        return (x, y)
+        return Coordinate(x, y)
     }
     
     //MARK: 8660 REM INSERT IN STRING ARRAY FOR QUADRANT

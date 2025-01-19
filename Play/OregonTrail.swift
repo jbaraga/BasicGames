@@ -50,7 +50,7 @@ class OregonTrail: GameProtocol {
     //155 REM
     
     func run() {
-        printHeader(title: Game.oregonTrail.title, newlines: 2)
+        printHeader(title: Game.oregonTrail.description, newlines: 2)
         
         var response = Response.other
         repeat {

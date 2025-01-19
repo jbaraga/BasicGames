@@ -30,7 +30,7 @@ class Golf: GameProtocol {
             case .trees: return "Trees"
             case .adjacentFairway: return "adjacent fairway"
             case .trap: return "trap"
-            case .water: return "water"
+            case .water: return "into water"
             case .outOfBounds: return "out of bounds"
             case .green: return "green"
             case .hole: return "hole"
@@ -138,32 +138,24 @@ class Golf: GameProtocol {
             }
             
             repeat {
-                var club = selectClub(for: progress.ballLocation)  //C
+                var (club, w) = selectClubAndSwing(for: progress.ballLocation)  //C - club value, W - fraction of full swing
                 progress.nextShot()
-                var w = 1.0  //W - fraction of full swing
                 
                 if club > 13 {  //742
-                    w = getSwingEffort()  //960
-                    if w > 1 {
-                        println("That club is not in the bag.")
-                        println()
-                        progress.shotNumber -= 1
-                    } else {
-                        if progress.ballLocation == .trap {
-                            if weakness == .trapShots, rnd() < progress.trapProbability {  //1280, 1320
-                                progress.trapProbability *= 0.2
-                                println("Shot dubbed, still in trap.")
-                            } else {
-                                progress.onGreen(handicap: handicap) //1300
-                            }
+                    if progress.ballLocation == .trap {
+                        if weakness == .trapShots, rnd() < progress.trapProbability {  //1280, 1320
+                            progress.trapProbability *= 0.2
+                            println("Shot dubbed, still in trap.")
                         } else {
-                            if club > 14 { club -= 10 }  //990-1000
-                            if progress.shotNumber > 7, progress.distanceToHole < 200 {  //760, 867
-                                progress.onGreen(handicap: handicap)
-                            } else {
-                                let d1 = shotDistance(for: club, effort: w)  //770
-                                progress.locationAndDistance = shotResult(hole: hole, shotDistance: d1, currentState: progress)
-                            }
+                            progress.onGreen(handicap: handicap) //1300
+                        }
+                    } else {
+                        if club > 14 { club -= 10 }  //990-1000
+                        if progress.shotNumber > 7, progress.distanceToHole < 200 {  //760, 867
+                            progress.onGreen(handicap: handicap)
+                        } else {
+                            let d1 = shotDistance(for: club, effort: w)  //770
+                            progress = shotResult(hole: hole, shotDistance: d1, currentState: progress)
                         }
                     }
                 } else {
@@ -173,28 +165,28 @@ class Golf: GameProtocol {
                     if hole.number % 3 == 0, s2 + q + 10 * s2 / 18 < s2 * (72 + (h + 1) / 0.85) / 18 {  //746, 952
                         progress.incrementTreeEncounters()  //956
                         if progress.shotNumber % 2 > 0 && progress.distanceToHole >= 95 {
-                            progress.locationAndDistance = (.rough, progress.distanceToHole - 75)  //set to .rough omitted from original code
+                            progress.locationAndDistance = (.rough, progress.distanceToHole - 75)  //set to .rough - omitted from original code
                             println("Ball hit tree - bounced into rough \(Int(progress.distanceToHole)) yards from hole.")  //1012
-                         } else {
+                        } else {
                             println("You dubbed it.")  //862
-                             progress.locationAndDistance = shotResult(hole: hole, shotDistance: 35, currentState: progress)
+                            progress = shotResult(hole: hole, shotDistance: 35, currentState: progress)
                         }
                     } else {
-                        if club < 4 && weakness == .distance {  //752, 756
+                        if club < 4 && progress.ballLocation == .rough {  //752, 756
                             println("You dubbed it.")
-                            progress.locationAndDistance = shotResult(hole: hole, shotDistance: 35, currentState: progress)
+                            progress = shotResult(hole: hole, shotDistance: 35, currentState: progress)
                         } else {
                             if progress.shotNumber > 7, progress.distanceToHole < 200 {  //760, 867
                                 progress.onGreen(handicap: handicap)
                             } else {
                                 let d1 = shotDistance(for: club, effort: w)  //770
-                                progress.locationAndDistance = shotResult(hole: hole, shotDistance: d1, currentState: progress)
+                                progress = shotResult(hole: hole, shotDistance: d1, currentState: progress)
                             }
                         }
                     }
                 }
                 
-                if progress.ballLocation == .teeOff { progress.ballLocation = .fairway }
+                if progress.ballLocation == .teeOff { progress.ballLocation = .fairway }  //330, 1150
                 
                 switch progress.ballLocation {
                 case .green:
@@ -250,22 +242,23 @@ class Golf: GameProtocol {
     }
     
     //629-730
-    private func selectClub(for ballLocation: BallLocation) -> Int {
-        //        let allowedClubs = [1...4, 13...19, 23...29].reduce(into: [Int]()) { $0 += $1 }
-        let allowedClubs = [1...4, 12...29].reduce(into: [Int]()) { $0 += $1 }  //Bye line 710-730,650 club 12 if allowed if L(0) <= 5
+    private func selectClubAndSwing(for ballLocation: BallLocation) -> (Int, Double) {
+        let allowedClubs = [1...4, 12...29].reduce(into: [Int]()) { $0 += $1 }  //By line 710-730,650 club 12 if allowed if L(0) <= 5
         if var c = Int(input("What club do you choose")), allowedClubs.contains(c) {
             println()
             //640-665, 710-730
             if c >= 12 { c -= 6 }  //Line 720: club 12-19 -> 6-13; 23-29 -> 17-23
             
-            if ballLocation.rawValue <= Area.trap.rawValue || c == 14 || c == 23 {  //Playable, not in water or out of bounds **this condition should always be true, as ballLocation is always reset to fairway after in water or out of bounds; c conditions don't make sense and are not needed
-                return c
-            }
+            //Line 650 condition: ball is playable, not in water or out of bounds **this condition should always be true, as ballLocation is always reset to fairway after in water or out of bounds per line 1240; lines 660,665 c conditions don't make sense and should never be executed
+            let w = c > 13 ? getSwingEffort() : 1
+            if w <= 1  { return (c, w) }
         }
+        
         println()
         println("That club is not in the bag.")
         println()
-        return selectClub(for: ballLocation)
+        return selectClubAndSwing(for: ballLocation)
+
     }
     
     //960-970
@@ -280,47 +273,60 @@ class Golf: GameProtocol {
     }
     
     //830-
-    private func shotResult(hole: Hole, shotDistance d1: Double, currentState: HoleProgress) -> (location: BallLocation, distance: Double) {
+    private func shotResult(hole: Hole, shotDistance d1: Double, currentState: HoleProgress) -> HoleProgress {
         let d = currentState.distanceToHole
         let o = offlineDistance(for: d1)
         let d2 = distanceToHole(shotDistance: d1, offlineDistance: o, startingDistance: d)  //New distance after shot
+        var newState = currentState
         
         if d - d1 < 0, d2 >= 20 {
             println("Too much club.  You're past the hole.")
         }
         
-        var newLocation: BallLocation
         if d2 > 27 {
             //1020-1094
             if o < 30 || currentState.penaltyAssessed {
                 //1150
-                newLocation = .fairway
+                newState.ballLocation = .fairway
             } else {
                 if (hole.number + 1) % 15 == 0, weakness == .slice {
                     print("You hooked- ")
-                    newLocation = hole.leftHazard
+                    newState.ballLocation = hole.leftHazard
                 } else {
                     print("You sliced- ")
-                    newLocation = hole.rightHazard
+                    newState.ballLocation = hole.rightHazard
                 }
                 if o > 45 { println("badly.") }
             }
-            
+            newState.distanceToHole = d2
         } else if d2 > 20 {
             //1100
-            newLocation = .trap
+            newState.locationAndDistance = (.trap, d2)
         } else if d2 > 0.5 {
-            return (.green, d2)
+            newState.locationAndDistance = (.green, d2)
+            return newState
         } else {
             println("You holed it.")
-            return (.hole, 0)
+            newState.locationAndDistance = (.hole, 0)
+            return newState
         }
         
-        println("Shot went \(Int(d1)) yards.  It's \(Int(d2)) yards from the cup.")
-        println("Ball is \(Int(o)) yards off line... in \(newLocation)")
-        return (newLocation, d2)
+        //1190-1270
+        switch newState.ballLocation {
+        case .outOfBounds, .water:
+            println("Your shot went \(newState.ballLocation)")
+            println("Penalty stroke assessed.  Hit from previous location.")
+            newState.penaltyAssessed = true
+            newState.ballLocation = .fairway
+        default:
+            println("Shot went \(Int(d1)) yards.  It's \(Int(d2)) yards from the cup.")
+            println("Ball is \(Int(o)) yards off line... in \(newState.ballLocation)")
+        }
+        
+        return newState
     }
     
+    //770-800, 1170-1180
     private func shotDistance(for club: Int, effort: Double) -> Double {
         let c = Double(club)
         let h = Double(handicap)

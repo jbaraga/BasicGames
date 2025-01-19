@@ -17,9 +17,10 @@ class Name: GameProtocol {
         var reversed: String { String(full.reversed()) }  //40-50
         var sorted: String { String((first + last).sorted()) }  //100-140
         
-        init(_ entry: (String?, String?)) {
-            first = entry.0 ?? ""
-            last = entry.1 ?? ""
+        init(_ string: String) {
+            let components = (string.components(separatedBy: .whitespaces.union(CharacterSet(charactersIn: ","))).map { $0.trimmingCharacters(in: .whitespaces) }).filter { !$0.isEmpty }
+            first = components.first ?? ""
+            last = components.last ?? ""
             if first.isEmpty && last.isEmpty {
                 first = "Hondo"
             }

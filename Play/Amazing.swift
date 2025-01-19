@@ -9,8 +9,7 @@
 import Foundation
 
 class Amazing: GameProtocol {
-    private let MaximumWidth = 30
-    private let MaximumLength = 72
+    private let maximumSize = Size(width: 30, height: 72)
     
     private struct Square {
         var hasRightWall = true
@@ -53,11 +52,11 @@ class Amazing: GameProtocol {
     }
     
     private func play() {
-        let (width, length) = getDimensions()
+        let size = getDimensions()
         println(3)
         
         consoleIO.startHardcopy()
-        generateMaze(width: width, height: length)
+        generateMaze(size: size)
         consoleIO.endHardcopy()
         println(3)
         wait(.long)
@@ -68,34 +67,33 @@ class Amazing: GameProtocol {
             wait(.long)
         }
         
-        if width > 4 { unlockEasterEgg(.amazing) }
+        if size.width > 4 { unlockEasterEgg(.amazing) }
     }
     
-    private func getDimensions() -> (width: Int, height: Int) {
-        wait(.short)
-        guard let (width, height): (Int, Int) = input("What are your width and length"), width > 0, height > 0 else {
+    private func getDimensions() -> Size {
+        guard let size: Size = input("What are your width and length") else {
             println("Meaningless dimensions.  Try Again.")
             return getDimensions()
         }
         
-        guard width <= MaximumWidth, height <= MaximumLength else {
-            println("Maximum dimensions \(MaximumWidth) x \(MaximumLength).  Try Again.")
+        guard size.width <= maximumSize.width, size.height <= maximumSize.height else {
+            println("Maximum dimensions \(maximumSize).  Try Again.")
             return getDimensions()
         }
-        return (width, height)
+        return size
     }
         
     //MARK: Generate and print maze
-    private func generateMaze(width: Int, height: Int) {
-        let numberOfSquares = width * height
-        var squares = dim(height, width, value: Square())
+    private func generateMaze(size: Size) {
+        let numberOfSquares = size.width * size.height
+        var squares = dim(size.height, size.width, value: Square())
         var isThereAnExit = false
         var row = 0
         var column = 0
         var squaresVisited = 0
         
         //Enter maze at random column
-        let entryColumn = Int(rnd(Double(width)))
+        let entryColumn = Int(rnd(Double(size.width)))
         column = entryColumn
         squares[row][column].markVisited()
         squaresVisited += 1
@@ -107,10 +105,10 @@ class Amazing: GameProtocol {
         //Moves left to right, up to down from current square in raster fashion
         func moveToNextSquare() {
             column += 1
-            if column == width {
+            if column == size.width {
                 column = 0
                 row += 1
-                if row == height { row = 0 }
+                if row == size.height { row = 0 }
             }
         }
 
@@ -121,11 +119,11 @@ class Amazing: GameProtocol {
             //Left
             if column > 0 && squares[row][column - 1].hasNotBeenVisited { allowedDirections.append(.left) }
             //Right
-            if column < width - 1 && squares[row][column + 1].hasNotBeenVisited { allowedDirections.append(.right) }
+            if column < size.width - 1 && squares[row][column + 1].hasNotBeenVisited { allowedDirections.append(.right) }
             //Up
             if row > 0 && squares[row - 1][column].hasNotBeenVisited { allowedDirections.append(.up) }
             //Down
-            if row < height - 1 {
+            if row < size.height - 1 {
                 if squares[row + 1][column].hasNotBeenVisited { allowedDirections.append(.down) }
             } else {
                 //At bottom row - allow for exit through bottom
@@ -152,7 +150,7 @@ class Amazing: GameProtocol {
                     row += 1
                 }
                 
-                if row < height {
+                if row < size.height {
                     //Still in maze. Mark square as used and increment counter
                     squares[row][column].markVisited()
                     squaresVisited += 1
@@ -179,7 +177,7 @@ class Amazing: GameProtocol {
         
         //Print out maze
         //Top line with opening at entryColumn
-        for i in 0..<width {
+        for i in 0..<size.width {
             i == entryColumn ? print(".  ") : print(".--")
         }
         println(".")

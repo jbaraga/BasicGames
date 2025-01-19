@@ -27,8 +27,8 @@ class Mugwump: GameProtocol {
         }
         
         //380-390
-        func distance(from m: Int, _ n: Int) -> Double {
-            return Double(Int(sqrt(pow(Double(x - m), 2) + pow(Double(y - n), 2)) * 10)) / 10
+        func distance(from point: Point) -> Double {
+            return Double(Int(sqrt(pow(Double(x - point.x), 2) + pow(Double(y - point.y), 2)) * 10)) / 10
         }
     }
     
@@ -58,15 +58,15 @@ class Mugwump: GameProtocol {
         while turn < 10 {
             turn += 1
             println(2)
-            let (m, n): (Int, Int) = input("Turn no. \(turn) what is your guess") ?? (0, 0)
+            let point: Point = input("Turn no. \(turn) what is your guess") ?? .zero
             
             for (index, wump) in mugwumps.enumerated() {
                 if wump.isHidden {
-                    if m == wump.x, n == wump.y {
+                    if point.x == wump.x, point.y == wump.y {
                         println("You have found Mugwump \(index + 1)")
                         mugwumps[index].isHidden = false
                     } else {
-                        let distance = wump.distance(from: m, n).formatted(.number)
+                        let distance = wump.distance(from: point).formatted(.number)
                         println("You are \(distance) units from Mugwump \(index + 1)")
                     }
                 }

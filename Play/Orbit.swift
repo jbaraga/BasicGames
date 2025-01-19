@@ -11,7 +11,7 @@ import Foundation
 class Orbit: GameProtocol {
     
     func run() {
-        printHeader(title: Game.orbit.title)
+        printHeader(title: Game.orbit.description)
         println("Somewhere above your planet is a Romulan ship.")
         println()
         println("The ship is in a constant polar orbit.  Its")

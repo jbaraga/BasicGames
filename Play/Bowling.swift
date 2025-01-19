@@ -162,6 +162,7 @@ class Bowling: GameProtocol {
             frameNumbers.forEach { print(tab(($0-1)*4), scoreByFrame[$0]?.ball1 ?? 0) }
             println()
             frameNumbers.forEach { print(tab(($0-1)*4), scoreByFrame[$0]?.total ?? 0) }
+            //TODO: verify scoring if strike or spare, currently not giving bonus for next frame
             println(tab(41), scoreByFrame.values.reduce(0, { $0 + $1.total }))
             frameNumbers.forEach { print(tab(($0-1)*4), scoreByFrame[$0]?.resultString ?? " ") }
             println(2)
@@ -172,6 +173,10 @@ class Bowling: GameProtocol {
         //TODO: score does not take into account spares and strikes
         let maximumScore = (scores.map { score in score.values.reduce(0) { $0 + $1.total } }).max() ?? 0
         if maximumScore > 95 { unlockEasterEgg(.bowling) }
+    }
+    
+    func test() {
+        //TODO: Implement
     }
 }
 

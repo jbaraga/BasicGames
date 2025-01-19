@@ -60,7 +60,7 @@ struct GameLauncherView: View {
                             .foregroundColor(game.imageTint)
                             .cornerRadius(cornerRadius(for: game))
                         
-                        Text(game.stringValue)
+                        Text(game.description)
                             .font(.title)
                         
                         Spacer()

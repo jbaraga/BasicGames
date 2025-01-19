@@ -114,4 +114,8 @@ class Bullseye: GameProtocol {
         unlockEasterEgg(.bullseye)
         end()
     }
+    
+    func test() {
+        //TODO: Implement
+    }
 }

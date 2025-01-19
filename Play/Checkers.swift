@@ -8,11 +8,9 @@
 import Foundation
 
 
-fileprivate typealias Board = [[Piece]]
+private typealias Board = Matrix<Piece>
 
 class Checkers: GameProtocol {
-    
-    private var board = Board()  //S
     
     func run() {
         printHeader(title: "Checkers")
@@ -27,27 +25,30 @@ class Checkers: GameProtocol {
         println("jump.  Type two negative numbers when you cannot jump.")
         println(3)
         
-        board = setupBoard()
         wait(.short)
+        play()
+        end()
+    }
+    
+    private func play() {
+        var board = setupBoard()
         
-        while let (fromSquare, toSquare) = getComputerMove() {
+        while let (fromSquare, toSquare) = getComputerMove(board: board) {
             print(chr$(30) + "From \(fromSquare.stringValue) To \(toSquare.stringValue)")
-            moveComputer(from: fromSquare, to: toSquare)
-            printBoard()
+            board = moveComputer(from: fromSquare, to: toSquare, board: board)
+            print(board: board)
             wait(.short)
             
             //Lines 1552-1570 - test for end
-            let computerPieces = (board.reduce([], { $0 + $1 })).filter { $0.isX }
+            let computerPieces = (board.rows.reduce([], { $0 + $1 })).filter { $0.isX }
             if computerPieces.count == 0 { gameover(isUserWinner: true) }
-            let userPieces = (board.reduce([], { $0 + $1 })).filter { $0.isO }
+            let userPieces = (board.rows.reduce([], { $0 + $1 })).filter { $0.isO }
             if userPieces.count == 0 { gameover(isUserWinner: false) }
             
-            let square1 = getFrom()  //E,H
-            let square2 = getTo(from: square1)  //A,B
-            moveUser(from: square1, to: square2)
+            let square1 = getFrom(board: board)  //E,H
+            let square2 = getTo(from: square1, board: board)  //A,B
+            board = moveUser(from: square1, to: square2, board: board)
         }
-        
-        gameover(isUserWinner: true)
     }
     
     //Lines 1880-1885
@@ -60,19 +61,30 @@ class Checkers: GameProtocol {
     }
     
     //Lines 90-200
+//    private func setupBoard() -> Board {
+//        var board = dim(2, 8, value: Piece.none)
+//        var row: [Piece] = [.oMan, .none, .oMan, .none, .oMan, .none, .oMan, .none]
+//        for _ in 0...2 {
+//            board.insert(row, at: 0)
+//            row.append(row.removeFirst())
+//            board.append(row.map { -$0})
+//        }
+//        return board
+//    }
+    
     private func setupBoard() -> Board {
-        var board = dim(2, 8, value: Piece.none)
+        var array = dim(2, 8, value: Piece.none)
         var row: [Piece] = [.oMan, .none, .oMan, .none, .oMan, .none, .oMan, .none]
         for _ in 0...2 {
-            board.insert(row, at: 0)
+            array.insert(row, at: 0)
             row.append(row.removeFirst())
-            board.append(row.map { -$0})
+            array.append(row.map { -$0})
         }
-        return board
+        return Matrix(array2D: array)
     }
     
     //Lines 230-1100 computer move. Returns nil if no move available [R(0)=99]
-    private func getComputerMove() -> (from: Square, to: Square)? {
+    private func getComputerMove(board: Board) -> (from: Square, to: Square)? {
         var score = -99  // [R(0)]
         var fromSquare = Square()
         var toSquare = Square()
@@ -91,7 +103,7 @@ class Checkers: GameProtocol {
                 }
                 
                 squares.forEach {
-                    let (q, destination) = scoreMove(from: square, to: $0)
+                    let (q, destination) = scoreMove(from: square, to: $0, board: board)
                     if q > score {
                         score = q
                         fromSquare = square
@@ -107,22 +119,22 @@ class Checkers: GameProtocol {
     }
     
     //Lines 650-870 - score move from square1 to square2; returns new square2 if move is a jump
-    private func scoreMove(from square1: Square, to square2: Square) -> (score: Int, tosquare: Square) {
+    private func scoreMove(from square1: Square, to square2: Square, board: Board) -> (score: Int, tosquare: Square) {
         //U = square2.x, V = square2.y
         switch board[square2] {
         case .xMan, .xKing: return (-99, square2)  //square2 occupied by friendly
         case .none:
-            return (getScoreForMove(from: square1, to: square2), square2)  //evaluate move to open square
+            return (getScoreForMove(from: square1, to: square2, board: board), square2)  //evaluate move to open square
         case .oMan, .oKing:
             //evaluate for jump
             let jumpsquare = Square(x: square2.x + (square2.x - square1.x), y: square2.y + (square2.y - square1.y))
             if jumpsquare.isOff { return (-99, square2) }
-            return (getScoreForMove(from: square1, to: jumpsquare), jumpsquare)
+            return (getScoreForMove(from: square1, to: jumpsquare, board: board), jumpsquare)
         }
     }
     
     //Lines 910-1100
-    private func getScoreForMove(from square1: Square, to square2: Square) -> Int {
+    private func getScoreForMove(from square1: Square, to square2: Square, board: Board) -> Int {
         var q = 0
         if square2.y == 0 && board[square1] == .xMan { q += 2 }  //Increase score 2 move to bottom
         if abs(square1.y - square2.y) == 2 { q += 5 }  //Increase score 5 for jump to square2
@@ -148,7 +160,8 @@ class Checkers: GameProtocol {
     }
     
     //Lines 1230-1400
-    private func moveComputer(from square1: Square, to square2: Square) {
+    private func moveComputer(from square1: Square, to square2: Square, board: Board) -> Board {
+        var board = board
         if square2.y == 0 {
             board[square2] = .xKing
 //            return  //Bug - if result of jump, user chip not removed
@@ -171,7 +184,7 @@ class Checkers: GameProtocol {
             case .xKing:
                 squares = [Square(x: square2.x-2, y: square2.y-2), Square(x: square2.x-2, y: square2.y+2), Square(x: square2.x+2, y: square2.y-2), Square(x: square2.x+1, y: square2.y+1)].filter { !$0.isOff }
             default:
-                return
+                return board
             }
             
             var score = -99
@@ -179,7 +192,7 @@ class Checkers: GameProtocol {
             squares.forEach { square in
                 let jumpedSquare = Square(x: (square.x + square2.x) / 2, y: (square.y + square2.y) / 2)
                 if board[square].isOpen && board[jumpedSquare].isO {
-                    let q = getScoreForMove(from: square2, to: square)
+                    let q = getScoreForMove(from: square2, to: square, board: board)
                     if q > score {
                         square3 = square
                         score = q
@@ -188,29 +201,33 @@ class Checkers: GameProtocol {
             }
             if score > -99 {
                 print(" To \(square3.stringValue)")
-                moveComputer(from: square2, to: square3)
+                return moveComputer(from: square2, to: square3, board: board)
             }
         }
+        
+        return board
     }
     
     //Lines 1700-1810
-    private func moveUser(from square1: Square, to square2: Square) {
+    private func moveUser(from square1: Square, to square2: Square, board: Board) -> Board {
+        var board = board
         board[square2] = board[square1]
         board[square1] = .none
         if abs(square1.x - square2.x) == 2 {
             //Jump
             let jumpedSquare = Square(x: (square1.x + square2.x) / 2, y: (square1.y + square2.y) / 2)
             board[jumpedSquare] = .none
-            if let square3 = getJumpTo(from: square2) { moveUser(from: square2, to: square3) }
+            if let square3 = getJumpTo(from: square2, board: board) { return moveUser(from: square2, to: square3, board: board) }
         }
         
         if square2.y == 7 { board[square1] = .oKing }
+        return board
     }
     
     //Lines 1420-1550
-    private func printBoard() {
+    private func print(board: Board) {
         println(3)
-        board.reversed().forEach { row in
+        board.rows.reversed().forEach { row in
             row.enumerated().forEach { index, piece in
                 print(tab(5 * index))
                 print(piece)
@@ -221,34 +238,39 @@ class Checkers: GameProtocol {
     }
     
     //Line 1590
-    private func getFrom() -> Square {
+    private func getFrom(board: Board) -> Square {
         guard let square = Square(input("From")), square.isOn, board[square].isO else {
-            return getFrom()
+            return getFrom(board: board)
         }
         return square
     }
     
     //Lines 1670-1690
-    private func getTo(from square1: Square) -> Square {
+    private func getTo(from square1: Square, board: Board) -> Square {
         guard let square2 = Square(input("To")), square2.isOn, board[square2].isOpen, abs(square2.x - square1.x) <= 2, abs(square2.x - square1.x) == abs(square2.y - square1.y) else {
             print(chr$(7) + chr$(11))
-            return getTo(from: square1)
+            return getTo(from: square1, board: board)
         }
         return square2
     }
     
     //Lines 1802-1804
-    private func getJumpTo(from square1: Square) -> Square? {
-        guard let square2 = Square(input("+To")) else { return getJumpTo(from: square1) }
+    private func getJumpTo(from square1: Square, board: Board) -> Square? {
+        guard let square2 = Square(input("+To")) else { return getJumpTo(from: square1, board: board) }
         if square2.x < 0 { return nil }
         guard square2.isOn, board[square2].isOpen, abs(square2.x - square1.x) == 2, abs(square2.y - square1.y) == 2 else {
-            return getJumpTo(from: square1)
+            return getJumpTo(from: square1, board: board)
         }
         return square2
     }
+    
+    func test() {
+        //TODO: implement
+    }
 }
 
-fileprivate enum Piece: CustomStringConvertible {
+
+private enum Piece: CustomStringConvertible {
     case xMan
     case xKing
     case oMan
@@ -270,7 +292,7 @@ fileprivate enum Piece: CustomStringConvertible {
     var isOpen: Bool { self == .none }
 }
 
-fileprivate prefix func -(_ piece: Piece)  -> Piece {
+private prefix func -(_ piece: Piece)  -> Piece {
     switch piece {
     case .xMan: return .oMan
     case .xKing: return .oKing
@@ -280,7 +302,7 @@ fileprivate prefix func -(_ piece: Piece)  -> Piece {
     }
 }
 
-fileprivate struct Square {
+private struct Square {
     var x = 0
     var y = 0
     
@@ -306,14 +328,10 @@ extension Square: LosslessStringConvertible {
 }
 
 //Transposed indexing to match S(X,Y) - x == column, y == row
-fileprivate extension Array where Element == [Piece] {
-    subscript(index: Square) -> Element.Element {
-        get {
-            return self[index.y][index.x]
-        }
-        set {
-            self[index.y][index.x] = newValue
-        }
+private extension Matrix where Element == Piece {
+    subscript(index: Square) -> Element {
+        get { self[index.y, index.x] }
+        set { self[index.y, index.x] = newValue }
     }
 }
 

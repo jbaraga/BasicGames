@@ -93,7 +93,7 @@ class Pizza: GameProtocol {
     //Line 750-970
     private func deliverPizzas() {
         for _ in 1...5 {
-            let s = Int(rnd(1) * 16)
+            let s = customers.indices.randomElement() ?? 0
             let customer = customers[s]
             println()
             println("Hello \(name)'s Pizza.  This is \(customer).")
@@ -101,14 +101,14 @@ class Pizza: GameProtocol {
             
             var isDelivered = false
             while !isDelivered {
-                if let (a1, a2): (Int, Int) = input("  Driver to \(name).  Where does \(customer) live"), a1 > 0, a1 < 5, a2 > 0, a2 < 5 {
-                    let t = a1 - 1 + (a2 - 1) * 4
+                if let point: Point = input("  Driver to \(name).  Where does \(customer) live"), point.x > 0, point.x < 5, point.y > 0, point.y < 5 {
+                    let t = point.x - 1 + (point.y - 1) * 4
                     if t == s {
                         println("Hello \(name).  This is \(customer), thanks for the pizza.")
                         isDelivered = true
                     } else {
                         println("This is \(customers[t]).  I did not order a pizza.")
-                        println("I live at \(a1), \(a2)")
+                        println("I live at \(point.x), \(point.y)")
                     }
                 } else {
                     println("  Driver to \(name).  No one at that address.")  //Added to handle invalid address entry
