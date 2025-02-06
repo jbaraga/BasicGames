@@ -8,7 +8,7 @@
 import Foundation
 
 
-class EvenWins2: GameProtocol {
+class EvenWins2: BasicGame {
     
     //Adaptive computer move array
     private var r = dim(2, 6, value: 4)

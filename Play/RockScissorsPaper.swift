@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RockScissorsPaper: GameProtocol {
+class RockScissorsPaper: BasicGame {
     
     private enum Object: Int, CaseIterable, Comparable, CustomStringConvertible {
         case paper = 1

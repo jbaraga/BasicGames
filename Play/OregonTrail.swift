@@ -9,7 +9,7 @@
 import Foundation
 
 
-class OregonTrail: GameProtocol {
+class OregonTrail: BasicGame {
     private enum ShootingLevel: Int {
         case unspecified = 0
         case ace = 1
@@ -686,9 +686,9 @@ class OregonTrail: GameProtocol {
             
             println()
             //Generate beep for next two lines
-            consoleIO.ringBell()
+            ringBell()
             println("You finally arrived at Oregon City")
-            consoleIO.ringBell()
+            ringBell()
             println("After 2040 long miles---HOORAY!!!")
             println("A real pioneer!")
             println()

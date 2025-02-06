@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RussianRoulette: GameProtocol {
+class RussianRoulette: BasicGame {
     
     func run() {
         printHeader(title: "Russian Roulette")

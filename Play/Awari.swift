@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Awari: GameProtocol {
+class Awari: BasicGame {
     
     private var b = [Int]()  //board, number of stones in pits - index 0-5 user side, 6 user home, 7-12 computer side, 13 computer home
     

@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Bug: GameProtocol {
+class Bug: BasicGame {
     private enum Player {
         case computer
         case user

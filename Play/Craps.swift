@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Craps: GameProtocol {
+class Craps: BasicGame {
     
     func run() {
         printHeader(title: "Craps")

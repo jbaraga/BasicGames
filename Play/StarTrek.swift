@@ -10,7 +10,7 @@ import Foundation
 private typealias Coordinate = Point
 
 
-class StarTrek: GameProtocol {
+class StarTrek: BasicGame {
     private enum Command: String, CaseIterable, CustomStringConvertible {
         case NAV
         case SRS

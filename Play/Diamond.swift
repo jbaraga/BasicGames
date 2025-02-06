@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Diamond: GameProtocol {
+class Diamond: BasicGame {
     func run() {
         printHeader(title: "Diamond")
         play()

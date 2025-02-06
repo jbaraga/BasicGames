@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Orbit: GameProtocol {
+class Orbit: BasicGame {
     
     func run() {
         printHeader(title: Game.orbit.description)

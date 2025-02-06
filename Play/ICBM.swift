@@ -8,7 +8,7 @@
 import Foundation
 
 
-class ICBM: GameProtocol {
+class ICBM: BasicGame {
         
     func run() {
         println(tab(26), "ICBM")

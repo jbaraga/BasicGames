@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Trap: GameProtocol {
+class Trap: BasicGame {
     
     private let n = 100  //maximum
     private let g = 6  //number of guesses

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Golf: GameProtocol {
+class Golf: BasicGame {
     //TODO: Play complete round
     private var score = 0  //G2
     private var cumulativePar = 0 //G3

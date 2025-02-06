@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Love: GameProtocol {
+class Love: BasicGame {
     
     private let maskByRow: [Int: [IndexSet]] = [
         0: [],

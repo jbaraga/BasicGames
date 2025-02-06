@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Bunny: GameProtocol {
+class Bunny: BasicGame {
     
     let data = [
         2,21,14,14,25,

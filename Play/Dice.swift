@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Dice: GameProtocol {
+class Dice: BasicGame {
     
     func run() {
         printHeader(title: "Dice")

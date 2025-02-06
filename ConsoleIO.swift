@@ -194,11 +194,13 @@ class ConsoleIO {
         }
     }
     
-    private func throttledNewLine(_ number: Int = 1) {
+    //Capped at 40
+    private func throttledNewLine(_ number: Int = 1, eraseLine: Bool = false) {
         if number < 1 { return }
-        if number > 20 { return }
+        if number > 40 { return }
         (1...number).forEach {_ in
             throttledWrite("")
+            if eraseLine { send(command: .eraseLine) }
         }
     }
     
@@ -210,8 +212,8 @@ class ConsoleIO {
         throttledWrite(message)
     }
         
-    func println(_ number: Int = 1) {
-        throttledNewLine(number)
+    func println(_ number: Int = 1, eraseLine: Bool = false) {
+        throttledNewLine(number, eraseLine: eraseLine)
     }
     
     func print(tab: Tab) {

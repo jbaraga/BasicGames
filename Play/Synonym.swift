@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Synonym: GameProtocol {
+class Synonym: BasicGame {
     
     private let n = 10  //Number of rounds
     

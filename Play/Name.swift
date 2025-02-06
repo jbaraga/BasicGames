@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Name: GameProtocol {
+class Name: BasicGame {
     
     private struct Name {
         var first = ""

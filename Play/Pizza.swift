@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Pizza: GameProtocol {
+class Pizza: BasicGame {
     
     private var name = ""
     private let customers = Array("ABCDEFGHIJKLMNOP")  //S$, zero indexed

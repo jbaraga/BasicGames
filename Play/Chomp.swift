@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Chomp: GameProtocol {
+class Chomp: BasicGame {
     
     private enum Square: String, CustomStringConvertible {
         case empty = " "

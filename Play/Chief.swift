@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Chief: GameProtocol {
+class Chief: BasicGame {
     func run() {
         printHeader(title: "Chief")
         println(" I am Chief Numbers Freek, the Great Indian Math God.")

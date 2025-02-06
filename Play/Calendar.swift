@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Calendar: GameProtocol {
+class Calendar: BasicGame {
     
     func run() {
         printHeader(title: "Calendar")

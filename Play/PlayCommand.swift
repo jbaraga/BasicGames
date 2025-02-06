@@ -23,435 +23,225 @@ struct Play: ParsableCommand {
 
     func run() throws {
         guard let game = Game(rawValue: gameName) else { throw RuntimeError("Invalid game name.") }
-        if test {
-            try self.test(game)
-            return
-        }
         
+        let basicGame: BasicGame
         switch game {
         case .aceyDucey:
-            AceyDucey().run()
+            basicGame = AceyDucey()
         case .amazing:
-            Amazing().run()
+            basicGame = Amazing()
         case .animal:
-            Animal().run()
+            basicGame = Animal()
         case .awari:
-            Awari().run()
+            basicGame = Awari()
         case .bagels:
-            Bagels().run()
+            basicGame = Bagels()
         case .banner:
-            Banner().run()
+            basicGame = Banner()
         case .basketball:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Basketball()
         case .batnum:
-            Batnum().run()
+            basicGame = Batnum()
         case .battle:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Battle()
         case .blackjack:
-            Blackjack().run()
+            basicGame = Blackjack()
         case .bombardment:
-            Bombardment().run()
+            basicGame = Bombardment()
         case .bombsAway:
-            BombsAway().run()
+            basicGame = BombsAway()
         case .bounce:
-            Bounce().run()
+            basicGame = Bounce()
         case .bowling:
-            Bowling().run()
+            basicGame = Bowling()
         case .boxing:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Boxing()
         case .bug:
-            Bug().run()
+            basicGame = Bug()
         case .bullfight:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = BullFight()
         case .bullseye:
-            Bullseye().run()
+            basicGame = Bullseye()
         case .bunny:
-            Bunny().run()
+            basicGame = Bunny()
         case .buzzword:
-            Buzzword().run()
+            basicGame = Buzzword()
         case .calendar:
-            Calendar().run()
+            basicGame = Calendar()
         case .change:
-            Change().run()
+            basicGame = Change()
         case .checkers:
-            Checkers().run()
+            basicGame = Checkers()
         case .chemist:
-            Chemist().run()
+            basicGame = Chemist()
         case .chief:
-            Chief().run()
+            basicGame = Chief()
         case .chomp:
-            Chomp().run()
+            basicGame = Chomp()
         case .civilWar:
-            CivilWar().run()
+            basicGame = CivilWar()
         case .combat:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Combat()
         case .craps:
-            Craps().run()
+            basicGame = Craps()
         case .cube:
-            Cube().run()
+            basicGame = Cube()
         case .depthCharge:
-            DepthCharge().run()
+            basicGame = DepthCharge()
         case .diamond:
-            Diamond().run()
+            basicGame = Diamond()
         case .dice:
-            Dice().run()
+            basicGame = Dice()
         case .digits:
-            Digits().run()
+            basicGame = Digits()
         case .evenWins1:
-            EvenWins1().run()
+            basicGame = EvenWins1()
         case .evenWins2:
-            EvenWins2().run()
+            basicGame = EvenWins2()
         case .flipFlop:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = FlipFlop()
         case .football:
-            Football().run()
+            basicGame = Football()
         case .ftball:
-            Ftball().run()
+            basicGame = Ftball()
         case .furTrader:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = FurTrader()
         case .golf:
-            Golf().run()
+            basicGame = Golf()
         case .gomoko:
-            Gomoko().run()
+            basicGame = Gomoko()
         case .guess:
-            Guess().run()
+            basicGame = Guess()
         case .gunner:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Gunner()
         case .hamurabi:
-            Hamurabi().run()
+            basicGame = Hamurabi()
         case .hangman:
-            Hangman().run()
+            basicGame = Hangman()
         case .hello:
-            Hello().run()
+            basicGame = Hello()
         case .hexapawn:
             throw RuntimeError("'\(game)' not implemented.")
         case .hiLo:
-            HiLo().run()
+            basicGame = HiLo()
         case .highIQ:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = HighIQ()
         case .hockey:
-            Hockey().run()
+            basicGame = Hockey()
         case .horserace:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Horserace()
         case .hurkle:
-            Hurkle().run()
+            basicGame = Hurkle()
         case .icbm:
-            ICBM().run()
+            basicGame = ICBM()
         case .joust:
-            Joust().run()
+            basicGame = Joust()
         case .kinema:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Kinema()
         case .king:
-            King().run()
+            basicGame = King()
         case .letter:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Letter()
         case .life:
-            Life().run()
+            basicGame = Life()
         case .lifeForTwo:
-            Life2().run()
+            basicGame = Life2()
         case .literatureQuiz:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = LiteratureQuiz()
         case .love:
-            Love().run()
+            basicGame = Love()
         case .lunar:
-            Lunar().run()
+            basicGame = Lunar()
         case .lem:
-            LEM().run()
+            basicGame = LEM()
         case .rocket:
-            Rocket().run()
+            basicGame = Rocket()
         case .masterMind:
             throw RuntimeError("'\(game)' not implemented.")
         case .mathDice:
-            MathDice().run()
+            basicGame = MathDice()
         case .mugwump:
-            Mugwump().run()
+            basicGame = Mugwump()
         case .name:
-            Name().run()
+            basicGame = Name()
         case .nicomachus:
-            Nicomachus().run()
+            basicGame = Nicomachus()
         case .nim:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Nim()
         case .number:
-            Number().run()
+            basicGame = Number()
         case .oneCheck:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = OneCheck()
         case .orbit:
-            Orbit().run()
+            basicGame = Orbit()
         case .oregonTrail:
-            OregonTrail().run()
+            basicGame = OregonTrail()
         case .pizza:
-            Pizza().run()
+            basicGame = Pizza()
         case .poetry:
-            Poetry().run()
+            basicGame = Poetry()
         case .poker:
-            Poker().run()
+            basicGame = Poker()
         case .queen:
             throw RuntimeError("'\(game)' not implemented.")
         case .reverse:
-            Reverse().run()
+            basicGame = Reverse()
         case .rockScissorsPaper:
-            RockScissorsPaper().run()
+            basicGame = RockScissorsPaper()
         case .roulette:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Roulette()
         case .russianRoulette:
             //TODO: throw error or hide game before release
-            RussianRoulette().run()
+//            throw RuntimeError("'\(game)' not available.")
+            basicGame = RussianRoulette()
         case .salvo:
             throw RuntimeError("'\(game)' not implemented.")
         case .sineWave:
-            SineWave().run()
+            basicGame = SineWave()
         case .slalom:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Slalom()
         case .slots:
-            Slots().run()
+            basicGame = Slots()
         case .splat:
-            Splat().run()
+            basicGame = Splat()
         case .starTrek:
-            StarTrek().run()
+            basicGame = StarTrek()
         case .stars:
-            Stars().run()
+            basicGame = Stars()
         case .stockMarket:
-            StockMarket().run()
+            basicGame = StockMarket()
         case .synonym:
-            Synonym().run()
+            basicGame = Synonym()
         case .target:
-            Target().run()
+            basicGame = Target()
         case .threeDPlot:
-            TDPlot().run()
+            basicGame = TDPlot()
         case .threeDTicTacToe:
             throw RuntimeError("'\(game)' not implemented.")
         case .ticTacToe1:
-            TicTacToe1().run()
+            basicGame = TicTacToe1()
         case .ticTacToe2:
-            TicTacToe2().run()
+            basicGame = TicTacToe2()
         case .tower:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Tower()
         case .train:
-            Train().run()
+            basicGame = Train()
         case .trap:
-            Trap().run()
+            basicGame = Trap()
         case .twentyThreeMatches:
-            TwentyThreeMatches().run()
+            basicGame = TwentyThreeMatches()
         case .war:
-            War().run()
+            basicGame = War()
         case .weekday:
-            Weekday().run()
+            basicGame = Weekday()
         case .word:
-            Word().run()
+            basicGame = Word()
         }
-    }
-    
-    func test(_ game: Game) throws {
-        switch game {
-        case .aceyDucey:
-            AceyDucey().test()
-        case .amazing:
-            Amazing().test()
-        case .animal:
-            Animal().test()
-        case .awari:
-            Awari().test()
-        case .bagels:
-            Bagels().test()
-        case .banner:
-            Banner().test()
-        case .basketball:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .batnum:
-            Batnum().test()
-        case .battle:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .blackjack:
-            Blackjack().test()
-        case .bombardment:
-            Bombardment().test()
-        case .bombsAway:
-            BombsAway().test()
-        case .bounce:
-            Bounce().test()
-        case .bowling:
-            Bowling().test()
-        case .boxing:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .bug:
-            Bug().test()
-        case .bullfight:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .bullseye:
-            Bullseye().test()
-        case .bunny:
-            Bunny().test()
-        case .buzzword:
-            Buzzword().test()
-        case .calendar:
-            Calendar().test()
-        case .change:
-            Change().test()
-        case .checkers:
-            Checkers().test()
-        case .chemist:
-            Chemist().test()
-        case .chief:
-            Chief().test()
-        case .chomp:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .civilWar:
-            CivilWar().test()
-        case .combat:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .craps:
-            Craps().test()
-        case .cube:
-            Cube().test()
-        case .depthCharge:
-            DepthCharge().test()
-        case .diamond:
-            Diamond().test()
-        case .dice:
-            Dice().test()
-        case .digits:
-            Digits().test()
-        case .evenWins1:
-            EvenWins1().test()
-        case .evenWins2:
-            EvenWins2().test()
-        case .flipFlop:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .football:
-            Football().test()
-        case .ftball:
-            Ftball().test()
-        case .furTrader:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .golf:
-            Golf().test()
-        case .gomoko:
-            Gomoko().test()
-        case .guess:
-            Guess().test()
-        case .gunner:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .hamurabi:
-            Hamurabi().test()
-        case .hangman:
-            Hangman().test()
-        case .hello:
-            Hello().test()
-        case .hexapawn:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .hiLo:
-            HiLo().test()
-        case .highIQ:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .hockey:
-            Hockey().test()
-        case .horserace:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .hurkle:
-            Hurkle().test()
-        case .icbm:
-            ICBM().test()
-        case .joust:
-            Joust().test()
-        case .kinema:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .king:
-            King().test()
-        case .letter:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .life:
-            Life().test()
-        case .lifeForTwo:
-            Life2().test()
-        case .literatureQuiz:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .love:
-            Love().test()
-        case .lunar:
-            Lunar().test()
-        case .lem:
-            LEM().test()
-        case .rocket:
-            Rocket().test()
-        case .masterMind:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .mathDice:
-            MathDice().test()
-        case .mugwump:
-            Mugwump().test()
-        case .name:
-            Name().test()
-        case .nicomachus:
-            Nicomachus().test()
-        case .nim:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .number:
-            Number().test()
-        case .oneCheck:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .orbit:
-            Orbit().test()
-        case .oregonTrail:
-            OregonTrail().test()
-        case .pizza:
-            Pizza().test()
-        case .poetry:
-            Poetry().test()
-        case .poker:
-            Poker().test()
-        case .queen:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .reverse:
-            Reverse().test()
-        case .rockScissorsPaper:
-            RockScissorsPaper().test()
-        case .roulette:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .russianRoulette:
-            //TODO: throw error or hide game before release
-            RussianRoulette().test()
-        case .salvo:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .sineWave:
-            SineWave().test()
-        case .slalom:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .slots:
-            Slots().test()
-        case .splat:
-            Splat().test()
-        case .starTrek:
-            StarTrek().test()
-        case .stars:
-            Stars().test()
-        case .stockMarket:
-            StockMarket().test()
-        case .synonym:
-            Synonym().test()
-        case .target:
-            Target().test()
-        case .threeDPlot:
-            TDPlot().test()
-        case .threeDTicTacToe:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .ticTacToe1:
-            TicTacToe1().test()
-        case .ticTacToe2:
-            TicTacToe2().test()
-        case .tower:
-            throw RuntimeError("'\(game)' not implemented.")
-        case .train:
-            Train().test()
-        case .trap:
-            Trap().test()
-        case .twentyThreeMatches:
-            TwentyThreeMatches().test()
-        case .war:
-            War().test()
-        case .weekday:
-            Weekday().test()
-        case .word:
-            Word().test()
+
+        if test {
+            basicGame.test()
+        } else {
+            basicGame.run()
         }
     }
 }

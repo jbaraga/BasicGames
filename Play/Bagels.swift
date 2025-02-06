@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Bagels: GameProtocol {
+class Bagels: BasicGame {
     
     var y = 0  //Number of correct guesses
     

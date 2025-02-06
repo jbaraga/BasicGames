@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Poetry: GameProtocol {
+class Poetry: BasicGame {
     
     private var phraseGroups: [[String]] = [
         ["midnight dreary", "fiery eyes", "bird or fiend", "thing of evil", "prophet"],

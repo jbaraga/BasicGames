@@ -6,7 +6,7 @@
 //
 
 
-class Chemist: GameProtocol {
+class Chemist: BasicGame {
     
     func run() {
         printHeader(title: "Chemist")

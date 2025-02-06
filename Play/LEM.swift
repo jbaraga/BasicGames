@@ -8,7 +8,7 @@
 import Foundation
 
 
-class LEM: GameProtocol {
+class LEM: BasicGame {
     private var isNewPilot = true  //Q$ == "NO"
     private var isTryAgain = false //Z$  == "YES"
     private var isMetricUnits = true  //K == 1

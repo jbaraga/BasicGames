@@ -10,7 +10,7 @@ import Foundation
 
 private typealias Board = Matrix<Piece>
 
-class Checkers: GameProtocol {
+class Checkers: BasicGame {
     
     func run() {
         printHeader(title: "Checkers")

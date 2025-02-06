@@ -8,7 +8,7 @@
 import Foundation
 
 
-class StockMarket: GameProtocol {
+class StockMarket: BasicGame {
     
     private let x = 1.0  //For rnd
     private var a = 0.0
@@ -155,7 +155,7 @@ class StockMarket: GameProtocol {
         
         //750 REM PRINT PORTFOLIO
         //751 REM BELL RINGING-DIFFERENT ON MANY COMPUTERS
-        consoleIO.ringBell()
+        ringBell()
         
         println()
         println("**********  End of Day's Trading")

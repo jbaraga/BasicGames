@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Bullseye: GameProtocol {
+class Bullseye: BasicGame {
     
     func run() {
         printHeader(title: "Bullseye")

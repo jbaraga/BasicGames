@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TicTacToe1: GameProtocol {
+class TicTacToe1: BasicGame {
     
     func run() {
         printHeader(title: "Tic Tac Toe")

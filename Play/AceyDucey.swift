@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AceyDucey: GameProtocol {
+class AceyDucey: BasicGame {
 
     private var q = 100 //Total dollars
     

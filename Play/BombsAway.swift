@@ -9,7 +9,7 @@ import Foundation
 import RegexBuilder
 
 
-class BombsAway: GameProtocol {
+class BombsAway: BasicGame {
     
     func run() {
         printHeader(title: "Bombs Away", newlines: 2)

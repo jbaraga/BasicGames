@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Lunar: GameProtocol {
+class Lunar: BasicGame {
     private let g = 1.01e-3  //lunar gravity miles/sec/sec
     private let z = 1.8  //Z - burn force conversion?
     private let capsuleWeight = 16500.0  //N - This is capsule weight, not including fuel. Incorrectly labeled fuel weight in description.

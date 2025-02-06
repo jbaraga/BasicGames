@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Animal: GameProtocol {
+class Animal: BasicGame {
     
     private var a$ = Animal.defaultList
     static let defaultList = ["4", "/qDoes it swim/y2/n3", "/aFish", "/aBird"]

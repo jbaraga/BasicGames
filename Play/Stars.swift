@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Stars: GameProtocol {
+class Stars: BasicGame {
     
     //140 REM *** A IS LIMIT ON NUMBER, M IS NUMBER OF GUESSES
     private let a = 100

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Amazing: GameProtocol {
+class Amazing: BasicGame {
     private let maximumSize = Size(width: 30, height: 72)
     
     private struct Square {

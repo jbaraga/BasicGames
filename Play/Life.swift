@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Life: GameProtocol {
+class Life: BasicGame {
     
     private let testPattern = [
         "   ***",
@@ -46,6 +46,7 @@ class Life: GameProtocol {
             }
         }
         
+        if isCRT { accelerate() }
         var isValid = true
         var generation = 0
         while true {

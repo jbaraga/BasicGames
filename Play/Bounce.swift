@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Bounce: GameProtocol {
+class Bounce: BasicGame {
     
     func run() {
         printHeader(title: "Bounce")

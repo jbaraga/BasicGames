@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Ftball: GameProtocol {
+class Ftball: BasicGame {
     
     private enum Play: Int, CustomStringConvertible {
         case simpleRun = 1

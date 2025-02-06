@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Poker: GameProtocol {
+class Poker: BasicGame {
     
     private var computerPurse = 200  //C - computer account
     private var userPurse = 200  //S - user account

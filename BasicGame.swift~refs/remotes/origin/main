@@ -9,21 +9,21 @@ import AppKit
 
 /*
  BASIC behavior:
- INT(_:) - rounds Double values in most cases.
+ INT(_:) - rounds Double values down according to TRS-80 level 1 basic manual, equivalent to floor in Swift: Int(3.14) = 3, Int(-3.14) = -4
  PRINT(_:); - the semicolon suppresses new line. Numeric values are padded with a space before and after
  PRINT(_, _, _) - multiple items separated by column are printed at successive tab stops. Default tab stop is 14
 */
 
-protocol GameProtocol {
+protocol BasicGame {
     func run()
     func test()
 }
 
-extension GameProtocol {
+extension BasicGame {
     func test() { println("Default implementation - no test available") }
 }
 
-extension GameProtocol {    
+extension BasicGame {    
     var consoleIO: ConsoleIO { ConsoleIO.shared }
     
     /// BASIC Sign function
@@ -94,8 +94,8 @@ extension GameProtocol {
     
     /// Prints new lines
     /// - Parameter number: number of new lines to print
-    func println(_ number: Int = 1) {
-        consoleIO.println(number)
+    func println(_ number: Int = 1, eraseLine: Bool = false) {
+        consoleIO.println(number, eraseLine: eraseLine)
     }
     
     func printHeader(title: String, newlines: Int = 3) {
@@ -137,7 +137,6 @@ extension GameProtocol {
     func enterCRTmode() {
         consoleIO.send(command: .eraseScreenToCursor)  //Clear screen results in additional clear for each cursorHome command (? SwiftTerm bug)
         consoleIO.send(command: .cursorHome)
-        consoleIO.set(baudRate: 256)
     }
     
     func moveCursorToHome() {
@@ -169,7 +168,7 @@ extension GameProtocol {
         consoleIO.saveLinePosition()
     }
     
-    func restoreLinePositon(eraseLine: Bool = true) {
+    func restoreLinePosition(eraseLine: Bool = true) {
         consoleIO.restoreLinePosition()
         if eraseLine { self.eraseLine() }
     }
@@ -177,6 +176,10 @@ extension GameProtocol {
     @discardableResult
     func pauseForEnter() -> String {
         return consoleIO.pauseForEnter()
+    }
+    
+    func ringBell(_ count: Int = 1) {
+        consoleIO.ringBell(count)
     }
     
     func unlockEasterEgg(_ game: Game) {

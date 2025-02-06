@@ -7,8 +7,8 @@
 
 import Foundation
 
-class Life2: GameProtocol {
-    //TODO: Original game may have bug - too many cells survice from from round 1 to round 2
+class Life2: BasicGame {
+    //TODO: Original game may have bug - too many cells survive from from round 1 to round 2
     private var board = Board()
     
     private enum Player: Int, CaseIterable, CustomStringConvertible {
@@ -21,7 +21,6 @@ class Life2: GameProtocol {
     
     private struct Board {
         private var n = Matrix(rows: 5, columns: 5, value: Self.emptyCell)
-//        private var n = dim(5, 5, value: Self.emptyCell)
         
         var columnIndices: Range<Int> { n.rows[0].indices }
         

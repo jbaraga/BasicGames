@@ -7,7 +7,7 @@
 
 import Foundation
 
-class King: GameProtocol {
+class King: BasicGame {
     private let term = 8  //N5 - term in years
     private var year = 0  //X5 - current year
     private var cash = 0  //A - money in treasury

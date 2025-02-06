@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Reverse: GameProtocol {
+class Reverse: BasicGame {
     
     //140 REM *** N=NUMBER OF NUMBER
     private let n = 9

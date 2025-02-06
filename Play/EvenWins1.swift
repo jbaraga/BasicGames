@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EvenWins1: GameProtocol {
+class EvenWins1: BasicGame {
     
     func run() {
         printHeader(title: "Even Wins")

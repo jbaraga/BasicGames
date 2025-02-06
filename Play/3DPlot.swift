@@ -8,7 +8,7 @@
 import Foundation
 
 
-class TDPlot: GameProtocol {
+class TDPlot: BasicGame {
     
     private enum Function: Int, CaseIterable, CustomStringConvertible {
         case e

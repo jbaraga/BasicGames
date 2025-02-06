@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Word: GameProtocol {
+class Word: BasicGame {
     
     private let words = ["dinky", "smoke", "water", "grass", "train", "might", "first", "candy", "champ", "would", "clump", "dopey"]
     

@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Guess: GameProtocol {
+class Guess: BasicGame {
     
     func run() {
         printHeader(title: "Guess")

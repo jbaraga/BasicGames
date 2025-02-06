@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Cube: GameProtocol {
+class Cube: BasicGame {
     
    private var account = 500  //A1
     

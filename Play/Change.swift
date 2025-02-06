@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Change: GameProtocol {
+class Change: BasicGame {
     
     func run() {
         printHeader(title: "Change")

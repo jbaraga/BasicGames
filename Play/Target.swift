@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Target: GameProtocol {
+class Target: BasicGame {
     
     //Line 100
     //let r = 1

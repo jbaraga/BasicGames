@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MathDice: GameProtocol {
+class MathDice: BasicGame {
     
     private struct Die {
         let value: Int

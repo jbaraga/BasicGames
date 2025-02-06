@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Banner: GameProtocol {
+class Banner: BasicGame {
     
     //Lines 899-940
     private let data: [String: [Int]] = [

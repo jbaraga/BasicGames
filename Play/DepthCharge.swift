@@ -8,7 +8,7 @@
 import Foundation
 
 
-class DepthCharge: GameProtocol {
+class DepthCharge: BasicGame {
     
     func run() {
         printHeader(title: "Depth Charge")

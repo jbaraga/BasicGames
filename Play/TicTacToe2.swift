@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TicTacToe2: GameProtocol {
+class TicTacToe2: BasicGame {
     
     private enum Player {
         case user
@@ -192,7 +192,7 @@ class TicTacToe2: GameProtocol {
         saveLinePosition()
         isCRT = Response(input("Are you running on a CRT")) == .yes  //Add on
         println()
-        if isCRT { restoreLinePositon() }
+        if isCRT { restoreLinePosition() }
         
         play()
         end()
@@ -202,7 +202,7 @@ class TicTacToe2: GameProtocol {
         saveLinePosition()
         board.userMark = input("Do you want 'X' or 'O'").uppercased() == "X" ? "X" : "O"  //P$, board value 1
         
-        if isCRT { restoreLinePositon() }
+        if isCRT { restoreLinePosition() }
         
         var isGameUnfinished: Bool { return board.winner == nil && board.isSpaceOpen }
         
@@ -218,7 +218,7 @@ class TicTacToe2: GameProtocol {
             if isGameUnfinished {
                 if isCRT {
                     wait(.short)
-                    restoreLinePositon()
+                    restoreLinePosition()
                 }
                 
                 println("The computer moves to...")
@@ -228,7 +228,7 @@ class TicTacToe2: GameProtocol {
             
             if isGameUnfinished, isCRT {
                 wait(.short)
-                restoreLinePositon()
+                restoreLinePosition()
             }
         } while isGameUnfinished
         
@@ -246,10 +246,10 @@ class TicTacToe2: GameProtocol {
         if !isCRT { println() }
         guard let move = Int(input("Where do you move")), move == 0 || ((1...9).contains(move) && board[move] == 0) else {
             if isCRT {
-                restoreLinePositon()
+                restoreLinePosition()
                 println("That square is occupied")
                 wait(.short)
-                restoreLinePositon()
+                restoreLinePosition()
             } else {
                 println("That square is occupied")
                 println(2)

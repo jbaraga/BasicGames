@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Blackjack: GameProtocol {
+class Blackjack: BasicGame {
     
     private enum Action: String, CaseIterable {
         case doubleDown = "D"

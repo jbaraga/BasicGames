@@ -58,7 +58,7 @@ extension Point: LosslessStringConvertible {
 
 //MARK: Matrix
 struct Matrix<Element> {
-    private var array2D: [[Element]]
+    var array2D: [[Element]]
     
     var rows: [[Element]] { array2D }
     var columns: [[Element]] { array2D.transposed() }
@@ -116,6 +116,10 @@ struct Matrix<Element> {
     subscript(_ point: Point) -> Element {
         get { self[point.x, point.y] }
         set { self[point.x, point.y] = newValue }
+    }
+    
+    subscript(_ row: Int, _ columnRange: Range<Int>) -> ArraySlice<Element> {
+        get { array2D[row][columnRange] }
     }
     
     private func diagonals(for array2D: [[Element]]) -> [[Element]] {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Hurkle: GameProtocol {
+class Hurkle: BasicGame {
     
     private let g = 10  //G
     private var n: Int { g / 2 }  //N=5

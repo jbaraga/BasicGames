@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Joust: GameProtocol {
+class Joust: BasicGame {
     
     private enum AimingPoint: Int, CaseIterable, CustomStringConvertible {
         case helm = 1

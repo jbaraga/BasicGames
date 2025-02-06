@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Football: GameProtocol {
+class Football: BasicGame {
     
     private enum Play: Int, CaseIterable, CustomStringConvertible {
         case pitchout = 1

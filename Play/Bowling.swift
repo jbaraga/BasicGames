@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Bowling: GameProtocol {
+class Bowling: BasicGame {
     
     func run() {
         printHeader(title: "Bowling", newlines: 1)        

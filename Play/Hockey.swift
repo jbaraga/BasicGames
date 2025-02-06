@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Hockey: GameProtocol {
+class Hockey: BasicGame {
     
     private enum TeamID {
         case a  //A$
@@ -132,7 +132,7 @@ class Hockey: GameProtocol {
             
             if isGoalScored {
                 //Line 960-1020 - score
-                consoleIO.ringBell()
+                ringBell()
                 wait(.short)
                 println((oTeam.id == .a ? "Goal " : "Score ") + oTeam.name)
                 let scoringReport = oTeam.goalScored(byPlayer: shooterIndex, assistedBy: firstAssistIndex, assistedBy: secondAssistIndex)
@@ -159,7 +159,7 @@ class Hockey: GameProtocol {
         } while time <= duration
         
         //Line 1540
-        consoleIO.ringBell(2)
+        ringBell(2)
         wait(.short)
         println("That's the siren")
         println()

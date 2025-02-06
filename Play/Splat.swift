@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Splat: GameProtocol {
+class Splat: BasicGame {
     
     private var chuteOpenAltitudes = [Double]()  //Array A - history of chute opening altitudes
     static let key = "altitudes"

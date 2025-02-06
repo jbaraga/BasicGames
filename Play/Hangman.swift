@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Hangman: GameProtocol {
+class Hangman: BasicGame {
     
     private var words = ["Gum", "Sin", "For", "Cry", "Lug", "Bye", "Fly", "Ugly", "Each", "From", "Work", "Talk", "With", "Self", "Pizza", "Thing", "Feign", "Fiend", "Elbow", "Fault", "Dirty", "Budget", "Spirit", "Quaint", "Maiden", "Escort", "Pickax", "Example", "Tension", "Quinine", "Kidney", "Replica", "Sleeper", "Triangle", "Kangaroo", "Mahogany", "Sergeant", "Sequence", "Moustache", "Dangerous", "Scientist", "Different", "Quiescent", "Magistrate", "Erroneously", "Loudspeaker", "Phytotoxic", "Matrimonial", "Parasympathomimetic", "Thigmotropism"]
     

@@ -11,9 +11,9 @@ import Foundation
 
 struct BasicGamesTests {
 
-    @Test(arguments: [Game.gomoko])
+    @Test(arguments: [Game.battle])
     func playTest(game: Game) throws {
-        guard let path = Bundle.main.path(forResource: "play", ofType: nil) else { throw TestError() }
+        guard let path = Bundle.main.path(forResource: "play", ofType: nil) else { throw URLError(.unsupportedURL) }
         let url = URL(fileURLWithPath: path)
         let process = Process()
         process.standardOutput = FileHandle.standardOutput
@@ -22,6 +22,3 @@ struct BasicGamesTests {
         try process.run()
     }
 }
-
-
-struct TestError: Error {}

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SineWave: GameProtocol {
+class SineWave: BasicGame {
     
     func run() {
         printHeader(title: "Sine Wave", newlines: 5)

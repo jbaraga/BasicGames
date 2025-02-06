@@ -7,7 +7,7 @@
 
 import Foundation
 
-class War: GameProtocol {
+class War: BasicGame {
     
     private struct Card: CustomStringConvertible {
         let suit: Suit

@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Buzzword: GameProtocol {
+class Buzzword: BasicGame {
     
     private struct PhraseGenerator {
         var group1 = ["ability", "basal", "behavioral", "child-centered", "differentiated", "discovery", "flexible", "heterogeneous", "homogeneous", "manipulative", "modular", "tavistock", "individualized"]

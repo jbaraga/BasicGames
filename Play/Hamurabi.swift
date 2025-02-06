@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Hamurabi: GameProtocol {
+class Hamurabi: BasicGame {
     
     func run() {
         printHeader(title: "Hamurabi")
@@ -261,7 +261,7 @@ class Hamurabi: GameProtocol {
     
 
     private func stop() {
-        consoleIO.ringBell(10)
+        ringBell(10)
         println("So long for now.")
         println()
         end()

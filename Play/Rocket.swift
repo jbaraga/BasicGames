@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Rocket: GameProtocol {
+class Rocket: BasicGame {
     
     func run() {
         printHeader(title: "Rocket")

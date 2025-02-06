@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Nicomachus: GameProtocol {
+class Nicomachus: BasicGame {
     
     func run() {
         printHeader(title: "Nicoma")

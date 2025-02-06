@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Mugwump: GameProtocol {
+class Mugwump: BasicGame {
     
     struct Wump {
         let x: Int

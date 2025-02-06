@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Slots: GameProtocol {
+class Slots: BasicGame {
     
     private var purse = 0  //P
     
@@ -42,7 +42,7 @@ class Slots: GameProtocol {
     
     private func play() {
         let bet = getBet()  //M
-        consoleIO.ringBell()
+        ringBell()
         println(2)
         
         let spin = (1...3).map { _ in Int.random(in: 1...6) }  //X, Y, Z
@@ -122,7 +122,7 @@ class Slots: GameProtocol {
             println()
             let bet = [5, 10, 25].randomElement()!
             println("Bet $ \(bet)")
-            consoleIO.ringBell()
+            ringBell()
             println()
             
             println(displayString(for: spin))

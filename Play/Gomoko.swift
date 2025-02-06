@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Gomoko: GameProtocol {
+class Gomoko: BasicGame {
     
     private enum Player: Int {
         case user = 1

@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Batnum: GameProtocol {
+class Batnum: BasicGame {
     
     private var n = 0  //Pile size
     private var winOption = WinOption.undefined  //M win option: 1 take last, 2 avoid last

@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Bombardment: GameProtocol {
+class Bombardment: BasicGame {
     
     func run() {
         printHeader(title: "Bombardment")

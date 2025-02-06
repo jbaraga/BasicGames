@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Digits: GameProtocol {
+class Digits: BasicGame {
     
     private let a = 0
     private let b = 1
@@ -126,7 +126,7 @@ class Digits: GameProtocol {
         case _ where x > 10:
             println("I guessed more than 1/3 of your numbers.")
             println("I win.")
-            consoleIO.ringBell(10)
+            ringBell(10)
         default:
             println("I guessed exactly 1/3 of your numbers.")
             println("It is a tie game.")

@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Weekday: GameProtocol {
+class Weekday: BasicGame {
     
     private typealias Interval = (years: Int, months: Int, days: Int)
     

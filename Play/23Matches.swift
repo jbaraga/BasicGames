@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TwentyThreeMatches: GameProtocol {
+class TwentyThreeMatches: BasicGame {
     
     private enum Player {
         case user
