@@ -52,7 +52,7 @@ class OregonTrail: BasicGame {
     func run() {
         printHeader(title: Game.oregonTrail.description, newlines: 2)
         
-        var response = Response.other
+        var response = Response()
         repeat {
             response = Response(input("Do you need instructions (yes/no)"))
             if response.isYes {
@@ -60,7 +60,7 @@ class OregonTrail: BasicGame {
                 showInstructions()
                 wait(.long)
             }
-        } while response == .other
+        } while response.isOther
         
         play()
     }

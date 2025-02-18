@@ -236,7 +236,7 @@ class Slalom: BasicGame {
     
     private func playAgain() -> Response {
         let response = Response(input("Do you want to race again"))
-        if response == .other {
+        if response.isOther {
             println("Please type 'yes' or 'no'")
             return playAgain()
         }

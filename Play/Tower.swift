@@ -213,7 +213,7 @@ class Tower: BasicGame {
     
     private func tryAgain() -> Response {
         let response = Response(input())
-        if response == .other {
+        if response.isOther {
             println()
             print("'Yes' or 'no' please")
             return tryAgain()

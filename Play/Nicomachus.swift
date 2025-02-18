@@ -31,13 +31,15 @@ class Nicomachus: BasicGame {
         var d = 70 * a + 21 * b + 15 * c
         while d > 105 { d -= 105 }
         print("Your number was \(d), right")
-        var response = Response.other
-        while response == .other {
-            let string = input()
+        var response = Response()
+        while response.isOther {
+            response = Response(input())
             println()
-            response = Response(string)
-            if response == .other {
+            switch response {
+            case .other(let string):
                 println("I don't understand '" + string + "'  Try 'yes' or 'no'.")
+            case .yes, .no:
+                break
             }
         }
         

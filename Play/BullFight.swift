@@ -314,7 +314,7 @@ class BullFight: BasicGame {
     private func getResponse() -> Response {
         //1920 REM
         let response = Response(input())
-        if response == .other {
+        if response.isOther {
             println("Incorrect answer - - please type 'yes' or 'no")
             return getResponse()
         }

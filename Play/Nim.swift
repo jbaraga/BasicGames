@@ -256,10 +256,11 @@ class Nim: BasicGame {
     
     private func playAgain() -> Response {
         let response = Response(input())
-        guard response != .other else {
+        switch response {
+        case .yes, .no: return response
+        case .other(_):
             print("Please.  Yes or no")
             return playAgain()
         }
-        return response
     }
 }

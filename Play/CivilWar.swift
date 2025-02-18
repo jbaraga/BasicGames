@@ -48,8 +48,8 @@ class CivilWar: BasicGame {
         //Lines 370-450
         println(4)
         print("Are there two generals present ")
-        response = Response.other
-        while !response.isYesOrNo {
+        response = Response()
+        while response.isOther {
             response = Response(input("(answer yes or no)"))
         }
         if response.isNo {
@@ -68,8 +68,8 @@ class CivilWar: BasicGame {
         println("use entries from the previous battle")
         println()
         println("After requesting a battle, do you wish battle descriptions")
-        response = .other
-        while !response.isYesOrNo {
+        response = Response()
+        while response.isOther {
             response = Response(input("(answer yes or no)"))
         }
                 

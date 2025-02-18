@@ -72,8 +72,8 @@ class Animal: BasicGame {
             println(animal + " from a " + guess)
             let question = input()
             
-            var answer = Response.other
-            while !(answer.isYesOrNo) {
+            var answer = Response()
+            while answer.isOther {
                 answer = Response(input("For a " + animal + " the answer would be "))
             }
             
@@ -98,8 +98,8 @@ class Animal: BasicGame {
         let answer1 = components[1]
         let answer2 = components[2]
         
-        var response = Response.other
-        while !response.isYesOrNo {
+        var response = Response()
+        while response.isOther {
             response = Response(input(question))
             if response.isYesOrNo {
                 let t$ = response.isYes ? "y" : "n"

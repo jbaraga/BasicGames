@@ -121,7 +121,7 @@ struct Play: ParsableCommand {
         case .hello:
             basicGame = Hello()
         case .hexapawn:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Hexapawn()
         case .hiLo:
             basicGame = HiLo()
         case .highIQ:
@@ -157,7 +157,7 @@ struct Play: ParsableCommand {
         case .rocket:
             basicGame = Rocket()
         case .masterMind:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = MasterMind()
         case .mathDice:
             basicGame = MathDice()
         case .mugwump:
@@ -183,7 +183,7 @@ struct Play: ParsableCommand {
         case .poker:
             basicGame = Poker()
         case .queen:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Queen()
         case .reverse:
             basicGame = Reverse()
         case .rockScissorsPaper:
@@ -195,7 +195,7 @@ struct Play: ParsableCommand {
 //            throw RuntimeError("'\(game)' not available.")
             basicGame = RussianRoulette()
         case .salvo:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = Salvo()
         case .sineWave:
             basicGame = SineWave()
         case .slalom:

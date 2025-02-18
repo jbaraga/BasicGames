@@ -25,24 +25,23 @@ class Hello: BasicGame {
         let name = input("What's your name").trimmingCharacters(in: .whitespaces)  //B$
         println()
         
-        var response = Response.other
+        var response = Response()
         print("  Hi there \(name), are you enjoying yourself here")
         repeat {
-            let string = input()
+            response = Response(input())
             println()
-            response = Response(string)
-            if response == .other {
+            switch response {
+            case .other(let string):
                 println("  \(name), I don't understand your answer is '\(string)'.")
                 print("Please answer 'yes' or 'no'.  Do you like it here")
+            case .yes:
+                println("I'm glad to hear that, \(name).")
+                println()
+            case .no:
+                println("Oh, I'm sorry to hear that, \(name), maybe we can")
+                println("brighten up your visit a bit.")
             }
-        } while response == .other
-        if response == .yes {
-            println("I'm glad to hear that, \(name).")
-            println()
-        } else {
-            println("Oh, I'm sorry to hear that, \(name), maybe we can")
-            println("brighten up your visit a bit.")
-        }
+        } while response.isOther
         
         println()
         println("Say \(name), I can solve all kinds of problems except")
@@ -95,10 +94,10 @@ class Hello: BasicGame {
             println()
             repeat {
                 response = Response(input("Any more problems you want solved, \(name)"))
-                if response == .other {
+                if response.isOther {
                     println("Just a simple 'yes' or 'no' please, \(name).")
                 }
-            } while response == .other
+            } while response.isOther
             
             if response == .yes {
                 print("What kind (sex, money, health, job)")
@@ -111,27 +110,26 @@ class Hello: BasicGame {
         wait(.long)
         println(3)
         repeat {
-            let string = input("Did you leave the money")
+            response = Response(input("Did you leave the money"))
             println()
-            response = Response(string)
-            if response == .other {
+            switch response {
+            case .other(let string):
                 println("Your answer of \(string) confuses me, \(name).")
                 println("Please respond with 'yes' or 'no'.")
+            case .yes:
+                println("Hey, \(name)??? You left no money at all!")
+                println("You are cheating me out of my hard-earned living.")
+                println("Rip off, \(name)" + String(repeating: "*", count: 37))
+            case .no:
+                println("That's honest, \(name), but how do you expect")
+                println("me to go on with my psychology studies if my patients")
+                println("don't pay their bills?")
+                println(2)
+                println("Now let me talk to someone else.")
+                unlockEasterEgg(.hello)
             }
-        } while response == .other
+        } while response.isOther
         
-        if response == .yes {
-            println("Hey, \(name)??? You left no money at all!")
-            println("You are cheating me out of my hard-earned living.")
-            println("Rip off, \(name)" + String(repeating: "*", count: 37))
-        } else {
-            println("That's honest, \(name), but how do you expect")
-            println("me to go on with my psychology studies if my patients")
-            println("don't pay their bills?")
-            println(2)
-            println("Now let me talk to someone else.")
-            unlockEasterEgg(.hello)
-        }
         println("Nice meeting you, \(name), have a nice day.")
         wait(.short)
     }

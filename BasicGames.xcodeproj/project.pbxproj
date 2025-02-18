@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD127BBB2D5AC39E002AF7CA /* Hexapawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127BBA2D5AC39E002AF7CA /* Hexapawn.swift */; };
+		AD127BBD2D5D40BC002AF7CA /* MasterMind.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127BBC2D5D40BC002AF7CA /* MasterMind.swift */; };
+		AD127BC32D5ECB4C002AF7CA /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127BC22D5ECB4C002AF7CA /* Queen.swift */; };
+		AD127BC52D611D98002AF7CA /* Salvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127BC42D611D98002AF7CA /* Salvo.swift */; };
 		AD162326277BD2C100E919C1 /* TerminalViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162325277BD2C100E919C1 /* TerminalViewRepresentable.swift */; };
 		AD162328277BD31D00E919C1 /* GameLauncherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162327277BD31D00E919C1 /* GameLauncherView.swift */; };
 		AD162331277BD53600E919C1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
@@ -185,6 +189,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AD127BBA2D5AC39E002AF7CA /* Hexapawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexapawn.swift; sourceTree = "<group>"; };
+		AD127BBC2D5D40BC002AF7CA /* MasterMind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMind.swift; sourceTree = "<group>"; };
+		AD127BC22D5ECB4C002AF7CA /* Queen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
+		AD127BC42D611D98002AF7CA /* Salvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salvo.swift; sourceTree = "<group>"; };
 		AD150F1727C149D500FA3280 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		AD150F2927C2B29D00FA3280 /* Blackjack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blackjack.swift; sourceTree = "<group>"; };
 		AD162325277BD2C100E919C1 /* TerminalViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalViewRepresentable.swift; sourceTree = "<group>"; };
@@ -412,6 +420,7 @@
 				AD69C55629718802005D52A2 /* Hamurabi.swift */,
 				AD7E47452D2468860051D447 /* Hangman.swift */,
 				ADFB954D2D2F148400CD662E /* Hello.swift */,
+				AD127BBA2D5AC39E002AF7CA /* Hexapawn.swift */,
 				ADFB95502D2F2E6100CD662E /* HiLo.swift */,
 				ADB2405A2D4123D500C04944 /* HighIQ.swift */,
 				ADD5D27D297B64690035F451 /* Hockey.swift */,
@@ -428,6 +437,7 @@
 				AD8F43EC278250450067143D /* Lunar.swift */,
 				ADF23D5A27864A3100D71CDD /* LEM.swift */,
 				AD7E47492D2468860051D447 /* Love.swift */,
+				AD127BBC2D5D40BC002AF7CA /* MasterMind.swift */,
 				AD7E474E2D2468860051D447 /* MathDice.swift */,
 				AD7E47522D2468860051D447 /* Mugwump.swift */,
 				AD7E47562D2468860051D447 /* Name.swift */,
@@ -440,11 +450,13 @@
 				ADDF8FD02B4F2BDB00BD5B14 /* Poetry.swift */,
 				ADDF8FBC2B4EDB0000BD5B14 /* Pizza.swift */,
 				ADDF8FE62B543D3F00BD5B14 /* Poker.swift */,
+				AD127BC22D5ECB4C002AF7CA /* Queen.swift */,
 				AD9CD4AD2D3352090009DEC7 /* Reverse.swift */,
 				ADDBCD0827B5509F00C369D1 /* Rocket.swift */,
 				AD7E47622D2468860051D447 /* RockScissorsPaper.swift */,
 				ADAF512E2D45A520007142F6 /* Roulette.swift */,
 				ADEDCC492D37317A0090953A /* RussianRoulette.swift */,
+				AD127BC42D611D98002AF7CA /* Salvo.swift */,
 				AD7E47662D2468860051D447 /* SineWave.swift */,
 				ADB2405E2D42FB2900C04944 /* Slalom.swift */,
 				ADEDCC4B2D3741EA0090953A /* Slots.swift */,
@@ -729,6 +741,7 @@
 				ADEC7BD82D3475C600EA55B8 /* Life.swift in Sources */,
 				AD1CD1632D29CEC6000340DC /* Craps.swift in Sources */,
 				AD7E479A2D247A210051D447 /* Rocket.swift in Sources */,
+				AD127BC32D5ECB4C002AF7CA /* Queen.swift in Sources */,
 				AD7E479B2D247A210051D447 /* 3DPlot.swift in Sources */,
 				AD7E479C2D247A210051D447 /* Digits.swift in Sources */,
 				ADF652402D39FD6A005E8981 /* Gomoko.swift in Sources */,
@@ -780,6 +793,7 @@
 				AD7E47BA2D247A210051D447 /* Bombardment.swift in Sources */,
 				AD543F1A2D360D5200E2AFF2 /* TicTacToe2.swift in Sources */,
 				AD7E47BB2D247A210051D447 /* Chemist.swift in Sources */,
+				AD127BC52D611D98002AF7CA /* Salvo.swift in Sources */,
 				AD7E47BC2D247A210051D447 /* Joust.swift in Sources */,
 				AD7E47BD2D247A210051D447 /* Hockey.swift in Sources */,
 				AD93BD6E2D3DD8BE0055C705 /* Kinema.swift in Sources */,
@@ -806,7 +820,9 @@
 				AD7E47CB2D247A210051D447 /* Football.swift in Sources */,
 				AD7E47CC2D247A210051D447 /* Hangman.swift in Sources */,
 				AD7E47CD2D247A210051D447 /* Train.swift in Sources */,
+				AD127BBB2D5AC39E002AF7CA /* Hexapawn.swift in Sources */,
 				AD7E47CE2D247A210051D447 /* CivilWar.swift in Sources */,
+				AD127BBD2D5D40BC002AF7CA /* MasterMind.swift in Sources */,
 				AD2461242D4BC37900FA2431 /* Nim.swift in Sources */,
 				AD1CD1412D2617D6000340DC /* War.swift in Sources */,
 				ADEDCC4C2D3741EA0090953A /* Slots.swift in Sources */,

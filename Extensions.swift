@@ -66,27 +66,26 @@ extension String {
 enum Response {
     case yes
     case no
-    case other
+    case other(String)
     
     init(_ string: String) {
         switch string {
         case _ where string.isYes: self = .yes
         case _ where string.isNo: self = .no
-        default: self = .other
+        default: self = .other(string)
         }
     }
     
-    var isYes: Bool {
-        return self == .yes
+    init() {
+        self = .other("")
     }
     
-    var isNo: Bool {
-        return self == .no
-    }
+    var isYes: Bool {  self == .yes }
     
-    var isYesOrNo: Bool {
-        return isYes || isNo
-    }
+    var isNo: Bool { self == .no }
+    
+    var isYesOrNo: Bool { isYes || isNo }
+    var isOther: Bool { !isYesOrNo }
     
     var code: Int {
         switch self {
@@ -96,6 +95,8 @@ enum Response {
         }
     }
 }
+
+extension Response: Equatable {}
 
 
 //MARK: Number Formatting

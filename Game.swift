@@ -495,6 +495,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .hamurabi: return "crown.fill"
         case .hangman: return "figure"
         case .hello: return "text.bubble"
+        case .hexapawn: return "person.bust.fill"
         case .hiLo: return "arrow.up.arrow.down"
         case .highIQ: return "brain"
         case .hockey: return "figure.hockey"
@@ -502,12 +503,13 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .hurkle: return "squareshape.split.3x3"
         case .joust: return "shield.pattern.checkered"
         case .kinema: return "cricket.ball"
-        case .king: return "crown"
+        case .king: return "crown.fill"
         case .letter: return "characters.uppercase"
         case .life: return "microbe"
         case .lifeForTwo: return "microbe.fill"
         case .literatureQuiz: return "book.pages"
         case .love: return "heart"
+        case .masterMind: return "brain.fill"
         case .mathDice: return "dice.fill"
         case .mugwump: return "mug"
         case .name: return "person.circle"
@@ -518,10 +520,12 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .orbit: return "atom"
         case .poetry: return "text.alignleft"
         case .poker: return "suit.spade.fill"
+        case .queen: return "crown"
         case .reverse: return "arrow.left.arrow.right.square"
         case .rockScissorsPaper: return "scissors"
         case .roulette: return "00.circle"
         case .russianRoulette: return "die.face.6"
+        case .salvo: return "scope"
         case .sineWave: return "water.waves"
         case .slalom: return "figure.skiing.downhill"
         case .slots: return "entry.lever.keypad"
@@ -584,6 +588,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .hamurabi: return .purple
         case .hangman: return .brown
         case .hello: return .yellow
+        case .hexapawn: return .brown
         case .hiLo: return .blue
         case .highIQ: return .pink
         case .hockey: return .green
@@ -597,6 +602,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .lifeForTwo: return .teal
         case .literatureQuiz: return .blue
         case .love: return .red
+        case .masterMind: return .brown
         case .mathDice: return .yellow
         case .mugwump: return .red
         case .name: return .brown
@@ -607,10 +613,12 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .orbit: return .blue
         case .poetry: return .teal
         case .poker: return .black
+        case .queen: return .pink
         case .reverse: return .purple
         case .rockScissorsPaper: return .orange
         case .roulette: return .cyan
         case .russianRoulette: return .yellow
+        case .salvo: return .gray
         case .sineWave: return .teal
         case .slalom: return .purple
         case .slots: return .indigo

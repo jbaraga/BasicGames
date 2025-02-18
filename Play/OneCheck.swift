@@ -162,7 +162,7 @@ class OneCheck: BasicGame {
     
     private func playAgain() -> Response {
         let response = Response(input("Try again"))
-        if response == .other {
+        if response.isYesOrNo {
             println("Please answer 'yes' or 'no'")
             return playAgain()
         }

@@ -451,8 +451,8 @@ class Poker: BasicGame {
         pot = 0
         println("Now I have $\(computerPurse) and you have $\(userPurse)")
         
-        var response = Response.other
-        while response == .other {
+        var response = Response()
+        while response.isOther {
             response = Response(input("Do you wish to continue"))
             switch response {
             case .yes:
@@ -461,7 +461,6 @@ class Poker: BasicGame {
                 end()
             default:
                 println("Answer yes or no, please.")
-                response = .other
             }
         }
     }

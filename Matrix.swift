@@ -63,13 +63,8 @@ struct Matrix<Element> {
     var rows: [[Element]] { array2D }
     var columns: [[Element]] { array2D.transposed() }
     
-    var forwardDiagonals: [[Element]] {
-        diagonals(for: array2D)
-    }
-    
-    var backwardDiagonals: [[Element]] {
-        diagonals(for: array2D.flipped()).flipped()
-    }
+    var forwardDiagonals: [[Element]] { diagonals(for: array2D) }
+    var backwardDiagonals: [[Element]] { diagonals(for: array2D.flipped()).flipped() }
     
     var indices: [(row: Int, column: Int)] {
         array2D.indices.reduce([(Int, Int)]()) { result, row in
@@ -77,6 +72,8 @@ struct Matrix<Element> {
             return result + columnIndices.map { (row, $0) }
         }
     }
+    
+    var elements: [Element] { Array(array2D.joined()) }
 
     init(rows: Int, columns: Int, value: Element) {
         array2D = Array(repeating: Array(repeating: value, count: columns), count: rows)
@@ -96,7 +93,7 @@ struct Matrix<Element> {
         guard array2D.indices.contains(row) else { return false }
         return array2D[row].indices.contains(column)
     }
-    
+        
     subscript(_ row: Int, _ column: Int) -> Element {
         get {
             assert(indexIsValid(row: row, column: column), "Index out for range")
@@ -122,6 +119,7 @@ struct Matrix<Element> {
         get { array2D[row][columnRange] }
     }
     
+    //Only valid for square matrices
     private func diagonals(for array2D: [[Element]]) -> [[Element]] {
         guard let row = array2D.first else { return [] }
         assert(array2D.count == row.count, "Matrix is not square")
