@@ -217,7 +217,7 @@ struct Play: ParsableCommand {
         case .threeDPlot:
             basicGame = TDPlot()
         case .threeDTicTacToe:
-            throw RuntimeError("'\(game)' not implemented.")
+            basicGame = TDTicTacToe()
         case .ticTacToe1:
             basicGame = TicTacToe1()
         case .ticTacToe2:

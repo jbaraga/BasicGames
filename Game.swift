@@ -534,6 +534,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .synonym: return "repeat.circle"
         case .target: return "dot.scope"
         case .threeDPlot: return "view.3d"
+        case .threeDTicTacToe: return "square.3.layers.3d"
         case .ticTacToe1: return "grid"
         case .ticTacToe2: return "grid"
         case .tower: return "building.2.crop.circle"
@@ -628,6 +629,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .synonym: return .orange
         case .target: return .blue
         case .threeDPlot: return .indigo
+        case.threeDTicTacToe: return .green
         case .ticTacToe1: return .red
         case .ticTacToe2: return .blue
         case .tower: return .yellow

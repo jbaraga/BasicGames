@@ -151,7 +151,7 @@ class Salvo: BasicGame {
         }
         
         func coordinates(for ship: Ship) -> [Coordinate] {
-            return (grid.indices.filter { grid[$0] == .ship(ship) }).map { Coordinate($0.row + 1, $0.column + 1) }
+            return (grid.indexes.filter { grid[$0] == .ship(ship) }).map { Coordinate($0.row + 1, $0.column + 1) }
         }
         
         func previousShot(at coordinate: Coordinate) -> Int? {
@@ -456,7 +456,7 @@ class Salvo: BasicGame {
     private func getTargetedShots(number: Int, userBoard: Board, computerBoard: Board) -> [Coordinate] {
         //3800 REM*******************USINGEARRAY
         var kMatrix = Matrix(rows: 10, columns: 10, value: 0)  //shot rank for each coordinate, zero indexed
-        kMatrix.indices.forEach { (row, column) in
+        kMatrix.indexes.forEach { (row, column) in
             let coordinate = Coordinate(row + 1, column + 1)
             switch userBoard[coordinate] {
             case .shot:
@@ -478,7 +478,7 @@ class Salvo: BasicGame {
             }
         }
         
-        let sortedIndices = kMatrix.indices.sorted(by: { kMatrix[$0] > kMatrix[$1] })
+        let sortedIndices = kMatrix.indexes.sorted(by: { kMatrix[$0] > kMatrix[$1] })
         return sortedIndices[0..<number].map { Coordinate($0.row + 1, $0.column + 1) }
     }
         

@@ -70,7 +70,7 @@ class Gomoko: BasicGame {
             
             //600 REM *** COMPUTER TRIES A RANDOM MOVE ***
             //Original code will result in infinite loop when board is full
-            let openSquares = matrix.indices.filter { matrix[$0] == 0 }
+            let openSquares = matrix.indexes.filter { matrix[$0] == 0 }
             guard let square = openSquares.randomElement() else { return nil }
             return Point(square.row + 1, square.column + 1)
         }

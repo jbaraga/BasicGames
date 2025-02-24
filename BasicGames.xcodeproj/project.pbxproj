@@ -23,7 +23,6 @@
 		AD2461222D4ACAB500FA2431 /* Combat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2461212D4ACAB500FA2431 /* Combat.swift */; };
 		AD2461242D4BC37900FA2431 /* Nim.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2461232D4BC37900FA2431 /* Nim.swift */; };
 		AD33D7782D3C830C00D3ADD5 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD33D7772D3C830C00D3ADD5 /* Matrix.swift */; };
-		AD33D7792D3C830C00D3ADD5 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD33D7772D3C830C00D3ADD5 /* Matrix.swift */; };
 		AD33D77B2D3CA2C100D3ADD5 /* Chomp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD33D77A2D3CA2C100D3ADD5 /* Chomp.swift */; };
 		AD5399282D485768002437A1 /* Tower.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5399272D485768002437A1 /* Tower.swift */; };
 		AD543F162D3595D300E2AFF2 /* Life2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD543F152D3595D300E2AFF2 /* Life2.swift */; };
@@ -126,6 +125,8 @@
 		ADB2405D2D41B5B300C04944 /* Horserace.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB2405C2D41B5B300C04944 /* Horserace.swift */; };
 		ADB2405F2D42FB2900C04944 /* Slalom.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB2405E2D42FB2900C04944 /* Slalom.swift */; };
 		ADB9D2872D518535000B4FE2 /* Boxing.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9D2862D518535000B4FE2 /* Boxing.swift */; };
+		ADD81FCF2D653DAE00EAE44A /* 3DTicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD81FCE2D653DAE00EAE44A /* 3DTicTacToe.swift */; };
+		ADD81FD12D668F7900EAE44A /* Tensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD81FD02D668F7900EAE44A /* Tensor.swift */; };
 		ADDBCD2427B6F16B00C369D1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2327B6F16B00C369D1 /* Preferences.swift */; };
 		ADDBCD2627B6F22E00C369D1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2527B6F22E00C369D1 /* SettingsView.swift */; };
 		ADDBEF1B2985956F00745DBD /* Bell Buoy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADDBEF1A2985956F00745DBD /* Bell Buoy.mp3 */; };
@@ -299,6 +300,8 @@
 		ADB4DEB527C5BF4600C04087 /* Ftball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ftball.swift; sourceTree = "<group>"; };
 		ADB9D2862D518535000B4FE2 /* Boxing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxing.swift; sourceTree = "<group>"; };
 		ADD5D27D297B64690035F451 /* Hockey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hockey.swift; sourceTree = "<group>"; };
+		ADD81FCE2D653DAE00EAE44A /* 3DTicTacToe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DTicTacToe.swift; sourceTree = "<group>"; };
+		ADD81FD02D668F7900EAE44A /* Tensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tensor.swift; sourceTree = "<group>"; };
 		ADDBCD0827B5509F00C369D1 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		ADDBCD1B27B6B16E00C369D1 /* Joust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joust.swift; sourceTree = "<group>"; };
 		ADDBCD2327B6F16B00C369D1 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -467,6 +470,7 @@
 				AD7E476E2D2468860051D447 /* Synonym.swift */,
 				AD60177A27ED3FA000213C47 /* Target.swift */,
 				AD56DA2327E610B700179FAA /* 3DPlot.swift */,
+				ADD81FCE2D653DAE00EAE44A /* 3DTicTacToe.swift */,
 				AD543F172D35D3A700E2AFF2 /* TicTacToe1.swift */,
 				AD543F192D360D5200E2AFF2 /* TicTacToe2.swift */,
 				AD5399272D485768002437A1 /* Tower.swift */,
@@ -487,6 +491,7 @@
 				ADAE10B3277BAD25006762F5 /* BasicGames */,
 				AD7D2750277CA5A600F43F39 /* Extensions.swift */,
 				AD33D7772D3C830C00D3ADD5 /* Matrix.swift */,
+				ADD81FD02D668F7900EAE44A /* Tensor.swift */,
 				AD162330277BD53600E919C1 /* Game.swift */,
 				AD7D274E277CA59800F43F39 /* ConsoleIO.swift */,
 				AD8F43F5278252550067143D /* BasicGame.swift */,
@@ -746,6 +751,7 @@
 				AD7E479C2D247A210051D447 /* Digits.swift in Sources */,
 				ADF652402D39FD6A005E8981 /* Gomoko.swift in Sources */,
 				AD7E479D2D247A210051D447 /* Synonym.swift in Sources */,
+				ADD81FCF2D653DAE00EAE44A /* 3DTicTacToe.swift in Sources */,
 				AD7E479E2D247A210051D447 /* Ftball.swift in Sources */,
 				AD7E479F2D247A210051D447 /* Pizza.swift in Sources */,
 				AD7E47A02D247A210051D447 /* StockMarket.swift in Sources */,
@@ -788,6 +794,7 @@
 				ADFB95572D2F41AD00CD662E /* Hurkle.swift in Sources */,
 				AD7E47B62D247A210051D447 /* Poker.swift in Sources */,
 				AD7E47B72D247A210051D447 /* Mugwump.swift in Sources */,
+				ADD81FD12D668F7900EAE44A /* Tensor.swift in Sources */,
 				AD7E47B82D247A210051D447 /* Orbit.swift in Sources */,
 				AD7E47B92D247A210051D447 /* Splat.swift in Sources */,
 				AD7E47BA2D247A210051D447 /* Bombardment.swift in Sources */,
@@ -846,7 +853,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD8AB4342959FB9B001E0C83 /* EggView.swift in Sources */,
-				AD33D7792D3C830C00D3ADD5 /* Matrix.swift in Sources */,
 				AD8AB4322959FABB001E0C83 /* PDFViewRepresentable.swift in Sources */,
 				AD162328277BD31D00E919C1 /* GameLauncherView.swift in Sources */,
 				ADFB95472D2EE1DF00CD662E /* GameTerminalView.swift in Sources */,

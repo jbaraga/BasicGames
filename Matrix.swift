@@ -66,7 +66,45 @@ struct Matrix<Element> {
     var forwardDiagonals: [[Element]] { diagonals(for: array2D) }
     var backwardDiagonals: [[Element]] { diagonals(for: array2D.flipped()).flipped() }
     
-    var indices: [(row: Int, column: Int)] {
+    var mainDiagonal: [Element] {
+        guard let row = array2D.first else { return [] }
+        assert(array2D.count == row.count, "Matrix is not square")
+        return (0..<array2D.count).map { array2D[$0][$0] }
+    }
+    
+    var antiDiagonal: [Element] {
+        guard let row = array2D.first else { return [] }
+        assert(array2D.count == row.count, "Matrix is not square")
+        return (0..<array2D.count).map { array2D[$0][array2D.count - 1 - $0] }
+    }
+    
+/*
+    var rowIndexes: [[(x: Int, y: Int)]] {
+        guard let row = array2D.first else { return [] }
+        assert(array2D.count == row.count, "Matrix is not square")
+        return array2D.indices.map { rowIndex in array2D[rowIndex].indices.map { (rowIndex, $0) } }
+    }
+    
+    var columnIndexes: [[(x: Int, y: Int)]] {
+        guard let row = array2D.first else { return [] }
+        assert(array2D.count == row.count, "Matrix is not square")
+        return array2D.indices.map { rowIndex in array2D[rowIndex].indices.map { ($0, rowIndex) } }
+    }
+    
+    var mainDiagonalIndexes: [(x: Int, y: Int)] {
+        guard let row = array2D.first else { return [] }
+        assert(array2D.count == row.count, "Matrix is not square")
+        return array2D.indices.map { ($0, $0) }
+    }
+    
+    var antiDiagonalIndexes: [(x: Int, y: Int)] {
+        guard let row = array2D.first else { return [] }
+        assert(array2D.count == row.count, "Matrix is not square")
+        return array2D.indices.map { ($0, array2D.endIndex - 1 - $0) }
+    }
+*/
+    
+    var indexes: [(row: Int, column: Int)] {
         array2D.indices.reduce([(Int, Int)]()) { result, row in
             let columnIndices = [Int](array2D[row].indices)
             return result + columnIndices.map { (row, $0) }
@@ -74,7 +112,7 @@ struct Matrix<Element> {
     }
     
     var elements: [Element] { Array(array2D.joined()) }
-
+    
     init(rows: Int, columns: Int, value: Element) {
         array2D = Array(repeating: Array(repeating: value, count: columns), count: rows)
     }
@@ -85,15 +123,6 @@ struct Matrix<Element> {
         self.array2D = array2D
     }
     
-    func isValid(point: Point) -> Bool {
-        return indexIsValid(row: point.x, column: point.y)
-    }
-    
-    func indexIsValid(row: Int, column: Int) -> Bool {
-        guard array2D.indices.contains(row) else { return false }
-        return array2D[row].indices.contains(column)
-    }
-        
     subscript(_ row: Int, _ column: Int) -> Element {
         get {
             assert(indexIsValid(row: row, column: column), "Index out for range")
@@ -119,7 +148,16 @@ struct Matrix<Element> {
         get { array2D[row][columnRange] }
     }
     
-    //Only valid for square matrices
+    func isValid(point: Point) -> Bool {
+        return indexIsValid(row: point.x, column: point.y)
+    }
+    
+    func indexIsValid(row: Int, column: Int) -> Bool {
+        guard array2D.indices.contains(row) else { return false }
+        return array2D[row].indices.contains(column)
+    }
+        
+    //Only valid for square matrices; will trigger assertion error for non-square matux
     private func diagonals(for array2D: [[Element]]) -> [[Element]] {
         guard let row = array2D.first else { return [] }
         assert(array2D.count == row.count, "Matrix is not square")
@@ -133,6 +171,18 @@ struct Matrix<Element> {
             }
         }
         return diagonals.map { $0.compactMap { $0 } }
+    }
+    
+    func print() {
+        rows.forEach { row in
+            Swift.print(row.map { "\($0)" }.joined(separator: " "))
+        }
+    }
+}
+
+extension Matrix: Sequence {
+    func makeIterator() -> IndexingIterator<[[Element]]> {
+        return array2D.makeIterator()
     }
 }
 
