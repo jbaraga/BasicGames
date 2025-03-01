@@ -7,37 +7,6 @@
 
 import Foundation
 
-//MARK: Point3d
-struct Point3d: Equatable {
-    var x = 0
-    var y = 0
-    var z = 0
-    
-    static let zero = Self.init()
-}
-
-extension Point3d: LosslessStringConvertible {
-    var description: String { "\(x),\(y),\(z)" }
-    
-    init?(_ description: String) {
-        let stringValues = description.components(separatedBy: CharacterSet(charactersIn: " ,")).compactMap { $0.trimmingCharacters(in: .whitespaces) }.filter { !$0.isEmpty }
-        guard stringValues.count == 3, let x = Int(stringValues[0]), let y = Int(stringValues[1]), let z = Int(stringValues[2]) else { return nil }
-        self.init(x: x, y: y, z: z)
-    }
-    
-    init(_ x: Int, _ y: Int, _ z: Int) {
-        self.x = x
-        self.y = y
-        self.z = z
-    }
-    
-    init(_ tuple: (Int, Int, Int)) {
-        self.x = tuple.0
-        self.y = tuple.1
-        self.z = tuple.2
-    }
-}
-
 
 struct Tensor<Element> {
     var matrixes: [Matrix<Element>]
@@ -84,7 +53,7 @@ struct Tensor<Element> {
         return Matrix(array2D: array2D)
     }
 
-    var lines: [[Element]] {
+    var oldLines: [[Element]] {
         var lineArray = [[Element]]()
         //Row slices - n*10 lines
         rowMatrixes.forEach {
@@ -108,7 +77,7 @@ struct Tensor<Element> {
     }
     
     //Exact match for order of lines in 3d tic tac toe - lines 2040-2220
-    var orderedLines: [[Element]] {
+    var lines: [[Element]] {
         var lineArray = [[Element]]()
         
         matrixes.forEach { lineArray += $0.rows }
@@ -126,7 +95,6 @@ struct Tensor<Element> {
         return lineArray
     }
 
-   
     var lineIndexes: [[(x: Int, y: Int, z: Int)]] {
         var coordinateTensor = Tensor<(Int,Int,Int)>(dimension: 4, value: (0,0,0))
         for (z, matrix) in coordinateTensor.matrixes.enumerated() {
@@ -139,8 +107,26 @@ struct Tensor<Element> {
         
         return coordinateTensor.lines
     }
+    
+    var indexedLines: [[((x: Int, y: Int, z: Int), Element)]] {
+        zip(lineIndexes, lines).map {
+            return zip($0.0, $0.1).map { ($0.0, $0.1) }
+        }
+    }
 
     var elements: [Element] { matrixes.reduce([Element]()) { $0 + $1.elements }}
+    
+    var indexes: [(x: Int, y: Int, z: Int)] {
+        var indices = [(x: Int, y: Int, z: Int)]()
+        for (z, matrix) in matrixes.enumerated() {
+            for (x, array) in matrix.rows.enumerated() {
+                for y in array.indices {
+                    indices.append((x,y,z))
+                }
+            }
+        }
+        return indices
+    }
 
     init(rows: Int, columns: Int, planes: Int, value: Element) {
         matrixes = Array(repeating: Matrix(rows: rows, columns: columns, value: value), count: planes)
@@ -170,19 +156,10 @@ struct Tensor<Element> {
         set { self[index.x, index.y, index.z] = newValue }
     }
     
-    subscript(_ point: Point3d) -> Element {
-        get { self[point.x, point.y, point.z] }
-        set { self[point.x, point.y, point.z] = newValue }
-    }
-
     //x == row, y == column
     func indexIsValid(x: Int, y: Int, z: Int) -> Bool {
         guard matrixes.indices.contains(z) else { return false }
         return matrixes[z].indexIsValid(row: x, column: y)
-    }
-
-    func isValid(point: Point3d) -> Bool {
-        return indexIsValid(x: point.x, y: point.y, z: point.z)
     }
     
     func print() {

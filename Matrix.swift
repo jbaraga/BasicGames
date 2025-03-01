@@ -10,10 +10,10 @@ import Foundation
 
 //MARK: Size
 struct Size: Equatable {
-    var width = 0
-    var height = 0
+    var width: Int
+    var height: Int
     
-    static let zero = Self.init()
+    static let zero = Self.init(width: 0, height: 0)
 }
 
 extension Size: LosslessStringConvertible {
@@ -29,10 +29,10 @@ extension Size: LosslessStringConvertible {
 
 //MARK: Point
 struct Point: Equatable {
-    var x = 0
-    var y = 0
+    var x: Int
+    var y: Int
     
-    static let zero = Self.init()
+    static let zero = Self.init(0, 0)
 }
 
 extension Point: LosslessStringConvertible {
