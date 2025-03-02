@@ -72,12 +72,12 @@ class ConsoleIO {
         }
 
 
-        /*Uncomment to use with mac Terminal app
+        /* Uncomment to use with mac Terminal app
         setUpTerminal()
          */
     }
        
-    /*Uncomment for mac Terminal app
+    /* Uncomment for mac Terminal app
     private func setUpTerminal() {
         freopen("", "a+", stderr)  //Suppresses error logging
         reset()

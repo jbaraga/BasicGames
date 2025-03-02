@@ -191,9 +191,8 @@ struct Play: ParsableCommand {
         case .roulette:
             basicGame = Roulette()
         case .russianRoulette:
-            //TODO: throw error or hide game before release
-//            throw RuntimeError("'\(game)' not available.")
             basicGame = RussianRoulette()
+            throw RuntimeError("'\(game)' is not available.")  //Comment out to allow access
         case .salvo:
             basicGame = Salvo()
         case .sineWave:

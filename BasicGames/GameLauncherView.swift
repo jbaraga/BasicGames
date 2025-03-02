@@ -94,7 +94,7 @@ struct GameLauncherView: View {
     }
     
     private func showEasterEgg(_ game: Game) {
-        guard let url = game.eggURL, let pdf = EasterEggPDF(url: url) else { return }
+        guard let url = game.eggURL, let pdf = EasterEggPDF(title: "Easter Egg - " + game.description, url: url) else { return }
         openWindow(value: pdf)
     }
     

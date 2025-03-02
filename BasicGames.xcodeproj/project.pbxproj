@@ -223,6 +223,7 @@
 		AD57CCFB27AED53A00AD32C5 /* StarTrek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTrek.swift; sourceTree = "<group>"; };
 		AD5C22C8296B90DA0067A2EF /* EvenWins1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenWins1.swift; sourceTree = "<group>"; };
 		AD5D19B42D389A6C006F764B /* BasicGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGamesTests.swift; sourceTree = "<group>"; };
+		AD5D67E72D749E0C007F3F7B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AD5F26D8297389820053C5A1 /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
 		AD5FA7742D52882300D885B5 /* Basketball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basketball.swift; sourceTree = "<group>"; };
 		AD5FA7762D544D0400D885B5 /* BullFight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullFight.swift; sourceTree = "<group>"; };
@@ -487,6 +488,7 @@
 		ADAE10A8277BAD25006762F5 = {
 			isa = PBXGroup;
 			children = (
+				AD5D67E72D749E0C007F3F7B /* README.md */,
 				AD7D2752277CA5D500F43F39 /* Resources */,
 				ADAE10B3277BAD25006762F5 /* BasicGames */,
 				AD7D2750277CA5A600F43F39 /* Extensions.swift */,
