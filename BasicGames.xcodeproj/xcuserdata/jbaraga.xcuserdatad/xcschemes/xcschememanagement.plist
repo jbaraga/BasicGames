@@ -9,25 +9,10 @@
 			<key>orderHint</key>
 			<integer>44</integer>
 		</dict>
-		<key>3DPlot.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>20</integer>
-		</dict>
 		<key>AceyDucey.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>60</integer>
-		</dict>
-		<key>Amazing.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>Animal.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>Awari.xcscheme_^#shared#^_</key>
 		<dict>
@@ -39,11 +24,6 @@
 			<key>orderHint</key>
 			<integer>28</integer>
 		</dict>
-		<key>Banner.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
 		<key>BasicGames.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -54,11 +34,6 @@
 			<key>orderHint</key>
 			<integer>52</integer>
 		</dict>
-		<key>Blackjack.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
 		<key>Bombardment.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -68,11 +43,6 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>35</integer>
-		</dict>
-		<key>Bounce.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>Bowling.xcscheme_^#shared#^_</key>
 		<dict>
@@ -94,11 +64,6 @@
 			<key>orderHint</key>
 			<integer>36</integer>
 		</dict>
-		<key>Calendar.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
-		</dict>
 		<key>Change.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -118,11 +83,6 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>39</integer>
-		</dict>
-		<key>DepthCharge.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 		<key>Diamond.xcscheme_^#shared#^_</key>
 		<dict>
@@ -149,16 +109,6 @@
 			<key>orderHint</key>
 			<integer>58</integer>
 		</dict>
-		<key>Football.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>8</integer>
-		</dict>
-		<key>Ftball.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
-		</dict>
 		<key>Guess.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -179,35 +129,15 @@
 			<key>orderHint</key>
 			<integer>24</integer>
 		</dict>
-		<key>ICBM.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
-		</dict>
-		<key>Joust.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
-		</dict>
 		<key>King.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>48</integer>
 		</dict>
-		<key>LEM.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>12</integer>
-		</dict>
 		<key>Love.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>42</integer>
-		</dict>
-		<key>Lunar.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>13</integer>
 		</dict>
 		<key>MathDice.xcscheme_^#shared#^_</key>
 		<dict>
@@ -239,11 +169,6 @@
 			<key>orderHint</key>
 			<integer>50</integer>
 		</dict>
-		<key>OregonTrail.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>15</integer>
-		</dict>
 		<key>Pizza.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -269,45 +194,20 @@
 			<key>orderHint</key>
 			<integer>59</integer>
 		</dict>
-		<key>Rocket.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>14</integer>
-		</dict>
 		<key>SineWave.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>37</integer>
-		</dict>
-		<key>Splat.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>16</integer>
-		</dict>
-		<key>StarTrek.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>17</integer>
 		</dict>
 		<key>Stars.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>32</integer>
 		</dict>
-		<key>StockMarket.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>18</integer>
-		</dict>
 		<key>Synonym.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>38</integer>
-		</dict>
-		<key>Target.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>19</integer>
 		</dict>
 		<key>Train.xcscheme_^#shared#^_</key>
 		<dict>
@@ -323,11 +223,6 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>43</integer>
-		</dict>
-		<key>Weekday.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>21</integer>
 		</dict>
 		<key>XPC-Messenger.xcscheme_^#shared#^_</key>
 		<dict>
