@@ -45,6 +45,27 @@ struct BasicGamesApp: App {
                 }
                 .keyboardShortcut(KeyEquivalent("P"))
             }
+            
+            CommandGroup(after: .help) {
+                Divider()
+                
+                Menu("Basic Computer Games") {
+                    Button("Introduction") {
+                        guard let url = Game.basicGamesIntroURL, let pdf = EasterEggPDF(title: "Basic Computer Games", url: url) else { return }
+                        openWindow(value: pdf)
+                    }
+                    
+                    Button("Index") {
+                        guard let url = Game.basicGamesAppendixURL, let pdf = EasterEggPDF(title: "Game Index", url: url) else { return }
+                        openWindow(value: pdf)
+                    }
+                }
+                
+                Button("Basic Games on Github") {
+                    guard let url = URL(string: "https://github.com/jbaraga/BasicGames") else { return }
+                    NSWorkspace.shared.open(url)
+                }
+            }
         }
         .windowToolbarStyle(.unifiedCompact(showsTitle: true))
         
@@ -84,6 +105,7 @@ struct BasicGamesApp: App {
         WindowGroup(id: "EasterEgg", for: EasterEggPDF.self) { $pdf in
             if let pdf, let document = pdf.document {
                 EggView(document: document)
+                    .navigationTitle(pdf.title)
             }
         }
         .defaultSize(NSScreen.main?.size(for: 8/displayScale, height: 10/displayScale) ?? NSSize(width: 640, height: 720))
@@ -124,10 +146,13 @@ struct BasicGamesApp: App {
 }
 
 struct EasterEggPDF: Codable, Hashable {
+    let title: String
     let url: URL
     var pageNumbers: ClosedRange<Int>?
             
-    init?(url: URL) {
+    init?(title: String, url: URL) {
+        self.title = title
+        
         guard let fileURL = Bundle.main.url(forResource: url.deletingPathExtension().lastPathComponent, withExtension: url.pathExtension) else { return nil }
         self.url = fileURL
         

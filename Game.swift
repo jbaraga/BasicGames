@@ -332,17 +332,17 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         }
     }
     
-    //If separate pdf, not from BasicGames.pdf
-    var pdfFilename: String {
+    //For file in bundle
+    var pdfFilepath: String {
         switch self {
-        case .icbm, .joust: return "BasicGames2"
-        case .oregonTrail: return "OregonTrail"
+        case .icbm, .joust: return URL.basicGamesScheme + ":///BasicGames2.pdf"
+        case .oregonTrail: return URL.basicGamesScheme + ":///OregonTrail.pdf"
         default:
-            return "BasicGames"
+            return Self.basicGamesPath
         }
     }
     
-    //Page numbers in BasicGames.pdf, zero indexed
+    //Page numbers in BasicGames.pdf
     var pdfPageNumbers: ClosedRange<Int>? {
         switch self {
         case .aceyDucey: return 16...16
@@ -445,13 +445,25 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
     }
     
     var eggURL: URL? {
-        var string = URL.basicGamesScheme + ":///" + pdfFilename + ".pdf"
-        if let pdfPageNumbers { string += "#pages=" + pdfPageNumbers.description }
-        return URL(string: string)
+        if let pdfPageNumbers {
+            return URL(string: pdfFilepath + "#pages=" + pdfPageNumbers.description)
+        } else {
+            return URL(string: pdfFilepath)
+        }
+    }
+    
+    static var basicGamesPath: String { URL.basicGamesScheme + ":///BasicGames.pdf" }
+    
+    static var basicGamesIntroURL: URL? {
+        URL(string: Self.basicGamesPath + "#pages=" + (1...15).description)
+    }
+    
+    static var basicGamesAppendixURL: URL? {
+        URL(string: Self.basicGamesPath + "#pages=" + (197...201).description)
     }
     
     var unlockURL: URL? {
-        return URL(string: URL.basicGamesScheme + ":///" + "#game=" + rawValue)
+        return URL(string: URL.basicGamesScheme + ":///#game=" + rawValue)
     }
     
     var preferredSet: Set<String> { Set([unlockURL].compactMap { $0?.absoluteString }) }

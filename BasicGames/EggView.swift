@@ -36,7 +36,6 @@ struct EggView: View {
 
     var body: some View {
         contentView
-            .navigationTitle("Easter Egg")
     }
 }
 
