@@ -1,27 +1,30 @@
 # Play
 
-[PlayCommand](PlayCommand.swift) is the unified launcher for each game, and is the source for the **play** executable command. A specific game is launched using the -g option followed by the game name (rawValue of the Game enum). -t testing flag is also available, but only implemented in a few select games.
+[PlayCommand](PlayCommand.swift) is the unified launcher for each game, and is the source for the **play** executable command. A specific game is launched using the `-g` option followed by the *gameName* (`rawValue` from the Game `enum` for the game case). `-t` flag for running unit test is also available, but only implemented in a few select games.
 
 ## Game Notes
 
-Each game has undergone limited testing, primarily to demonstrate equal output to the sample runs in the original sources, when possible.
+Each game has undergone limited testing, primarily to demonstrate equal output to the sample runs included in the original sources, when possible.
 
 ### [Acey Ducey](AceyDucey.swift)
 
-No issues.
+- No issues.
 
-### [Amazing](Amaxing.swift)
+### [Amazing](Amazing.swift)
 
-The original code flow is exceedingly convoluted and difficult to unravel. The underlying algorithm is ingenious, and akin to random walk; the algorithm is outlined in the inline program comments.
+- The original program flow is exceedingly convoluted and difficult to unravel. The underlying algorithm is ingenious, and akin to random walk; the algorithm is outlined in the inline program comments.
+- The first attempt used recursion to duplicate the original code flow directly and is included for reference but commented out. This contains the exit row bug in the original code, in which an exit is not created occasionally. The level of recursion exponentially increases with maze size, and results in stack overflow with large mazes. 
 
-The first attempt, which used recursion to duplicate the original code flow directly, is included for reference but commented out. This contains the exit row bug in the original code, in which an exit is occasionally not created. The level of recursion exponentially increases with maze size, and results in stack overflow with large mazes. 
+### [Animal](Animal.swift)
 
-### Animal
+- No issues.
+- Added save feature, as mentioned in the game description, and ability to reset the saved list.
 
+### [Awari](Awari.swift)
 
-
-### Awari
-
+- Retained simple array to represent the board.
+- Incomplete understanding of computer learning algorithm.
+- Lines 900-999 should never be executed.
 
 ### Bagels
 

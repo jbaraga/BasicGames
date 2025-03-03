@@ -170,7 +170,7 @@ class Awari: BasicGame {
                     //855 no need to test k at j > 6 as specified in j loop
                     let k = j - 7
                     if n > 0 {
-                        //Iterates over previous games without computer win, probably to lower change of choice of pit which was selected in prior game; untested as game example only single game
+                        //Iterates over previous games without computer win, probably to lower chance of choice of pit which was selected in prior game; untested as game example only single game
                         for i in 0...(n - 1) {
                             if f[n] * 6 + k == Int(Double(f[i]) / pow(6, Double(7 - c)) + 0.1) { q -= 2 }
                         }

@@ -14,7 +14,7 @@ As a fun exercise, I decided to translate my favorite classic Basic games to Swi
 
 Originally each program was created as a CLI program. As more games were completed, a stand alone game launcher app was constructed to access all the games. Each game was launched in a separate Terminal window, tweaked to mimic a 1970's era computer. I subsequently discovered and added the [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm.git) terminal emulator, which allowed for more customization and a self-contained game launcher app. 
 
-As a further simplification, the individual game CLI products were replaced by the single **play** CLI programs, which encapsulates all of the games in a single combined CLI. Individual games are launched from the command line.
+To simplify the design further, the individual game CLI products were consolidated into a single **play** CLI program. Individual games are run using the play command with the name of the game in the command line.
 
 The project is written completely in Swift; the Basic Games launcher app utilizes SwiftUI wherever possible.
 
