@@ -33,7 +33,6 @@ struct EggView: View {
             }
     }
 
-
     var body: some View {
         contentView
     }

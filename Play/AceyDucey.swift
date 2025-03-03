@@ -23,7 +23,6 @@ class AceyDucey: BasicGame {
         
         repeat {
             play()
-            wait(.short)
         } while Response(input("Try again (yes or no)")).isYes
         
         end()
@@ -96,11 +95,7 @@ class AceyDucey: BasicGame {
             return getCards()
         }
 
-        if a < b {
-            return (a, b)
-        } else  {
-            return (b, a)
-        }
+        return a < b ? (a, b) : (b, a)
     }
     
     private func cardName(for value: Int) -> String {

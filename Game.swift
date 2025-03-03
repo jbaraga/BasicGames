@@ -332,7 +332,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         }
     }
     
-    //For file in bundle
+    //pdf file with Basic source code in Resources group
     var pdfFilepath: String {
         switch self {
         case .icbm, .joust: return URL.basicGamesScheme + ":///BasicGames2.pdf"
@@ -342,7 +342,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         }
     }
     
-    //Page numbers in BasicGames.pdf
+    //Page numbers in Basic source code pdf file, if file contains multiple programs
     var pdfPageNumbers: ClosedRange<Int>? {
         switch self {
         case .aceyDucey: return 16...16
