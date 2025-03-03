@@ -69,6 +69,7 @@ class Amazing: BasicGame {
         
         if size.width > 4 { unlockEasterEgg(.amazing) }
     }
+
     
     private func getDimensions() -> Size {
         guard let size: Size = input("What are your width and length") else {
@@ -198,40 +199,94 @@ class Amazing: BasicGame {
             println(".")
         }
     }
+    
+    /* Recursive method
+    private func generateMazeRecursive(size: Size) {
+        var mazeGenerator = MazeGenerator(size: size)
+        let maze = mazeGenerator.generateMaze()
+        println(maze)
+    }
+    */
  }
     
-    /*Recursive version, based on Ahl
+
+/*//Recursive method, based on original code flow
+private struct MazeGenerator {
     private var width = 0  //h
     private var length = 0  //v
     private var numberOfSquares = 0
     private var w = [[Int]]()  // > 0 if square has been visited
     private var v = [[Int]]()  //Keeps track of right and bottom walls for each cell
+    private var x = 1  //Entry point
     private var c = 1  //Square counter
     private var r = 1  //Horizontal position
     private var s = 1  //Vertical position
     private var q = false  //Int in original Basic, 0 or 1 - used to determine if exit present
     private var z = false  //Int in original Basic, 0 or 1 - used to determine if exit present
     
-    //Line 195
-    private func generateMaze(width: Int, height: Int) {
-        //Initialize maze.  Arrays are indexed starting at 1
-        numberOfSquares = width * length
+    init(size: Size) {
+        //Line 195
+        numberOfSquares = size.width * size.height
+        width = size.width
+        length = size.height
         w = Array(repeating: Array(repeating: 0, count: length + 1), count: width + 1)
         v = Array(repeating: Array(repeating: 0, count: length + 1), count: width + 1)
         q = false
         z = false
-        let x = rnd(width - 1) + 1  //Entry point
+        x = Int.random(in: 1...size.width)  //Entry point
         c = 1
         w[x][1] = c
         c += 1
         r = x
         s = 1
+    }
+    
+    mutating func generateMaze() -> String {
         goToNextSquare()
-        printMaze(withEntryAt: x)
+        
+        var string = ""
+        //First row, extry at column x
+        for i in 1...width {
+            if i == x {
+                string.append(".  ")
+            } else {
+                string.append(".--")
+            }
+        }
+        string.append(".\n")
+        
+        for j in 1...length {
+            //Print spaces and vertical dividers
+            string.append("I")
+            for i in 1...width {
+                if v[i][j] < 2 {
+                    string.append("  I")
+                } else {
+                    string.append("   ")
+                }
+            }
+            string.append("\n")
+            
+            //Print horizontal dividers
+            for i in 1...width {
+                if v[i][j] == 0 || v[i][j] == 2 {
+                    string.append(":--")
+                } else {
+                    string.append(":  ")
+                }
+            }
+            string.append(".\n")
+        }
+
+        return string
+    }
+    
+    private func rnd(_ x: Int) -> Int {
+        return Int.random(in: 0...x)
     }
     
     //Line 210
-    private func scanRowForOpening() {
+    mutating private func scanRowForOpening() {
         repeat {
             if r < width {
                 r += 1
@@ -250,7 +305,7 @@ class Amazing: BasicGame {
     
     
     //Line 260
-    private func goToNextSquare() {
+    mutating private func goToNextSquare() {
         while c <= numberOfSquares {
             switch (r, s) {
             case _ where  r == 1 || w[r-1][s] > 0:
@@ -268,7 +323,7 @@ class Amazing: BasicGame {
                 
             default:
                 //Go left or up or right, randomly select direction
-                let x = rnd(2)
+                let x = Int.random(in: 0...2)
                 switch x {
                 case 0:
                     goLeft()
@@ -284,7 +339,7 @@ class Amazing: BasicGame {
     }
     
     //Line 330
-    private func goLeftOrUpOrDown() {
+    mutating private func goLeftOrUpOrDown() {
         let x: Int
         if s < length {
             if w[r][s + 1] > 0 {
@@ -314,7 +369,7 @@ class Amazing: BasicGame {
     }
     
     //Line 390
-    private func goLeftOrRightOrDown() {
+    mutating private func goLeftOrRightOrDown() {
         //Left or right or down
         let x: Int
         if s < length {
@@ -345,7 +400,7 @@ class Amazing: BasicGame {
     }
     
     //Line 470
-    private func goLeftOrDown() {
+    mutating private func goLeftOrDown() {
         let x: Int
         if s < length {
             if w[r][s + 1] > 0 {
@@ -373,7 +428,7 @@ class Amazing: BasicGame {
     }
     
     //Line 530
-    private func goRightOrUpOrDown() {
+    mutating private func goRightOrUpOrDown() {
         switch (r, s) {
         case _ where s == 1 || w[r][s - 1] > 0:
             //Line 670. Go right or down
@@ -407,7 +462,7 @@ class Amazing: BasicGame {
                     break
                 }
             }
-
+            
         case _ where r == width || w[r + 1][s] > 0:
             //Up or down
             let x: Int
@@ -434,7 +489,7 @@ class Amazing: BasicGame {
             default:
                 break
             }
-
+            
         default:
             //Go right or up or down
             let x: Int
@@ -465,8 +520,8 @@ class Amazing: BasicGame {
             }
         }
     }
-        
-    private func goDownOrScanRow() {
+    
+    mutating private func goDownOrScanRow() {
         if s < length {
             if w[r][s + 1] > 0 {
                 //Blocked
@@ -485,7 +540,7 @@ class Amazing: BasicGame {
     }
     
     //Line 790
-    private func goLeft() {
+    mutating private func goLeft() {
         w[r-1][s] = c
         v[r-1][s] = 2
         r -= 1
@@ -494,7 +549,7 @@ class Amazing: BasicGame {
     }
     
     //Line 820
-    private func goUp() {
+    mutating private func goUp() {
         w[r][s-1] = c
         v[r][s-1] = 1
         s -= 1
@@ -503,7 +558,7 @@ class Amazing: BasicGame {
     }
     
     //Line 830 - goUp() skipping line 820, without setting w
-    private func goBackUp() {
+    mutating private func goBackUp() {
         v[r][s-1] = 1
         s -= 1
         c += 1
@@ -511,7 +566,7 @@ class Amazing: BasicGame {
     }
     
     //Line 860
-    private func goRight() {
+    mutating private func goRight() {
         w[r+1][s] = c
         v[r][s] = v[r][s] == 0 ? 2 : 3
         r += 1
@@ -522,7 +577,7 @@ class Amazing: BasicGame {
     }
     
     //Line 910
-    private func goDown() {
+    mutating private func goDown() {
         if q {
             z = true
             q = false
@@ -548,135 +603,5 @@ class Amazing: BasicGame {
             goToNextSquare()
         }
     }
-    
-    private func printMaze(withEntryAt x: Int) {
-        //First row, extry at column x
-        for i in 1...width {
-            if i == x {
-                print(".  ")
-            } else {
-                print(".--")
-            }
-        }
-        println(".")
-
-        for j in 1...length {
-            //Print spaces and vertical dividers
-            print("I")
-            for i in 1...width {
-                if v[i][j] < 2 {
-                    print("  I")
-                } else {
-                    print("   ")
-                }
-            }
-            println()
-            
-            //Print horizontal dividers
-            for i in 1...width {
-                if v[i][j] == 0 || v[i][j] == 2 {
-                    print(":--")
-                } else {
-                    print(":  ")
-                }
-            }
-            println(".")
-        }
-    }
- */
-
-/*
-class Amazing: GameProtocol {
-    private let MaximumWidth = 30
-    private let MaximumLength = 72
-    var width = 2
-    var height = 2
-    
-    // Define the directions to move in the maze
-    let directions = [
-        (dx: 0, dy: -1), // Up
-        (dx: 0, dy: 1), // Down
-        (dx: -1, dy: 0), // Left
-        (dx: 1, dy: 0) // Right
-    ]
-
-    func run() {
-        (width, height) = getDimensions()
-        
-        // Choose a random starting cell and carve out the maze
-        let startX = Int.random(in: 1..<width-1)
-        let startY = Int.random(in: 1..<height-1)
-        
-        var maze = recursiveBacktracking(x: startX, y: startY)
-
-        // Add an entrance and an exit to the maze
-        maze[0][1] = " "
-        maze[height-1][width-2] = " "
-
-        // Print the maze
-        for row in maze {
-            print(String(row))
-            println()
-        }
-    }
-    
-    // Define a function to check if a cell is within the maze boundaries
-    private func isValidCell(x: Int, y: Int) -> Bool {
-        return x >= 0 && x < width && y >= 0 && y < height
-    }
-
-    // Define a function to get the unvisited neighbors of a cell
-    private func getUnvisitedNeighbors(x: Int, y: Int, maze: [[Character]]) -> [(Int, Int)] {
-        var neighbors = [(Int, Int)]()
-        for direction in directions {
-            let neighborX = x + direction.dx
-            let neighborY = y + direction.dy
-            if isValidCell(x: neighborX, y: neighborY) && maze[neighborY][neighborX] == "#" {
-                neighbors.append((neighborX, neighborY))
-            }
-        }
-        return neighbors
-    }
-
-    // Define the recursive backtracking function
-    private func recursiveBacktracking(x: Int, y: Int) -> [[Character]] {
-        // Create a two-dimensional array to represent the maze
-        var maze = [[Character]](repeating: [Character](repeating: "#", count: width), count: height)
-        maze[y][x] = " "
-        var stack = [(x, y)]
-        while !stack.isEmpty {
-            let currentCell = stack.last!
-            let unvisitedNeighbors = getUnvisitedNeighbors(x: currentCell.0, y: currentCell.1, maze: maze)
-            if unvisitedNeighbors.isEmpty {
-                stack.removeLast()
-                break
-            }
-            let randomNeighbor = unvisitedNeighbors.randomElement()!
-            let direction = (
-                dx: randomNeighbor.0 - currentCell.0,
-                dy: randomNeighbor.1 - currentCell.1
-            )
-            maze[currentCell.1 + direction.dy / 2][currentCell.0 + direction.dx / 2] = " "
-            maze[randomNeighbor.1][randomNeighbor.0] = " "
-            stack.append(randomNeighbor)
-        }
-        return maze
-    }
-    
-    private func getDimensions() -> (width: Int, height: Int) {
-        wait(.short)
-        let response = input("What are your width and length")
-        let components = response.components(separatedBy: CharacterSet.decimalDigits.inverted)
-        guard components.count > 1, let first = components.first, let last = components.last, let width = Int(first), let height = Int(last), width > 0, height > 0 else {
-            println("Meaningless dimensions.  Try Again.")
-            return getDimensions()
-        }
-        guard width <= MaximumWidth, height <= MaximumLength else {
-            println("Maximum dimensions \(MaximumWidth) x \(MaximumLength).  Try Again.")
-            return getDimensions()
-        }
-        return (width, height)
-    }
 }
 */
-

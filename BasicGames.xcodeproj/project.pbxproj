@@ -209,7 +209,7 @@
 		AD2437CC27EAA101005D67B6 /* Splat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splat.swift; sourceTree = "<group>"; };
 		AD2461212D4ACAB500FA2431 /* Combat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combat.swift; sourceTree = "<group>"; };
 		AD2461232D4BC37900FA2431 /* Nim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nim.swift; sourceTree = "<group>"; };
-		AD2AE9E92D74F58600995876 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AD2AE9E92D74F58600995876 /* GameNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = GameNotes.md; sourceTree = "<group>"; };
 		AD33D7772D3C830C00D3ADD5 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		AD33D77A2D3CA2C100D3ADD5 /* Chomp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chomp.swift; sourceTree = "<group>"; };
 		AD33FD0D27B9560F00E087D1 /* ICBM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICBM.swift; sourceTree = "<group>"; };
@@ -482,7 +482,7 @@
 				AD1CD1402D2617D6000340DC /* War.swift */,
 				AD3D807927BF268D004226EF /* Weekday.swift */,
 				ADA44D862D24A26800AF183E /* Word.swift */,
-				AD2AE9E92D74F58600995876 /* README.md */,
+				AD2AE9E92D74F58600995876 /* GameNotes.md */,
 			);
 			path = Play;
 			sourceTree = "<group>";
