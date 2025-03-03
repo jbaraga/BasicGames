@@ -1,16 +1,16 @@
 # Play
 
-**PlayCommand** is the unified launcher for each game, and is the source for the **play** executable command. A specific game is launched using the -g option followed by the game name (rawValue of the Game enum). -t testing flag is also available, but only implemented in a few select games.
+[PlayCommand](PlayCommand.swift) is the unified launcher for each game, and is the source for the **play** executable command. A specific game is launched using the -g option followed by the game name (rawValue of the Game enum). -t testing flag is also available, but only implemented in a few select games.
 
 ## Game Notes
 
 Each game has undergone limited testing, primarily to demonstrate equal output to the sample runs in the original sources, when possible.
 
-### Acey Ducey
+### [Acey Ducey](AceyDucey.swift)
 
 No issues.
 
-### Amazing
+### [Amazing](Amaxing.swift)
 
 The original code flow is exceedingly convoluted and difficult to unravel. The underlying algorithm is ingenious, and akin to random walk; the algorithm is outlined in the inline program comments.
 

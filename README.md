@@ -20,7 +20,7 @@ The project is written completely in Swift; the Basic Games launcher app utilize
 
 ## Basic to Swift Translation
 
-The primary focus is to duplicate as closely as possible the original game play, logic and I/O. In a few instances, minor output errors are corrected. Many of the programs contain convoluted logic and confusing execution flow; all attempts are made to understand the underlying logic and to duplicate the logic in a more coherent, clear, and modern design. Custom Swift data structures are used to modularize code and encapsulate data and methods.
+The primary focus is to duplicate as closely as possible the original game play, logic and I/O. In a few instances, minor output errors are corrected and enhancements are added. Many of the programs contain convoluted logic and confusing execution flow; all attempts are made to understand the underlying logic and to duplicate the logic in a more coherent, clear, and modern design. Custom Swift data structures are used to modularize code and encapsulate data and methods.
 
 The Swift source code for each game is contained in a Swift class conforming to the BasicGame protocol.
 
@@ -39,7 +39,7 @@ In many cases, inline comments in the Swift source code provide a reference to l
 ### Root folder
 
 - [Extensions](Extensions.swift) and [Game](Game.swift) - shared by all targets.
-- [Matrix](Matrix.swift) and [Tensor.swift](Tensor) - custom Swift 2D and 3D data structures, utilized in some of the game programs.
+- [Matrix](Matrix.swift) and [Tensor](Tensor.swift) - custom Swift 2D and 3D data structures, utilized in some of the game programs.
 - [ConsoleIO](ConsoleIO.swift) - terminal I/O and utility methods
 - [BasicGame](BasicGame.swift) - BasicGame protocol
 
@@ -75,11 +75,11 @@ To add a new game:
 
 1. Add *GameName*.swift file to [Play](Play) folder, with target membership **play**.
 2. In that file create Swift `class` with *GameName* with conformance to BasicGame protocol, and add `func run() {}` for conformance.
-2. Add case *gameName* to [Game](Game) `enum`, and associated computed properties.
-3. Add image for game as an Image set in [Assets](Assets), or use a selected system image; add image name to [Game](Game) `enum`.
-4. In [Play](Play/PlayCommand) `struct`, add enum case for game and instantiate.
+2. Add case *gameName* to [Game](Game.swift) `enum`, and associated computed properties.
+3. Add image for game as an Image set in [Assets](BasicGames/Assets), or use a selected system image; add image name to [Game](Game.swift) `enum`.
+4. In [Play](Play/PlayCommand.swift) `struct`, add enum case for game and instantiate.
 5. Write game code in *GameName*.swift file.
-6. Optionally add pdf file with Basic source code, and matching pdf filename to the [Game](Game) `enum`.
+6. Optionally add pdf file with Basic source code, and matching pdf filename to the [Game](Game.swift) `enum`.
 
 ## Future
 
