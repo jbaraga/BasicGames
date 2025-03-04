@@ -15,7 +15,7 @@ struct Play: ParsableCommand {
     
     @Option(
         name: [.short, .customLong("game")],
-        help: "Game to play. Available games: \n\((Game.allCases.map { $0.rawValue }).joined(separator: ", "))")
+        help: "Available games: \n\((Game.allCases.map { $0.rawValue }).joined(separator: ", "))")
     var gameName: String
     
     @Flag(name: [.short, .long], help: "Run unit test, if implemented.")

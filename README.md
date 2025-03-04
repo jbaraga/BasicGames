@@ -4,7 +4,7 @@ Swift translation of classic computer games written in Basic from the book [Basi
 
 ## Background
 
-I was first exposed to computers and programming in the early 1970's, when a teletype connected via phone modem to a mainframe computer operated by the [Minnesota Educational Computing Consortium](https://en.wikipedia.org/wiki/MECC) was brought to my grade school. As I recall, 3 games were available on the mainframe: Amazing, a word finder puzzle generator, and a third game which I do not specifically remember. I was captivated and soon after learned to program in Basic, and later in Fortran. I purchased a TRS-80 Model 1 (originally with 4K RAM, later expanded to 16K). I subscribed to Creative Computing magazine and later purchased the compilation of games [Basic Computer Games (Microcomputer Edition)](https://www.atariarchives.org/basicgames/), and spent many hours entering programs into the TRS-80, as well as tinkering with my own programs. Later in college and graduate school, I learned to program in C. After a long hiatus from programming, I decided to revive my computer hobby, and learned Apple's Swift language shortly after it was released in 2014.
+I was first exposed to computers and programming in the early 1970's, when a teletype connected via phone modem to a mainframe computer operated by the [Minnesota Educational Computing Consortium](https://en.wikipedia.org/wiki/MECC) was brought to my grade school. As I recall, 3 games were available on the mainframe: Amazing, a word finder puzzle generator, and probably Lunar. I was captivated and soon after learned to program in Basic, and later in Fortran. I purchased a TRS-80 Model 1 (originally with 4K RAM, later expanded to 16K). I subscribed to Creative Computing magazine and later purchased the compilation of games [Basic Computer Games (Microcomputer Edition)](https://www.atariarchives.org/basicgames/), and spent many hours entering programs into the TRS-80, as well as tinkering with my own programs. Later in college and graduate school, I learned to program in C. After a long hiatus from programming, I decided to revive my computer hobby, and learned Apple's Swift language shortly after it was released in 2014.
 
 ## Motivation
 
@@ -20,7 +20,7 @@ The project is written completely in Swift; the Basic Games launcher app utilize
 
 ## Basic to Swift Translation
 
-The primary focus is to duplicate as closely as possible the original game play, logic and I/O. In a few instances, minor output errors are corrected and enhancements are added. Many of the programs contain convoluted logic and confusing execution flow; all attempts are made to understand the underlying logic and to duplicate the logic in a more coherent, clear, and modern design. Custom Swift data structures are used to modularize code and encapsulate data and methods.
+The primary focus is to duplicate as closely as possible the original game play, logic and I/O. In a few instances, minor output errors are corrected and enhancements are added. Many of the programs contain convoluted logic and confusing execution flow; all attempts are made to understand the underlying logic and to deconstruct the flow of execution in a more coherent, clear, and modern design. Custom Swift data structures are used to modularize code and encapsulate data and methods.
 
 The Swift source code for each game is contained in a Swift class conforming to the BasicGame protocol.
 
@@ -51,7 +51,7 @@ UI code for the BasicGames game launcher app and SwiftTerm wrapper.
 
 Code for the executable **play** CLI, which contains all the individual games, and for each game. Each game is contained in its own file, and is structured as a Swift class conforming to the BasicGame protocol.
 
-See [GameNotes](Play/GameNotes.md) file in **Play** folder for individual game notes.
+See [GameNotes](Play/GameNotes.md) in **Play** folder for individual game notes.
 
 ### Package dependencies
 
@@ -63,7 +63,7 @@ The **play** target depends on the [swift-argument-parser](https://github.com/ap
 
 ### BasicGames target
 
-The complete launcher app, which launches each game in separate window in SwiftTerm. Contains additional goodies, including ability to view the original Basic code for each game (which is unlocked as an Easter Egg after successful game play).
+The GUI launcher macOS app, which launches each game in separate window in SwiftTerm. Contains additional goodies, including ability to view the original Basic code for each game (which is unlocked as an Easter Egg after successful game play).
 
 ### play target
 

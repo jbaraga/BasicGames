@@ -61,17 +61,6 @@ class Checkers: BasicGame {
     }
     
     //Lines 90-200
-//    private func setupBoard() -> Board {
-//        var board = dim(2, 8, value: Piece.none)
-//        var row: [Piece] = [.oMan, .none, .oMan, .none, .oMan, .none, .oMan, .none]
-//        for _ in 0...2 {
-//            board.insert(row, at: 0)
-//            row.append(row.removeFirst())
-//            board.append(row.map { -$0})
-//        }
-//        return board
-//    }
-    
     private func setupBoard() -> Board {
         var array = dim(2, 8, value: Piece.none)
         var row: [Piece] = [.oMan, .none, .oMan, .none, .oMan, .none, .oMan, .none]

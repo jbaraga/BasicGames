@@ -34,7 +34,6 @@ class Bunny: BasicGame {
         //110 REM
         
         play()
-        
         end()
     }
     

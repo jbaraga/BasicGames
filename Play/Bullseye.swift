@@ -114,8 +114,4 @@ class Bullseye: BasicGame {
         unlockEasterEgg(.bullseye)
         end()
     }
-    
-    func test() {
-        //TODO: Implement
-    }
 }

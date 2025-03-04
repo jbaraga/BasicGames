@@ -17,7 +17,7 @@ class CivilWar: BasicGame {
     private var battles = [HistoricalBattleData]()  //Zero indexed; original 1 indexed
     private var players = 1
     //60 REM UNION INFO ON LIKELY CONFEDERATE STRATEGY
-    private var strategyPercentage = [25.0, 25.0, 25.0, 25.0]  //S() - trategy percentage by index
+    private var strategyPercentage = [25.0, 25.0, 25.0, 25.0]  //S() - strategy percentage by index
         
     //Allocations, maintained outside of main loop to allow reuse of prior
     private var south = Army(name: "Confederacy")
@@ -460,8 +460,8 @@ class CivilWar: BasicGame {
     }
     
     //Lines 82-88, 3420-4000
-    //3420 REM - Historical data...can add more (strat.,etc) by inserting
-    //3430 REM   data statements after appro. info, and adjusting read
+    //3420 REM - HISTORICAL DATA...CAN ADD MORE (STRAT.,ETC) BY INSERTING
+    //3430 REM   DATA STATEMENTS AFTER APPRO. INFO, AND ADJUSTING READ
     private func loadHistoricalData() -> [HistoricalBattleData] {
         return [
             HistoricalBattleData(name: "Bull Run", menSouth: 18000, menNorth: 18500, lossesSouth: 1967, lossesNorth: 2708, m: 1, description: "July 21, 1861.  Gen. Beauregard, commanding the South, met\nUnion forces with Gen. McDowell in a premature battle at\nBull Run.  Gen. Jackson helped push back the Union attack."),

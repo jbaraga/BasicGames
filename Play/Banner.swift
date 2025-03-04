@@ -84,7 +84,7 @@ class Banner: BasicGame {
             //Line 96
             if letter == " " {
                 //Line 812
-                println(7*x)
+                println(7 * x)
             } else {
                 //Line 201
                 let outputCharacter = character == "ALL" ? letter : character  //x$
@@ -132,6 +132,6 @@ class Banner: BasicGame {
     }
     
     func pow(_ base: Int, _ exp: Int) -> Int {
-        return Int(Darwin.pow(Double(base) ,Double(exp)))
+        return Int(Darwin.pow(Double(base), Double(exp)))
     }
 }

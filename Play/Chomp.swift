@@ -27,7 +27,7 @@ class Chomp: BasicGame {
             self.matrix[0,0] = .poison
         }
         
-        //1 indexed
+        //One-indexed
         subscript(_ location: Point) -> Square {
             get { matrix[location.x - 1, location.y - 1] }
             set { matrix[location.x - 1, location.y - 1] = newValue}

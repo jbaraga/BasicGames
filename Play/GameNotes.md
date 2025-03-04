@@ -1,6 +1,6 @@
 # Play
 
-[PlayCommand](PlayCommand.swift) is the unified launcher for each game, and is the source for the **play** executable command. A specific game is launched using the `-g` option followed by the *gameName* (`rawValue` from the Game `enum` for the game case). `-t` flag for running unit test is also available, but only implemented in a few select games.
+[PlayCommand](PlayCommand.swift) `struct` is the unified command line launcher for each game, and is the source for the **play** executable command. A specific game is launched using the `-g` option followed by the *gameName* (`rawValue` from the Game `enum` for the game case). `-t` flag for running unit test is also available, but only implemented in a few select games.
 
 ## Game Notes
 
@@ -13,7 +13,7 @@ Each game has undergone limited testing, primarily to demonstrate equal output t
 ### [Amazing](Amazing.swift)
 
 - The original program flow is exceedingly convoluted and difficult to unravel. The underlying algorithm is ingenious, and akin to random walk; the algorithm is outlined in the inline program comments.
-- The first attempt used recursion to duplicate the original code flow directly and is included for reference but commented out. This contains the exit row bug in the original code, in which an exit is not created occasionally. The level of recursion exponentially increases with maze size, and results in stack overflow with large mazes. 
+- The first attempt used recursion to duplicate the original code flow directly and is included for reference but commented out. This contains the exit row bug in the original code, in which an exit from the maze may be missing. The level of recursion exponentially increases with maze size, and results in stack overflow with large mazes. 
 
 ### [Animal](Animal.swift)
 
@@ -26,302 +26,335 @@ Each game has undergone limited testing, primarily to demonstrate equal output t
 - Incomplete understanding of computer learning algorithm.
 - Lines 900-999 should never be executed.
 
-### Bagels
+### [Bagels](Bagels.swift)
 
+- No issues
 
-### Banner
+### [Banner](Banner.swift)
 
+- No issues
 
-### Basketball
+### [Basketball](Basketball.swift)
 
+- Extra new line printed after rebound.
+- Execution flow incompletely deconstructed; uses recursion to duplicate program flow.
 
-### Batnum
+### [Batnum](Batnum.swift)
 
+- No issues
 
-### Battle
+### [Battle](Battle.swift)
 
+- 2D array grid represented by Matrix struct.
+- Complex logic to place ships on board in element-wise fashion not duplicated; replaced by Swift array methods.
 
-### Blackjack
+### [Blackjack](Blackjack.swift)
 
+- Original Basic program design largely followed
 
-### Bombardment
+### [Bombardment](Bombardment.swift)
 
+- Added check for illegal entry
 
-### Bombs Away
+### [Bombs Away](BombsAway.swift)
 
+- No issues
 
-### Bounce
+### [Bounce](Bounce.swift)
 
+- Minor difference in plot along x axis, maybe due to cumulative rounding error 
 
-### Bowling
+### [Bowling](Bowling.swift)
 
+- Strike not possible? Additional testing needed
+- Scoring issues: scoring of spares and strikes does not appear to follow bowling rules, and potential bugs in scoring, improper indexing of score by player; scoring not shown in sample run
 
-### Boxing
+### [Boxing](Boxing.swift)
 
+- No issues
 
-### Bug
+### [Bug](Bug.swift)
 
+- No issues
 
-### Bullfight
+### [Bullfight](Bullfight.swift)
 
+- Lines 1460-1570 - random number fnc is recomputed for each if statement
+- Lines 1800-1820 should never be executed
 
-### Bullseye
+### [Bullseye](Bullseye.swift)
 
+- No issues
 
-### Bunny
+### [Bunny](Bunny.swift)
 
+- No issues
 
-### Buzzword
+### [Buzzword](Buzzword.swift)
 
+- No issues
 
-### Calendar
+### [Calendar](Calendar.swift)
 
+- Modification to allow user input of year
+- Incorporates algorithm from weekday to get first day of year, as suggested in program intro
 
-### Change
+### [Change](Change.swift)
 
+- No issues
 
-### Checkers
+### [Checkers](Checkers.swift)
 
+- Bug in computer move, if move to last row (King) via jump user chip not removed
+- Modified for Matrix implementation of Board after initial translation 
 
-### Chemist
+### [Chemist](Chemist.swift)
 
+- No issues
 
-### Chief
+### [Chief](Chief.swift)
 
+- No issues
 
-### Chomp
+### [Chomp](Chomp.swift)
 
+- No issues
 
-### Civil War
+### [Civil War](CivilWar.swift)
 
+- Bug fixed - if 2 player mode, north not allowed to surrender; if south surrenders battle continues
+- Bug fixed - morale for both sides calculated from F1 computed from south only
 
-### Combat
+### [Combat](Combat.swift)
 
+- No issues
 
-### Craps
+### [Craps](Craps.swift)
 
+- Lines 21-26 do nothing, except maybe random delay?
 
-### Cube
+### [Cube](Cube.swift)
 
+- No issues
 
-### Depth Charge
+### [Depth Charge](Depth Charge.swift)
 
 
-### Diamond
+### [Diamond](Diamond.swift)
 
 
-### Dice
+### [Dice](Dice.swift)
 
 
-### Digits
+### [Digits](Digits.swift)
 
 
-### Even Wins (v1)
+### [Even Wins (v1)](EvenWins1.swift)
 
 
-### Even Wins (v2)
+### [Even Wins (v2)](EvenWins2.swift)
 
 
-### Flip Flop
+### [Flip Flop](FlipFlop.swift)
 
 
-### Football
+### [Football](Football.swift)
 
 
-### Ftball
+### [Ftball](Ftball.swift)
 
 
-### Fur Trader
+### [Fur Trader](FurTrader.swift)
 
 
-### Golf
+### [Golf](Golf.swift)
 
 
-### Gomoko
+### [Gomoko](Gomoko.swift)
 
 
-### Guess
+### [Guess](Guess.swift)
 
 
-### Gunner
+### [Gunner](Gunner.swift)
 
 
-### Hamurabi
+### [Hamurabi](Hamurabi.swift)
 
 
-### Hangman
+### [Hangman](Hangman.swift)
 
 
-### Hello
+### [Hello](Hello.swift)
 
 
-### Hexapawn
+### [Hexapawn](Hexapawn.swift)
 
 
-### Hi-Lo
+### [Hi-Lo](HiLo.swift)
 
 
-### High I-Q
+### [High I-Q](HighIQ.swift)
 
 
-### Hockey
+### [Hockey](Hockey.swift)
 
 
-### Horserace
+### [Horserace](Horserace.swift)
 
 
-### Hurkle
+### [Hurkle](Hurkle.swift)
 
 
-### ICBM
+### [ICBM](ICBM.swift)
 
 
-### Joust
+### [Joust](Joust.swift)
 
 
-### Kinema
+### [Kinema](Kinema.swift)
 
 
-### King
+### [King](King.swift)
 
 
-### Letter
+### [Letter](Letter.swift)
 
 
-### Life
+### [Life](Life.swift)
 
 
-### Life for Two
+### [Life for Two](Life2.swift)
 
 
-### Literature Quiz
+### [Literature Quiz](LiteratureQuiz.swift)
 
 
-### Love
+### [Love](Love.swift)
 
 
-### Lunar
+### [Lunar](Lunar.swift)
 
 
-### LEM
+### [LEM](LEM.swift)
 
 
-### Rocket
+### [Rocket](Rocket.swift)
 
 
-### Master Mind
+### [Master Mind](MasterMind.swift)
 
 
-### Math Dice
+### [Math Dice](MathDice.swift)
 
 
-### Mugwump
+### [Mugwump](Mugwump.swift)
 
 
-### Name
+### [Name](Name.swift)
 
 
-### Nicomachus
+### [Nicomachus](Nicomachus.swift)
 
 
-### Nim
+### [Nim](Nim.swift)
 
 
-### Number
+### [Number](Number.swift)
 
 
-### One Check
+### [One Check](OneCheck.swift)
 
 
-### Orbit
+### [Orbit](Orbit.swift)
 
 
-### Oregon Trail
+### [Oregon Trail](OregonTrail.swift)
 
 
-### Pizza
+### [Pizza](Pizza.swift)
 
 
-### Poetry
+### [Poetry](Poetry.swift)
 
 
-### Poker
+### [Poker](Poker.swift)
 
 
-### Queen
+### [Queen](Queen.swift)
 
 
-### Reverse
+### [Reverse](Reverse.swift)
 
 
-### Rock, Scissors, Paper
+### [Rock, Scissors, Paper](RockScissorsPaper.swift)
 
 
-### Roulette
+### [Roulette](Roulette.swift)
 
 
-### Russian Roulette
+### [Russian Roulette](RussianRoulette.swift)
 
 
-### Salvo
+### [Salvo](Salvo.swift)
 
 
-### Sine Wave
+### [Sine Wave](SineWave.swift)
 
 
-### Slalom
+### [Slalom](Slalom.swift)
 
 
-### Slots
+### [Slots](Slots.swift)
 
 
-### Splat
+### [Splat](Splat.swift)
 
 
-### Star Trek
+### [Star Trek](StarTrek.swift)
 
 
-### Stars
+### [Stars](Stars.swift)
 
 
-### Stock Market
+### [Stock Market](StockMarket.swift)
 
 
-### Synonym
+### [Synonym](Synonym.swift)
 
 
-### Target
+### [Target](Target.swift)
 
 
-### 3-D Plot
+### [3-D Plot](3DPlot.swift)
 
 
-### 3-D Tic-Tac-Toe
+### [3-D Tic-Tac-Toe](3DTicTacToe.swift)
 
 
-### Tic Tac Toe (v1)
+### [Tic Tac Toe (v1)](TicTacToe1.swift)
 
 
-### Tic Tac Toe (v2)
+### [Tic Tac Toe (v2)](TicTacToe2.swift)
 
 
-### Tower
+### [Tower](Tower.swift)
 
 
-### Train
+### [Train](Train.swift)
 
 
-### Trap
+### [Trap](Trap.swift)
 
 
-### 23 Matches
+### [23 Matches](23Matches.swift)
 
 
-### War
+### [War](War.swift)
 
 
-### Weekday
+### [Weekday](Weekday.swift)
 
 
-### Word
+### [Word](Word.swift)
 

@@ -28,8 +28,6 @@ class Batnum: BasicGame {
         println("playing the game.")
         println()
 
-        wait(.short)
-        
         while true {
             n = 0
             min = 0
@@ -39,7 +37,6 @@ class Batnum: BasicGame {
         }
     }
     
-    //Lines 330-
     private func play() {
         while n == 0 {
             n = Int(input("Enter pile size")) ?? 0

@@ -342,9 +342,5 @@ class Bug: BasicGame {
             }
         }
     }
-    
-    func test() {
-        //TODO: Implement
-    }
 }
 
