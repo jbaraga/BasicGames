@@ -12,19 +12,19 @@ As a fun exercise, I decided to translate my favorite classic Basic games to Swi
 
 ## Project Evolution
 
-Originally each program was created as a CLI program. As more games were completed, a stand alone game launcher app was constructed to access all the games. Each game was launched in a separate Terminal window, tweaked to mimic a 1970's era computer. I subsequently discovered and added the [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm.git) terminal emulator, which allowed for more customization and a self-contained game launcher app. 
+Originally each program was created as a separate CLI program. As more games were completed, a unified Basic Games macOS app was added to select and launch each game from a list. 
 
-To simplify the design further, the individual game CLI products were consolidated into a single **play** CLI program. Individual games are run using the play command with the name of the game in the command line.
+Each game is launched in a separate terminal emulator window, tweaked to give the feel of a 1970's era computer. Originally the macOS Terminal app was utilized. In the current version the [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm.git) terminal emulator is embedded in the app, which allows for more customization and a self-contained game launcher app. 
+
+To simplify the design further, the individual game CLI products have been consolidated into a single **play** CLI program, from which specific games are run using the play command with the name of the game as a command line argument.
 
 The project is written completely in Swift; the Basic Games launcher app utilizes SwiftUI wherever possible.
 
 ## Basic to Swift Translation
 
-The primary focus is to duplicate as closely as possible the original game play, logic and I/O. In a few instances, minor output errors are corrected and enhancements are added. Many of the programs contain convoluted logic and confusing execution flow; all attempts are made to understand the underlying logic and to deconstruct the flow of execution in a more coherent, clear, and modern design. Custom Swift data structures are used to modularize code and encapsulate data and methods.
+The primary focus is to refactor and simplify the code while maintaining as closely as possible the original game play and I/O. In a few instances, minor output errors are corrected and enhancements are added. Many of the programs contain convoluted logic and confusing execution flow; all attempts are made to refactor the original code into a more coherent, clear, and modern design.
 
-The Swift source code for each game is contained in a Swift class conforming to the BasicGame protocol.
-
-In many cases, inline comments in the Swift source code provide a reference to lines in the original Basic code. Remarks (REM statements) are preserved in most cases, as a tribute to the original code.
+In many cases, inline comments in the Swift source code provide a reference to lines in the original Basic code. Remarks (REM statements) in the original source code are preserved in most cases, as an homage to the original code.
  
 ### ConsoleIO
 
@@ -32,7 +32,7 @@ In many cases, inline comments in the Swift source code provide a reference to l
 
 ### BasicGame
 
-[BasicGame](BasicGame.swift) is a Swift `protocol` adopted by all the games. It implements Swift methods duplicating many Basic functions, including `input`, `print`, `rnd`, `chr$`, among others, and provides a more explicit connection between the original Basic and Swift code.
+[BasicGame](BasicGame.swift) is the Swift `protocol` adopted by all the games. It includes implementation of Swift methods duplicating many Basic functions, including `input`, `print`, `rnd`, `chr$`, among others, and provides a more explicit connection between the original Basic and Swift code.
 
 ## Project Structure
 
@@ -88,6 +88,6 @@ To add a new game:
 
 ## Credits
 
-Much thanks to [David H. Ahl](https://www.swapmeetdave.com/Ahl/DHAbio.htm) for his seminal involvement in early personal computing and computer games, and for inspiring a whole generation of programmers. In an incredibly generous move, David released all his works into the public domain in 2022.
+Much thanks to [David H. Ahl](https://www.swapmeetdave.com/Ahl/DHAbio.htm) for his pioneering involvement in early personal computing and computer games, and for inspiring a whole generation of programmers. In an incredibly generous move, he released all his works into the public domain in 2022.
 
 Thanks to [Miguel de Icaza](https://github.com/migueldeicaza) and the other contributors of [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm.git).

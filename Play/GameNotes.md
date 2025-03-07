@@ -12,12 +12,12 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 ##### [Amazing](Amazing.swift)
 
-- Original program flow is exceedingly convoluted and difficult to unravel. The underlying algorithm is ingenious and reproduced in the translation.
-- First attempt at translation used recursion to duplicate the original code flow directly and is included for reference but commented out. This contains the exit row bug in the original code, in which an exit from the maze may be missing. The level of recursion exponentially increases with maze size, and results in stack overflow with large mazes. 
+- Original program flow is exceedingly convoluted and difficult to unravel
+- First attempt at translation used recursion to duplicate the original code flow directly and is included for reference but commented out. This contains the exit row bug in the original code, in which an exit from the maze may be missing. The level of recursion exponentially increases with maze size, and results in stack overflow with large mazes.
+- Final ranslation utilizes the underlying, very clever algorithm
 
 #### [Animal](Animal.swift)
 
-- No issues
 - Added save feature, as mentioned in the game description
 
 #### [Awari](Awari.swift)
@@ -36,8 +36,8 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 #### [Basketball](Basketball.swift)
 
-- Extra new line printed after rebound.
-- Execution flow incompletely deconstructed; uses recursion to duplicate program flow
+- Extra new line printed after rebound
+- Code execution flow incompletely refactored; uses recursion to duplicate program flow
 
 #### [Batnum](Batnum.swift)
 
@@ -67,7 +67,8 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 #### [Bowling](Bowling.swift)
 
 - Strike not possible? Additional testing needed
-- Scoring issues: scoring of spares and strikes does not appear to follow bowling rules, and potential bugs in scoring, improper indexing of score by player; scoring not shown in sample run
+- Scoring issues: scoring of spares and strikes does not appear to follow bowling rules, and potential bugs in scoring
+- Bug fixed - improper indexing of score by player; scoring not shown in sample run to confirm
 
 #### [Boxing](Boxing.swift)
 
@@ -97,7 +98,7 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 #### [Calendar](Calendar.swift)
 
 - Modification to allow user input of year
-- Incorporates algorithm from weekday to get first day of year, as suggested in program intro
+- Incorporates algorithm from weekday to get first day of year, as suggested in program description
 
 #### [Change](Change.swift)
 
@@ -105,8 +106,8 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 #### [Checkers](Checkers.swift)
 
-- Bug in computer move, if move to last row (crowning - King) via jump user chip not removed
-- Modified for Matrix implementation of Board after initial translation 
+- Bug in computer move, if move to last row for crowning via jump user chip not removed
+- Modified for Matrix `struct` representation of Board after initial translation 
 
 #### [Chemist](Chemist.swift)
 
@@ -163,15 +164,15 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 #### [Flip Flop](FlipFlop.swift)
 
-- Need to understand algorithm for flipping additional elements, r function 
+- Incomplete understanding algorithm for flipping additional elements, r function 
 
 #### [Football](Football.swift)
 
-- Largely duplicates original code flow
+- Largely duplicates original code structure
 
 #### [Ftball](Ftball.swift)
 
-- Largely duplicates original code flow
+- Largely duplicates original code structure
 
 #### [Fur Trader](FurTrader.swift)
 
@@ -179,8 +180,8 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 #### [Golf](Golf.swift)
 
-- Original code execution flow is convoluted and probably not completely deconstructed
-- Lines 650-665 C conditions don't makes ense, some may alway evaluate to true
+- Original code execution flow is convoluted and incompletely refactored
+- Lines 650-665 C conditions don't makes sense, some may always evaluate to true
 
 #### [Gomoko](Gomoko.swift)
 
@@ -304,7 +305,7 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 #### [Nim](Nim.swift)
 
-- Need to more completely understand computer move logic, binary arithmetic
+- Incomplete understanding and refactoring computer move logic, binary arithmetic
 
 #### [Number](Number.swift)
 
@@ -321,7 +322,7 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 #### [Oregon Trail](OregonTrail.swift)
 
 - First game translated, construction and code flow could be improved
-- Uses nested functions to access state data in play func; could transition state data to a struct
+- Uses nested functions to access state variables in play func; could refactor further, move state data to a struct to factor out functions
 
 #### [Pizza](Pizza.swift)
 
@@ -333,7 +334,7 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 #### [Poker](Poker.swift)
 
-- Hand evaluation, computer betting logic confusing with inconsistencies, could be simplified and improved
+- Hand evaluation, computer betting original logic and execution flow confusing with inconsistencies, could be further refactored and improved
 
 #### [Queen](Queen.swift)
 
@@ -403,7 +404,7 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 #### [3-D Tic-Tac-Toe](3DTicTacToe.swift)
 
-- Tensor `struct` for 3D representation of board
+- Custom Tensor `struct` for 3D representation of board
 - Convoluted computer move logic in original source code incompletely implemented
 
 #### [Tic Tac Toe (v1)](TicTacToe1.swift)
@@ -436,9 +437,9 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 #### [Weekday](Weekday.swift)
 
-- Added date entry error catch
-- Used Doomsday algorithm to compute weekday; A2 calculation not understood
-- Alternate compact method to compute weekday included, but not used
+- Added date entry error check
+- Doomsday algorithm to compute weekday; A2 calculation not understood
+- Alternate compact method to compute weekday using Doomsday algorthm is included, but not used
 
 #### [Word](Word.swift)
 
