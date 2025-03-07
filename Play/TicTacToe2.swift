@@ -241,7 +241,7 @@ class TicTacToe2: BasicGame {
         }
     }
     
-    //500-
+    //500-510
     private func getUserMove() -> Int {
         if !isCRT { println() }
         guard let move = Int(input("Where do you move")), move == 0 || ((1...9).contains(move) && board[move] == 0) else {
@@ -259,7 +259,7 @@ class TicTacToe2: BasicGame {
         return move
     }
     
-    //1000-1170, removing win check logic
+    //1000-1170, win check logic factored out
     private func printBoard() {
         println()
         println(board)

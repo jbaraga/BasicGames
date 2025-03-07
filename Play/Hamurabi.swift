@@ -15,7 +15,6 @@ class Hamurabi: BasicGame {
         println("Try your hand at governing ancient Sumeria")
         println("For a ten-year term of office.")
         println()
-        wait(.short)
         play()
     }
     

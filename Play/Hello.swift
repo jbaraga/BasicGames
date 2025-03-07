@@ -131,6 +131,5 @@ class Hello: BasicGame {
         } while response.isOther
         
         println("Nice meeting you, \(name), have a nice day.")
-        wait(.short)
     }
 }

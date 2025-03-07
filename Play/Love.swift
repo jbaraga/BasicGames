@@ -9,11 +9,6 @@ import Foundation
 
 class Love: BasicGame {
     
-    private let maskByRow: [Int: [IndexSet]] = [
-        0: [],
-        
-    ]
-    
     //600-710 - successive numbers alternate between # characters to print and # of spaces to print
     private let data = [
         60,1,12,26,9,12,3,8,24,17,8,4,6,23,21,6,4,6,22,12,5,6,5,
@@ -37,7 +32,6 @@ class Love: BasicGame {
         println("your choice up to 60 characters.  If you can't think of")
         println("a message, simply type the word 'LOVE'")
         println()
-        wait(.short)
         play()
         
     }

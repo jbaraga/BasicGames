@@ -108,7 +108,6 @@ class OneCheck: BasicGame {
         end()
     }
     
-    //70-
     private func play() {
         var board = Board()
         var jumps = 0

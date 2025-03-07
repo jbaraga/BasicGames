@@ -81,7 +81,7 @@ class Digits: BasicGame {
                     var s = 0
                     var g = 0
                     for j in 0...2 {
-                        let s1 = a * k[z2,j]  + b * l[z1,j] + c * m[z,j]  //a = 0, so k is never used ? bug
+                        let s1 = a * k[z2,j]  + b * l[z1,j] + c * m[z,j]  //700 - a = 0, so k is never used ? bug
                         if s < s1 || (s == s1 && rnd(1) > 0.5) {
                             s = s1
                             g = j

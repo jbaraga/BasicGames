@@ -462,6 +462,16 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         URL(string: Self.basicGamesPath + "#pages=" + (197...201).description)
     }
     
+    static var moreBasicGamesPath: String { URL.basicGamesScheme + ":///BasicGames2.pdf" }
+    
+    static var moreBasicGamesIntroURL: URL? {
+        URL(string: Self.moreBasicGamesPath + "#pages=" + (1...12).description)
+    }
+    
+    static var moreBasicGamesAppendixURL: URL? {
+        URL(string: Self.moreBasicGamesPath + "#pages=" + (208...208).description)
+    }
+    
     var unlockURL: URL? {
         return URL(string: URL.basicGamesScheme + ":///#game=" + rawValue)
     }

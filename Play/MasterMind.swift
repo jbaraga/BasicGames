@@ -146,9 +146,9 @@ class MasterMind: BasicGame {
         println("You ran out of moves!  That's all you get!")
         score.human += guesses.count
         print(score: score)
+        //Bug in original code, does not execute line 622-626 after out of moves, and would and fallthrough to 630 if it did
         println("The actual combination was: " + (positions.map { $0.letter }).joined() )
         println()
-        //Bug in original code, falls through to line 630 - println("You guessed it in  \(guesses.count) moves!")
     }
     
     //380-490

@@ -174,8 +174,4 @@ class Life2: BasicGame {
         println(String(repeating: "█", count: 6))
         return coordinate
     }
-    
-    func test() {
-        //TODO: Implement
-    }
 }

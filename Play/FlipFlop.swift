@@ -53,7 +53,7 @@ class FlipFlop: BasicGame {
             }
         }
         
-        //TODO: Understand the r functions. Simplify algorithm
+        //TODO: Understand the r function. Simplify algorithm
         //420-500, 530-600
         mutating func flipAdditionalElement(lastNumber: Int, lastSelection: Int) {
             let n = Double(lastNumber)

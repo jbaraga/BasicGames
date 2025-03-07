@@ -61,6 +61,18 @@ struct BasicGamesApp: App {
                     }
                 }
                 
+                Menu("More Basic Computer Games") {
+                    Button("Introduction") {
+                        guard let url = Game.moreBasicGamesIntroURL, let pdf = EasterEggPDF(title: "More Basic Computer Games", url: url) else { return }
+                        openWindow(value: pdf)
+                    }
+                    
+                    Button("Appendix") {
+                        guard let url = Game.moreBasicGamesAppendixURL, let pdf = EasterEggPDF(title: "Appendix", url: url) else { return }
+                        openWindow(value: pdf)
+                    }
+                }
+                
                 Button("Basic Games on Github") {
                     guard let url = URL(string: "https://github.com/jbaraga/BasicGames") else { return }
                     NSWorkspace.shared.open(url)

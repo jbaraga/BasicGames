@@ -9,6 +9,10 @@ import Foundation
 
 class EvenWins1: BasicGame {
     
+    private enum Player {
+        case user, computer
+    }
+    
     func run() {
         printHeader(title: "Even Wins")
         println("     This is a two person game called 'Even Wins.'")
@@ -42,24 +46,21 @@ class EvenWins1: BasicGame {
         //Lines 200-260
         println("     Type a 1 if you want to go first, and type")
         println("a 0 if you want me to go first.")
-        var c = Int(input()) ?? 0  //Turn tracker - c=0 for computer, c=1 for player
+        var player: Player = (Int(input()) ?? 0) == 0 ? .computer : .user  //Turn tracker - c=0 for computer, c=1 for player
         
         var t = 27  //Line 250 - remaining marbles
         var m1 = 0  //Computer marbles
         var y1 = 0  //Player marbles
         
         while t > 0 {
-            if c == 0 {
-                //Computer turn
+            switch player {
+            case .computer:
                 let m: Int  //Computer pick
                 if t == 27 {
-                    //Line 270
-                    println("Total= \(t)")
-                    //First turn, computer picks 2
-                    m = 2
+                    println("Total= \(t)")  //270
+                    m = 2  //First turn, computer picks 2
                 } else {
-                    //Computer picking logic
-                    //Lines 500-600
+                    //500-600 computer picking logic
                     let r = t - 6 * Int(t / 6)
                     if y1 % 2 == 0 {
                         //700 REM     I AM READY TO ENCODE THE STRAT FOR WHEN OPP TOT IS EVEN
@@ -71,18 +72,15 @@ class EvenWins1: BasicGame {
                             //830 REM    250 IS WHERE I WIN
                         } else {
                             if r < 4 {
-                                //Line 540
-                                m = r + 1
+                                m = r + 1  //540
                             } else {
-                                //Line 620
-                                m = r == 4 ? 4 : 1
+                                m = r == 4 ? 4 : 1  //620
                             }
                         }
                     }
                 }
                 m1 += m
                 t -= m
-                c = 1
                 
                 println("I pick up \(m) marbles.")
                 if t == 0 {
@@ -92,8 +90,8 @@ class EvenWins1: BasicGame {
                         println("Total = 0")
                     }
                 }
-            } else {
-                //Player turn
+
+            case .user:
                 if t == 27 {
                     //Lines 1070-1130
                     println(3)
@@ -138,8 +136,10 @@ class EvenWins1: BasicGame {
                         y = 0
                     }
                 }
-                c = 0
+
             }
+
+            player = player == .computer ? .user : .computer
         }
         
         //Lines 880-1050

@@ -33,7 +33,6 @@ class OregonTrail: BasicGame {
         case `continue`
     }
     
-    private let delayAfterInput = 0.5  //Seconds after hitting return
     private let TotalCash = 700
     
     //10 REM PROGRAM NAME - OREGON        VERSION:01/01/78
@@ -931,8 +930,10 @@ class OregonTrail: BasicGame {
         
     //Shooting subroutine, lines 6130-6280.
     private func shoot(_ level: ShootingLevel) -> Double {
+        let delayAfterInput = ConsoleIO.Delay.afterEntry.value  //Delay built into input function
+
         var responseTime = 0.0
-        let MaximumTime = 9.0  //9 seconds maximum = failure
+        let maximumTime = 9.0  //9 seconds maximum = failure
         let word: String
         switch Int.random(in: 0...3) {
         case 0: word = "bang"
@@ -948,7 +949,7 @@ class OregonTrail: BasicGame {
         let shootTime = Date().timeIntervalSince(startTime) - delayAfterInput  //Remove input delay
         
         if response.uppercased() != word.uppercased() {
-            responseTime = MaximumTime
+            responseTime = maximumTime
         } else {
             
         }

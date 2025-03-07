@@ -75,7 +75,6 @@ class Hangman: BasicGame {
     
     func run() {
         printHeader(title: "Hangman")
-        wait(.short)
         play()
     }
     

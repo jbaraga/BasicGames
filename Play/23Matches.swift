@@ -76,7 +76,7 @@ class TwentyThreeMatches: BasicGame {
             }
         }
         
-        //Fallthrough,  with 1 left next player is loser; does not account for deliberately loosing by taking last 2 or 3
+        //Fallthrough,  with 1 left next player is loser; does not account for deliberately losing by taking last 2 or 3
         if player == .computer {
             //530-550
             println("You won, floppy ears !")
@@ -95,7 +95,6 @@ class TwentyThreeMatches: BasicGame {
         end()
     }
 
-    
     private func getUserChoice() -> Int {
         guard let number = Int(input()), number > 0 && number < 4 else {
             //430-460

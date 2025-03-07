@@ -45,7 +45,7 @@ class EvenWins2: BasicGame {
     private func play() {
         //Line 70
         var a = 0  //Player's chips
-        var b = 0 //Computer's chips
+        var b = 0  //Computer's chips
         var p = Int((13 * rnd(1) + 9) / 2) * 2 + 1  //Number of chips on board
         
         //e and l are indices to select computer move from array r

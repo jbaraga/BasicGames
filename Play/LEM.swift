@@ -260,13 +260,6 @@ class LEM: BasicGame {
         //Lines 810-840
         func printStatus() {
             //Prints elapsed time in seconds, height, distance form landing site, vertical velocity, horizontal velocity, fuel units remaining
-//            let timeString = formatter.string(from: t)
-//            let hString = formatter.string(from: height)
-//            let vvelString = formatter.string(from: verticalVelocity)
-//            let dString = formatter.string(from: distance)
-//            let hvelString = formatter.string(from: horizontalVelocity)
-//            let fuelString = formatter.string(from: remainingFuelUnits)
-            
             let timeString = t.formatted(.basic)
             let hString = height.formatted(.basic)
             let vvelString = verticalVelocity.formatted(.basic)

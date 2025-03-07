@@ -9,8 +9,6 @@ import Foundation
 
 class Gunner: BasicGame {
     
-    private let moreTrainingString = "Better go back to Fort Sill for refresher training!"
-    
     func run() {
         printHeader(title: "Gunner")
         println("You are the officer-in-charge, giving orders to a gun")
@@ -31,6 +29,8 @@ class Gunner: BasicGame {
     }
     
     private func play() {
+        let moreTrainingString = "Better go back to Fort Sill for refresher training!"
+        
         let range = Int(40000 * rnd(1) + 20000)
         var totalRounds = 0  //S1
         var z = 0
