@@ -4,7 +4,9 @@ Swift translation of classic computer games written in Basic from the book [Basi
 
 ## Background
 
-I was first exposed to computers and programming in the early 1970's, when a teletype connected via phone modem to a mainframe computer operated by the [Minnesota Educational Computing Consortium](https://en.wikipedia.org/wiki/MECC) was brought to my grade school. As I recall, 3 games were available on the mainframe: Amazing, a word finder puzzle generator, and probably Lunar. I was captivated and soon after learned to program in Basic, and later in Fortran. I purchased a TRS-80 Model 1 (originally with 4K RAM, later expanded to 16K). I subscribed to Creative Computing magazine and later purchased the compilation of games [Basic Computer Games (Microcomputer Edition)](https://www.atariarchives.org/basicgames/), and spent many hours entering programs into the TRS-80, as well as tinkering with my own programs. Later in college and graduate school, I learned to program in C. After a long hiatus from programming, I decided to revive my computer hobby, and learned Apple's Swift language shortly after it was released in 2014.
+I was first exposed to computers in the early 1970's, when a teletype connected via phone modem to a mainframe computer operated by the [Minnesota Educational Computing Consortium](https://en.wikipedia.org/wiki/MECC) was brought to my grade school. As I recall, 3 games were available on the mainframe: Amazing, a word finder puzzle generator, and probably Lunar. Soon after I learned to program in Basic, and I obtained a TRS-80 Model 1 (originally with 4K RAM, later expanded to 16K). I spent many hours entering programs from [Creative Computing](https://archive.org/details/creativecomputing) magazine and [Basic Computer Games (Microcomputer Edition)](https://www.atariarchives.org/basicgames/) into the TRS-80, as well as tinkering with my own programs. Later I learned Fortran and C. 
+
+After a long hiatus from programming, I decided to revive my computer hobby, and learned Apple's Swift language shortly after it was released in 2014.
 
 ## Motivation
 
@@ -38,8 +40,8 @@ In many cases, inline comments in the Swift source code provide a reference to l
 
 ### Root folder
 
-- [Extensions](Extensions.swift) and [Game](Game.swift) - shared by all targets.
-- [Matrix](Matrix.swift) and [Tensor](Tensor.swift) - custom Swift 2D and 3D data structures, utilized in some of the game programs.
+- [Extensions](Extensions.swift) and [Game](Game.swift) - shared by all targets
+- [Matrix](Matrix.swift) and [Tensor](Tensor.swift) - custom Swift 2D and 3D data structures, utilized in some of the game programs
 - [ConsoleIO](ConsoleIO.swift) - terminal I/O and utility methods
 - [BasicGame](BasicGame.swift) - BasicGame protocol
 
@@ -49,13 +51,13 @@ UI code for the BasicGames game launcher app and SwiftTerm wrapper.
 
 ### Play folder
 
-Code for the executable **play** CLI, which contains all the individual games, and for each game. Each game is contained in its own file, and is structured as a Swift class conforming to the BasicGame protocol.
+Code for the **play** CLI s all for the individual games. Each game is contained in its own file, and is structured as a Swift class conforming to the BasicGame protocol.
 
 See [GameNotes](Play/GameNotes.md) in **Play** folder for individual game notes.
 
 ### Package dependencies
 
-[SwiftTerm](https://github.com/migueldeicaza/SwiftTerm.git) is currently embedded as a local package dependency in the BasicGames target, allowing for additional customizations. Alternatively it can be added remote package.
+The **BasicGames** target depends on the [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm.git) package, for terminal customizations.
 
 The **play** target depends on the [swift-argument-parser](https://github.com/apple/swift-argument-parser) package, for command line argument parsing and enhancements.
 
@@ -63,11 +65,13 @@ The **play** target depends on the [swift-argument-parser](https://github.com/ap
 
 ### BasicGames target
 
-The GUI launcher macOS app, which launches each game in separate window in SwiftTerm. Contains additional goodies, including ability to view the original Basic code for each game (which is unlocked as an Easter Egg after successful game play).
+The GUI launcher macOS app, which launches each game in separate window in SwiftTerm. Contains additional goodies, including ability to view the original Basic code for each game (which is unlocked as an Easter Egg after successful game play). 
+
+The **play** command line tool is embedded in the BasicGames app ([Embedding a command-line tool in a sandboxed app](https://developer.apple.com/documentation/xcode/embedding-a-helper-tool-in-a-sandboxed-app)).
 
 ### play target
 
-Executable CLI program, which is embedded within the BasicGames launcher app, but which can also be run as a standalone CLI in any terminal app. If run in the macOS Terminal app, some customizations of Terminal can be added by un-commenting terminal setup commands in the ConsoleIO.swift file.
+Executable CLI program containing all games, which is embedded in the BasicGames app, but also be run as a standalone CLI in any terminal app. If run in the macOS Terminal app, some customizations of Terminal can be added by un-commenting terminal setup commands in the ConsoleIO.swift file.
 
 ## Contribution
 

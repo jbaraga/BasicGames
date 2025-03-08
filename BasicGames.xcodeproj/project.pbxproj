@@ -209,7 +209,6 @@
 		AD150F2927C2B29D00FA3280 /* Blackjack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blackjack.swift; sourceTree = "<group>"; };
 		AD162325277BD2C100E919C1 /* TerminalViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalViewRepresentable.swift; sourceTree = "<group>"; };
 		AD162327277BD31D00E919C1 /* GameLauncherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherView.swift; sourceTree = "<group>"; };
-		AD162329277BD38900E919C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AD162330277BD53600E919C1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		AD162332277BD81B00E919C1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD1CD1402D2617D6000340DC /* War.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = War.swift; sourceTree = "<group>"; };
@@ -534,7 +533,6 @@
 		ADAE10B3277BAD25006762F5 /* BasicGames */ = {
 			isa = PBXGroup;
 			children = (
-				AD162329277BD38900E919C1 /* Info.plist */,
 				AD162332277BD81B00E919C1 /* AppDelegate.swift */,
 				ADDBCD2327B6F16B00C369D1 /* Preferences.swift */,
 				ADAE10B4277BAD25006762F5 /* BasicGamesApp.swift */,
@@ -1091,7 +1089,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BasicGames/Preview Content\"";
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -1101,7 +1099,7 @@
 				INFOPLIST_FILE = BasicGames/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "101 Plus";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022-2025 Starware Software LLC. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2018-2025 Starware Software LLC. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1125,7 +1123,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BasicGames/Preview Content\"";
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -1135,7 +1133,7 @@
 				INFOPLIST_FILE = BasicGames/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "101 Plus";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022-2025 Starware Software LLC. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2018-2025 Starware Software LLC. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
