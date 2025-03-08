@@ -67,7 +67,7 @@ The GUI launcher macOS app, which launches each game in separate window in Swift
 
 ### play target
 
-Executable CLI program, which is embedded withi the BasicGames launcher app, but which can also be run as a standalone CLI in any terminal shell. If run in the macOS Terminal app, some customizations of Terminal can be added by un-commenting terminal setup commands in the ConsoleIO.swift file.
+Executable CLI program, which is embedded within the BasicGames launcher app, but which can also be run as a standalone CLI in any terminal app. If run in the macOS Terminal app, some customizations of Terminal can be added by un-commenting terminal setup commands in the ConsoleIO.swift file.
 
 ## Contribution
 
@@ -83,7 +83,7 @@ To add a new game:
 
 ## Future
 
-- Review completed programs for refinements, in some cases more complete understanding of underlying logic.
+- Review completed programs for refinements, in some cases further refactoring.
 - Implement additional games from [More Basic Computer Games](https://archive.org/details/More_BASIC_Computer_Games) and [Creative Computing](https://archive.org/details/creativecomputing)
 
 ## Credits

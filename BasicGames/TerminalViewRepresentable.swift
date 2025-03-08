@@ -22,7 +22,7 @@ struct TerminalViewRepresentable: NSViewRepresentable {
     
     func makeNSView(context: Context) -> GameTerminalView {
         let terminalView = GameTerminalView(frame: frame)
-        guard let path = Bundle.main.path(forResource: "play", ofType: nil) else { return terminalView }
+        guard let path = Bundle.main.path(forAuxiliaryExecutable: "play") else { return terminalView }
         terminalView.hasFocus = true  //For proper rendering of cursor outline
         terminalView.foregroundColor = settings.foregroundColor
         terminalView.nativeBackgroundColor = .terminalBackground
