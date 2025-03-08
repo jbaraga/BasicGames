@@ -3,10 +3,122 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0C67B72D7CA5FF00D593F7 /* Life2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD543F152D3595D300E2AFF2 /* Life2.swift */; };
+		AD0C67B92D7CA5FF00D593F7 /* ICBM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD33FD0D27B9560F00E087D1 /* ICBM.swift */; };
+		AD0C67BA2D7CA5FF00D593F7 /* RussianRoulette.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEDCC492D37317A0090953A /* RussianRoulette.swift */; };
+		AD0C67BB2D7CA5FF00D593F7 /* FlipFlop.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB240542D3F0CE100C04944 /* FlipFlop.swift */; };
+		AD0C67BC2D7CA5FF00D593F7 /* AceyDucey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA8481A295FBF8100F86687 /* AceyDucey.swift */; };
+		AD0C67BD2D7CA5FF00D593F7 /* StarTrek.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD57CCFB27AED53A00AD32C5 /* StarTrek.swift */; };
+		AD0C67BE2D7CA5FF00D593F7 /* Craps.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CD1622D29CEC6000340DC /* Craps.swift */; };
+		AD0C67BF2D7CA5FF00D593F7 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD0827B5509F00C369D1 /* Rocket.swift */; };
+		AD0C67C02D7CA5FF00D593F7 /* HiLo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB95502D2F2E6100CD662E /* HiLo.swift */; };
+		AD0C67C12D7CA5FF00D593F7 /* Roulette.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF512E2D45A520007142F6 /* Roulette.swift */; };
+		AD0C67C22D7CA5FF00D593F7 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E475E2D2468860051D447 /* Number.swift */; };
+		AD0C67C32D7CA5FF00D593F7 /* TicTacToe1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD543F172D35D3A700E2AFF2 /* TicTacToe1.swift */; };
+		AD0C67C42D7CA5FF00D593F7 /* Kinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD93BD6D2D3DD8BE0055C705 /* Kinema.swift */; };
+		AD0C67C52D7CA5FF00D593F7 /* 23Matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47792D2468860051D447 /* 23Matches.swift */; };
+		AD0C67C62D7CA5FF00D593F7 /* Love.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47492D2468860051D447 /* Love.swift */; };
+		AD0C67C72D7CA5FF00D593F7 /* Bullseye.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E472D2D2468860051D447 /* Bullseye.swift */; };
+		AD0C67C82D7CA5FF00D593F7 /* MasterMind.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127BBC2D5D40BC002AF7CA /* MasterMind.swift */; };
+		AD0C67C92D7CA5FF00D593F7 /* Hamurabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD69C55629718802005D52A2 /* Hamurabi.swift */; };
+		AD0C67CA2D7CA5FF00D593F7 /* Awari.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E471D2D2468860051D447 /* Awari.swift */; };
+		AD0C67CB2D7CA5FF00D593F7 /* Reverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CD4AD2D3352090009DEC7 /* Reverse.swift */; };
+		AD0C67CC2D7CA5FF00D593F7 /* OregonTrail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2760277CA7BE00F43F39 /* OregonTrail.swift */; };
+		AD0C67CD2D7CA5FF00D593F7 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF8FBC2B4EDB0000BD5B14 /* Pizza.swift */; };
+		AD0C67CE2D7CA5FF00D593F7 /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47722D2468860051D447 /* Train.swift */; };
+		AD0C67CF2D7CA5FF00D593F7 /* 3DPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56DA2327E610B700179FAA /* 3DPlot.swift */; };
+		AD0C67D02D7CA5FF00D593F7 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF51302D46EC23007142F6 /* Battle.swift */; };
+		AD0C67D12D7CA5FF00D593F7 /* Buzzword.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47312D2468860051D447 /* Buzzword.swift */; };
+		AD0C67D22D7CA5FF00D593F7 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3D807927BF268D004226EF /* Weekday.swift */; };
+		AD0C67D32D7CA5FF00D593F7 /* LEM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF23D5A27864A3100D71CDD /* LEM.swift */; };
+		AD0C67D42D7CA5FF00D593F7 /* OneCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF512C2D451FC8007142F6 /* OneCheck.swift */; };
+		AD0C67D52D7CA5FF00D593F7 /* Joust.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD1B27B6B16E00C369D1 /* Joust.swift */; };
+		AD0C67D62D7CA5FF00D593F7 /* Hexapawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127BBA2D5AC39E002AF7CA /* Hexapawn.swift */; };
+		AD0C67D72D7CA5FF00D593F7 /* Hurkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB95562D2F41AD00CD662E /* Hurkle.swift */; };
+		AD0C67D82D7CA5FF00D593F7 /* Orbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7C3F732961D54000F3C5AA /* Orbit.swift */; };
+		AD0C67D92D7CA5FF00D593F7 /* Bowling.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADA5972B4C3BE90024CA81 /* Bowling.swift */; };
+		AD0C67DA2D7CA5FF00D593F7 /* Slots.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEDCC4B2D3741EA0090953A /* Slots.swift */; };
+		AD0C67DB2D7CA5FF00D593F7 /* Hangman.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47452D2468860051D447 /* Hangman.swift */; };
+		AD0C67DC2D7CA5FF00D593F7 /* DepthCharge.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFE458E27B83570002175D7 /* DepthCharge.swift */; };
+		AD0C67DD2D7CA5FF00D593F7 /* Trap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47762D2468860051D447 /* Trap.swift */; };
+		AD0C67DE2D7CA5FF00D593F7 /* Bombardment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47252D2468860051D447 /* Bombardment.swift */; };
+		AD0C67DF2D7CA5FF00D593F7 /* Ftball.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DEB527C5BF4600C04087 /* Ftball.swift */; };
+		AD0C67E02D7CA5FF00D593F7 /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F26D8297389820053C5A1 /* Bug.swift */; };
+		AD0C67E12D7CA5FF00D593F7 /* EvenWins2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF8BF04296CC57300B778CA /* EvenWins2.swift */; };
+		AD0C67E22D7CA5FF00D593F7 /* Football.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB4DEB327C5BF3400C04087 /* Football.swift */; };
+		AD0C67E32D7CA5FF00D593F7 /* Salvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127BC42D611D98002AF7CA /* Salvo.swift */; };
+		AD0C67E42D7CA5FF00D593F7 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CD1642D29F714000340DC /* Cube.swift */; };
+		AD0C67E52D7CA5FF00D593F7 /* Bagels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47212D2468860051D447 /* Bagels.swift */; };
+		AD0C67E62D7CA5FF00D593F7 /* Slalom.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB2405E2D42FB2900C04944 /* Slalom.swift */; };
+		AD0C67E72D7CA5FF00D593F7 /* War.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CD1402D2617D6000340DC /* War.swift */; };
+		AD0C67E82D7CA5FF00D593F7 /* BombsAway.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47292D2468860051D447 /* BombsAway.swift */; };
+		AD0C67E92D7CA5FF00D593F7 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56DA0E27E29C0100179FAA /* Animal.swift */; };
+		AD0C67EA2D7CA5FF00D593F7 /* Blackjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD150F2927C2B29D00FA3280 /* Blackjack.swift */; };
+		AD0C67EB2D7CA5FF00D593F7 /* Synonym.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E476E2D2468860051D447 /* Synonym.swift */; };
+		AD0C67EC2D7CA5FF00D593F7 /* BullFight.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5FA7762D544D0400D885B5 /* BullFight.swift */; };
+		AD0C67ED2D7CA5FF00D593F7 /* CivilWar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE614A52B3500820087F9C6 /* CivilWar.swift */; };
+		AD0C67EE2D7CA5FF00D593F7 /* Life.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEC7BD72D3475C600EA55B8 /* Life.swift */; };
+		AD0C67EF2D7CA5FF00D593F7 /* MathDice.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E474E2D2468860051D447 /* MathDice.swift */; };
+		AD0C67F02D7CA5FF00D593F7 /* Golf.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8462692D2A32E100588A2B /* Golf.swift */; };
+		AD0C67F12D7CA5FF00D593F7 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA44D862D24A26800AF183E /* Word.swift */; };
+		AD0C67F22D7CA5FF00D593F7 /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90BEFB2978D25A0015A9DB /* King.swift */; };
+		AD0C67F32D7CA5FF00D593F7 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36C57227BB41BA00FB1E63 /* Banner.swift */; };
+		AD0C67F42D7CA5FF00D593F7 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD150F1727C149D500FA3280 /* Calendar.swift */; };
+		AD0C67F52D7CA5FF00D593F7 /* SineWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47662D2468860051D447 /* SineWave.swift */; };
+		AD0C67F62D7CA5FF00D593F7 /* EvenWins1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5C22C8296B90DA0067A2EF /* EvenWins1.swift */; };
+		AD0C67F72D7CA5FF00D593F7 /* Splat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2437CC27EAA101005D67B6 /* Splat.swift */; };
+		AD0C67F82D7CA5FF00D593F7 /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7747372960D51200066994 /* Guess.swift */; };
+		AD0C67F92D7CA5FF00D593F7 /* Chomp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD33D77A2D3CA2C100D3ADD5 /* Chomp.swift */; };
+		AD0C67FA2D7CA5FF00D593F7 /* Nim.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2461232D4BC37900FA2431 /* Nim.swift */; };
+		AD0C67FB2D7CA5FF00D593F7 /* RockScissorsPaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47622D2468860051D447 /* RockScissorsPaper.swift */; };
+		AD0C67FC2D7CA5FF00D593F7 /* Checkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADA5812B46E7630024CA81 /* Checkers.swift */; };
+		AD0C67FD2D7CA5FF00D593F7 /* Chemist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47392D2468860051D447 /* Chemist.swift */; };
+		AD0C67FE2D7CA5FF00D593F7 /* Gunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFEEC672D3D49BB00EC303E /* Gunner.swift */; };
+		AD0C67FF2D7CA5FF00D593F7 /* Poker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF8FE62B543D3F00BD5B14 /* Poker.swift */; };
+		AD0C68002D7CA5FF00D593F7 /* Batnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE848F42B4DD9350018C719 /* Batnum.swift */; };
+		AD0C68012D7CA5FF00D593F7 /* StockMarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A002C27E77D2E009B5679 /* StockMarket.swift */; };
+		AD0C68022D7CA5FF00D593F7 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47352D2468860051D447 /* Change.swift */; };
+		AD0C68032D7CA5FF00D593F7 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60177A27ED3FA000213C47 /* Target.swift */; };
+		AD0C68042D7CA5FF00D593F7 /* Nicomachus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E475A2D2468860051D447 /* Nicomachus.swift */; };
+		AD0C68052D7CA5FF00D593F7 /* FurTrader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAD89EE2D5118BD0097490A /* FurTrader.swift */; };
+		AD0C68062D7CA5FF00D593F7 /* Hockey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5D27D297B64690035F451 /* Hockey.swift */; };
+		AD0C68072D7CA5FF00D593F7 /* Lunar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43EC278250450067143D /* Lunar.swift */; };
+		AD0C68082D7CA5FF00D593F7 /* Bounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD82570F27F09CF000A0ECCB /* Bounce.swift */; };
+		AD0C68092D7CA5FF00D593F7 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB240562D40359800C04944 /* Letter.swift */; };
+		AD0C680A2D7CA5FF00D593F7 /* Poetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF8FD02B4F2BDB00BD5B14 /* Poetry.swift */; };
+		AD0C680B2D7CA5FF00D593F7 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47562D2468860051D447 /* Name.swift */; };
+		AD0C680C2D7CA5FF00D593F7 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47412D2468860051D447 /* Dice.swift */; };
+		AD0C680D2D7CA5FF00D593F7 /* Mugwump.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47522D2468860051D447 /* Mugwump.swift */; };
+		AD0C680E2D7CA5FF00D593F7 /* LiteratureQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB240582D403C7900C04944 /* LiteratureQuiz.swift */; };
+		AD0C680F2D7CA5FF00D593F7 /* TicTacToe2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD543F192D360D5200E2AFF2 /* TicTacToe2.swift */; };
+		AD0C68102D7CA5FF00D593F7 /* Bunny.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CD15E2D287944000340DC /* Bunny.swift */; };
+		AD0C68112D7CA5FF00D593F7 /* Combat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2461212D4ACAB500FA2431 /* Combat.swift */; };
+		AD0C68122D7CA5FF00D593F7 /* Horserace.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB2405C2D41B5B300C04944 /* Horserace.swift */; };
+		AD0C68132D7CA5FF00D593F7 /* Basketball.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5FA7742D52882300D885B5 /* Basketball.swift */; };
+		AD0C68142D7CA5FF00D593F7 /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E473D2D2468860051D447 /* Diamond.swift */; };
+		AD0C68152D7CA5FF00D593F7 /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB954D2D2F148400CD662E /* Hello.swift */; };
+		AD0C68162D7CA5FF00D593F7 /* Gomoko.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF6523F2D39FD6A005E8981 /* Gomoko.swift */; };
+		AD0C68172D7CA5FF00D593F7 /* Digits.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADACACAF2963371600DEB6F7 /* Digits.swift */; };
+		AD0C68182D7CA5FF00D593F7 /* Amazing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6AC92D277F340200B9E5DB /* Amazing.swift */; };
+		AD0C68192D7CA5FF00D593F7 /* Tower.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5399272D485768002437A1 /* Tower.swift */; };
+		AD0C681A2D7CA5FF00D593F7 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127BC22D5ECB4C002AF7CA /* Queen.swift */; };
+		AD0C681B2D7CA5FF00D593F7 /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E476A2D2468860051D447 /* Stars.swift */; };
+		AD0C681C2D7CA5FF00D593F7 /* HighIQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB2405A2D4123D500C04944 /* HighIQ.swift */; };
+		AD0C681D2D7CA5FF00D593F7 /* 3DTicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD81FCE2D653DAE00EAE44A /* 3DTicTacToe.swift */; };
+		AD0C681E2D7CA5FF00D593F7 /* Chief.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CD1602D29894E000340DC /* Chief.swift */; };
+		AD0C681F2D7CA5FF00D593F7 /* Boxing.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9D2862D518535000B4FE2 /* Boxing.swift */; };
+		AD0C68202D7CA60A00D593F7 /* BasicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* BasicGame.swift */; };
+		AD0C68212D7CA61200D593F7 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
+		AD0C68222D7CA62100D593F7 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD33D7772D3C830C00D3ADD5 /* Matrix.swift */; };
+		AD0C68232D7CA62100D593F7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
+		AD0C68242D7CA62100D593F7 /* Tensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD81FD02D668F7900EAE44A /* Tensor.swift */; };
+		AD0C68252D7CA62800D593F7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
+		AD0C68262D7CA6A000D593F7 /* PlayCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E47932D2470B50051D447 /* PlayCommand.swift */; };
+		AD0C68282D7CA6F000D593F7 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = AD0C68272D7CA6F000D593F7 /* ArgumentParser */; };
 		AD127BBB2D5AC39E002AF7CA /* Hexapawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127BBA2D5AC39E002AF7CA /* Hexapawn.swift */; };
 		AD127BBD2D5D40BC002AF7CA /* MasterMind.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127BBC2D5D40BC002AF7CA /* MasterMind.swift */; };
 		AD127BC32D5ECB4C002AF7CA /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD127BC22D5ECB4C002AF7CA /* Queen.swift */; };
@@ -168,6 +280,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		AD0C67AE2D7CA5C300D593F7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		AD7E47822D246E370051D447 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,6 +322,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AD0C67B02D7CA5C300D593F7 /* bplay */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bplay; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD127BBA2D5AC39E002AF7CA /* Hexapawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexapawn.swift; sourceTree = "<group>"; };
 		AD127BBC2D5D40BC002AF7CA /* MasterMind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMind.swift; sourceTree = "<group>"; };
 		AD127BC22D5ECB4C002AF7CA /* Queen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queen.swift; sourceTree = "<group>"; };
@@ -340,7 +462,19 @@
 		ADFEEC672D3D49BB00EC303E /* Gunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gunner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AD0C67B12D7CA5C300D593F7 /* bplay */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = bplay; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		AD0C67AD2D7CA5C300D593F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD0C68282D7CA6F000D593F7 /* ArgumentParser in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD7E47812D246E370051D447 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -514,6 +648,7 @@
 				AD7E47942D2470B50051D447 /* Play */,
 				ADAE10C5277BAD2D006762F5 /* BasicGamesTests */,
 				ADAE10CF277BAD2E006762F5 /* BasicGamesUITests */,
+				AD0C67B12D7CA5C300D593F7 /* bplay */,
 				ADAE10B2277BAD25006762F5 /* Products */,
 				ADDB4FC6278B589100278FB7 /* Frameworks */,
 			);
@@ -526,6 +661,7 @@
 				ADAE10C2277BAD2D006762F5 /* BasicGamesTests.xctest */,
 				ADAE10CC277BAD2D006762F5 /* BasicGamesUITests.xctest */,
 				AD7E47842D246E370051D447 /* play */,
+				AD0C67B02D7CA5C300D593F7 /* bplay */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -584,6 +720,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AD0C67AF2D7CA5C300D593F7 /* bplay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD0C67B62D7CA5C300D593F7 /* Build configuration list for PBXNativeTarget "bplay" */;
+			buildPhases = (
+				AD0C67AC2D7CA5C300D593F7 /* Sources */,
+				AD0C67AD2D7CA5C300D593F7 /* Frameworks */,
+				AD0C67AE2D7CA5C300D593F7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AD0C67B12D7CA5C300D593F7 /* bplay */,
+			);
+			name = bplay;
+			packageProductDependencies = (
+				AD0C68272D7CA6F000D593F7 /* ArgumentParser */,
+			);
+			productName = bplay;
+			productReference = AD0C67B02D7CA5C300D593F7 /* bplay */;
+			productType = "com.apple.product-type.tool";
+		};
 		AD7E47832D246E370051D447 /* play */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD7E47882D246E380051D447 /* Build configuration list for PBXNativeTarget "play" */;
@@ -673,6 +832,9 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					AD0C67AF2D7CA5C300D593F7 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					AD7E47832D246E370051D447 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -710,6 +872,7 @@
 				ADAE10C1277BAD2D006762F5 /* BasicGamesTests */,
 				ADAE10CB277BAD2D006762F5 /* BasicGamesUITests */,
 				AD7E47832D246E370051D447 /* play */,
+				AD0C67AF2D7CA5C300D593F7 /* bplay */,
 			);
 		};
 /* End PBXProject section */
@@ -745,6 +908,124 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AD0C67AC2D7CA5C300D593F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD0C67B72D7CA5FF00D593F7 /* Life2.swift in Sources */,
+				AD0C67B92D7CA5FF00D593F7 /* ICBM.swift in Sources */,
+				AD0C67BA2D7CA5FF00D593F7 /* RussianRoulette.swift in Sources */,
+				AD0C67BB2D7CA5FF00D593F7 /* FlipFlop.swift in Sources */,
+				AD0C67BC2D7CA5FF00D593F7 /* AceyDucey.swift in Sources */,
+				AD0C67BD2D7CA5FF00D593F7 /* StarTrek.swift in Sources */,
+				AD0C67BE2D7CA5FF00D593F7 /* Craps.swift in Sources */,
+				AD0C68212D7CA61200D593F7 /* ConsoleIO.swift in Sources */,
+				AD0C67BF2D7CA5FF00D593F7 /* Rocket.swift in Sources */,
+				AD0C67C02D7CA5FF00D593F7 /* HiLo.swift in Sources */,
+				AD0C67C12D7CA5FF00D593F7 /* Roulette.swift in Sources */,
+				AD0C67C22D7CA5FF00D593F7 /* Number.swift in Sources */,
+				AD0C67C32D7CA5FF00D593F7 /* TicTacToe1.swift in Sources */,
+				AD0C67C42D7CA5FF00D593F7 /* Kinema.swift in Sources */,
+				AD0C67C52D7CA5FF00D593F7 /* 23Matches.swift in Sources */,
+				AD0C67C62D7CA5FF00D593F7 /* Love.swift in Sources */,
+				AD0C67C72D7CA5FF00D593F7 /* Bullseye.swift in Sources */,
+				AD0C67C82D7CA5FF00D593F7 /* MasterMind.swift in Sources */,
+				AD0C67C92D7CA5FF00D593F7 /* Hamurabi.swift in Sources */,
+				AD0C67CA2D7CA5FF00D593F7 /* Awari.swift in Sources */,
+				AD0C67CB2D7CA5FF00D593F7 /* Reverse.swift in Sources */,
+				AD0C67CC2D7CA5FF00D593F7 /* OregonTrail.swift in Sources */,
+				AD0C67CD2D7CA5FF00D593F7 /* Pizza.swift in Sources */,
+				AD0C67CE2D7CA5FF00D593F7 /* Train.swift in Sources */,
+				AD0C67CF2D7CA5FF00D593F7 /* 3DPlot.swift in Sources */,
+				AD0C68252D7CA62800D593F7 /* Extensions.swift in Sources */,
+				AD0C67D02D7CA5FF00D593F7 /* Battle.swift in Sources */,
+				AD0C67D12D7CA5FF00D593F7 /* Buzzword.swift in Sources */,
+				AD0C67D22D7CA5FF00D593F7 /* Weekday.swift in Sources */,
+				AD0C67D32D7CA5FF00D593F7 /* LEM.swift in Sources */,
+				AD0C68262D7CA6A000D593F7 /* PlayCommand.swift in Sources */,
+				AD0C67D42D7CA5FF00D593F7 /* OneCheck.swift in Sources */,
+				AD0C67D52D7CA5FF00D593F7 /* Joust.swift in Sources */,
+				AD0C67D62D7CA5FF00D593F7 /* Hexapawn.swift in Sources */,
+				AD0C67D72D7CA5FF00D593F7 /* Hurkle.swift in Sources */,
+				AD0C67D82D7CA5FF00D593F7 /* Orbit.swift in Sources */,
+				AD0C67D92D7CA5FF00D593F7 /* Bowling.swift in Sources */,
+				AD0C67DA2D7CA5FF00D593F7 /* Slots.swift in Sources */,
+				AD0C67DB2D7CA5FF00D593F7 /* Hangman.swift in Sources */,
+				AD0C67DC2D7CA5FF00D593F7 /* DepthCharge.swift in Sources */,
+				AD0C67DD2D7CA5FF00D593F7 /* Trap.swift in Sources */,
+				AD0C67DE2D7CA5FF00D593F7 /* Bombardment.swift in Sources */,
+				AD0C67DF2D7CA5FF00D593F7 /* Ftball.swift in Sources */,
+				AD0C67E02D7CA5FF00D593F7 /* Bug.swift in Sources */,
+				AD0C67E12D7CA5FF00D593F7 /* EvenWins2.swift in Sources */,
+				AD0C67E22D7CA5FF00D593F7 /* Football.swift in Sources */,
+				AD0C67E32D7CA5FF00D593F7 /* Salvo.swift in Sources */,
+				AD0C67E42D7CA5FF00D593F7 /* Cube.swift in Sources */,
+				AD0C67E52D7CA5FF00D593F7 /* Bagels.swift in Sources */,
+				AD0C67E62D7CA5FF00D593F7 /* Slalom.swift in Sources */,
+				AD0C67E72D7CA5FF00D593F7 /* War.swift in Sources */,
+				AD0C67E82D7CA5FF00D593F7 /* BombsAway.swift in Sources */,
+				AD0C67E92D7CA5FF00D593F7 /* Animal.swift in Sources */,
+				AD0C67EA2D7CA5FF00D593F7 /* Blackjack.swift in Sources */,
+				AD0C67EB2D7CA5FF00D593F7 /* Synonym.swift in Sources */,
+				AD0C67EC2D7CA5FF00D593F7 /* BullFight.swift in Sources */,
+				AD0C67ED2D7CA5FF00D593F7 /* CivilWar.swift in Sources */,
+				AD0C67EE2D7CA5FF00D593F7 /* Life.swift in Sources */,
+				AD0C67EF2D7CA5FF00D593F7 /* MathDice.swift in Sources */,
+				AD0C67F02D7CA5FF00D593F7 /* Golf.swift in Sources */,
+				AD0C67F12D7CA5FF00D593F7 /* Word.swift in Sources */,
+				AD0C67F22D7CA5FF00D593F7 /* King.swift in Sources */,
+				AD0C68222D7CA62100D593F7 /* Matrix.swift in Sources */,
+				AD0C68232D7CA62100D593F7 /* Game.swift in Sources */,
+				AD0C68242D7CA62100D593F7 /* Tensor.swift in Sources */,
+				AD0C67F32D7CA5FF00D593F7 /* Banner.swift in Sources */,
+				AD0C67F42D7CA5FF00D593F7 /* Calendar.swift in Sources */,
+				AD0C67F52D7CA5FF00D593F7 /* SineWave.swift in Sources */,
+				AD0C67F62D7CA5FF00D593F7 /* EvenWins1.swift in Sources */,
+				AD0C67F72D7CA5FF00D593F7 /* Splat.swift in Sources */,
+				AD0C67F82D7CA5FF00D593F7 /* Guess.swift in Sources */,
+				AD0C67F92D7CA5FF00D593F7 /* Chomp.swift in Sources */,
+				AD0C67FA2D7CA5FF00D593F7 /* Nim.swift in Sources */,
+				AD0C67FB2D7CA5FF00D593F7 /* RockScissorsPaper.swift in Sources */,
+				AD0C67FC2D7CA5FF00D593F7 /* Checkers.swift in Sources */,
+				AD0C67FD2D7CA5FF00D593F7 /* Chemist.swift in Sources */,
+				AD0C67FE2D7CA5FF00D593F7 /* Gunner.swift in Sources */,
+				AD0C67FF2D7CA5FF00D593F7 /* Poker.swift in Sources */,
+				AD0C68002D7CA5FF00D593F7 /* Batnum.swift in Sources */,
+				AD0C68012D7CA5FF00D593F7 /* StockMarket.swift in Sources */,
+				AD0C68022D7CA5FF00D593F7 /* Change.swift in Sources */,
+				AD0C68032D7CA5FF00D593F7 /* Target.swift in Sources */,
+				AD0C68042D7CA5FF00D593F7 /* Nicomachus.swift in Sources */,
+				AD0C68052D7CA5FF00D593F7 /* FurTrader.swift in Sources */,
+				AD0C68062D7CA5FF00D593F7 /* Hockey.swift in Sources */,
+				AD0C68072D7CA5FF00D593F7 /* Lunar.swift in Sources */,
+				AD0C68082D7CA5FF00D593F7 /* Bounce.swift in Sources */,
+				AD0C68092D7CA5FF00D593F7 /* Letter.swift in Sources */,
+				AD0C680A2D7CA5FF00D593F7 /* Poetry.swift in Sources */,
+				AD0C680B2D7CA5FF00D593F7 /* Name.swift in Sources */,
+				AD0C680C2D7CA5FF00D593F7 /* Dice.swift in Sources */,
+				AD0C680D2D7CA5FF00D593F7 /* Mugwump.swift in Sources */,
+				AD0C680E2D7CA5FF00D593F7 /* LiteratureQuiz.swift in Sources */,
+				AD0C680F2D7CA5FF00D593F7 /* TicTacToe2.swift in Sources */,
+				AD0C68102D7CA5FF00D593F7 /* Bunny.swift in Sources */,
+				AD0C68112D7CA5FF00D593F7 /* Combat.swift in Sources */,
+				AD0C68122D7CA5FF00D593F7 /* Horserace.swift in Sources */,
+				AD0C68132D7CA5FF00D593F7 /* Basketball.swift in Sources */,
+				AD0C68142D7CA5FF00D593F7 /* Diamond.swift in Sources */,
+				AD0C68152D7CA5FF00D593F7 /* Hello.swift in Sources */,
+				AD0C68162D7CA5FF00D593F7 /* Gomoko.swift in Sources */,
+				AD0C68202D7CA60A00D593F7 /* BasicGame.swift in Sources */,
+				AD0C68172D7CA5FF00D593F7 /* Digits.swift in Sources */,
+				AD0C68182D7CA5FF00D593F7 /* Amazing.swift in Sources */,
+				AD0C68192D7CA5FF00D593F7 /* Tower.swift in Sources */,
+				AD0C681A2D7CA5FF00D593F7 /* Queen.swift in Sources */,
+				AD0C681B2D7CA5FF00D593F7 /* Stars.swift in Sources */,
+				AD0C681C2D7CA5FF00D593F7 /* HighIQ.swift in Sources */,
+				AD0C681D2D7CA5FF00D593F7 /* 3DTicTacToe.swift in Sources */,
+				AD0C681E2D7CA5FF00D593F7 /* Chief.swift in Sources */,
+				AD0C681F2D7CA5FF00D593F7 /* Boxing.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD7E47802D246E370051D447 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -919,6 +1200,37 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		AD0C67B42D7CA5C300D593F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD0C67B52D7CA5C300D593F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 624UDYC489;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		AD7E47892D246E380051D447 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1089,7 +1401,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BasicGames/Preview Content\"";
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -1123,7 +1435,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BasicGames/Preview Content\"";
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -1248,6 +1560,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AD0C67B62D7CA5C300D593F7 /* Build configuration list for PBXNativeTarget "bplay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD0C67B42D7CA5C300D593F7 /* Debug */,
+				AD0C67B52D7CA5C300D593F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AD7E47882D246E380051D447 /* Build configuration list for PBXNativeTarget "play" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1314,6 +1635,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AD0C68272D7CA6F000D593F7 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD7E47962D2471830051D447 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
 		AD7E47972D24718B0051D447 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AD7E47962D2471830051D447 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;

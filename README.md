@@ -59,7 +59,7 @@ See [GameNotes](Play/GameNotes.md) in **Play** folder for individual game notes.
 
 The **BasicGames** target depends on the [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm.git) package, for terminal customizations.
 
-The **play** target depends on the [swift-argument-parser](https://github.com/apple/swift-argument-parser) package, for command line argument parsing and enhancements.
+The **play** and **bplay** targets depend on the [swift-argument-parser](https://github.com/apple/swift-argument-parser) package, for command line argument parsing and enhancements.
 
 ## Products
 
@@ -71,7 +71,12 @@ The **play** command line tool is embedded in the BasicGames app ([Embedding a c
 
 ### play target
 
-Executable CLI program containing all games, which is embedded in the BasicGames app, but also be run as a standalone CLI in any terminal app. If run in the macOS Terminal app, some customizations of Terminal can be added by un-commenting terminal setup commands in the ConsoleIO.swift file.
+Executable CLI program containing all games, which is embedded in the BasicGames app. This will not run as a separate CLI due to App Sandbox capability 
+
+### bplay target
+
+Executable CLI program containing all games, identical to play target without App Sandbox capability, which can be run as a standalone CLI in any terminal app. If run in the macOS Terminal app, some customizations of the Terminal window can be enabled by un-commenting terminal setup commands in the ConsoleIO.swift file.
+
 
 ## Contribution
 

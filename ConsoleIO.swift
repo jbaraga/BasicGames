@@ -71,21 +71,19 @@ class ConsoleIO {
             }
         }
 
-
-        /* Uncomment to use with mac Terminal app
-        setUpTerminal()
-         */
+        //Uncomment to customize Terminal app
+        //setUpTerminalApp()
     }
        
-    /* Uncomment for mac Terminal app
-    private func setUpTerminal() {
+    //Customizations for mac Terminal app
+    private func setUpTerminalApp() {
         freopen("", "a+", stderr)  //Suppresses error logging
-        reset()
         
         //Terminal setup control sequences
         var scriptString = "tell application \"Terminal\"\n"
         scriptString += "set background color of the front window to \(grayColor)\n"
         scriptString += "set normal text color of the front window to \(greenColor)\n"
+        scriptString += "set cursor color of the front window to \(greenColor)\n"
         scriptString += "set title displays custom title of the front window to true\n"
         scriptString += "set custom title of the front window to \"\"\n"  //Suppresses duplicate name
         scriptString += "set title displays window size of the front window to false\n"
@@ -106,12 +104,6 @@ class ConsoleIO {
             #endif
         }
     }
-    
-    func reset() {
-        Swift.print(TerminalCommands.reset, terminator: "")  //Resets terminal, clears screen
-        fflush(__stdoutp)
-    }
-    */
     
     func wait(_ delay: Delay) {
         Thread.sleep(forTimeInterval: delay.value)
