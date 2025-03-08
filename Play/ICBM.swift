@@ -16,6 +16,9 @@ class ICBM: BasicGame {
         println(tab(18), "Morristown, New Jersey")
         println(3)
         
+        let _ = input("Press enter to start")
+        unlockEasterEgg(.icbm)  //Unlock for access to instructions
+
         repeat {
             play()
             wait(.short)
@@ -88,7 +91,6 @@ class ICBM: BasicGame {
                     //Success
                     println("Congratulations!  Your SAM came within \(Int(round(d))) miles of")
                     println("the ICBM and destroyed it!")
-                    unlockEasterEgg(.icbm)
                 }
                 println("ICBM & SAM now \(Int(round(d))) miles apart")
             } else  {

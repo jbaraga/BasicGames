@@ -335,7 +335,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
     //pdf file with Basic source code in Resources group
     var pdfFilepath: String {
         switch self {
-        case .icbm, .joust: return URL.basicGamesScheme + ":///BasicGames2.pdf"
+        case .icbm, .joust: return Self.moreBasicGamesPath
         case .oregonTrail: return URL.basicGamesScheme + ":///OregonTrail.pdf"
         default:
             return Self.basicGamesPath
@@ -353,6 +353,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .banner: return 24...25
         case .basketball: return 26...27
         case .batnum: return 28...28
+        case .battle: return 29...31
         case .blackjack: return 32...35
         case .bombardment: return 36...37
         case .bombsAway: return 38...38
@@ -393,6 +394,8 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .hiLo: return 99...99
         case .highIQ: return 100...101
         case .hockey: return 102...105
+        case .horserace: return 106...107
+        case .hurkle: return 108...108
         case .icbm: return 88...89
         case .joust: return 92...93
         case .kinema: return 109...109
@@ -440,7 +443,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .war: return 192...192
         case .weekday: return 193...194
         case .word: return 195...196
-        default: return nil
+        case .oregonTrail: return nil
         }
     }
     
@@ -681,10 +684,6 @@ enum Category: String, CaseIterable, Identifiable, Codable {
     case gambling
     case cardAndBoard
     case combat
-    #if DEBUG
-    case completed
-    case notCompleted
-    #endif
     
     var stringValue: String {
         switch self {
@@ -701,10 +700,6 @@ enum Category: String, CaseIterable, Identifiable, Codable {
         case .gambling: return "Gambling and Casino"
         case .cardAndBoard: return "Card and Board"
         case .combat: return "Combat"
-        #if DEBUG
-        case .completed: return "Completed"
-        case .notCompleted: return "Not Completed"
-        #endif
         }
     }
     
@@ -713,10 +708,6 @@ enum Category: String, CaseIterable, Identifiable, Codable {
     var games: [Game] {
         switch self {
         case .all: return Game.allCases
-        #if DEBUG
-        case .completed: return Game.allCases.filter { $0.imageSystemName != nil || Bundle.main.image(forResource: $0.imageName) != nil }
-        case .notCompleted: return Game.allCases.filter { $0.imageSystemName == nil && Bundle.main.image(forResource: $0.imageName) == nil }
-        #endif
         default:
             return Game.allCases.filter { $0.category == self }
         }

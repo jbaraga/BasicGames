@@ -34,7 +34,6 @@
 		AD6E52332D19004700F337D8 /* OregonTrail.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AD6E52322D19004700F337D8 /* OregonTrail.pdf */; };
 		AD7E478B2D246E610051D447 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D2750277CA5A600F43F39 /* Extensions.swift */; };
 		AD7E478C2D246E610051D447 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD162330277BD53600E919C1 /* Game.swift */; };
-		AD7E478F2D246EB80051D447 /* play in Resources */ = {isa = PBXBuildFile; fileRef = AD7E47842D246E370051D447 /* play */; };
 		AD7E47902D246F930051D447 /* Amazing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6AC92D277F340200B9E5DB /* Amazing.swift */; };
 		AD7E47912D246FB30051D447 /* BasicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8F43F5278252550067143D /* BasicGame.swift */; };
 		AD7E47922D246FB30051D447 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D274E277CA59800F43F39 /* ConsoleIO.swift */; };
@@ -125,6 +124,7 @@
 		ADB2405D2D41B5B300C04944 /* Horserace.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB2405C2D41B5B300C04944 /* Horserace.swift */; };
 		ADB2405F2D42FB2900C04944 /* Slalom.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB2405E2D42FB2900C04944 /* Slalom.swift */; };
 		ADB9D2872D518535000B4FE2 /* Boxing.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9D2862D518535000B4FE2 /* Boxing.swift */; };
+		ADBD6DA72D7BB330007B0653 /* play in Embed Helper Tools */ = {isa = PBXBuildFile; fileRef = AD7E47842D246E370051D447 /* play */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		ADD81FCF2D653DAE00EAE44A /* 3DTicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD81FCE2D653DAE00EAE44A /* 3DTicTacToe.swift */; };
 		ADD81FD12D668F7900EAE44A /* Tensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD81FD02D668F7900EAE44A /* Tensor.swift */; };
 		ADDBCD2427B6F16B00C369D1 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBCD2327B6F16B00C369D1 /* Preferences.swift */; };
@@ -176,6 +176,17 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		ADBD6DA42D7BAE32007B0653 /* Embed Helper Tools */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				ADBD6DA72D7BB330007B0653 /* play in Embed Helper Tools */,
+			);
+			name = "Embed Helper Tools";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ADF652502D3AB1FB005E8981 /* Embed XPC Services */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -301,6 +312,7 @@
 		ADB4DEB327C5BF3400C04087 /* Football.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Football.swift; sourceTree = "<group>"; };
 		ADB4DEB527C5BF4600C04087 /* Ftball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ftball.swift; sourceTree = "<group>"; };
 		ADB9D2862D518535000B4FE2 /* Boxing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxing.swift; sourceTree = "<group>"; };
+		ADBD6DA62D7BB0C7007B0653 /* play.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = play.entitlements; path = play/play.entitlements; sourceTree = "<group>"; };
 		ADD5D27D297B64690035F451 /* Hockey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hockey.swift; sourceTree = "<group>"; };
 		ADD81FCE2D653DAE00EAE44A /* 3DTicTacToe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DTicTacToe.swift; sourceTree = "<group>"; };
 		ADD81FD02D668F7900EAE44A /* Tensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tensor.swift; sourceTree = "<group>"; };
@@ -490,6 +502,7 @@
 		ADAE10A8277BAD25006762F5 = {
 			isa = PBXGroup;
 			children = (
+				ADBD6DA62D7BB0C7007B0653 /* play.entitlements */,
 				AD5D67E72D749E0C007F3F7B /* README.md */,
 				AD7D2752277CA5D500F43F39 /* Resources */,
 				ADAE10B3277BAD25006762F5 /* BasicGames */,
@@ -601,6 +614,7 @@
 				ADAE10AE277BAD25006762F5 /* Frameworks */,
 				ADAE10AF277BAD25006762F5 /* Resources */,
 				ADF652502D3AB1FB005E8981 /* Embed XPC Services */,
+				ADBD6DA42D7BAE32007B0653 /* Embed Helper Tools */,
 			);
 			buildRules = (
 			);
@@ -707,7 +721,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD7E478F2D246EB80051D447 /* play in Resources */,
 				ADDBEF1B2985956F00745DBD /* Bell Buoy.mp3 in Resources */,
 				ADE101052D0F3346003080C9 /* BasicGames.pdf in Resources */,
 				AD9FA6CD2D0B88DF008A5E92 /* BasicGames2.pdf in Resources */,
@@ -912,13 +925,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = play/play.entitlements;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 624UDYC489;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				OTHER_CODE_SIGN_FLAGS = "$(inherited) -i $(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starwaresoftware.BasicGames.play;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -928,13 +945,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = play/play.entitlements;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 624UDYC489;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				OTHER_CODE_SIGN_FLAGS = "$(inherited) -i $(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starwaresoftware.BasicGames.play;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1070,7 +1091,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BasicGames/Preview Content\"";
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -1080,13 +1101,13 @@
 				INFOPLIST_FILE = BasicGames/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "101 Plus";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Starware Software LLC. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022-2025 Starware Software LLC. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
-				MARKETING_VERSION = 0.9;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.starwaresoftware.BasicGames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1104,7 +1125,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BasicGames/Preview Content\"";
 				DEVELOPMENT_TEAM = 624UDYC489;
@@ -1114,13 +1135,13 @@
 				INFOPLIST_FILE = BasicGames/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "101 Plus";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Starware Software LLC. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022-2025 Starware Software LLC. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
-				MARKETING_VERSION = 0.9;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.starwaresoftware.BasicGames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
