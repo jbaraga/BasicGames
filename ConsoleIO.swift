@@ -161,7 +161,11 @@ class ConsoleIO {
             let player = try AVAudioPlayer(contentsOf: url)
             self.player = player
             player.enableRate = true
-            player.rate = 2
+            switch count {
+            case 1: player.rate = 1
+            case 2: player.rate = 2
+            default: player.rate = 4
+            }
             player.numberOfLoops = count - 1
             player.play()
          } catch {

@@ -91,7 +91,7 @@ struct GameView: View {
         .onAppear { isFocused = true }
         .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { notification in
             guard let window = notification.object as? NSWindow, window.title == game.description else { return }
-            isTerminated = true  //Process is not killed for user window close
+            isTerminated = true  //Kills process for user window close
         }
     }
     
@@ -100,7 +100,7 @@ struct GameView: View {
             contentView
                 .onKeyPress(.init("c"), phases: .down) { keyPress in
                     guard keyPress.modifiers == [.control] else { return .ignored }
-                    //                    isTerminated = true
+//                    isTerminated = true  //Alternate method for termination, not compatible with macOS 13
                     DistributedNotificationCenter.default().post(name: .terminalCommand, object: TerminalCommand.break.rawValue)
                     return.handled
                 }
