@@ -587,7 +587,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .bowling: return .brown
         case .boxing: return .yellow
         case .bug: return .red
-        case.bullfight: return .orange
+        case .bullfight: return .orange
         case .bullseye: return .blue
         case .bunny: return .pink
         case .buzzword: return .teal
@@ -598,7 +598,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .chief: return .yellow
         case .chomp: return .red
         case .combat: return .gray
-        case .craps: return .white
+        case .craps: return Color.primary
         case .cube: return .green
         case .diamond: return .blue
         case .dice: return .yellow
@@ -606,7 +606,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .evenWins1: return .indigo
         case .evenWins2: return .blue
         case .flipFlop: return .yellow
-        case .furTrader: return .white
+        case .furTrader: return Color.primary
         case .golf: return .brown
         case .gomoko: return .green
         case .guess: return .mint

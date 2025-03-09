@@ -51,7 +51,7 @@ struct GameLauncherView: View {
     var body: some View {
         List {
             ForEach(games, id: \.self) { game in
-                Button(action: { launch(game) }) {
+                ListRowButton(action: { launch(game) }) {
                     HStack {
                         image(for: game)
                             .resizable()
@@ -73,9 +73,7 @@ struct GameLauncherView: View {
                                 .help("Easter egg unlocked (right click to open)")
                         }
                     }
-                    .contentShape(Rectangle())
                 }
-                .buttonStyle(.borderless)
                 .contextMenu {
                     Button("Easter egg...") {
                         showEasterEgg(game)
@@ -106,5 +104,32 @@ struct GameLauncherView: View {
 struct GameLauncherView_Previews: PreviewProvider {
     static var previews: some View {
         GameLauncherView()
+    }
+}
+
+
+//For proper handling of contextMenu modifier on Button
+//Context menu on standard SwiftUI borderless Button works properly for right click with magic mouse, but control click results in button action rather than context menu
+struct ListRowButton<Content: View>: View {
+    let action: () -> Void
+    let content: () -> Content
+    
+    @GestureState private var isPressed: Bool = false
+    
+    private var tapGesture: some Gesture {
+        DragGesture(minimumDistance: 0)
+            .updating($isPressed) { (gestureValue, gestureState, transaction) in
+                gestureState = true
+            }
+            .onEnded { _ in
+                action()
+            }
+    }
+    
+    var body: some View {
+        content()
+            .opacity(isPressed ? 0.7 : 1)
+            .contentShape(Rectangle())
+            .gesture(tapGesture)
     }
 }
