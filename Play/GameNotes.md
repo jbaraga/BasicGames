@@ -14,7 +14,7 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 - Original program flow is exceedingly convoluted and difficult to unravel
 - First attempt at translation used recursion to duplicate the original code flow directly and is included for reference but commented out. This contains the exit row bug in the original code, in which an exit from the maze may be missing. The level of recursion exponentially increases with maze size, and results in stack overflow with large mazes.
-- Final ranslation utilizes the underlying, very clever algorithm
+- Final translation utilizes the underlying, very clever algorithm
 
 #### [Animal](Animal.swift)
 
@@ -66,8 +66,8 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 #### [Bowling](Bowling.swift)
 
-- Strike not possible? Additional testing needed
-- Scoring issues: scoring of spares and strikes does not appear to follow bowling rules, and potential bugs in scoring
+- ?strike not possible - additional testing needed
+- Scoring issues - scoring of spares and strikes does not appear to follow bowling rules
 - Bug fixed - improper indexing of score by player; scoring not shown in sample run to confirm
 
 #### [Boxing](Boxing.swift)
@@ -168,11 +168,11 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 #### [Football](Football.swift)
 
-- Largely duplicates original code structure
+- Largely duplicates original code structure, needs refactoring
 
 #### [Ftball](Ftball.swift)
 
-- Largely duplicates original code structure
+- Largely duplicates original code structure, needs refactoring
 
 #### [Fur Trader](FurTrader.swift)
 
@@ -221,7 +221,7 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 #### [Hockey](Hockey.swift)
 
-- 290-305 fixed bug in original code where pass could occur between same player
+- Lines 290-305 - fixed bug in original code where pass could occur between same player
 - Line 430 missing in original code; Z assumed to equal 17 for choice S=2
 
 #### [Horserace](Horserace.swift)
@@ -259,7 +259,7 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 #### [Life for Two](Life2.swift)
 
 - ?bug in original code - too many cells survive from round 1 to round 2
-- Could improve coordinate input masking with raw mode in terminal
+- Could improve coordinate secure input masking with raw mode in terminal
 
 #### [Literature Quiz](LiteratureQuiz.swift)
 
@@ -404,7 +404,7 @@ Each game has undergone limited testing, primarily to demonstrate equivalent out
 
 #### [3-D Tic-Tac-Toe](3DTicTacToe.swift)
 
-- Custom Tensor `struct` for 3D representation of board
+- Implemented Tensor `struct` for 3D representation of board
 - Convoluted computer move logic in original source code incompletely implemented
 
 #### [Tic Tac Toe (v1)](TicTacToe1.swift)
