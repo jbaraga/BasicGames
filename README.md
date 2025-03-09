@@ -14,7 +14,7 @@ As a fun exercise, I decided to translate my favorite classic Basic games to Swi
 
 ## Project Evolution
 
-Originally each program was created as a separate CLI program. As more games were completed, a unified Basic Games macOS app was added to select and launch each game from a list. 
+Originally each program was created as a separate CLI program. As more games were completed, the BasicGames macOS app was added to provide GUI to select and launch each game. 
 
 Each game is launched in a separate terminal emulator window, tweaked to give the feel of a 1970's era computer. Originally the macOS Terminal app was utilized. In the current version the [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm.git) terminal emulator is embedded in the app, which allows for more customization and a self-contained game launcher app. 
 
@@ -51,7 +51,7 @@ UI code for the BasicGames game launcher app and SwiftTerm wrapper.
 
 ### Play folder
 
-Code for the **play** CLI s all for the individual games. Each game is contained in its own file, and is structured as a Swift class conforming to the BasicGame protocol.
+Code for the **play** CLI and the individual games. Each game is contained in its own file, and is structured as a Swift class conforming to the BasicGame protocol.
 
 See [GameNotes](Play/GameNotes.md) in **Play** folder for individual game notes.
 
@@ -67,16 +67,13 @@ The **play** and **bplay** targets depend on the [swift-argument-parser](https:/
 
 The GUI launcher macOS app, which launches each game in separate window in SwiftTerm. Contains additional goodies, including ability to view the original Basic code for each game (which is unlocked as an Easter Egg after successful game play). 
 
-The **play** command line tool is embedded in the BasicGames app ([Embedding a command-line tool in a sandboxed app](https://developer.apple.com/documentation/xcode/embedding-a-helper-tool-in-a-sandboxed-app)).
-
 ### play target
 
-Executable CLI program containing all games, which is embedded in the BasicGames app. This will not run as a separate CLI due to App Sandbox capability 
+Executable CLI program containing all games, which is embedded in the BasicGames app as a helper tool ([Embedding a command-line tool in a sandboxed app](https://developer.apple.com/documentation/xcode/embedding-a-helper-tool-in-a-sandboxed-app)). This can not be run as a separate CLI due to App Sandbox capability.
 
 ### bplay target
 
-Executable CLI program containing all games, identical to play target without App Sandbox capability, which can be run as a standalone CLI in any terminal app. If run in the macOS Terminal app, some customizations of the Terminal window can be enabled by un-commenting terminal setup commands in the ConsoleIO.swift file.
-
+Executable CLI program containing all games, identical to play target without App Sandbox capability, which can be run as a standalone CLI in any terminal app. If run in the macOS Terminal app, some customizations of the Terminal window can be enabled by un-commenting terminal setup commands in the [ConsoleIO](ConsoleIO.swift) file.
 
 ## Contribution
 
@@ -88,11 +85,11 @@ To add a new game:
 3. Add image for game as an Image set in [Assets](BasicGames/Assets), or use a selected system image; add image name to [Game](Game.swift) `enum`.
 4. In [Play](Play/PlayCommand.swift) `struct`, add enum case for game and instantiate.
 5. Write game code in *GameName*.swift file.
-6. Optionally add pdf file with Basic source code, and matching pdf filename to the [Game](Game.swift) `enum`.
+6. Optionally add Easter egg pdf file with Basic source code, and matching pdf filename to the [Game](Game.swift) `enum`.
 
 ## Future
 
-- Review completed programs for refinements, in some cases further refactoring.
+- Refine completed programs; in some cases further refactor the original Basic code
 - Implement additional games from [More Basic Computer Games](https://archive.org/details/More_BASIC_Computer_Games) and [Creative Computing](https://archive.org/details/creativecomputing)
 
 ## Credits
