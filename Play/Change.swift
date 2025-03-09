@@ -41,6 +41,8 @@ class Change: BasicGame {
             case .penny: return "Penny(s)"
             }
         }
+        
+        var value: Double { rawValue }
     }
     
     private func play() {
@@ -56,10 +58,11 @@ class Change: BasicGame {
                 var change = payment - cost
                 println("Your change, $ " + change.formatted(.currency(code: "USD")))
                 Currency.allCases.forEach {
-                    let number = Int(change / $0.rawValue)
+                    let number = Int(change / $0.value)
                     if number > 0 {
                         println(" \(number) " + $0.description)
-                        change -= Double(number) * $0.rawValue
+                        change -= Double(number) * $0.value
+                        change = round(100 * change) / 100  //Rounds to two decimal places, to handle Double imprescision
                     }
                 }
                 println("Thank you, come again.")

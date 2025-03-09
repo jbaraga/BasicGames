@@ -512,7 +512,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .digits: return "hand.raised.fingers.spread.fill"
         case .evenWins1, .evenWins2: return "circle.hexagongrid.circle"
         case .flipFlop: return "x.circle"
-        case .furTrader: return "hare"
+        case .furTrader: return "hare.fill"
         case .golf: return "figure.golf"
         case .gomoko: return "5.square"
         case .guess: return "questionmark.app"
@@ -587,7 +587,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .bowling: return .brown
         case .boxing: return .yellow
         case .bug: return .red
-        case.bullfight: return .orange
+        case .bullfight: return .orange
         case .bullseye: return .blue
         case .bunny: return .pink
         case .buzzword: return .teal
@@ -598,7 +598,7 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .chief: return .yellow
         case .chomp: return .red
         case .combat: return .gray
-        case .craps: return .white
+        case .craps: return .primary
         case .cube: return .green
         case .diamond: return .blue
         case .dice: return .yellow
@@ -606,15 +606,15 @@ enum Game: String, CaseIterable, Codable, CustomStringConvertible {
         case .evenWins1: return .indigo
         case .evenWins2: return .blue
         case .flipFlop: return .yellow
-        case .furTrader: return .white
-        case .golf: return .brown
+        case .furTrader: return .brown
+        case .golf: return .primary
         case .gomoko: return .green
         case .guess: return .mint
         case .gunner: return .red
         case .hamurabi: return .purple
         case .hangman: return .brown
         case .hello: return .yellow
-        case .hexapawn: return .brown
+        case .hexapawn: return .primary
         case .hiLo: return .blue
         case .highIQ: return .pink
         case .hockey: return .green
